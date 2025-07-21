@@ -1,32 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator, Button } from 'react-native';
+import { useFetch } from '../../hooks/useFetch';
 
-export default function GuardianDashboard({ navigation, route }) {
   const { firstName, role, userId } = route.params || {};
-  const [students, setStudents] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchStudents() {
-      try {
-        // Replace with actual backend API URL
-        const response = await fetch(`https://your-backend-api/guardian/students?guardian_id=${userId}`);
-        const data = await response.json();
-        if (response.ok) setStudents(data);
-      } catch (error) {
-        // Handle error
-      } finally {
-        setLoading(false);
-      }
-    }
-    if (userId) fetchStudents();
-  }, [userId]);
+  const { data: students, loading, error } = useFetch(userId ? `https://your-backend-api/guardian/students?guardian_id=${userId}` : null, [], !!userId);
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Guardian Portal</Text>
       <Text style={styles.welcome}>Welcome, {firstName || 'User'}! You are logged in as a {role || 'guardian'}.</Text>
       <Text style={styles.sectionTitle}>Linked Students</Text>
+      {error && <Text style={styles.errorText}>{error}</Text>}
       {loading ? <ActivityIndicator size="large" /> : (
         <FlatList
           data={students}
@@ -42,12 +26,13 @@ export default function GuardianDashboard({ navigation, route }) {
       <Button title="Logout" onPress={() => navigation.navigate('LoginScreen')} color="#d9534f" />
     </View>
   );
-}
+
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
   title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
   welcome: { fontSize: 18, marginBottom: 20 },
   sectionTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 10 },
+  errorText: { color: '#d9534f', fontSize: 16, marginBottom: 10 },
   studentItem: { padding: 10, borderWidth: 1, borderColor: '#ccc', borderRadius: 5, marginBottom: 10 },
 });

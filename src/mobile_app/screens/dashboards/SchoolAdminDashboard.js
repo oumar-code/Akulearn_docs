@@ -1,31 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { View, Text, Button, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
 import * as Progress from 'react-native-progress';
 import { Ionicons } from '@expo/vector-icons';
+import { useFetch } from '../../hooks/useFetch';
 
 export default function SchoolAdminDashboard({ navigation, route }) {
   const { firstName, role, schoolId } = route.params || {};
-  const [school, setSchool] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const { data: school, loading, error, refetch } = useFetch(schoolId ? `https://your-backend-api/schools/${schoolId}` : null, {}, !!schoolId);
   // Placeholder for teachers/students
-  const [teachers, setTeachers] = useState([]);
-  const [students, setStudents] = useState([]);
-
-  useEffect(() => {
-    async function fetchSchool() {
-      try {
-        // Replace with actual backend API URL
-        const response = await fetch(`https://your-backend-api/schools/${schoolId}`);
-        const data = await response.json();
-        if (response.ok) setSchool(data);
-      } catch (error) {
-        // Handle error
-      } finally {
-        setLoading(false);
-      }
-    }
-    if (schoolId) fetchSchool();
-  }, [schoolId]);
+  const [teachers, setTeachers] = React.useState([]);
+  const [students, setStudents] = React.useState([]);
 
   // Dummy data
   const totalStudents = 420;
@@ -40,6 +24,7 @@ export default function SchoolAdminDashboard({ navigation, route }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome, School Admin {firstName || 'User'}!</Text>
+      {error && <Text style={styles.errorText}>{error}</Text>}
       {/* Enrollment Overview */}
       <Text style={styles.sectionTitle}>Enrollment Overview</Text>
       <View style={styles.metricsRow}>
@@ -102,6 +87,7 @@ const styles = StyleSheet.create({
   title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
 
   sectionTitle: { fontSize: 18, fontWeight: 'bold', marginTop: 20, marginBottom: 10 },
+  errorText: { color: '#d9534f', fontSize: 16, marginBottom: 10 },
   metricsRow: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20 },
   metricBox: { alignItems: 'center', flex: 1, marginHorizontal: 8, padding: 12, backgroundColor: '#f7faff', borderRadius: 8, elevation: 1 },
   metricNumber: { fontSize: 32, fontWeight: 'bold', color: '#007bff', marginTop: 4 },

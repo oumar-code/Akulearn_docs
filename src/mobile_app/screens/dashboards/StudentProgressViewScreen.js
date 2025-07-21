@@ -1,35 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, ActivityIndicator, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as Progress from 'react-native-progress';
+import { useFetch } from '../../hooks/useFetch';
 
-export default function StudentProgressViewScreen({ route }) {
   const { studentId } = route.params;
-  const [progress, setProgress] = useState(null);
-  const [examResults, setExamResults] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const { data: progress, loading: loadingProgress, error: errorProgress } = useFetch(studentId ? `https://your-backend-api/user/progress/${studentId}` : null, null, !!studentId);
+  const { data: examResults, loading: loadingExam, error: errorExam } = useFetch(studentId ? `https://your-backend-api/user/exam_results/${studentId}` : null, null, !!studentId);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const progressRes = await fetch(`https://your-backend-api/user/progress/${studentId}`);
-        const progressData = await progressRes.json();
-        const examRes = await fetch(`https://your-backend-api/user/exam_results/${studentId}`);
-        const examData = await examRes.json();
-        setProgress(progressData);
-        setExamResults(examData);
-      } catch (error) {
-        // Handle error
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, [studentId]);
+  const loading = loadingProgress || loadingExam;
+  const error = errorProgress || errorExam;
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Student Progress</Text>
+      {error && <Text style={styles.errorText}>{error}</Text>}
       {loading ? <ActivityIndicator size="large" /> : (
         <>
           {progress && (
@@ -56,7 +41,7 @@ export default function StudentProgressViewScreen({ route }) {
                 <Text style={[styles.examCell, styles.examHeader]}>Exam</Text>
                 <Text style={[styles.examCell, styles.examHeader]}>Score</Text>
               </View>
-              {examResults.results.map((result, idx) => (
+              {examResults.results && examResults.results.map((result, idx) => (
                 <View key={idx} style={styles.examTableRow}>
                   <Text style={styles.examCell}>{result.exam_name}</Text>
                   <Text style={styles.examCell}>{result.score}%</Text>
@@ -68,7 +53,7 @@ export default function StudentProgressViewScreen({ route }) {
       )}
     </ScrollView>
   );
-}
+
 
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },

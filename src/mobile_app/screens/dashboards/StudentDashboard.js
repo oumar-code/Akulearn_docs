@@ -1,33 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { View, Text, Button, StyleSheet, TouchableOpacity, ActivityIndicator, Dimensions, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as Progress from 'react-native-progress';
 import { BarChart } from 'react-native-chart-kit';
+import { useFetch } from '../../hooks/useFetch';
 
 export default function StudentDashboard({ navigation, route }) {
   const { firstName, role, userId } = route.params || {};
-  const [progress, setProgress] = useState(null);
-  const [lastTopic, setLastTopic] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchProgress() {
-      try {
-        // Replace with actual backend API URLs
-        const progressRes = await fetch(`https://your-backend-api/user/progress/${userId}`);
-        const progressData = await progressRes.json();
-        const topicRes = await fetch(`https://your-backend-api/user/last_accessed_topic?user_id=${userId}`);
-        const topicData = await topicRes.json();
-        setProgress(progressData);
-        setLastTopic(topicData);
-      } catch (error) {
-        // Handle error
-      } finally {
-        setLoading(false);
-      }
-    }
-    if (userId) fetchProgress();
-  }, [userId]);
+  const { data: progress, loading: loadingProgress, error: errorProgress } = useFetch(userId ? `https://your-backend-api/user/progress/${userId}` : null, {}, !!userId);
+  const { data: lastTopic, loading: loadingTopic, error: errorTopic } = useFetch(userId ? `https://your-backend-api/user/last_accessed_topic?user_id=${userId}` : null, {}, !!userId);
 
   // Dummy data for 'Topics Completed This Week' bar chart
   const weeklyTopicsData = {
@@ -58,7 +39,8 @@ export default function StudentDashboard({ navigation, route }) {
         <Ionicons name="stats-chart" size={28} color="#ffc107" />
         <Text>My Progress</Text>
       </TouchableOpacity>
-      {loading ? <ActivityIndicator size="large" /> : progress && (
+      {(errorProgress || errorTopic) && <Text style={styles.errorText}>{errorProgress || errorTopic}</Text>}
+      {(loadingProgress || loadingTopic) ? <ActivityIndicator size="large" /> : progress && (
         <View style={styles.progressWidget}>
           <Text style={styles.sectionTitle}>Your Progress</Text>
           <View style={{alignItems: 'center', marginVertical: 10}}>
@@ -121,6 +103,7 @@ const styles = StyleSheet.create({
   progressBar: { height: 10, backgroundColor: '#007bff', borderRadius: 5 },
 
   chartWidget: { padding: 10, borderWidth: 1, borderColor: '#e3e3e3', borderRadius: 5, marginBottom: 20, backgroundColor: '#fafbff' },
+  errorText: { color: '#d9534f', fontSize: 16, marginBottom: 10 },
   nextLessonWidget: { padding: 10, borderWidth: 1, borderColor: '#ccc', borderRadius: 5, marginBottom: 20 },
   sectionTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 10 },
 });

@@ -1,32 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { View, Text, Button, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
+import { useFetch } from '../../hooks/useFetch';
 
 export default function SuperAdminDashboard({ navigation, route }) {
   const { firstName, role } = route.params || {};
-  const [schools, setSchools] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetchSchools() {
-      try {
-        // Replace with actual backend API URL
-        const response = await fetch('https://your-backend-api/admin/schools');
-        const data = await response.json();
-        if (response.ok) {
-          setSchools(data);
-          setError(null);
-        } else {
-          setError('Could not load schools. Please try again.');
-        }
-      } catch (error) {
-        setError('Network error. Please check your connection.');
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchSchools();
-  }, []);
+  const { data: schools, loading, error, refetch } = useFetch('https://your-backend-api/admin/schools');
 
   return (
     <View style={styles.container}>
@@ -37,7 +15,7 @@ export default function SuperAdminDashboard({ navigation, route }) {
       {error && <Text style={styles.errorText}>{error}</Text>}
       {loading ? <ActivityIndicator size="large" /> : (
         <FlatList
-          data={schools}
+          data={schools || []}
           keyExtractor={(item) => item.school_id}
           renderItem={({ item }) => (
             <View style={styles.schoolItem}>
