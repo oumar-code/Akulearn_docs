@@ -1,3 +1,19 @@
+from sqlalchemy import Integer, DateTime, func
+
+# UserProgress model for tracking topic completion and progress
+class UserProgress(Base):
+    __tablename__ = "user_progress"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(UUID(as_uuid=True), ForeignKey("users.user_id"), nullable=False, index=True)
+    topic_id = Column(String, nullable=False)
+    module_id = Column(String, nullable=True)
+    completed = Column(Boolean, default=False)
+    completed_at = Column(DateTime, default=func.now())
+    last_accessed_at = Column(DateTime, default=func.now(), onupdate=func.now())
+
+    __table_args__ = (
+        UniqueConstraint('user_id', 'topic_id'),
+    )
 from sqlalchemy import (
     Column, String, Boolean, Enum, ForeignKey, TIMESTAMP, UniqueConstraint
 )

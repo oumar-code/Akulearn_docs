@@ -1,3 +1,36 @@
+from src.backend.database.models import UserProgress
+from datetime import datetime
+# --- Track Topic Completion Endpoint ---
+from fastapi import status
+class TrackTopicCompletionRequest(BaseModel):
+    user_id: str
+    topic_id: str
+    module_id: str = None
+
+@router.post("/track_topic_completion", status_code=status.HTTP_200_OK)
+def track_topic_completion(req: TrackTopicCompletionRequest, db: Session = Depends(get_db)):
+    try:
+        # Check if progress exists
+        progress = db.query(UserProgress).filter_by(user_id=req.user_id, topic_id=req.topic_id).first()
+        if progress:
+            progress.completed = True
+            progress.completed_at = datetime.utcnow()
+            progress.last_accessed_at = datetime.utcnow()
+        else:
+            progress = UserProgress(
+                user_id=req.user_id,
+                topic_id=req.topic_id,
+                module_id=req.module_id,
+                completed=True,
+                completed_at=datetime.utcnow(),
+                last_accessed_at=datetime.utcnow()
+            )
+            db.add(progress)
+        db.commit()
+        return {"success": True, "message": "Topic marked as complete."}
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=f"Database error: {str(e)}")
 from fastapi import APIRouter, Depends, HTTPException
 from src.backend.dependencies import get_db, get_current_user
 from sqlalchemy.orm import Session

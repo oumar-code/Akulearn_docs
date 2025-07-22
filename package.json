@@ -1,0 +1,28 @@
+{
+  "name": "akulearn_docs",
+  "version": "1.0.0",
+  "description": "Welcome to the Akulearn documentation repository! This space contains all official documentation for the Akulearn EdTech platform, designed to empower learners and educators across Nigeria and Africa.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oumar-code/Akulearn_docs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oumar-code/Akulearn_docs/issues"
+  },
+  "homepage": "https://github.com/oumar-code/Akulearn_docs#readme",
+  "dependencies": {
+    "react-native-chart-kit": "^6.12.0",
+    "react-native-progress": "^5.0.1",
+    "react-native-svg": "^15.12.0"
+  }
+}
