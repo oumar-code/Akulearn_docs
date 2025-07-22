@@ -1,32 +1,54 @@
 site_name: Akulearn Documentation
+site_url: https://akulearn.com/docs
+repo_url: https://github.com/oumar-code/Akulearn_docs
+repo_name: oumar-code/Akulearn_docs
 site_description: Comprehensive documentation for the Akulearn EdTech platform, covering architecture, development standards, and project plans.
+
 theme:
   name: material
+  palette:
+    primary: blue
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: images/akulearn-logo.png
+  favicon: images/favicon.ico
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+    - content.tabs.link
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+
 nav:
   - Home: index.md
   - Project Overview:
       - Overview: docs/00-project-overview/index.md
-      - Project Roadmap: docs/00-project-overview/roadmap-phase-1.md
+      - Roadmap: docs/00-project-overview/roadmap-phase-1.md
   - Architecture:
       - Overview: docs/01-architecture/index.md
+      - Content Ingestion: docs/01-architecture/hld-lld-content-ingestion.md
       - ADRs: docs/01-architecture/adrs/index.md
-      - Content Ingestion HLD/LLD: docs/01-architecture/hld-lld-content-ingestion.md
   - Backend:
-      - Handbook: docs/02-backend/index.md
-      - API Specifications: docs/02-backend/api-specs.md
+      - Overview: docs/02-backend/index.md
+      - API Specs: docs/02-backend/api-specs.md
       - Database Schemas: docs/02-backend/database-schemas.md
-  - Mobile:
-      - Guidelines: docs/03-mobile/index.md
-  - IoT & Projector:
-      - Guidelines: docs/04-iot-projector/index.md
-  - Cross-Cutting Concerns:
-      - Technical Specs: docs/05-cross-cutting/index.md
+  - Mobile App: docs/03-mobile/index.md
+  - IoT Projector: docs/04-iot-projector/index.md
+  - Cross-Cutting:
       - Coding Standards: docs/05-cross-cutting/coding-standards.md
-  - Process & Methodology:
-      - Handbook: docs/06-process-methodology/index.md
-  - Glossary:
-      - Terms: docs/07-glossary/index.md
-  - Images: docs/images/
-extensions:
-  - admonition
-  - codehilite
+      - Overview: docs/05-cross-cutting/index.md
+  - Process & Methodology: docs/06-process-methodology/index.md
+  - Glossary: docs/07-glossary/index.md
+  - Demo Scripts: docs/demo_scripts/offline_demo_segment.md
