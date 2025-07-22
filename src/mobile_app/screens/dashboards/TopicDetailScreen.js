@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Modal } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Modal, Button, ActivityIndicator, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 // Dummy topic data for demonstration
 const topic = {
+  topic_id: 'topic123',
+  module_id: 'module456',
   title: 'Quadratic Equations',
   description: 'Learn how to solve quadratic equations.',
   premium_only: true,
@@ -11,6 +13,8 @@ const topic = {
 
 export default function TopicDetailScreen({ navigation, route }) {
   const [showPremiumModal, setShowPremiumModal] = useState(false);
+  const [marking, setMarking] = useState(false);
+  const [completed, setCompleted] = useState(false);
   // Assume user is free tier for demo
   const isFreeUser = true;
 
@@ -19,6 +23,30 @@ export default function TopicDetailScreen({ navigation, route }) {
       setShowPremiumModal(true);
     } else {
       // Navigate to content
+    }
+  }
+
+  async function handleMarkComplete() {
+    setMarking(true);
+    try {
+      // Replace with actual userId from auth context or navigation params
+      const userId = 'demo123';
+      const response = await fetch('https://your-backend-api/user/track_topic_completion', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ user_id: userId, topic_id: topic.topic_id, module_id: topic.module_id })
+      });
+      const data = await response.json();
+      if (response.ok && data.success) {
+        setCompleted(true);
+        Alert.alert('Success', 'Topic marked as complete!');
+      } else {
+        Alert.alert('Error', data.detail || 'Failed to mark as complete.');
+      }
+    } catch (e) {
+      Alert.alert('Error', e.message || 'Network error.');
+    } finally {
+      setMarking(false);
     }
   }
 
@@ -36,6 +64,14 @@ export default function TopicDetailScreen({ navigation, route }) {
           <Ionicons name="lock-closed" size={20} color="#d9534f" style={{ marginLeft: 8 }} />
         )}
       </TouchableOpacity>
+      <View style={{ marginVertical: 20 }}>
+        <Button
+          title={completed ? 'Completed!' : marking ? 'Marking...' : 'Mark as Complete'}
+          onPress={handleMarkComplete}
+          color={completed ? '#28a745' : '#007bff'}
+          disabled={marking || completed}
+        />
+      </View>
       <Modal visible={showPremiumModal} transparent animationType="slide">
         <View style={styles.modalOverlay}>
           <View style={styles.modalBox}>

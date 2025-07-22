@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert, Modal, TouchableOpacity } from 'react-native';
+import jwtDecode from 'jwt-decode';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function RegisterScreen({ navigation }) {
   const [firstName, setFirstName] = useState('');
@@ -13,17 +15,60 @@ export default function RegisterScreen({ navigation }) {
     setLoading(true);
     try {
       // Replace with actual registration API call
-      // Simulate success
-      setTimeout(() => {
+      const response = await fetch('https://your-backend-api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ first_name: firstName, email, password })
+      });
+      const data = await response.json();
+      if (response.ok && data.token) {
         setShowWelcome(true);
         setLoading(false);
+        await AsyncStorage.setItem('akulearn_token', data.token);
+        const decoded = jwtDecode(data.token);
+        const role = decoded.role;
+        const userId = decoded.user_id || decoded.id;
+        const firstNameDecoded = decoded.first_name || firstName;
         setTimeout(() => {
           setShowWelcome(false);
-          // Simulate auto-login and JWT
-          navigation.replace('StudentDashboard', { firstName, role: 'student', userId: 'demo123' });
+          // Role-based navigation
+          switch (role) {
+            case 'super_admin':
+              navigation.replace('SuperAdminDashboard', { firstName: firstNameDecoded, role, userId });
+              break;
+            case 'school_admin':
+              navigation.replace('SchoolAdminDashboard', { firstName: firstNameDecoded, role, userId });
+              break;
+            case 'teacher':
+              navigation.replace('TeacherDashboard', { firstName: firstNameDecoded, role, userId });
+              break;
+            case 'student':
+              navigation.replace('StudentDashboard', { firstName: firstNameDecoded, role, userId });
+              break;
+            case 'guardian':
+              navigation.replace('GuardianDashboard', { firstName: firstNameDecoded, role, userId });
+              break;
+            case 'corporation':
+              navigation.replace('CorporateDashboard', { firstName: firstNameDecoded, role, userId });
+              break;
+            case 'government':
+              navigation.replace('GovernmentDashboard', { firstName: firstNameDecoded, role, userId });
+              break;
+            case 'ngo_partner':
+              navigation.replace('NgoPartnerDashboard', { firstName: firstNameDecoded, role, userId });
+              break;
+            case 'it_support':
+              navigation.replace('ITSupportDashboard', { firstName: firstNameDecoded, role, userId });
+              break;
+            default:
+              Alert.alert('Unknown role', 'Your account role is not recognized.');
+          }
           setTimeout(() => setShowFreePrompt(true), 500);
         }, 1200);
-      }, 1000);
+      } else {
+        Alert.alert('Registration failed', data.message || 'Please try again.');
+        setLoading(false);
+      }
     } catch (e) {
       Alert.alert('Registration failed', 'Please try again.');
       setLoading(false);
