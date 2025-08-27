@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Alert, ActivityIndicator } from 'react-native';
 import jwtDecode from 'jwt-decode';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -8,6 +8,7 @@ export default function LoginScreen({ navigation }) {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
+  // Enhance login flow: robust role-based navigation, error/loading handling
   const handleLogin = async () => {
     setLoading(true);
     try {
@@ -58,10 +59,10 @@ export default function LoginScreen({ navigation }) {
             Alert.alert('Unknown role', 'Your account role is not recognized.');
         }
       } else {
-        Alert.alert('Login Failed', data.message || 'Invalid credentials');
+        Alert.alert('Login Error', data.detail || 'Invalid credentials. Please try again.');
       }
-    } catch (error) {
-      Alert.alert('Error', error.message);
+    } catch (e) {
+      Alert.alert('Network Error', e.message || 'Unable to connect.');
     } finally {
       setLoading(false);
     }
@@ -86,6 +87,7 @@ export default function LoginScreen({ navigation }) {
         secureTextEntry
       />
       <Button title={loading ? 'Logging in...' : 'Login'} onPress={handleLogin} disabled={loading} />
+      {loading && <ActivityIndicator size="large" color="#007bff" style={{ marginVertical: 10 }} />}
     </View>
   );
 }

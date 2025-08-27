@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert, Modal, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Alert, Modal, TouchableOpacity, ActivityIndicator } from 'react-native';
 import jwtDecode from 'jwt-decode';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -63,11 +63,10 @@ export default function RegisterScreen({ navigation }) {
             default:
               Alert.alert('Unknown role', 'Your account role is not recognized.');
           }
-          setTimeout(() => setShowFreePrompt(true), 500);
-        }, 1200);
+        }, 1800); // Show welcome for 1.8 seconds
       } else {
-        Alert.alert('Registration failed', data.message || 'Please try again.');
         setLoading(false);
+        Alert.alert('Registration Error', data.detail || 'Failed to register. Please try again.');
       }
     } catch (e) {
       Alert.alert('Registration failed', 'Please try again.');
@@ -83,6 +82,7 @@ export default function RegisterScreen({ navigation }) {
       <TextInput style={styles.input} placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
       <Button title={loading ? 'Registering...' : 'Register'} onPress={handleRegister} disabled={loading} />
       <Button title="Already have an account? Login" onPress={() => navigation.navigate('LoginScreen')} />
+      {loading && <ActivityIndicator size="large" color="#007bff" style={{ marginVertical: 10 }} />}
       <Modal visible={showWelcome} transparent animationType="fade">
         <View style={styles.modalOverlay}>
           <View style={styles.modalBox}>
