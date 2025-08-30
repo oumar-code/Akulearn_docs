@@ -1,0 +1,47 @@
+name: Akulearn Projector Hub CI/CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-package-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Build Sync Agent
+        run: |
+          cd unconnected_stack/backend
+          pip install -r requirements.txt
+          python main.py --check
+      - name: Build PWA
+        run: |
+          cd unconnected_stack/frontend
+          npm install
+          npm run build
+      - name: Package Hub Software
+        run: |
+          mkdir -p hub_package
+          cp -r unconnected_stack/backend hub_package/
+          cp -r unconnected_stack/frontend/dist hub_package/pwa
+          cp unconnected_stack/deployment/nginx.conf hub_package/
+          # Add AI models and scripts as needed
+      - name: Deployment Readiness Check
+        run: |
+          # Example: check for required files
+          test -f hub_package/pwa/index.html
+          test -f hub_package/backend/main.py
+      - name: Upload Hub Package Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AkulearnHub-Package
+          path: hub_package

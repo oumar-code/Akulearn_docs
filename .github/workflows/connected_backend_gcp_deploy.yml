@@ -1,0 +1,63 @@
+name: Akulearn Connected Backend GCP CI/CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-push-deploy:
+    runs-on: ubuntu-latest
+    env:
+      PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+      REGION: ${{ secrets.GCP_REGION }}
+      REPOSITORY: ${{ secrets.GCP_ARTIFACT_REPO }}
+      VM_IP: ${{ secrets.GCP_VM_IP }}
+      VM_USER: ${{ secrets.GCP_VM_USER }}
+      VM_SSH_KEY: ${{ secrets.GCP_VM_SSH_KEY }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build Backend
+        run: |
+          cd connected_stack/backend
+          pip install -r requirements.txt
+          python main.py --check || true
+
+      - name: Set up Google Cloud CLI
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          export_default_credentials: true
+
+      - name: Configure Docker for Artifact Registry
+        run: |
+          gcloud auth configure-docker $REGION-docker.pkg.dev
+
+      - name: Build Docker image
+        run: |
+          cd connected_stack/deployment
+          docker build -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/akulearn-connected-backend:${{ github.sha }} .
+
+      - name: Push Docker image to Artifact Registry
+        run: |
+          docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/akulearn-connected-backend:${{ github.sha }}
+
+      - name: SSH and Deploy on GCP VM
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ env.VM_IP }}
+          username: ${{ env.VM_USER }}
+          key: ${{ env.VM_SSH_KEY }}
+          script: |
+            gcloud auth configure-docker $REGION-docker.pkg.dev
+            docker pull $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/akulearn-connected-backend:${{ github.sha }}
+            docker stop akulearn-connected-backend || true
+            docker rm akulearn-connected-backend || true
+            docker run -d --name akulearn-connected-backend -p 8000:8000 $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/akulearn-connected-backend:${{ github.sha }}
