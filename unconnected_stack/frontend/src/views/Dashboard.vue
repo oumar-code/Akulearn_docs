@@ -1,7 +1,9 @@
 
+
 <template>
   <div>
     <Navbar :role="store.role" />
+    <SolarStatus />
     <div v-if="store.role === 'student'">
       <ProgressDashboard :progress="progress" />
     </div>
@@ -21,9 +23,10 @@ import Navbar from '../components/Navbar.vue';
 import ProgressDashboard from '../components/ProgressDashboard.vue';
 import ReviewPanel from '../components/ReviewPanel.vue';
 import AdminPanel from '../components/AdminPanel.vue';
+import SolarStatus from '../components/SolarStatus.vue';
 import { fetchProgress } from '../api';
 export default {
-  components: { Navbar, ProgressDashboard, ReviewPanel, AdminPanel },
+  components: { Navbar, ProgressDashboard, ReviewPanel, AdminPanel, SolarStatus },
   data() {
     return { store, progress: 0, error: '', loading: false };
   },
