@@ -1,3 +1,74 @@
+class Journal(BaseModel):
+    id: int
+    title: str
+    issue: str
+    path: str
+    metadata: str = ""
+
+journals_db: List[Journal] = []
+
+@app.post("/journals/add")
+def add_journal(journal: Journal):
+    journals_db.append(journal)
+    return {"message": "Journal added", "journal": journal}
+
+@app.get("/journals/list")
+def list_journals():
+    return journals_db
+
+class ConferencePaper(BaseModel):
+    id: int
+    title: str
+    year: str
+    path: str
+    metadata: str = ""
+
+conference_papers_db: List[ConferencePaper] = []
+
+@app.post("/conference_papers/add")
+def add_conference_paper(paper: ConferencePaper):
+    conference_papers_db.append(paper)
+    return {"message": "Conference paper added", "paper": paper}
+
+@app.get("/conference_papers/list")
+def list_conference_papers():
+    return conference_papers_db
+
+class Dataset(BaseModel):
+    id: int
+    title: str
+    format: str
+    path: str
+    metadata: str = ""
+
+datasets_db: List[Dataset] = []
+
+@app.post("/datasets/add")
+def add_dataset(dataset: Dataset):
+    datasets_db.append(dataset)
+    return {"message": "Dataset added", "dataset": dataset}
+
+@app.get("/datasets/list")
+def list_datasets():
+    return datasets_db
+
+class CodeSnippet(BaseModel):
+    id: int
+    title: str
+    language: str
+    path: str
+    metadata: str = ""
+
+code_db: List[CodeSnippet] = []
+
+@app.post("/code/add")
+def add_code(code: CodeSnippet):
+    code_db.append(code)
+    return {"message": "Code added", "code": code}
+
+@app.get("/code/list")
+def list_code():
+    return code_db
 # Endpoints for creative tools
 @app.post("/tools/add")
 def add_tool(tool: Tool):
