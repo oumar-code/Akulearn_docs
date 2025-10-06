@@ -1,3 +1,19 @@
+class Simulation(BaseModel):
+    id: int
+    title: str
+    description: str
+    path: str  # html/js or other format
+
+simulations_db: List[Simulation] = []
+
+@app.post("/simulations/add")
+def add_simulation(sim: Simulation):
+    simulations_db.append(sim)
+    return {"message": "Simulation added", "simulation": sim}
+
+@app.get("/simulations/list")
+def list_simulations():
+    return simulations_db
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List
