@@ -1,3 +1,42 @@
+from fastapi import Query
+
+# Advanced search endpoint
+@app.get("/search")
+def search_content(q: str = Query(..., description="Search query")):
+    results = []
+    # Search textbooks
+    for tb in textbooks_db:
+        if q.lower() in tb.title.lower():
+            results.append({"type": "textbook", "title": tb.title, "version": tb.format})
+    # Search journals
+    for j in journals_db:
+        if q.lower() in j.title.lower():
+            results.append({"type": "journal", "title": j.title, "issue": j.issue})
+    # Search conference papers
+    for cp in conference_papers_db:
+        if q.lower() in cp.title.lower():
+            results.append({"type": "conference_paper", "title": cp.title, "year": cp.year})
+    # Search datasets
+    for ds in datasets_db:
+        if q.lower() in ds.title.lower():
+            results.append({"type": "dataset", "title": ds.title, "format": ds.format})
+    # Search code
+    for c in code_db:
+        if q.lower() in c.title.lower():
+            results.append({"type": "code", "title": c.title, "language": c.language})
+    # Search AR assets
+    for ar in ar_assets_db:
+        if q.lower() in ar.title.lower():
+            results.append({"type": "ar_asset", "title": ar.title, "format": ar.format})
+    # Search simulations
+    for sim in simulations_db:
+        if q.lower() in sim.title.lower():
+            results.append({"type": "simulation", "title": sim.title})
+    # Search VR experiences
+    for vr in vr_experiences_db:
+        if q.lower() in vr.title.lower():
+            results.append({"type": "vr_experience", "title": vr.title})
+    return results
 class Journal(BaseModel):
     id: int
     title: str
