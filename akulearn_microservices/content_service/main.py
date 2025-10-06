@@ -1,3 +1,28 @@
+# Endpoints for creative tools
+@app.post("/tools/add")
+def add_tool(tool: Tool):
+    tools_db.append(tool)
+    return {"message": "Tool added", "tool": tool}
+
+@app.get("/tools/list")
+def list_tools():
+    return tools_db
+class VRExperience(BaseModel):
+    id: int
+    title: str
+    description: str
+    path: str  # unitypackage or other format
+
+vr_experiences_db: List[VRExperience] = []
+
+@app.post("/vr_experiences/add")
+def add_vr_experience(exp: VRExperience):
+    vr_experiences_db.append(exp)
+    return {"message": "VR experience added", "experience": exp}
+
+@app.get("/vr_experiences/list")
+def list_vr_experiences():
+    return vr_experiences_db
 class Simulation(BaseModel):
     id: int
     title: str
