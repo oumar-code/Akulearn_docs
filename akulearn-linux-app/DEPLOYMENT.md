@@ -9,7 +9,7 @@
 1. Install JDK:
    ```sh
    sudo apt update
-   sudo apt install openjdk-17-jdk
+   sudo apt install openjdk-25-jdk
    ```
 2. Install Kotlin and Gradle (if not present):
    ```sh
