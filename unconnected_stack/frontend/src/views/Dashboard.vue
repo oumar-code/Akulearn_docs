@@ -1,5 +1,3 @@
-
-
 <template>
   <div>
     <Navbar :role="store.role" />
@@ -12,6 +10,7 @@
     </div>
     <div v-else-if="store.role === 'admin'">
       <AdminPanel />
+      <CommunityDashboard />
     </div>
     <div v-if="error" style="color: var(--error)">{{ error }}</div>
     <div v-if="loading">Loading...</div>
@@ -23,10 +22,11 @@ import Navbar from '../components/Navbar.vue';
 import ProgressDashboard from '../components/ProgressDashboard.vue';
 import ReviewPanel from '../components/ReviewPanel.vue';
 import AdminPanel from '../components/AdminPanel.vue';
+import CommunityDashboard from '../components/CommunityDashboard.vue';
 import SolarStatus from '../components/SolarStatus.vue';
 import { fetchProgress } from '../api';
 export default {
-  components: { Navbar, ProgressDashboard, ReviewPanel, AdminPanel, SolarStatus },
+  components: { Navbar, ProgressDashboard, ReviewPanel, AdminPanel, CommunityDashboard, SolarStatus },
   data() {
     return { store, progress: 0, error: '', loading: false };
   },
