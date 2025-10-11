@@ -7,7 +7,46 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 import requests
 import os
 
+from pydantic import BaseModel
+from typing import Optional
+from passlib.context import CryptContext
+
 app = FastAPI(title="Akulearn Admin Portal Service")
+
+# Simple in-memory user store
+users_db = {}
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+class UserCreate(BaseModel):
+    username: str
+    password: str
+
+class UserLogin(BaseModel):
+    username: str
+    password: str
+
+def verify_password(plain_password, hashed_password):
+    return pwd_context.verify(plain_password, hashed_password)
+
+def get_password_hash(password):
+    return pwd_context.hash(password)
+
+# Endpoint to create initial admin user
+@app.post("/create_admin")
+def create_admin(user: UserCreate):
+    if user.username in users_db:
+        raise HTTPException(status_code=400, detail="User already exists")
+    users_db[user.username] = get_password_hash(user.password)
+    return {"msg": "Admin user created"}
+
+# Simple login endpoint
+@app.post("/login")
+def login(user: UserLogin):
+    hashed = users_db.get(user.username)
+    if not hashed or not verify_password(user.password, hashed):
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    # For demo, return a dummy token
+    return {"access_token": f"dummy-token-for-{user.username}", "token_type": "bearer"}
 
 # JWT Authentication Middleware
 security = HTTPBearer()
