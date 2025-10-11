@@ -1,4 +1,4 @@
-name: Akulearn Projector Hub GCP CI/CD
+name: Aku Platform Mesh Device GCP CI/CD
 
 on:
   push:
@@ -54,11 +54,11 @@ jobs:
       - name: Build Docker image
         run: |
           cd unconnected_stack/deployment
-          docker build -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/akulearn-hub:${{ github.sha }} .
+          docker build -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/aku-mesh-device:${{ github.sha }} .
 
       - name: Push Docker image to Artifact Registry
         run: |
-          docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/akulearn-hub:${{ github.sha }}
+          docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/aku-mesh-device:${{ github.sha }}
 
       - name: SSH and Deploy on GCP VM
         uses: appleboy/ssh-action@v0.1.10
@@ -68,7 +68,7 @@ jobs:
           key: ${{ env.VM_SSH_KEY }}
           script: |
             gcloud auth configure-docker $REGION-docker.pkg.dev
-            docker pull $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/akulearn-hub:${{ github.sha }}
+            docker pull $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/aku-mesh-device:${{ github.sha }}
             docker stop akulearn-hub || true
             docker rm akulearn-hub || true
-            docker run -d --name akulearn-hub -p 80:80 -p 8000:8000 $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/akulearn-hub:${{ github.sha }}
+            docker run -d --name akulearn-hub -p 80:80 -p 8000:8000 $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/aku-mesh-device:${{ github.sha }}

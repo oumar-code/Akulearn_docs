@@ -1,4 +1,4 @@
-name: Akulearn Projector Hub OTA Package (GCP)
+name: Aku Platform Mesh Device OTA Package (GCP)
 
 on:
   push:
@@ -42,12 +42,13 @@ jobs:
           cp -r projector_sync_service ota_package/
           cp -r frontend/dist ota_package/pwa
           cp deployment/nginx.conf ota_package/
-          # Add AI models, scripts, and other components as needed
+          # Add AI models, scripts, and other mesh device components as needed
 
       - name: Deployment Readiness Check
         run: |
           test -f ota_package/pwa/index.html
           test -f ota_package/projector_sync_service/main.py
+          # Add checks for other mesh device components as needed
 
       - name: Upload OTA Package to GCP Storage
         uses: google-github-actions/upload-cloud-storage@v1
