@@ -1,6 +1,7 @@
-# FastAPI Analytics microservice
-from fastapi import FastAPI
+# Aku Platform Analytics Microservice
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+from typing import List
 
 app = FastAPI()
 
@@ -10,10 +11,12 @@ class ProgressReport(BaseModel):
     score: float
     time_spent: int
 
-reports = []
+reports: List[ProgressReport] = []
 
 @app.post("/report_progress")
 def report_progress(report: ProgressReport):
+    if not report.student_id or not report.lesson_id:
+        raise HTTPException(status_code=400, detail="Missing required fields")
     reports.append(report)
     return {"status": "recorded"}
 

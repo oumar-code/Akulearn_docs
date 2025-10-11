@@ -1,7 +1,7 @@
-# FastAPI AI Tutor microservice
-from fastapi import FastAPI, Query
+# Aku Platform AI Tutor Microservice
+from fastapi import FastAPI, Query, HTTPException
 from pydantic import BaseModel
-import random
+from typing import List
 
 app = FastAPI()
 
@@ -11,10 +11,12 @@ class TutorRequest(BaseModel):
 
 class TutorResponse(BaseModel):
     answer: str
-    hints: list[str]
+    hints: List[str]
 
 @app.post("/ask", response_model=TutorResponse)
 def ask_tutor(req: TutorRequest):
+    if not req.question:
+        raise HTTPException(status_code=400, detail="Question required")
     # Placeholder: Replace with real AI model integration
     answer = f"AI answer to: {req.question}"
     hints = ["Think about the main concept.", "Review your notes."]

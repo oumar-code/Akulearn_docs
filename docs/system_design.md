@@ -105,6 +105,32 @@ Akulearn's best strategy for serving schools or communities with computers/table
 
 ---
 
+## Microservice Interaction Diagram
+
+```mermaid
+graph TD
+    AI[AI Tutor] --> API[API Gateway]
+    Polls[Polls/Q&A] --> API
+    Analytics[Analytics] --> API
+    Hub[Hub Integration] --> API
+    Marketplace[Marketplace] --> API
+    Hardware[Hardware Integration] --> API
+    API --> FE[Frontend]
+    API --> DB[(Database)]
+```
+
+## Data Sync Flow Diagram
+
+```mermaid
+graph TD
+    Local[Local Device/Hub] -- Offline Data --> Hub[Projector Hub]
+    Hub -- Scheduled Sync --> Cloud[Cloud Backend]
+    Cloud -- Updates --> Hub
+    Hub -- Real-Time Data --> FE[Frontend]
+```
+
+---
+
 ### Why This Strategy Wins for Akulearn
 
 * **Maximizes Existing Assets:** Leverages schools' existing computers/tablets, reducing new hardware costs.
