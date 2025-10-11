@@ -51,6 +51,12 @@ Thank you for helping us build a brighter future for education!
 
 Welcome to the Aku Platform documentation repository! This space contains all official documentation for the Aku Platform, designed to empower learners and communities across Africa.
 
+## Interactive Zamfara Network Map
+
+[![Zamfara Network Map Preview](docs/network-map/preview.png)](https://oumar-code.github.io/Akulearn_docs/docs/network-map/)
+
+> **Click the image above or [this link](https://oumar-code.github.io/Akulearn_docs/docs/network-map/) to view the interactive Zamfara mesh network map.**
+
 ## Architecture Overview
 
 Below is the Aku Platform architecture diagram. If you see a rendering error, please view the diagram in a Markdown editor that supports Mermaid, or see the GitHub documentation for troubleshooting.

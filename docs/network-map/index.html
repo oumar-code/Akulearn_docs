@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zamfara Network Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100vw; height:100vh; }
+    .mapboxgl-popup { max-width: 300px; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <script>
+    mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN'; // Replace with your token
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/light-v10',
+      center: [6.5483, 12.1221], // Zamfara center
+      zoom: 7
+    });
+    map.on('load', () => {
+      fetch('../../web/public/data/zamfara-network-data.geojson')
+        .then(response => response.json())
+        .then(data => {
+          map.addSource('zamfara', { type: 'geojson', data });
+          map.addLayer({
+            id: 'network-nodes',
+            type: 'circle',
+            source: 'zamfara',
+            paint: {
+              'circle-radius': 6,
+              'circle-color': '#007cbf',
+              'circle-stroke-width': 2,
+              'circle-stroke-color': '#fff'
+            }
+          });
+          map.on('click', 'network-nodes', (e) => {
+            const props = e.features[0].properties;
+            new mapboxgl.Popup()
+              .setLngLat(e.lngLat)
+              .setHTML(`<strong>${props.name || 'Node'}</strong><br>Status: ${props.status || 'Unknown'}`)
+              .addTo(map);
+          });
+          map.on('mouseenter', 'network-nodes', () => {
+            map.getCanvas().style.cursor = 'pointer';
+          });
+          map.on('mouseleave', 'network-nodes', () => {
+            map.getCanvas().style.cursor = '';
+          });
+        });
+    });
+  </script>
+</body>
+</html>
