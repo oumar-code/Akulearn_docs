@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://akulearn.com/docs/core_concepts/">
+        <link rel="canonical" href="https://akulearn.com/docs/architecture/">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Akulearn Core Concepts - Akulearn Documentation</title>
+        <title>Akulearn Projector Hub: Local Learning Server & Edge Compute - Akulearn Documentation</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#akulearn-core-concepts" class="md-skip">
+        <a href="#akulearn-projector-hub-local-learning-server-edge-compute" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Akulearn Core Concepts
+              Akulearn Projector Hub: Local Learning Server &amp; Edge Compute
             
           </span>
         </div>
@@ -1011,47 +1011,59 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mission-vision" class="md-nav__link">
+  <a href="#system-components" class="md-nav__link">
     <span class="md-ellipsis">
-      Mission &amp; Vision
+      System Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#projector-hub-as-local-learning-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projector Hub as Local Learning Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Projector Hub as Local Learning Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-technical-components-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Technical Components &amp; Functions
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#hybrid-learning-model" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#interaction-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Hybrid Learning Model
+      Interaction Flow
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#core-monetization-philosophy" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#architectural-benefits" class="md-nav__link">
     <span class="md-ellipsis">
-      Core Monetization Philosophy
+      Architectural Benefits
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#foundational-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      Foundational Principles
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#key-stakeholders" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Stakeholders
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1074,36 +1086,68 @@
   
 
 
-<h1 id="akulearn-core-concepts">Akulearn Core Concepts<a class="headerlink" href="#akulearn-core-concepts" title="Permanent link">&para;</a></h1>
-<h2 id="mission-vision">Mission &amp; Vision<a class="headerlink" href="#mission-vision" title="Permanent link">&para;</a></h2>
-<p>To revolutionize access to quality education in Nigeria by combining AI-powered digital learning with physical Projector Hubs. Our ultimate goal is to significantly improve exam success rates and university admission chances for underserved students, while building a sustainable, impact-driven business.</p>
-<h2 id="hybrid-learning-model">Hybrid Learning Model<a class="headerlink" href="#hybrid-learning-model" title="Permanent link">&para;</a></h2>
-<p>Akulearn operates a unique hybrid model:</p>
+<h1 id="akulearn-projector-hub-local-learning-server-edge-compute">Akulearn Projector Hub: Local Learning Server &amp; Edge Compute<a class="headerlink" href="#akulearn-projector-hub-local-learning-server-edge-compute" title="Permanent link">&para;</a></h1>
+<h2 id="system-components">System Components<a class="headerlink" href="#system-components" title="Permanent link">&para;</a></h2>
+<h3 id="projector-hub-as-local-learning-server">Projector Hub as Local Learning Server<a class="headerlink" href="#projector-hub-as-local-learning-server" title="Permanent link">&para;</a></h3>
+<p>The Akulearn Projector Hub is designed to be much more than a simple projection device. It acts as a self-contained local learning server and edge compute node, enabling robust, scalable, and reliable educational experiences in environments with unreliable or no internet connectivity.</p>
+<h4 id="key-technical-components-functions">Key Technical Components &amp; Functions<a class="headerlink" href="#key-technical-components-functions" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Integrated Wi-Fi Hotspot:</strong></li>
+<li>Creates a local, isolated network for connected devices (laptops, tablets, smartphones).</li>
+<li>
+<p>Broadcasts a secure Wi-Fi signal (e.g., "Akulearn_SchoolName") for device access.</p>
+</li>
+<li>
+<p><strong>Local Web Server (Nginx/Apache/Lightweight Python server):</strong></p>
+</li>
+<li>Serves a browser-based version of the Akulearn learning portal (PWA) to all connected devices.</li>
+<li>
+<p>No app installation required; access via local IP address (e.g., 192.168.1.1).</p>
+</li>
+<li>
+<p><strong>Local Content Cache:</strong></p>
+</li>
+<li>Stores all learning modules, videos, quizzes, and associated media directly on the Hub.</li>
+<li>
+<p>Ensures full offline access to Akulearn content.</p>
+</li>
+<li>
+<p><strong>Local AI Inference Engine:</strong></p>
+</li>
+<li>Runs the Gemma AI model locally, processing AI Tutor chat requests from connected devices without internet.</li>
+<li>
+<p>Provides instant, personalized tutoring and curriculum generation offline.</p>
+</li>
+<li>
+<p><strong>Local Data Store (SQLite/Embedded DB):</strong></p>
+</li>
+<li>Temporarily stores student progress, quiz results, and AI chat histories from locally connected devices.</li>
+<li>
+<p>Ensures individual progress tracking even on shared devices.</p>
+</li>
+<li>
+<p><strong>Cloud Sync Module:</strong></p>
+</li>
+<li>Manages scheduled/opportunistic synchronization with the central Akulearn cloud backend.</li>
+<li>Uploads local data, downloads new content/AI model updates.</li>
+<li>Uses smart bandwidth management and data compression for efficient sync.</li>
+</ul>
+<h4 id="interaction-flow">Interaction Flow<a class="headerlink" href="#interaction-flow" title="Permanent link">&para;</a></h4>
 <ol>
-<li><strong>Mobile App:</strong> Provides personalized AI tutoring, practice questions, and structured lessons.</li>
-<li><strong>Projector Hubs:</strong> Solar-powered learning centers in schools/communities enabling offline access and group learning.</li>
+<li>Devices connect to Hub's Wi-Fi.</li>
+<li>Devices access local Akulearn portal via browser.</li>
+<li>Learning content/AI requests are served locally by the Hub.</li>
+<li>Local data is stored on Hub.</li>
+<li>Hub periodically syncs with cloud backend when internet is available.</li>
 </ol>
-<h2 id="core-monetization-philosophy">Core Monetization Philosophy<a class="headerlink" href="#core-monetization-philosophy" title="Permanent link">&para;</a></h2>
-<p>"Don't monetize poverty – monetize solutions." We provide a free first year, monetizing through performance-based success fees, B2G/B2B contracts for Projector Hub leases, corporate CSR partnerships, data licensing, and verified credentials.</p>
-<h2 id="foundational-principles">Foundational Principles<a class="headerlink" href="#foundational-principles" title="Permanent link">&para;</a></h2>
+<h4 id="architectural-benefits">Architectural Benefits<a class="headerlink" href="#architectural-benefits" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Accessibility:</strong> Education for all, regardless of location or economic status.</li>
-<li><strong>Personalization:</strong> Adaptive learning paths tailored to individual student needs.</li>
-<li><strong>Impact-Driven:</strong> Focus on measurable improvements in student outcomes.</li>
-<li><strong>Sustainability:</strong> A robust business model ensuring long-term viability.</li>
-<li><strong>Data Security &amp; Privacy:</strong> Protecting student information rigorously.</li>
+<li><strong>Robustness:</strong> Operates independently of internet reliability.</li>
+<li><strong>Scalability:</strong> Multiple Hubs can serve large student populations and distributed classrooms.</li>
+<li><strong>Network Challenge Solution:</strong> Decouples learning from persistent connectivity and device scarcity.</li>
 </ul>
-<h2 id="key-stakeholders">Key Stakeholders<a class="headerlink" href="#key-stakeholders" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Primary/Secondary Students</li>
-<li>Parents/Guardians</li>
-<li>Teachers/Facilitators</li>
-<li>Schools (Public &amp; Private)</li>
-<li>State Ministries of Education</li>
-<li>Corporate CSR Divisions</li>
-<li>NGOs (UNICEF, Mastercard Foundation)</li>
-<li>Exam Bodies (JAMB, WAEC, NECO)</li>
-</ul>
+<hr />
+<p>This architecture enables Akulearn to deliver high-quality, personalized, and scalable learning experiences in resource-constrained environments, maximizing the impact of existing school infrastructure.</p>
 
 
 
