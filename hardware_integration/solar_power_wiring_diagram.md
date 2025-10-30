@@ -1,7 +1,7 @@
-# Solar Power System Wiring Diagram for Akulearn Projector Hub
+# Solar Power System Wiring Diagram for Akulearn Aku Edge Hub
 
 ```
-[SOLAR PANEL]---(DC)---[CHARGE CONTROLLER]---(DC)---[DEEP-CYCLE BATTERY]---(DC)---[INVERTER]---(AC)---[SMART BOARD/TV + PROJECTOR HUB]
+[SOLAR PANEL]---(DC)---[CHARGE CONTROLLER]---(DC)---[DEEP-CYCLE BATTERY]---(DC)---[INVERTER]---(AC)---[SMART BOARD/TV + Aku Edge Hub]
 
 # Monitoring Connections:
 - Charge Controller: Serial/USB/I2C to Linux device
@@ -20,3 +20,4 @@
 - Use appropriate fuses and breakers for safety.
 - All communication cables (serial, I2C, RS485) should be shielded and kept short.
 - Enclosure should be ventilated and secure.
+

@@ -1,0 +1,7 @@
+%% Aku Coin Model
+flowchart LR
+  Users -->|use services| EdgeHub
+  EdgeHub -->|contributes bandwidth| SuperHub
+  SuperHub -->|reports usage| IGHub
+  IGHub -->|issue tokens| Wallets
+  Wallets -->|payout| CommunityPartners

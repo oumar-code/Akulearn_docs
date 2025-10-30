@@ -7,10 +7,10 @@ This document will provide high-level and low-level system design details, inclu
 
 ### Strategy for Schools with Devices & Network Interruption
 
-Akulearn's best strategy for serving schools or communities with computers/tablets but unreliable internet is a hybrid, localized content delivery model that leverages the strengths of both Projector Hubs and existing devices.
+Akulearn's best strategy for serving schools or communities with computers/tablets but unreliable internet is a hybrid, localized content delivery model that leverages the strengths of both Aku Edge Hubs and existing devices.
 
-#### 1. Projector Hub as a Local Server (The "Brain")
-* **Integrated Wi-Fi Hotspot:** Every Akulearn Projector Hub has a built-in, local Wi-Fi hotspot (e.g., "Akulearn_SchoolName").
+#### 1. Aku Edge Hub as a Local Server (The "Brain")
+* **Integrated Wi-Fi Hotspot:** Every Akulearn Aku Edge Hub has a built-in, local Wi-Fi hotspot (e.g., "Akulearn_SchoolName").
 * **Local Content Delivery:** The Hub is pre-loaded with Akulearn learning modules, videos, past questions, and the Gemma AI model. Students connect via browser to a local IP (e.g., 192.168.1.1) and access a browser-friendly Akulearn portal (PWA) for lessons, practice, and AI tutoring—all offline.
 * **AI Tutor on the Hub:** The Gemma AI model runs directly on the Hub, processing student requests locally for instant, offline AI tutoring.
 
@@ -123,7 +123,7 @@ graph TD
 
 ```mermaid
 graph TD
-    Local[Local Device/Hub] -- Offline Data --> Hub[Projector Hub]
+    Local[Local Device/Hub] -- Offline Data --> Hub[Aku Edge Hub]
     Hub -- Scheduled Sync --> Cloud[Cloud Backend]
     Cloud -- Updates --> Hub
     Hub -- Real-Time Data --> FE[Frontend]
@@ -136,8 +136,9 @@ graph TD
 * **Maximizes Existing Assets:** Leverages schools' existing computers/tablets, reducing new hardware costs.
 * **True Offline Capability:** Entire learning experience, including AI tutoring, is genuinely offline within the school.
 * **Addresses Connectivity:** Works around unreliable internet, using it only for necessary updates.
-* **Scalability:** Each Projector Hub is an independent, self-contained learning unit; expansion means deploying more Hubs.
+* **Scalability:** Each Aku Edge Hub is an independent, self-contained learning unit; expansion means deploying more Hubs.
 * **Data Collection:** Student progress is tracked offline and synced when possible, supporting teachers, admins, and KPIs.
 * **Simplicity for Users:** "Connect to Akulearn Wi-Fi, open browser, learn." Minimal technical hurdles.
 
-This refined strategy positions Akulearn as an adaptable solution for diverse connectivity and infrastructure realities across Nigeria, Africa, and beyond. The Projector Hub is not just a projection device, but the intelligent, localized learning server at the heart of the school.
+This refined strategy positions Akulearn as an adaptable solution for diverse connectivity and infrastructure realities across Nigeria, Africa, and beyond. The Aku Edge Hub is not just a projection device, but the intelligent, localized learning server at the heart of the school.
+
