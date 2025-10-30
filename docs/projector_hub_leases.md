@@ -1,9 +1,9 @@
 
-# Akulearn Projector Hub Leases: Enhanced Value Proposition
+# Akulearn Aku Edge Hub Leases: Enhanced Value Proposition
 
-## Why Lease an Akulearn Projector Hub?
+## Why Lease an Akulearn Aku Edge Hub?
 
-The Akulearn Projector Hub is more than just a projector—it's a self-contained, intelligent local learning server designed to address the most pressing challenges in African education, especially in rural, underserved, or bandwidth-constrained areas.
+The Akulearn Aku Edge Hub is more than just a projector—it's a self-contained, intelligent local learning server designed to address the most pressing challenges in African education, especially in rural, underserved, or bandwidth-constrained areas.
 
 
 ### Key Value Points
@@ -19,7 +19,7 @@ The Akulearn Projector Hub is more than just a projector—it's a self-contained
 ### Target Audience Emphasis
 
 
-The Akulearn Projector Hub is especially suited for:
+The Akulearn Aku Edge Hub is especially suited for:
 
 - Rural and underserved schools
 - Communities with unreliable or limited internet access
@@ -31,9 +31,9 @@ The Akulearn Projector Hub is especially suited for:
 ---
 
 
-## The Akulearn Ideal Projector Hub: A Self-Contained Learning Ecosystem
+## The Akulearn Ideal Aku Edge Hub: A Self-Contained Learning Ecosystem
 
-Our ideal Akulearn Projector Hub is a robust, intelligent, and self-sufficient learning server designed to thrive in areas with unreliable internet and limited individual devices. It's the central nervous system for offline education.
+Our ideal Akulearn Aku Edge Hub is a robust, intelligent, and self-sufficient learning server designed to thrive in areas with unreliable internet and limited individual devices. It's the central nervous system for offline education.
 
 ## What Makes It Ideal
 
@@ -69,7 +69,7 @@ Our ideal Akulearn Projector Hub is a robust, intelligent, and self-sufficient l
 
 ---
 
-## Building the Ideal Akulearn Projector Hub: Key Tools & Components
+## Building the Ideal Akulearn Aku Edge Hub: Key Tools & Components
 
 ### A. Hardware Components
 * **Single Board Computer (SBC):**
@@ -103,7 +103,7 @@ Our ideal Akulearn Projector Hub is a robust, intelligent, and self-sufficient l
 
 ---
 
-## Estimated Cost to Build Akulearn Ideal Projector Hub (Per Unit)
+## Estimated Cost to Build Akulearn Ideal Aku Edge Hub (Per Unit)
 
 ### Category 1: Core Hardware Components
 | Item | Description | Estimated Cost Per Unit (₦) | Notes |
@@ -150,4 +150,5 @@ If you build 1,000 units, the initial software development cost of ₦20,000,000
 * **Local Sourcing/Assembly:** Explore local partners to reduce costs.
 * **Funding:** Use this cost analysis for fundraising and planning.
 
-Building the "ideal" Projector Hub is ambitious but highly impactful, requiring expertise across embedded systems, web/cloud development, and industrial design. Thoughtful integration of these tools and components will create a scalable, transformative solution for education.
+Building the "ideal" Aku Edge Hub is ambitious but highly impactful, requiring expertise across embedded systems, web/cloud development, and industrial design. Thoughtful integration of these tools and components will create a scalable, transformative solution for education.
+

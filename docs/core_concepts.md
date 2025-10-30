@@ -2,18 +2,18 @@
 
 ## Mission & Vision
 
-To revolutionize access to quality education in Nigeria by combining AI-powered digital learning with physical Projector Hubs. Our ultimate goal is to significantly improve exam success rates and university admission chances for underserved students, while building a sustainable, impact-driven business.
+To revolutionize access to quality education in Nigeria by combining AI-powered digital learning with physical Aku Edge Hubs. Our ultimate goal is to significantly improve exam success rates and university admission chances for underserved students, while building a sustainable, impact-driven business.
 
 ## Hybrid Learning Model
 
 Akulearn operates a unique hybrid model:
 
 1. **Mobile App:** Provides personalized AI tutoring, practice questions, and structured lessons.
-2. **Projector Hubs:** Solar-powered learning centers in schools/communities enabling offline access and group learning.
+2. **Aku Edge Hubs:** Solar-powered learning centers in schools/communities enabling offline access and group learning.
 
 ## Core Monetization Philosophy
 
-"Don't monetize poverty – monetize solutions." We provide a free first year, monetizing through performance-based success fees, B2G/B2B contracts for Projector Hub leases, corporate CSR partnerships, data licensing, and verified credentials.
+"Don't monetize poverty – monetize solutions." We provide a free first year, monetizing through performance-based success fees, B2G/B2B contracts for Aku Edge Hub leases, corporate CSR partnerships, data licensing, and verified credentials.
 
 ## Foundational Principles
 
@@ -33,3 +33,4 @@ Akulearn operates a unique hybrid model:
 - Corporate CSR Divisions
 - NGOs (UNICEF, Mastercard Foundation)
 - Exam Bodies (JAMB, WAEC, NECO)
+

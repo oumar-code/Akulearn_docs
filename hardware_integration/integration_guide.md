@@ -2,8 +2,8 @@
 
 ## 1. Hardware Block Diagram
 See `akulearn_hardware_block_diagram.png` for a visual overview of the system:
-- Solar Panel → Charge Controller → Battery → Inverter → Smart Board/TV/Projector Hub
-- Wind Turbine → Charge Controller → Battery → Inverter → Smart Board/TV/Projector Hub
+- Solar Panel → Charge Controller → Battery → Inverter → Smart Board/TV/Aku Edge Hub
+- Wind Turbine → Charge Controller → Battery → Inverter → Smart Board/TV/Aku Edge Hub
 - Sensors (voltage, current, temperature, wind speed) connect to PCB, which interfaces with the backend via API.
 
 ## 2. Wiring & Assembly
@@ -52,3 +52,4 @@ graph TD
 ---
 
 This guide ensures a consistent, safe, and maintainable integration of all Aku Platform hardware and software components, supporting hybrid solar/wind energy harvesting and multi-product hardware integration.
+

@@ -12,11 +12,11 @@ This section details the core user flows for Akulearn, including onboarding, lea
 
 ---
 
-## Offline & Local Learning Experience via Projector Hub
+## Offline & Local Learning Experience via Aku Edge Hub
 
 ### Student Experience (Device Sharing)
 
-- Students connect their personal devices (laptops, tablets, phones) or school-provided computers/tablets to the Projector Hub's local Wi-Fi network.
+- Students connect their personal devices (laptops, tablets, phones) or school-provided computers/tablets to the Aku Edge Hub's local Wi-Fi network.
 - Access the Akulearn learning portal through a web browser (local IP address, e.g., 192.168.1.1).
 - Multiple students can share devices: each logs into their own Akulearn account, ensuring individual progress tracking even on shared devices.
 - All learning modules, videos, quizzes, and the AI Tutor are available without any internet connection.
@@ -36,3 +36,4 @@ This section details the core user flows for Akulearn, including onboarding, lea
 - Student data is collected locally on the Hub and then synced to the cloud when an internet connection becomes available.
 
 ---
+

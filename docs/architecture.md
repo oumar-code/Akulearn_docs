@@ -1,10 +1,10 @@
-# Akulearn Projector Hub: Local Learning Server & Edge Compute
+# Akulearn Aku Edge Hub: Local Learning Server & Edge Compute
 
 ## System Components
 
-### Projector Hub as Local Learning Server
+### Aku Edge Hub as Local Learning Server
 
-The Akulearn Projector Hub is designed to be much more than a simple projection device. It acts as a self-contained local learning server and edge compute node, enabling robust, scalable, and reliable educational experiences in environments with unreliable or no internet connectivity.
+The Akulearn Aku Edge Hub is designed to be much more than a simple projection device. It acts as a self-contained local learning server and edge compute node, enabling robust, scalable, and reliable educational experiences in environments with unreliable or no internet connectivity.
 
 #### Key Technical Components & Functions
 
@@ -50,3 +50,4 @@ The Akulearn Projector Hub is designed to be much more than a simple projection 
 ---
 
 This architecture enables Akulearn to deliver high-quality, personalized, and scalable learning experiences in resource-constrained environments, maximizing the impact of existing school infrastructure.
+
