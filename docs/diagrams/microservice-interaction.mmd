@@ -1,0 +1,11 @@
+%% Microservice Interaction (Mermaid sequence)
+sequenceDiagram
+  participant Client
+  participant EdgeHub
+  participant SuperHub
+  participant IGHub
+  Client->>EdgeHub: Request content / auth
+  EdgeHub->>SuperHub: Sync aggregate metrics
+  SuperHub->>IGHub: Send anonymized billing metadata
+  IGHub->>SuperHub: Policy updates (OPA)
+  SuperHub->>EdgeHub: QoS + routing updates
