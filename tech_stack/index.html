@@ -1011,6 +1011,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#aku-coin-model-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aku Coin Model Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#blockchain-integration" class="md-nav__link">
     <span class="md-ellipsis">
       Blockchain Integration
@@ -1057,6 +1066,15 @@
 
 
 <h1 id="akulearn-technology-stack">Akulearn Technology Stack<a class="headerlink" href="#akulearn-technology-stack" title="Permanent link">&para;</a></h1>
+<h2 id="aku-coin-model-diagram">Aku Coin Model Diagram<a class="headerlink" href="#aku-coin-model-diagram" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">graph</span><span class="w"> </span><span class="n">TD</span>
+<span class="w">    </span><span class="n">Partner</span><span class="p">[</span><span class="n">Node</span><span class="w"> </span><span class="n">Partner</span><span class="p">]</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Earns</span><span class="w"> </span><span class="n">Aku</span><span class="w"> </span><span class="n">Coin</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Wallet</span><span class="p">[</span><span class="n">Wallet</span><span class="p">]</span>
+<span class="w">    </span><span class="n">Wallet</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Spend</span><span class="w"> </span><span class="n">Aku</span><span class="w"> </span><span class="n">Coin</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Marketplace</span><span class="p">[</span><span class="n">Marketplace</span><span class="p">]</span>
+<span class="w">    </span><span class="n">Wallet</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Transfer</span><span class="w"> </span><span class="n">Aku</span><span class="w"> </span><span class="n">Coin</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">OtherUser</span><span class="p">[</span><span class="n">Other</span><span class="w"> </span><span class="n">User</span><span class="p">]</span>
+<span class="w">    </span><span class="n">Marketplace</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Item</span><span class="w"> </span><span class="n">Purchase</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Partner</span>
+<span class="w">    </span><span class="n">Community</span><span class="p">[</span><span class="n">Community</span><span class="w"> </span><span class="n">Ownership</span><span class="p">]</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Compensation</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Partner</span>
+</code></pre></div>
+
 <h2 id="blockchain-integration">Blockchain Integration<a class="headerlink" href="#blockchain-integration" title="Permanent link">&para;</a></h2>
 <p>All blockchain calls MUST use PolygonService for verified credentials and AkuCoin, as referenced in guardrails.</p>
 <h2 id="core-technologies">Core Technologies<a class="headerlink" href="#core-technologies" title="Permanent link">&para;</a></h2>

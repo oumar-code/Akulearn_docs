@@ -1,0 +1,8 @@
+%% Data Sync Flow
+flowchart TD
+  A[Edge Hub Store] -->|Replicate| B[Super Hub DB]
+  B -->|Async Replication| C[IG-Hub Archive]
+  C -->|Archive Lookup| B
+  style A fill:#ccffcc
+  style B fill:#ffe0b3
+  style C fill:#d1c4e9

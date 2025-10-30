@@ -1,0 +1,24 @@
+%% Aku Platform Architecture (Mermaid)
+graph LR
+  subgraph Tier1 ["Tier 1 - Edge"]
+    E1[Edge Hub A]
+    E2[Edge Hub B]
+  end
+  subgraph Tier2 ["Tier 2 - Super Hubs"]
+    S1[Super Hub - LGA1]
+    S2[Super Hub - LGA2]
+  end
+  subgraph Tier3 ["Tier 3 - IG-Hub"]
+    IG[Interstate Gateway Hub]
+  end
+  E1 -- "P2P / local data" --> E2
+  E1 -- "Mesh backhaul" --> S1
+  E2 -- "Mesh backhaul" --> S2
+  S1 -- "Anonymized metadata / billing" --> IG
+  S2 -- "Anonymized metadata / billing" --> IG
+  classDef edge fill:#00ffcc,stroke:#006644;
+  classDef super fill:#ffa500,stroke:#993d00;
+  classDef ig fill:#800080,stroke:#4b004b;
+  class E1,E2 edge;
+  class S1,S2 super;
+  class IG ig;

@@ -1031,9 +1031,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-projector-hub-as-a-local-server-the-brain" class="md-nav__link">
+  <a href="#1-aku-edge-hub-as-a-local-server-the-brain" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Projector Hub as a Local Server (The "Brain")
+      1. Aku Edge Hub as a Local Server (The "Brain")
     </span>
   </a>
   
@@ -1113,6 +1113,30 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microservice-interaction-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microservice Interaction Diagram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-sync-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Sync Flow Diagram
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Sync Flow Diagram">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#why-this-strategy-wins-for-akulearn" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1150,10 +1174,10 @@
 <p>This document will provide high-level and low-level system design details, including diagrams and technical specifications.</p>
 <h2 id="akulearn-hybrid-localized-content-delivery-model">Akulearn Hybrid Localized Content Delivery Model<a class="headerlink" href="#akulearn-hybrid-localized-content-delivery-model" title="Permanent link">&para;</a></h2>
 <h3 id="strategy-for-schools-with-devices-network-interruption">Strategy for Schools with Devices &amp; Network Interruption<a class="headerlink" href="#strategy-for-schools-with-devices-network-interruption" title="Permanent link">&para;</a></h3>
-<p>Akulearn's best strategy for serving schools or communities with computers/tablets but unreliable internet is a hybrid, localized content delivery model that leverages the strengths of both Projector Hubs and existing devices.</p>
-<h4 id="1-projector-hub-as-a-local-server-the-brain">1. Projector Hub as a Local Server (The "Brain")<a class="headerlink" href="#1-projector-hub-as-a-local-server-the-brain" title="Permanent link">&para;</a></h4>
+<p>Akulearn's best strategy for serving schools or communities with computers/tablets but unreliable internet is a hybrid, localized content delivery model that leverages the strengths of both Aku Edge Hubs and existing devices.</p>
+<h4 id="1-aku-edge-hub-as-a-local-server-the-brain">1. Aku Edge Hub as a Local Server (The "Brain")<a class="headerlink" href="#1-aku-edge-hub-as-a-local-server-the-brain" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Integrated Wi-Fi Hotspot:</strong> Every Akulearn Projector Hub has a built-in, local Wi-Fi hotspot (e.g., "Akulearn_SchoolName").</li>
+<li><strong>Integrated Wi-Fi Hotspot:</strong> Every Akulearn Aku Edge Hub has a built-in, local Wi-Fi hotspot (e.g., "Akulearn_SchoolName").</li>
 <li><strong>Local Content Delivery:</strong> The Hub is pre-loaded with Akulearn learning modules, videos, past questions, and the Gemma AI model. Students connect via browser to a local IP (e.g., 192.168.1.1) and access a browser-friendly Akulearn portal (PWA) for lessons, practice, and AI tutoring—all offline.</li>
 <li><strong>AI Tutor on the Hub:</strong> The Gemma AI model runs directly on the Hub, processing student requests locally for instant, offline AI tutoring.</li>
 </ul>
@@ -1278,16 +1302,37 @@
 </code></pre></div>
 
 <hr />
+<h2 id="microservice-interaction-diagram">Microservice Interaction Diagram<a class="headerlink" href="#microservice-interaction-diagram" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">graph</span><span class="w"> </span><span class="n">TD</span>
+<span class="w">    </span><span class="n">AI</span><span class="p">[</span><span class="n">AI</span><span class="w"> </span><span class="n">Tutor</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">API</span><span class="p">[</span><span class="n">API</span><span class="w"> </span><span class="n">Gateway</span><span class="p">]</span>
+<span class="w">    </span><span class="n">Polls</span><span class="p">[</span><span class="n">Polls</span><span class="o">/</span><span class="n">Q</span><span class="o">&amp;</span><span class="n">A</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">API</span>
+<span class="w">    </span><span class="n">Analytics</span><span class="p">[</span><span class="n">Analytics</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">API</span>
+<span class="w">    </span><span class="n">Hub</span><span class="p">[</span><span class="n">Hub</span><span class="w"> </span><span class="n">Integration</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">API</span>
+<span class="w">    </span><span class="n">Marketplace</span><span class="p">[</span><span class="n">Marketplace</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">API</span>
+<span class="w">    </span><span class="n">Hardware</span><span class="p">[</span><span class="n">Hardware</span><span class="w"> </span><span class="n">Integration</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">API</span>
+<span class="w">    </span><span class="n">API</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">FE</span><span class="p">[</span><span class="n">Frontend</span><span class="p">]</span>
+<span class="w">    </span><span class="n">API</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">DB</span><span class="p">[(</span><span class="n">Database</span><span class="p">)]</span>
+</code></pre></div>
+
+<h2 id="data-sync-flow-diagram">Data Sync Flow Diagram<a class="headerlink" href="#data-sync-flow-diagram" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">graph</span><span class="w"> </span><span class="n">TD</span>
+<span class="w">    </span><span class="n">Local</span><span class="p">[</span><span class="n">Local</span><span class="w"> </span><span class="n">Device</span><span class="o">/</span><span class="n">Hub</span><span class="p">]</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Offline</span><span class="w"> </span><span class="n">Data</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Hub</span><span class="p">[</span><span class="n">Aku</span><span class="w"> </span><span class="n">Edge</span><span class="w"> </span><span class="n">Hub</span><span class="p">]</span>
+<span class="w">    </span><span class="n">Hub</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Scheduled</span><span class="w"> </span><span class="n">Sync</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Cloud</span><span class="p">[</span><span class="n">Cloud</span><span class="w"> </span><span class="n">Backend</span><span class="p">]</span>
+<span class="w">    </span><span class="n">Cloud</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Updates</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Hub</span>
+<span class="w">    </span><span class="n">Hub</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Real</span><span class="o">-</span><span class="n">Time</span><span class="w"> </span><span class="n">Data</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">FE</span><span class="p">[</span><span class="n">Frontend</span><span class="p">]</span>
+</code></pre></div>
+
+<hr />
 <h3 id="why-this-strategy-wins-for-akulearn">Why This Strategy Wins for Akulearn<a class="headerlink" href="#why-this-strategy-wins-for-akulearn" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Maximizes Existing Assets:</strong> Leverages schools' existing computers/tablets, reducing new hardware costs.</li>
 <li><strong>True Offline Capability:</strong> Entire learning experience, including AI tutoring, is genuinely offline within the school.</li>
 <li><strong>Addresses Connectivity:</strong> Works around unreliable internet, using it only for necessary updates.</li>
-<li><strong>Scalability:</strong> Each Projector Hub is an independent, self-contained learning unit; expansion means deploying more Hubs.</li>
+<li><strong>Scalability:</strong> Each Aku Edge Hub is an independent, self-contained learning unit; expansion means deploying more Hubs.</li>
 <li><strong>Data Collection:</strong> Student progress is tracked offline and synced when possible, supporting teachers, admins, and KPIs.</li>
 <li><strong>Simplicity for Users:</strong> "Connect to Akulearn Wi-Fi, open browser, learn." Minimal technical hurdles.</li>
 </ul>
-<p>This refined strategy positions Akulearn as an adaptable solution for diverse connectivity and infrastructure realities across Nigeria, Africa, and beyond. The Projector Hub is not just a projection device, but the intelligent, localized learning server at the heart of the school.</p>
+<p>This refined strategy positions Akulearn as an adaptable solution for diverse connectivity and infrastructure realities across Nigeria, Africa, and beyond. The Aku Edge Hub is not just a projection device, but the intelligent, localized learning server at the heart of the school.</p>
 
 
 
