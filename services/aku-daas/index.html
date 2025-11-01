@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -1004,6 +1004,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-aku-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with Aku Workspace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-publishing-anonymized-metadata-via-ig-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample: Publishing anonymized metadata via IG-Hub
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1027,6 +1062,31 @@ Generate Aku DaaS doc: micro-VMs, streaming protocol (ASP), QoS steering, multi-
 -->
 <h1 id="aku-daas-data-as-a-service">Aku DaaS (Data-as-a-Service)<a class="headerlink" href="#aku-daas-data-as-a-service" title="Permanent link">&para;</a></h1>
 <!-- Copilot: expand here -->
+
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Aku DaaS is the platform layer responsible for ingesting, processing, anonymizing, storing, and serving aggregated datasets to authorized consumers. It provides APIs used by internal services (including Aku Workspace) and external partners under strict data governance.</p>
+<h2 id="integration-with-aku-workspace">Integration with Aku Workspace<a class="headerlink" href="#integration-with-aku-workspace" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Aku Workspace will query Aku DaaS for anonymized datasets to power natural-language data insights and visualizations. All queries from Workspace to DaaS must pass through the Data Governance microservice and respect privacy labels and consent.</li>
+</ul>
+<h2 id="sample-publishing-anonymized-metadata-via-ig-hub">Sample: Publishing anonymized metadata via IG-Hub<a class="headerlink" href="#sample-publishing-anonymized-metadata-via-ig-hub" title="Permanent link">&para;</a></h2>
+<p>In some workflows, Super Hubs publish aggregated/anonymized metadata to the IG-Hub which can then be harvested into the DaaS pipeline. Example (curl):</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Register a Super Hub (admin-only) -&gt; returns an apiKey</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;X-API-KEY: admin-secret-example&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;superHubId&quot;:&quot;sh-001&quot;,&quot;countryCode&quot;:&quot;NG&quot;,&quot;publicKey&quot;:&quot;pubkey&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>http://localhost:8080/superhubs/register
+
+<span class="c1"># Publish anonymized metadata with issued apiKey</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;X-API-KEY: &lt;issued-apiKey&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;superHubId&quot;:&quot;sh-001&quot;,&quot;datasetId&quot;:&quot;d-1&quot;,&quot;anonymizedPayload&quot;:{&quot;count&quot;:10}}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>http://localhost:8080/metadata/publish
+</code></pre></div>
+
+<p>See <code>infra/examples/ig_hub_control_panel/README.md</code> and <code>infra/examples/super_hub_simulator/</code> for runnable examples and a demo simulator.</p>
 
 
 

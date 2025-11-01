@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -1004,6 +1004,131 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Executive Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-architectural-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Architectural Tiers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Architectural Tiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aku-edge-hub-tier-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aku Edge Hub (Tier 1)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aku-super-hub-tier-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aku Super Hub (Tier 2)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aku-interstate-gateway-hub-ig-hub-tier-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aku Interstate Gateway Hub (IG-Hub - Tier 3)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foundational-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundational Infrastructure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Foundational Infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meshstatics-network-provider-and-data-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meshstatics (Network Provider and Data Center)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-services-of-the-aku-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Services of the Aku Platform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Services of the Aku Platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aku-workspace-ai-native-productivity-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aku Workspace (AI-Native Productivity Suite)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overall-vision-the-aku-ai-native-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overall Vision: The Aku AI-Native Ecosystem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagram-description-for-designers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram Description (for designers)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1021,14 +1146,46 @@
   
 
 
-<!--
+<p>&lt;!--
 COPILOT_PROMPT:
 Generate a complete Aku Platform overview. Cover executive summary, three tiers (Aku Edge Hub, Aku Super Hub, Aku IG-Hub),
 Meshstatics (Network Provider and Data Center), key services (Aku Learn, Aku DaaS, Aku eSIM),
-operational principles and a short diagram description section for a designer.
--->
+operational principles and a short diagram description section for a designer.</p>
 <h1 id="aku-platform-overview">Aku Platform Overview<a class="headerlink" href="#aku-platform-overview" title="Permanent link">&para;</a></h1>
-<!-- Copilot: expand here -->
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>The Aku Platform is a unified, tiered ecosystem that delivers localized compute, resilient connectivity, and compliant cross-border data services across the ECOWAS region. It combines edge hardware (Aku Edge Hubs), regional processing (Aku Super Hubs), and a logically centralized but physically distributed global control plane (Aku Interstate Gateway Hub — IG-Hub). Meshstatics (Network Provider and Data Center) provides the foundational fabric that hosts and connects these tiers.</p>
+<h2 id="core-architectural-tiers">Core Architectural Tiers<a class="headerlink" href="#core-architectural-tiers" title="Permanent link">&para;</a></h2>
+<h3 id="aku-edge-hub-tier-1">Aku Edge Hub (Tier 1)<a class="headerlink" href="#aku-edge-hub-tier-1" title="Permanent link">&para;</a></h3>
+<p>Aku Edge Hubs are ruggedized edge compute nodes deployed at schools, clinics, community centers and micro data-centers. They provide local content caching, IoT integration, basic AI inference, and offline-first experiences. Edge Hubs support solar/wind hybrid power and are optimized for low-bandwidth, intermittent connectivity.</p>
+<h3 id="aku-super-hub-tier-2">Aku Super Hub (Tier 2)<a class="headerlink" href="#aku-super-hub-tier-2" title="Permanent link">&para;</a></h3>
+<p>Aku Super Hubs are national/regional control planes that aggregate telemetry and data from clusters of Edge Hubs, provide regional API gateways, perform heavier analytics and model fine-tuning, and orchestrate updates and configuration for edge fleets.</p>
+<h3 id="aku-interstate-gateway-hub-ig-hub-tier-3">Aku Interstate Gateway Hub (IG-Hub - Tier 3)<a class="headerlink" href="#aku-interstate-gateway-hub-ig-hub-tier-3" title="Permanent link">&para;</a></h3>
+<p>The IG-Hub is the Tier 3 logical control plane and clearing house for cross-border operations. It handles anonymized metadata exchange, financial clearing (Aku Coin settlement), policy &amp; compliance enforcement, and global model management.</p>
+<h2 id="foundational-infrastructure">Foundational Infrastructure<a class="headerlink" href="#foundational-infrastructure" title="Permanent link">&para;</a></h2>
+<h3 id="meshstatics-network-provider-and-data-center">Meshstatics (Network Provider and Data Center)<a class="headerlink" href="#meshstatics-network-provider-and-data-center" title="Permanent link">&para;</a></h3>
+<p>"Meshstatics" represents the physical network provider and data center layer that hosts core network functions, regional caches, and interconnection points. Meshstatics supports carrier-grade backhaul, IX/peering points, and co-location for the IG-Hub.</p>
+<h2 id="key-services-of-the-aku-platform">Key Services of the Aku Platform<a class="headerlink" href="#key-services-of-the-aku-platform" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Aku Learn (education delivery and local AI tutoring)</li>
+<li>Aku DaaS (Data-as-a-Service: anonymized insights and secure datasets)</li>
+<li>Aku eSIM (embedded SIM provisioning and mobile connectivity)</li>
+<li>Aku Workspace (AI-Native Productivity Suite — see below)</li>
+</ul>
+<h3 id="aku-workspace-ai-native-productivity-suite">Aku Workspace (AI-Native Productivity Suite)<a class="headerlink" href="#aku-workspace-ai-native-productivity-suite" title="Permanent link">&para;</a></h3>
+<p>Aku Workspace is the AI-first productivity layer built on top of the Aku Platform. It provides natural-language-driven tools for data analysis, document and presentation generation, communication, and project management. The core interaction layer is the Aku AI Assistant which understands user intent, leverages contextual memory, and orchestrates distributed compute across Edge Hubs, Super Hubs, and the IG-Hub to perform tasks efficiently and securely.</p>
+<h2 id="overall-vision-the-aku-ai-native-ecosystem">Overall Vision: The Aku AI-Native Ecosystem<a class="headerlink" href="#overall-vision-the-aku-ai-native-ecosystem" title="Permanent link">&para;</a></h2>
+<p>The Aku Platform is evolving beyond infrastructure to deliver an "Intuitive Intelligence" Workspace, redefining productivity through AI-first, natural language interaction. This vision aims to remove technical barriers, making powerful data analysis, document creation, and communication effortless for all users. The Aku AI Assistant, leveraging distributed intelligence from Edge Hubs, Super Hubs, and the IG-Hub, will be the core interaction layer for all Aku Workspace applications.</p>
+<h2 id="diagram-description-for-designers">Diagram Description (for designers)<a class="headerlink" href="#diagram-description-for-designers" title="Permanent link">&para;</a></h2>
+<p>Create a multi-tier diagram showing:</p>
+<ul>
+<li>Tier 1 (Edge): many Aku Edge Hubs with local devices and sensors. Show offline cache and solar/wind power.</li>
+<li>Tier 2 (Super): regional Aku Super Hubs aggregating telemetry, performing analytics and model fine-tuning.</li>
+<li>Tier 3 (IG-Hub): a logically centralized control plane for anonymized metadata exchange, financial clearing and global model orchestration.</li>
+<li>Meshstatics underlying all tiers as network provider and data centers.</li>
+<li>Services (Aku Learn, DaaS, eSIM, Aku Workspace) running across tiers with arrows showing data flow and control lines (anonymized data to IG-Hub).</li>
+</ul>
+<hr />
+<p>For full details on components, see the <code>docs/components/</code> and <code>docs/services/</code> folders.</p>
 
 
 

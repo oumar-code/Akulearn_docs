@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://akulearn.com/docs/demo_scripts/offline_demo_segment/">
+        <link rel="canonical" href="https://akulearn.com/docs/services/aku-workspace/">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>Akulearn AI Tutor Offline Demo Script - Akulearn Documentation</title>
+        <title>Aku workspace - Akulearn Documentation</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#akulearn-ai-tutor-offline-demo-script" class="md-skip">
+        <a href="#aku-workspace" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Akulearn AI Tutor Offline Demo Script
+              Aku workspace
             
           </span>
         </div>
@@ -1011,27 +1011,99 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
+  <a href="#vision" class="md-nav__link">
     <span class="md-ellipsis">
-      Purpose
+      Vision
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#demo-steps" class="md-nav__link">
+  <a href="#primary-user-scenarios" class="md-nav__link">
     <span class="md-ellipsis">
-      Demo Steps
+      Primary User Scenarios
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-talking-points" class="md-nav__link">
+  <a href="#core-components" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Talking Points
+      Core Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend Integration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mlops-model-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      MLOps &amp; Model Lifecycle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow-typical-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow (Typical Query)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security &amp; Privacy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-rollout-plan-mvp-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment &amp; Rollout Plan (MVP -&gt; Scale)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observability-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observability &amp; Metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges &amp; Mitigations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-workspace-pulling-insights-from-daas-via-ig-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Workspace pulling insights from DaaS via IG-Hub
     </span>
   </a>
   
@@ -1056,30 +1128,92 @@
   
 
 
-<h1 id="akulearn-ai-tutor-offline-demo-script">Akulearn AI Tutor Offline Demo Script<a class="headerlink" href="#akulearn-ai-tutor-offline-demo-script" title="Permanent link">&para;</a></h1>
-<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
-<p>Showcase the Akulearn AI Tutor's ability to provide instant, intelligent responses even when offline, highlighting its unique value for Nigerian learners.</p>
-<h2 id="demo-steps">Demo Steps<a class="headerlink" href="#demo-steps" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>Disable Wi-Fi/Mobile Data</strong></li>
-<li>On the demo device, turn off all internet connections.</li>
-<li><strong>Open Akulearn App</strong></li>
-<li>Launch the Akulearn mobile app.</li>
-<li><strong>Navigate to AI Tutor Chat</strong></li>
-<li>From the dashboard, tap on "AI Tutor Chat".</li>
-<li><strong>Enter a Query</strong></li>
-<li>Example: Type "Explain photosynthesis" or "Help me with quadratic equations".</li>
-<li><strong>Observe the Response</strong></li>
-<li>The AI Tutor instantly provides a clear, helpful answer tailored to the query (e.g., offers to explain, give a practice problem, or show a past WAEC question).</li>
-<li><strong>Highlight the Value</strong></li>
-<li>Emphasize that this works with no internet, making Akulearn ideal for students in areas with unreliable connectivity.</li>
-</ol>
-<h2 id="key-talking-points">Key Talking Points<a class="headerlink" href="#key-talking-points" title="Permanent link">&para;</a></h2>
+<!--
+COPILOT_PROMPT:
+Create a comprehensive Aku Workspace service document: vision, user scenarios, core components, backend integration, data flows, MLOps & model lifecycle, security/privacy, deployment & rollout plan, metrics, and known challenges.
+-->
+<h1 id="aku-workspace">Aku Workspace<a class="headerlink" href="#aku-workspace" title="Permanent link">&para;</a></h1>
+<h2 id="vision">Vision<a class="headerlink" href="#vision" title="Permanent link">&para;</a></h2>
+<p>Aku Workspace is the AI-native productivity layer of the Aku Platform. It provides natural-language-driven tools for document creation, data analysis, communication, and lightweight automation. The Workspace exposes an Aku AI Assistant that orchestrates distributed compute across Edge Hubs, Super Hubs, and the IG-Hub to deliver low-latency, privacy-preserving intelligence to users in constrained connectivity environments.</p>
+<h2 id="primary-user-scenarios">Primary User Scenarios<a class="headerlink" href="#primary-user-scenarios" title="Permanent link">&para;</a></h2>
 <ul>
-<li>"Akulearn's AI Tutor works even when offline—no data, no problem."</li>
-<li>"Students can get help with WAEC, JAMB, and core subjects anytime, anywhere."</li>
-<li>"This is a game-changer for education access in Nigeria."</li>
+<li>Natural-language data queries (Aku Data Insights): ask questions like "show attendance trends for School X" and receive charts and summaries.</li>
+<li>Document generation and summarization (Aku Docs): create lesson plans, summaries, and student feedback from prompts.</li>
+<li>Conversational workflows: tutoring dialogs, task automation, and guided forms.</li>
+<li>Collaborative editing and sharing with synchronized local caching for offline access.</li>
 </ul>
+<h2 id="core-components">Core Components<a class="headerlink" href="#core-components" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Aku AI Assistant: central orchestration and NLU/NLG engine (may call external LLMs or local inference).</li>
+<li>Contextual Memory Service: stores conversation context and short-term memory with strict retention policies.</li>
+<li>Query Planner / Orchestrator: decides where to run inference (edge/superhub/cloud) based on latency, cost, and privacy policies.</li>
+<li>Workspace Frontend: web/desktop/mobile UI components for Aku Data Insights, Aku Docs, and collaboration.</li>
+<li>Security &amp; Privacy Layer: encryption, access control, consent, and anonymization hooks.</li>
+</ul>
+<h2 id="backend-integration">Backend Integration<a class="headerlink" href="#backend-integration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Identity and Access: integrates with IG-Hub IdP for user authentication and role-based access control.</li>
+<li>Data Access: queries DaaS APIs (via Super Hubs / IG-Hub) to fetch anonymized datasets when allowed.</li>
+<li>Model Registry &amp; Serving: integrates with model registry (MLflow or cloud provider) for model versioning, and K8s-based inference services for serving.</li>
+<li>Telemetry &amp; Monitoring: hooks into platform telemetry (Prometheus/Grafana, OpenTelemetry) for latency, error rates, and model performance monitoring.</li>
+</ul>
+<h2 id="mlops-model-lifecycle">MLOps &amp; Model Lifecycle<a class="headerlink" href="#mlops-model-lifecycle" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Model Registry: all models used by Aku Workspace MUST be registered with metadata: version, lineage, training data provenance, privacy labels, resource requirements.</li>
+<li>Experiment Tracking: each fine-tune or experiment must be tracked (MLflow or equivalent) and have reproducible training artifacts.</li>
+<li>CI/CD for Models: models pass automated unit tests, integration tests (small inference runs), and safety checks before promoted to staging/production.</li>
+<li>Canary &amp; Rollout: support for gradual rollout at Super Hub or IG-Hub level with monitoring and automatic rollback on anomalies.</li>
+</ul>
+<h2 id="data-flow-typical-query">Data Flow (Typical Query)<a class="headerlink" href="#data-flow-typical-query" title="Permanent link">&para;</a></h2>
+<ol>
+<li>User issues a natural-language query in Workspace UI.</li>
+<li>Request is authenticated and enriched with user/context metadata.</li>
+<li>Query Planner checks privacy policy, local caches, and decides an execution plan.</li>
+<li>If permitted &amp; low-latency required, inference is executed at the nearest Edge Hub (local model) or Super Hub; otherwise routed to IG-Hub or cloud provider.</li>
+<li>Results are post-processed, persisted if needed (with anonymization), and returned to the user.</li>
+</ol>
+<h2 id="security-privacy">Security &amp; Privacy<a class="headerlink" href="#security-privacy" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Data Minimization: default behavior is to avoid sending raw PII off-device. Use the Data Governance microservice to sanitize any records.</li>
+<li>Consent &amp; Access Controls: workspace actions that access sensitive datasets require explicit user consent and role checks.</li>
+<li>Encryption: TLS for transport; field-level encryption for sensitive persisted artifacts.</li>
+<li>Audit Logging: all model invocations, data accesses, and policy decisions are logged for audit (with PII obfuscated where appropriate).</li>
+</ul>
+<h2 id="deployment-rollout-plan-mvp-scale">Deployment &amp; Rollout Plan (MVP -&gt; Scale)<a class="headerlink" href="#deployment-rollout-plan-mvp-scale" title="Permanent link">&para;</a></h2>
+<ul>
+<li>MVP: Host core NLU at IG-Hub with a lightweight local fallback at Edge Hubs for critical paths.</li>
+<li>Pilot: Deploy Workspace to a small set of schools/regions; collect telemetry and user feedback.</li>
+<li>Scale: Gradually replicate inference and caching logic to Super Hubs and Edge Hubs; optimize models for edge resource constraints.</li>
+</ul>
+<h2 id="observability-metrics">Observability &amp; Metrics<a class="headerlink" href="#observability-metrics" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Latency (end-to-end), success/error rates, model accuracy metrics (as applicable), resource utilization (CPU/GPU/memory), and user engagement metrics.</li>
+</ul>
+<h2 id="challenges-mitigations">Challenges &amp; Mitigations<a class="headerlink" href="#challenges-mitigations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Intermittent connectivity: mitigate via aggressive caching, offline-first UI, and resumable uploads.</li>
+<li>Model size vs edge resources: mitigate via quantization, distillation, and offloading heavier workloads to Super Hubs.</li>
+<li>Data privacy: robust policy enforcement and strict data minimization.</li>
+</ul>
+<hr />
+<p>For implementation examples (IaC, API schemas, example microservices), see the <code>infra/examples/</code> folder in the repo.</p>
+<h2 id="example-workspace-pulling-insights-from-daas-via-ig-hub">Example: Workspace pulling insights from DaaS via IG-Hub<a class="headerlink" href="#example-workspace-pulling-insights-from-daas-via-ig-hub" title="Permanent link">&para;</a></h2>
+<p>A typical flow is:</p>
+<ol>
+<li>Aku Workspace issues a natural-language query.</li>
+<li>The Workspace backend requests anonymized datasets from DaaS; DaaS may itself source aggregated metadata published to the IG-Hub by Super Hubs.</li>
+<li>The IG-Hub API (see <code>infra/examples/ig_hub_control_panel/README.md</code>) provides endpoints for ingestion and a connectivity control plane; Workspace services can query DaaS or the IG-Hub status endpoints when coordinating cross-tier tasks.</li>
+</ol>
+<p>Sample integration (curl):</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Query DaaS for anonymized dataset (authenticated as service)</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;service-token&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;query&quot;:&quot;attendance trends for school X&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>https://daas.aku.africa/v1/query
+</code></pre></div>
+
+<p>And see the IG-Hub simulator in <code>infra/examples/super_hub_simulator</code> to run a local end-to-end demo of Super Hub -&gt; IG-Hub -&gt; DaaS ingestion.</p>
 
 
 

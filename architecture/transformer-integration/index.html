@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -1004,6 +1004,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aku-workspace-consumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aku Workspace Consumption
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-resource-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware &amp; Resource Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware &amp; Resource Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-checklist-per-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Checklist (per model)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privacy-federated-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privacy &amp; Federated Learning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1028,6 +1078,33 @@ global model orchestration at IG-Hub. Include privacy guardrails and deployment 
 -->
 <h1 id="transformer-integration-strategy-for-aku-platform">Transformer Integration Strategy for Aku Platform<a class="headerlink" href="#transformer-integration-strategy-for-aku-platform" title="Permanent link">&para;</a></h1>
 <!-- Copilot: expand here -->
+
+<h2 id="aku-workspace-consumption">Aku Workspace Consumption<a class="headerlink" href="#aku-workspace-consumption" title="Permanent link">&para;</a></h2>
+<p>Aku Workspace is a primary consumer of Transformer capabilities on the platform. The Workspace uses Transformers for NLU, NLG, summarization, and light-weight data transformation. Key considerations for Workspace consumption:</p>
+<ul>
+<li>Latency vs Privacy trade-off: Short, interactive requests should prefer local or Super Hub inference when possible. Techniques like model quantization, distillation, and small specialized models reduce latency on Edge Hubs.</li>
+<li>Context handling: Conversation context and user memory should be stored in the Contextual Memory Service with fine-grained retention and consent controls; only metadata or anonymized artifacts are forwarded for global fine-tuning.</li>
+<li>Fallback &amp; orchestration: The Query Planner decides execution location. If an Edge Hub lacks capacity it falls back to Super Hub or IG-Hub; degraded modes should return cached or shorter responses.</li>
+</ul>
+<h2 id="hardware-resource-integration">Hardware &amp; Resource Integration<a class="headerlink" href="#hardware-resource-integration" title="Permanent link">&para;</a></h2>
+<p>Transformers integration must be tightly coupled with resource management across tiers:</p>
+<ul>
+<li>Edge Hubs: Expect constrained CPU/GPU availability. Use model optimization (quantization, pruning, distillation) and tiny Transformer variants (e.g., distilled or adapter-based models). Caching and batching reduce inference overhead.</li>
+<li>Super Hubs: Provide modest GPU/accelerator pools for batched inference and federated fine-tuning. Super Hubs act as aggregation points for telemetry and intermediate training workloads.</li>
+<li>IG-Hub / Cloud: Hosts full-size models, heavy training/fine-tuning jobs, model registry, and experimentation platforms.</li>
+</ul>
+<h3 id="deployment-checklist-per-model">Deployment Checklist (per model)<a class="headerlink" href="#deployment-checklist-per-model" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Register model in Model Registry with metadata (resource footprint, privacy labels, intended tier deployment).</li>
+<li>Validate model with unit inference tests and safety checks (toxicity, hallucination tests where applicable).</li>
+<li>Produce optimized artifacts for edge deployment (quantized weights, ONNX or TensorRT where supported).</li>
+<li>Add rollout config (canary percent, target Super Hubs, telemetry thresholds).</li>
+<li>Deploy to staging Super Hub cluster, monitor, then gradually roll out to Edge Hubs.</li>
+</ol>
+<h3 id="privacy-federated-learning">Privacy &amp; Federated Learning<a class="headerlink" href="#privacy-federated-learning" title="Permanent link">&para;</a></h3>
+<p>When using federated or on-device learning, ensure contributions are differentially private, and agree on secure aggregation protocols. Only send model updates (gradients or weight deltas), never raw PII. Use the Data Governance microservice and Vault for key management.</p>
+<hr />
+<p>See <code>docs/services/aku-workspace.md</code> for Workspace architecture and operational guidance.</p>
 
 
 
