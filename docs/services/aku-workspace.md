@@ -71,3 +71,24 @@ Aku Workspace is the AI-native productivity layer of the Aku Platform. It provid
 ---
 
 For implementation examples (IaC, API schemas, example microservices), see the `infra/examples/` folder in the repo.
+
+## Example: Workspace pulling insights from DaaS via IG-Hub
+
+A typical flow is:
+
+1. Aku Workspace issues a natural-language query.
+2. The Workspace backend requests anonymized datasets from DaaS; DaaS may itself source aggregated metadata published to the IG-Hub by Super Hubs.
+3. The IG-Hub API (see `infra/examples/ig_hub_control_panel/README.md`) provides endpoints for ingestion and a connectivity control plane; Workspace services can query DaaS or the IG-Hub status endpoints when coordinating cross-tier tasks.
+
+Sample integration (curl):
+
+```bash
+# Query DaaS for anonymized dataset (authenticated as service)
+curl -X POST \
+	-H "Authorization: Bearer <service-token>" \
+	-H "Content-Type: application/json" \
+	-d '{"query":"attendance trends for school X"}' \
+	https://daas.aku.africa/v1/query
+```
+
+And see the IG-Hub simulator in `infra/examples/super_hub_simulator` to run a local end-to-end demo of Super Hub -> IG-Hub -> DaaS ingestion.

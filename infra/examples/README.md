@@ -12,6 +12,11 @@ Contents:
 - `ig_hub_api.yaml` — OpenAPI sample for IG-Hub endpoints.
 - `AkuDataInsights.tsx` — frontend example component that queries the Aku AI Assistant.
 
+E2E demo
+
+- `infra/examples/ig_hub_control_panel/` includes an IG-Hub control panel example. See its `README.md` for usage.
+- `infra/examples/super_hub_simulator/` includes a Super Hub simulator that registers and publishes anonymized metadata. It can be run locally or by the CI e2e workflow.
+
 How to adapt
 
 1. Copy the Terraform example into a new folder and provide a `terraform.tfvars` with your cloud credentials and region.
