@@ -1,0 +1,12 @@
+{
+  "short_name": "AkuWorkspace",
+  "name": "Aku Workspace - PWA Shell",
+  "icons": [
+    { "src": "/icons/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icons/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2b6cb0",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: Aku Interstate Gateway Hub (IG-Hub) API
+  version: 1.0.0
+  description: API for Super Hub federation, metadata transfer, and financial clearing.
+servers:
+  - url: https://api.ig-hub.aku.africa/v1
+paths:
+  /superhubs/register:
+    post:
+      summary: Register a new Aku Super Hub
+      description: Allows a national Aku Super Hub to register itself with the IG-Hub for federation.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - superHubId
+                - countryCode
+                - publicKey
+              properties:
+                superHubId:
+                  type: string
+                  description: Unique identifier for the Super Hub.
+                countryCode:
+                  type: string
+                  description: ISO 3166-1 alpha-2 country code.
+                publicKey:
+                  type: string
+                  description: Public key for secure communication.
+      responses:
+        '200':
+          description: Super Hub registered successfully.
+        '400':
+          description: Invalid request payload.
+  /metadata/publish:
+    post:
+      summary: Publish anonymized metadata from Super Hubs
+      description: Allows Aku Super Hubs to securely publish aggregated and anonymized metadata to the IG-Hub for global insights and compliance checks.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                superHubId:
+                  type: string
+                datasetId:
+                  type: string
+                anonymizedPayload:
+                  type: object
+      responses:
+        '200':
+          description: Metadata received
+        '403':
+          description: Unauthorized or policy violation
