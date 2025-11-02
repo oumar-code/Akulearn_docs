@@ -1,0 +1,16 @@
+Subject: Inquiry — Jetson-compatible compute module procurement and dev kits
+
+Hello NVIDIA sales/partner team,
+
+We are evaluating Jetson modules (Orin Nano / Orin NX / Jetson family) for the Aku Platform Edge Alpha. Could you provide:
+
+- Current availability for Orin Nano / Orin NX modules and dev kits
+- Pricing for low-volume orders (5–20 modules) and dev kits
+- Recommended thermal and carrier board options for field-deployable use
+- Any partner distributors in the ECOWAS region
+
+We can share power/thermal envelope and preliminary BOM upon request.
+
+Best,
+[Your Name]
+procurement@aku-platform.org

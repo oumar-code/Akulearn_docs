@@ -1,0 +1,9 @@
+Subject: RFQ — Edge Alpha PMU components
+
+Hello Avnet team,
+
+We are sourcing parts for a small prototype run of the Aku Platform Edge Alpha PMU. Attached is our RFQ. Can you provide quotes, lead times, and available alternates for the parts listed?
+
+Thanks,
+[Your Name]
+procurement@aku-platform.org

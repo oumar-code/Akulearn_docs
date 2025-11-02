@@ -1,0 +1,16 @@
+Subject: RFQ — Edge Alpha PMU components (Aku Platform prototype)
+
+Hello Mouser team,
+
+We're sourcing components for a small prototype run of the Aku Platform Edge Alpha PMU. Attached is our filled RFQ (edge_alpha_rfq_filled.csv). Could you provide availability, prices for the requested quantities, and potential substitute recommendations?
+
+Specific asks:
+- Stock and lead times
+- Per-line pricing and total cost
+- Equivalent parts or alternates if a part is long lead
+- Shipping options to West Africa and estimated shipping times
+
+Contact:
+[Your Name]
+Aku Platform Procurement
+procurement@aku-platform.org

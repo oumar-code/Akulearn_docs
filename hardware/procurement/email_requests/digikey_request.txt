@@ -1,0 +1,23 @@
+Subject: RFQ — Edge Alpha PMU components (Aku Platform prototype)
+
+Hello Digi-Key team,
+
+We are preparing a prototype run for the "Edge Alpha" PMU (Power Management Unit) as part of the Aku Platform (open education hardware). Attached is our populated RFQ CSV with quantities and preferred part numbers (edge_alpha_rfq_filled.csv). Could you provide:
+
+- Available stock and lead times for the listed parts
+- Best unit pricing for the quantities (per-line and total)
+- Alternate equivalent parts (second sources) and recommended substitutes if lead times are long
+- Any MOQ (minimum order quantities) or packaging constraints we should be aware of
+
+Key project details:
+- Project: Aku Platform — Edge Alpha PMU prototype
+- Destination: ECOWAS pilot sites (West Africa)
+- Prototype quantity: see CSV (typically low-volume, 5–20 units per line)
+
+Please reply with a quote (PDF preferred) and approximate lead-times. If you need an attached schematic or BOM in a specific format, tell us and we'll provide it.
+
+Best regards,
+
+[Your Name]
+Aku Platform Procurement
+procurement@aku-platform.org
