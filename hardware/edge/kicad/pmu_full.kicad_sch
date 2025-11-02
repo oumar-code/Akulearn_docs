@@ -94,9 +94,12 @@ R R1
     2 SENSE_MINUS
 
 Text Notes 100 620 2 ~ 0
-U1: INA226 (I2C power monitor)
+U1: INA226 (I2C power monitor) - Analog Devices INA226AIDRLT (SOIC-8)
 AnalogDevices_INA226 U1
-    Attrs: Footprint=SOIC-8
+    Attrs: Footprint=SOIC-8_3.9x4.9mm_P1.27mm
+    Attrs: Part=INA226AIDRLT
+    Attrs: Manufacturer=Analog Devices
+    Attrs: MFG_PN=INA226AIDRLT
     Pins:
     VCC NET_V3V3
     GND GND
@@ -106,9 +109,12 @@ AnalogDevices_INA226 U1
     VIN- SENSE_MINUS
 
 Text Notes 100 700 2 ~ 0
-U2: 5V buck regulator (example: synchronous buck with EN pin)
+U2: 5V buck regulator (TI TPS5430 or similar) - supply-friendly
 Regulator_StepDown U2
-    Attrs: Footprint=TO-263-5 or SMD
+    Attrs: Footprint=HTSSOP-14_16.3x6.4mm_P0.5mm
+    Attrs: Part=TPS5430
+    Attrs: Manufacturer=Texas Instruments
+    Attrs: MFG_PN=TPS5430
     Pins:
     VIN NET_12V
     VOUT NET_V5V
@@ -116,9 +122,12 @@ Regulator_StepDown U2
     GND GND
 
 Text Notes 100 780 2 ~ 0
-U3: 3.3V buck regulator
+U3: 3.3V buck regulator (TI TPS62840 or MP1584)
 Regulator_StepDown U3
-    Attrs: Footprint=SOT-23-5
+    Attrs: Footprint=SOT-23-5_or_MP1584_SMD
+    Attrs: Part=TPS62840
+    Attrs: Manufacturer=Texas Instruments
+    Attrs: MFG_PN=TPS62840
     Pins:
     VIN NET_12V
     VOUT NET_V3V3
@@ -126,9 +135,12 @@ Regulator_StepDown U3
     GND GND
 
 Text Notes 100 860 2 ~ 0
-U4: Optional 1.8V LDO
+U4: Optional 1.8V LDO (e.g., Microchip MIC5219 or TI TLV700)
 Regulator_LDO U4
     Attrs: Footprint=SOT-23-5
+    Attrs: Part=TLV70018 (suggested)
+    Attrs: Manufacturer=Texas Instruments
+    Attrs: MFG_PN=TLV70018
     Pins:
     VIN NET_V3V3
     VOUT NET_V1V8
@@ -136,13 +148,16 @@ Regulator_LDO U4
     GND GND
 
 Text Notes 100 940 2 ~ 0
-U5: Voltage supervisor (reset generation)
-Device_Supervisor U5
-    Attrs: Footprint=SOT-23-5
+Q1: P-channel MOSFET (ideal-diode) for reverse protection - example BSS84 (P-channel SOT-23)
+Transistor_P Q1
+    Attrs: Footprint=SOT-23-3
+    Attrs: Part=BSS84
+    Attrs: Manufacturer=Diodes Inc.
+    Attrs: MFG_PN=BSS84
     Pins:
-    VCC NET_V3V3
-    RESET_N RESET_N
-
+    D MPPT_IN
+    S NET_12V
+    G Q1_GATE
 Text Notes 100 1020 2 ~ 0
 JDEBUG: UART / debug header
 Conn_01x06 JDEBUG
