@@ -1,0 +1,16 @@
+Part Name,MPN/Model,Preferred Suppliers,Primary Contact (name/email),Distributor URLs,Notes
+Jetson Orin Nano Dev Kit,JNX-ONX-DEV,Digi-Key;NVIDIA Store;Arrow,Sales@nvidia.com;support@digikey.com,https://www.nvidia.com;https://www.digikey.com,Request dev kit quote and lead time
+Jetson Orin Nano Module,JNX-ONX-16GB,Arrow;Avnet;Digi-Key,arrow-sales@arrow.com;avnet@avnet.com,https://www.arrow.com;https://www.avnet.com,Request MOQ and lead times
+LoRa Module (SX1262),SX1262-MOD,Murata;Digi-Key,murata-sales@murata.com;sales@digikey.com,https://www.murata.com;https://www.digikey.com,Confirm regional certification/antenna options
+Wi-Fi 6 M.2 (AX200),AX200-M.2,Digi-Key;Mouser,sales@digikey.com;support@mouser.com,https://www.digikey.com;https://www.mouser.com,Confirm M.2 type and antenna headers
+Cellular Modem (Quectel EG25-G),EG25-G,Quectel;Digi-Key;Mouser,sales@quectel.com;sales@digikey.com,https://www.quectel.com,Request eSIM variant availability and regional band support
+LiFePO4 Battery 12.8V 20Ah,LF-12V-20Ah,EVE;Winston;battery-specialist,sales@evebattery.com,https://www.evebattery.com,Request cell datasheets and UN38.3 test certificates
+MPPT Charge Controller,MPPT-75-15,Victron;TI distributors,info@victronenergy.com,https://www.victronenergy.com,Request LiFePO4 charging profile support
+DC-DC Buck 5V,LM2596,Digi-Key;Mouser,support@digikey.com,https://www.digikey.com,Confirm footprint variant and switching freq
+DC-DC Buck 3.3V,TPS62840,Texas Instruments;Digi-Key,ti-sales@ti.com;support@digikey.com,https://www.ti.com,Ask for evaluation board or recommended footprint
+Current Sense Amp,INA219,Digi-Key;Mouser,support@digikey.com,https://www.digikey.com,Confirm package and temp range
+Environmental Sensor (SHT4x),SHT4x,Sensirion;sensirion-support@sensirion.com,https://www.sensirion.com,Confirm sample availability
+GNSS Module,NEO-M8,u-blox;Digi-Key,support@u-blox.com,https://www.u-blox.com,Confirm antenna recommendations and carrier approvals
+Camera Module (IMX series),IMX-XYZ,CameraSupplier;Distributor,contact@camerasupplier.com,https://www.camerasupplier.com,Confirm MIPI lane and CSI interface
+Waterproof Connectors (M12),M12-2/M12-3,Amphenol;TE Connectivity,sales@amphenol.com,https://www.amphenol.com,Confirm IP67 part numbers and mounting
+Enclosure (IP67),IP67-BOX,Polycase;Hammond,enclosure-sales@polycase.com,https://www.polycase.com,Provide dimensions and antenna gland options

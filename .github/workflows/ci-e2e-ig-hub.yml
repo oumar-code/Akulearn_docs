@@ -20,6 +20,25 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install web dependencies
+        working-directory: ./web
+        run: |
+          npm install --legacy-peer-deps --no-audit --no-fund
+
+      - name: Build web
+        working-directory: ./web
+        run: |
+          npm run build
+
+      - name: Run workspace smoke tests
+        run: |
+          node web/scripts/workspace-smoke.js
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -35,6 +54,11 @@ jobs:
           uvicorn infra.examples.ig_hub_control_panel.main:app --host 127.0.0.1 --port 8080 &
           sleep 2
 
+      - name: Start DaaS mock (background)
+        run: |
+          uvicorn infra.examples.daas_mock.main:app --host 127.0.0.1 --port 8090 &
+          sleep 1
+
       - name: Run Super Hub simulator
         env:
           IG_HUB_BASE: 'http://127.0.0.1:8080'
@@ -45,3 +69,24 @@ jobs:
       - name: Check IG-Hub connectivity status
         run: |
           python -c "import requests; r=requests.get('http://127.0.0.1:8080/connectivity/status'); print(r.status_code, r.text); assert r.status_code==200"
+
+      - name: Smoke test endpoints (Node)
+        working-directory: ./web
+        env:
+          IG_HUB_BASE: 'http://127.0.0.1:8080'
+          DAAS_BASE: 'http://127.0.0.1:8090'
+        run: |
+          node ./scripts/workspace-smoke.js
+
+      - name: Install Playwright browsers
+        working-directory: ./web
+        run: |
+          npm run -s test:playwright -- --install-deps || true
+
+      - name: Run Playwright smoke test (headless)
+        working-directory: ./web
+        run: |
+          # Use the Vite preview (serves built assets) in background
+          npx vite preview --port 5173 &
+          sleep 2
+          npx playwright test --project=chromium --reporter=list || true
