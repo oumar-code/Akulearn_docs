@@ -1,0 +1,14 @@
+Subject: Inquiry — Solar / MPPT hardware and chargers for Edge Alpha
+
+Hello Victron / solar hardware team,
+
+We are designing a prototype Edge Alpha device with small solar input and need MPPT-capable charge controllers suitable for 12V LiFePO4 battery packs (low-to-mid-power, up to ~200W). Please advise recommended MPPT modules, pricing for prototype quantities, and integration notes.
+
+Key requirements:
+- Input: small PV panels (12–36V typical)
+- Output: charge LiFePO4 12V battery banks
+- Remote telemetry option preferred
+
+Thanks,
+[Your Name]
+procurement@aku-platform.org

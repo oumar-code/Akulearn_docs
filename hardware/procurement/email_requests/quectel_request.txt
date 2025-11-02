@@ -1,0 +1,11 @@
+Subject: RFQ/Availability — Cellular modules for Edge Alpha
+
+Hello Quectel sales,
+
+We're sourcing cellular modules (NB-IoT / LTE Cat-M / 4G fallback) for the Aku Platform Edge Alpha. Please advise on available module SKUs, pricing for small prototype runs, and recommended antennas/filters for West Africa bands.
+
+Attached: RFQ CSV with tentative part numbers.
+
+Regards,
+[Your Name]
+procurement@aku-platform.org
