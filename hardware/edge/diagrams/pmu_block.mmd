@@ -1,0 +1,13 @@
+%% Edge Hub - Power Management Block Diagram (Mermaid)
+flowchart TB
+  SP[SOLAR PANEL\n(18V Vmp)] --> MPPT[MPPT Charge Controller\n(LiFePO4 profile)]
+  MPPT -->|Charge| BATT[Battery Pack\nLiFePO4 12V]
+  BATT -->|Supply| DC12[12V Rail]
+  DC12 --> DC5[5V Buck] --> USB_DEV[USB / Peripherals / PoE]
+  DC12 --> DC3[3.3V Buck] --> SENSORS(3.3V Sensors)
+  DC12 --> DC1_8[1.8V Reg] --> SOC_CORE(SoC Core Power)
+  MPPT -->|Telemetry| BMS[BMS (SMBus / I2C)]
+  BMS -->|Comm| CM[Compute Module (UART/I2C)]
+  Protect[Protection: Reverse polarity, TVS, Fuses] --> MPPT
+  Protect --> BATT
+  Protect --> DC12

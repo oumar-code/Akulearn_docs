@@ -1,0 +1,69 @@
+EESchema Schematic File Version 4
+# PMU schematic template for KiCad (alpha) - scaffold only
+#
+# This file is a human-editable template intended to be converted into a real
+# KiCad schematic (`pmu.sch`) by copying the nets, component references and
+# footprints into KiCad's schematic editor. It is not a fully valid KiCad
+# schematic file; use it as a scaffold and then author `pmu.sch` in KiCad.
+
+# Net names (suggested)
+# - SOLAR_PLUS, SOLAR_MINUS
+# - BATT_PLUS, BATT_MINUS
+# - 12V, GND
+# - V5V, V3V3, V1V8
+# - BMS_SDA, BMS_SCL
+# - PWR_OK, RESET_N
+# - SENSE_PLUS, SENSE_MINUS
+
+# Suggested schematic blocks (create these as hierarchical sheets in KiCad):
+# 1) INPUT_PROTECTION
+#    - P-channel MOSFET or ideal-diode IC for reverse polarity protection
+#    - TVS diodes
+#    - Inrush current limiter or NTC
+#    - Fuses
+
+# 2) MPPT_INTERFACE
+#    - If using external MPPT module: connector with SOLAR+/SOLAR-
+#    - If implementing MPPT on-board: include controller IC footprint and switching components
+
+# 3) BATTERY_PACK
+#    - Battery connector footprint (waterproof)
+#    - BMS connector: SMBUS/I2C/UART pins
+#    - Shunt resistor footprint for current sensing (SENSE+, SENSE-)
+
+# 4) DC_DC_REGULATORS
+#    - 5V Buck regulator module/IC with EN pin -> net V5V
+#    - 3.3V Buck regulator module/IC -> net V3V3
+#    - 1.8V LDO/reg as needed -> net V1V8
+#    - Bulk and decoupling capacitor footprints
+
+# 5) MONITORING_AND_TELEMETRY
+#    - Current sense amplifier (INA219 / INA226) footprints
+#    - Temperature sensor footprints (NTC footprint or digital sensor)
+#    - SMBUS/I2C resistors (if level shifting required)
+
+# 6) DEBUG_HEADER
+#    - 2x6 or 2x5 header for UART, JTAG and programming
+
+# Test points (add as TP footprints in KiCad):
+# TP_BATT_PLUS, TP_BATT_MINUS, TP_12V, TP_5V, TP_3V3, TP_1V8, TP_SENSE+, TP_SENSE-, TP_RESET
+
+# Example component reference list (replace with real footprints in KiCad):
+# - U1: MPPT_CONTROLLER (if on-board)
+# - U2: BMS_COMM_IC / SMBus interface
+# - U3: BUCK_5V
+# - U4: BUCK_3V3
+# - U5: LDO_1V8
+# - U6: CURRENT_SENSE_AMP
+# - F1: FUSE_BATT
+# - D1: TVS_SOLAR
+
+# Layout & PCB notes (copy into KiCad PCB job):
+# - Use thick copper for 12V power plane (2oz recommended)
+# - Place thermal vias under high-power regulator footprints
+# - Keep sense resistor traces short and use Kelvin pads
+
+# After creating `pmu.sch` in KiCad:
+# 1. Run ERC and fix errors.
+# 2. Export netlist and create the footprint list.
+# 3. Create a `pmu-layout` PCB project or integrate into the main PCB project.

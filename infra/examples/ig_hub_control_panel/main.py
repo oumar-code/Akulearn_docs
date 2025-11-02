@@ -6,6 +6,7 @@ import os
 import json
 
 from fastapi import FastAPI, HTTPException, Header, Request
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import Any, Dict, Optional
 from datetime import datetime
@@ -15,6 +16,15 @@ import sqlite3
 import secrets
 
 app = FastAPI(title="Aku IG-Hub Control Panel (example)")
+
+# Allow CORS for demo frontend (adjust in production)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 DB_PATH = os.environ.get('IGHUB_DB_PATH', '/tmp/ig_hub.db')
