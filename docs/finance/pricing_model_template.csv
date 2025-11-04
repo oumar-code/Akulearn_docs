@@ -1,0 +1,5 @@
+plan_name,monthly_price_usd,in_state_call_cents_per_min,regional_call_cents_per_min,national_call_cents_per_min,data_gb,included_cached_gb,notes
+Aku Learn Free,0,0,0,0,0,5,"Free access to Aku Learn while on any Edge Hub; includes 5GB cached content access per month"
+Aku Local Connect,1.5,0.5,2,5,1,10,"Low-cost in-state calls; heavy zero-rating for cached content"
+Aku State Connect,4.0,0.2,1,3,5,50,"Generous in-state data, suitable for families and small businesses"
+Aku National Connect,10.0,0.1,0.5,1,10,100,"Broader coverage and national calling allowance"
