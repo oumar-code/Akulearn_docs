@@ -1,0 +1,224 @@
+%PDF-1.1
+%µµµ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 6352 >>
+stream
+BT /F1 10 Tf 50 770 Td
+(EESchema Schematic File Version 4) Tj
+T* (LIBS:power) Tj
+T* (LIBS:device) Tj
+T* (LIBS:conn) Tj
+T* (LIBS:regul) Tj
+T* (LIBS:transistors) Tj
+T* (LIBS:analog_devices) Tj
+T* (EELAYER 25 0) Tj
+T* (EELAYER END) Tj
+T* ($Descr A4 11693 8268) Tj
+T* (encoding utf-8) Tj
+T* (Sheet 1 1) Tj
+T* (Title "PMU - Edge Alpha \(full scaffold\)") Tj
+T* (Date "2025-11-02") Tj
+T* (Rev "alpha-1") Tj
+T* (Comp "") Tj
+T* (Comment1 "PMU full schematic scaffold: replace placeholder footprints with chosen KiCad library footprints and run ERC. Intended as a starting point for an electrical engineer to finalize." ) Tj
+T* ($EndDescr) Tj
+T* () Tj
+T* (# Components \(placeholders — set correct footprints in KiCad schematic editor\):) Tj
+T* (# J1: Connector - SOLAR input \(2 pins\)) Tj
+T* (# J2: Connector - BATTERY/BMS \(4 pins: BATT+, BATT-, SDA, SCL\)) Tj
+T* (# F1: Fuse - series with battery \(SMD or through-hole as required\)) Tj
+T* (# D1: TVS diode across solar input) Tj
+T* (# Q1: P-channel MOSFET \(reverse-blocking / ideal diode\)) Tj
+T* (# R1: Shunt resistor \(R_SENSE\) low-ohm for current measurement) Tj
+T* (# U1: INA226 \(current/power monitor\) - I2C) Tj
+T* (# U2: Buck regulator 5V \(synchronous\) - EN pin) Tj
+T* (# U3: Buck regulator 3V3 \(synchronous\) - EN pin) Tj
+T* (# U4: LDO 1V8 \(optional\)) Tj
+T* (# U5: Voltage supervisor / reset IC) Tj
+T* (# JDEBUG: 6-pin UART header \(TX,RX,3.3V,GND,BOOT,RESET\)) Tj
+T* () Tj
+T* (# Net labels used in this schematic:) Tj
+T* (# SOLAR_PLUS, SOLAR_MINUS) Tj
+T* (# BATT_PLUS, BATT_MINUS) Tj
+T* (# NET_12V, NET_V5V, NET_V3V3, NET_V1V8) Tj
+T* (# SENSE_PLUS, SENSE_MINUS) Tj
+T* (# BMS_SDA, BMS_SCL) Tj
+T* (# PWR_OK, RESET_N) Tj
+T* () Tj
+T* (Text Notes 100 80 2 ~ 0) Tj
+T* (--- PMU Schematic \(full scaffold\) ---) Tj
+T* () Tj
+T* (Text Notes 100 140 2 ~ 0) Tj
+T* (J1: SOLAR connector \(2-pin\)) Tj
+T* (Conn_01x02 J1) Tj
+T* (    Attrs: Footprint=Conn_01x02) Tj
+T* (    Pins:) Tj
+T* (    1 SOLAR_PLUS) Tj
+T* (    2 SOLAR_MINUS) Tj
+T* () Tj
+T* (Text Notes 100 220 2 ~ 0) Tj
+T* (D1: TVS across SOLAR input) Tj
+T* (Device_D1 TVS_SMD) Tj
+T* (    Attrs: Footprint=TVS_SMD) Tj
+T* (    Pins:) Tj
+T* (    A SOLAR_PLUS) Tj
+T* (    K SOLAR_MINUS) Tj
+T* () Tj
+T* (Text Notes 100 300 2 ~ 0) Tj
+T* (Q1: P-channel MOSFET \(ideal-diode\) for reverse protection) Tj
+T* (Transistor_P Q1) Tj
+T* (    Attrs: Footprint=SOT-23-3) Tj
+T* (    Pins:) Tj
+T* (    D MPPT_IN) Tj
+T* (    S NET_12V) Tj
+T* (    G Q1_GATE) Tj
+T* () Tj
+T* (Text Notes 100 380 2 ~ 0) Tj
+T* (J2: BATTERY / BMS connector \(example: 4-pin JST\)) Tj
+T* (Conn_01x04 J2) Tj
+T* (    Attrs: Footprint=Conn_01x04) Tj
+T* (    Pins:) Tj
+T* (    1 BATT_PLUS) Tj
+T* (    2 BATT_MINUS) Tj
+T* (    3 BMS_SDA) Tj
+T* (    4 BMS_SCL) Tj
+T* () Tj
+T* (Text Notes 100 460 2 ~ 0) Tj
+T* (F1: Fuse in battery positive) Tj
+T* (Fuse F1) Tj
+T* (    Attrs: Footprint=Fuse_Holder) Tj
+T* (    Pins:) Tj
+T* (    1 NET_12V) Tj
+T* (    2 BATT_PLUS) Tj
+T* () Tj
+T* (Text Notes 100 540 2 ~ 0) Tj
+T* (R1: Current sense resistor \(low value, e.g., 50mOhm\)) Tj
+T* (R R1) Tj
+T* (    Attrs: Value=0.05) Tj
+T* (    Pins:) Tj
+T* (    1 SENSE_PLUS) Tj
+T* (    2 SENSE_MINUS) Tj
+T* () Tj
+T* (Text Notes 100 620 2 ~ 0) Tj
+T* (U1: INA226 \(I2C power monitor\) - Analog Devices INA226AIDRLT \(SOIC-8\)) Tj
+T* (AnalogDevices_INA226 U1) Tj
+T* (    Attrs: Footprint=SOIC-8_3.9x4.9mm_P1.27mm) Tj
+T* (    Attrs: Part=INA226AIDRLT) Tj
+T* (    Attrs: Manufacturer=Analog Devices) Tj
+T* (    Pins:) Tj
+T* (    VCC NET_V3V3) Tj
+T* (    GND GND) Tj
+T* (    SCL BMS_SCL) Tj
+T* (    SDA BMS_SDA) Tj
+T* (    VIN+ SENSE_PLUS) Tj
+T* (    VIN- SENSE_MINUS) Tj
+T* () Tj
+T* (Text Notes 100 700 2 ~ 0) Tj
+T* (U2: 5V buck regulator \(TI TPS5430 or similar\) - supply-friendly) Tj
+T* (Regulator_StepDown U2) Tj
+T* (    Attrs: Footprint=HTSSOP-14_16.3x6.4mm_P0.5mm) Tj
+T* (    Attrs: Part=TPS5430) Tj
+T* (    Attrs: Manufacturer=Texas Instruments) Tj
+T* (    Pins:) Tj
+T* (    VIN NET_12V) Tj
+T* (    VOUT NET_V5V) Tj
+T* (    EN EN5) Tj
+T* (    GND GND) Tj
+T* () Tj
+T* (Text Notes 100 780 2 ~ 0) Tj
+T* (U3: 3.3V buck regulator \(TI TPS62840 or MP1584\)) Tj
+T* (Regulator_StepDown U3) Tj
+T* (    Attrs: Footprint=SOT-23-5_or_MP1584_SMD) Tj
+T* (    Attrs: Part=TPS62840) Tj
+T* (    Attrs: Manufacturer=Texas Instruments) Tj
+T* (    Pins:) Tj
+T* (    VIN NET_12V) Tj
+T* (    VOUT NET_V3V3) Tj
+T* (    EN EN3V3) Tj
+T* (    GND GND) Tj
+T* () Tj
+T* (Text Notes 100 860 2 ~ 0) Tj
+T* (U4: Optional 1.8V LDO \(e.g., Microchip MIC5219 or TI TLV700\)) Tj
+T* (Regulator_LDO U4) Tj
+T* (    Attrs: Footprint=SOT-23-5) Tj
+T* (    Attrs: Part=TLV70018 \(suggested\)) Tj
+T* (    Attrs: Manufacturer=Texas Instruments) Tj
+T* (    Pins:) Tj
+T* (    VIN NET_V3V3) Tj
+T* (    VOUT NET_V1V8) Tj
+T* (    EN EN1V8) Tj
+T* (    GND GND) Tj
+T* () Tj
+T* (Text Notes 100 940 2 ~ 0) Tj
+T* (Q1: P-channel MOSFET \(ideal-diode\) for reverse protection - example BSS84 \(P-channel SOT-23\)) Tj
+T* (Transistor_P Q1) Tj
+T* (    Attrs: Footprint=SOT-23-3) Tj
+T* (    Attrs: Part=BSS84) Tj
+T* (    Attrs: Manufacturer=Diodes Inc.) Tj
+T* (    Pins:) Tj
+T* (    D MPPT_IN) Tj
+T* (    S NET_12V) Tj
+T* (    G Q1_GATE) Tj
+T* (Text Notes 100 1020 2 ~ 0) Tj
+T* (JDEBUG: UART / debug header) Tj
+T* (Conn_01x06 JDEBUG) Tj
+T* (    Attrs: Footprint=Conn_1x06) Tj
+T* (    Pins:) Tj
+T* (    1 UART_TX) Tj
+T* (    2 UART_RX) Tj
+T* (    3 3V3) Tj
+T* (    4 GND) Tj
+T* (    5 BOOT) Tj
+T* (    6 RESET_N) Tj
+T* () Tj
+T* (Text Notes 100 1100 2 ~ 0) Tj
+T* (# Net ties and recommended testpoints) Tj
+T* (TP NET_12V TP_12V) Tj
+T* (TP NET_V5V TP_5V) Tj
+T* (TP NET_V3V3 TP_3V3) Tj
+T* (TP NET_V1V8 TP_1V8) Tj
+T* (TP SENSE_PLUS TP_SENSE_P) Tj
+T* (TP SENSE_MINUS TP_SENSE_N) Tj
+T* () Tj
+T* (Text Notes 100 1180 2 ~ 0) Tj
+T* (# I2C pull-ups: recommended 4.7k from BMS_SDA/BMS_SCL to NET_V3V3) Tj
+T* (R R_PU_SDA 4.7k) Tj
+T* (R R_PU_SCL 4.7k) Tj
+T* () Tj
+T* (Text Notes 100 1260 2 ~ 0) Tj
+T* (# Decoupling: add 0.1uF and bulk caps on VIN and VOUT of each regulator near the ICs.) Tj
+T* () Tj
+T* (Text Notes 100 1340 2 ~ 0) Tj
+T* (# Notes for the engineer:) Tj
+T* (# - Replace placeholder footprints with chosen parts and footprints in KiCad.) Tj
+T* (# - After setting footprints, run ERC and review power flags; ensure proper net tie conventions for battery and chassis grounds.) Tj
+T* (# - Add thermal reliefs and copper pours for power nets in PCB layout.) Tj
+T* () Tj
+T* (End) Tj
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000017 00000 n 
+0000000066 00000 n 
+0000000123 00000 n 
+0000000249 00000 n 
+0000000319 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+6723
+%EOF
