@@ -1,7 +1,9 @@
 version: '3.8'
 services:
   kamailio:
-    image: kamailio/kamailio:5.5
+    # Use explicit registry and platform to avoid ambiguous pulls on some Docker setups
+    image: docker.io/kamailio/kamailio:5.5
+    platform: linux/amd64
     container_name: kamailio
     restart: unless-stopped
     ports:
@@ -12,7 +14,8 @@ services:
       - ./kamailio/cfg:/etc/kamailio
 
   freeswitch:
-    image: signalwire/freeswitch:latest
+    image: docker.io/signalwire/freeswitch:latest
+    platform: linux/amd64
     container_name: freeswitch
     restart: unless-stopped
     ports:
@@ -22,7 +25,9 @@ services:
       - ./freeswitch/conf:/etc/freeswitch
 
   nginx_cache:
-    image: nginx:stable
+    # Use the official library reference and add a simple healthcheck
+    image: docker.io/library/nginx:stable
+    platform: linux/amd64
     container_name: nginx_cache
     restart: unless-stopped
     volumes:
@@ -30,6 +35,11 @@ services:
       - ./cache:/var/cache/nginx
     ports:
       - "80:80"
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 # Notes:
 # - This is a lightweight prototype stack. For Edge Hub prototypes, consider a single container that runs a lightweight SIP proxy and a static cache.
