@@ -1,1 +1,33 @@
 node_modules
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+myenv/
+
+# Logs and temporary outputs
+*.log
+pyarrow-install.log
+ps-output.txt
+pull-output.txt
+docker-info.txt
+docker-ps-all.txt
+docker-version.txt
+
+# runtime logs and outputs
+logs-*.txt
+*.out
+*.err
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Misc
+*.zip
+*.egg-info/

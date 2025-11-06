@@ -1,0 +1,1 @@
+﻿Docker Compose version v2.38.2-desktop.1
