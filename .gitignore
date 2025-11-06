@@ -19,6 +19,11 @@ docker-info.txt
 docker-ps-all.txt
 docker-version.txt
 
+# runtime logs and outputs
+logs-*.txt
+*.out
+*.err
+
 # Editor/IDE
 .vscode/
 .idea/
