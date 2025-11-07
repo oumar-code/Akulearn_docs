@@ -27,16 +27,58 @@ function ExitWith($code, $msg) {
 
 Write-Host "== Akulearn: conda installer helper =="
 
-# Check for conda
-try {
-    $condaVersion = & conda --version 2>$null
-} catch {
-    ExitWith 1 "conda not found on PATH. Please install Miniconda or Anaconda and re-run. https://docs.conda.io/en/latest/miniconda.html"
+# Check for conda and, if missing, download & install Miniconda silently into the user's profile
+$MinicondaUrl = "https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe"
+$defaultInstallDir = Join-Path $env:USERPROFILE "Miniconda3"
+
+function Install-Miniconda {
+    param(
+        [string]$Url = $MinicondaUrl,
+        [string]$InstallDir = $defaultInstallDir
+    )
+
+    Write-Host "conda not found. Downloading Miniconda installer from $Url ..."
+    $installer = Join-Path $env:TEMP "Miniconda3-latest-Windows-x86_64.exe"
+    try {
+        Invoke-WebRequest -Uri $Url -OutFile $installer -UseBasicParsing -ErrorAction Stop
+    } catch {
+        ExitWith 1 "Failed to download Miniconda installer: $_"
+    }
+
+    Write-Host "Running Miniconda silent installer to '$InstallDir'... This may take a minute."
+    # Silent installer arguments: /InstallationType=JustMe /RegisterPython=0 /AddToPath=0 /S /D=<dir>
+    $args = "/InstallationType=JustMe","/RegisterPython=0","/AddToPath=0","/S","/D=$InstallDir"
+    $proc = Start-Process -FilePath $installer -ArgumentList $args -Wait -PassThru
+    if ($proc.ExitCode -ne 0) {
+        ExitWith 1 "Miniconda installer failed with exit code $($proc.ExitCode)."
+    }
+
+    # Add the conda exe path for this session
+    $condaExe = Join-Path $InstallDir "Scripts\conda.exe"
+    if (-Not (Test-Path $condaExe)) {
+        ExitWith 1 "Miniconda installed but conda.exe not found at $condaExe."
+    }
+
+    # Optionally initialize shell for PowerShell - perform minimal init by running conda init
+    & $condaExe init powershell | Out-Null
+    Write-Host "Miniconda installed at $InstallDir"
+    return $condaExe
 }
 
-Write-Host "Found conda: $condaVersion"
-
+Write-Host "Checking for conda on PATH..."
 if (Get-Command conda -ErrorAction SilentlyContinue) {
+    $condaVersion = & conda --version 2>$null
+    Write-Host "Found conda: $condaVersion"
+    $condaExe = (Get-Command conda).Source
+} else {
+    # Auto-install Miniconda into user profile
+    $condaExe = Install-Miniconda -InstallDir $defaultInstallDir
+    # Add installer Scripts path to current PATH so 'conda' command works in this session
+    $scriptsPath = Join-Path $defaultInstallDir 'Scripts'
+    $env:Path = "$scriptsPath;$env:Path"
+}
+
+if (Test-Path $condaExe) {
     Write-Host "Creating conda environment '$EnvName' with Python $PythonVersion..."
     if ($Force) {
         conda remove -n $EnvName --all -y
