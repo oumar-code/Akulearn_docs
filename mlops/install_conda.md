@@ -7,7 +7,9 @@ these packages from source when using a newer Python version.
 
 Quick steps (one-liner):
 
-1. Install Miniconda / Anaconda if you don't have conda: https://docs.conda.io/en/latest/miniconda.html
+1. If you don't have conda installed, the helper script will now automatically download
+	and silently install Miniconda into your user profile (e.g. `%USERPROFILE%\Miniconda3`) and
+	initialize PowerShell for conda use.
 
 2. From the repository root, run the helper PowerShell script (recommended):
 
