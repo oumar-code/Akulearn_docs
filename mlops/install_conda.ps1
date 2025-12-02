@@ -40,29 +40,44 @@ function Install-Miniconda {
     Write-Host "conda not found. Downloading Miniconda installer from $Url ..."
     $installer = Join-Path $env:TEMP "Miniconda3-latest-Windows-x86_64.exe"
     try {
-        Invoke-WebRequest -Uri $Url -OutFile $installer -UseBasicParsing -ErrorAction Stop
+        Invoke-WebRequest -Uri $Url -OutFile $installer -ErrorAction Stop
     } catch {
-        ExitWith 1 "Failed to download Miniconda installer: $_"
+        # fallback to BITS transfer if Invoke-WebRequest fails
+        try {
+            Start-BitsTransfer -Source $Url -Destination $installer -ErrorAction Stop
+        } catch {
+            ExitWith 1 "Failed to download Miniconda installer: $_"
+        }
     }
 
     Write-Host "Running Miniconda silent installer to '$InstallDir'... This may take a minute."
     # Silent installer arguments: /InstallationType=JustMe /RegisterPython=0 /AddToPath=0 /S /D=<dir>
     $args = "/InstallationType=JustMe","/RegisterPython=0","/AddToPath=0","/S","/D=$InstallDir"
-    $proc = Start-Process -FilePath $installer -ArgumentList $args -Wait -PassThru
+    $proc = Start-Process -FilePath $installer -ArgumentList $args -Wait -PassThru -WindowStyle Hidden
     if ($proc.ExitCode -ne 0) {
         ExitWith 1 "Miniconda installer failed with exit code $($proc.ExitCode)."
     }
 
-    # Add the conda exe path for this session
+    # prefer condabin\conda.bat for scripting, fall back to Scripts\conda.exe
+    $condaBat = Join-Path $InstallDir "condabin\conda.bat"
     $condaExe = Join-Path $InstallDir "Scripts\conda.exe"
-    if (-Not (Test-Path $condaExe)) {
-        ExitWith 1 "Miniconda installed but conda.exe not found at $condaExe."
+    if (Test-Path $condaBat) {
+        $useConda = $condaBat
+    } elseif (Test-Path $condaExe) {
+        $useConda = $condaExe
+    } else {
+        ExitWith 1 "Miniconda installed but conda executable not found under $InstallDir."
     }
 
-    # Optionally initialize shell for PowerShell - perform minimal init by running conda init
-    & $condaExe init powershell | Out-Null
+    # Initialize PowerShell integration (best-effort)
+    try {
+        & $useConda init powershell | Out-Null
+    } catch {
+        Write-Host "Warning: conda init returned a warning; continue."
+    }
+
     Write-Host "Miniconda installed at $InstallDir"
-    return $condaExe
+    return $useConda
 }
 
 Write-Host "Checking for conda on PATH..."
@@ -78,31 +93,31 @@ if (Get-Command conda -ErrorAction SilentlyContinue) {
     $env:Path = "$scriptsPath;$env:Path"
 }
 
-if (Test-Path $condaExe) {
-    Write-Host "Creating conda environment '$EnvName' with Python $PythonVersion..."
-    if ($Force) {
-        conda remove -n $EnvName --all -y
-    }
-    conda create -n $EnvName python=$PythonVersion -y || ExitWith 2 "Failed to create conda env."
+# Use the concrete conda path if available, otherwise fall back to 'conda' on PATH
+if ($condaExe -and (Test-Path $condaExe)) { $condaCmd = $condaExe } else { $condaCmd = "conda" }
 
-    Write-Host "Activating environment and installing binary packages (pyarrow, onnxruntime, pytorch)..."
-    # Use conda run to avoid relying on shell activation behavior
-    conda run -n $EnvName --no-capture-output python -m pip install --upgrade pip setuptools wheel
-
-    # Install pyarrow and onnxruntime from conda-forge
-    conda install -n $EnvName -c conda-forge pyarrow onnxruntime -y || ExitWith 3 "Failed to install pyarrow/onnxruntime via conda."
-
-    # Install CPU-only PyTorch via pytorch channel (works on many Windows setups)
-    conda install -n $EnvName -c pytorch pytorch cpuonly -y || Write-Host "Warning: installing pytorch via conda failed; you'll need to install pytorch manually for your platform."
-
-    Write-Host "Now pip-installing remaining mlops requirements (using --no-deps because heavy binaries are installed via conda)..."
-    conda run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt --no-deps || ExitWith 4 "pip install of mlops requirements failed. Check the output above."
-
-    Write-Host "Installation complete. To activate the environment run:"
-    Write-Host "    conda activate $EnvName"
-    Write-Host "Then you can run the example server inside the env:"
-    Write-Host "    python -m mlops.examples.fastapi_server"
-    exit 0
-} else {
-    ExitWith 1 "conda executable not available."
+Write-Host "Creating conda environment '$EnvName' with Python $PythonVersion..."
+if ($Force) {
+    & $condaCmd remove -n $EnvName --all -y
 }
+
+& $condaCmd create -n $EnvName python=$PythonVersion -y || ExitWith 2 "Failed to create conda env."
+
+Write-Host "Activating environment and installing binary packages (pyarrow, onnxruntime, pytorch)..."
+# Use conda run to avoid relying on shell activation behavior
+& $condaCmd run -n $EnvName --no-capture-output python -m pip install --upgrade pip setuptools wheel
+
+# Install pyarrow and onnxruntime from conda-forge
+& $condaCmd install -n $EnvName -c conda-forge pyarrow onnxruntime -y || ExitWith 3 "Failed to install pyarrow/onnxruntime via conda."
+
+# Install CPU-only PyTorch via pytorch channel (works on many Windows setups)
+& $condaCmd install -n $EnvName -c pytorch pytorch cpuonly -y || Write-Host "Warning: installing pytorch via conda failed; you'll need to install pytorch manually for your platform."
+
+Write-Host "Now pip-installing remaining mlops requirements (using --no-deps because heavy binaries are installed via conda)..."
+& $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt --no-deps || ExitWith 4 "pip install of mlops requirements failed. Check the output above."
+
+Write-Host "Installation complete. To activate the environment run:"
+Write-Host "    conda activate $EnvName"
+Write-Host "Then you can run the example server inside the env:" 
+Write-Host "    python -m mlops.examples.fastapi_server"
+exit 0
