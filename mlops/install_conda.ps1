@@ -187,16 +187,48 @@ Log "pip, setuptools, and wheel upgraded."
 # Install pyarrow and onnxruntime from conda-forge
 Log "Installing pyarrow and onnxruntime from conda-forge..."
 Log "Running: $condaCmd install -n $EnvName -c conda-forge pyarrow onnxruntime -y"
-& $condaCmd install -n $EnvName -c conda-forge pyarrow onnxruntime -y
-if ($LASTEXITCODE -ne 0) { ExitWith 3 "Failed to install pyarrow/onnxruntime via conda." }
-Log "pyarrow and onnxruntime installed."
+$condaFailed = $false
+for ($i = 1; $i -le 3; $i++) {
+    Log "Attempt $i of 3..."
+    & $condaCmd install -n $EnvName -c conda-forge pyarrow onnxruntime -y 2>&1
+    if ($LASTEXITCODE -eq 0) { 
+        Log "pyarrow and onnxruntime installed."
+        break
+    } elseif ($i -lt 3) {
+        Log "WARNING: Attempt $i failed; retrying in 10 seconds..."
+        Start-Sleep -Seconds 10
+    } else {
+        Log "WARNING: conda install failed after 3 attempts; will skip and try pip later."
+        $condaFailed = $true
+    }
+}
+if ($condaFailed) {
+    Log "pyarrow/onnxruntime installation will be retried via pip."
+}
 
 # Install CPU-only PyTorch via pytorch channel (works on many Windows setups)
 Log "Installing PyTorch (CPU) from pytorch channel..."
 Log "Running: $condaCmd install -n $EnvName -c pytorch pytorch cpuonly -y"
-& $condaCmd install -n $EnvName -c pytorch pytorch cpuonly -y
-if ($LASTEXITCODE -ne 0) { Log "WARNING: installing pytorch via conda failed; you'll need to install pytorch manually for your platform." }
-Log "PyTorch installation attempt completed (check above for warnings if any)."
+$torchFailed = $false
+for ($i = 1; $i -le 3; $i++) {
+    Log "Attempt $i of 3..."
+    & $condaCmd install -n $EnvName -c pytorch pytorch cpuonly -y 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Log "PyTorch installed successfully."
+        break
+    } elseif ($i -lt 3) {
+        Log "WARNING: Attempt $i failed; retrying in 10 seconds..."
+        Start-Sleep -Seconds 10
+    } else {
+        Log "WARNING: installing pytorch via conda failed after 3 attempts; will skip and try pip later."
+        $torchFailed = $true
+    }
+}
+if ($torchFailed) {
+    Log "PyTorch installation will be retried via pip."
+} else {
+    Log "PyTorch installation attempt completed."
+}
 
 Log "Now pip-installing remaining mlops requirements..."
 Log "Running: $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt --no-deps"
