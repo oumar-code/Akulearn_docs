@@ -127,19 +127,33 @@ function Install-Miniconda {
 }
 
 Write-Host "Checking for conda on PATH..."
+$condaExe = $null
+
 if (Get-Command conda -ErrorAction SilentlyContinue) {
     $condaVersion = & conda --version 2>$null
     Log "Found conda on PATH: $condaVersion"
     $condaExe = (Get-Command conda).Source
     Log "conda executable: $condaExe"
 } else {
-    Log "conda not found on PATH. Auto-installing Miniconda into user profile..."
-    # Auto-install Miniconda into user profile
-    $condaExe = Install-Miniconda -InstallDir $defaultInstallDir
+    Log "conda not found on PATH. Checking for existing Miniconda installation at $defaultInstallDir..."
+    $condaBat = Join-Path $defaultInstallDir "condabin\conda.bat"
+    $condaExe2 = Join-Path $defaultInstallDir "Scripts\conda.exe"
+    if (Test-Path $condaBat) {
+        Log "Found conda.bat at $condaBat; using it directly."
+        $condaExe = $condaBat
+    } elseif (Test-Path $condaExe2) {
+        Log "Found conda.exe at $condaExe2; using it directly."
+        $condaExe = $condaExe2
+    } else {
+        Log "Existing Miniconda directory found but no conda executable; attempting to auto-install Miniconda..."
+        $condaExe = Install-Miniconda -InstallDir $defaultInstallDir
+    }
     # Add installer Scripts path to current PATH so 'conda' command works in this session
     $scriptsPath = Join-Path $defaultInstallDir 'Scripts'
-    $env:Path = "$scriptsPath;$env:Path"
-    Log "Added $scriptsPath to PATH"
+    if ($scriptsPath -notin $env:Path.Split(';')) {
+        $env:Path = "$scriptsPath;$env:Path"
+        Log "Added $scriptsPath to PATH"
+    }
 }
 
 # Use the concrete conda path if available, otherwise fall back to 'conda' on PATH
