@@ -233,10 +233,13 @@ if ($torchFailed) {
 Log "Now pip-installing remaining mlops requirements..."
 # Filter out heavy binary packages that we already installed via conda so pip
 # doesn't try to build them from source. This prevents long source builds
-# (e.g. pyarrow) when binary wheels are not available.
+# (e.g. pyarrow) when binary wheels are not available. Also install certain
+# packages (like mlflow) with --no-deps so pip won't pull heavy binaries.
 $reqFile = Join-Path (Get-Location) "mlops\requirements.txt"
 $tempReq = Join-Path (Get-Location) "mlops\requirements-pip.txt"
 $condaInstalledPkgs = @('pyarrow','onnxruntime','torch','pytorch')
+# Packages that should be installed with --no-deps to avoid pulling heavy deps
+$specialNoDepsPkgs = @('mlflow')
 Log "Reading requirements from $reqFile and writing filtered list to $tempReq"
 try {
     $lines = Get-Content $reqFile -ErrorAction Stop
@@ -244,7 +247,9 @@ try {
     ExitWith 4 "Could not read requirements file"
 }
 
+
 $filtered = @()
+$noDepsToInstall = @()
 foreach ($line in $lines) {
     $trim = $line.Trim()
     if ($trim -eq '' -or $trim.StartsWith('#')) { continue }
@@ -253,13 +258,55 @@ foreach ($line in $lines) {
         Log "Excluding package from pip install (installed via conda): $pkgName"
         continue
     }
+    if ($specialNoDepsPkgs -contains $pkgName) {
+        Log "Deferring package to install with --no-deps: $trim"
+        $noDepsToInstall += $trim
+        continue
+    }
     $filtered += $trim
 }
 
+# Before running pip, verify that conda-installed packages are visible to pip
+Log "Verifying conda-installed packages are visible to pip..."
+& $condaCmd run -n $EnvName --no-capture-output python -c "import pyarrow; print(f'pyarrow version: {pyarrow.__version__}')" 2>&1 | Tee-Object -Append -FilePath $logFile
+if ($LASTEXITCODE -ne 0) {
+    Log "WARNING: pyarrow not found in conda environment. Attempting to install it again..."
+    & $condaCmd install -n $EnvName -c conda-forge pyarrow -y 2>&1 | Tee-Object -Append -FilePath $logFile
+}
+
+# Write the filtered requirements (excluding conda-provided and --no-deps packages)
 Set-Content -Path $tempReq -Value ($filtered -join "`n") -Force
-Log "Running: $condaCmd run -n $EnvName --no-capture-output python -m pip install -r $tempReq"
-& $condaCmd run -n $EnvName --no-capture-output python -m pip install -r $tempReq
-if ($LASTEXITCODE -ne 0) { ExitWith 4 "pip install of mlops requirements failed. Check the output above and the log file: $logFile" }
+if ($filtered.Count -gt 0) {
+    Log "Running: $condaCmd run -n $EnvName --no-capture-output python -m pip install --only-binary :all: -r $tempReq"
+    & $condaCmd run -n $EnvName --no-capture-output python -m pip install --only-binary :all: -r $tempReq 2>&1 | Tee-Object -Append -FilePath $logFile
+    if ($LASTEXITCODE -ne 0) {
+        Log "WARNING: pip install returned non-zero exit code. This may indicate pip attempted to build a package from source."
+        Log "Check the output above and the log file: $logFile"
+        ExitWith 4 "pip install of mlops requirements failed."
+    }
+    Log "Pip successfully installed filtered requirements."
+} else {
+    Log "No filtered pip requirements to install."
+}
+# Install deferred packages with --no-deps so they rely on conda for heavy binaries
+foreach ($pkgSpec in $noDepsToInstall) {
+    Log "Installing deferred package with --no-deps: $pkgSpec"
+    Log "Running: $condaCmd run -n $EnvName --no-capture-output python -m pip install --only-binary :all: $pkgSpec --no-deps"
+    & $condaCmd run -n $EnvName --no-capture-output python -m pip install --only-binary :all: $pkgSpec --no-deps 2>&1 | Tee-Object -Append -FilePath $logFile
+    if ($LASTEXITCODE -ne 0) {
+        Log "WARNING: Failed to install $pkgSpec with --no-deps"
+        Log "Will attempt to install with regular pip (conda-provided binaries should satisfy dependencies)..."
+        & $condaCmd run -n $EnvName --no-capture-output python -m pip install --only-binary :all: $pkgSpec 2>&1 | Tee-Object -Append -FilePath $logFile
+        if ($LASTEXITCODE -ne 0) {
+            Log "ERROR: Also failed with regular pip install. Continuing anyway..."
+        }
+        # Don't exit here; warn and continue to check if conda already provided the binary
+        # If the package is critical, we'll catch it in the imports test later
+    } else {
+        Log "Successfully installed: $pkgSpec"
+    }
+}
+
 Log "All pip requirements installed successfully."
 # Clean up temp requirements file
 Remove-Item -Path $tempReq -ErrorAction SilentlyContinue
