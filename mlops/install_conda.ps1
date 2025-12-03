@@ -231,10 +231,38 @@ if ($torchFailed) {
 }
 
 Log "Now pip-installing remaining mlops requirements..."
-Log "Running: $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt"
-& $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt
+# Filter out heavy binary packages that we already installed via conda so pip
+# doesn't try to build them from source. This prevents long source builds
+# (e.g. pyarrow) when binary wheels are not available.
+$reqFile = Join-Path (Get-Location) "mlops\requirements.txt"
+$tempReq = Join-Path (Get-Location) "mlops\requirements-pip.txt"
+$condaInstalledPkgs = @('pyarrow','onnxruntime','torch','pytorch')
+Log "Reading requirements from $reqFile and writing filtered list to $tempReq"
+try {
+    $lines = Get-Content $reqFile -ErrorAction Stop
+} catch {
+    ExitWith 4 "Could not read requirements file at $reqFile: $_"
+}
+
+$filtered = @()
+foreach ($line in $lines) {
+    $trim = $line.Trim()
+    if ($trim -eq '' -or $trim.StartsWith('#')) { continue }
+    $pkgName = $trim.Split('[',':','=')[0].Split('==')[0].Split('<=')[0].Split('>')[0].Split('!')[0].Trim().ToLower()
+    if ($condaInstalledPkgs -contains $pkgName) {
+        Log "Excluding package from pip install (installed via conda): $pkgName"
+        continue
+    }
+    $filtered += $trim
+}
+
+Set-Content -Path $tempReq -Value ($filtered -join "`n") -Force
+Log "Running: $condaCmd run -n $EnvName --no-capture-output python -m pip install -r $tempReq"
+& $condaCmd run -n $EnvName --no-capture-output python -m pip install -r $tempReq
 if ($LASTEXITCODE -ne 0) { ExitWith 4 "pip install of mlops requirements failed. Check the output above and the log file: $logFile" }
 Log "All pip requirements installed successfully."
+# Clean up temp requirements file
+Remove-Item -Path $tempReq -ErrorAction SilentlyContinue
 
 Log "Installation complete. To activate the environment run:"
 Log "    conda activate $EnvName"
