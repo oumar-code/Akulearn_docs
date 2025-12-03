@@ -20,12 +20,47 @@ param(
     [switch]$Force
 )
 
+# Initialize logging
+$logDir = Join-Path (Get-Location) "mlops"
+$logFile = Join-Path $logDir "install_conda_run.log"
+if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Force -Path $logDir | Out-Null }
+
+function Log($msg) {
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    $logLine = "[$timestamp] $msg"
+    Write-Host $logLine
+    Add-Content -Path $logFile -Value $logLine -ErrorAction SilentlyContinue
+}
+
 function ExitWith($code, $msg) {
-    Write-Host $msg
+    Log "ERROR: $msg"
+    Log "Script exited with code $code"
     exit $code
 }
 
 Write-Host "== Akulearn: conda installer helper =="
+
+# Helper to get the Python launcher, preferring `py` if available
+function Get-PythonLauncher {
+    Log "DEBUG: Checking for Python launcher..."
+    if (Get-Command py -ErrorAction SilentlyContinue) {
+        $pyVersion = & py --version 2>&1
+        Log "DEBUG: Found 'py' launcher: $pyVersion"
+        return "py"
+    } elseif (Get-Command python -ErrorAction SilentlyContinue) {
+        $pyVersion = & python --version 2>&1
+        Log "DEBUG: 'py' not found; falling back to 'python' launcher: $pyVersion"
+        return "python"
+    } else {
+        Log "WARNING: Neither 'py' nor 'python' found on PATH. Pre-checks will be limited."
+        return $null
+    }
+}
+
+$pythonLauncher = Get-PythonLauncher
+Log "Using Python launcher: $pythonLauncher"
+Log "Process ID: $pid"
+Log "Working directory: $(Get-Location)"
 
 # Check for conda and, if missing, download & install Miniconda silently into the user's profile
 $MinicondaUrl = "https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe"
@@ -37,87 +72,123 @@ function Install-Miniconda {
         [string]$InstallDir = $defaultInstallDir
     )
 
-    Write-Host "conda not found. Downloading Miniconda installer from $Url ..."
+    Log "Starting Miniconda download and installation..."
+    Log "Download URL: $Url"
+    Log "Install directory: $InstallDir"
     $installer = Join-Path $env:TEMP "Miniconda3-latest-Windows-x86_64.exe"
     try {
+        Log "Downloading Miniconda installer to $installer..."
         Invoke-WebRequest -Uri $Url -OutFile $installer -ErrorAction Stop
+        Log "Download completed successfully."
     } catch {
-        # fallback to BITS transfer if Invoke-WebRequest fails
+        Log "WARNING: Invoke-WebRequest failed, trying BITS transfer..."
         try {
             Start-BitsTransfer -Source $Url -Destination $installer -ErrorAction Stop
+            Log "BITS transfer completed successfully."
         } catch {
             ExitWith 1 "Failed to download Miniconda installer: $_"
         }
     }
 
-    Write-Host "Running Miniconda silent installer to '$InstallDir'... This may take a minute."
+    Log "Running Miniconda silent installer to '$InstallDir'... This may take a minute."
     # Silent installer arguments: /InstallationType=JustMe /RegisterPython=0 /AddToPath=0 /S /D=<dir>
     $args = "/InstallationType=JustMe","/RegisterPython=0","/AddToPath=0","/S","/D=$InstallDir"
     $proc = Start-Process -FilePath $installer -ArgumentList $args -Wait -PassThru -WindowStyle Hidden
+    Log "Miniconda installer process exited with code: $($proc.ExitCode)"
     if ($proc.ExitCode -ne 0) {
         ExitWith 1 "Miniconda installer failed with exit code $($proc.ExitCode)."
     }
 
     # prefer condabin\conda.bat for scripting, fall back to Scripts\conda.exe
+    Log "Locating conda executable in $InstallDir..."
     $condaBat = Join-Path $InstallDir "condabin\conda.bat"
     $condaExe = Join-Path $InstallDir "Scripts\conda.exe"
     if (Test-Path $condaBat) {
+        Log "Found conda.bat at $condaBat"
         $useConda = $condaBat
     } elseif (Test-Path $condaExe) {
+        Log "Found conda.exe at $condaExe"
         $useConda = $condaExe
     } else {
         ExitWith 1 "Miniconda installed but conda executable not found under $InstallDir."
     }
 
     # Initialize PowerShell integration (best-effort)
+    Log "Initializing conda for PowerShell..."
     try {
         & $useConda init powershell | Out-Null
+        Log "conda init powershell completed."
     } catch {
-        Write-Host "Warning: conda init returned a warning; continue."
+        Log "WARNING: conda init returned a warning; continue."
     }
 
-    Write-Host "Miniconda installed at $InstallDir"
+    Log "Miniconda installed successfully at $InstallDir"
     return $useConda
 }
 
 Write-Host "Checking for conda on PATH..."
 if (Get-Command conda -ErrorAction SilentlyContinue) {
     $condaVersion = & conda --version 2>$null
-    Write-Host "Found conda: $condaVersion"
+    Log "Found conda on PATH: $condaVersion"
     $condaExe = (Get-Command conda).Source
+    Log "conda executable: $condaExe"
 } else {
+    Log "conda not found on PATH. Auto-installing Miniconda into user profile..."
     # Auto-install Miniconda into user profile
     $condaExe = Install-Miniconda -InstallDir $defaultInstallDir
     # Add installer Scripts path to current PATH so 'conda' command works in this session
     $scriptsPath = Join-Path $defaultInstallDir 'Scripts'
     $env:Path = "$scriptsPath;$env:Path"
+    Log "Added $scriptsPath to PATH"
 }
 
 # Use the concrete conda path if available, otherwise fall back to 'conda' on PATH
-if ($condaExe -and (Test-Path $condaExe)) { $condaCmd = $condaExe } else { $condaCmd = "conda" }
-
-Write-Host "Creating conda environment '$EnvName' with Python $PythonVersion..."
-if ($Force) {
-    & $condaCmd remove -n $EnvName --all -y
+if ($condaExe -and (Test-Path $condaExe)) { 
+    $condaCmd = $condaExe 
+    Log "Using concrete conda path: $condaCmd"
+} else { 
+    $condaCmd = "conda"
+    Log "Using conda from PATH"
 }
 
-& $condaCmd create -n $EnvName python=$PythonVersion -y || ExitWith 2 "Failed to create conda env."
+Write-Host "Creating conda environment '$EnvName' with Python $PythonVersion..."
+Log "Creating conda environment '$EnvName' with Python $PythonVersion (Force: $Force)..."
+if ($Force) {
+    Log "Force flag set; removing any existing environment..."
+    & $condaCmd remove -n $EnvName --all -y
+    Log "Environment removal completed."
+}
 
-Write-Host "Activating environment and installing binary packages (pyarrow, onnxruntime, pytorch)..."
+Log "Running: $condaCmd create -n $EnvName python=$PythonVersion -y"
+& $condaCmd create -n $EnvName python=$PythonVersion -y || ExitWith 2 "Failed to create conda env."
+Log "Environment created successfully."
+
+Log "Activating environment and installing binary packages..."
 # Use conda run to avoid relying on shell activation behavior
+Log "Running: $condaCmd run -n $EnvName --no-capture-output python -m pip install --upgrade pip setuptools wheel"
 & $condaCmd run -n $EnvName --no-capture-output python -m pip install --upgrade pip setuptools wheel
+Log "pip, setuptools, and wheel upgraded."
 
 # Install pyarrow and onnxruntime from conda-forge
+Log "Installing pyarrow and onnxruntime from conda-forge..."
+Log "Running: $condaCmd install -n $EnvName -c conda-forge pyarrow onnxruntime -y"
 & $condaCmd install -n $EnvName -c conda-forge pyarrow onnxruntime -y || ExitWith 3 "Failed to install pyarrow/onnxruntime via conda."
+Log "pyarrow and onnxruntime installed."
 
 # Install CPU-only PyTorch via pytorch channel (works on many Windows setups)
-& $condaCmd install -n $EnvName -c pytorch pytorch cpuonly -y || Write-Host "Warning: installing pytorch via conda failed; you'll need to install pytorch manually for your platform."
+Log "Installing PyTorch (CPU) from pytorch channel..."
+Log "Running: $condaCmd install -n $EnvName -c pytorch pytorch cpuonly -y"
+& $condaCmd install -n $EnvName -c pytorch pytorch cpuonly -y || Log "WARNING: installing pytorch via conda failed; you'll need to install pytorch manually for your platform."
+Log "PyTorch installation attempt completed (check above for warnings if any)."
 
-Write-Host "Now pip-installing remaining mlops requirements (using --no-deps because heavy binaries are installed via conda)..."
-& $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt --no-deps || ExitWith 4 "pip install of mlops requirements failed. Check the output above."
+Log "Now pip-installing remaining mlops requirements..."
+Log "Running: $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt --no-deps"
+& $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt --no-deps || ExitWith 4 "pip install of mlops requirements failed. Check the output above and the log file: $logFile"
+Log "All pip requirements installed successfully."
 
-Write-Host "Installation complete. To activate the environment run:"
-Write-Host "    conda activate $EnvName"
-Write-Host "Then you can run the example server inside the env:" 
-Write-Host "    python -m mlops.examples.fastapi_server"
+Log "Installation complete. To activate the environment run:"
+Log "    conda activate $EnvName"
+Log "Then you can run the example server inside the env:"
+Log "    python -m mlops.examples.fastapi_server"
+Log "Full log saved to: $logFile"
 exit 0
