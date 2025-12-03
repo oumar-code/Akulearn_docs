@@ -241,7 +241,7 @@ Log "Reading requirements from $reqFile and writing filtered list to $tempReq"
 try {
     $lines = Get-Content $reqFile -ErrorAction Stop
 } catch {
-    ExitWith 4 "Could not read requirements file at $reqFile: $_"
+    ExitWith 4 "Could not read requirements file"
 }
 
 $filtered = @()
