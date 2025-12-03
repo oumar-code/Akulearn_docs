@@ -253,7 +253,7 @@ $noDepsToInstall = @()
 foreach ($line in $lines) {
     $trim = $line.Trim()
     if ($trim -eq '' -or $trim.StartsWith('#')) { continue }
-    $pkgName = $trim.Split('[',':','=')[0].Split('==')[0].Split('<=')[0].Split('>')[0].Split('!')[0].Trim().ToLower()
+    $pkgName = $trim.Split(@('[', ':', '='))[0].Split('==')[0].Split('<=')[0].Split('>')[0].Split('!')[0].Trim().ToLower()
     if ($condaInstalledPkgs -contains $pkgName) {
         Log "Excluding package from pip install (installed via conda): $pkgName"
         continue

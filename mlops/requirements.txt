@@ -3,7 +3,7 @@ uvicorn==0.22.0
 transformers==4.37.0
 torch==2.2.0
 prefect==2.12.0
-mlflow==2.6.0
+mlflow>=2.16.0
 onnxruntime==1.17.0
 numpy<2
 huggingface-hub
