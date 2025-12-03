@@ -160,7 +160,8 @@ if ($Force) {
 }
 
 Log "Running: $condaCmd create -n $EnvName python=$PythonVersion -y"
-& $condaCmd create -n $EnvName python=$PythonVersion -y || ExitWith 2 "Failed to create conda env."
+& $condaCmd create -n $EnvName python=$PythonVersion -y
+if ($LASTEXITCODE -ne 0) { ExitWith 2 "Failed to create conda env." }
 Log "Environment created successfully."
 
 Log "Activating environment and installing binary packages..."
@@ -172,18 +173,21 @@ Log "pip, setuptools, and wheel upgraded."
 # Install pyarrow and onnxruntime from conda-forge
 Log "Installing pyarrow and onnxruntime from conda-forge..."
 Log "Running: $condaCmd install -n $EnvName -c conda-forge pyarrow onnxruntime -y"
-& $condaCmd install -n $EnvName -c conda-forge pyarrow onnxruntime -y || ExitWith 3 "Failed to install pyarrow/onnxruntime via conda."
+& $condaCmd install -n $EnvName -c conda-forge pyarrow onnxruntime -y
+if ($LASTEXITCODE -ne 0) { ExitWith 3 "Failed to install pyarrow/onnxruntime via conda." }
 Log "pyarrow and onnxruntime installed."
 
 # Install CPU-only PyTorch via pytorch channel (works on many Windows setups)
 Log "Installing PyTorch (CPU) from pytorch channel..."
 Log "Running: $condaCmd install -n $EnvName -c pytorch pytorch cpuonly -y"
-& $condaCmd install -n $EnvName -c pytorch pytorch cpuonly -y || Log "WARNING: installing pytorch via conda failed; you'll need to install pytorch manually for your platform."
+& $condaCmd install -n $EnvName -c pytorch pytorch cpuonly -y
+if ($LASTEXITCODE -ne 0) { Log "WARNING: installing pytorch via conda failed; you'll need to install pytorch manually for your platform." }
 Log "PyTorch installation attempt completed (check above for warnings if any)."
 
 Log "Now pip-installing remaining mlops requirements..."
 Log "Running: $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt --no-deps"
-& $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt --no-deps || ExitWith 4 "pip install of mlops requirements failed. Check the output above and the log file: $logFile"
+& $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt --no-deps
+if ($LASTEXITCODE -ne 0) { ExitWith 4 "pip install of mlops requirements failed. Check the output above and the log file: $logFile" }
 Log "All pip requirements installed successfully."
 
 Log "Installation complete. To activate the environment run:"
