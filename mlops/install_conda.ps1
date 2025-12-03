@@ -231,8 +231,8 @@ if ($torchFailed) {
 }
 
 Log "Now pip-installing remaining mlops requirements..."
-Log "Running: $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt --no-deps"
-& $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt --no-deps
+Log "Running: $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt"
+& $condaCmd run -n $EnvName --no-capture-output python -m pip install -r mlops\requirements.txt
 if ($LASTEXITCODE -ne 0) { ExitWith 4 "pip install of mlops requirements failed. Check the output above and the log file: $logFile" }
 Log "All pip requirements installed successfully."
 
