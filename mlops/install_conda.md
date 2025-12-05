@@ -42,3 +42,17 @@ python -m mlops.examples.fastapi_server
 ```
 
 If you want me to also create a small `install_conda.ps1` that downloads Miniconda automatically, say so and I'll add that — currently the script assumes `conda` is already present.
+
+[core]
+    repositoryformatversion = 0
+    filemode = false
+    bare = false
+    logallrefupdates = true
+
+[remote "origin"]
+    url = https://github.com/oumar-code/Akulearn_docs.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+
+[branch "docs-copilot-refactor"]
+    remote = origin
+    merge = refs/heads/docs-copilot-refactor
