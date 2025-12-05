@@ -52,16 +52,30 @@ logger = logging.getLogger(__name__)
 
 
 def load_data(args):
-    """Load dataset from HF Hub or local file."""
+    """Load dataset from HF Hub or local file with network fallback."""
     logger.info(f"Loading dataset: {args.dataset or args.data_file}")
     
     if args.dataset:
-        # Load from Hugging Face Hub
-        dataset = load_dataset(args.dataset)
-        if "test" not in dataset:
-            # Split if no test set
-            dataset = dataset["train"].train_test_split(test_size=0.1, seed=42)
-        return dataset
+        # Load from Hugging Face Hub with network fallback
+        try:
+            dataset = load_dataset(args.dataset)
+            if "test" not in dataset:
+                # Split if no test set
+                dataset = dataset["train"].train_test_split(test_size=0.1, seed=42)
+            return dataset
+        except Exception as e:
+            logger.warning(f"Failed to load from Hub ({e}), checking for local cache...")
+            # Try to use offline mode for CI/testing environments
+            try:
+                import os
+                os.environ["HF_DATASETS_OFFLINE"] = "1"
+                dataset = load_dataset(args.dataset)
+                if "test" not in dataset:
+                    dataset = dataset["train"].train_test_split(test_size=0.1, seed=42)
+                return dataset
+            except Exception as e2:
+                logger.error(f"Failed to load dataset (offline): {e2}")
+                raise
     elif args.data_file:
         # Load from local CSV/JSON
         ext = Path(args.data_file).suffix
@@ -204,10 +218,23 @@ def main():
         
         # Model
         logger.info(f"Loading model: {args.model_name}")
-        model = AutoModelForSequenceClassification.from_pretrained(
-            args.model_name,
-            num_labels=args.num_labels,
-        )
+        try:
+            model = AutoModelForSequenceClassification.from_pretrained(
+                args.model_name,
+                num_labels=args.num_labels,
+            )
+        except Exception as e:
+            logger.warning(f"Failed to load model from Hub ({e}), trying offline mode...")
+            try:
+                import os
+                os.environ["HF_HUB_OFFLINE"] = "1"
+                model = AutoModelForSequenceClassification.from_pretrained(
+                    args.model_name,
+                    num_labels=args.num_labels,
+                )
+            except Exception as e2:
+                logger.error(f"Failed to load model (offline): {e2}")
+                raise
         
         # Training arguments
         training_args = TrainingArguments(
@@ -233,19 +260,21 @@ def main():
         )
         
         # Trainer with early stopping
+        callbacks_list = []
+        if eval_dataset:
+            callbacks_list.append(EarlyStoppingCallback(
+                early_stopping_patience=args.patience,
+                early_stopping_threshold=0.0,
+            ))
+        
         trainer = Trainer(
             model=model,
             args=training_args,
             train_dataset=train_dataset,
             eval_dataset=eval_dataset,
-            processing_class=tokenizer,
+            tokenizer=tokenizer,
             compute_metrics=compute_metrics if eval_dataset else None,
-            callbacks=[
-                EarlyStoppingCallback(
-                    early_stopping_patience=args.patience,
-                    early_stopping_threshold=0.0,
-                ) if eval_dataset else None
-            ],
+            callbacks=callbacks_list,
             data_collator=DataCollatorWithPadding(tokenizer),
         )
         
