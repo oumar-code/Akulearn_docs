@@ -1,19 +1,19 @@
 Part Name,Manufacturer,MPN,Supplier,Supplier SKU,Alternate,Unit Price (USD),Quantity,Lead Time (weeks),Notes
 Jetson Orin Nano Dev Kit,NVIDIA,JNX-ONX-DEV,NVIDIA Store,JNX-ONX-DEV,Distributor SKU,$499,1,4,Use for initial software/hardware integration
-Jetson Orin Nano Module,NVIDIA,JNX-ONX-16GB,Distributor,SKU-JNX-ONX-16GB,, $399,1,6,Module for carrier board
+Jetson Orin Nano Module,NVIDIA,JNX-ONX-16GB,Distributor,SKU-JNX-ONX-16GB,,$399,1,6,Module for carrier board
 LoRa Module (SX1262),Semtech,SX1262-MOD,Murata/DigiKey,SX1262MOD-1,Semtech eval kit,$12,2,2,Pre-certified LoRa module
-Wi-Fi 6 M.2 (AX200),Intel,AX200-M.2,Digi-Key,AX200-INTEL,, $15,1,1,External antennas recommended
-Cellular Modem (4G LTE),Quectel,EG25-G,Quectel/Arrow,EG25-G-SKU,, $45,1,4,Ensure regional band support; consider eSIM variants
-LiFePO4 Battery 12.8V 20Ah,EVE or Winston,LF-12V-20Ah,BatteryVendor,BATT-12V20Ah,, $180,1,6,Include BMS with SMBus telemetry
-MPPT Charge Controller,TI ref / Victron,MPPT-REF,Victron/Distributor,MPPT-75-15,, $120,1,3,Commercial or custom MPPT recommended (LiFePO4 profile)
-DC-DC Buck 5V,TI,LM2596-5.0,Digi-Key,LM2596-5.0,, $2.5,1,1,High-efficiency synchronous buck preferred
-DC-DC Buck 3.3V,TI,TPS62840,Digi-Key,TPS62840,, $1.8,1,1,Low-noise regulator for sensors
-Current Sense Amplifier,TI,INA219,Digi-Key,INA219,, $3.5,1,1,Optional for power telemetry
-Environmental Sensor (Temp/Humidity),Sensirion,SHT4x,Digi-Key,SHT4X-SKU,, $6,2,2,I2C
-Environmental Sensor (Pressure/Env),Bosch,BME688,Digi-Key,BME688-SKU,, $10,2,2,I2C
-GNSS Module,u-blox,NEO-M8, u-blox/Digi-Key,NEO-M8-SKU,, $25,1,2,UART
-Camera Module (MIPI CSI),Sony/Generic,IMX-XYZ,CamSupplier,IMX-XXX,, $45,1,3,Select MIPI-compatible module
-Antenna,Generic,ANT-OMNI,Digi-Key,ANT-OMNI-EXT,, $8,3,1,External SMA antenna for LoRa/Wi-Fi/Cellular
-Waterproof Connectors,M12/Amphenol,M12-2/3P,Digi-Key,M12-2PIN-SKU,, $6,3,2,Power and Ethernet connectors
-Enclosure,Custom/OffTheShelf,IP67-BOX,EnclosureSupplier,IP67-BOX-SKU,, $40,1,3,Allow custom lid for connectors
-Misc (screws, standoffs, test points),Various,VAR-ASSORT,LocalSupplier,VAR-ASSORT,, $25,1,1,Assembly kit
+Wi-Fi 6 M.2 (AX200),Intel,AX200-M.2,Digi-Key,AX200-INTEL,,$15,1,1,External antennas recommended
+Cellular Modem (4G LTE),Quectel,EG25-G,Quectel/Arrow,EG25-G-SKU,,$45,1,4,Ensure regional band support; consider eSIM variants
+LiFePO4 Battery 12.8V 20Ah,EVE or Winston,LF-12V-20Ah,BatteryVendor,BATT-12V20Ah,,$180,1,6,Include BMS with SMBus telemetry
+MPPT Charge Controller,TI ref / Victron,MPPT-REF,Victron/Distributor,MPPT-75-15,,$120,1,3,Commercial or custom MPPT recommended (LiFePO4 profile)
+DC-DC Buck 5V,TI,LM2596-5.0,Digi-Key,LM2596-5.0,,$2.5,1,1,High-efficiency synchronous buck preferred
+DC-DC Buck 3.3V,TI,TPS62840,Digi-Key,TPS62840,,$1.8,1,1,Low-noise regulator for sensors
+Current Sense Amplifier,TI,INA219,Digi-Key,INA219,,$3.5,1,1,Optional for power telemetry
+Environmental Sensor (Temp/Humidity),Sensirion,SHT4x,Digi-Key,SHT4X-SKU,,$6,2,2,I2C
+Environmental Sensor (Pressure/Env),Bosch,BME688,Digi-Key,BME688-SKU,,$10,2,2,I2C
+GNSS Module,u-blox,NEO-M8,u-blox/Digi-Key,NEO-M8-SKU,,$25,1,2,UART
+Camera Module (MIPI CSI),Sony/Generic,IMX-XYZ,CamSupplier,IMX-XXX,,$45,1,3,Select MIPI-compatible module
+Antenna,Generic,ANT-OMNI,Digi-Key,ANT-OMNI-EXT,,$8,3,1,External SMA antenna for LoRa/Wi-Fi/Cellular
+Waterproof Connectors,M12/Amphenol,M12-2/3P,Digi-Key,M12-2PIN-SKU,,$6,3,2,Power and Ethernet connectors
+Enclosure,Custom/OffTheShelf,IP67-BOX,EnclosureSupplier,IP67-BOX-SKU,,$40,1,3,Allow custom lid for connectors
+"Misc (screws, standoffs, test points)",Various,VAR-ASSORT,LocalSupplier,VAR-ASSORT,,$25,1,1,Assembly kit
