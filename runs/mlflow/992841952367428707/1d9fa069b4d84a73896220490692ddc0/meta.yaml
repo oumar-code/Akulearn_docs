@@ -1,0 +1,14 @@
+artifact_uri: file:C:/Users/hp/Documents/Akulearn_docs/runs/mlflow/992841952367428707/1d9fa069b4d84a73896220490692ddc0/artifacts
+end_time: 1764873512503
+entry_point_name: ''
+experiment_id: '992841952367428707'
+lifecycle_stage: active
+run_id: 1d9fa069b4d84a73896220490692ddc0
+run_name: smoke-test-mlflow
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764872367247
+status: 4
+tags: []
+user_id: hp

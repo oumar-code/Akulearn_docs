@@ -1,0 +1,35 @@
+{
+  "generated_at": "",
+  "items": [
+    {
+      "path": "content\\textbooks\\math_grade6.pdf",
+      "type": "pdf",
+      "size": 63,
+      "first_page": ""
+    },
+    {
+      "path": "content\\textbooks\\math_v1.0\\chapter1.pdf",
+      "type": "pdf",
+      "size": 36,
+      "first_page": ""
+    },
+    {
+      "path": "content\\textbooks\\math_v1.0\\chapter2.pdf",
+      "type": "pdf",
+      "size": 36,
+      "first_page": ""
+    },
+    {
+      "path": "content\\textbooks\\math_v1.0\\metadata.json",
+      "type": "json",
+      "size": 164,
+      "first_page": ""
+    },
+    {
+      "path": "content\\modules\\science_module1.zip",
+      "type": "zip",
+      "size": 44,
+      "members": []
+    }
+  ]
+}
