@@ -1,0 +1,5 @@
+asset_path,issue,notes,reviewer,created_at,status
+content\textbooks\math_grade6.pdf,failed_pdf_parse,"EOF marker not found when parsing PDF",, 
+content\textbooks\math_v1.0\chapter1.pdf,failed_pdf_parse,"EOF marker not found when parsing PDF",, 
+content\textbooks\math_v1.0\chapter2.pdf,failed_pdf_parse,"EOF marker not found when parsing PDF",, 
+content\modules\science_module1.zip,failed_zip_parse,"File reported as not a zip file; may be corrupted or different container",, 

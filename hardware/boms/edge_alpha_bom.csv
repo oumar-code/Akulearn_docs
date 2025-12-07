@@ -16,4 +16,4 @@ Camera Module (MIPI CSI),Sony/Generic,IMX-XYZ,CamSupplier,IMX-XXX,, $45,1,3,Sele
 Antenna,Generic,ANT-OMNI,Digi-Key,ANT-OMNI-EXT,, $8,3,1,External SMA antenna for LoRa/Wi-Fi/Cellular
 Waterproof Connectors,M12/Amphenol,M12-2/3P,Digi-Key,M12-2PIN-SKU,, $6,3,2,Power and Ethernet connectors
 Enclosure,Custom/OffTheShelf,IP67-BOX,EnclosureSupplier,IP67-BOX-SKU,, $40,1,3,Allow custom lid for connectors
-Misc (screws, standoffs, test points),Various,VAR-ASSORT,LocalSupplier,VAR-ASSORT,, $25,1,1,Assembly kit
+Misc (screws, standoffs, test points),Various,VAR-ASSORT,LocalSupplier,VAR-ASSORT,, $25,"1,1,Assembly kit"

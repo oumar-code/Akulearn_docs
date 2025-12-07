@@ -1,0 +1,14 @@
+artifact_uri: file:C:/Users/hp/Documents/Akulearn_docs/runs/mlflow/992841952367428707/f23f3c80ad774652906a373f9f47b866/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '992841952367428707'
+lifecycle_stage: active
+run_id: f23f3c80ad774652906a373f9f47b866
+run_name: mlflow-integration-test
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764874374100
+status: 1
+tags: []
+user_id: hp

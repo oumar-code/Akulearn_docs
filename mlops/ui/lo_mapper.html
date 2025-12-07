@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>LO Mapper Review UI</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px }
+    .item { border: 1px solid #ddd; padding: 10px; margin: 8px 0 }
+    textarea { width: 100%; height: 60px }
+  </style>
+</head>
+<body>
+  <h1>LO Mapper - Manual Review</h1>
+  <div>
+    <button id="refresh">Refresh</button>
+    <a id="template-link" href="/mapping_template" target="_blank">Download Mapping Template</a>
+  </div>
+  <h2>Manual Review Items</h2>
+  <div id="items"></div>
+
+  <h2>Add Review</h2>
+  <form id="add-form">
+    <label>Asset Path: <input id="asset_path" style="width:60%"></label><br>
+    <label>Issue: <input id="issue" style="width:60%"></label><br>
+    <label>Notes:<br><textarea id="notes"></textarea></label><br>
+    <label>Reviewer: <input id="reviewer"></label>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2>Apply Suggested LO Mapping</h2>
+  <form id="apply-form">
+    <label>Asset Path: <input id="map_asset_path" style="width:60%"></label><br>
+    <label>LO ID: <input id="map_lo_id" style="width:60%"></label><br>
+    <label>Score: <input id="map_score" style="width:20%"></label>
+    <label>Reviewer: <input id="map_reviewer" style="width:30%"></label>
+    <button type="submit">Apply Mapping</button>
+  </form>
+
+  <h2>Auto-Tag Suggestions</h2>
+  <div id="suggestions-container">Loading suggestions...</div>
+
+  <script>
+    async function loadItems(){
+      const res = await fetch('/manual_review');
+      const data = await res.json();
+      const container = document.getElementById('items');
+      container.innerHTML = '';
+      (data.items || []).forEach(it => {
+        const div = document.createElement('div'); div.className = 'item';
+        div.innerHTML = `<b>${it.asset_path}</b><br>Issue: ${it.issue}<br>Notes: ${it.notes || ''}<br>Reviewer: ${it.reviewer || ''}<br>Status: ${it.status || ''}`;
+        container.appendChild(div);
+      });
+    }
+
+    document.getElementById('refresh').addEventListener('click', (e)=>{ loadItems(); });
+
+    document.getElementById('add-form').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const payload = {
+        asset_path: document.getElementById('asset_path').value,
+        issue: document.getElementById('issue').value,
+        notes: document.getElementById('notes').value,
+        reviewer: document.getElementById('reviewer').value,
+        status: 'open'
+      };
+      const res = await fetch('/manual_review', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      const resp = await res.json();
+      alert('Saved');
+      loadItems();
+    });
+
+    document.getElementById('apply-form').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const payload = {
+        asset_path: document.getElementById('map_asset_path').value,
+        lo_id: document.getElementById('map_lo_id').value,
+        score: document.getElementById('map_score').value,
+        reviewer: document.getElementById('map_reviewer').value
+      };
+      const res = await fetch('/apply_mapping', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      const resp = await res.json();
+      if(res.ok){
+        alert('Mapping applied');
+      } else {
+        alert('Failed: ' + JSON.stringify(resp));
+      }
+    });
+
+    // Fetch and display suggestions file if available
+    async function loadSuggestions(){
+      const container = document.getElementById('suggestions-container');
+      container.innerHTML = 'Loading suggestions...';
+      try{
+        const res = await fetch('/content/auto_tag_suggestions.json');
+        if(!res.ok){ container.innerHTML = 'No suggestions file found.'; return; }
+        const data = await res.json();
+        const list = document.createElement('div');
+        (data.suggestions || []).forEach(s => {
+          const card = document.createElement('div');
+          card.className = 'item';
+          const title = document.createElement('div');
+          title.innerHTML = `<b>${s.asset_id}</b> <small>${s.generated_at}</small>`;
+          card.appendChild(title);
+          const ul = document.createElement('div');
+          (s.candidates || []).forEach(c => {
+            const btn = document.createElement('button');
+            btn.textContent = `${c.lo_id} (score ${Number(c.score).toFixed(3)})`;
+            btn.style.margin = '4px';
+            btn.addEventListener('click', async ()=>{
+              // apply mapping immediately
+              const payload = { asset_path: s.asset_id, lo_id: c.lo_id, score: c.score, reviewer: '' };
+              const r = await fetch('/apply_mapping', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+              if(r.ok){ alert('Mapping applied: ' + c.lo_id); } else { alert('Failed to apply mapping'); }
+            });
+            ul.appendChild(btn);
+          });
+          card.appendChild(ul);
+          list.appendChild(card);
+        });
+        container.innerHTML = '';
+        container.appendChild(list);
+      }catch(err){
+        container.innerHTML = 'Error loading suggestions: ' + err;
+      }
+    }
+
+    // load suggestions on open
+    loadSuggestions();
+
+    // load on open
+    loadItems();
+  </script>
+</body>
+</html>
