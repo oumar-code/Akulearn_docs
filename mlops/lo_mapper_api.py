@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "content" / "catalog.json"
 MANUAL_REVIEW_CSV = ROOT / "content" / "manual_review.csv"
 MAPPING_TEMPLATE_CSV = ROOT / "content" / "lo_mapping_template.csv"
+AUTO_TAG_SUGGESTIONS_PATH = ROOT / "content" / "auto_tag_suggestions.json"
 UI_HTML = ROOT / "mlops" / "ui" / "lo_mapper.html"
 
 app = FastAPI(title="LO Mapper / Content Review API")
@@ -74,6 +75,19 @@ def get_mapping_template():
             writer = csv.writer(f)
             writer.writerow(['asset_path', 'lo_id', 'score', 'reviewer', 'created_at'])
     return FileResponse(MAPPING_TEMPLATE_CSV)
+
+
+@app.get("/suggestions")
+def get_suggestions():
+    """Serve the auto-generated LO suggestions file dynamically."""
+    if not AUTO_TAG_SUGGESTIONS_PATH.exists():
+        return {"suggestions": [], "message": "No suggestions file generated yet. Run auto-tagging first."}
+    try:
+        with open(AUTO_TAG_SUGGESTIONS_PATH, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error loading suggestions: {str(e)}")
 
 
 @app.post("/apply_mapping")

@@ -91,9 +91,13 @@
       const container = document.getElementById('suggestions-container');
       container.innerHTML = 'Loading suggestions...';
       try{
-        const res = await fetch('/content/auto_tag_suggestions.json');
-        if(!res.ok){ container.innerHTML = 'No suggestions file found.'; return; }
+        const res = await fetch('/suggestions');
+        if(!res.ok){ container.innerHTML = 'No suggestions available. Run auto-tagging to generate suggestions.'; return; }
         const data = await res.json();
+        if (!data.suggestions || data.suggestions.length === 0) {
+          container.innerHTML = 'No suggestions available.';
+          return;
+        }
         const list = document.createElement('div');
         (data.suggestions || []).forEach(s => {
           const card = document.createElement('div');
@@ -110,7 +114,7 @@
               // apply mapping immediately
               const payload = { asset_path: s.asset_id, lo_id: c.lo_id, score: c.score, reviewer: '' };
               const r = await fetch('/apply_mapping', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) });
-              if(r.ok){ alert('Mapping applied: ' + c.lo_id); } else { alert('Failed to apply mapping'); }
+              if(r.ok){ alert('Mapping applied: ' + c.lo_id); loadSuggestions(); } else { alert('Failed to apply mapping'); }
             });
             ul.appendChild(btn);
           });
