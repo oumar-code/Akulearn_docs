@@ -439,3 +439,17 @@ cd mlops && python exam_paper_scraper.py  # Generate data
 **Last Updated**: December 10, 2025
 
 *For detailed information, refer to the appropriate documentation file above.*
+
+frontend fe_http
+  bind *:80
+  default_backend be_app
+
+backend be_app
+  balance source
+  server s1 10.0.0.1:8080 check
+  server s2 10.0.0.2:8080 check
+
+# producer: set priority in message properties
+channel.basic_publish(exchange='', routing_key='jobs', body=payload,
+                      properties=pika.BasicProperties(priority=9))
+# consumer: normal consume; highest priority processed first
