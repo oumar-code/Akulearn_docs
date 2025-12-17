@@ -1,0 +1,142 @@
+{
+  "content": [
+    {
+      "id": "math_algebra_guide_001",
+      "title": "Introduction to Quadratic Equations",
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "\n# Quadratic Equations\n\n## Learning Objectives\nBy the end of this guide, you should be able to:\n- Define quadratic equations\n- Solve quadratic equations using different methods\n- Apply quadratic equations to real-world problems\n\n## What is a Quadratic Equation?\n\nA quadratic equation is a polynomial equation of degree 2, with the general form:\n**ax² + bx + c = 0**\n\nWhere:\n- **a** ≠ 0 (coefficient of x²)\n- **b** = coefficient of x\n- **c** = constant term\n\n### Examples of Quadratic Equations:\n- x² + 5x + 6 = 0\n- 2x² - 7x + 3 = 0\n- x² = 10\n\n## Methods of Solving Quadratic Equations\n\n### 1. Factorization Method\nExpress the quadratic as a product of two binomials.\n\n**Example:** Solve x² + 5x + 6 = 0\n- Find factors of 6 that add to 5: 2 and 3\n- (x + 2)(x + 3) = 0\n- x = -2 or x = -3\n\n### 2. Quadratic Formula\nFor ax² + bx + c = 0, the solutions are:\n**x = [-b ± √(b² - 4ac)] / 2a**\n\n**Example:** Solve x² - 5x + 6 = 0\n- a = 1, b = -5, c = 6\n- x = [5 ± √(25 - 24)] / 2\n- x = [5 ± √1] / 2\n- x = [5 ± 1] / 2\n- x = 3 or x = 2\n\n### 3. Completing the Square\nRewrite the equation in the form (x + h)² = k\n\n**Example:** Solve x² + 6x + 5 = 0\n- x² + 6x = -5\n- x² + 6x + 9 = -5 + 9\n- (x + 3)² = 4\n- x + 3 = ±2\n- x = -3 ± 2\n- x = -1 or x = -5\n\n## Applications of Quadratic Equations\n\n### 1. Projectile Motion\nThe height of a projectile is given by: h = -16t² + v₀t + h₀\n\n### 2. Area Problems\nFinding dimensions when area is given.\n\n### 3. Revenue Optimization\nFinding maximum profit: Revenue = price × quantity\n\n## Common Mistakes to Avoid\n\n1. **Forgetting the ± sign** in quadratic formula\n2. **Incorrect discriminant calculation**\n3. **Not checking solutions** by substitution\n4. **Division by zero** (a ≠ 0)\n\n## Practice Problems\n\n1. Solve: x² - 7x + 12 = 0\n2. Solve: 2x² + 5x - 3 = 0\n3. Find the roots: x² - 4x - 5 = 0\n\n## Exam Tips\n\n- Always show your working clearly\n- Check your answers by substitution\n- Use the most efficient method for each problem\n- Practice different types of quadratic equations\n            ",
+      "estimated_read_time": 15,
+      "prerequisites": [],
+      "related_questions": [
+        "waec_math_2020_001",
+        "waec_math_2021_045"
+      ],
+      "tags": [
+        "algebra",
+        "quadratic",
+        "equations",
+        "factorization",
+        "formula"
+      ],
+      "created_at": "2025-12-16T17:04:22.325098",
+      "updated_at": "2025-12-16T17:04:22.325128",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_mechanics_ref_001",
+      "title": "Newton's Laws Quick Reference",
+      "subject": "Physics",
+      "topic": "Mechanics",
+      "content_type": "reference",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "\n# Newton's Laws of Motion\n\n## First Law (Law of Inertia)\n**An object at rest stays at rest, and an object in motion stays in motion with the same speed and direction unless acted upon by an unbalanced force.**\n\n- Also called: Law of Inertia\n- Inertia = resistance to change in motion\n- Measured by: mass\n\n## Second Law (F = ma)\n**Force equals mass times acceleration.**\n**F = ma**\n\n- Force is measured in Newtons (N)\n- Mass is measured in kilograms (kg)\n- Acceleration is measured in m/s²\n- 1 N = 1 kg·m/s²\n\n## Third Law (Action-Reaction)\n**For every action, there is an equal and opposite reaction.**\n\n- Forces always come in pairs\n- Equal magnitude, opposite direction\n- Same type of force\n\n## Key Formulas\n- **Weight:** W = mg\n- **Friction:** f ≤ μN\n- **Momentum:** p = mv\n- **Impulse:** J = FΔt = Δp\n\n## Important Notes\n- Net force = sum of all forces\n- Balanced forces = no acceleration\n- Unbalanced forces = acceleration\n- Free-body diagrams help visualize forces\n            ",
+      "estimated_read_time": 5,
+      "prerequisites": [],
+      "related_questions": [
+        "waec_physics_2020_012",
+        "waec_physics_2021_023"
+      ],
+      "tags": [
+        "physics",
+        "mechanics",
+        "newton",
+        "laws",
+        "motion"
+      ],
+      "created_at": "2025-12-16T17:04:22.325147",
+      "updated_at": "2025-12-16T17:04:22.325149",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "english_grammar_summary_001",
+      "title": "Parts of Speech Summary",
+      "subject": "English Language",
+      "topic": "Grammar",
+      "content_type": "summary",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "\n# Parts of Speech\n\n## Nouns\n- **Common nouns:** book, city, teacher\n- **Proper nouns:** Lagos, Nigeria, Shakespeare\n- **Abstract nouns:** love, freedom, happiness\n- **Collective nouns:** team, family, crowd\n\n## Pronouns\n- **Personal:** I, you, he, she, it, we, they\n- **Possessive:** my, your, his, her, its, our, their\n- **Reflexive:** myself, yourself, himself, herself\n- **Demonstrative:** this, that, these, those\n\n## Verbs\n- **Action verbs:** run, eat, sleep\n- **Linking verbs:** be, seem, appear\n- **Helping verbs:** is, are, was, were, has, have\n\n## Adjectives\n- **Descriptive:** big, small, beautiful\n- **Quantitative:** some, many, few\n- **Demonstrative:** this, that, these, those\n\n## Adverbs\n- **Manner:** quickly, slowly, carefully\n- **Time:** now, then, yesterday\n- **Place:** here, there, everywhere\n\n## Prepositions\n- **Time:** at, on, in, during, before, after\n- **Place:** in, on, at, under, over, beside\n- **Direction:** to, from, towards, through\n\n## Conjunctions\n- **Coordinating:** and, but, or, so, yet, for\n- **Subordinating:** because, although, if, when, since\n\n## Interjections\n- Express emotion: oh!, wow!, hey!, ouch!\n\n## Exam Focus\n- Identify parts of speech in sentences\n- Use correct grammar in writing\n- Understand word classes for comprehension\n            ",
+      "estimated_read_time": 8,
+      "prerequisites": [],
+      "related_questions": [
+        "waec_english_2020_005",
+        "waec_english_2021_018"
+      ],
+      "tags": [
+        "english",
+        "grammar",
+        "parts",
+        "speech",
+        "vocabulary"
+      ],
+      "created_at": "2025-12-16T17:04:22.325157",
+      "updated_at": "2025-12-16T17:04:22.325158",
+      "author": "English Expert",
+      "version": 1
+    },
+    {
+      "id": "math_trigonometry_guide_001",
+      "title": "Trigonometric Ratios and Identities",
+      "subject": "Mathematics",
+      "topic": "Trigonometry",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Trigonometric Ratios\n\n## Right-Angled Triangle\nFor a right-angled triangle with angle θ:\n\n- **sin θ = opposite/hypotenuse**\n- **cos θ = adjacent/hypotenuse**\n- **tan θ = opposite/adjacent**\n\n## Reciprocal Ratios\n- **cosec θ = 1/sin θ**\n- **sec θ = 1/cos θ**\n- **cot θ = 1/tan θ**\n\n## Pythagorean Identities\n- **sin²θ + cos²θ = 1**\n- **1 + tan²θ = sec²θ**\n- **cot²θ + 1 = cosec²θ**\n\n## Angle Values (30°, 45°, 60°)\n- **sin 30° = 1/2**\n- **cos 30° = √3/2**\n- **tan 30° = 1/√3**\n\n## Applications\n- Height and distance problems\n- Navigation and surveying\n- Physics (waves, oscillations)",
+      "estimated_read_time": 18,
+      "prerequisites": [
+        "basic_geometry"
+      ],
+      "related_questions": [
+        "waec_math_2020_008",
+        "waec_math_2021_014"
+      ],
+      "tags": [
+        "trigonometry",
+        "ratios",
+        "identities",
+        "triangle"
+      ],
+      "created_at": "2025-12-16T17:04:22.784229",
+      "updated_at": "2025-12-16T17:04:22.784263",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_electricity_guide_001",
+      "title": "Electric Circuits and Components",
+      "subject": "Physics",
+      "topic": "Electricity",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Electric Circuits\n\n## Basic Components\n- **Battery/Cell**: Provides voltage (V)\n- **Resistor**: Opposes current flow (Ω)\n- **Switch**: Opens/closes circuit\n- **Ammeter**: Measures current (A)\n- **Voltmeter**: Measures voltage (V)\n\n## Ohm's Law\n**V = I × R**\n\nWhere:\n- V = Voltage (Volts)\n- I = Current (Amperes)\n- R = Resistance (Ohms)\n\n## Series Circuits\n- **Total Resistance**: R_total = R1 + R2 + R3\n- **Current**: Same through all components\n- **Voltage**: Divides across components\n\n## Parallel Circuits\n- **Total Resistance**: 1/R_total = 1/R1 + 1/R2 + 1/R3\n- **Voltage**: Same across all components\n- **Current**: Divides between branches\n\n## Power\n**P = V × I**\n**P = I² × R**\n**P = V²/R**\n\nUnits: Watts (W)",
+      "estimated_read_time": 20,
+      "prerequisites": [
+        "basic_physics"
+      ],
+      "related_questions": [
+        "waec_physics_2020_010",
+        "waec_physics_2021_016"
+      ],
+      "tags": [
+        "electricity",
+        "circuits",
+        "ohms_law",
+        "resistance"
+      ],
+      "created_at": "2025-12-16T17:04:22.799031",
+      "updated_at": "2025-12-16T17:04:22.799051",
+      "author": "Physics Expert",
+      "version": 1
+    }
+  ],
+  "progress": {}
+}

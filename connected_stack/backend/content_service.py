@@ -57,13 +57,81 @@ class ContentService:
     def __init__(self):
         self.content_db: Dict[str, LearningContent] = {}
         self.progress_db: Dict[str, Dict[str, ContentProgress]] = {}  # user_id -> content_id -> progress
+        self.data_file = os.path.join(os.path.dirname(__file__), 'content_data.json')
         self._load_content()
 
     def _load_content(self):
-        """Load content from JSON files or database"""
-        # For MVP, we'll use in-memory storage
-        # In production, this would load from database
-        self._initialize_sample_content()
+        """Load content from JSON file"""
+        try:
+            if os.path.exists(self.data_file):
+                with open(self.data_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+
+                # Load content
+                for content_data in data.get('content', []):
+                    # Convert string timestamps back to datetime
+                    content_data['created_at'] = datetime.fromisoformat(content_data['created_at'])
+                    content_data['updated_at'] = datetime.fromisoformat(content_data['updated_at'])
+
+                    # Convert enums
+                    content_data['content_type'] = ContentType(content_data['content_type'])
+                    content_data['difficulty'] = Difficulty(content_data['difficulty'])
+
+                    content = LearningContent(**content_data)
+                    self.content_db[content.id] = content
+
+                # Load progress
+                for user_id, progress_data in data.get('progress', {}).items():
+                    self.progress_db[user_id] = {}
+                    for content_id, prog_data in progress_data.items():
+                        prog_data['last_read_at'] = datetime.fromisoformat(prog_data['last_read_at'])
+                        if prog_data.get('completed_at'):
+                            prog_data['completed_at'] = datetime.fromisoformat(prog_data['completed_at'])
+                        self.progress_db[user_id][content_id] = ContentProgress(**prog_data)
+
+            else:
+                self._initialize_sample_content()
+        except Exception as e:
+            print(f"Error loading content data: {e}")
+            self._initialize_sample_content()
+
+    def _save_content(self):
+        """Save content to JSON file"""
+        try:
+            data = {
+                'content': [],
+                'progress': {}
+            }
+
+            # Save content
+            for content in self.content_db.values():
+                content_dict = asdict(content)
+                # Convert datetime to ISO format
+                content_dict['created_at'] = content.created_at.isoformat()
+                content_dict['updated_at'] = content.updated_at.isoformat()
+                # Convert enums to strings
+                content_dict['content_type'] = content.content_type.value
+                content_dict['difficulty'] = content.difficulty.value
+                data['content'].append(content_dict)
+
+            # Save progress
+            for user_id, user_progress in self.progress_db.items():
+                data['progress'][user_id] = {}
+                for content_id, progress in user_progress.items():
+                    prog_dict = asdict(progress)
+                    prog_dict['last_read_at'] = progress.last_read_at.isoformat()
+                    if progress.completed_at:
+                        prog_dict['completed_at'] = progress.completed_at.isoformat()
+                    data['progress'][user_id][content_id] = prog_dict
+
+            with open(self.data_file, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+
+        except Exception as e:
+            print(f"Error saving content data: {e}")
+
+    def _initialize_sample_content(self):
+        """Create sample content for demonstration"""
 
     def _initialize_sample_content(self):
         """Create sample content for demonstration"""
@@ -440,6 +508,46 @@ Finding maximum profit: Revenue = price × quantity
             "content_types": content_types,
             "last_updated": max(c.updated_at for c in self.content_db.values()).isoformat()
         }
+
+    def add_content(self, content_data: Dict[str, Any]) -> bool:
+        """Add new content to the database"""
+        try:
+            # Convert string enums to proper enum objects
+            content_type = ContentType(content_data['content_type'])
+            difficulty = Difficulty(content_data['difficulty'])
+
+            # Parse timestamps
+            created_at = datetime.fromisoformat(content_data.get('created_at', datetime.now().isoformat()))
+            updated_at = datetime.fromisoformat(content_data.get('updated_at', datetime.now().isoformat()))
+
+            # Create LearningContent object
+            content = LearningContent(
+                id=content_data['id'],
+                title=content_data['title'],
+                subject=content_data['subject'],
+                topic=content_data['topic'],
+                content_type=content_type,
+                difficulty=difficulty,
+                exam_board=content_data['exam_board'],
+                content=content_data['content'],
+                estimated_read_time=content_data.get('estimated_read_time', 10),
+                prerequisites=content_data.get('prerequisites', []),
+                related_questions=content_data.get('related_questions', []),
+                tags=content_data.get('tags', []),
+                created_at=created_at,
+                updated_at=updated_at,
+                author=content_data.get('author', ''),
+                version=content_data.get('version', 1)
+            )
+
+            # Store in database
+            self.content_db[content.id] = content
+            self._save_content()  # Persist changes
+            return True
+
+        except Exception as e:
+            print(f"Error adding content: {e}")
+            return False
 
 
 # Global content service instance
