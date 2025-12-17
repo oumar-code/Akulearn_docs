@@ -1,0 +1,314 @@
+title,subject,topic,content_type,difficulty,exam_board,content,estimated_read_time,prerequisites,related_questions,tags,author
+Introduction to Linear Equations,Mathematics,Algebra,study_guide,intermediate,WAEC,# Linear Equations
+
+## What are Linear Equations?
+
+A linear equation is an equation that makes a straight line when it is graphed. It has the general form:
+
+**ax + b = c**
+
+Where:
+- **a** is the coefficient of x
+- **b** is the constant term
+- **c** is the constant on the other side
+
+## Solving Linear Equations
+
+### Addition and Subtraction
+To solve equations, perform the same operation on both sides.
+
+**Example:** x + 5 = 12
+**Solution:** x + 5 - 5 = 12 - 5
+**Result:** x = 7
+
+### Multiplication and Division
+**Example:** 3x = 15
+**Solution:** 3x ÷ 3 = 15 ÷ 3
+**Result:** x = 5
+
+## Applications
+
+Linear equations are used in:
+- Business (profit calculations)
+- Physics (distance-speed-time)
+- Engineering (load calculations)
+- Finance (interest calculations),15,basic_algebra,waec_math_2020_q1,linear_equations,algebra,Mathematics Expert
+Basic Mechanics Reference,Physics,Mechanics,reference,basic,WAEC,# Basic Mechanics
+
+## Newton's Laws of Motion
+
+### First Law (Law of Inertia)
+An object at rest stays at rest, and an object in motion stays in motion with the same speed and in the same direction unless acted upon by an unbalanced force.
+
+### Second Law (F = ma)
+The acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass.
+
+**Formula:** F = ma
+- F = force (Newtons)
+- m = mass (kg)
+- a = acceleration (m/s²)
+
+### Third Law (Action-Reaction)
+For every action, there is an equal and opposite reaction.
+
+## Key Formulas
+
+| Concept | Formula | Units |
+|---------|---------|-------|
+| Speed | v = d/t | m/s |
+| Acceleration | a = (v-u)/t | m/s² |
+| Force | F = ma | N |
+| Weight | W = mg | N |
+| Work | W = Fd cosθ | J |
+
+## Common Misconceptions
+
+- **Heavy objects fall faster:** All objects fall at the same rate in vacuum
+- **Force equals weight:** Weight is a type of force, but not all forces are weight
+- **Inertia means laziness:** Inertia is resistance to change in motion, not reluctance to work,12,,waec_physics_2020_q3,mechanics,newton,laws,Physics Expert
+Periodic Table Fundamentals,Chemistry,Periodic Table,summary,basic,WAEC,# The Periodic Table
+
+## Organization
+
+The periodic table organizes elements by:
+- **Atomic number** (number of protons)
+- **Groups** (vertical columns, similar properties)
+- **Periods** (horizontal rows, same electron shell level)
+
+## Group Characteristics
+
+### Group 1: Alkali Metals
+- Soft, reactive metals
+- React violently with water
+- Examples: Li, Na, K, Rb, Cs
+
+### Group 7: Halogens
+- Reactive non-metals
+- Form salts with metals
+- Examples: F, Cl, Br, I
+
+### Group 8: Noble Gases
+- Unreactive gases
+- Full outer electron shells
+- Examples: He, Ne, Ar, Kr
+
+## Periodic Trends
+
+### Atomic Radius
+- **Decreases** across a period (left to right)
+- **Increases** down a group
+
+### Ionization Energy
+- **Increases** across a period
+- **Decreases** down a group
+
+### Electronegativity
+- **Increases** across a period
+- **Decreases** down a group
+
+## Element Classification
+
+### Metals
+- Left side of table
+- Good conductors
+- Malleable and ductile
+
+### Non-metals
+- Right side of table
+- Poor conductors
+- Brittle solids or gases
+
+### Metalloids
+- Between metals and non-metals
+- Semiconductor properties
+- Examples: B, Si, Ge, As
+
+## Exam Focus Areas
+
+- Group properties and reactions
+- Periodic trends explanations
+- Element identification
+- Electronic configuration patterns,10,,waec_chemistry_2020_q2,periodic_table,elements,trends,Chemistry Expert
+Cell Structure and Function,Biology,Cell Biology,summary,basic,WAEC,# Cell Biology Fundamentals
+
+## Cell Theory
+
+1. All living organisms are composed of cells
+2. The cell is the basic unit of life
+3. All cells come from pre-existing cells
+
+## Prokaryotic vs Eukaryotic Cells
+
+| Feature | Prokaryotic | Eukaryotic |
+|---------|-------------|------------|
+| Nucleus | Absent | Present |
+| Size | Smaller (1-10 μm) | Larger (10-100 μm) |
+| Organelles | No membrane-bound | Membrane-bound |
+| Examples | Bacteria | Plants, animals, fungi |
+
+## Cell Organelles
+
+### Membrane-bound Organelles
+- **Nucleus:** Control center, contains DNA
+- **Mitochondria:** Energy production (ATP)
+- **Endoplasmic Reticulum:** Protein synthesis and transport
+- **Golgi Apparatus:** Packaging and modification
+- **Lysosomes:** Digestion and waste removal
+- **Vacuoles:** Storage (large in plant cells)
+
+### Other Structures
+- **Ribosomes:** Protein synthesis
+- **Cell Membrane:** Controls substance movement
+- **Cell Wall:** Support and protection (plants)
+
+## Plant vs Animal Cells
+
+### Plant Cells Have:
+- Cell wall (cellulose)
+- Large central vacuole
+- Chloroplasts (photosynthesis)
+- No centrioles
+
+### Animal Cells Have:
+- Centrioles (cell division)
+- Lysosomes
+- No cell wall
+- Smaller vacuoles
+
+## Cell Membrane Structure
+
+- **Phospholipid bilayer** with embedded proteins
+- **Selectively permeable**
+- **Fluid mosaic model**
+- Controls movement of substances in/out of cell
+
+## Cell Division
+
+### Mitosis
+- Produces identical daughter cells
+- Growth and repair
+- Single division
+
+### Meiosis
+- Produces gametes (sperm/eggs)
+- Genetic variation
+- Two divisions (meiosis I and II),8,,waec_biology_2020_q1,cell_biology,organelles,structure,Biology Expert
+English Grammar Essentials,English Language,Grammar,reference,basic,WAEC,# English Grammar Essentials
+
+## Parts of Speech
+
+### Nouns
+- **Common nouns:** person, place, thing, idea (book, city, happiness)
+- **Proper nouns:** specific names (London, Shakespeare, Monday)
+- **Abstract nouns:** qualities or states (love, freedom, intelligence)
+- **Collective nouns:** groups (team, flock, committee)
+
+### Pronouns
+- **Personal:** I, you, he, she, it, we, they
+- **Possessive:** my, your, his, her, its, our, their
+- **Reflexive:** myself, yourself, himself, herself, itself, ourselves, themselves
+- **Demonstrative:** this, that, these, those
+- **Interrogative:** who, what, which, whose, whom
+- **Relative:** who, whom, whose, which, that
+
+### Verbs
+- **Action verbs:** run, eat, think, sleep
+- **Linking verbs:** be, seem, appear, become
+- **Helping verbs:** do, does, did, has, have, had, will, would, can, could
+
+### Adjectives
+- Describe nouns: big, small, beautiful, intelligent, red
+- Comparative: bigger, more beautiful, less intelligent
+- Superlative: biggest, most beautiful, least intelligent
+
+### Adverbs
+- Describe verbs: quickly, slowly, carefully, well
+- Describe adjectives: very, quite, extremely, fairly
+- Describe other adverbs: too, very, quite
+
+### Prepositions
+- Show relationships: in, on, at, to, from, with, by, for, about, under, over
+
+### Conjunctions
+- Coordinating: and, but, or, nor, for, so, yet
+- Subordinating: although, because, since, unless, while, when, where
+
+### Interjections
+- Express emotion: oh!, wow!, hey!, ouch!, hooray!
+
+## Sentence Structure
+
+### Subject-Verb Agreement
+- Singular subject takes singular verb: *The dog barks*
+- Plural subject takes plural verb: *The dogs bark*
+- Compound subjects: *Tom and Jerry are friends*
+
+### Tenses
+- **Present Simple:** I eat breakfast every day
+- **Past Simple:** I ate breakfast yesterday
+- **Future Simple:** I will eat breakfast tomorrow
+- **Present Continuous:** I am eating breakfast now
+- **Past Continuous:** I was eating breakfast when you called
+- **Present Perfect:** I have eaten breakfast
+
+### Active vs Passive Voice
+- **Active:** The cat chased the mouse
+- **Passive:** The mouse was chased by the cat
+
+## Common Errors to Avoid
+
+### Subject-Verb Disagreement
+- ❌ *He go to school*
+- ✅ *He goes to school*
+
+### Wrong Tense Usage
+- ❌ *I have went to the market*
+- ✅ *I have gone to the market*
+
+### Double Negatives
+- ❌ *I don't have no money*
+- ✅ *I don't have any money*
+
+### Wrong Prepositions
+- ❌ *depend from someone*
+- ✅ *depend on someone*
+
+### Incorrect Comparisons
+- ❌ *She is more taller than me*
+- ✅ *She is taller than me*
+
+## Punctuation Rules
+
+### Commas
+- Separate items in a list: *apples, oranges, and bananas*
+- After introductory phrases: *In the morning, I eat breakfast*
+- Before conjunctions in compound sentences: *I came, but I couldn't stay*
+
+### Apostrophes
+- Possession: *John's book, the students' desks*
+- Contractions: *don't, can't, it's, they're*
+
+### Colons and Semicolons
+- Colons introduce lists or explanations: *There are three colors: red, blue, and green*
+- Semicolons join related independent clauses: *I have a big test tomorrow; I can't go out tonight*
+
+### Question Marks and Exclamation Points
+- Question marks end questions: *What time is it?*
+- Exclamation points show strong emotion: *That's amazing!*
+
+## Practice Exercises
+
+### Identify Parts of Speech
+1. The quick brown fox jumps over the lazy dog.
+2. She sings beautifully in the school choir.
+
+### Correct the Errors
+1. He don't like spicy food.
+2. I have saw that movie three times.
+3. She is the most happiest person I know.
+4. The book is on the table which I bought yesterday.
+
+### Rewrite in Different Tenses
+1. I eat breakfast every morning. (past simple)
+2. She is reading a book. (past continuous)
+3. They have visited Paris. (past simple),12,,waec_english_2020_q1,grammar,parts_of_speech,tenses,English Expert

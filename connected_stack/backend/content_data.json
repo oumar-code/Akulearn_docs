@@ -136,6 +136,74 @@
       "updated_at": "2025-12-16T17:04:22.799051",
       "author": "Physics Expert",
       "version": 1
+    },
+    {
+      "id": "mathematics_algebra_study_guide_20251217_154840",
+      "title": "Introduction to Linear Equations",
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Linear Equations\\n\\nA linear equation is an equation that makes a straight line when graphed. General form: ax + b = c\\n\\n## Solving Methods\\n1. Addition/Subtraction: Perform same operation on both sides\\n2. Multiplication/Division: Isolate the variable\\n\\n## Example\\nx + 5 = 12\\nx = 12 - 5\\nx = 7",
+      "estimated_read_time": 15,
+      "prerequisites": [
+        "basic_algebra"
+      ],
+      "related_questions": [
+        "waec_math_2020_q1"
+      ],
+      "tags": [
+        "linear_equations"
+      ],
+      "created_at": "2025-12-17T15:48:40.210428",
+      "updated_at": "2025-12-17T15:48:40.210451",
+      "author": "algebra",
+      "version": 1
+    },
+    {
+      "id": "physics_mechanics_reference_20251217_154840",
+      "title": "Basic Mechanics Reference",
+      "subject": "Physics",
+      "topic": "Mechanics",
+      "content_type": "reference",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Newton's Laws\\n\\n## First Law\\nAn object at rest stays at rest, object in motion stays in motion unless acted upon by unbalanced force.\\n\\n## Second Law\\nF = ma (Force equals mass times acceleration)\\n\\n## Third Law\\nFor every action, equal and opposite reaction.",
+      "estimated_read_time": 12,
+      "prerequisites": [],
+      "related_questions": [
+        "waec_physics_2020_q3"
+      ],
+      "tags": [
+        "mechanics"
+      ],
+      "created_at": "2025-12-17T15:48:40.768372",
+      "updated_at": "2025-12-17T15:48:40.769376",
+      "author": "newton",
+      "version": 1
+    },
+    {
+      "id": "chemistry_periodic_table_summary_20251217_154841",
+      "title": "Periodic Table Fundamentals",
+      "subject": "Chemistry",
+      "topic": "Periodic Table",
+      "content_type": "summary",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Periodic Table\\n\\n## Organization\\n- Elements arranged by atomic number\\n- Groups: vertical columns (similar properties)\\n- Periods: horizontal rows\\n\\n## Trends\\n- Atomic radius decreases across period, increases down group\\n- Ionization energy increases across period, decreases down group",
+      "estimated_read_time": 10,
+      "prerequisites": [],
+      "related_questions": [
+        "waec_chemistry_2020_q2"
+      ],
+      "tags": [
+        "periodic_table"
+      ],
+      "created_at": "2025-12-17T15:48:41.104495",
+      "updated_at": "2025-12-17T15:48:41.104513",
+      "author": "elements",
+      "version": 1
     }
   ],
   "progress": {}
