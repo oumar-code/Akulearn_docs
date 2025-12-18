@@ -204,6 +204,1385 @@
       "updated_at": "2025-12-17T15:48:41.104513",
       "author": "elements",
       "version": 1
+    },
+    {
+      "id": "mathematics_algebra_equations_20251217_194703",
+      "title": "Equations in Algebra",
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Equations in Algebra\n\n## Learning Objectives\n\nBy the end of this study guide, you should be able to:\n\n- Solve equations and inequalities\n- Work with polynomials and functions\n- Apply algebraic methods to problems\n\n## Key Concepts\n\nEquations are mathematical statements that assert the equality of two expressions. They can be solved by isolating the variable using inverse operations.\n\n## Examples and Practice\n\n**Example:** Solve 2x + 3 = 7\n**Solution:** 2x = 4, x = 2\n\n**Practice:** Solve 3x - 5 = 10\n\n## Important Formulas\n\n**Linear:** ax + b = 0 → x = -b/a\n**Quadratic:** ax² + bx + c = 0 → x = [-b ± √(b²-4ac)]/2a\n\n## Summary\n\nEquations is a fundamental concept in Algebra that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "algebra",
+        "equations"
+      ],
+      "created_at": "2025-12-17T19:47:04.924478",
+      "updated_at": "2025-12-17T19:47:04.924502",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_algebra_inequalities_20251217_194704",
+      "title": "Inequalities in Algebra",
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Inequalities in Algebra\n\n## Learning Objectives\n\nBy the end of this study guide, you should be able to:\n\n- Solve equations and inequalities\n- Work with polynomials and functions\n- Apply algebraic methods to problems\n\n## Key Concepts\n\nInequalities show the relationship between two expressions using symbols like <, >, ≤, ≥. They represent ranges of values rather than single solutions.\n\n## Examples and Practice\n\n**Example:** Solve x + 2 > 5\n**Solution:** x > 3\n\n**Practice:** Solve 2x - 1 ≤ 7\n\n## Important Formulas\n\n**Linear:** ax + b > 0 → x > -b/a\n**Quadratic:** ax² + bx + c > 0 → solve using discriminant\n\n## Summary\n\nInequalities is a fundamental concept in Algebra that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "algebra",
+        "inequalities"
+      ],
+      "created_at": "2025-12-17T19:47:04.928470",
+      "updated_at": "2025-12-17T19:47:04.928483",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_algebra_polynomials_20251217_194704",
+      "title": "Polynomials in Algebra",
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Polynomials in Algebra\n\n## Learning Objectives\n\nBy the end of this study guide, you should be able to:\n\n- Solve equations and inequalities\n- Work with polynomials and functions\n- Apply algebraic methods to problems\n\n## Key Concepts\n\nPolynomials are expressions consisting of variables and coefficients, combined using addition, subtraction, and multiplication.\n\n## Examples and Practice\n\n**Example:** Expand (x + 2)(x + 3) = x² + 5x + 6\n\n**Practice:** Expand (x - 1)(x + 4)\n\n## Important Formulas\n\n**Addition:** (a + b)(c + d) = ac + ad + bc + bd\n**Difference:** (a + b)(a - b) = a² - b²\n\n## Summary\n\nPolynomials is a fundamental concept in Algebra that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "algebra",
+        "polynomials"
+      ],
+      "created_at": "2025-12-17T19:47:04.928821",
+      "updated_at": "2025-12-17T19:47:04.928830",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_algebra_functions_20251217_194704",
+      "title": "Functions in Algebra",
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Functions in Algebra\n\n## Learning Objectives\n\nBy the end of this study guide, you should be able to:\n\n- Solve equations and inequalities\n- Work with polynomials and functions\n- Apply algebraic methods to problems\n\n## Key Concepts\n\nFunctions are relations where each input has exactly one output. They can be represented algebraically, graphically, or in tables.\n\n## Examples and Practice\n\n**Example:** f(x) = 2x + 1, find f(3) = 7\n\n**Practice:** g(x) = x² - 4, find g(-2)\n\n## Important Formulas\n\n**Linear:** f(x) = mx + c\n**Quadratic:** f(x) = ax² + bx + c\n\n## Summary\n\nFunctions is a fundamental concept in Algebra that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "algebra",
+        "functions"
+      ],
+      "created_at": "2025-12-17T19:47:04.929116",
+      "updated_at": "2025-12-17T19:47:04.929125",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_geometry_shapes_20251217_194704",
+      "title": "Shapes in Geometry",
+      "subject": "Mathematics",
+      "topic": "Geometry",
+      "content_type": "reference",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Shapes in Geometry\n\n## Key Concepts\n\nGeometric shapes have specific properties and formulas for area, perimeter, and volume calculations.\n\n## Important Formulas\n\n**Circle Area:** A = πr²\n**Rectangle Area:** A = l × w\n**Triangle Area:** A = ½ × b × h\n\n## Summary\n\nShapes is a fundamental concept in Geometry that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "geometry",
+        "shapes"
+      ],
+      "created_at": "2025-12-17T19:47:04.929545",
+      "updated_at": "2025-12-17T19:47:04.929553",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_geometry_theorems_20251217_194704",
+      "title": "Theorems in Geometry",
+      "subject": "Mathematics",
+      "topic": "Geometry",
+      "content_type": "reference",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Theorems in Geometry\n\n## Key Concepts\n\nGeometric theorems are proven statements about relationships between different geometric elements.\n\n## Important Formulas\n\n**Pythagoras:** a² + b² = c²\n**Triangle Sum:** A + B + C = 180°\n\n## Summary\n\nTheorems is a fundamental concept in Geometry that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "geometry",
+        "theorems"
+      ],
+      "created_at": "2025-12-17T19:47:04.929792",
+      "updated_at": "2025-12-17T19:47:04.929800",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_geometry_coordinate_geometry_20251217_194704",
+      "title": "Coordinate Geometry in Geometry",
+      "subject": "Mathematics",
+      "topic": "Geometry",
+      "content_type": "reference",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Coordinate Geometry in Geometry\n\n## Key Concepts\n\nCoordinate geometry combines algebra and geometry to study geometric figures using coordinates.\n\n## Important Formulas\n\n**Distance:** d = √[(x₂-x₁)² + (y₂-y₁)²]\n**Midpoint:** ((x₁+x₂)/2, (y₁+y₂)/2)\n\n## Summary\n\nCoordinate Geometry is a fundamental concept in Geometry that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "geometry",
+        "coordinate_geometry"
+      ],
+      "created_at": "2025-12-17T19:47:04.930037",
+      "updated_at": "2025-12-17T19:47:04.930045",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_trigonometry_identities_20251217_194704",
+      "title": "Identities in Trigonometry",
+      "subject": "Mathematics",
+      "topic": "Trigonometry",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Identities in Trigonometry\n\n## Learning Objectives\n\nBy the end of this study guide, you should be able to:\n\n- Use trigonometric ratios and identities\n- Solve triangles\n- Apply trigonometry to real-world problems\n\n## Key Concepts\n\nTrigonometric identities are equations that are true for all values of the variables involved.\n\n## Examples and Practice\n\n**Example:** sin²θ + cos²θ = 1\n\n**Practice:** Verify for θ = 30°\n\n## Important Formulas\n\n**sin²θ + cos²θ = 1**\n**tanθ = sinθ/cosθ**\n**1 + tan²θ = sec²θ**\n\n## Summary\n\nIdentities is a fundamental concept in Trigonometry that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "trigonometry",
+        "identities"
+      ],
+      "created_at": "2025-12-17T19:47:04.930477",
+      "updated_at": "2025-12-17T19:47:04.930485",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_trigonometry_triangles_20251217_194704",
+      "title": "Triangles in Trigonometry",
+      "subject": "Mathematics",
+      "topic": "Trigonometry",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Triangles in Trigonometry\n\n## Learning Objectives\n\nBy the end of this study guide, you should be able to:\n\n- Use trigonometric ratios and identities\n- Solve triangles\n- Apply trigonometry to real-world problems\n\n## Key Concepts\n\nTriangles are three-sided polygons with specific properties and trigonometric relationships.\n\n## Examples and Practice\n\n**Example:** In right triangle, sin A = opposite/hypotenuse\n\n**Practice:** Find missing side using Pythagoras\n\n## Important Formulas\n\n**Sine Rule:** a/sinA = b/sinB = c/sinC\n**Cosine Rule:** c² = a² + b² - 2ab cosC\n\n## Summary\n\nTriangles is a fundamental concept in Trigonometry that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "trigonometry",
+        "triangles"
+      ],
+      "created_at": "2025-12-17T19:47:04.930755",
+      "updated_at": "2025-12-17T19:47:04.930763",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_trigonometry_applications_20251217_194704",
+      "title": "Applications in Trigonometry",
+      "subject": "Mathematics",
+      "topic": "Trigonometry",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Applications in Trigonometry\n\n## Learning Objectives\n\nBy the end of this study guide, you should be able to:\n\n- Use trigonometric ratios and identities\n- Solve triangles\n- Apply trigonometry to real-world problems\n\n## Key Concepts\n\nTrigonometry has applications in navigation, physics, engineering, and surveying.\n\n## Examples and Practice\n\n**Example:** Height of building using angle of elevation\n\n**Practice:** Calculate distance using trigonometry\n\n## Important Formulas\n\nKey formulas and equations will be provided in the detailed study guide.\n\n## Summary\n\nApplications is a fundamental concept in Trigonometry that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "trigonometry",
+        "applications"
+      ],
+      "created_at": "2025-12-17T19:47:04.931036",
+      "updated_at": "2025-12-17T19:47:04.931045",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_calculus_differentiation_20251217_194704",
+      "title": "Differentiation in Calculus",
+      "subject": "Mathematics",
+      "topic": "Calculus",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Differentiation in Calculus\n\n## Learning Objectives\n\nBy the end of this study guide, you should be able to:\n\n- Understand differentiation and integration\n- Apply calculus to rates of change\n- Solve optimization problems\n\n## Key Concepts\n\nDifferentiation is the process of finding the derivative, which represents the rate of change.\n\n## Examples and Practice\n\n**Example:** d/dx(x²) = 2x\n\n**Practice:** d/dx(x³ + 2x) = ?\n\n## Important Formulas\n\n**Power Rule:** d/dx(xⁿ) = nxⁿ⁻¹\n**Sum Rule:** d/dx(f+g) = f' + g'\n\n## Summary\n\nDifferentiation is a fundamental concept in Calculus that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "calculus",
+        "differentiation"
+      ],
+      "created_at": "2025-12-17T19:47:04.931464",
+      "updated_at": "2025-12-17T19:47:04.931472",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_calculus_integration_20251217_194704",
+      "title": "Integration in Calculus",
+      "subject": "Mathematics",
+      "topic": "Calculus",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Integration in Calculus\n\n## Learning Objectives\n\nBy the end of this study guide, you should be able to:\n\n- Understand differentiation and integration\n- Apply calculus to rates of change\n- Solve optimization problems\n\n## Key Concepts\n\nIntegration is the reverse process of differentiation, used to find areas and solve differential equations.\n\n## Examples and Practice\n\n**Example:** ∫x dx = x²/2 + C\n\n**Practice:** ∫(2x + 1) dx = ?\n\n## Important Formulas\n\n**Power Rule:** ∫xⁿ dx = xⁿ⁺¹/(n+1) + C\n**∫k dx = kx + C**\n\n## Summary\n\nIntegration is a fundamental concept in Calculus that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "calculus",
+        "integration"
+      ],
+      "created_at": "2025-12-17T19:47:04.931755",
+      "updated_at": "2025-12-17T19:47:04.931763",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_statistics_mean_20251217_194704",
+      "title": "Mean in Statistics",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Mean in Statistics\n\n## Learning Objectives\n\nBy the end of this study guide, you should be able to:\n\n- Calculate mean, median, and mode\n- Understand probability concepts\n- Analyze data distributions\n\n## Key Concepts\n\nThe mean is the average of a set of numbers, calculated by summing all values and dividing by the count.\n\n## Examples and Practice\n\n**Example:** Mean of 2, 4, 6, 8 = (2+4+6+8)/4 = 5\n\n**Practice:** Find mean of 1, 3, 5, 7, 9\n\n## Important Formulas\n\n**Arithmetic Mean:** μ = Σxᵢ/n\n**Weighted Mean:** μ = Σ(wᵢxᵢ)/Σwᵢ\n\n## Summary\n\nMean is a fundamental concept in Statistics that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "statistics",
+        "mean"
+      ],
+      "created_at": "2025-12-17T19:47:04.932189",
+      "updated_at": "2025-12-17T19:47:04.932198",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_statistics_median_20251217_194704",
+      "title": "Median in Statistics",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Median in Statistics\n\n## Learning Objectives\n\nBy the end of this study guide, you should be able to:\n\n- Calculate mean, median, and mode\n- Understand probability concepts\n- Analyze data distributions\n\n## Key Concepts\n\nThe median is the middle value in an ordered set of numbers.\n\n## Examples and Practice\n\n**Example:** Median of 1, 3, 5, 7, 9 = 5\n\n**Practice:** Find median of 2, 4, 6, 8, 10\n\n## Important Formulas\n\n**For odd n:** median = middle value\n**For even n:** median = average of two middle values\n\n## Summary\n\nMedian is a fundamental concept in Statistics that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "statistics",
+        "median"
+      ],
+      "created_at": "2025-12-17T19:47:04.932453",
+      "updated_at": "2025-12-17T19:47:04.932461",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "mathematics_statistics_probability_20251217_194704",
+      "title": "Probability in Statistics",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Probability in Statistics\n\n## Learning Objectives\n\nBy the end of this study guide, you should be able to:\n\n- Calculate mean, median, and mode\n- Understand probability concepts\n- Analyze data distributions\n\n## Key Concepts\n\nProbability is the measure of how likely an event is to occur, expressed as a number between 0 and 1.\n\n## Examples and Practice\n\n**Example:** P(heads) = 1/2 for fair coin\n\n**Practice:** P(rolling 4 on die) = ?\n\n## Important Formulas\n\n**P(A) = n(A)/n(S)**\n**P(A∪B) = P(A) + P(B) - P(A∩B)**\n\n## Summary\n\nProbability is a fundamental concept in Statistics that provides the foundation for more advanced mathematical studies. Practice regularly to master the techniques and applications.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_arithmetic",
+        "algebra_fundamentals"
+      ],
+      "related_questions": [
+        "waec_mathematics_2020_q1",
+        "waec_mathematics_2021_q2"
+      ],
+      "tags": [
+        "mathematics",
+        "statistics",
+        "probability"
+      ],
+      "created_at": "2025-12-17T19:47:04.932715",
+      "updated_at": "2025-12-17T19:47:04.932723",
+      "author": "Mathematics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_mechanics_motion_20251217_194704",
+      "title": "Motion in Mechanics",
+      "subject": "Physics",
+      "topic": "Mechanics",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Motion in Mechanics\n\n## Key Concepts\n\nMotion is the change in position of an object over time. It can be described using displacement, velocity, and acceleration.\n\n## Examples and Practice\n\n**Example:** Car accelerates from 0 to 60 km/h in 10s\n\n**Practice:** Calculate average velocity\n\n## Important Formulas\n\n**v = u + at**\n**s = ut + ½at²**\n**v² = u² + 2as**\n\n## Summary\n\nUnderstanding Motion in Mechanics is crucial for explaining natural phenomena and technological applications. Focus on both theoretical concepts and practical problem-solving.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "mathematics",
+        "basic_physics_concepts"
+      ],
+      "related_questions": [
+        "waec_physics_2020_q1",
+        "waec_physics_2021_q2"
+      ],
+      "tags": [
+        "physics",
+        "mechanics",
+        "motion"
+      ],
+      "created_at": "2025-12-17T19:47:04.933381",
+      "updated_at": "2025-12-17T19:47:04.933388",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_mechanics_forces_20251217_194704",
+      "title": "Forces in Mechanics",
+      "subject": "Physics",
+      "topic": "Mechanics",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Forces in Mechanics\n\n## Key Concepts\n\nForces are pushes or pulls that can change an object's motion. They have magnitude and direction.\n\n## Examples and Practice\n\n**Example:** F = ma, 10N force on 2kg mass gives 5 m/s² acceleration\n\n**Practice:** Find force needed for given acceleration\n\n## Important Formulas\n\n**F = ma**\n**W = mg**\n**F = kx (Hooke's law)**\n\n## Summary\n\nUnderstanding Forces in Mechanics is crucial for explaining natural phenomena and technological applications. Focus on both theoretical concepts and practical problem-solving.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "mathematics",
+        "basic_physics_concepts"
+      ],
+      "related_questions": [
+        "waec_physics_2020_q1",
+        "waec_physics_2021_q2"
+      ],
+      "tags": [
+        "physics",
+        "mechanics",
+        "forces"
+      ],
+      "created_at": "2025-12-17T19:47:04.933643",
+      "updated_at": "2025-12-17T19:47:04.933651",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_mechanics_energy_20251217_194704",
+      "title": "Energy in Mechanics",
+      "subject": "Physics",
+      "topic": "Mechanics",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Energy in Mechanics\n\n## Key Concepts\n\nEnergy is the capacity to do work. It exists in various forms including kinetic, potential, and thermal.\n\n## Examples and Practice\n\n**Example:** KE = ½mv², m=2kg, v=3m/s, KE=9J\n\n**Practice:** Calculate PE for 5kg mass at 10m height\n\n## Important Formulas\n\n**KE = ½mv²**\n**PE = mgh**\n**W = Fd cosθ**\n\n## Summary\n\nUnderstanding Energy in Mechanics is crucial for explaining natural phenomena and technological applications. Focus on both theoretical concepts and practical problem-solving.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "mathematics",
+        "basic_physics_concepts"
+      ],
+      "related_questions": [
+        "waec_physics_2020_q1",
+        "waec_physics_2021_q2"
+      ],
+      "tags": [
+        "physics",
+        "mechanics",
+        "energy"
+      ],
+      "created_at": "2025-12-17T19:47:04.933892",
+      "updated_at": "2025-12-17T19:47:04.933899",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_mechanics_momentum_20251217_194704",
+      "title": "Momentum in Mechanics",
+      "subject": "Physics",
+      "topic": "Mechanics",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Momentum in Mechanics\n\n## Key Concepts\n\nMomentum is the product of mass and velocity. It is conserved in collisions.\n\n## Examples and Practice\n\n**Example:** p = mv, 2kg mass at 4m/s has momentum 8 kg·m/s\n\n**Practice:** Find change in momentum\n\n## Important Formulas\n\n**p = mv**\n**Conservation:** m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂\n\n## Summary\n\nUnderstanding Momentum in Mechanics is crucial for explaining natural phenomena and technological applications. Focus on both theoretical concepts and practical problem-solving.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "mathematics",
+        "basic_physics_concepts"
+      ],
+      "related_questions": [
+        "waec_physics_2020_q1",
+        "waec_physics_2021_q2"
+      ],
+      "tags": [
+        "physics",
+        "mechanics",
+        "momentum"
+      ],
+      "created_at": "2025-12-17T19:47:04.934138",
+      "updated_at": "2025-12-17T19:47:04.934146",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_electricity_circuits_20251217_194704",
+      "title": "Circuits in Electricity",
+      "subject": "Physics",
+      "topic": "Electricity",
+      "content_type": "reference",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Circuits in Electricity\n\n## Key Concepts\n\nElectric circuits consist of components connected by conductors to allow current flow.\n\n## Important Formulas\n\n**V = IR (Ohm's law)**\n**Series R_total = R₁ + R₂ + R₃**\n**Parallel 1/R_total = 1/R₁ + 1/R₂ + 1/R₃**\n\n## Summary\n\nUnderstanding Circuits in Electricity is crucial for explaining natural phenomena and technological applications. Focus on both theoretical concepts and practical problem-solving.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "mathematics",
+        "basic_physics_concepts"
+      ],
+      "related_questions": [
+        "waec_physics_2020_q1",
+        "waec_physics_2021_q2"
+      ],
+      "tags": [
+        "physics",
+        "electricity",
+        "circuits"
+      ],
+      "created_at": "2025-12-17T19:47:04.934541",
+      "updated_at": "2025-12-17T19:47:04.934550",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_electricity_magnetism_20251217_194704",
+      "title": "Magnetism in Electricity",
+      "subject": "Physics",
+      "topic": "Electricity",
+      "content_type": "reference",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Magnetism in Electricity\n\n## Key Concepts\n\nMagnetism is a force exerted by magnets, caused by moving electric charges.\n\n## Important Formulas\n\n**F = BIL sinθ**\n**Φ = BA cosθ**\n**F = qvB sinθ**\n\n## Summary\n\nUnderstanding Magnetism in Electricity is crucial for explaining natural phenomena and technological applications. Focus on both theoretical concepts and practical problem-solving.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "mathematics",
+        "basic_physics_concepts"
+      ],
+      "related_questions": [
+        "waec_physics_2020_q1",
+        "waec_physics_2021_q2"
+      ],
+      "tags": [
+        "physics",
+        "electricity",
+        "magnetism"
+      ],
+      "created_at": "2025-12-17T19:47:04.934780",
+      "updated_at": "2025-12-17T19:47:04.934788",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_electricity_electromagnetism_20251217_194704",
+      "title": "Electromagnetism in Electricity",
+      "subject": "Physics",
+      "topic": "Electricity",
+      "content_type": "reference",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Electromagnetism in Electricity\n\n## Key Concepts\n\nElectromagnetism is the interaction between electric and magnetic fields.\n\n## Important Formulas\n\n**ε = -dΦ/dt**\n**F = BIL sinθ**\n**Motor effect applications**\n\n## Summary\n\nUnderstanding Electromagnetism in Electricity is crucial for explaining natural phenomena and technological applications. Focus on both theoretical concepts and practical problem-solving.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "mathematics",
+        "basic_physics_concepts"
+      ],
+      "related_questions": [
+        "waec_physics_2020_q1",
+        "waec_physics_2021_q2"
+      ],
+      "tags": [
+        "physics",
+        "electricity",
+        "electromagnetism"
+      ],
+      "created_at": "2025-12-17T19:47:04.935026",
+      "updated_at": "2025-12-17T19:47:04.935034",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_waves_sound_20251217_194704",
+      "title": "Sound in Waves",
+      "subject": "Physics",
+      "topic": "Waves",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Sound in Waves\n\n## Key Concepts\n\nSound waves are mechanical waves that require a medium for propagation.\n\n## Examples and Practice\n\n**Example:** Speed of sound = 343 m/s at 20°C\n\n**Practice:** Calculate wavelength for 440Hz\n\n## Important Formulas\n\n**v = fλ**\n**Doppler: f' = f(v ± v₀)/(v ± vₛ)**\n\n## Summary\n\nUnderstanding Sound in Waves is crucial for explaining natural phenomena and technological applications. Focus on both theoretical concepts and practical problem-solving.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "mathematics",
+        "basic_physics_concepts"
+      ],
+      "related_questions": [
+        "waec_physics_2020_q1",
+        "waec_physics_2021_q2"
+      ],
+      "tags": [
+        "physics",
+        "waves",
+        "sound"
+      ],
+      "created_at": "2025-12-17T19:47:04.935752",
+      "updated_at": "2025-12-17T19:47:04.935762",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_waves_light_20251217_194704",
+      "title": "Light in Waves",
+      "subject": "Physics",
+      "topic": "Waves",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Light in Waves\n\n## Key Concepts\n\nLight is an electromagnetic wave that can travel through vacuum and exhibits wave-particle duality.\n\n## Examples and Practice\n\n**Example:** Refractive index n = c/v\n\n**Practice:** Find angle of refraction\n\n## Important Formulas\n\n**n = c/v**\n**Snell's law: n₁sinθ₁ = n₂sinθ₂**\n**Lens: 1/f = 1/u + 1/v**\n\n## Summary\n\nUnderstanding Light in Waves is crucial for explaining natural phenomena and technological applications. Focus on both theoretical concepts and practical problem-solving.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "mathematics",
+        "basic_physics_concepts"
+      ],
+      "related_questions": [
+        "waec_physics_2020_q1",
+        "waec_physics_2021_q2"
+      ],
+      "tags": [
+        "physics",
+        "waves",
+        "light"
+      ],
+      "created_at": "2025-12-17T19:47:04.936312",
+      "updated_at": "2025-12-17T19:47:04.936322",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_waves_wave_properties_20251217_194704",
+      "title": "Wave Properties in Waves",
+      "subject": "Physics",
+      "topic": "Waves",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Wave Properties in Waves\n\n## Key Concepts\n\nWaves have properties like wavelength, frequency, amplitude, and speed.\n\n## Examples and Practice\n\n**Example:** v = fλ, f=100Hz, λ=2m, v=200m/s\n\n**Practice:** Find frequency for given speed and wavelength\n\n## Important Formulas\n\n**v = fλ**\n**T = 1/f**\n**I ∝ A²**\n\n## Summary\n\nUnderstanding Wave Properties in Waves is crucial for explaining natural phenomena and technological applications. Focus on both theoretical concepts and practical problem-solving.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "mathematics",
+        "basic_physics_concepts"
+      ],
+      "related_questions": [
+        "waec_physics_2020_q1",
+        "waec_physics_2021_q2"
+      ],
+      "tags": [
+        "physics",
+        "waves",
+        "wave_properties"
+      ],
+      "created_at": "2025-12-17T19:47:04.936634",
+      "updated_at": "2025-12-17T19:47:04.936643",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_modern physics_atomic_structure_20251217_194704",
+      "title": "Atomic Structure in Modern Physics",
+      "subject": "Physics",
+      "topic": "Modern Physics",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Atomic Structure in Modern Physics\n\n## Key Concepts\n\nAtoms consist of protons, neutrons, and electrons arranged in specific energy levels.\n\n## Examples and Practice\n\n**Example:** Carbon has 6 protons, 6 neutrons, 6 electrons\n\n**Practice:** Find atomic number and mass number\n\n## Important Formulas\n\n**E = hc/λ**\n**Bohr: mvr = nh/2π**\n**Quantum numbers**\n\n## Summary\n\nUnderstanding Atomic Structure in Modern Physics is crucial for explaining natural phenomena and technological applications. Focus on both theoretical concepts and practical problem-solving.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "mathematics",
+        "basic_physics_concepts"
+      ],
+      "related_questions": [
+        "waec_physics_2020_q1",
+        "waec_physics_2021_q2"
+      ],
+      "tags": [
+        "physics",
+        "modern physics",
+        "atomic_structure"
+      ],
+      "created_at": "2025-12-17T19:47:04.939360",
+      "updated_at": "2025-12-17T19:47:04.939377",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "physics_modern physics_radioactivity_20251217_194704",
+      "title": "Radioactivity in Modern Physics",
+      "subject": "Physics",
+      "topic": "Modern Physics",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Radioactivity in Modern Physics\n\n## Key Concepts\n\nRadioactivity is the spontaneous emission of radiation from unstable atomic nuclei.\n\n## Examples and Practice\n\n**Example:** Half-life of radioactive substance\n\n**Practice:** Calculate remaining amount after 2 half-lives\n\n## Important Formulas\n\n**λ = ln2/t½**\n**N = N₀e^(-λt)**\n**Decay constant relationships**\n\n## Summary\n\nUnderstanding Radioactivity in Modern Physics is crucial for explaining natural phenomena and technological applications. Focus on both theoretical concepts and practical problem-solving.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "mathematics",
+        "basic_physics_concepts"
+      ],
+      "related_questions": [
+        "waec_physics_2020_q1",
+        "waec_physics_2021_q2"
+      ],
+      "tags": [
+        "physics",
+        "modern physics",
+        "radioactivity"
+      ],
+      "created_at": "2025-12-17T19:47:04.939876",
+      "updated_at": "2025-12-17T19:47:04.939888",
+      "author": "Physics Expert",
+      "version": 1
+    },
+    {
+      "id": "chemistry_physical chemistry_atomic_structure_20251217_194704",
+      "title": "Atomic Structure in Physical Chemistry",
+      "subject": "Chemistry",
+      "topic": "Physical Chemistry",
+      "content_type": "summary",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Atomic Structure in Physical Chemistry\n\n## Key Concepts\n\nAtoms are the basic units of matter, consisting of protons, neutrons, and electrons.\n\n## Important Formulas\n\n**Atomic number = protons**\n**Mass number = protons + neutrons**\n**Isotopes have same Z, different A**\n\n## Summary\n\nAtomic Structure forms the basis for understanding chemical behavior and reactions. Regular practice with examples will help master these important concepts.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_chemistry",
+        "periodic_table_basics"
+      ],
+      "related_questions": [
+        "waec_chemistry_2020_q1",
+        "waec_chemistry_2021_q2"
+      ],
+      "tags": [
+        "chemistry",
+        "physical chemistry",
+        "atomic_structure"
+      ],
+      "created_at": "2025-12-17T19:47:04.940719",
+      "updated_at": "2025-12-17T19:47:04.940729",
+      "author": "Chemistry Expert",
+      "version": 1
+    },
+    {
+      "id": "chemistry_physical chemistry_bonding_20251217_194704",
+      "title": "Bonding in Physical Chemistry",
+      "subject": "Chemistry",
+      "topic": "Physical Chemistry",
+      "content_type": "summary",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Bonding in Physical Chemistry\n\n## Key Concepts\n\nChemical bonding involves the interaction of atoms to form compounds through various types of bonds.\n\n## Important Formulas\n\n**Ionic:** Metal + non-metal\n**Covalent:** Non-metal + non-metal\n**Metallic:** Metal atoms**\n\n## Summary\n\nBonding forms the basis for understanding chemical behavior and reactions. Regular practice with examples will help master these important concepts.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_chemistry",
+        "periodic_table_basics"
+      ],
+      "related_questions": [
+        "waec_chemistry_2020_q1",
+        "waec_chemistry_2021_q2"
+      ],
+      "tags": [
+        "chemistry",
+        "physical chemistry",
+        "bonding"
+      ],
+      "created_at": "2025-12-17T19:47:04.940996",
+      "updated_at": "2025-12-17T19:47:04.941004",
+      "author": "Chemistry Expert",
+      "version": 1
+    },
+    {
+      "id": "chemistry_physical chemistry_states_of_matter_20251217_194704",
+      "title": "States Of Matter in Physical Chemistry",
+      "subject": "Chemistry",
+      "topic": "Physical Chemistry",
+      "content_type": "summary",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# States Of Matter in Physical Chemistry\n\n## Key Concepts\n\nMatter exists in three main states: solid, liquid, and gas, each with distinct properties.\n\n## Important Formulas\n\n**Gas:** PV = nRT\n**Kinetic theory**\n**Phase changes**\n\n## Summary\n\nStates of Matter forms the basis for understanding chemical behavior and reactions. Regular practice with examples will help master these important concepts.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_chemistry",
+        "periodic_table_basics"
+      ],
+      "related_questions": [
+        "waec_chemistry_2020_q1",
+        "waec_chemistry_2021_q2"
+      ],
+      "tags": [
+        "chemistry",
+        "physical chemistry",
+        "states_of_matter"
+      ],
+      "created_at": "2025-12-17T19:47:04.941277",
+      "updated_at": "2025-12-17T19:47:04.941285",
+      "author": "Chemistry Expert",
+      "version": 1
+    },
+    {
+      "id": "chemistry_inorganic chemistry_periodic_table_20251217_194704",
+      "title": "Periodic Table in Inorganic Chemistry",
+      "subject": "Chemistry",
+      "topic": "Inorganic Chemistry",
+      "content_type": "summary",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Periodic Table in Inorganic Chemistry\n\n## Key Concepts\n\nThe periodic table organizes elements by atomic number and shows trends in properties.\n\n## Important Formulas\n\n**Atomic radius decreases across period**\n**Ionization energy increases across period**\n**Electronegativity increases across period**\n\n## Summary\n\nPeriodic Table forms the basis for understanding chemical behavior and reactions. Regular practice with examples will help master these important concepts.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_chemistry",
+        "periodic_table_basics"
+      ],
+      "related_questions": [
+        "waec_chemistry_2020_q1",
+        "waec_chemistry_2021_q2"
+      ],
+      "tags": [
+        "chemistry",
+        "inorganic chemistry",
+        "periodic_table"
+      ],
+      "created_at": "2025-12-17T19:47:04.941716",
+      "updated_at": "2025-12-17T19:47:04.941724",
+      "author": "Chemistry Expert",
+      "version": 1
+    },
+    {
+      "id": "chemistry_inorganic chemistry_chemical_reactions_20251217_194704",
+      "title": "Chemical Reactions in Inorganic Chemistry",
+      "subject": "Chemistry",
+      "topic": "Inorganic Chemistry",
+      "content_type": "summary",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Chemical Reactions in Inorganic Chemistry\n\n## Key Concepts\n\nChemical reactions involve the transformation of substances into new substances with different properties.\n\n## Important Formulas\n\n**Conservation of mass**\n**Balancing equations**\n**Reaction types**\n\n## Summary\n\nChemical Reactions forms the basis for understanding chemical behavior and reactions. Regular practice with examples will help master these important concepts.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_chemistry",
+        "periodic_table_basics"
+      ],
+      "related_questions": [
+        "waec_chemistry_2020_q1",
+        "waec_chemistry_2021_q2"
+      ],
+      "tags": [
+        "chemistry",
+        "inorganic chemistry",
+        "chemical_reactions"
+      ],
+      "created_at": "2025-12-17T19:47:04.942010",
+      "updated_at": "2025-12-17T19:47:04.942019",
+      "author": "Chemistry Expert",
+      "version": 1
+    },
+    {
+      "id": "chemistry_organic chemistry_hydrocarbons_20251217_194704",
+      "title": "Hydrocarbons in Organic Chemistry",
+      "subject": "Chemistry",
+      "topic": "Organic Chemistry",
+      "content_type": "summary",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Hydrocarbons in Organic Chemistry\n\n## Key Concepts\n\nHydrocarbons are organic compounds containing only hydrogen and carbon atoms.\n\n## Important Formulas\n\n**Alkanes: CₙH₂ₙ₊₂**\n**Alkenes: CₙH₂ₙ**\n**Alkynes: CₙH₂ₙ₋₂**\n\n## Summary\n\nHydrocarbons forms the basis for understanding chemical behavior and reactions. Regular practice with examples will help master these important concepts.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_chemistry",
+        "periodic_table_basics"
+      ],
+      "related_questions": [
+        "waec_chemistry_2020_q1",
+        "waec_chemistry_2021_q2"
+      ],
+      "tags": [
+        "chemistry",
+        "organic chemistry",
+        "hydrocarbons"
+      ],
+      "created_at": "2025-12-17T19:47:04.942474",
+      "updated_at": "2025-12-17T19:47:04.942483",
+      "author": "Chemistry Expert",
+      "version": 1
+    },
+    {
+      "id": "chemistry_organic chemistry_functional_groups_20251217_194704",
+      "title": "Functional Groups in Organic Chemistry",
+      "subject": "Chemistry",
+      "topic": "Organic Chemistry",
+      "content_type": "summary",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Functional Groups in Organic Chemistry\n\n## Key Concepts\n\nFunctional groups are specific atom groupings that determine the chemical properties of organic compounds.\n\n## Important Formulas\n\n**-OH: Alcohol**\n**-COOH: Carboxylic acid**\n**-NH₂: Amine**\n\n## Summary\n\nFunctional Groups forms the basis for understanding chemical behavior and reactions. Regular practice with examples will help master these important concepts.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_chemistry",
+        "periodic_table_basics"
+      ],
+      "related_questions": [
+        "waec_chemistry_2020_q1",
+        "waec_chemistry_2021_q2"
+      ],
+      "tags": [
+        "chemistry",
+        "organic chemistry",
+        "functional_groups"
+      ],
+      "created_at": "2025-12-17T19:47:04.942747",
+      "updated_at": "2025-12-17T19:47:04.942756",
+      "author": "Chemistry Expert",
+      "version": 1
+    },
+    {
+      "id": "biology_cell biology_cell_structure_20251217_194704",
+      "title": "Cell Structure in Cell Biology",
+      "subject": "Biology",
+      "topic": "Cell Biology",
+      "content_type": "exercise",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Cell Structure in Cell Biology\n\n## Key Concepts\n\nCells are the basic structural and functional units of life, with various organelles performing specific functions.\n\n## Examples and Practice\n\n**Example:** Nucleus contains DNA and controls cell activities\n\n**Practice:** Label cell organelles\n\n## Summary\n\nCell Structure is essential for understanding living organisms and biological processes. Connect these concepts with real-world observations for better comprehension.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_biology",
+        "cell_structure"
+      ],
+      "related_questions": [
+        "waec_biology_2020_q1",
+        "waec_biology_2021_q2"
+      ],
+      "tags": [
+        "biology",
+        "cell biology",
+        "cell_structure"
+      ],
+      "created_at": "2025-12-17T19:47:04.943645",
+      "updated_at": "2025-12-17T19:47:04.943654",
+      "author": "Biology Expert",
+      "version": 1
+    },
+    {
+      "id": "biology_cell biology_functions_20251217_194704",
+      "title": "Functions in Cell Biology",
+      "subject": "Biology",
+      "topic": "Cell Biology",
+      "content_type": "exercise",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Functions in Cell Biology\n\n## Key Concepts\n\nCell functions include energy production, protein synthesis, waste removal, and reproduction.\n\n## Examples and Practice\n\n**Example:** Mitochondria produce energy (ATP)\n\n**Practice:** Explain ribosome function\n\n## Summary\n\nFunctions is essential for understanding living organisms and biological processes. Connect these concepts with real-world observations for better comprehension.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_biology",
+        "cell_structure"
+      ],
+      "related_questions": [
+        "waec_biology_2020_q1",
+        "waec_biology_2021_q2"
+      ],
+      "tags": [
+        "biology",
+        "cell biology",
+        "functions"
+      ],
+      "created_at": "2025-12-17T19:47:04.944123",
+      "updated_at": "2025-12-17T19:47:04.944133",
+      "author": "Biology Expert",
+      "version": 1
+    },
+    {
+      "id": "biology_genetics_inheritance_20251217_194704",
+      "title": "Inheritance in Genetics",
+      "subject": "Biology",
+      "topic": "Genetics",
+      "content_type": "exercise",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Inheritance in Genetics\n\n## Key Concepts\n\nInheritance is the transmission of genetic information from parents to offspring.\n\n## Examples and Practice\n\n**Example:** Tall (T) dominant over short (t)\n\n**Practice:** Predict offspring from Tt × tt\n\n## Summary\n\nInheritance is essential for understanding living organisms and biological processes. Connect these concepts with real-world observations for better comprehension.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_biology",
+        "cell_structure"
+      ],
+      "related_questions": [
+        "waec_biology_2020_q1",
+        "waec_biology_2021_q2"
+      ],
+      "tags": [
+        "biology",
+        "genetics",
+        "inheritance"
+      ],
+      "created_at": "2025-12-17T19:47:04.944574",
+      "updated_at": "2025-12-17T19:47:04.944583",
+      "author": "Biology Expert",
+      "version": 1
+    },
+    {
+      "id": "biology_genetics_dna_20251217_194704",
+      "title": "Dna in Genetics",
+      "subject": "Biology",
+      "topic": "Genetics",
+      "content_type": "exercise",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Dna in Genetics\n\n## Key Concepts\n\nDNA is the molecule that carries genetic information and directs cellular activities.\n\n## Examples and Practice\n\n**Example:** DNA structure: double helix with base pairs A-T, C-G\n\n**Practice:** Explain DNA replication\n\n## Summary\n\nDNA is essential for understanding living organisms and biological processes. Connect these concepts with real-world observations for better comprehension.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_biology",
+        "cell_structure"
+      ],
+      "related_questions": [
+        "waec_biology_2020_q1",
+        "waec_biology_2021_q2"
+      ],
+      "tags": [
+        "biology",
+        "genetics",
+        "dna"
+      ],
+      "created_at": "2025-12-17T19:47:04.944851",
+      "updated_at": "2025-12-17T19:47:04.944860",
+      "author": "Biology Expert",
+      "version": 1
+    },
+    {
+      "id": "biology_genetics_reproduction_20251217_194704",
+      "title": "Reproduction in Genetics",
+      "subject": "Biology",
+      "topic": "Genetics",
+      "content_type": "exercise",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Reproduction in Genetics\n\n## Key Concepts\n\nReproduction is the process by which organisms produce offspring, either sexually or asexually.\n\n## Examples and Practice\n\n**Example:** Mitosis produces identical cells, meiosis produces gametes\n\n**Practice:** Compare mitosis and meiosis\n\n## Summary\n\nReproduction is essential for understanding living organisms and biological processes. Connect these concepts with real-world observations for better comprehension.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_biology",
+        "cell_structure"
+      ],
+      "related_questions": [
+        "waec_biology_2020_q1",
+        "waec_biology_2021_q2"
+      ],
+      "tags": [
+        "biology",
+        "genetics",
+        "reproduction"
+      ],
+      "created_at": "2025-12-17T19:47:04.945151",
+      "updated_at": "2025-12-17T19:47:04.945160",
+      "author": "Biology Expert",
+      "version": 1
+    },
+    {
+      "id": "biology_ecology_ecosystems_20251217_194704",
+      "title": "Ecosystems in Ecology",
+      "subject": "Biology",
+      "topic": "Ecology",
+      "content_type": "exercise",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Ecosystems in Ecology\n\n## Key Concepts\n\nEcosystems are communities of living organisms interacting with their physical environment.\n\n## Examples and Practice\n\n**Example:** Food chain: grass → rabbit → fox\n\n**Practice:** Draw energy pyramid\n\n## Summary\n\nEcosystems is essential for understanding living organisms and biological processes. Connect these concepts with real-world observations for better comprehension.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_biology",
+        "cell_structure"
+      ],
+      "related_questions": [
+        "waec_biology_2020_q1",
+        "waec_biology_2021_q2"
+      ],
+      "tags": [
+        "biology",
+        "ecology",
+        "ecosystems"
+      ],
+      "created_at": "2025-12-17T19:47:04.945635",
+      "updated_at": "2025-12-17T19:47:04.945644",
+      "author": "Biology Expert",
+      "version": 1
+    },
+    {
+      "id": "biology_ecology_environmental_biology_20251217_194704",
+      "title": "Environmental Biology in Ecology",
+      "subject": "Biology",
+      "topic": "Ecology",
+      "content_type": "exercise",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Environmental Biology in Ecology\n\n## Key Concepts\n\nEnvironmental biology studies the relationships between organisms and their environment.\n\n## Examples and Practice\n\n**Example:** Deforestation reduces biodiversity\n\n**Practice:** Explain greenhouse effect\n\n## Summary\n\nEnvironmental Biology is essential for understanding living organisms and biological processes. Connect these concepts with real-world observations for better comprehension.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_biology",
+        "cell_structure"
+      ],
+      "related_questions": [
+        "waec_biology_2020_q1",
+        "waec_biology_2021_q2"
+      ],
+      "tags": [
+        "biology",
+        "ecology",
+        "environmental_biology"
+      ],
+      "created_at": "2025-12-17T19:47:04.945925",
+      "updated_at": "2025-12-17T19:47:04.945935",
+      "author": "Biology Expert",
+      "version": 1
+    },
+    {
+      "id": "biology_human physiology_systems_20251217_194704",
+      "title": "Systems in Human Physiology",
+      "subject": "Biology",
+      "topic": "Human Physiology",
+      "content_type": "exercise",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Systems in Human Physiology\n\n## Key Concepts\n\nHuman body systems work together to maintain homeostasis and ensure proper functioning.\n\n## Examples and Practice\n\n**Example:** Digestive system breaks down food\n\n**Practice:** Describe circulatory system\n\n## Summary\n\nSystems is essential for understanding living organisms and biological processes. Connect these concepts with real-world observations for better comprehension.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_biology",
+        "cell_structure"
+      ],
+      "related_questions": [
+        "waec_biology_2020_q1",
+        "waec_biology_2021_q2"
+      ],
+      "tags": [
+        "biology",
+        "human physiology",
+        "systems"
+      ],
+      "created_at": "2025-12-17T19:47:04.946535",
+      "updated_at": "2025-12-17T19:47:04.946544",
+      "author": "Biology Expert",
+      "version": 1
+    },
+    {
+      "id": "biology_human physiology_homeostasis_20251217_194704",
+      "title": "Homeostasis in Human Physiology",
+      "subject": "Biology",
+      "topic": "Human Physiology",
+      "content_type": "exercise",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Homeostasis in Human Physiology\n\n## Key Concepts\n\nHomeostasis is the maintenance of stable internal conditions despite external changes.\n\n## Examples and Practice\n\n**Example:** Body temperature regulation\n\n**Practice:** Explain osmoregulation in kidneys\n\n## Summary\n\nHomeostasis is essential for understanding living organisms and biological processes. Connect these concepts with real-world observations for better comprehension.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [
+        "basic_biology",
+        "cell_structure"
+      ],
+      "related_questions": [
+        "waec_biology_2020_q1",
+        "waec_biology_2021_q2"
+      ],
+      "tags": [
+        "biology",
+        "human physiology",
+        "homeostasis"
+      ],
+      "created_at": "2025-12-17T19:47:04.946778",
+      "updated_at": "2025-12-17T19:47:04.946786",
+      "author": "Biology Expert",
+      "version": 1
+    },
+    {
+      "id": "english language_grammar_parts_of_speech_20251217_194704",
+      "title": "Parts Of Speech in Grammar",
+      "subject": "English Language",
+      "topic": "Grammar",
+      "content_type": "reference",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Parts Of Speech in Grammar\n\n## Key Concepts\n\nParts of Speech is an important concept in Grammar that forms the foundation for understanding more advanced topics in English Language.\n\n## Summary\n\nParts of Speech is an important topic that requires careful study and regular practice.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [],
+      "related_questions": [
+        "waec_english language_2020_q1",
+        "waec_english language_2021_q2"
+      ],
+      "tags": [
+        "english language",
+        "grammar",
+        "parts_of_speech"
+      ],
+      "created_at": "2025-12-17T19:47:04.947434",
+      "updated_at": "2025-12-17T19:47:04.947442",
+      "author": "English Language Expert",
+      "version": 1
+    },
+    {
+      "id": "english language_grammar_sentence_structure_20251217_194704",
+      "title": "Sentence Structure in Grammar",
+      "subject": "English Language",
+      "topic": "Grammar",
+      "content_type": "reference",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Sentence Structure in Grammar\n\n## Key Concepts\n\nSentence Structure is an important concept in Grammar that forms the foundation for understanding more advanced topics in English Language.\n\n## Summary\n\nSentence Structure is an important topic that requires careful study and regular practice.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [],
+      "related_questions": [
+        "waec_english language_2020_q1",
+        "waec_english language_2021_q2"
+      ],
+      "tags": [
+        "english language",
+        "grammar",
+        "sentence_structure"
+      ],
+      "created_at": "2025-12-17T19:47:04.947689",
+      "updated_at": "2025-12-17T19:47:04.947696",
+      "author": "English Language Expert",
+      "version": 1
+    },
+    {
+      "id": "english language_literature_comprehension_20251217_194704",
+      "title": "Comprehension in Literature",
+      "subject": "English Language",
+      "topic": "Literature",
+      "content_type": "reference",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Comprehension in Literature\n\n## Key Concepts\n\nComprehension is an important concept in Literature that forms the foundation for understanding more advanced topics in English Language.\n\n## Summary\n\nComprehension is an important topic that requires careful study and regular practice.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [],
+      "related_questions": [
+        "waec_english language_2020_q1",
+        "waec_english language_2021_q2"
+      ],
+      "tags": [
+        "english language",
+        "literature",
+        "comprehension"
+      ],
+      "created_at": "2025-12-17T19:47:04.948081",
+      "updated_at": "2025-12-17T19:47:04.948089",
+      "author": "English Language Expert",
+      "version": 1
+    },
+    {
+      "id": "english language_literature_analysis_20251217_194704",
+      "title": "Analysis in Literature",
+      "subject": "English Language",
+      "topic": "Literature",
+      "content_type": "reference",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Analysis in Literature\n\n## Key Concepts\n\nAnalysis is an important concept in Literature that forms the foundation for understanding more advanced topics in English Language.\n\n## Summary\n\nAnalysis is an important topic that requires careful study and regular practice.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [],
+      "related_questions": [
+        "waec_english language_2020_q1",
+        "waec_english language_2021_q2"
+      ],
+      "tags": [
+        "english language",
+        "literature",
+        "analysis"
+      ],
+      "created_at": "2025-12-17T19:47:04.948319",
+      "updated_at": "2025-12-17T19:47:04.948331",
+      "author": "English Language Expert",
+      "version": 1
+    },
+    {
+      "id": "english language_literature_criticism_20251217_194704",
+      "title": "Criticism in Literature",
+      "subject": "English Language",
+      "topic": "Literature",
+      "content_type": "reference",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Criticism in Literature\n\n## Key Concepts\n\nCriticism is an important concept in Literature that forms the foundation for understanding more advanced topics in English Language.\n\n## Summary\n\nCriticism is an important topic that requires careful study and regular practice.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [],
+      "related_questions": [
+        "waec_english language_2020_q1",
+        "waec_english language_2021_q2"
+      ],
+      "tags": [
+        "english language",
+        "literature",
+        "criticism"
+      ],
+      "created_at": "2025-12-17T19:47:04.948553",
+      "updated_at": "2025-12-17T19:47:04.948560",
+      "author": "English Language Expert",
+      "version": 1
+    },
+    {
+      "id": "english language_writing_essay_writing_20251217_194704",
+      "title": "Essay Writing in Writing",
+      "subject": "English Language",
+      "topic": "Writing",
+      "content_type": "reference",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Essay Writing in Writing\n\n## Key Concepts\n\nEssay Writing is an important concept in Writing that forms the foundation for understanding more advanced topics in English Language.\n\n## Summary\n\nEssay Writing is an important topic that requires careful study and regular practice.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [],
+      "related_questions": [
+        "waec_english language_2020_q1",
+        "waec_english language_2021_q2"
+      ],
+      "tags": [
+        "english language",
+        "writing",
+        "essay_writing"
+      ],
+      "created_at": "2025-12-17T19:47:04.948933",
+      "updated_at": "2025-12-17T19:47:04.948940",
+      "author": "English Language Expert",
+      "version": 1
+    },
+    {
+      "id": "english language_writing_comprehension_20251217_194704",
+      "title": "Comprehension in Writing",
+      "subject": "English Language",
+      "topic": "Writing",
+      "content_type": "reference",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Comprehension in Writing\n\n## Key Concepts\n\nComprehension is an important concept in Writing that forms the foundation for understanding more advanced topics in English Language.\n\n## Summary\n\nComprehension is an important topic that requires careful study and regular practice.\n",
+      "estimated_read_time": 1,
+      "prerequisites": [],
+      "related_questions": [
+        "waec_english language_2020_q1",
+        "waec_english language_2021_q2"
+      ],
+      "tags": [
+        "english language",
+        "writing",
+        "comprehension"
+      ],
+      "created_at": "2025-12-17T19:47:04.949155",
+      "updated_at": "2025-12-17T19:47:04.949162",
+      "author": "English Language Expert",
+      "version": 1
     }
   ],
   "progress": {}
