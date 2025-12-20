@@ -1583,6 +1583,27 @@
       "updated_at": "2025-12-17T19:47:04.949162",
       "author": "English Language Expert",
       "version": 1
+    },
+    {
+      "id": "test_nerdc_001",
+      "title": "Test NERDC Content",
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "content_type": "study_guide",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "Test content with learning tips",
+      "estimated_read_time": 10,
+      "prerequisites": [],
+      "related_questions": [],
+      "tags": [
+        "test",
+        "nerdc"
+      ],
+      "created_at": "2025-12-19T10:00:00",
+      "updated_at": "2025-12-19T10:00:00",
+      "author": "Test Author",
+      "version": 1
     }
   ],
   "progress": {}
