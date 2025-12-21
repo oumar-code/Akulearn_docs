@@ -851,7 +851,7 @@ def save_to_content_service(content_items):
     """
     try:
         # Use absolute path to root content_data.json
-        content_file_path = 'c:/Users/hp/Documents/Akulearn_docs/content_data.json'
+        content_file_path = 'content_data.json'
         with open(content_file_path, 'r', encoding='utf-8', errors='ignore') as f:
             data = json.load(f)
     except FileNotFoundError:
