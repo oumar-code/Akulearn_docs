@@ -96,6 +96,66 @@ export default function HomeScreen({ navigation }) {
           </TouchableOpacity>
         </View>
 
+        <View style={styles.advancedFeatures}>
+          <Text style={styles.sectionTitle}>Advanced Learning Tools</Text>
+
+          <View style={styles.featuresGrid}>
+            <TouchableOpacity
+              style={styles.featureCard}
+              onPress={() => navigation.navigate('CodePlayground')}
+            >
+              <Text style={styles.featureIcon}>💻</Text>
+              <Text style={styles.featureTitle}>Code Playground</Text>
+              <Text style={styles.featureDescription}>Practice coding</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.featureCard}
+              onPress={() => navigation.navigate('DatasetExplorer')}
+            >
+              <Text style={styles.featureIcon}>📊</Text>
+              <Text style={styles.featureTitle}>Data Explorer</Text>
+              <Text style={styles.featureDescription}>Analyze datasets</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.featureCard}
+              onPress={() => navigation.navigate('Encyclopedia')}
+            >
+              <Text style={styles.featureIcon}>📚</Text>
+              <Text style={styles.featureTitle}>Encyclopedia</Text>
+              <Text style={styles.featureDescription}>Knowledge base</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.featureCard}
+              onPress={() => navigation.navigate('Flashcard')}
+            >
+              <Text style={styles.featureIcon}>🃏</Text>
+              <Text style={styles.featureTitle}>Flashcards</Text>
+              <Text style={styles.featureDescription}>Spaced repetition</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.featureCard}
+              onPress={() => navigation.navigate('GameHub')}
+            >
+              <Text style={styles.featureIcon}>🎮</Text>
+              <Text style={styles.featureTitle}>Game Hub</Text>
+              <Text style={styles.featureDescription}>Learn through games</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.featureCard}
+              onPress={() => navigation.navigate('ResearchHub')}
+            >
+              <Text style={styles.featureIcon}>🔬</Text>
+              <Text style={styles.featureTitle}>Research Hub</Text>
+              <Text style={styles.featureDescription}>Academic writing</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
         {progressData?.weak_topics && progressData.weak_topics.length > 0 && (
           <View style={styles.weakTopicsSection}>
             <Text style={styles.sectionTitle}>Focus Areas</Text>
@@ -205,6 +265,43 @@ const styles = StyleSheet.create({
   },
   weakTopicsSection: {
     marginBottom: 30,
+  },
+  advancedFeatures: {
+    marginBottom: 30,
+  },
+  featuresGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  featureCard: {
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    padding: 16,
+    width: '48%',
+    alignItems: 'center',
+    marginBottom: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  featureIcon: {
+    fontSize: 32,
+    marginBottom: 8,
+  },
+  featureTitle: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#333',
+    textAlign: 'center',
+    marginBottom: 4,
+  },
+  featureDescription: {
+    fontSize: 12,
+    color: '#666',
+    textAlign: 'center',
   },
   weakTopicCard: {
     backgroundColor: '#fff',
