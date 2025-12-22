@@ -1,0 +1,980 @@
+{
+  "content": [
+    {
+      "id": "nerdc-further-math-ss1-sets-20251221-195949",
+      "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+      "subject": "Further Mathematics",
+      "level": "SS1",
+      "curriculum_framework": "NERDC Senior Secondary School Further Mathematics",
+      "learning_objectives": [
+        "Understand set theory and operations",
+        "Apply logical reasoning and proof techniques",
+        "Solve problems using Venn diagrams",
+        "Understand basic mathematical logic"
+      ],
+      "content": "\n## 🔢 Sets, Logic and Proof\n\n### Core Concepts\nFurther Mathematics builds advanced mathematical thinking and problem-solving skills.\n\n**Set Theory:**\n- **Set**: Collection of distinct objects\n- **Elements**: Members of a set\n- **Universal Set**: Set containing all possible elements\n- **Empty Set**: Set with no elements (∅)\n\n**Set Operations:**\n- **Union**: A ∪ B = {x | x ∈ A or x ∈ B}\n- **Intersection**: A ∩ B = {x | x ∈ A and x ∈ B}\n- **Complement**: A' = {x ∈ U | x ∉ A}\n- **Difference**: A - B = {x ∈ A | x ∉ B}\n\n**Logic:**\n- **Proposition**: Statement that is true or false\n- **Truth Tables**: Systematic way to determine validity\n- **Logical Connectives**: ∧ (and), ∨ (or), ¬ (not), → (implies)\n- **Tautology**: Always true statement\n\n### Worked Examples\n\n**Example 1: Set Operations**\nIf A = {1, 2, 3, 4} and B = {3, 4, 5, 6}\nA ∪ B = {1, 2, 3, 4, 5, 6}\nA ∩ B = {3, 4}\nA' = {5, 6} (if U = {1, 2, 3, 4, 5, 6})\n\n**Example 2: Truth Table**\nConstruct truth table for (P ∧ Q) → R\n\n**Example 3: Proof by Contradiction**\nProve √2 is irrational by contradiction.\n\n### Common Misconceptions\n- Sets can contain duplicate elements\n- Empty set is the same as zero\n- All mathematical statements are provable\n- Logic is only for computers\n\n### Real-Life Applications\n- Computer science and programming\n- Database design and queries\n- Decision making in business\n- Cryptography and security\n- Artificial intelligence reasoning\n\n### Practice Problems\n\n**Basic Level:**\n1. List elements of set A = {x | x is even, 1 ≤ x ≤ 10}\n2. Find A ∪ B and A ∩ B for given sets\n3. Draw Venn diagram for three sets\n\n**Intermediate Level:**\n4. Prove set identity: A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)\n5. Construct truth table for ¬(P ∨ Q) ↔ (¬P ∧ ¬Q)\n6. Solve problem using inclusion-exclusion principle\n\n**Advanced Level:**\n7. Prove mathematical induction for sum formula\n8. Analyze logical argument validity\n9. Apply set theory to real-world problem\n\n### WAEC Exam Preparation\n- Set theory operations and Venn diagrams\n- Basic logical reasoning\n- Simple proof techniques\n- Problem-solving applications\n\n### Study Tips\n- Practice with real objects to understand sets\n- Create truth tables systematically\n- Learn proof techniques step-by-step\n- Apply concepts to programming logic\n\n### Additional Resources\n- Discrete Mathematics textbooks\n- Khan Academy: Sets and Logic\n- YouTube: Professor Leonard (Logic)\n- Online set theory visualizers\n        ",
+      "learning_options": {
+        "visual": {
+          "tips": [
+            "Draw detailed Venn diagrams for set operations",
+            "Create visual truth tables and logic circuits",
+            "Use color coding for different set operations",
+            "Watch animations of logical proofs"
+          ],
+          "activities": [
+            "Design visual representations of set relationships",
+            "Create flow charts for logical reasoning",
+            "Make diagrams showing proof structures"
+          ]
+        },
+        "kinesthetic": {
+          "tips": [
+            "Use physical objects to demonstrate set operations",
+            "Build logic gates with physical components",
+            "Create tangible models of mathematical proofs",
+            "Use manipulatives for set theory concepts"
+          ],
+          "activities": [
+            "Use cards or tokens to represent set elements",
+            "Build physical Venn diagrams with hoops",
+            "Construct logic circuit models"
+          ]
+        },
+        "auditory": {
+          "tips": [
+            "Listen to logic and set theory podcasts",
+            "Record yourself explaining proofs",
+            "Participate in mathematics discussion groups",
+            "Use rhythmic patterns for logical operations"
+          ],
+          "activities": [
+            "Create audio explanations of set operations",
+            "Listen to mathematical reasoning lectures",
+            "Record step-by-step problem solutions"
+          ]
+        },
+        "reading_writing": {
+          "tips": [
+            "Write detailed proof explanations",
+            "Create study guides for logical operators",
+            "Maintain a mathematical reasoning journal",
+            "Read mathematical logic papers"
+          ],
+          "activities": [
+            "Write formal mathematical proofs",
+            "Document solution strategies",
+            "Create comparison charts of logical connectives"
+          ]
+        }
+      },
+      "practice_problems": {
+        "basic": [
+          "A = {1,3,5}, B = {2,3,4}, find A ∪ B, A ∩ B",
+          "Draw Venn diagram for A ∩ B = ∅",
+          "List subsets of {1, 2}"
+        ],
+        "intermediate": [
+          "Prove De Morgan's law: (A ∪ B)' = A' ∩ B'",
+          "Construct truth table for P → (Q ∧ R)",
+          "Solve inclusion-exclusion problem"
+        ],
+        "advanced": [
+          "Prove by mathematical induction: 1+2+...+n = n(n+1)/2",
+          "Analyze validity of logical argument",
+          "Apply set theory to combinatorics problem"
+        ]
+      },
+      "exam_preparation": {
+        "waec_focus": [
+          "Set operations and Venn diagrams",
+          "Basic logical reasoning",
+          "Simple proof techniques",
+          "Problem-solving applications"
+        ],
+        "common_questions": [
+          "Perform set operations",
+          "Construct and interpret Venn diagrams",
+          "Apply basic logic principles",
+          "Solve problems using set theory"
+        ],
+        "time_management": "Allocate 15-20 minutes per problem",
+        "scoring_tips": "Show all working clearly, use correct notation"
+      },
+      "career_connections": [
+        "Computer Science: Algorithm design and analysis",
+        "Engineering: Systems analysis and optimization",
+        "Finance: Risk assessment and decision making",
+        "Research: Statistical analysis and modeling"
+      ],
+      "estimated_duration": "60 minutes",
+      "difficulty_level": "Intermediate",
+      "prerequisites": [
+        "Basic mathematics, logical thinking"
+      ],
+      "tags": [
+        "further mathematics",
+        "sets",
+        "logic",
+        "proof",
+        "discrete math",
+        "WAEC"
+      ],
+      "created_at": "2025-12-21T19:59:49.196683",
+      "updated_at": "2025-12-21T19:59:49.196704"
+    },
+    {
+      "id": "nerdc-geography-ss1-intro-20251221-195949",
+      "title": "Introduction to Geography and Map Reading (SS1)",
+      "subject": "Geography",
+      "level": "SS1",
+      "curriculum_framework": "NERDC Senior Secondary School Geography",
+      "learning_objectives": [
+        "Understand the scope and importance of geography",
+        "Read and interpret different types of maps",
+        "Understand map projections and scales",
+        "Identify major geographical features"
+      ],
+      "content": "\n## 🌍 Introduction to Geography and Map Reading\n\n### Core Concepts\nGeography is the study of Earth's physical features, climate, and human activities.\n\n**Branches of Geography:**\n- **Physical Geography**: Landforms, climate, vegetation, soils\n- **Human Geography**: Population, settlement, economic activities\n- **Environmental Geography**: Human-environment interactions\n- **Cartography**: Map making and interpretation\n\n**Map Essentials:**\n- **Scale**: Ratio between map distance and actual distance\n- **Projection**: Method of representing Earth's curved surface on flat map\n- **Legend**: Explains symbols used on map\n- **Grid Reference**: System for locating positions\n\n**Types of Maps:**\n- **Topographic Maps**: Show physical features and elevation\n- **Political Maps**: Show boundaries and cities\n- **Thematic Maps**: Show specific data (population, climate)\n- **Aerial Photographs**: Bird's eye view images\n\n### Worked Examples\n\n**Example 1: Scale Calculation**\nMap scale: 1:50,000\nDistance on map: 5cm\nActual distance = 5cm × 50,000 = 250,000cm = 2.5km\n\n**Example 2: Grid Reference**\nOn a map with 100m grid squares:\nPoint at intersection of grid lines 35 and 42 = 3542\nMore precise: 354275 (35 easting, 42 northing, 75m east, 75m north)\n\n**Example 3: Map Reading**\nIdentify: Rivers, mountains, roads, settlements, vegetation\n\n### Common Misconceptions\n- Geography is only about memorizing capitals\n- All maps are accurate representations\n- Physical geography doesn't affect human life\n- Maps are outdated in digital age\n\n### Real-Life Applications\n- Urban planning and development\n- Environmental conservation\n- Disaster management and emergency response\n- Transportation and logistics\n- Climate change adaptation\n- International relations and geopolitics\n\n### Practice Problems\n\n**Basic Level:**\n1. Convert map scale 1:25,000 to statement form\n2. Identify major physical features on a map\n3. Locate Nigeria on world map\n\n**Intermediate Level:**\n4. Calculate actual distance from map measurement\n5. Give 6-figure grid reference for a point\n6. Compare different map projections\n\n**Advanced Level:**\n7. Interpret topographic map for land use planning\n8. Analyze thematic map data patterns\n9. Evaluate map accuracy and reliability\n\n### WAEC Exam Preparation\n- Map reading and interpretation\n- Geographical concepts and definitions\n- Basic map calculations\n- Identification of geographical features\n\n### Study Tips\n- Practice with real maps and atlases\n- Learn map symbols and conventions\n- Study current geographical events\n- Use online mapping tools\n\n### Additional Resources\n- National Geographic maps\n- Google Earth for 3D visualization\n- Geography textbooks and atlases\n- Online GIS and mapping tools\n        ",
+      "learning_options": {
+        "visual": {
+          "tips": [
+            "Study detailed maps and globes",
+            "Create visual diagrams of geographical concepts",
+            "Use color coding for different map features",
+            "Watch geographical documentaries"
+          ],
+          "activities": [
+            "Draw and label geographical features",
+            "Create visual timelines of geographical events",
+            "Design thematic maps for data presentation"
+          ]
+        },
+        "kinesthetic": {
+          "tips": [
+            "Build physical models of landforms",
+            "Use globes and maps for hands-on exploration",
+            "Create geographical games and puzzles",
+            "Conduct field observations and measurements"
+          ],
+          "activities": [
+            "Build 3D models of mountains and valleys",
+            "Use physical maps for navigation exercises",
+            "Create geographical scavenger hunts"
+          ]
+        },
+        "auditory": {
+          "tips": [
+            "Listen to geography podcasts and lectures",
+            "Record explanations of geographical processes",
+            "Participate in geography discussion groups",
+            "Use audio descriptions of maps"
+          ],
+          "activities": [
+            "Create audio guides for map reading",
+            "Listen to geographical case studies",
+            "Record oral presentations on geographical topics"
+          ]
+        },
+        "reading_writing": {
+          "tips": [
+            "Write detailed geographical descriptions",
+            "Create study guides for map reading",
+            "Maintain a geography observation journal",
+            "Read geographical research and reports"
+          ],
+          "activities": [
+            "Write geographical reports and analyses",
+            "Document field observations",
+            "Create comparison charts of geographical features"
+          ]
+        }
+      },
+      "practice_problems": {
+        "basic": [
+          "Convert 1:100,000 scale to statement",
+          "Identify 5 physical features on Nigeria map",
+          "List 4 types of maps"
+        ],
+        "intermediate": [
+          "Calculate distance: 3cm on 1:50,000 map",
+          "Give 4-figure grid reference",
+          "Compare Mercator vs Peters projection"
+        ],
+        "advanced": [
+          "Interpret contour lines on topographic map",
+          "Analyze population density patterns",
+          "Evaluate environmental impact assessment"
+        ]
+      },
+      "exam_preparation": {
+        "waec_focus": [
+          "Map reading and interpretation",
+          "Geographical concepts and definitions",
+          "Basic map calculations and scales",
+          "Identification of geographical features"
+        ],
+        "common_questions": [
+          "Interpret maps and diagrams",
+          "Calculate distances and areas",
+          "Identify and describe geographical features",
+          "Explain geographical processes"
+        ],
+        "time_management": "Allocate 15-20 minutes per map question",
+        "scoring_tips": "Label diagrams clearly, use geographical terminology"
+      },
+      "career_connections": [
+        "Urban Planning: City development and infrastructure",
+        "Environmental Science: Conservation and management",
+        "GIS Specialist: Geographic information systems",
+        "International Development: Aid and development work"
+      ],
+      "estimated_duration": "60 minutes",
+      "difficulty_level": "Intermediate",
+      "prerequisites": [
+        "Basic map skills, general knowledge"
+      ],
+      "tags": [
+        "geography",
+        "maps",
+        "cartography",
+        "physical features",
+        "map reading",
+        "WAEC"
+      ],
+      "created_at": "2025-12-21T19:59:49.196766",
+      "updated_at": "2025-12-21T19:59:49.196772"
+    },
+    {
+      "id": "nerdc-economics-ss1-basic-20251221-195949",
+      "title": "Basic Economic Concepts and Principles (SS1)",
+      "subject": "Economics",
+      "level": "SS1",
+      "curriculum_framework": "NERDC Senior Secondary School Economics",
+      "learning_objectives": [
+        "Understand basic economic concepts and terminology",
+        "Explain the concept of scarcity and choice",
+        "Distinguish between needs and wants",
+        "Understand production and consumption"
+      ],
+      "content": "\n## 💰 Basic Economic Concepts and Principles\n\n### Core Concepts\nEconomics is the study of how individuals and societies allocate scarce resources.\n\n**Fundamental Concepts:**\n- **Scarcity**: Limited resources, unlimited wants\n- **Choice**: Decision-making due to scarcity\n- **Opportunity Cost**: Value of next best alternative forgone\n- **Scale of Preference**: Ranking of wants by importance\n\n**Needs vs Wants:**\n- **Needs**: Essential for survival (food, shelter, clothing)\n- **Wants**: Desirable but not essential items\n- **Goods**: Physical items (cars, phones, books)\n- **Services**: Non-physical benefits (haircut, teaching)\n\n**Production and Consumption:**\n- **Production**: Creation of goods and services\n- **Consumption**: Using goods and services to satisfy wants\n- **Factors of Production**: Land, Labor, Capital, Entrepreneurship\n- **Division of Labor**: Specialization in production\n\n### Worked Examples\n\n**Example 1: Opportunity Cost**\nA student has ₦500 and must choose between:\n- Movie ticket: ₦300\n- Textbook: ₦250\nIf chooses movie, opportunity cost is textbook (₦250)\nIf chooses textbook, opportunity cost is movie (₦300)\n\n**Example 2: Scale of Preference**\nStudent's wants ranked by priority:\n1. Food and water (most important)\n2. Clothing and shelter\n3. Education and healthcare\n4. Entertainment and luxury items\n\n**Example 3: Production Possibility Curve**\nWith limited resources, a farmer can produce:\n- 10 bags rice OR 20 bags maize\n- 5 bags rice AND 10 bags maize\n- Shows trade-offs and efficiency\n\n### Common Misconceptions\n- Economics is only about money\n- Rich people don't face scarcity\n- Government can solve all economic problems\n- Economic growth benefits everyone equally\n\n### Real-Life Applications\n- Personal financial planning and budgeting\n- Business decision-making and resource allocation\n- Government policy and economic planning\n- International trade and globalization\n- Environmental resource management\n- Career planning and salary negotiations\n\n### Practice Problems\n\n**Basic Level:**\n1. Distinguish between needs and wants with examples\n2. Explain why scarcity forces choice\n3. List 4 factors of production\n\n**Intermediate Level:**\n4. Calculate opportunity cost in a budget decision\n5. Construct a simple scale of preference\n6. Explain division of labor in a factory\n\n**Advanced Level:**\n7. Analyze production possibility curve shifts\n8. Evaluate economic impact of government policies\n9. Apply economic principles to real-world problems\n\n### WAEC Exam Preparation\n- Basic economic concepts and definitions\n- Scarcity, choice, and opportunity cost\n- Needs vs wants, goods vs services\n- Factors of production\n\n### Study Tips\n- Relate concepts to daily life experiences\n- Create personal budget examples\n- Study current economic news\n- Practice with real-world scenarios\n\n### Additional Resources\n- Economics textbooks for secondary schools\n- BBC Economics resources\n- Khan Academy: Microeconomics\n- Financial planning websites\n        ",
+      "learning_options": {
+        "visual": {
+          "tips": [
+            "Create diagrams of economic concepts",
+            "Draw production possibility curves",
+            "Use charts for economic data visualization",
+            "Watch economic documentaries"
+          ],
+          "activities": [
+            "Design visual aids for economic principles",
+            "Create economic concept maps",
+            "Make infographics about economic systems"
+          ]
+        },
+        "kinesthetic": {
+          "tips": [
+            "Use physical objects for economic simulations",
+            "Create role-playing scenarios for economic decisions",
+            "Build models of economic systems",
+            "Conduct economic experiments with play money"
+          ],
+          "activities": [
+            "Simulate market transactions with tokens",
+            "Create physical production possibility models",
+            "Build economic decision-making games"
+          ]
+        },
+        "auditory": {
+          "tips": [
+            "Listen to economics podcasts and lectures",
+            "Record explanations of economic concepts",
+            "Participate in economics discussion groups",
+            "Use audio for vocabulary building"
+          ],
+          "activities": [
+            "Create audio explanations of economic theories",
+            "Listen to economic news analysis",
+            "Record oral presentations on economic topics"
+          ]
+        },
+        "reading_writing": {
+          "tips": [
+            "Write detailed economic analyses",
+            "Create study guides for economic terms",
+            "Maintain an economic observation journal",
+            "Read economic news and reports"
+          ],
+          "activities": [
+            "Write economic opinion pieces",
+            "Document personal financial decisions",
+            "Create comparison charts of economic systems"
+          ]
+        }
+      },
+      "practice_problems": {
+        "basic": [
+          "Give 3 examples each of needs and wants",
+          "Explain scarcity with personal example",
+          "List factors of production with examples"
+        ],
+        "intermediate": [
+          "Calculate opportunity cost: ₦1000 for phone vs laptop",
+          "Rank wants in order of preference",
+          "Explain specialization benefits"
+        ],
+        "advanced": [
+          "Analyze economic impact of price increase",
+          "Evaluate government intervention in markets",
+          "Apply economic principles to environmental issues"
+        ]
+      },
+      "exam_preparation": {
+        "waec_focus": [
+          "Basic economic concepts and definitions",
+          "Scarcity, choice, and opportunity cost",
+          "Needs vs wants, goods vs services",
+          "Factors of production and division of labor"
+        ],
+        "common_questions": [
+          "Define and explain economic concepts",
+          "Distinguish between economic terms",
+          "Give examples of economic principles",
+          "Explain economic relationships"
+        ],
+        "time_management": "Allocate 10-15 minutes per definition question",
+        "scoring_tips": "Use economic terminology correctly, give relevant examples"
+      },
+      "career_connections": [
+        "Business Administration: Management and finance",
+        "Banking and Finance: Investment and loans",
+        "Government: Policy making and economic planning",
+        "Entrepreneurship: Business planning and management"
+      ],
+      "estimated_duration": "60 minutes",
+      "difficulty_level": "Intermediate",
+      "prerequisites": [
+        "Basic mathematics, general knowledge"
+      ],
+      "tags": [
+        "economics",
+        "scarcity",
+        "choice",
+        "opportunity cost",
+        "production",
+        "WAEC"
+      ],
+      "created_at": "2025-12-21T19:59:49.196802",
+      "updated_at": "2025-12-21T19:59:49.196807"
+    },
+    {
+      "id": "nerdc-computer-ss1-intro-20251221-195949",
+      "title": "Introduction to Computing and Basic Programming (SS1)",
+      "subject": "Computer Science",
+      "level": "SS1",
+      "curriculum_framework": "NERDC Senior Secondary School Computer Science",
+      "learning_objectives": [
+        "Understand computer systems and components",
+        "Learn basic programming concepts",
+        "Understand data representation in computers",
+        "Develop algorithmic thinking"
+      ],
+      "content": "\n## 💻 Introduction to Computing and Basic Programming\n\n### Core Concepts\nComputer Science is the study of computers, computational systems, and computation itself.\n\n**Computer Systems:**\n- **Hardware**: Physical components (CPU, memory, storage, input/output)\n- **Software**: Programs and operating systems\n- **Data**: Information processed by computers\n- **Users**: People who interact with computer systems\n\n**Programming Fundamentals:**\n- **Algorithm**: Step-by-step procedure to solve a problem\n- **Program**: Set of instructions written in programming language\n- **Variables**: Named storage locations for data\n- **Data Types**: Different kinds of data (numbers, text, boolean)\n\n**Basic Programming Concepts:**\n- **Input**: Getting data into the program\n- **Processing**: Manipulating data according to instructions\n- **Output**: Displaying results\n- **Control Structures**: Sequence, selection, iteration\n\n### Worked Examples\n\n**Example 1: Algorithm Development**\nProblem: Calculate average of three numbers\nAlgorithm:\n1. Get three numbers from user\n2. Add the numbers together\n3. Divide sum by 3\n4. Display the result\n\n**Example 2: Pseudocode**\nBEGIN\n    INPUT num1, num2, num3\n    sum = num1 + num2 + num3\n    average = sum / 3\n    OUTPUT average\nEND\n\n**Example 3: Flowchart Symbols**\n- Rectangle: Process/operation\n- Diamond: Decision point\n- Arrow: Flow direction\n- Oval: Start/End\n\n### Common Misconceptions\n- Programming is only for math experts\n- Computers think like humans\n- All software is the same\n- Coding is just typing fast\n\n### Real-Life Applications\n- Mobile app development\n- Website creation and management\n- Data analysis and visualization\n- Automation and robotics\n- Artificial intelligence and machine learning\n- Cybersecurity and network management\n\n### Practice Problems\n\n**Basic Level:**\n1. Identify computer hardware components\n2. Explain difference between RAM and ROM\n3. Draw flowchart for simple daily activity\n\n**Intermediate Level:**\n4. Write algorithm to find largest of three numbers\n5. Create pseudocode for temperature conversion\n6. Explain binary number system\n\n**Advanced Level:**\n7. Design program to calculate compound interest\n8. Create flowchart for grading system\n9. Debug simple programming errors\n\n### WAEC Exam Preparation\n- Computer system components and functions\n- Basic programming concepts\n- Algorithm development and flowcharts\n- Data representation (binary, decimal)\n\n### Study Tips\n- Practice coding regularly on simple problems\n- Learn one programming language well\n- Understand concepts before syntax\n- Work on real projects\n\n### Additional Resources\n- Scratch programming for beginners\n- Codecademy interactive tutorials\n- Khan Academy: Computer Science\n- FreeCodeCamp online courses\n        ",
+      "learning_options": {
+        "visual": {
+          "tips": [
+            "Create flowcharts and diagrams for algorithms",
+            "Use color coding for different programming elements",
+            "Watch coding tutorial videos",
+            "Design user interface mockups"
+          ],
+          "activities": [
+            "Draw detailed flowcharts for processes",
+            "Create visual programming concept maps",
+            "Design algorithm visualization diagrams"
+          ]
+        },
+        "kinesthetic": {
+          "tips": [
+            "Build simple circuits and electronic projects",
+            "Use physical programming kits (Arduino, Raspberry Pi)",
+            "Create tangible algorithms with cards or objects",
+            "Build computer hardware models"
+          ],
+          "activities": [
+            "Assemble computer hardware components",
+            "Create physical flowcharts with sticky notes",
+            "Build simple robots or automated systems"
+          ]
+        },
+        "auditory": {
+          "tips": [
+            "Listen to programming podcasts and lectures",
+            "Record yourself explaining code",
+            "Participate in coding discussion groups",
+            "Use audio for learning programming syntax"
+          ],
+          "activities": [
+            "Create audio explanations of programming concepts",
+            "Listen to coding interviews and discussions",
+            "Record debugging sessions"
+          ]
+        },
+        "reading_writing": {
+          "tips": [
+            "Write detailed code documentation",
+            "Create study guides for programming concepts",
+            "Maintain a coding journal",
+            "Read programming blogs and tutorials"
+          ],
+          "activities": [
+            "Write pseudocode for complex problems",
+            "Document project development processes",
+            "Create comparison charts of programming languages"
+          ]
+        }
+      },
+      "practice_problems": {
+        "basic": [
+          "Label 5 computer hardware components",
+          "Convert decimal 25 to binary",
+          "Draw flowchart for making tea"
+        ],
+        "intermediate": [
+          "Write algorithm to check if number is even",
+          "Create pseudocode for area calculation",
+          "Explain difference between RAM and hard disk"
+        ],
+        "advanced": [
+          "Design program for student grading system",
+          "Create flowchart for ATM transaction",
+          "Debug logical errors in sample code"
+        ]
+      },
+      "exam_preparation": {
+        "waec_focus": [
+          "Computer system components and functions",
+          "Basic programming concepts and algorithms",
+          "Data representation and number systems",
+          "Flowchart design and interpretation"
+        ],
+        "common_questions": [
+          "Identify and explain computer components",
+          "Design algorithms and flowcharts",
+          "Convert between number systems",
+          "Explain programming concepts"
+        ],
+        "time_management": "Allocate 12-18 minutes per programming question",
+        "scoring_tips": "Use correct technical terminology, show clear logic"
+      },
+      "career_connections": [
+        "Software Development: Programming and app creation",
+        "Data Science: Analysis and machine learning",
+        "Cybersecurity: System protection and ethical hacking",
+        "IT Support: Technical troubleshooting and maintenance"
+      ],
+      "estimated_duration": "60 minutes",
+      "difficulty_level": "Intermediate",
+      "prerequisites": [
+        "Basic computer usage, logical thinking"
+      ],
+      "tags": [
+        "computer science",
+        "programming",
+        "algorithms",
+        "hardware",
+        "software",
+        "WAEC"
+      ],
+      "created_at": "2025-12-21T19:59:49.196843",
+      "updated_at": "2025-12-21T19:59:49.196849"
+    },
+    {
+      "id": "nerdc-further-math-ss1-sets-20251221-200005",
+      "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+      "subject": "Further Mathematics",
+      "level": "SS1",
+      "curriculum_framework": "NERDC Senior Secondary School Further Mathematics",
+      "learning_objectives": [
+        "Understand set theory and operations",
+        "Apply logical reasoning and proof techniques",
+        "Solve problems using Venn diagrams",
+        "Understand basic mathematical logic"
+      ],
+      "content": "\n## 🔢 Sets, Logic and Proof\n\n### Core Concepts\nFurther Mathematics builds advanced mathematical thinking and problem-solving skills.\n\n**Set Theory:**\n- **Set**: Collection of distinct objects\n- **Elements**: Members of a set\n- **Universal Set**: Set containing all possible elements\n- **Empty Set**: Set with no elements (∅)\n\n**Set Operations:**\n- **Union**: A ∪ B = {x | x ∈ A or x ∈ B}\n- **Intersection**: A ∩ B = {x | x ∈ A and x ∈ B}\n- **Complement**: A' = {x ∈ U | x ∉ A}\n- **Difference**: A - B = {x ∈ A | x ∉ B}\n\n**Logic:**\n- **Proposition**: Statement that is true or false\n- **Truth Tables**: Systematic way to determine validity\n- **Logical Connectives**: ∧ (and), ∨ (or), ¬ (not), → (implies)\n- **Tautology**: Always true statement\n\n### Worked Examples\n\n**Example 1: Set Operations**\nIf A = {1, 2, 3, 4} and B = {3, 4, 5, 6}\nA ∪ B = {1, 2, 3, 4, 5, 6}\nA ∩ B = {3, 4}\nA' = {5, 6} (if U = {1, 2, 3, 4, 5, 6})\n\n**Example 2: Truth Table**\nConstruct truth table for (P ∧ Q) → R\n\n**Example 3: Proof by Contradiction**\nProve √2 is irrational by contradiction.\n\n### Common Misconceptions\n- Sets can contain duplicate elements\n- Empty set is the same as zero\n- All mathematical statements are provable\n- Logic is only for computers\n\n### Real-Life Applications\n- Computer science and programming\n- Database design and queries\n- Decision making in business\n- Cryptography and security\n- Artificial intelligence reasoning\n\n### Practice Problems\n\n**Basic Level:**\n1. List elements of set A = {x | x is even, 1 ≤ x ≤ 10}\n2. Find A ∪ B and A ∩ B for given sets\n3. Draw Venn diagram for three sets\n\n**Intermediate Level:**\n4. Prove set identity: A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)\n5. Construct truth table for ¬(P ∨ Q) ↔ (¬P ∧ ¬Q)\n6. Solve problem using inclusion-exclusion principle\n\n**Advanced Level:**\n7. Prove mathematical induction for sum formula\n8. Analyze logical argument validity\n9. Apply set theory to real-world problem\n\n### WAEC Exam Preparation\n- Set theory operations and Venn diagrams\n- Basic logical reasoning\n- Simple proof techniques\n- Problem-solving applications\n\n### Study Tips\n- Practice with real objects to understand sets\n- Create truth tables systematically\n- Learn proof techniques step-by-step\n- Apply concepts to programming logic\n\n### Additional Resources\n- Discrete Mathematics textbooks\n- Khan Academy: Sets and Logic\n- YouTube: Professor Leonard (Logic)\n- Online set theory visualizers\n        ",
+      "learning_options": {
+        "visual": {
+          "tips": [
+            "Draw detailed Venn diagrams for set operations",
+            "Create visual truth tables and logic circuits",
+            "Use color coding for different set operations",
+            "Watch animations of logical proofs"
+          ],
+          "activities": [
+            "Design visual representations of set relationships",
+            "Create flow charts for logical reasoning",
+            "Make diagrams showing proof structures"
+          ]
+        },
+        "kinesthetic": {
+          "tips": [
+            "Use physical objects to demonstrate set operations",
+            "Build logic gates with physical components",
+            "Create tangible models of mathematical proofs",
+            "Use manipulatives for set theory concepts"
+          ],
+          "activities": [
+            "Use cards or tokens to represent set elements",
+            "Build physical Venn diagrams with hoops",
+            "Construct logic circuit models"
+          ]
+        },
+        "auditory": {
+          "tips": [
+            "Listen to logic and set theory podcasts",
+            "Record yourself explaining proofs",
+            "Participate in mathematics discussion groups",
+            "Use rhythmic patterns for logical operations"
+          ],
+          "activities": [
+            "Create audio explanations of set operations",
+            "Listen to mathematical reasoning lectures",
+            "Record step-by-step problem solutions"
+          ]
+        },
+        "reading_writing": {
+          "tips": [
+            "Write detailed proof explanations",
+            "Create study guides for logical operators",
+            "Maintain a mathematical reasoning journal",
+            "Read mathematical logic papers"
+          ],
+          "activities": [
+            "Write formal mathematical proofs",
+            "Document solution strategies",
+            "Create comparison charts of logical connectives"
+          ]
+        }
+      },
+      "practice_problems": {
+        "basic": [
+          "A = {1,3,5}, B = {2,3,4}, find A ∪ B, A ∩ B",
+          "Draw Venn diagram for A ∩ B = ∅",
+          "List subsets of {1, 2}"
+        ],
+        "intermediate": [
+          "Prove De Morgan's law: (A ∪ B)' = A' ∩ B'",
+          "Construct truth table for P → (Q ∧ R)",
+          "Solve inclusion-exclusion problem"
+        ],
+        "advanced": [
+          "Prove by mathematical induction: 1+2+...+n = n(n+1)/2",
+          "Analyze validity of logical argument",
+          "Apply set theory to combinatorics problem"
+        ]
+      },
+      "exam_preparation": {
+        "waec_focus": [
+          "Set operations and Venn diagrams",
+          "Basic logical reasoning",
+          "Simple proof techniques",
+          "Problem-solving applications"
+        ],
+        "common_questions": [
+          "Perform set operations",
+          "Construct and interpret Venn diagrams",
+          "Apply basic logic principles",
+          "Solve problems using set theory"
+        ],
+        "time_management": "Allocate 15-20 minutes per problem",
+        "scoring_tips": "Show all working clearly, use correct notation"
+      },
+      "career_connections": [
+        "Computer Science: Algorithm design and analysis",
+        "Engineering: Systems analysis and optimization",
+        "Finance: Risk assessment and decision making",
+        "Research: Statistical analysis and modeling"
+      ],
+      "estimated_duration": "60 minutes",
+      "difficulty_level": "Intermediate",
+      "prerequisites": [
+        "Basic mathematics, logical thinking"
+      ],
+      "tags": [
+        "further mathematics",
+        "sets",
+        "logic",
+        "proof",
+        "discrete math",
+        "WAEC"
+      ],
+      "created_at": "2025-12-21T20:00:05.094565",
+      "updated_at": "2025-12-21T20:00:05.094581"
+    },
+    {
+      "id": "nerdc-geography-ss1-intro-20251221-200005",
+      "title": "Introduction to Geography and Map Reading (SS1)",
+      "subject": "Geography",
+      "level": "SS1",
+      "curriculum_framework": "NERDC Senior Secondary School Geography",
+      "learning_objectives": [
+        "Understand the scope and importance of geography",
+        "Read and interpret different types of maps",
+        "Understand map projections and scales",
+        "Identify major geographical features"
+      ],
+      "content": "\n## 🌍 Introduction to Geography and Map Reading\n\n### Core Concepts\nGeography is the study of Earth's physical features, climate, and human activities.\n\n**Branches of Geography:**\n- **Physical Geography**: Landforms, climate, vegetation, soils\n- **Human Geography**: Population, settlement, economic activities\n- **Environmental Geography**: Human-environment interactions\n- **Cartography**: Map making and interpretation\n\n**Map Essentials:**\n- **Scale**: Ratio between map distance and actual distance\n- **Projection**: Method of representing Earth's curved surface on flat map\n- **Legend**: Explains symbols used on map\n- **Grid Reference**: System for locating positions\n\n**Types of Maps:**\n- **Topographic Maps**: Show physical features and elevation\n- **Political Maps**: Show boundaries and cities\n- **Thematic Maps**: Show specific data (population, climate)\n- **Aerial Photographs**: Bird's eye view images\n\n### Worked Examples\n\n**Example 1: Scale Calculation**\nMap scale: 1:50,000\nDistance on map: 5cm\nActual distance = 5cm × 50,000 = 250,000cm = 2.5km\n\n**Example 2: Grid Reference**\nOn a map with 100m grid squares:\nPoint at intersection of grid lines 35 and 42 = 3542\nMore precise: 354275 (35 easting, 42 northing, 75m east, 75m north)\n\n**Example 3: Map Reading**\nIdentify: Rivers, mountains, roads, settlements, vegetation\n\n### Common Misconceptions\n- Geography is only about memorizing capitals\n- All maps are accurate representations\n- Physical geography doesn't affect human life\n- Maps are outdated in digital age\n\n### Real-Life Applications\n- Urban planning and development\n- Environmental conservation\n- Disaster management and emergency response\n- Transportation and logistics\n- Climate change adaptation\n- International relations and geopolitics\n\n### Practice Problems\n\n**Basic Level:**\n1. Convert map scale 1:25,000 to statement form\n2. Identify major physical features on a map\n3. Locate Nigeria on world map\n\n**Intermediate Level:**\n4. Calculate actual distance from map measurement\n5. Give 6-figure grid reference for a point\n6. Compare different map projections\n\n**Advanced Level:**\n7. Interpret topographic map for land use planning\n8. Analyze thematic map data patterns\n9. Evaluate map accuracy and reliability\n\n### WAEC Exam Preparation\n- Map reading and interpretation\n- Geographical concepts and definitions\n- Basic map calculations\n- Identification of geographical features\n\n### Study Tips\n- Practice with real maps and atlases\n- Learn map symbols and conventions\n- Study current geographical events\n- Use online mapping tools\n\n### Additional Resources\n- National Geographic maps\n- Google Earth for 3D visualization\n- Geography textbooks and atlases\n- Online GIS and mapping tools\n        ",
+      "learning_options": {
+        "visual": {
+          "tips": [
+            "Study detailed maps and globes",
+            "Create visual diagrams of geographical concepts",
+            "Use color coding for different map features",
+            "Watch geographical documentaries"
+          ],
+          "activities": [
+            "Draw and label geographical features",
+            "Create visual timelines of geographical events",
+            "Design thematic maps for data presentation"
+          ]
+        },
+        "kinesthetic": {
+          "tips": [
+            "Build physical models of landforms",
+            "Use globes and maps for hands-on exploration",
+            "Create geographical games and puzzles",
+            "Conduct field observations and measurements"
+          ],
+          "activities": [
+            "Build 3D models of mountains and valleys",
+            "Use physical maps for navigation exercises",
+            "Create geographical scavenger hunts"
+          ]
+        },
+        "auditory": {
+          "tips": [
+            "Listen to geography podcasts and lectures",
+            "Record explanations of geographical processes",
+            "Participate in geography discussion groups",
+            "Use audio descriptions of maps"
+          ],
+          "activities": [
+            "Create audio guides for map reading",
+            "Listen to geographical case studies",
+            "Record oral presentations on geographical topics"
+          ]
+        },
+        "reading_writing": {
+          "tips": [
+            "Write detailed geographical descriptions",
+            "Create study guides for map reading",
+            "Maintain a geography observation journal",
+            "Read geographical research and reports"
+          ],
+          "activities": [
+            "Write geographical reports and analyses",
+            "Document field observations",
+            "Create comparison charts of geographical features"
+          ]
+        }
+      },
+      "practice_problems": {
+        "basic": [
+          "Convert 1:100,000 scale to statement",
+          "Identify 5 physical features on Nigeria map",
+          "List 4 types of maps"
+        ],
+        "intermediate": [
+          "Calculate distance: 3cm on 1:50,000 map",
+          "Give 4-figure grid reference",
+          "Compare Mercator vs Peters projection"
+        ],
+        "advanced": [
+          "Interpret contour lines on topographic map",
+          "Analyze population density patterns",
+          "Evaluate environmental impact assessment"
+        ]
+      },
+      "exam_preparation": {
+        "waec_focus": [
+          "Map reading and interpretation",
+          "Geographical concepts and definitions",
+          "Basic map calculations and scales",
+          "Identification of geographical features"
+        ],
+        "common_questions": [
+          "Interpret maps and diagrams",
+          "Calculate distances and areas",
+          "Identify and describe geographical features",
+          "Explain geographical processes"
+        ],
+        "time_management": "Allocate 15-20 minutes per map question",
+        "scoring_tips": "Label diagrams clearly, use geographical terminology"
+      },
+      "career_connections": [
+        "Urban Planning: City development and infrastructure",
+        "Environmental Science: Conservation and management",
+        "GIS Specialist: Geographic information systems",
+        "International Development: Aid and development work"
+      ],
+      "estimated_duration": "60 minutes",
+      "difficulty_level": "Intermediate",
+      "prerequisites": [
+        "Basic map skills, general knowledge"
+      ],
+      "tags": [
+        "geography",
+        "maps",
+        "cartography",
+        "physical features",
+        "map reading",
+        "WAEC"
+      ],
+      "created_at": "2025-12-21T20:00:05.094630",
+      "updated_at": "2025-12-21T20:00:05.094636"
+    },
+    {
+      "id": "nerdc-economics-ss1-basic-20251221-200005",
+      "title": "Basic Economic Concepts and Principles (SS1)",
+      "subject": "Economics",
+      "level": "SS1",
+      "curriculum_framework": "NERDC Senior Secondary School Economics",
+      "learning_objectives": [
+        "Understand basic economic concepts and terminology",
+        "Explain the concept of scarcity and choice",
+        "Distinguish between needs and wants",
+        "Understand production and consumption"
+      ],
+      "content": "\n## 💰 Basic Economic Concepts and Principles\n\n### Core Concepts\nEconomics is the study of how individuals and societies allocate scarce resources.\n\n**Fundamental Concepts:**\n- **Scarcity**: Limited resources, unlimited wants\n- **Choice**: Decision-making due to scarcity\n- **Opportunity Cost**: Value of next best alternative forgone\n- **Scale of Preference**: Ranking of wants by importance\n\n**Needs vs Wants:**\n- **Needs**: Essential for survival (food, shelter, clothing)\n- **Wants**: Desirable but not essential items\n- **Goods**: Physical items (cars, phones, books)\n- **Services**: Non-physical benefits (haircut, teaching)\n\n**Production and Consumption:**\n- **Production**: Creation of goods and services\n- **Consumption**: Using goods and services to satisfy wants\n- **Factors of Production**: Land, Labor, Capital, Entrepreneurship\n- **Division of Labor**: Specialization in production\n\n### Worked Examples\n\n**Example 1: Opportunity Cost**\nA student has ₦500 and must choose between:\n- Movie ticket: ₦300\n- Textbook: ₦250\nIf chooses movie, opportunity cost is textbook (₦250)\nIf chooses textbook, opportunity cost is movie (₦300)\n\n**Example 2: Scale of Preference**\nStudent's wants ranked by priority:\n1. Food and water (most important)\n2. Clothing and shelter\n3. Education and healthcare\n4. Entertainment and luxury items\n\n**Example 3: Production Possibility Curve**\nWith limited resources, a farmer can produce:\n- 10 bags rice OR 20 bags maize\n- 5 bags rice AND 10 bags maize\n- Shows trade-offs and efficiency\n\n### Common Misconceptions\n- Economics is only about money\n- Rich people don't face scarcity\n- Government can solve all economic problems\n- Economic growth benefits everyone equally\n\n### Real-Life Applications\n- Personal financial planning and budgeting\n- Business decision-making and resource allocation\n- Government policy and economic planning\n- International trade and globalization\n- Environmental resource management\n- Career planning and salary negotiations\n\n### Practice Problems\n\n**Basic Level:**\n1. Distinguish between needs and wants with examples\n2. Explain why scarcity forces choice\n3. List 4 factors of production\n\n**Intermediate Level:**\n4. Calculate opportunity cost in a budget decision\n5. Construct a simple scale of preference\n6. Explain division of labor in a factory\n\n**Advanced Level:**\n7. Analyze production possibility curve shifts\n8. Evaluate economic impact of government policies\n9. Apply economic principles to real-world problems\n\n### WAEC Exam Preparation\n- Basic economic concepts and definitions\n- Scarcity, choice, and opportunity cost\n- Needs vs wants, goods vs services\n- Factors of production\n\n### Study Tips\n- Relate concepts to daily life experiences\n- Create personal budget examples\n- Study current economic news\n- Practice with real-world scenarios\n\n### Additional Resources\n- Economics textbooks for secondary schools\n- BBC Economics resources\n- Khan Academy: Microeconomics\n- Financial planning websites\n        ",
+      "learning_options": {
+        "visual": {
+          "tips": [
+            "Create diagrams of economic concepts",
+            "Draw production possibility curves",
+            "Use charts for economic data visualization",
+            "Watch economic documentaries"
+          ],
+          "activities": [
+            "Design visual aids for economic principles",
+            "Create economic concept maps",
+            "Make infographics about economic systems"
+          ]
+        },
+        "kinesthetic": {
+          "tips": [
+            "Use physical objects for economic simulations",
+            "Create role-playing scenarios for economic decisions",
+            "Build models of economic systems",
+            "Conduct economic experiments with play money"
+          ],
+          "activities": [
+            "Simulate market transactions with tokens",
+            "Create physical production possibility models",
+            "Build economic decision-making games"
+          ]
+        },
+        "auditory": {
+          "tips": [
+            "Listen to economics podcasts and lectures",
+            "Record explanations of economic concepts",
+            "Participate in economics discussion groups",
+            "Use audio for vocabulary building"
+          ],
+          "activities": [
+            "Create audio explanations of economic theories",
+            "Listen to economic news analysis",
+            "Record oral presentations on economic topics"
+          ]
+        },
+        "reading_writing": {
+          "tips": [
+            "Write detailed economic analyses",
+            "Create study guides for economic terms",
+            "Maintain an economic observation journal",
+            "Read economic news and reports"
+          ],
+          "activities": [
+            "Write economic opinion pieces",
+            "Document personal financial decisions",
+            "Create comparison charts of economic systems"
+          ]
+        }
+      },
+      "practice_problems": {
+        "basic": [
+          "Give 3 examples each of needs and wants",
+          "Explain scarcity with personal example",
+          "List factors of production with examples"
+        ],
+        "intermediate": [
+          "Calculate opportunity cost: ₦1000 for phone vs laptop",
+          "Rank wants in order of preference",
+          "Explain specialization benefits"
+        ],
+        "advanced": [
+          "Analyze economic impact of price increase",
+          "Evaluate government intervention in markets",
+          "Apply economic principles to environmental issues"
+        ]
+      },
+      "exam_preparation": {
+        "waec_focus": [
+          "Basic economic concepts and definitions",
+          "Scarcity, choice, and opportunity cost",
+          "Needs vs wants, goods vs services",
+          "Factors of production and division of labor"
+        ],
+        "common_questions": [
+          "Define and explain economic concepts",
+          "Distinguish between economic terms",
+          "Give examples of economic principles",
+          "Explain economic relationships"
+        ],
+        "time_management": "Allocate 10-15 minutes per definition question",
+        "scoring_tips": "Use economic terminology correctly, give relevant examples"
+      },
+      "career_connections": [
+        "Business Administration: Management and finance",
+        "Banking and Finance: Investment and loans",
+        "Government: Policy making and economic planning",
+        "Entrepreneurship: Business planning and management"
+      ],
+      "estimated_duration": "60 minutes",
+      "difficulty_level": "Intermediate",
+      "prerequisites": [
+        "Basic mathematics, general knowledge"
+      ],
+      "tags": [
+        "economics",
+        "scarcity",
+        "choice",
+        "opportunity cost",
+        "production",
+        "WAEC"
+      ],
+      "created_at": "2025-12-21T20:00:05.094665",
+      "updated_at": "2025-12-21T20:00:05.094671"
+    },
+    {
+      "id": "nerdc-computer-ss1-intro-20251221-200005",
+      "title": "Introduction to Computing and Basic Programming (SS1)",
+      "subject": "Computer Science",
+      "level": "SS1",
+      "curriculum_framework": "NERDC Senior Secondary School Computer Science",
+      "learning_objectives": [
+        "Understand computer systems and components",
+        "Learn basic programming concepts",
+        "Understand data representation in computers",
+        "Develop algorithmic thinking"
+      ],
+      "content": "\n## 💻 Introduction to Computing and Basic Programming\n\n### Core Concepts\nComputer Science is the study of computers, computational systems, and computation itself.\n\n**Computer Systems:**\n- **Hardware**: Physical components (CPU, memory, storage, input/output)\n- **Software**: Programs and operating systems\n- **Data**: Information processed by computers\n- **Users**: People who interact with computer systems\n\n**Programming Fundamentals:**\n- **Algorithm**: Step-by-step procedure to solve a problem\n- **Program**: Set of instructions written in programming language\n- **Variables**: Named storage locations for data\n- **Data Types**: Different kinds of data (numbers, text, boolean)\n\n**Basic Programming Concepts:**\n- **Input**: Getting data into the program\n- **Processing**: Manipulating data according to instructions\n- **Output**: Displaying results\n- **Control Structures**: Sequence, selection, iteration\n\n### Worked Examples\n\n**Example 1: Algorithm Development**\nProblem: Calculate average of three numbers\nAlgorithm:\n1. Get three numbers from user\n2. Add the numbers together\n3. Divide sum by 3\n4. Display the result\n\n**Example 2: Pseudocode**\nBEGIN\n    INPUT num1, num2, num3\n    sum = num1 + num2 + num3\n    average = sum / 3\n    OUTPUT average\nEND\n\n**Example 3: Flowchart Symbols**\n- Rectangle: Process/operation\n- Diamond: Decision point\n- Arrow: Flow direction\n- Oval: Start/End\n\n### Common Misconceptions\n- Programming is only for math experts\n- Computers think like humans\n- All software is the same\n- Coding is just typing fast\n\n### Real-Life Applications\n- Mobile app development\n- Website creation and management\n- Data analysis and visualization\n- Automation and robotics\n- Artificial intelligence and machine learning\n- Cybersecurity and network management\n\n### Practice Problems\n\n**Basic Level:**\n1. Identify computer hardware components\n2. Explain difference between RAM and ROM\n3. Draw flowchart for simple daily activity\n\n**Intermediate Level:**\n4. Write algorithm to find largest of three numbers\n5. Create pseudocode for temperature conversion\n6. Explain binary number system\n\n**Advanced Level:**\n7. Design program to calculate compound interest\n8. Create flowchart for grading system\n9. Debug simple programming errors\n\n### WAEC Exam Preparation\n- Computer system components and functions\n- Basic programming concepts\n- Algorithm development and flowcharts\n- Data representation (binary, decimal)\n\n### Study Tips\n- Practice coding regularly on simple problems\n- Learn one programming language well\n- Understand concepts before syntax\n- Work on real projects\n\n### Additional Resources\n- Scratch programming for beginners\n- Codecademy interactive tutorials\n- Khan Academy: Computer Science\n- FreeCodeCamp online courses\n        ",
+      "learning_options": {
+        "visual": {
+          "tips": [
+            "Create flowcharts and diagrams for algorithms",
+            "Use color coding for different programming elements",
+            "Watch coding tutorial videos",
+            "Design user interface mockups"
+          ],
+          "activities": [
+            "Draw detailed flowcharts for processes",
+            "Create visual programming concept maps",
+            "Design algorithm visualization diagrams"
+          ]
+        },
+        "kinesthetic": {
+          "tips": [
+            "Build simple circuits and electronic projects",
+            "Use physical programming kits (Arduino, Raspberry Pi)",
+            "Create tangible algorithms with cards or objects",
+            "Build computer hardware models"
+          ],
+          "activities": [
+            "Assemble computer hardware components",
+            "Create physical flowcharts with sticky notes",
+            "Build simple robots or automated systems"
+          ]
+        },
+        "auditory": {
+          "tips": [
+            "Listen to programming podcasts and lectures",
+            "Record yourself explaining code",
+            "Participate in coding discussion groups",
+            "Use audio for learning programming syntax"
+          ],
+          "activities": [
+            "Create audio explanations of programming concepts",
+            "Listen to coding interviews and discussions",
+            "Record debugging sessions"
+          ]
+        },
+        "reading_writing": {
+          "tips": [
+            "Write detailed code documentation",
+            "Create study guides for programming concepts",
+            "Maintain a coding journal",
+            "Read programming blogs and tutorials"
+          ],
+          "activities": [
+            "Write pseudocode for complex problems",
+            "Document project development processes",
+            "Create comparison charts of programming languages"
+          ]
+        }
+      },
+      "practice_problems": {
+        "basic": [
+          "Label 5 computer hardware components",
+          "Convert decimal 25 to binary",
+          "Draw flowchart for making tea"
+        ],
+        "intermediate": [
+          "Write algorithm to check if number is even",
+          "Create pseudocode for area calculation",
+          "Explain difference between RAM and hard disk"
+        ],
+        "advanced": [
+          "Design program for student grading system",
+          "Create flowchart for ATM transaction",
+          "Debug logical errors in sample code"
+        ]
+      },
+      "exam_preparation": {
+        "waec_focus": [
+          "Computer system components and functions",
+          "Basic programming concepts and algorithms",
+          "Data representation and number systems",
+          "Flowchart design and interpretation"
+        ],
+        "common_questions": [
+          "Identify and explain computer components",
+          "Design algorithms and flowcharts",
+          "Convert between number systems",
+          "Explain programming concepts"
+        ],
+        "time_management": "Allocate 12-18 minutes per programming question",
+        "scoring_tips": "Use correct technical terminology, show clear logic"
+      },
+      "career_connections": [
+        "Software Development: Programming and app creation",
+        "Data Science: Analysis and machine learning",
+        "Cybersecurity: System protection and ethical hacking",
+        "IT Support: Technical troubleshooting and maintenance"
+      ],
+      "estimated_duration": "60 minutes",
+      "difficulty_level": "Intermediate",
+      "prerequisites": [
+        "Basic computer usage, logical thinking"
+      ],
+      "tags": [
+        "computer science",
+        "programming",
+        "algorithms",
+        "hardware",
+        "software",
+        "WAEC"
+      ],
+      "created_at": "2025-12-21T20:00:05.094705",
+      "updated_at": "2025-12-21T20:00:05.094711"
+    }
+  ]
+}
