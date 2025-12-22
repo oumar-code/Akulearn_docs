@@ -16,6 +16,14 @@ import ProgressScreen from './screens/ProgressScreen';
 import LearnScreen from './screens/LearnScreen';
 import ContentReaderScreen from './screens/ContentReaderScreen';
 
+// New feature screens
+import CodePlaygroundScreen from './screens/CodePlaygroundScreen';
+import DatasetExplorerScreen from './screens/DatasetExplorerScreen';
+import EncyclopediaScreen from './screens/EncyclopediaScreen';
+import FlashcardScreen from './screens/FlashcardScreen';
+import GameHubScreen from './screens/GameHubScreen';
+import ResearchHubScreen from './screens/ResearchHubScreen';
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -122,6 +130,36 @@ export default function App() {
             name="ContentReader"
             component={ContentReaderScreen}
             options={{ title: 'Content' }}
+          />
+          <Stack.Screen
+            name="CodePlayground"
+            component={CodePlaygroundScreen}
+            options={{ title: 'Code Playground' }}
+          />
+          <Stack.Screen
+            name="DatasetExplorer"
+            component={DatasetExplorerScreen}
+            options={{ title: 'Dataset Explorer' }}
+          />
+          <Stack.Screen
+            name="Encyclopedia"
+            component={EncyclopediaScreen}
+            options={{ title: 'Encyclopedia' }}
+          />
+          <Stack.Screen
+            name="Flashcard"
+            component={FlashcardScreen}
+            options={{ title: 'Flashcards' }}
+          />
+          <Stack.Screen
+            name="GameHub"
+            component={GameHubScreen}
+            options={{ title: 'Game Hub' }}
+          />
+          <Stack.Screen
+            name="ResearchHub"
+            component={ResearchHubScreen}
+            options={{ title: 'Research Hub' }}
           />
         </Stack.Navigator>
       </NavigationContainer>
