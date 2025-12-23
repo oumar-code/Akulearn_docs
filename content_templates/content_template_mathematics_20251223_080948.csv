@@ -1,0 +1,78 @@
+title,subject,topic,subtopic,content_type,difficulty,exam_board,content,summary,learning_objectives,key_concepts,worked_examples,important_formulas,common_mistakes,practice_problems,exam_tips,estimated_read_time,prerequisites,related_questions,tags,author,references,multimedia_links,cultural_notes
+Solving Quadratic Equations by Factorization,Mathematics,Algebra,Quadratic Equations,study_guide,intermediate,WAEC,"# Solving Quadratic Equations by Factorization
+
+## Introduction
+Quadratic equations are polynomial equations of degree 2. They can be solved using several methods including factorization.
+
+## Method: Factorization
+To solve ax² + bx + c = 0 by factorization:
+
+1. Write the equation in standard form
+2. Factor the quadratic expression
+3. Set each factor equal to zero
+4. Solve for the variable
+
+## Worked Examples
+
+### Example 1: Simple Factorization
+Solve x² + 5x + 6 = 0
+
+**Step 1:** Factor the quadratic
+(x + 2)(x + 3) = 0
+
+**Step 2:** Set each factor to zero
+x + 2 = 0 or x + 3 = 0
+
+**Step 3:** Solve each equation
+x = -2 or x = -3
+
+### Example 2: With Common Factor
+Solve 2x² + 8x + 6 = 0
+
+**Step 1:** Divide by 2: x² + 4x + 3 = 0
+**Step 2:** Factor: (x + 1)(x + 3) = 0
+**Step 3:** x = -1 or x = -3",Factorization method for solving quadratic equations with step-by-step examples,"Solve quadratic equations by factorization,Identify when to use factorization,Apply factorization to real-world problems","Standard form: ax² + bx + c = 0,Zero product property,Factors and roots","x² + 5x + 6 = 0 → (x + 2)(x + 3) = 0 → x = -2, -3","ax² + bx + c = (x + m)(x + n) where m + n = b, mn = c","Forgetting to set factors equal to zero,Ignoring the ± in solutions,Not checking solutions","Solve: x² - 7x + 12 = 0, 2x² + x - 6 = 0, x² + 2x - 8 = 0","Always check your factors by expanding,Look for common factors first,Practice different number combinations",20,"Basic algebra,Linear equations","WAEC Math 2020 Q1,WAEC Math 2021 Q3","algebra,quadratic equations,factorization,mathematics",Mathematics Expert,"WAEC Mathematics Syllabus 2023,Adelodun A. (2019) Mathematics for Senior Secondary Schools",,Quadratic equations appear in Nigerian business calculations for profit maximization
+Trigonometric Ratios and Identities,Mathematics,Trigonometry,Basic Ratios,reference,intermediate,WAEC,"# Trigonometric Ratios
+
+## The Three Main Ratios
+
+### Sine (sin)
+sin θ = Opposite / Hypotenuse
+
+### Cosine (cos)
+cos θ = Adjacent / Hypotenuse
+
+### Tangent (tan)
+tan θ = Opposite / Adjacent
+
+## Reciprocal Ratios
+
+### Cosecant (cosec)
+cosec θ = 1 / sin θ = Hypotenuse / Opposite
+
+### Secant (sec)
+sec θ = 1 / cos θ = Hypotenuse / Adjacent
+
+### Cotangent (cot)
+cot θ = 1 / tan θ = Adjacent / Opposite
+
+## Important Identities
+
+### Pythagorean Identity
+sin²θ + cos²θ = 1
+
+### Quotient Identity
+tan θ = sin θ / cos θ
+
+### Reciprocal Identities
+cosec θ = 1/sin θ, sec θ = 1/cos θ, cot θ = 1/tan θ
+
+## Special Angles
+
+| Angle | sin | cos | tan |
+|-------|-----|-----|-----|
+| 0°   | 0   | 1   | 0   |
+| 30°  | 1/2 | √3/2| 1/√3|
+| 45°  | √2/2| √2/2| 1   |
+| 60°  | √3/2| 1/2 | √3  |
+| 90°  | 1   | 0   | ∞   |","Complete reference for trigonometric ratios, identities, and special angles","Define trigonometric ratios,Apply ratios to right-angled triangles,Use trigonometric identities","SOHCAHTOA mnemonic,Right-angled triangles,Special triangles","In △ABC with ∠C=90°, ∠A=30°, AC=5cm. Find sin A, cos A, tan A","sin θ = opp/hyp, cos θ = adj/hyp, tan θ = opp/adj, sin²θ + cos²θ = 1",,"Find trigonometric ratios for 45° and 60° angles,Solve for missing sides using ratios",,25,"Pythagoras theorem,Similar triangles",,"trigonometry,ratios,identities,mathematics",Mathematics Expert,,,
