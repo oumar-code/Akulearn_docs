@@ -1,0 +1,590 @@
+[
+  {
+    "source": "subtopic_mathematics_algebra_equations",
+    "target": "topic_mathematics_algebra",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_mathematics_algebra_inequalities",
+    "target": "topic_mathematics_algebra",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_mathematics_algebra_functions",
+    "target": "topic_mathematics_algebra",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_mathematics_algebra_sequences",
+    "target": "topic_mathematics_algebra",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_mathematics_algebra",
+    "target": "subject_mathematics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_mathematics_geometry_coordinate_geometry",
+    "target": "topic_mathematics_geometry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_mathematics_geometry_trigonometry",
+    "target": "topic_mathematics_geometry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_mathematics_geometry_vectors",
+    "target": "topic_mathematics_geometry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_mathematics_geometry",
+    "target": "subject_mathematics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_mathematics_calculus_differentiation",
+    "target": "topic_mathematics_calculus",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_mathematics_calculus_integration",
+    "target": "topic_mathematics_calculus",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_mathematics_calculus_limits",
+    "target": "topic_mathematics_calculus",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_mathematics_calculus",
+    "target": "subject_mathematics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_mathematics_statistics_probability",
+    "target": "topic_mathematics_statistics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_mathematics_statistics_data_analysis",
+    "target": "topic_mathematics_statistics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_mathematics_statistics_distributions",
+    "target": "topic_mathematics_statistics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_mathematics_statistics",
+    "target": "subject_mathematics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_physics_mechanics_kinematics",
+    "target": "topic_physics_mechanics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_physics_mechanics_dynamics",
+    "target": "topic_physics_mechanics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_physics_mechanics_energy",
+    "target": "topic_physics_mechanics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_physics_mechanics_momentum",
+    "target": "topic_physics_mechanics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_physics_mechanics",
+    "target": "subject_physics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_physics_electricity_circuits",
+    "target": "topic_physics_electricity",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_physics_electricity_magnetism",
+    "target": "topic_physics_electricity",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_physics_electricity_electromagnetic_induction",
+    "target": "topic_physics_electricity",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_physics_electricity",
+    "target": "subject_physics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_physics_waves_sound",
+    "target": "topic_physics_waves",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_physics_waves_light",
+    "target": "topic_physics_waves",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_physics_waves_wave_properties",
+    "target": "topic_physics_waves",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_physics_waves",
+    "target": "subject_physics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_physics_modern physics_quantum_physics",
+    "target": "topic_physics_modern_physics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_physics_modern physics_nuclear_physics",
+    "target": "topic_physics_modern_physics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_physics_modern_physics",
+    "target": "subject_physics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_chemistry_physical chemistry_chemical_kinetics",
+    "target": "topic_chemistry_physical_chemistry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_chemistry_physical chemistry_equilibrium",
+    "target": "topic_chemistry_physical_chemistry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_chemistry_physical chemistry_thermodynamics",
+    "target": "topic_chemistry_physical_chemistry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_chemistry_physical_chemistry",
+    "target": "subject_chemistry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_chemistry_organic chemistry_hydrocarbons",
+    "target": "topic_chemistry_organic_chemistry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_chemistry_organic chemistry_functional_groups",
+    "target": "topic_chemistry_organic_chemistry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_chemistry_organic chemistry_reactions",
+    "target": "topic_chemistry_organic_chemistry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_chemistry_organic_chemistry",
+    "target": "subject_chemistry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_chemistry_inorganic chemistry_periodic_table",
+    "target": "topic_chemistry_inorganic_chemistry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_chemistry_inorganic chemistry_chemical_bonding",
+    "target": "topic_chemistry_inorganic_chemistry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_chemistry_inorganic chemistry_acids_&_bases",
+    "target": "topic_chemistry_inorganic_chemistry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_chemistry_inorganic_chemistry",
+    "target": "subject_chemistry",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_biology_cell biology_cell_structure",
+    "target": "topic_biology_cell_biology",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_biology_cell biology_cell_functions",
+    "target": "topic_biology_cell_biology",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_biology_cell biology_cell_division",
+    "target": "topic_biology_cell_biology",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_biology_cell_biology",
+    "target": "subject_biology",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_biology_genetics_dna",
+    "target": "topic_biology_genetics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_biology_genetics_rna",
+    "target": "topic_biology_genetics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_biology_genetics_inheritance",
+    "target": "topic_biology_genetics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_biology_genetics_mutations",
+    "target": "topic_biology_genetics",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_biology_genetics",
+    "target": "subject_biology",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_biology_ecology_ecosystems",
+    "target": "topic_biology_ecology",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_biology_ecology_food_chains",
+    "target": "topic_biology_ecology",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_biology_ecology_biodiversity",
+    "target": "topic_biology_ecology",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_biology_ecology",
+    "target": "subject_biology",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_english_literature_poetry",
+    "target": "topic_english_literature",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_english_literature_drama",
+    "target": "topic_english_literature",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_english_literature_prose",
+    "target": "topic_english_literature",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_english_literature_literary_devices",
+    "target": "topic_english_literature",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_english_literature",
+    "target": "subject_english",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_english_language_grammar",
+    "target": "topic_english_language",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_english_language_comprehension",
+    "target": "topic_english_language",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_english_language_writing_skills",
+    "target": "topic_english_language",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_english_language",
+    "target": "subject_english",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_english_communication_speaking",
+    "target": "topic_english_communication",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_english_communication_listening",
+    "target": "topic_english_communication",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "subtopic_english_communication_reading",
+    "target": "topic_english_communication",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_english_communication",
+    "target": "subject_english",
+    "type": "belongs_to",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "path_waec_science_track",
+    "target": "subject_mathematics",
+    "type": "requires",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "path_waec_science_track",
+    "target": "subject_physics",
+    "type": "requires",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "path_waec_science_track",
+    "target": "subject_chemistry",
+    "type": "requires",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "path_waec_science_track",
+    "target": "subject_biology",
+    "type": "requires",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "path_waec_art_track",
+    "target": "subject_english",
+    "type": "requires",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "path_engineering_foundation",
+    "target": "subject_mathematics",
+    "type": "requires",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "path_engineering_foundation",
+    "target": "subject_physics",
+    "type": "requires",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "path_engineering_foundation",
+    "target": "subject_chemistry",
+    "type": "requires",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "path_medical_sciences",
+    "target": "subject_biology",
+    "type": "requires",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "path_medical_sciences",
+    "target": "subject_chemistry",
+    "type": "requires",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "path_medical_sciences",
+    "target": "subject_physics",
+    "type": "requires",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "path_medical_sciences",
+    "target": "subject_mathematics",
+    "type": "requires",
+    "weight": 1.0,
+    "properties": {}
+  },
+  {
+    "source": "topic_physics_electricity",
+    "target": "topic_mathematics_algebra",
+    "type": "prerequisite_for",
+    "weight": 1.0,
+    "properties": {}
+  }
+]

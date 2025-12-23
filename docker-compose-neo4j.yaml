@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  neo4j:
+    image: neo4j:5.15
+    container_name: akulearn-neo4j
+    ports:
+      - "7474:7474"    # HTTP
+      - "7687:7687"    # Bolt
+    environment:
+      NEO4J_AUTH: neo4j/password
+      NEO4J_PLUGINS: '["graph-data-science"]'
+      NEO4J_dbms_security_procedures_unrestricted: 'gds.*'
+      NEO4J_dbms_security_procedures_allowlist: 'gds.*'
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - ./neo4j/import:/var/lib/neo4j/import
+    networks:
+      - akulearn-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "cypher-shell", "-u", "neo4j", "-p", "password", "MATCH () RETURN count(*) limit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  akulearndocs:
+    image: akulearndocs
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8000:8000
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    environment:
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: password
+    networks:
+      - akulearn-network
+    restart: unless-stopped
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
+
+networks:
+  akulearn-network:
+    driver: bridge
