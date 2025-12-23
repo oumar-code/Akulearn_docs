@@ -1,0 +1,208 @@
+{
+  "report_timestamp": "2025-12-23T08:14:41.477640",
+  "content_overview": {
+    "total_content_items": 8,
+    "content_types": {
+      "unknown": 5,
+      "study_guide": 3
+    },
+    "subjects": {
+      "unknown": 5,
+      "Mathematics": 2,
+      "Physics": 1
+    },
+    "difficulty_distribution": {
+      "unknown": 5,
+      "intermediate": 2,
+      "basic": 1
+    },
+    "average_content_length": 341.0,
+    "creation_methods": {
+      "unknown": 8
+    },
+    "content_with_summaries": 0,
+    "content_with_examples": 0,
+    "content_with_nigerian_context": 0
+  },
+  "quality_metrics": {
+    "average_quality_score": 21.8,
+    "quality_distribution": {
+      "excellent": 0,
+      "good": 0,
+      "fair": 3,
+      "poor": 5
+    },
+    "highest_quality_score": 55.714285714285715,
+    "lowest_quality_score": 0.0,
+    "quality_variance": 566.75
+  },
+  "subject_distribution": {
+    "Unknown": {
+      "total": 5,
+      "by_type": {
+        "unknown": 5
+      },
+      "by_difficulty": {
+        "unknown": 5
+      },
+      "average_quality": 0,
+      "topics_covered": [
+        "unknown"
+      ]
+    },
+    "Mathematics": {
+      "total": 2,
+      "by_type": {
+        "study_guide": 2
+      },
+      "by_difficulty": {
+        "intermediate": 1,
+        "basic": 1
+      },
+      "average_quality": 50.0,
+      "topics_covered": [
+        "Algebra",
+        "Trigonometry"
+      ]
+    },
+    "Physics": {
+      "total": 1,
+      "by_type": {
+        "study_guide": 1
+      },
+      "by_difficulty": {
+        "intermediate": 1
+      },
+      "average_quality": 100.0,
+      "topics_covered": [
+        "Electricity"
+      ]
+    }
+  },
+  "content_gaps": {
+    "missing_subjects": [
+      "English",
+      "Chemistry",
+      "Biology",
+      "Geography",
+      "Economics",
+      "History",
+      "Literature",
+      "Computer Science"
+    ],
+    "underrepresented_topics": [
+      {
+        "subject": "Mathematics",
+        "missing_topics": [
+          "Geometry",
+          "Calculus",
+          "Statistics"
+        ],
+        "coverage_percentage": 40.0
+      },
+      {
+        "subject": "Physics",
+        "missing_topics": [
+          "Mechanics",
+          "Magnetism",
+          "Optics",
+          "Thermodynamics"
+        ],
+        "coverage_percentage": 20.0
+      },
+      {
+        "subject": "Chemistry",
+        "missing_topics": [
+          "Organic Chemistry",
+          "Inorganic Chemistry",
+          "Physical Chemistry",
+          "Biochemistry"
+        ],
+        "coverage_percentage": 0.0
+      },
+      {
+        "subject": "Biology",
+        "missing_topics": [
+          "Cell Biology",
+          "Genetics",
+          "Ecology",
+          "Human Physiology",
+          "Evolution"
+        ],
+        "coverage_percentage": 0.0
+      }
+    ],
+    "missing_difficulty_levels": [
+      "Advanced level content underrepresented"
+    ],
+    "content_type_gaps": [
+      "Need more practice exercises and quizzes"
+    ],
+    "quality_gaps": []
+  },
+  "recent_activity": {
+    "recent_files": [
+      {
+        "file": "content_data.json",
+        "modified": "2025-12-21T20:08:12.515129",
+        "age_days": 1
+      },
+      {
+        "file": "content_data.json",
+        "modified": "2025-12-21T20:00:05.150619",
+        "age_days": 1
+      },
+      {
+        "file": "sample_content.json",
+        "modified": "2025-12-16T17:00:55.791229",
+        "age_days": 6
+      },
+      {
+        "file": "test_content.json",
+        "modified": "2025-12-16T16:58:44.281265",
+        "age_days": 6
+      },
+      {
+        "file": "content_generation_stats.json",
+        "modified": "2025-12-10T07:53:01.355587",
+        "age_days": 13
+      },
+      {
+        "file": "exam_content_batch.json",
+        "modified": "2025-12-10T07:53:01.346573",
+        "age_days": 13
+      },
+      {
+        "file": "tsconfig.test.json",
+        "modified": "2025-07-22T15:32:01.902626",
+        "age_days": 153
+      },
+      {
+        "file": "test.json",
+        "modified": "2025-07-22T15:26:12.358381",
+        "age_days": 153
+      }
+    ],
+    "files_modified_today": 0,
+    "files_modified_this_week": 4,
+    "files_modified_this_month": 6
+  },
+  "recommendations": [
+    "Focus on expanding content volume - aim for at least 500 comprehensive content items",
+    "Prioritize content quality improvement - use AI enhancement and validation tools",
+    "Add content for missing subjects: English, Chemistry, Biology, Geography, Economics, History, Literature, Computer Science",
+    "Add topics for Mathematics: Geometry, Calculus, Statistics",
+    "Add topics for Physics: Mechanics, Magnetism, Optics, Thermodynamics",
+    "Add topics for Chemistry: Organic Chemistry, Inorganic Chemistry, Physical Chemistry, Biochemistry",
+    "Add Nigerian cultural context and examples to more content items",
+    "Create more practice exercises and interactive content"
+  ],
+  "performance_indicators": {
+    "content_completeness_index": 0.0,
+    "cultural_relevance_index": 0.0,
+    "quality_index": 21.8,
+    "subject_diversity_index": 20.0,
+    "content_type_diversity_index": 33.33,
+    "overall_performance_score": 15.03
+  }
+}
