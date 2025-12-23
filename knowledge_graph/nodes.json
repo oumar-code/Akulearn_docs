@@ -1,0 +1,1010 @@
+{
+  "subject_mathematics": {
+    "id": "subject_mathematics",
+    "type": "subject",
+    "label": "Mathematics",
+    "properties": {
+      "description": "Complete Mathematics curriculum for WAEC preparation",
+      "exam_board": "WAEC",
+      "difficulty_levels": [
+        "basic",
+        "intermediate",
+        "advanced"
+      ],
+      "estimated_completion_time": "6 months"
+    },
+    "metadata": {}
+  },
+  "topic_mathematics_algebra": {
+    "id": "topic_mathematics_algebra",
+    "type": "topic",
+    "label": "Algebra",
+    "properties": {
+      "subject": "Mathematics",
+      "subtopics": [
+        "Equations",
+        "Inequalities",
+        "Functions",
+        "Sequences"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_algebra_equations": {
+    "id": "subtopic_mathematics_algebra_equations",
+    "type": "subtopic",
+    "label": "Equations",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_algebra_inequalities": {
+    "id": "subtopic_mathematics_algebra_inequalities",
+    "type": "subtopic",
+    "label": "Inequalities",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_algebra_functions": {
+    "id": "subtopic_mathematics_algebra_functions",
+    "type": "subtopic",
+    "label": "Functions",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_algebra_sequences": {
+    "id": "subtopic_mathematics_algebra_sequences",
+    "type": "subtopic",
+    "label": "Sequences",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Algebra",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "topic_mathematics_geometry": {
+    "id": "topic_mathematics_geometry",
+    "type": "topic",
+    "label": "Geometry",
+    "properties": {
+      "subject": "Mathematics",
+      "subtopics": [
+        "Coordinate Geometry",
+        "Trigonometry",
+        "Vectors"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_geometry_coordinate_geometry": {
+    "id": "subtopic_mathematics_geometry_coordinate_geometry",
+    "type": "subtopic",
+    "label": "Coordinate Geometry",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Geometry",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_geometry_trigonometry": {
+    "id": "subtopic_mathematics_geometry_trigonometry",
+    "type": "subtopic",
+    "label": "Trigonometry",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Geometry",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_geometry_vectors": {
+    "id": "subtopic_mathematics_geometry_vectors",
+    "type": "subtopic",
+    "label": "Vectors",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Geometry",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "topic_mathematics_calculus": {
+    "id": "topic_mathematics_calculus",
+    "type": "topic",
+    "label": "Calculus",
+    "properties": {
+      "subject": "Mathematics",
+      "subtopics": [
+        "Differentiation",
+        "Integration",
+        "Limits"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_calculus_differentiation": {
+    "id": "subtopic_mathematics_calculus_differentiation",
+    "type": "subtopic",
+    "label": "Differentiation",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Calculus",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_calculus_integration": {
+    "id": "subtopic_mathematics_calculus_integration",
+    "type": "subtopic",
+    "label": "Integration",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Calculus",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_calculus_limits": {
+    "id": "subtopic_mathematics_calculus_limits",
+    "type": "subtopic",
+    "label": "Limits",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Calculus",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "topic_mathematics_statistics": {
+    "id": "topic_mathematics_statistics",
+    "type": "topic",
+    "label": "Statistics",
+    "properties": {
+      "subject": "Mathematics",
+      "subtopics": [
+        "Probability",
+        "Data Analysis",
+        "Distributions"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_statistics_probability": {
+    "id": "subtopic_mathematics_statistics_probability",
+    "type": "subtopic",
+    "label": "Probability",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_statistics_data_analysis": {
+    "id": "subtopic_mathematics_statistics_data_analysis",
+    "type": "subtopic",
+    "label": "Data Analysis",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_mathematics_statistics_distributions": {
+    "id": "subtopic_mathematics_statistics_distributions",
+    "type": "subtopic",
+    "label": "Distributions",
+    "properties": {
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subject_physics": {
+    "id": "subject_physics",
+    "type": "subject",
+    "label": "Physics",
+    "properties": {
+      "description": "Complete Physics curriculum for WAEC preparation",
+      "exam_board": "WAEC",
+      "difficulty_levels": [
+        "basic",
+        "intermediate",
+        "advanced"
+      ],
+      "estimated_completion_time": "6 months"
+    },
+    "metadata": {}
+  },
+  "topic_physics_mechanics": {
+    "id": "topic_physics_mechanics",
+    "type": "topic",
+    "label": "Mechanics",
+    "properties": {
+      "subject": "Physics",
+      "subtopics": [
+        "Kinematics",
+        "Dynamics",
+        "Energy",
+        "Momentum"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_physics_mechanics_kinematics": {
+    "id": "subtopic_physics_mechanics_kinematics",
+    "type": "subtopic",
+    "label": "Kinematics",
+    "properties": {
+      "subject": "Physics",
+      "topic": "Mechanics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_physics_mechanics_dynamics": {
+    "id": "subtopic_physics_mechanics_dynamics",
+    "type": "subtopic",
+    "label": "Dynamics",
+    "properties": {
+      "subject": "Physics",
+      "topic": "Mechanics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_physics_mechanics_energy": {
+    "id": "subtopic_physics_mechanics_energy",
+    "type": "subtopic",
+    "label": "Energy",
+    "properties": {
+      "subject": "Physics",
+      "topic": "Mechanics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_physics_mechanics_momentum": {
+    "id": "subtopic_physics_mechanics_momentum",
+    "type": "subtopic",
+    "label": "Momentum",
+    "properties": {
+      "subject": "Physics",
+      "topic": "Mechanics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "topic_physics_electricity": {
+    "id": "topic_physics_electricity",
+    "type": "topic",
+    "label": "Electricity",
+    "properties": {
+      "subject": "Physics",
+      "subtopics": [
+        "Circuits",
+        "Magnetism",
+        "Electromagnetic Induction"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_physics_electricity_circuits": {
+    "id": "subtopic_physics_electricity_circuits",
+    "type": "subtopic",
+    "label": "Circuits",
+    "properties": {
+      "subject": "Physics",
+      "topic": "Electricity",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_physics_electricity_magnetism": {
+    "id": "subtopic_physics_electricity_magnetism",
+    "type": "subtopic",
+    "label": "Magnetism",
+    "properties": {
+      "subject": "Physics",
+      "topic": "Electricity",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_physics_electricity_electromagnetic_induction": {
+    "id": "subtopic_physics_electricity_electromagnetic_induction",
+    "type": "subtopic",
+    "label": "Electromagnetic Induction",
+    "properties": {
+      "subject": "Physics",
+      "topic": "Electricity",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "topic_physics_waves": {
+    "id": "topic_physics_waves",
+    "type": "topic",
+    "label": "Waves",
+    "properties": {
+      "subject": "Physics",
+      "subtopics": [
+        "Sound",
+        "Light",
+        "Wave Properties"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_physics_waves_sound": {
+    "id": "subtopic_physics_waves_sound",
+    "type": "subtopic",
+    "label": "Sound",
+    "properties": {
+      "subject": "Physics",
+      "topic": "Waves",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_physics_waves_light": {
+    "id": "subtopic_physics_waves_light",
+    "type": "subtopic",
+    "label": "Light",
+    "properties": {
+      "subject": "Physics",
+      "topic": "Waves",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_physics_waves_wave_properties": {
+    "id": "subtopic_physics_waves_wave_properties",
+    "type": "subtopic",
+    "label": "Wave Properties",
+    "properties": {
+      "subject": "Physics",
+      "topic": "Waves",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "topic_physics_modern_physics": {
+    "id": "topic_physics_modern_physics",
+    "type": "topic",
+    "label": "Modern Physics",
+    "properties": {
+      "subject": "Physics",
+      "subtopics": [
+        "Quantum Physics",
+        "Nuclear Physics"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_physics_modern physics_quantum_physics": {
+    "id": "subtopic_physics_modern physics_quantum_physics",
+    "type": "subtopic",
+    "label": "Quantum Physics",
+    "properties": {
+      "subject": "Physics",
+      "topic": "Modern Physics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_physics_modern physics_nuclear_physics": {
+    "id": "subtopic_physics_modern physics_nuclear_physics",
+    "type": "subtopic",
+    "label": "Nuclear Physics",
+    "properties": {
+      "subject": "Physics",
+      "topic": "Modern Physics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subject_chemistry": {
+    "id": "subject_chemistry",
+    "type": "subject",
+    "label": "Chemistry",
+    "properties": {
+      "description": "Complete Chemistry curriculum for WAEC preparation",
+      "exam_board": "WAEC",
+      "difficulty_levels": [
+        "basic",
+        "intermediate",
+        "advanced"
+      ],
+      "estimated_completion_time": "6 months"
+    },
+    "metadata": {}
+  },
+  "topic_chemistry_physical_chemistry": {
+    "id": "topic_chemistry_physical_chemistry",
+    "type": "topic",
+    "label": "Physical Chemistry",
+    "properties": {
+      "subject": "Chemistry",
+      "subtopics": [
+        "Chemical Kinetics",
+        "Equilibrium",
+        "Thermodynamics"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_chemistry_physical chemistry_chemical_kinetics": {
+    "id": "subtopic_chemistry_physical chemistry_chemical_kinetics",
+    "type": "subtopic",
+    "label": "Chemical Kinetics",
+    "properties": {
+      "subject": "Chemistry",
+      "topic": "Physical Chemistry",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_chemistry_physical chemistry_equilibrium": {
+    "id": "subtopic_chemistry_physical chemistry_equilibrium",
+    "type": "subtopic",
+    "label": "Equilibrium",
+    "properties": {
+      "subject": "Chemistry",
+      "topic": "Physical Chemistry",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_chemistry_physical chemistry_thermodynamics": {
+    "id": "subtopic_chemistry_physical chemistry_thermodynamics",
+    "type": "subtopic",
+    "label": "Thermodynamics",
+    "properties": {
+      "subject": "Chemistry",
+      "topic": "Physical Chemistry",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "topic_chemistry_organic_chemistry": {
+    "id": "topic_chemistry_organic_chemistry",
+    "type": "topic",
+    "label": "Organic Chemistry",
+    "properties": {
+      "subject": "Chemistry",
+      "subtopics": [
+        "Hydrocarbons",
+        "Functional Groups",
+        "Reactions"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_chemistry_organic chemistry_hydrocarbons": {
+    "id": "subtopic_chemistry_organic chemistry_hydrocarbons",
+    "type": "subtopic",
+    "label": "Hydrocarbons",
+    "properties": {
+      "subject": "Chemistry",
+      "topic": "Organic Chemistry",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_chemistry_organic chemistry_functional_groups": {
+    "id": "subtopic_chemistry_organic chemistry_functional_groups",
+    "type": "subtopic",
+    "label": "Functional Groups",
+    "properties": {
+      "subject": "Chemistry",
+      "topic": "Organic Chemistry",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_chemistry_organic chemistry_reactions": {
+    "id": "subtopic_chemistry_organic chemistry_reactions",
+    "type": "subtopic",
+    "label": "Reactions",
+    "properties": {
+      "subject": "Chemistry",
+      "topic": "Organic Chemistry",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "topic_chemistry_inorganic_chemistry": {
+    "id": "topic_chemistry_inorganic_chemistry",
+    "type": "topic",
+    "label": "Inorganic Chemistry",
+    "properties": {
+      "subject": "Chemistry",
+      "subtopics": [
+        "Periodic Table",
+        "Chemical Bonding",
+        "Acids & Bases"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_chemistry_inorganic chemistry_periodic_table": {
+    "id": "subtopic_chemistry_inorganic chemistry_periodic_table",
+    "type": "subtopic",
+    "label": "Periodic Table",
+    "properties": {
+      "subject": "Chemistry",
+      "topic": "Inorganic Chemistry",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_chemistry_inorganic chemistry_chemical_bonding": {
+    "id": "subtopic_chemistry_inorganic chemistry_chemical_bonding",
+    "type": "subtopic",
+    "label": "Chemical Bonding",
+    "properties": {
+      "subject": "Chemistry",
+      "topic": "Inorganic Chemistry",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_chemistry_inorganic chemistry_acids_&_bases": {
+    "id": "subtopic_chemistry_inorganic chemistry_acids_&_bases",
+    "type": "subtopic",
+    "label": "Acids & Bases",
+    "properties": {
+      "subject": "Chemistry",
+      "topic": "Inorganic Chemistry",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subject_biology": {
+    "id": "subject_biology",
+    "type": "subject",
+    "label": "Biology",
+    "properties": {
+      "description": "Complete Biology curriculum for WAEC preparation",
+      "exam_board": "WAEC",
+      "difficulty_levels": [
+        "basic",
+        "intermediate",
+        "advanced"
+      ],
+      "estimated_completion_time": "6 months"
+    },
+    "metadata": {}
+  },
+  "topic_biology_cell_biology": {
+    "id": "topic_biology_cell_biology",
+    "type": "topic",
+    "label": "Cell Biology",
+    "properties": {
+      "subject": "Biology",
+      "subtopics": [
+        "Cell Structure",
+        "Cell Functions",
+        "Cell Division"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_biology_cell biology_cell_structure": {
+    "id": "subtopic_biology_cell biology_cell_structure",
+    "type": "subtopic",
+    "label": "Cell Structure",
+    "properties": {
+      "subject": "Biology",
+      "topic": "Cell Biology",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_biology_cell biology_cell_functions": {
+    "id": "subtopic_biology_cell biology_cell_functions",
+    "type": "subtopic",
+    "label": "Cell Functions",
+    "properties": {
+      "subject": "Biology",
+      "topic": "Cell Biology",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_biology_cell biology_cell_division": {
+    "id": "subtopic_biology_cell biology_cell_division",
+    "type": "subtopic",
+    "label": "Cell Division",
+    "properties": {
+      "subject": "Biology",
+      "topic": "Cell Biology",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "topic_biology_genetics": {
+    "id": "topic_biology_genetics",
+    "type": "topic",
+    "label": "Genetics",
+    "properties": {
+      "subject": "Biology",
+      "subtopics": [
+        "DNA",
+        "RNA",
+        "Inheritance",
+        "Mutations"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_biology_genetics_dna": {
+    "id": "subtopic_biology_genetics_dna",
+    "type": "subtopic",
+    "label": "DNA",
+    "properties": {
+      "subject": "Biology",
+      "topic": "Genetics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_biology_genetics_rna": {
+    "id": "subtopic_biology_genetics_rna",
+    "type": "subtopic",
+    "label": "RNA",
+    "properties": {
+      "subject": "Biology",
+      "topic": "Genetics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_biology_genetics_inheritance": {
+    "id": "subtopic_biology_genetics_inheritance",
+    "type": "subtopic",
+    "label": "Inheritance",
+    "properties": {
+      "subject": "Biology",
+      "topic": "Genetics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_biology_genetics_mutations": {
+    "id": "subtopic_biology_genetics_mutations",
+    "type": "subtopic",
+    "label": "Mutations",
+    "properties": {
+      "subject": "Biology",
+      "topic": "Genetics",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "topic_biology_ecology": {
+    "id": "topic_biology_ecology",
+    "type": "topic",
+    "label": "Ecology",
+    "properties": {
+      "subject": "Biology",
+      "subtopics": [
+        "Ecosystems",
+        "Food Chains",
+        "Biodiversity"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_biology_ecology_ecosystems": {
+    "id": "subtopic_biology_ecology_ecosystems",
+    "type": "subtopic",
+    "label": "Ecosystems",
+    "properties": {
+      "subject": "Biology",
+      "topic": "Ecology",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_biology_ecology_food_chains": {
+    "id": "subtopic_biology_ecology_food_chains",
+    "type": "subtopic",
+    "label": "Food Chains",
+    "properties": {
+      "subject": "Biology",
+      "topic": "Ecology",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_biology_ecology_biodiversity": {
+    "id": "subtopic_biology_ecology_biodiversity",
+    "type": "subtopic",
+    "label": "Biodiversity",
+    "properties": {
+      "subject": "Biology",
+      "topic": "Ecology",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subject_english": {
+    "id": "subject_english",
+    "type": "subject",
+    "label": "English",
+    "properties": {
+      "description": "Complete English curriculum for WAEC preparation",
+      "exam_board": "WAEC",
+      "difficulty_levels": [
+        "basic",
+        "intermediate",
+        "advanced"
+      ],
+      "estimated_completion_time": "6 months"
+    },
+    "metadata": {}
+  },
+  "topic_english_literature": {
+    "id": "topic_english_literature",
+    "type": "topic",
+    "label": "Literature",
+    "properties": {
+      "subject": "English",
+      "subtopics": [
+        "Poetry",
+        "Drama",
+        "Prose",
+        "Literary Devices"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_english_literature_poetry": {
+    "id": "subtopic_english_literature_poetry",
+    "type": "subtopic",
+    "label": "Poetry",
+    "properties": {
+      "subject": "English",
+      "topic": "Literature",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_english_literature_drama": {
+    "id": "subtopic_english_literature_drama",
+    "type": "subtopic",
+    "label": "Drama",
+    "properties": {
+      "subject": "English",
+      "topic": "Literature",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_english_literature_prose": {
+    "id": "subtopic_english_literature_prose",
+    "type": "subtopic",
+    "label": "Prose",
+    "properties": {
+      "subject": "English",
+      "topic": "Literature",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_english_literature_literary_devices": {
+    "id": "subtopic_english_literature_literary_devices",
+    "type": "subtopic",
+    "label": "Literary Devices",
+    "properties": {
+      "subject": "English",
+      "topic": "Literature",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "topic_english_language": {
+    "id": "topic_english_language",
+    "type": "topic",
+    "label": "Language",
+    "properties": {
+      "subject": "English",
+      "subtopics": [
+        "Grammar",
+        "Comprehension",
+        "Writing Skills"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_english_language_grammar": {
+    "id": "subtopic_english_language_grammar",
+    "type": "subtopic",
+    "label": "Grammar",
+    "properties": {
+      "subject": "English",
+      "topic": "Language",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_english_language_comprehension": {
+    "id": "subtopic_english_language_comprehension",
+    "type": "subtopic",
+    "label": "Comprehension",
+    "properties": {
+      "subject": "English",
+      "topic": "Language",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_english_language_writing_skills": {
+    "id": "subtopic_english_language_writing_skills",
+    "type": "subtopic",
+    "label": "Writing Skills",
+    "properties": {
+      "subject": "English",
+      "topic": "Language",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "topic_english_communication": {
+    "id": "topic_english_communication",
+    "type": "topic",
+    "label": "Communication",
+    "properties": {
+      "subject": "English",
+      "subtopics": [
+        "Speaking",
+        "Listening",
+        "Reading"
+      ],
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_english_communication_speaking": {
+    "id": "subtopic_english_communication_speaking",
+    "type": "subtopic",
+    "label": "Speaking",
+    "properties": {
+      "subject": "English",
+      "topic": "Communication",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_english_communication_listening": {
+    "id": "subtopic_english_communication_listening",
+    "type": "subtopic",
+    "label": "Listening",
+    "properties": {
+      "subject": "English",
+      "topic": "Communication",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "subtopic_english_communication_reading": {
+    "id": "subtopic_english_communication_reading",
+    "type": "subtopic",
+    "label": "Reading",
+    "properties": {
+      "subject": "English",
+      "topic": "Communication",
+      "difficulty": "intermediate"
+    },
+    "metadata": {}
+  },
+  "path_waec_science_track": {
+    "id": "path_waec_science_track",
+    "type": "learning_objective",
+    "label": "Waec Science Track",
+    "properties": {
+      "subjects": [
+        "Mathematics",
+        "Physics",
+        "Chemistry",
+        "Biology"
+      ],
+      "duration": "6 months",
+      "difficulty": "intermediate",
+      "focus": "WAEC Science subjects preparation"
+    },
+    "metadata": {}
+  },
+  "path_waec_art_track": {
+    "id": "path_waec_art_track",
+    "type": "learning_objective",
+    "label": "Waec Art Track",
+    "properties": {
+      "subjects": [
+        "English",
+        "Literature",
+        "History",
+        "Geography",
+        "Economics"
+      ],
+      "duration": "6 months",
+      "difficulty": "intermediate",
+      "focus": "WAEC Art subjects preparation"
+    },
+    "metadata": {}
+  },
+  "path_engineering_foundation": {
+    "id": "path_engineering_foundation",
+    "type": "learning_objective",
+    "label": "Engineering Foundation",
+    "properties": {
+      "subjects": [
+        "Mathematics",
+        "Physics",
+        "Chemistry"
+      ],
+      "prerequisites": [
+        "Basic Algebra",
+        "Basic Physics"
+      ],
+      "duration": "8 months",
+      "difficulty": "advanced",
+      "focus": "Engineering undergraduate preparation"
+    },
+    "metadata": {}
+  },
+  "path_medical_sciences": {
+    "id": "path_medical_sciences",
+    "type": "learning_objective",
+    "label": "Medical Sciences",
+    "properties": {
+      "subjects": [
+        "Biology",
+        "Chemistry",
+        "Physics",
+        "Mathematics"
+      ],
+      "prerequisites": [
+        "Basic Biology",
+        "Basic Chemistry"
+      ],
+      "duration": "8 months",
+      "difficulty": "advanced",
+      "focus": "Medical sciences preparation"
+    },
+    "metadata": {}
+  }
+}

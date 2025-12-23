@@ -48,6 +48,181 @@ class ContentProgress:
     last_read_at: datetime
     completed_at: Optional[datetime] = None
 
+
+
+    # ============================================================================
+    # KNOWLEDGE GRAPH INTEGRATION
+    # ============================================================================
+
+    def get_knowledge_graph_recommendations(self, student_id: str, subject: str = None) -> Dict[str, Any]:
+        """
+        Get personalized recommendations from knowledge graph
+
+        Args:
+            student_id: Unique student identifier
+            subject: Optional subject filter
+
+        Returns:
+            Dictionary with recommendations
+        """
+        try:
+            from knowledge_graph_neo4j import AkulearnKnowledgeGraph
+
+            kg = AkulearnKnowledgeGraph()
+            student_profile = self.get_student_profile(student_id)
+
+            if not student_profile:
+                return {"error": "Student profile not found"}
+
+            # Get recommendations
+            recommendations = kg.recommend_content({
+                "current_level": student_profile.get("level", "intermediate"),
+                "target_subjects": [subject] if subject else student_profile.get("subjects", []),
+                "completed_topics": student_profile.get("completed_topics", [])
+            })
+
+            # Get prerequisites
+            prerequisites = []
+            if subject:
+                prereqs = kg.find_prerequisites(subject)
+                prerequisites = [p["name"] for p in prereqs]
+
+            # Get related topics
+            related_topics = kg.find_related_topics(
+                [subject] if subject else student_profile.get("subjects", [])
+            )
+
+            kg.close()
+
+            return {
+                "recommendations": recommendations,
+                "prerequisites": prerequisites,
+                "related_topics": related_topics,
+                "learning_paths": self.get_suggested_learning_paths(student_id)
+            }
+
+        except Exception as e:
+            return {"error": f"Knowledge graph integration failed: {str(e)}"}
+
+    def get_learning_path_progress(self, student_id: str, path_id: str) -> Dict[str, Any]:
+        """
+        Get progress on a specific learning path
+
+        Args:
+            student_id: Student identifier
+            path_id: Learning path identifier
+
+        Returns:
+            Progress information
+        """
+        try:
+            from knowledge_graph_neo4j import AkulearnKnowledgeGraph
+
+            kg = AkulearnKnowledgeGraph()
+            path_info = kg.get_learning_path(path_id)
+
+            if not path_info:
+                return {"error": "Learning path not found"}
+
+            # Calculate progress based on completed topics
+            student_profile = self.get_student_profile(student_id)
+            completed_topics = set(student_profile.get("completed_topics", []))
+
+            path_subjects = path_info["subjects"]
+            total_topics = 0
+            completed_count = 0
+
+            # Count topics in path subjects
+            for subject in path_subjects:
+                subject_topics = kg.subject_hierarchy.get(subject, {}).get("topics", {})
+                for topic, subtopics in subject_topics.items():
+                    total_topics += len(subtopics)
+                    for subtopic in subtopics:
+                        if subtopic in completed_topics:
+                            completed_count += 1
+
+            progress_percentage = (completed_count / total_topics * 100) if total_topics > 0 else 0
+
+            kg.close()
+
+            return {
+                "path_name": path_info["name"],
+                "progress_percentage": progress_percentage,
+                "completed_topics": completed_count,
+                "total_topics": total_topics,
+                "remaining_subjects": [s for s in path_subjects if s not in completed_topics],
+                "estimated_completion": f"{(total_topics - completed_count) * 2} hours"
+            }
+
+        except Exception as e:
+            return {"error": f"Progress calculation failed: {str(e)}"}
+
+    def get_suggested_learning_paths(self, student_id: str) -> List[Dict[str, Any]]:
+        """
+        Suggest appropriate learning paths for a student
+
+        Args:
+            student_id: Student identifier
+
+        Returns:
+            List of suggested learning paths
+        """
+        student_profile = self.get_student_profile(student_id)
+        if not student_profile:
+            return []
+
+        student_level = student_profile.get("level", "intermediate")
+        target_goals = student_profile.get("goals", [])
+
+        # Simple rule-based suggestions
+        suggestions = []
+
+        if "waec" in target_goals or "examination" in target_goals:
+            if student_level in ["intermediate", "advanced"]:
+                suggestions.append({
+                    "path_id": "waec_science_track",
+                    "name": "WAEC Science Track",
+                    "reason": "Comprehensive preparation for WAEC science subjects"
+                })
+
+        if "engineering" in target_goals:
+            suggestions.append({
+                "path_id": "engineering_foundation",
+                "name": "Engineering Foundation",
+                "reason": "Essential preparation for engineering studies"
+            })
+
+        if "medical" in target_goals or "health" in target_goals:
+            suggestions.append({
+                "path_id": "medical_sciences",
+                "name": "Medical Sciences",
+                "reason": "Foundation for medical and health sciences"
+            })
+
+        return suggestions
+
+    def get_student_profile(self, student_id: str) -> Optional[Dict[str, Any]]:
+        """
+        Get student profile (placeholder - integrate with actual student service)
+
+        Args:
+            student_id: Student identifier
+
+        Returns:
+            Student profile dictionary
+        """
+        # Placeholder implementation
+        # In real implementation, this would fetch from student database
+        return {
+            "id": student_id,
+            "level": "intermediate",
+            "subjects": ["Mathematics", "Physics", "Chemistry"],
+            "completed_topics": ["Basic Algebra", "Mechanics"],
+            "goals": ["waec", "engineering"],
+            "preferences": ["visual_learning", "practice_problems"]
+        }
+
+
 class ContentService:
     """
     Manages learning content for the Akulearn platform.
