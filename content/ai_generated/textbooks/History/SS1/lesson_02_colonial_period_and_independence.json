@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "subject": "History",
+    "level": "SS1",
+    "unit": "2",
+    "unit_title": "Colonial Period and Independence",
+    "lesson": "2",
+    "lesson_title": "Colonial Period and Independence",
+    "duration_minutes": 90,
+    "estimated_pages": 13,
+    "curriculum_alignment": {
+      "nerdc_code": "HS.SS1.2.1-2.3",
+      "nerdc_description": "Colonization causes/process, administration, nationalism, independence",
+      "waec_topic": "Colonialism and Independence",
+      "waec_weighting": "10%"
+    },
+    "learning_level": "foundational",
+    "nigerian_context": true
+  },
+  "learning_objectives": [
+    "Explain motives and methods of European colonization in Nigeria",
+    "Describe structures of colonial administration and indirect rule",
+    "Identify key nationalist movements, leaders, and their strategies",
+    "Trace events leading to 1960 independence",
+    "Evaluate impacts of colonial policies on economy, society, and politics"
+  ],
+  "prerequisites": [
+    "Knowledge of pre-colonial Nigerian polities (Lesson 1)",
+    "Understanding of trade and governance concepts",
+    "Basic timeline reading"
+  ],
+  "content_sections": [
+    {
+      "section_id": "2.1",
+      "title": "Causes and Process of Colonization",
+      "duration_minutes": 22,
+      "content": "Motives: economic (raw materials, markets), political rivalry, missionary/religious aims, strategic control. Tools: treaties, protectorates, conquest. Berlin Conference 1884-85 set rules; British consolidated coastal footholds (Lagos 1861) then interior."
+    },
+    {
+      "section_id": "2.2",
+      "title": "Colonial Administration and Indirect Rule",
+      "duration_minutes": 23,
+      "content": "Indirect rule: using existing traditional rulers under British supervision. Successful in northern emirates with centralized emirate system; mixed results in acephalous societies (Igbo). Administrative hierarchy: Governor, Lieutenant-Governors, Residents, District Officers, Native Authorities. Policies: taxation, land ordinances, railways, cash crop economy (cocoa, groundnuts, palm oil)."
+    },
+    {
+      "section_id": "2.3",
+      "title": "Nationalist Movements and Resistance",
+      "duration_minutes": 22,
+      "content": "Early resistance: Ekumeku (Igbo), Satiru (Sokoto), Aba Women’s War 1929 (tax grievance). Nationalist leaders: Herbert Macaulay (NNDP), Nnamdi Azikiwe (NCNC), Obafemi Awolowo (Action Group), Ahmadu Bello (NPC), Tafawa Balewa. Media (West African Pilot), trade unions, student groups fueled nationalism. Constitutional reforms: Clifford 1922, Richards 1946, Macpherson 1951, Lyttleton 1954 expanded participation."
+    },
+    {
+      "section_id": "2.4",
+      "title": "Road to Independence (1960)",
+      "duration_minutes": 23,
+      "content": "Regional self-government (1957/1959) → federal elections → negotiation of independence. October 1, 1960: Nigeria independent within Commonwealth; Governor-General Nnamdi Azikiwe; Prime Minister Tafawa Balewa. Post-independence challenges foreshadowed (regional tensions, census disputes)."
+    }
+  ],
+  "worked_examples": [
+    {
+      "example_id": "2.1",
+      "title": "Indirect Rule Suitability",
+      "context": "British applied indirect rule in Northern Nigeria.",
+      "problem": "Why was it more effective there than in some southern areas?",
+      "solution": "Northern emirates had centralized authority, tax systems, Islamic courts—structures fit indirect rule. Many southern acephalous societies lacked centralized chiefs, making indirect rule less effective or resisted.",
+      "skills_tested": ["Administrative analysis", "Comparative governance"]
+    },
+    {
+      "example_id": "2.2",
+      "title": "Linking Economics to Colonial Policy",
+      "context": "Railways built from ports inland.",
+      "problem": "What economic purpose did this serve?",
+      "solution": "Facilitated extraction of cash crops/minerals to ports, integrating Nigeria into British trade network and ensuring cheaper transport for exports/imports.",
+      "skills_tested": ["Economic causation", "Infrastructure purpose"]
+    },
+    {
+      "example_id": "2.3",
+      "title": "Nationalist Strategy",
+      "context": "NCNC campaigned for reforms.",
+      "problem": "Name two strategies nationalists used.",
+      "solution": "Newspapers and pamphlets to spread ideas; political parties contesting elections; petitions to colonial office; protests/strikes; alliances across regions.",
+      "skills_tested": ["Political tactics", "Movement analysis"]
+    }
+  ],
+  "practice_problems": [
+    {"tier": "basic", "difficulty": 1, "problem_id": "2.1.B", "problem": "What year was Lagos annexed?", "answer": "1861.", "explanation": "Start of formal British presence."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "2.2.B", "problem": "Define indirect rule.", "answer": "Governing through existing traditional rulers under colonial supervision.", "explanation": "Key colonial method."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "2.3.B", "problem": "Name one nationalist leader.", "answer": "Nnamdi Azikiwe / Obafemi Awolowo / Ahmadu Bello / Herbert Macaulay (any one).", "explanation": "Prominent figures."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.4.C", "problem": "State one reason for British colonization.", "answer": "Economic resources/markets; strategic control; missionary aims (any one).", "explanation": "Motives list."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.5.C", "problem": "Which constitution introduced elective principle?", "answer": "Clifford Constitution 1922.", "explanation": "First elections in Lagos/Calabar."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.6.C", "problem": "Give one cash crop promoted under colonial economy.", "answer": "Cocoa, groundnuts, palm oil (any).", "explanation": "Export crops."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.7.CH", "problem": "Why did indirect rule face resistance among some Igbo communities?", "answer": "Acephalous villages lacked centralized chiefs; warrant chiefs seen as imposed; taxation/court changes resented (e.g., Aba Women’s War).", "explanation": "Mismatch with local structures."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.8.CH", "problem": "Explain role of newspapers in nationalism.", "answer": "They spread political ideas, criticized colonial rule, mobilized educated elites and masses; e.g., West African Pilot built nationalist consciousness.", "explanation": "Media as mobilizer."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.9.CH", "problem": "How did World War II affect Nigerian nationalism?", "answer": "Veterans gained political awareness; economic hardship; global decolonization sentiment; weakened European moral authority—boosted demands for self-rule.", "explanation": "War catalyzed change."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.10.CH", "problem": "Name one factor that led to 1960 independence timeline.", "answer": "Constitutional reforms expanding self-government; strong nationalist pressure; British post-war policy to decolonize; regional self-rule readiness.", "explanation": "Converging drivers."}
+  ],
+  "glossary": [
+    {"term": "Indirect rule", "definition": "Colonial system using traditional rulers under supervision.", "example": "British administration in Northern Nigeria emirates."},
+    {"term": "Protectorate", "definition": "Territory under external protection/control with local rulers retained.", "example": "Northern/Southern Protectorates pre-1914."},
+    {"term": "Nationalism", "definition": "Movement for self-determination and independence.", "example": "NCNC, Action Group campaigns."},
+    {"term": "Constitutional reform", "definition": "Changes to governing rules expanding participation.", "example": "Macpherson Constitution 1951."},
+    {"term": "Aba Women’s War", "definition": "1929 protest against taxation and warrant chiefs in SE Nigeria.", "example": "Women’s collective resistance."}
+  ],
+  "assessment": {
+    "quick_checks": [
+      "When was Lagos annexed?",
+      "Define indirect rule.",
+      "Name one nationalist leader.",
+      "Which constitution introduced elections?",
+      "State one colonial economic policy."
+    ],
+    "end_of_lesson_quiz": [
+      {"question": "Berlin Conference year:", "options": ["1784-85", "1884-85", "1945", "1960"], "correct": "1884-85"},
+      {"question": "Indirect rule worked best where:", "options": ["No chiefs existed", "Centralized emirates existed", "No tax systems", "Only coastlines"], "correct": "Centralized emirates existed"},
+      {"question": "Which constitution first allowed elections in Lagos?", "options": ["Richards", "Clifford", "Macpherson", "Lyttleton"], "correct": "Clifford"},
+      {"question": "Aba Women’s War occurred in:", "options": ["1914", "1929", "1945", "1957"], "correct": "1929"},
+      {"question": "Nigeria gained independence in:", "options": ["1954", "1957", "1960", "1963"], "correct": "1960"}
+    ],
+    "exam_style_questions": [
+      {"question": "Assess reasons indirect rule succeeded in the north but struggled in parts of the south. Use specific examples.", "answer_guide": "Centralized emirates, Islamic courts/taxes vs acephalous Igbo; warrant chiefs imposition; legitimacy and structure fit; resistance (Aba)."},
+      {"question": "Explain two roles of constitutional reforms (1922–1954) in Nigeria’s journey to independence.", "answer_guide": "Introduced elections/representation; regional autonomy; political party growth; training in self-rule; laid federal structure."}
+    ]
+  },
+  "resources": {
+    "visual_aids": [
+      {"title": "Colonial Nigeria Map", "type": "map", "description": "Protectorates, regions, rail lines."},
+      {"title": "Constitutional Timeline", "type": "chart", "description": "Clifford to Lyttleton milestones."},
+      {"title": "Nationalist Leaders Gallery", "type": "poster", "description": "Photos/names of key leaders."}
+    ]
+  },
+  "waec_tags": ["colonialism", "indirect rule", "nationalism", "constitutional reforms", "independence", "British rule", "Aba Women’s War", "Nigeria 1960"]
+}
