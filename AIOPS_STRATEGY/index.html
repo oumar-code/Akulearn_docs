@@ -1,0 +1,2297 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive documentation for the Akulearn EdTech platform, covering architecture, development standards, and project plans.">
+      
+      
+      
+        <link rel="canonical" href="https://akulearn.com/docs/AIOPS_STRATEGY/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>AIops Strategy for Akulearn - Exam Content Generation - Akulearn Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aiops-strategy-for-akulearn-exam-content-generation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Akulearn Documentation" class="md-header__button md-logo" aria-label="Akulearn Documentation" data-md-component="logo">
+      
+  <img src="../images/akulearn-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Akulearn Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AIops Strategy for Akulearn - Exam Content Generation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/oumar-code/Akulearn_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    oumar-code/Akulearn_docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../docs/00-project-overview/index.md" class="md-tabs__link">
+          
+  
+  
+  Project Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../docs/01-architecture/index.md" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../docs/02-backend/index.md" class="md-tabs__link">
+          
+  
+  
+  Backend
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../docs/03-mobile/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mobile App
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../docs/04-iot-projector/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  IoT Projector
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../docs/05-cross-cutting/coding-standards.md" class="md-tabs__link">
+          
+  
+  
+  Cross-Cutting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../docs/06-process-methodology/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Process & Methodology
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../docs/07-glossary/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../docs/demo_scripts/offline_demo_segment.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Demo Scripts
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Akulearn Documentation" class="md-nav__button md-logo" aria-label="Akulearn Documentation" data-md-component="logo">
+      
+  <img src="../images/akulearn-logo.png" alt="logo">
+
+    </a>
+    Akulearn Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/oumar-code/Akulearn_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    oumar-code/Akulearn_docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/00-project-overview/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/00-project-overview/roadmap-phase-1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/01-architecture/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/01-architecture/hld-lld-content-ingestion.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/01-architecture/adrs/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADRs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/02-backend/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/02-backend/api-specs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/02-backend/database-schemas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/03-mobile/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/04-iot-projector/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IoT Projector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Cutting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cross-Cutting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/05-cross-cutting/coding-standards.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/05-cross-cutting/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/06-process-methodology/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process & Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/07-glossary/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/demo_scripts/offline_demo_segment.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-aiops-best-practices-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. AIops Best Practices &amp; Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. AIops Best Practices &amp; Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Core Principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Core Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automation-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automation First
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability &amp; Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-as-code-iac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure as Code (IaC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-integrationcontinuous-deployment-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous Integration/Continuous Deployment (CI/CD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedback-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feedback Loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Architecture Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-technology-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Technology Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Technology Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-aiml-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 AI/ML Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-infrastructure-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Infrastructure Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-monitoring-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Monitoring &amp; CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-content-generation-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Content Generation Pipelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Content Generation Pipelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-question-generation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Question Generation Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-solution-explanation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Solution Explanation Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-quiz-generator-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Quiz Generator Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ai-agent-orchestration-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. AI Agent Orchestration Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. AI Agent Orchestration Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-multi-agent-system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Multi-Agent System Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-agent-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Agent Responsibilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-exam-specific-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Exam-Specific Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Exam-Specific Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-waec-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 WAEC Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-neco-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 NECO Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-jamb-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 JAMB Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-implementation-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Implementation Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Implementation Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-foundation-week-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Foundation (Week 1-2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-mvp-week-3-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: MVP (Week 3-4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-scale-week-5-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Scale (Week 5-6)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-intelligence-week-7-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Intelligence (Week 7-8)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-key-metrics-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Key Metrics &amp; KPIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Key Metrics &amp; KPIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#content-quality-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content Quality Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-best-practices-for-your-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Best Practices for Your Team
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Best Practices for Your Team">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Prompt Engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-model-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Model Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Data Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-deployment-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Deployment Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-risk-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Risk Mitigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-tools-integration-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Tools Integration Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Tools Integration Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-notebook-lm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Notebook LM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google AI Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hugging-face-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hugging Face Hub
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-quick-start-first-content-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Quick Start: First Content Generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="aiops-strategy-for-akulearn-exam-content-generation">AIops Strategy for Akulearn - Exam Content Generation<a class="headerlink" href="#aiops-strategy-for-akulearn-exam-content-generation" title="Permanent link">&para;</a></h1>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This document outlines the best practices for implementing AIops to automate content generation for secondary school exam preparation (WAEC, NECO, JAMB) using Google Notebook LM, Google AI Studio, Hugging Face, and custom ML agents.</p>
+<hr />
+<h2 id="1-aiops-best-practices-framework">1. AIops Best Practices &amp; Framework<a class="headerlink" href="#1-aiops-best-practices-framework" title="Permanent link">&para;</a></h2>
+<h3 id="11-core-principles">1.1 Core Principles<a class="headerlink" href="#11-core-principles" title="Permanent link">&para;</a></h3>
+<h4 id="automation-first"><strong>Automation First</strong><a class="headerlink" href="#automation-first" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Automate repetitive content creation tasks (question generation, solution crafting, explanation writing)</li>
+<li>Use CI/CD pipelines to validate and deploy content automatically</li>
+<li>Implement monitoring for content quality metrics</li>
+</ul>
+<h4 id="observability-monitoring"><strong>Observability &amp; Monitoring</strong><a class="headerlink" href="#observability-monitoring" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Track AI model performance (accuracy, relevance, toxicity scores)</li>
+<li>Monitor content generation latency and throughput</li>
+<li>Alert on anomalies in generated content quality</li>
+</ul>
+<h4 id="infrastructure-as-code-iac"><strong>Infrastructure as Code (IaC)</strong><a class="headerlink" href="#infrastructure-as-code-iac" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Define ML pipelines as code (Python/YAML)</li>
+<li>Version control all model configurations and prompts</li>
+<li>Reproducible deployment across environments</li>
+</ul>
+<h4 id="continuous-integrationcontinuous-deployment-cicd"><strong>Continuous Integration/Continuous Deployment (CI/CD)</strong><a class="headerlink" href="#continuous-integrationcontinuous-deployment-cicd" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Automated testing of generated content (fact-checking, format validation)</li>
+<li>Multi-stage deployment: Dev → Staging → Production</li>
+<li>Rollback mechanisms for faulty content batches</li>
+</ul>
+<h4 id="feedback-loops"><strong>Feedback Loops</strong><a class="headerlink" href="#feedback-loops" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Collect user feedback on generated content</li>
+<li>Retrain models with human-validated data</li>
+<li>Iterate on prompt engineering based on results</li>
+</ul>
+<hr />
+<h2 id="2-architecture-overview">2. Architecture Overview<a class="headerlink" href="#2-architecture-overview" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="err">┌─────────────────────────────────────────────────────────────────┐</span>
+<span class="err">│</span><span class="w">                     </span><span class="n">AIops</span><span class="w"> </span><span class="n">Content</span><span class="w"> </span><span class="n">Pipeline</span><span class="w">                       </span><span class="err">│</span>
+<span class="err">└─────────────────────────────────────────────────────────────────┘</span>
+
+<span class="mf">1.</span><span class="w"> </span><span class="n">DATA</span><span class="w"> </span><span class="n">INGESTION</span><span class="w"> </span><span class="n">LAYER</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">WAEC</span><span class="w"> </span><span class="n">Past</span><span class="w"> </span><span class="n">Questions</span><span class="w"> </span><span class="p">(</span><span class="n">CSV</span><span class="o">/</span><span class="n">JSON</span><span class="p">)</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">NECO</span><span class="w"> </span><span class="n">Exam</span><span class="w"> </span><span class="n">Datasets</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">JAMB</span><span class="w"> </span><span class="n">Question</span><span class="w"> </span><span class="n">Banks</span>
+<span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">Textbook</span><span class="w"> </span><span class="n">PDFs</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Educational</span><span class="w"> </span><span class="n">Resources</span>
+
+<span class="mf">2.</span><span class="w"> </span><span class="n">CONTENT</span><span class="w"> </span><span class="n">PROCESSING</span><span class="w"> </span><span class="n">LAYER</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Notebook</span><span class="w"> </span><span class="n">LM</span><span class="w"> </span><span class="p">(</span><span class="n">Google</span><span class="p">)</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Audio</span><span class="w"> </span><span class="n">study</span><span class="w"> </span><span class="n">guides</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Google</span><span class="w"> </span><span class="n">AI</span><span class="w"> </span><span class="n">Studio</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Prompt</span><span class="w"> </span><span class="n">refinement</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">testing</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Hugging</span><span class="w"> </span><span class="n">Face</span><span class="w"> </span><span class="n">Models</span>
+<span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Transformers</span><span class="w"> </span><span class="p">(</span><span class="n">BERT</span><span class="p">,</span><span class="w"> </span><span class="n">GPT</span><span class="o">-</span><span class="mh">2</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">question</span><span class="w"> </span><span class="n">generation</span><span class="p">)</span>
+<span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Summarization</span><span class="w"> </span><span class="n">models</span><span class="w"> </span><span class="p">(</span><span class="n">BART</span><span class="p">,</span><span class="w"> </span><span class="n">T5</span><span class="p">)</span>
+<span class="w">   </span><span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">Text</span><span class="w"> </span><span class="n">classification</span><span class="w"> </span><span class="p">(</span><span class="n">toxicity</span><span class="p">,</span><span class="w"> </span><span class="n">relevance</span><span class="w"> </span><span class="n">detection</span><span class="p">)</span>
+<span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">Custom</span><span class="w"> </span><span class="n">ML</span><span class="w"> </span><span class="n">Agents</span>
+<span class="w">       </span><span class="err">├──</span><span class="w"> </span><span class="n">Question</span><span class="w"> </span><span class="n">generator</span><span class="w"> </span><span class="n">agent</span>
+<span class="w">       </span><span class="err">├──</span><span class="w"> </span><span class="n">Solution</span><span class="w"> </span><span class="n">explanation</span><span class="w"> </span><span class="n">agent</span>
+<span class="w">       </span><span class="err">├──</span><span class="w"> </span><span class="n">Quiz</span><span class="w"> </span><span class="n">generator</span><span class="w"> </span><span class="n">agent</span>
+<span class="w">       </span><span class="err">└──</span><span class="w"> </span><span class="n">Difficulty</span><span class="w"> </span><span class="n">classifier</span><span class="w"> </span><span class="n">agent</span>
+
+<span class="mf">3.</span><span class="w"> </span><span class="n">VALIDATION</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">QUALITY</span><span class="w"> </span><span class="n">ASSURANCE</span><span class="w"> </span><span class="n">LAYER</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Fact</span><span class="o">-</span><span class="n">checking</span><span class="w"> </span><span class="n">against</span><span class="w"> </span><span class="n">reference</span><span class="w"> </span><span class="n">materials</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Format</span><span class="w"> </span><span class="n">validation</span><span class="w"> </span><span class="p">(</span><span class="n">JSON</span><span class="w"> </span><span class="n">schema</span><span class="p">)</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Content</span><span class="w"> </span><span class="n">safety</span><span class="w"> </span><span class="n">checks</span><span class="w"> </span><span class="p">(</span><span class="n">toxicity</span><span class="p">,</span><span class="w"> </span><span class="n">bias</span><span class="w"> </span><span class="n">detection</span><span class="p">)</span>
+<span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">Relevance</span><span class="w"> </span><span class="n">scoring</span>
+
+<span class="mf">4.</span><span class="w"> </span><span class="n">STORAGE</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">DELIVERY</span><span class="w"> </span><span class="n">LAYER</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Content</span><span class="w"> </span><span class="n">database</span><span class="w"> </span><span class="p">(</span><span class="n">PostgreSQL</span><span class="o">/</span><span class="n">MongoDB</span><span class="p">)</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Content</span><span class="w"> </span><span class="n">versioning</span><span class="w"> </span><span class="n">system</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">API</span><span class="w"> </span><span class="n">endpoints</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="n">apps</span>
+<span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">CDN</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="n">assets</span>
+
+<span class="mf">5.</span><span class="w"> </span><span class="n">MONITORING</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">OBSERVABILITY</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">MLflow</span><span class="w"> </span><span class="n">experiment</span><span class="w"> </span><span class="n">tracking</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Prometheus</span><span class="w"> </span><span class="n">metrics</span><span class="w"> </span><span class="n">collection</span>
+<span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="n">Logging</span><span class="w"> </span><span class="n">aggregation</span><span class="w"> </span><span class="p">(</span><span class="n">ELK</span><span class="w"> </span><span class="n">stack</span><span class="p">)</span>
+<span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="n">Dashboards</span><span class="w"> </span><span class="p">(</span><span class="n">Grafana</span><span class="p">)</span>
+</code></pre></div>
+
+<hr />
+<h2 id="3-technology-stack">3. Technology Stack<a class="headerlink" href="#3-technology-stack" title="Permanent link">&para;</a></h2>
+<h3 id="31-aiml-tools">3.1 AI/ML Tools<a class="headerlink" href="#31-aiml-tools" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Google Notebook LM</strong></td>
+<td>Audio study guides, document summarization</td>
+<td>Convert textbooks → podcast-style study guides</td>
+</tr>
+<tr>
+<td><strong>Google AI Studio</strong></td>
+<td>Prompt engineering, model testing</td>
+<td>Interactive prompt refinement &amp; testing</td>
+</tr>
+<tr>
+<td><strong>Hugging Face Transformers</strong></td>
+<td>Pre-trained models</td>
+<td>Question generation, summarization, classification</td>
+</tr>
+<tr>
+<td><strong>LLaMA / Mistral</strong></td>
+<td>Open-source LLMs</td>
+<td>Fine-tuning for exam-specific content</td>
+</tr>
+<tr>
+<td><strong>LangChain</strong></td>
+<td>Agent orchestration</td>
+<td>Chain multiple AI models for complex workflows</td>
+</tr>
+<tr>
+<td><strong>Ollama</strong></td>
+<td>Local LLM deployment</td>
+<td>Run open-source models locally for speed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-infrastructure-tools">3.2 Infrastructure Tools<a class="headerlink" href="#32-infrastructure-tools" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Docker</strong></td>
+<td>Containerization of ML services</td>
+</tr>
+<tr>
+<td><strong>Kubernetes</strong></td>
+<td>Orchestration of microservices</td>
+</tr>
+<tr>
+<td><strong>MLflow</strong></td>
+<td>Experiment tracking &amp; model registry</td>
+</tr>
+<tr>
+<td><strong>DVC (Data Version Control)</strong></td>
+<td>Dataset versioning</td>
+</tr>
+<tr>
+<td><strong>FastAPI</strong></td>
+<td>REST API for content generation</td>
+</tr>
+<tr>
+<td><strong>PostgreSQL</strong></td>
+<td>Content &amp; metadata storage</td>
+</tr>
+<tr>
+<td><strong>Redis</strong></td>
+<td>Caching &amp; task queuing (Celery)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-monitoring-cicd">3.3 Monitoring &amp; CI/CD<a class="headerlink" href="#33-monitoring-cicd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GitHub Actions</strong></td>
+<td>CI/CD pipeline automation</td>
+</tr>
+<tr>
+<td><strong>Prometheus</strong></td>
+<td>Metrics collection</td>
+</tr>
+<tr>
+<td><strong>Grafana</strong></td>
+<td>Dashboard visualization</td>
+</tr>
+<tr>
+<td><strong>ELK Stack</strong></td>
+<td>Centralized logging</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-content-generation-pipelines">4. Content Generation Pipelines<a class="headerlink" href="#4-content-generation-pipelines" title="Permanent link">&para;</a></h2>
+<h3 id="41-question-generation-pipeline">4.1 Question Generation Pipeline<a class="headerlink" href="#41-question-generation-pipeline" title="Permanent link">&para;</a></h3>
+<p><strong>Input</strong>: Topic (e.g., "Biology - Photosynthesis")
+<strong>Output</strong>: 5-10 multiple-choice questions with solutions</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">Pipeline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">QUESTION_GENERATION</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Step 1</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Extract relevant content</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Search textbook database for topic</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Use Hugging Face summarizer to extract key concepts</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Identify difficulty level (easy/medium/hard)</span>
+
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Step 2</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generate question variations</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Use GPT-2 / LLaMA fine-tuned on WAEC past questions</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Generate 3-5 question variants per concept</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Classify difficulty using ML model</span>
+
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Step 3</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Validation</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Fact-check answers against reference materials</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Check for ambiguity and clarity</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Rate relevance to exam syllabus (0-100)</span>
+
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Step 4</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Storage</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Save to content database</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Tag by subject, topic, difficulty, exam board</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Index for fast retrieval</span>
+</code></pre></div>
+
+<h3 id="42-solution-explanation-pipeline">4.2 Solution Explanation Pipeline<a class="headerlink" href="#42-solution-explanation-pipeline" title="Permanent link">&para;</a></h3>
+<p><strong>Input</strong>: Question + Correct Answer
+<strong>Output</strong>: Step-by-step explanation + video/audio guide</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">Pipeline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SOLUTION_EXPLANATION</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Step 1</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Analyze question</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Identify question type (calculation, definition, etc.)</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Extract key concepts</span>
+
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Step 2</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generate explanation</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Use T5/BART summarizer for concise explanation</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Break into 3-5 logical steps</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Add worked examples</span>
+
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Step 3</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generate multimedia</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Notebook LM</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Convert text → audio explanation</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Google AI Studio</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generate follow-up practice questions</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Create visual diagrams (if applicable)</span>
+
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Step 4</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Quality check</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Validate step-by-step logic</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Check mathematical accuracy</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Rate explanation clarity</span>
+</code></pre></div>
+
+<h3 id="43-quiz-generator-pipeline">4.3 Quiz Generator Pipeline<a class="headerlink" href="#43-quiz-generator-pipeline" title="Permanent link">&para;</a></h3>
+<p><strong>Input</strong>: Topic list + Difficulty level + Question count
+<strong>Output</strong>: Full quiz with auto-grading</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">Pipeline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">QUIZ_GENERATION</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Step 1</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Select questions</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Query content database for topic + difficulty</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Sample random questions avoiding duplicates</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Mix question types for variety</span>
+
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Step 2</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Randomize options</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Shuffle multiple-choice options</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Ensure correct answer distribution</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Validate no duplicate options</span>
+
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Step 3</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Generate rubric</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Define scoring rules</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Set time limits per question</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Create progress tracking</span>
+
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Step 4</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Generate quiz JSON</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Create unique quiz ID</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">- Track performance metrics</span>
+</code></pre></div>
+
+<hr />
+<h2 id="5-ai-agent-orchestration-strategy">5. AI Agent Orchestration Strategy<a class="headerlink" href="#5-ai-agent-orchestration-strategy" title="Permanent link">&para;</a></h2>
+<h3 id="51-multi-agent-system-architecture">5.1 Multi-Agent System Architecture<a class="headerlink" href="#51-multi-agent-system-architecture" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>┌──────────────────────────────────────────┐
+│        Orchestrator Agent (Master)       │ ← Coordinates all sub-agents
+└──────────────────────────────────────────┘
+         ↓ ↓ ↓ ↓ ↓
+    ┌────┴──┴──┴──┴────┐
+    │                   │
+┌───▼────┐  ┌──────┐  ┌─▼────────┐
+│Question │  │Content│  │Validation│
+│Generator│  │Curator│  │Agent     │
+└────┬────┘  └──┬───┘  └──┬───────┘
+     │          │         │
+     └──────┬───┴─────────┘
+            ↓
+      ┌─────────────┐
+      │   Database  │
+      │  (Content)  │
+      └─────────────┘
+</code></pre></div>
+
+<h3 id="52-agent-responsibilities">5.2 Agent Responsibilities<a class="headerlink" href="#52-agent-responsibilities" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Responsibilities</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Question Generator</strong></td>
+<td>Create questions, validate uniqueness</td>
+<td>HF Transformers, LLaMA</td>
+</tr>
+<tr>
+<td><strong>Content Curator</strong></td>
+<td>Select &amp; arrange content for topics</td>
+<td>LangChain, Vector DB</td>
+</tr>
+<tr>
+<td><strong>Validator</strong></td>
+<td>Quality checks, fact-checking</td>
+<td>Toxicity classifiers, Relevance models</td>
+</tr>
+<tr>
+<td><strong>Explainer</strong></td>
+<td>Generate solutions &amp; explanations</td>
+<td>BART, T5, Notebook LM</td>
+</tr>
+<tr>
+<td><strong>Performance Analyzer</strong></td>
+<td>Track metrics, identify gaps</td>
+<td>MLflow, Pandas</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-exam-specific-strategies">6. Exam-Specific Strategies<a class="headerlink" href="#6-exam-specific-strategies" title="Permanent link">&para;</a></h2>
+<h3 id="61-waec-strategy">6.1 WAEC Strategy<a class="headerlink" href="#61-waec-strategy" title="Permanent link">&para;</a></h3>
+<p><strong>Characteristics</strong>: Standardized, comprehensive, tests depth
+<strong>Content Generation Approach</strong>:
+- Extract 5-10 years of past papers
+- Map syllabus topics to question types
+- Generate variations maintaining official difficulty curve
+- Focus on: Biology, Chemistry, Physics, Mathematics, English</p>
+<h3 id="62-neco-strategy">6.2 NECO Strategy<a class="headerlink" href="#62-neco-strategy" title="Permanent link">&para;</a></h3>
+<p><strong>Characteristics</strong>: Similar to WAEC, fewer subjects, quicker turnaround
+<strong>Content Generation Approach</strong>:
+- Use WAEC base + NECO-specific variations
+- Emphasize practical/application questions
+- Shorter solution explanations (2-3 steps vs 4-5)</p>
+<h3 id="63-jamb-strategy">6.3 JAMB Strategy<a class="headerlink" href="#63-jamb-strategy" title="Permanent link">&para;</a></h3>
+<p><strong>Characteristics</strong>: Multiple-choice only, time-pressured, pattern-based
+<strong>Content Generation Approach</strong>:
+- Generate high-volume questions (100+ per subject)
+- Implement adaptive difficulty sequencing
+- Create timed practice sessions
+- Focus on common trick questions &amp; distractors</p>
+<hr />
+<h2 id="7-implementation-roadmap">7. Implementation Roadmap<a class="headerlink" href="#7-implementation-roadmap" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-foundation-week-1-2">Phase 1: Foundation (Week 1-2)<a class="headerlink" href="#phase-1-foundation-week-1-2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Set up Notebook LM account &amp; Google AI Studio</li>
+<li>[ ] Create base prompt templates for each exam type</li>
+<li>[ ] Build data ingestion pipeline (past papers → structured format)</li>
+<li>[ ] Deploy Hugging Face model serving infrastructure</li>
+</ul>
+<h3 id="phase-2-mvp-week-3-4">Phase 2: MVP (Week 3-4)<a class="headerlink" href="#phase-2-mvp-week-3-4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Build question generation agent (LLaMA-based)</li>
+<li>[ ] Implement solution explanation generator</li>
+<li>[ ] Create basic quality validation pipeline</li>
+<li>[ ] Generate 200-300 questions across 3 subjects</li>
+</ul>
+<h3 id="phase-3-scale-week-5-6">Phase 3: Scale (Week 5-6)<a class="headerlink" href="#phase-3-scale-week-5-6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Build multi-agent orchestration system</li>
+<li>[ ] Implement MLflow experiment tracking</li>
+<li>[ ] Set up GitHub Actions CI/CD for content</li>
+<li>[ ] Deploy content API (FastAPI)</li>
+</ul>
+<h3 id="phase-4-intelligence-week-7-8">Phase 4: Intelligence (Week 7-8)<a class="headerlink" href="#phase-4-intelligence-week-7-8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Collect user feedback on generated content</li>
+<li>[ ] Fine-tune models on high-rated content</li>
+<li>[ ] Implement adaptive difficulty selection</li>
+<li>[ ] Launch A/B testing framework</li>
+</ul>
+<hr />
+<h2 id="8-key-metrics-kpis">8. Key Metrics &amp; KPIs<a class="headerlink" href="#8-key-metrics-kpis" title="Permanent link">&para;</a></h2>
+<h3 id="content-quality-metrics">Content Quality Metrics<a class="headerlink" href="#content-quality-metrics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Relevance Score</strong>: % of generated questions matching exam syllabus (target: &gt;95%)</li>
+<li><strong>Accuracy Rate</strong>: % of automatically validated answers correct (target: &gt;98%)</li>
+<li><strong>Clarity Score</strong>: User ratings on explanation clarity (target: &gt;4.2/5)</li>
+<li><strong>Uniqueness</strong>: % of questions unique vs past papers (target: &gt;85%)</li>
+</ul>
+<h3 id="performance-metrics">Performance Metrics<a class="headerlink" href="#performance-metrics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Generation Latency</strong>: Time to generate 1 question (target: &lt;2 seconds)</li>
+<li><strong>Throughput</strong>: Questions generated per hour (target: 500+)</li>
+<li><strong>Model Accuracy</strong>: F1 score on validation tasks (target: &gt;0.92)</li>
+<li><strong>API Response Time</strong>: &lt;500ms for quiz generation</li>
+</ul>
+<h3 id="business-metrics">Business Metrics<a class="headerlink" href="#business-metrics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Content Coverage</strong>: % of syllabus covered (target: &gt;90%)</li>
+<li><strong>Student Performance Improvement</strong>: % score improvement using platform (target: +15%)</li>
+<li><strong>Cost per Question</strong>: Infrastructure cost per generated question (target: &lt;$0.01)</li>
+</ul>
+<hr />
+<h2 id="9-best-practices-for-your-team">9. Best Practices for Your Team<a class="headerlink" href="#9-best-practices-for-your-team" title="Permanent link">&para;</a></h2>
+<h3 id="91-prompt-engineering">9.1 Prompt Engineering<a class="headerlink" href="#91-prompt-engineering" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Versioning</strong>: Keep all prompts in version control (git)</li>
+<li><strong>Documentation</strong>: Document intent, expected output, edge cases</li>
+<li><strong>Testing</strong>: Test prompts against known exam questions before deployment</li>
+<li><strong>Iteration</strong>: Use Google AI Studio for interactive refinement</li>
+</ul>
+<h3 id="92-model-selection">9.2 Model Selection<a class="headerlink" href="#92-model-selection" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Start Small</strong>: Begin with smaller models (DistilBERT, GPT-2) for speed</li>
+<li><strong>Evaluate Trade-offs</strong>: Accuracy vs Latency vs Cost</li>
+<li><strong>Mix Approaches</strong>: Combine rule-based + ML-based solutions</li>
+<li><strong>Regular Updates</strong>: Track new SOTA models, conduct experiments with MLflow</li>
+</ul>
+<h3 id="93-data-quality">9.3 Data Quality<a class="headerlink" href="#93-data-quality" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Source Validation</strong>: Verify all past papers from official sources</li>
+<li><strong>Annotation</strong>: Have subject matter experts review &amp; tag questions</li>
+<li><strong>Versioning</strong>: Use DVC for dataset versioning &amp; reproducibility</li>
+<li><strong>Deduplication</strong>: Identify &amp; remove near-duplicate questions</li>
+</ul>
+<h3 id="94-deployment-strategy">9.4 Deployment Strategy<a class="headerlink" href="#94-deployment-strategy" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Canary Releases</strong>: Deploy new content to 5% of users first</li>
+<li><strong>Monitoring</strong>: Track question performance metrics in production</li>
+<li><strong>Rollback Plan</strong>: Ability to remove low-quality content quickly</li>
+<li><strong>Documentation</strong>: Document all content batches with metadata</li>
+</ul>
+<hr />
+<h2 id="10-risk-mitigation">10. Risk Mitigation<a class="headerlink" href="#10-risk-mitigation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Mitigation Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inaccurate content</td>
+<td>Fact-checking pipeline + expert review</td>
+</tr>
+<tr>
+<td>Plagiarism concerns</td>
+<td>Originality scoring + diversity maximization</td>
+</tr>
+<tr>
+<td>Model bias</td>
+<td>Fairness audits, diverse training data</td>
+</tr>
+<tr>
+<td>API rate limits</td>
+<td>Implement caching, batch processing, queue system</td>
+</tr>
+<tr>
+<td>Data privacy</td>
+<td>Anonymize student data, comply with GDPR/local laws</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11-tools-integration-guide">11. Tools Integration Guide<a class="headerlink" href="#11-tools-integration-guide" title="Permanent link">&para;</a></h2>
+<h3 id="google-notebook-lm">Google Notebook LM<a class="headerlink" href="#google-notebook-lm" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">Use</span><span class="w"> </span><span class="k">for</span><span class="p">:</span><span class="w"> </span><span class="n">Converting</span><span class="w"> </span><span class="n">textbooks</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">audio</span><span class="w"> </span><span class="n">study</span><span class="w"> </span><span class="n">guides</span>
+<span class="n">Steps</span><span class="p">:</span>
+<span class="mf">1.</span><span class="w"> </span><span class="n">Upload</span><span class="w"> </span><span class="n">PDF</span><span class="o">/</span><span class="n">document</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Notebook</span><span class="w"> </span><span class="n">LM</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Generate</span><span class="w"> </span><span class="n">study</span><span class="w"> </span><span class="n">guide</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">Export</span><span class="w"> </span><span class="n">audio</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">MP3</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">Integrate</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">quiz</span><span class="w"> </span><span class="n">app</span>
+<span class="n">Cost</span><span class="p">:</span><span class="w"> </span><span class="n">Free</span><span class="w"> </span><span class="n">tier</span><span class="w"> </span><span class="n">available</span>
+</code></pre></div>
+
+<h3 id="google-ai-studio">Google AI Studio<a class="headerlink" href="#google-ai-studio" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">Use</span><span class="w"> </span><span class="k">for</span><span class="err">:</span><span class="w"> </span><span class="n">Prompt</span><span class="w"> </span><span class="n">testing</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">refinement</span>
+<span class="nl">Steps</span><span class="p">:</span>
+<span class="mf">1.</span><span class="w"> </span><span class="k">Create</span><span class="w"> </span><span class="nc">text</span><span class="o">/</span><span class="n">chat</span><span class="w"> </span><span class="n">prompt</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">against</span><span class="w"> </span><span class="n">sample</span><span class="w"> </span><span class="n">questions</span>
+<span class="mf">3.</span><span class="w"> </span><span class="k">Iterate</span><span class="w"> </span><span class="n">based</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">results</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">Export</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">production</span><span class="w"> </span><span class="n">code</span>
+<span class="nl">Cost</span><span class="p">:</span><span class="w"> </span><span class="n">Pay</span><span class="o">-</span><span class="k">as</span><span class="o">-</span><span class="n">you</span><span class="o">-</span><span class="k">go</span><span class="w"> </span><span class="p">(</span><span class="err">$</span><span class="mf">0.01</span><span class="w"> </span><span class="n">per</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="n">tokens</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="hugging-face-hub">Hugging Face Hub<a class="headerlink" href="#hugging-face-hub" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nv">Use</span><span class="w"> </span><span class="k">for</span>:<span class="w"> </span><span class="nv">Pre</span><span class="o">-</span><span class="nv">trained</span><span class="w"> </span><span class="nv">model</span><span class="w"> </span><span class="nv">access</span>
+<span class="nv">Models</span><span class="w"> </span><span class="nv">recommended</span>:
+<span class="o">-</span><span class="w"> </span><span class="nv">bert</span><span class="o">-</span><span class="nv">base</span><span class="o">-</span><span class="nv">uncased</span>:<span class="w"> </span><span class="nv">Text</span><span class="w"> </span><span class="nv">classification</span>
+<span class="o">-</span><span class="w"> </span><span class="nv">t5</span><span class="o">-</span><span class="nv">small</span>:<span class="w"> </span><span class="nv">Summarization</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nv">question</span><span class="w"> </span><span class="nv">generation</span>
+<span class="o">-</span><span class="w"> </span><span class="nv">distilbert</span><span class="o">-</span><span class="nv">base</span><span class="o">-</span><span class="nv">uncased</span>:<span class="w"> </span><span class="nv">Fast</span><span class="w"> </span><span class="nv">inference</span>
+<span class="nv">Deployment</span>:<span class="w"> </span><span class="nv">Hugging</span><span class="w"> </span><span class="nv">Face</span><span class="w"> </span><span class="nv">Inference</span><span class="w"> </span><span class="nv">API</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">local</span><span class="w"> </span><span class="nv">Ollama</span>
+</code></pre></div>
+
+<hr />
+<h2 id="12-quick-start-first-content-generation">12. Quick Start: First Content Generation<a class="headerlink" href="#12-quick-start-first-content-generation" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Pseudocode for question generation pipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain</span><span class="w"> </span><span class="kn">import</span> <span class="n">LLMChain</span><span class="p">,</span> <span class="n">PromptTemplate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">huggingface_hub</span><span class="w"> </span><span class="kn">import</span> <span class="n">hf_api</span>
+
+<span class="c1"># 1. Initialize model</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">HuggingFaceHub</span><span class="p">(</span><span class="n">model_id</span><span class="o">=</span><span class="s2">&quot;gpt2&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2. Create prompt template</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="n">PromptTemplate</span><span class="p">(</span>
+    <span class="n">input_variables</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;topic&quot;</span><span class="p">,</span> <span class="s2">&quot;difficulty&quot;</span><span class="p">],</span>
+    <span class="n">template</span><span class="o">=</span><span class="s2">&quot;Generate a </span><span class="si">{difficulty}</span><span class="s2"> multiple-choice question about </span><span class="si">{topic}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># 3. Create chain</span>
+<span class="n">chain</span> <span class="o">=</span> <span class="n">LLMChain</span><span class="p">(</span><span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">)</span>
+
+<span class="c1"># 4. Generate question</span>
+<span class="n">question</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="s2">&quot;Photosynthesis&quot;</span><span class="p">,</span> <span class="n">difficulty</span><span class="o">=</span><span class="s2">&quot;medium&quot;</span><span class="p">)</span>
+
+<span class="c1"># 5. Validate &amp; store</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">validate_question</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+<span class="n">store_in_database</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<hr />
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>This AIops strategy leverages Google's tools (Notebook LM, AI Studio) combined with open-source solutions (Hugging Face, LLaMA) to build a scalable, automated content generation system for exam preparation. Start with Phase 1-2, measure results, and iterate.</p>
+<p><strong>Next Steps</strong>: 
+1. Set up accounts with Google Notebook LM, Google AI Studio
+2. Gather past papers for WAEC, NECO, JAMB
+3. Begin building the data pipeline
+4. Create first 100 questions with human validation
+5. Measure quality metrics and iterate</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
