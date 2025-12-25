@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "subject": "Biology",
+    "level": "SS1",
+    "unit": "3",
+    "unit_title": "Ecology and Nutrition",
+    "lesson": "3",
+    "lesson_title": "Ecology and Nutrition",
+    "duration_minutes": 90,
+    "estimated_pages": 13,
+    "curriculum_alignment": {
+      "nerdc_code": "BI.SS1.3.1-3.3",
+      "nerdc_description": "Ecosystems, food chains/webs, photosynthesis, respiration, nutrient cycles",
+      "waec_topic": "Ecology and Nutrition",
+      "waec_weighting": "9%"
+    },
+    "learning_level": "foundational",
+    "nigerian_context": true
+  },
+  "learning_objectives": [
+    "Define ecosystem components and organization levels",
+    "Differentiate food chains, webs, and trophic levels",
+    "Write balanced photosynthesis and respiration equations",
+    "Explain energy flow and nutrient cycling",
+    "Relate ecological concepts to Nigerian biomes and agriculture",
+    "Interpret simple population and energy pyramid data",
+    "Discuss conservation and sustainable practices"
+  ],
+  "prerequisites": [
+    "Basic understanding of cells and photosynthesis from Basic Science",
+    "Awareness of Nigerian environments (rainforest, savanna, wetlands)",
+    "Simple chemical equation reading from Chemistry"
+  ],
+  "content_sections": [
+    {
+      "section_id": "3.1",
+      "title": "Ecosystem Organization",
+      "duration_minutes": 22,
+      "content": "**Key Terms**\n- Population: individuals of same species in an area\n- Community: different populations interacting\n- Ecosystem: community plus abiotic factors (light, soil, water)\n- Biome: large region with characteristic climate and organisms\n\n**Nigerian Examples**\n- Rainforest (Cross River): high rainfall, tall trees, rich biodiversity\n- Savanna (Middle Belt): grasses with scattered trees, seasonal fires\n- Mangroves (Niger Delta): salt-tolerant plants, nurseries for fish\n\n**Abiotic Factors**\nLight, temperature, water, soil type, salinity influence species distribution." 
+    },
+    {
+      "section_id": "3.2",
+      "title": "Food Chains, Food Webs, and Energy Flow",
+      "duration_minutes": 23,
+      "content": "**Trophic Levels**\n- Producers (plants, algae)\n- Primary consumers (herbivores)\n- Secondary consumers (carnivores)\n- Tertiary consumers (top predators)\n- Decomposers (fungi, bacteria) recycle nutrients\n\n**Food Chain Example (Savanna)**\nGrass → Grasshopper → Frog → Snake → Hawk\n\n**Food Webs**\nInterconnected food chains showing multiple feeding links; more stable than single chains.\n\n**Energy Pyramid**\n- Only ~10% of energy transfers to next trophic level; rest lost as heat\n- Explains why top predators are few\n\n**Nigerian Context**: Overfishing in Lagos lagoons disrupts food webs; sustainable limits protect fish stocks." 
+    },
+    {
+      "section_id": "3.3",
+      "title": "Photosynthesis and Respiration",
+      "duration_minutes": 23,
+      "content": "**Photosynthesis Equation**\n6CO2 + 6H2O → C6H12O6 + 6O2 (in presence of light and chlorophyll)\n\n**Steps (Simplified)**\n- Light-dependent reactions in thylakoids produce ATP and oxygen\n- Light-independent (Calvin cycle) in stroma fixes CO2 into glucose\n\n**Respiration Equation (Aerobic)**\nC6H12O6 + 6O2 → 6CO2 + 6H2O + Energy (ATP)\n\n**Relationship**\n- Photosynthesis stores energy; respiration releases energy for cells\n- In plants, both occur; in animals, only respiration\n\n**Nigerian Context**: Photosynthesis drives crop yields in rice fields of Kebbi; respiration rate affects post-harvest storage of fruits in Lagos markets." 
+    },
+    {
+      "section_id": "3.4",
+      "title": "Nutrient Cycles and Conservation",
+      "duration_minutes": 22,
+      "content": "**Water Cycle**: evaporation → condensation → precipitation → runoff/infiltration.\n**Carbon Cycle**: photosynthesis removes CO2; respiration and combustion return CO2.\n**Nitrogen Cycle**: fixation by bacteria/lightning → nitrification → assimilation → ammonification → denitrification.\n\n**Human Impact**\n- Deforestation reduces carbon storage and biodiversity\n- Oil spills in Niger Delta damage mangroves and fisheries\n- Fertilizer overuse causes eutrophication\n\n**Conservation Practices**\n- Reforestation and mangrove restoration\n- Protected areas (Yankari, Gashaka Gumti)\n- Sustainable farming: crop rotation, reduced chemical use\n\n**Nigerian Context**: Community forestry in Cross River conserves rainforests; organic farming initiatives in Abuja reduce runoff into rivers." 
+    }
+  ],
+  "worked_examples": [
+    {
+      "example_id": "3.1",
+      "title": "Tracing Energy in a Food Web",
+      "context": "A simplified Niger Delta food web includes phytoplankton, shrimps, small fish, and catfish.",
+      "problem": "If energy at phytoplankton level is 10,000 kJ, estimate energy at catfish (tertiary consumer) assuming 10% transfer each step.",
+      "solution": "Phytoplankton 10,000 kJ → shrimps ~1,000 kJ → small fish ~100 kJ → catfish ~10 kJ. Energy decreases sharply up the pyramid.",
+      "skills_tested": ["Energy pyramid calculation", "Trophic level understanding", "Numerical reasoning"]
+    },
+    {
+      "example_id": "3.2",
+      "title": "Balancing Photosynthesis Equation",
+      "context": "Students must write a balanced photosynthesis equation for practical notes.",
+      "problem": "Provide the balanced equation and identify reactants/products.",
+      "solution": "Balanced: 6CO2 + 6H2O → C6H12O6 + 6O2 (light, chlorophyll). Reactants: carbon dioxide, water. Products: glucose, oxygen.",
+      "skills_tested": ["Equation balancing", "Process identification", "Photosynthesis knowledge"]
+    },
+    {
+      "example_id": "3.3",
+      "title": "Nitrogen Cycle Application",
+      "context": "A farmer in Kano applies nitrogen fertilizer to maize fields.",
+      "problem": "Which part of the nitrogen cycle does fertilizer bypass and what is a potential consequence?",
+      "solution": "Industrial fertilizer adds nitrates directly, bypassing natural fixation. Excess can leach into water, causing eutrophication and fish kills downstream.",
+      "skills_tested": ["Cycle interpretation", "Human impact analysis", "Agricultural context"]
+    }
+  ],
+  "practice_problems": [
+    {"tier": "basic", "difficulty": 1, "problem_id": "3.1.B", "problem": "Define ecosystem.", "answer": "A community of living organisms interacting with abiotic factors in an area.", "explanation": "Ecosystems include both biotic and abiotic components."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "3.2.B", "problem": "Name the producers in a food chain.", "answer": "Green plants or algae.", "explanation": "Producers make food via photosynthesis."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "3.3.B", "problem": "Write the word equation for photosynthesis.", "answer": "Carbon dioxide + water → glucose + oxygen (in light, chlorophyll).", "explanation": "Summarizes inputs and outputs of photosynthesis."},
+    {"tier": "core", "difficulty": 2, "problem_id": "3.4.C", "problem": "Explain why energy decreases at higher trophic levels.", "answer": "Most energy is lost as heat and through life processes; only ~10% passes on.", "explanation": "Inefficient transfer limits number of higher-level consumers."},
+    {"tier": "core", "difficulty": 2, "problem_id": "3.5.C", "problem": "Differentiate food chain from food web.", "answer": "Food chain is a single feeding pathway; food web is interconnected chains showing multiple links.", "explanation": "Webs better represent real ecosystems."},
+    {"tier": "core", "difficulty": 2, "problem_id": "3.6.C", "problem": "State two human activities that disrupt ecosystems.", "answer": "Deforestation and oil pollution (others: overfishing, excessive fertilizer use).", "explanation": "Human actions alter habitats and nutrient balance."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "3.7.CH", "problem": "Predict one impact of removing predators from a savanna food web.", "answer": "Herbivore populations may explode, overgrazing vegetation and collapsing the system.", "explanation": "Predators regulate herbivore numbers, maintaining balance."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "3.8.CH", "problem": "How does mangrove deforestation affect fisheries in Niger Delta?", "answer": "Loss of nursery habitat reduces juvenile fish survival, lowering adult fish stocks and catches.", "explanation": "Habitat removal breaks food web support for fish."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "3.9.CH", "problem": "Calculate energy at secondary consumers if producers start with 5,000 kJ (10% rule).", "answer": "Producers 5,000 kJ → primary consumers 500 kJ → secondary consumers 50 kJ.", "explanation": "Multiply by 0.1 at each trophic transfer."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "3.10.CH", "problem": "Suggest one conservation strategy for Nigerian rainforests and justify it.", "answer": "Community-managed reserves with sustainable harvesting to protect biodiversity while supporting local livelihoods.", "explanation": "Engaging communities reduces illegal logging and maintains ecosystem services."}
+  ],
+  "glossary": [
+    {"term": "Ecosystem", "definition": "A community of organisms plus abiotic environment interacting together.", "example": "Yankari savanna ecosystem with grasses, antelopes, lions, and soil."},
+    {"term": "Trophic level", "definition": "Feeding position in a food chain.", "example": "Primary consumers eat producers."},
+    {"term": "Photosynthesis", "definition": "Process by which green plants convert light energy to chemical energy.", "example": "Leaves making glucose from CO2 and water."},
+    {"term": "Respiration", "definition": "Breakdown of glucose to release energy.", "example": "Muscle cells respire to produce ATP during exercise."},
+    {"term": "Food web", "definition": "Network of interconnected food chains.", "example": "Aquatic web in Lagos lagoon linking plankton, fish, and birds."},
+    {"term": "Eutrophication", "definition": "Nutrient enrichment of water leading to algal bloom and oxygen depletion.", "example": "Fertilizer runoff causing fish deaths in streams."},
+    {"term": "Nitrogen fixation", "definition": "Conversion of atmospheric N2 into usable forms by bacteria or lightning.", "example": "Rhizobium bacteria in legume root nodules."},
+    {"term": "Biome", "definition": "Large ecological region defined by climate and dominant vegetation.", "example": "Tropical rainforest biome in Cross River."},
+    {"term": "Decomposer", "definition": "Organism that breaks down dead matter and recycles nutrients.", "example": "Fungi decomposing leaf litter."},
+    {"term": "Conservation", "definition": "Protection and sustainable management of natural resources.", "example": "Mangrove restoration projects in Niger Delta."}
+  ],
+  "assessment": {
+    "quick_checks": [
+      "Define food chain and give one example.",
+      "State the balanced equation for photosynthesis (symbols).",
+      "What percentage of energy typically passes between trophic levels?",
+      "Name one human activity that causes eutrophication.",
+      "Why are decomposers essential in ecosystems?"
+    ],
+    "end_of_lesson_quiz": [
+      {"question": "Producers occupy which trophic level?", "options": ["First", "Second", "Third", "Fourth"], "correct": "First"},
+      {"question": "Which process releases energy from glucose?", "options": ["Photosynthesis", "Respiration", "Transpiration", "Fixation"], "correct": "Respiration"},
+      {"question": "About how much energy transfers to the next trophic level?", "options": ["1%", "10%", "50%", "90%"], "correct": "10%"},
+      {"question": "Which activity directly increases CO2 in atmosphere?", "options": ["Planting trees", "Combustion of fuel", "Photosynthesis", "Nitrogen fixation"], "correct": "Combustion of fuel"},
+      {"question": "Oil spill damage to mangroves mainly disrupts which component?", "options": ["Abiotic factors", "Producers", "Top predators", "Decomposers"], "correct": "Producers"}
+    ],
+    "exam_style_questions": [
+      {"question": "Using examples from Nigeria, explain how deforestation affects the carbon cycle and food webs.", "answer_guide": "Tree loss reduces CO2 uptake, increases atmospheric CO2; removes producer base, disrupts herbivores/predators; mention soil erosion and biodiversity loss."},
+      {"question": "Describe the nitrogen cycle with emphasis on fixation, nitrification, and denitrification, relating to fertilizer use.", "answer_guide": "Outline each step, roles of bacteria, how fertilizer adds nitrates directly, risks of leaching and eutrophication."}
+    ]
+  },
+  "resources": {
+    "visual_aids": [
+      {"title": "Ecosystem Pyramid", "type": "diagram", "description": "Energy pyramid showing 10% rule across trophic levels."},
+      {"title": "Food Web Poster", "type": "chart", "description": "Interlinked food chains for savanna and mangrove ecosystems."},
+      {"title": "Photosynthesis vs Respiration Map", "type": "graphic", "description": "Side-by-side equations and organelle locations for both processes."}
+    ]
+  },
+  "waec_tags": ["ecosystem", "food chain", "food web", "photosynthesis", "respiration", "energy pyramid", "nutrient cycle", "conservation", "trophic level", "Nigeria ecology"]
+}
