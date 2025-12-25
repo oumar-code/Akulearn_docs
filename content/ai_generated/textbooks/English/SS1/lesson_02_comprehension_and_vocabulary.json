@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "subject": "English Language",
+    "level": "SS1",
+    "unit": "2",
+    "unit_title": "Comprehension and Vocabulary",
+    "lesson": "2",
+    "lesson_title": "Comprehension and Vocabulary",
+    "duration_minutes": 90,
+    "estimated_pages": 14,
+    "curriculum_alignment": {
+      "nerdc_code": "EN.SS1.2.1-2.2",
+      "nerdc_description": "Reading comprehension, vocabulary building, context clues",
+      "waec_topic": "Reading and Vocabulary",
+      "waec_weighting": "14%"
+    },
+    "learning_level": "foundational",
+    "nigerian_context": true
+  },
+  "learning_objectives": [
+    "Apply effective reading strategies for comprehension",
+    "Expand vocabulary through word families and roots",
+    "Use context clues to determine word meanings",
+    "Analyze texts for main ideas and supporting details",
+    "Identify literary devices in passages",
+    "Relate comprehension skills to Nigerian literature and contexts",
+    "Improve reading speed and accuracy"
+  ],
+  "prerequisites": [
+    "Basic reading fluency",
+    "Understanding of sentence structure from Lesson 1",
+    "Ability to identify main ideas in simple texts"
+  ],
+  "content_sections": [
+    {
+      "section_id": "2.1",
+      "title": "Reading Strategies and Comprehension Techniques",
+      "duration_minutes": 22,
+      "content": "**Active Reading Strategies**\n\n**1. PREVIEWING**\n- Scan title, headings, first/last paragraphs\n- Look at visuals, captions, bold terms\n- Predict what text will cover\n- Activates prior knowledge\n\n**2. ANNOTATING**\n- Underline key points\n- Circle unfamiliar words\n- Write margin notes\n- Mark confusing sections with ?\n\n**3. QUESTIONING**\n- Ask who, what, when, where, why, how\n- Generate questions before, during, after reading\n- Predict answers, then verify\n\n**4. SUMMARIZING**\n- Identify main idea of each paragraph\n- Condense key points in own words\n- Omit minor details\n- Check understanding\n\n**5. VISUALIZING**\n- Create mental images\n- Draw diagrams or charts\n- Connect to personal experiences\n\n**Comprehension Levels**\n\n**Literal Comprehension** (surface level):\n- What text explicitly states\n- Facts, details, sequences\n- Who, what, when, where questions\n- Example: \"Who is the main character?\"\n\n**Inferential Comprehension** (reading between lines):\n- What text implies but doesn't state directly\n- Drawing conclusions from evidence\n- Understanding tone, mood, author's purpose\n- Example: \"Why did the character feel sad?\"\n\n**Critical/Evaluative Comprehension** (deeper analysis):\n- Judging text quality, accuracy, bias\n- Comparing with other texts or experiences\n- Forming opinions supported by evidence\n- Example: \"Is the author's argument convincing?\"\n\n**Finding Main Idea and Supporting Details**\n\n**Main Idea**: Central point or message of paragraph/passage\n- Often stated in topic sentence (first or last sentence)\n- Sometimes implied (reader must infer)\n\n**Supporting Details**: Evidence backing up main idea\n- Examples, facts, statistics, descriptions\n- Explain, prove, or illustrate main idea\n\n**Strategy**:\n1. Read entire paragraph/passage\n2. Ask: \"What is this mostly about?\"\n3. Identify topic (who/what)\n4. Determine what author says about topic\n5. Check if details support that main idea\n\n**Nigerian Context**: When reading Nigerian newspapers (The Guardian, Punch), apply these strategies. Preview headlines and subheadings. Identify main idea (e.g., \"Government announces new education policy\") and supporting details (statistics, quotes, examples)."
+    },
+    {
+      "section_id": "2.2",
+      "title": "Vocabulary Development and Word Families",
+      "duration_minutes": 23,
+      "content": "**Building Vocabulary**\n\n**Word Families**\n\nWord families are groups of related words sharing a common root.\n\n**Example: 'act' family**:\n- act (verb): to do something\n- actor (noun): person who acts\n- action (noun): process of acting\n- active (adjective): doing something\n- actively (adverb): in an active manner\n- activate (verb): to make active\n- activity (noun): state of being active\n- react (verb): to act in response\n- reaction (noun): response\n\n**Prefixes and Suffixes**\n\n**Common Prefixes** (added to beginning):\n- un-, in-, im-, dis- (not): unhappy, inactive, impossible, disagree\n- re- (again): rewrite, return\n- pre- (before): preview, prehistoric\n- post- (after): postwar, postpone\n- mis- (wrong): misunderstand, misspell\n- over- (too much): overeat, overwork\n- under- (too little): underestimate, underpay\n\n**Common Suffixes** (added to end):\n- -tion, -sion (noun): education, decision\n- -ment (noun): government, development\n- -ness (noun): happiness, kindness\n- -able, -ible (adjective): readable, possible\n- -ful (adjective): beautiful, helpful\n- -less (adjective): hopeless, careless\n- -ly (adverb): quickly, happily\n- -er, -or (noun, person): teacher, actor\n\n**Root Words**\n\n**Latin/Greek Roots** (many English words derive from these):\n\n- **port** (carry): transport, portable, export\n- **scrib/script** (write): describe, manuscript\n- **dict** (say): dictionary, predict, contradict\n- **spec/spect** (see): inspect, spectator, respect\n- **vid/vis** (see): video, vision, visible\n- **graph** (write): autograph, paragraph\n- **bio** (life): biology, biography\n- **geo** (earth): geography, geology\n\n**Example**: Understanding 'geo' (earth) + 'graph' (write) helps decode 'geography' (writing about earth).\n\n**Synonyms and Antonyms**\n\n**Synonyms**: Words with similar meanings\n- happy = joyful, glad, cheerful, delighted\n- big = large, huge, enormous, gigantic\n- smart = intelligent, clever, bright, wise\n\n**Antonyms**: Words with opposite meanings\n- happy ↔ sad\n- big ↔ small\n- hot ↔ cold\n\n**Using a Dictionary and Thesaurus**\n\n**Dictionary**: Gives definitions, pronunciation, part of speech, usage\n**Thesaurus**: Lists synonyms and antonyms\n\n**Nigerian Context**: Nigerian English includes words borrowed from local languages. 'Okada' (motorcycle taxi), 'danfo' (minibus), 'jollof' (rice dish) are understood nationally. Building vocabulary includes learning formal academic words and understanding Nigerian cultural terms."
+    },
+    {
+      "section_id": "2.3",
+      "title": "Context Clues and Word Inference",
+      "duration_minutes": 22,
+      "content": "**Context Clues**\n\nContext clues are hints in surrounding text that help determine meaning of unfamiliar words.\n\n**Types of Context Clues**:\n\n**1. DEFINITION/EXPLANATION**\n- Unfamiliar word is defined in sentence\n- Signal words: is, means, refers to, is called\n- Example: \"A carnivore, an animal that eats meat, hunted the prey.\"\n  → carnivore = animal that eats meat\n\n**2. SYNONYM (restatement)**\n- Similar word or phrase follows\n- Signal words: or, that is, in other words\n- Example: \"The student was elated, or extremely happy, about the results.\"\n  → elated = extremely happy\n\n**3. ANTONYM (contrast)**\n- Opposite meaning provided\n- Signal words: but, however, unlike, although\n- Example: \"Unlike her lethargic brother, she was full of energy.\"\n  → lethargic = lacking energy (opposite of \"full of energy\")\n\n**4. EXAMPLE**\n- Examples illustrate meaning\n- Signal words: such as, for example, for instance, like\n- Example: \"Citrus fruits, such as oranges and lemons, are rich in vitamin C.\"\n  → citrus fruits = fruits like oranges and lemons\n\n**5. INFERENCE/GENERAL CONTEXT**\n- Overall meaning of sentence/paragraph suggests word's meaning\n- Example: \"The arid desert received no rain for months, and the land was parched.\"\n  → arid = dry (no rain, parched land)\n\n**Steps to Use Context Clues**:\n1. Read entire sentence carefully\n2. Look for signal words\n3. Examine surrounding sentences\n4. Make an educated guess\n5. Check if guess makes sense\n6. Verify with dictionary if needed\n\n**Nigerian Context Example**:\n\"The Lagos traffic was so congested that the driver spent two hours in gridlock, barely moving an inch.\"\n- Context clues: \"barely moving,\" \"two hours,\" \"congested\"\n- Inference: gridlock = severe traffic jam where vehicles can't move"
+    },
+    {
+      "section_id": "2.4",
+      "title": "Text Analysis and Literary Devices",
+      "duration_minutes": 23,
+      "content": "**Analyzing Text Structure**\n\n**Common Text Structures**:\n\n1. **Chronological/Sequence**: Events in time order\n   - Signal words: first, next, then, finally, before, after\n\n2. **Cause and Effect**: Shows reasons and results\n   - Signal words: because, since, as a result, therefore, consequently\n\n3. **Compare and Contrast**: Shows similarities and differences\n   - Signal words: similarly, likewise, however, on the other hand, in contrast\n\n4. **Problem and Solution**: Presents issue and resolution\n   - Signal words: problem, solution, solved by, one answer is\n\n5. **Description**: Provides details about topic\n   - Signal words: for example, such as, characteristics include\n\n**Literary Devices**\n\n**1. SIMILE**\n- Comparison using \"like\" or \"as\"\n- Example: Her smile was as bright as the sun.\n- Nigerian example: The Lagos streets were as busy as a market on Saturday.\n\n**2. METAPHOR**\n- Direct comparison without \"like/as\"\n- Example: Time is money.\n- Nigerian example: The Niger River is the lifeblood of the communities along its banks.\n\n**3. PERSONIFICATION**\n- Giving human qualities to non-human things\n- Example: The wind whispered through the trees.\n- Nigerian example: The harmattan wind danced across the savanna.\n\n**4. HYPERBOLE**\n- Exaggeration for effect\n- Example: I've told you a million times.\n- Nigerian example: The Lagos traffic jam stretched for miles and miles.\n\n**5. ALLITERATION**\n- Repetition of initial consonant sounds\n- Example: Peter Piper picked a peck of pickled peppers.\n- Nigerian example: Beautiful birds beside the bountiful baobab.\n\n**6. IMAGERY**\n- Descriptive language appealing to senses\n- Example: The sweet aroma of fresh bread filled the warm kitchen.\n\n**Tone and Mood**\n\n**Tone**: Author's attitude toward subject (formal, informal, serious, humorous, sarcastic)\n**Mood**: Feeling created in reader (happy, sad, tense, peaceful)\n\n**Author's Purpose**\n- **Persuade**: Convince reader of viewpoint\n- **Inform**: Provide facts and information\n- **Entertain**: Amuse or engage reader\n- **Explain**: Clarify how something works\n\n**Nigerian Context**: In Chinua Achebe's \"Things Fall Apart,\" imagery describes Igbo village life. \"The drums were still beating, persistent and unchanging like the heartbeat of the earth\" uses simile and personification to convey cultural significance."
+    }
+  ],
+  "worked_examples": [
+    {
+      "example_id": "2.1",
+      "title": "Using Context Clues to Determine Meaning",
+      "context": "A student reads: \"The politician's rhetoric was eloquent and persuasive, moving the audience to applause.\"",
+      "problem": "What does 'eloquent' mean based on context clues?",
+      "solution": "Context clues: 'persuasive,' 'moving the audience to applause.' These suggest positive, effective speaking. Eloquent likely means 'fluent and persuasive in speaking' or 'well-expressed.' The positive outcome (applause) confirms it's a favorable quality.",
+      "skills_tested": ["Context clue identification", "Word inference", "Comprehension"]
+    },
+    {
+      "example_id": "2.2",
+      "title": "Identifying Main Idea and Supporting Details",
+      "context": "Passage: \"Nigeria is Africa's most populous nation with over 200 million people. It has a diverse economy driven by oil, agriculture, and services. Lagos, the commercial capital, is a major financial hub. Despite challenges, Nigeria remains a regional leader.\"",
+      "problem": "What is the main idea? List two supporting details.",
+      "solution": "Main idea: Nigeria is a significant and influential nation in Africa. Supporting details: (1) Over 200 million people (most populous). (2) Diverse economy with oil, agriculture, services. (3) Lagos is financial hub. (4) Regional leader. Any two support the main idea.",
+      "skills_tested": ["Main idea identification", "Detail extraction", "Text analysis"]
+    },
+    {
+      "example_id": "2.3",
+      "title": "Analyzing Literary Devices",
+      "context": "Sentence from Nigerian literature: \"The sun blazed like a furnace over the dry, cracked earth.\"",
+      "problem": "Identify the literary device(s) used.",
+      "solution": "Simile: 'sun blazed like a furnace' compares sun to furnace using 'like.' Imagery: 'dry, cracked earth' appeals to visual sense, creating vivid picture of drought. Both devices emphasize extreme heat.",
+      "skills_tested": ["Literary device identification", "Figurative language", "Text interpretation"]
+    }
+  ],
+  "practice_problems": [
+    {"tier": "basic", "difficulty": 1, "problem_id": "2.1.B", "problem": "What is a context clue?", "answer": "A hint in surrounding text that helps determine meaning of unfamiliar word.", "explanation": "Context clues guide word meaning without dictionary."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "2.2.B", "problem": "Define synonym.", "answer": "A word with similar meaning to another word.", "explanation": "Happy and joyful are synonyms."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "2.3.B", "problem": "What is a simile?", "answer": "A comparison using 'like' or 'as'.", "explanation": "Example: as brave as a lion."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.4.C", "problem": "Use context clues: \"The crowd was jubilant, cheering and celebrating wildly.\" What does jubilant mean?", "answer": "Very happy or joyful.", "explanation": "Clues: cheering, celebrating wildly suggest extreme happiness."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.5.C", "problem": "List three words in the 'write' family.", "answer": "writer, writing, rewrite (or written, overwrite, etc.).", "explanation": "All share 'write' root with affixes."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.6.C", "problem": "Identify literary device: \"The classroom was a zoo.\"", "answer": "Metaphor (direct comparison without like/as).", "explanation": "Compares classroom to zoo to suggest chaos."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.7.C", "problem": "In passage about Nigerian economy, main idea is stated in which sentence typically?", "answer": "Topic sentence (often first or last sentence of paragraph).", "explanation": "Main idea usually appears at beginning or end."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.8.CH", "problem": "Read: \"Despite the scorching heat, the farmers toiled in the fields from dawn to dusk.\" What can you infer about the farmers?", "answer": "They are hardworking and dedicated; they persevere despite difficult conditions.", "explanation": "Inference from 'despite,' 'toiled,' 'dawn to dusk' implies strong work ethic."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.9.CH", "problem": "Explain the difference between tone and mood using an example.", "answer": "Tone is author's attitude (e.g., formal, humorous); mood is reader's feeling (e.g., tense, joyful). Example: Sarcastic tone may create amused or uncomfortable mood.", "explanation": "Tone = writer's approach; mood = reader's response."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.10.CH", "problem": "Analyze: \"The Niger River, Nigeria's lifeline, nourishes the land and sustains millions.\" Identify literary device and explain its effect.", "answer": "Metaphor ('lifeline') and personification ('nourishes'). Effect: emphasizes river's vital importance to survival and prosperity.", "explanation": "Figurative language highlights essential role of river."}
+  ],
+  "glossary": [
+    {"term": "Context clues", "definition": "Hints in text that help determine unfamiliar word meanings.", "example": "Synonym clues, definition clues, example clues."},
+    {"term": "Main idea", "definition": "Central point or message of paragraph or passage.", "example": "The most important concept the author conveys."},
+    {"term": "Supporting details", "definition": "Facts, examples, or evidence that back up main idea.", "example": "Statistics, quotes, descriptions."},
+    {"term": "Synonym", "definition": "Word with similar meaning to another word.", "example": "Happy and joyful."},
+    {"term": "Antonym", "definition": "Word with opposite meaning to another word.", "example": "Hot and cold."},
+    {"term": "Prefix", "definition": "Letter group added to beginning of word to change meaning.", "example": "un- in unhappy."},
+    {"term": "Suffix", "definition": "Letter group added to end of word to change meaning or part of speech.", "example": "-tion in education."},
+    {"term": "Simile", "definition": "Comparison using 'like' or 'as'.", "example": "Brave as a lion."},
+    {"term": "Metaphor", "definition": "Direct comparison without 'like' or 'as'.", "example": "Time is money."},
+    {"term": "Inference", "definition": "Logical conclusion drawn from evidence in text.", "example": "Reading between the lines to understand implied meaning."}
+  ],
+  "assessment": {
+    "quick_checks": [
+      "Name three active reading strategies.",
+      "What is the difference between a synonym and an antonym?",
+      "Define context clues and give one type.",
+      "What is a simile? Give an example.",
+      "Where is the main idea usually found in a paragraph?"
+    ],
+    "end_of_lesson_quiz": [
+      {"question": "Which context clue type: 'Arid means dry'?", "options": ["Definition", "Synonym", "Antonym", "Example"], "correct": "Definition"},
+      {"question": "Identify device: 'The wind howled in anger.'", "options": ["Simile", "Metaphor", "Personification", "Hyperbole"], "correct": "Personification"},
+      {"question": "What is the main idea of a paragraph?", "options": ["First sentence", "Central point", "Supporting detail", "Last word"], "correct": "Central point"},
+      {"question": "Word family for 'act' includes which?", "options": ["actor", "banana", "zebra", "moon"], "correct": "actor"},
+      {"question": "Synonym for 'happy'?", "options": ["sad", "joyful", "angry", "tired"], "correct": "joyful"}
+    ],
+    "exam_style_questions": [
+      {"question": "Read this passage and answer: Identify the main idea, list two supporting details, and explain one context clue. [Passage about Nigerian education system provided]", "answer_guide": "Main idea: Nigerian education faces challenges but shows progress. Supporting details: enrollment rates, government initiatives. Context clue: if 'reform' appears, surrounding text like 'improving' and 'changes' define it."},
+      {"question": "Analyze this sentence for literary devices and explain their effect: 'The Lagos skyline, a forest of gleaming towers, reached for the clouds.'", "answer_guide": "Metaphor ('forest of towers') compares buildings to forest, suggesting density. Personification ('reached for clouds') gives buildings human action. Effect: emphasizes impressive, ambitious urban growth."}
+    ]
+  },
+  "resources": {
+    "visual_aids": [
+      {"title": "Context Clue Types Chart", "type": "table", "description": "Five context clue types with definitions, signal words, examples."},
+      {"title": "Prefix/Suffix Reference", "type": "chart", "description": "Common prefixes and suffixes with meanings and word examples."},
+      {"title": "Literary Devices Poster", "type": "infographic", "description": "Visual examples of simile, metaphor, personification with Nigerian contexts."}
+    ]
+  },
+  "waec_tags": ["comprehension", "vocabulary", "context clues", "main idea", "literary devices", "reading strategies", "word families", "synonyms", "antonyms", "Nigerian literature"]
+}

@@ -1,0 +1,301 @@
+{
+  "metadata": {
+    "subject": "Chemistry",
+    "level": "SS1",
+    "unit": "1",
+    "unit_title": "Atomic Structure and Bonding",
+    "lesson": "3",
+    "lesson_title": "Chemical Equations and Reactions",
+    "duration_minutes": 90,
+    "estimated_pages": 12,
+    "curriculum_alignment": {
+      "nerdc_code": "CH.SS1.3.1",
+      "nerdc_description": "Chemical equations, balancing, types of reactions, stoichiometry",
+      "waec_topic": "Chemical Equations and Reactions",
+      "waec_weighting": "10%"
+    },
+    "learning_level": "foundational",
+    "nigerian_context": true
+  },
+  "learning_objectives": [
+    "Write and balance chemical equations",
+    "Identify and classify types of chemical reactions",
+    "Apply stoichiometry to solve molar and mass problems",
+    "Understand energy changes in reactions (exothermic/endothermic)",
+    "Calculate theoretical yields and percentage yields",
+    "Apply reaction concepts to Nigerian industrial processes"
+  ],
+  "prerequisites": [
+    "Understanding of atomic structure and valency from Lesson 1",
+    "Knowledge of molar mass and atomic masses",
+    "Ability to balance equations algebraically"
+  ],
+  "content_sections": [
+    {
+      "section_id": "3.1",
+      "title": "Writing and Balancing Chemical Equations",
+      "duration_minutes": 20,
+      "content": "**Chemical Equations**\n\nA chemical equation is a symbolic representation of a chemical reaction showing reactants, products, and stoichiometric coefficients.\n\n**General Form**: **Reactants → Products**\n\nor: **Reactants → Products (conditions)**\n\nExample: **2H₂ + O₂ → 2H₂O**\n- Reactants: H₂ and O₂\n- Product: H₂O\n- Coefficients: 2, 1, 2\n\n**Parts of Equation**:\n- **Formulas**: Represent substances (H₂O, CO₂, NaCl)\n- **Coefficients**: Numbers before formulas (balance atoms)\n- **Arrow**: Shows direction (→ or ⇌ for reversible)\n- **Conditions**: Temperature, pressure, catalyst (written above arrow)\n\n**Law of Conservation of Mass**\n\nIn any chemical reaction, mass is neither created nor destroyed. The number of atoms of each element must be the same on both sides.\n\n**Balancing Equations**\n\nA balanced equation has equal numbers of each type of atom on both sides.\n\n**Method**:\n1. Count atoms of each element on both sides\n2. Identify atoms not balanced\n3. Add coefficients (never change subscripts)\n4. Recount to verify balance\n\n**Example 1: Combustion of Methane**\nUnbalanced: CH₄ + O₂ → CO₂ + H₂O\n\nAtom count (unbalanced):\n- C: 1 left, 1 right ✓\n- H: 4 left, 2 right ✗\n- O: 2 left, 4 right ✗\n\nAdd coefficient 2 to H₂O: CH₄ + O₂ → CO₂ + 2H₂O\nRecount: H: 4 left, 4 right ✓; O: 2 left, 4 right ✗\n\nAdd coefficient 2 to O₂: CH₄ + 2O₂ → CO₂ + 2H₂O\nFinal count: All balanced ✓\n\n**Balanced**: **CH₄ + 2O₂ → CO₂ + 2H₂O**\n\n**Symbol Meanings**:\n- → : Single arrow (irreversible reaction)\n- ⇌ : Double arrow (reversible reaction)\n- ↑ : Gas escapes\n- ↓ : Precipitate forms\n- (s) : Solid state\n- (l) : Liquid state\n- (g) : Gaseous state\n- (aq) : Aqueous (dissolved in water)\n\n**Example 2: Ionic Equation**\n**AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq)**\n\n**Nigerian Context**: In Lagos water treatment, reactions are written to show precipitation of impurities:\n**Fe₂(SO₄)₃ + 3Ca(OH)₂ → 2Fe(OH)₃↓ + 3CaSO₄**"
+    },
+    {
+      "section_id": "3.2",
+      "title": "Types of Chemical Reactions",
+      "duration_minutes": 20,
+      "content": "**Four Main Types of Chemical Reactions**\n\n---\n\n**1. SYNTHESIS (Combination) Reactions**\n\n**Pattern**: **A + B → AB** (Two or more substances combine)\n\n**Characteristics**:\n- Two or more reactants\n- One product\n- Forming more complex substance\n\n**Examples**:\n- **2Na + Cl₂ → 2NaCl** (Metal + nonmetal → salt)\n- **2H₂ + O₂ → 2H₂O** (Hydrogen + oxygen → water)\n- **C + O₂ → CO₂** (Carbon + oxygen → carbon dioxide)\n\n**Nigerian Context**: Iron ore (Fe₂O₃) reduction in furnaces:\n**4Fe + 3O₂ → 2Fe₂O₃** (reverse of smelting)\n\n---\n\n**2. DECOMPOSITION Reactions**\n\n**Pattern**: **AB → A + B** (One substance breaks into two or more)\n\n**Characteristics**:\n- One reactant\n- Two or more products\n- Usually requires heat, light, or electricity\n\n**Examples**:\n- **2H₂O → 2H₂ + O₂** (Electrolysis of water)\n- **2HgO → 2Hg + O₂** (Thermal decomposition)\n- **CaCO₃ → CaO + CO₂** (Limestone decomposition)\n\n**Nigerian Context**: Limestone (CaCO₃) used in cement production:\n**CaCO₃ (heat)→ CaO + CO₂** (Calcination)\n\n---\n\n**3. DISPLACEMENT Reactions**\n\n**Pattern**: **AB + C → AC + B** (More reactive element displaces less reactive)\n\n**Characteristics**:\n- One element replaces another in compound\n- Single displacement: A + BC → AC + B\n- Double displacement: AB + CD → AD + CB\n\n**Examples (Single Displacement)**:\n- **Zn + CuSO₄ → ZnSO₄ + Cu** (Zn more reactive than Cu)\n- **2Na + 2H₂O → 2NaOH + H₂↑** (Na very reactive)\n- **Fe + CuSO₄ → FeSO₄ + Cu** (Fe more reactive than Cu)\n\n**Examples (Double Displacement)**:\n- **AgNO₃ + NaCl → AgCl↓ + NaNO₃** (Precipitation)\n- **HCl + NaOH → NaCl + H₂O** (Acid-base neutralization)\n- **BaCl₂ + Na₂SO₄ → BaSO₄↓ + NaCl** (Precipitation)\n\n**Nigerian Context**: In water treatment, precipitation removes hardness:\n**CaCl₂ + Na₂CO₃ → CaCO₃↓ + NaCl**\n\n---\n\n**4. COMBUSTION Reactions**\n\n**Pattern**: **Fuel + O₂ → CO₂ + H₂O + energy**\n\n**Characteristics**:\n- Substance reacts with oxygen\n- Produces heat (exothermic)\n- Complete combustion produces CO₂ and H₂O\n- Incomplete combustion produces CO and C (soot)\n\n**Examples**:\n- **CH₄ + 2O₂ → CO₂ + 2H₂O** (Complete combustion of methane)\n- **2C₈H₁₈ + 25O₂ → 16CO₂ + 18H₂O** (Petrol combustion)\n- **2C + O₂ → 2CO** (Incomplete combustion)\n\n**Nigerian Context**: Combustion of Nigerian crude oil components at refineries produces energy and CO₂:\n**C₁₆H₃₄ + 24.5O₂ → 16CO₂ + 17H₂O** (Diesel combustion)"
+    },
+    {
+      "section_id": "3.3",
+      "title": "Stoichiometry and Molar Calculations",
+      "duration_minutes": 25,
+      "content": "**Stoichiometry**\n\nStoichiometry is the study of quantitative relationships between reactants and products in chemical reactions.\n\n**Molar Relationships**\n\nCoefficients in balanced equations represent molar ratios.\n\n**Example**: **CH₄ + 2O₂ → CO₂ + 2H₂O**\n\nMolar ratio: 1 mol CH₄ : 2 mol O₂ : 1 mol CO₂ : 2 mol H₂O\n\nInterpretation:\n- 1 mole of CH₄ reacts with 2 moles of O₂\n- Produces 1 mole of CO₂ and 2 moles of H₂O\n- 6.022 × 10²³ molecules of CH₄ react with 2 × 6.022 × 10²³ molecules of O₂\n\n**Molar Mass**\n\nMolar mass (M) = mass of 1 mole of substance (g/mol)\n\nCalculated by summing atomic masses of all atoms in formula.\n\n**Example**: H₂O\n- H: 1.008 × 2 = 2.016\n- O: 16.00\n- Total: 18.016 g/mol ≈ 18 g/mol\n\n**Converting Between Moles and Mass**\n\n**n = m / M**\n\nwhere n = moles, m = mass (g), M = molar mass (g/mol)\n\n**Example**: How many moles in 36 g of H₂O?\n- n = 36 g / 18 g/mol = 2 moles\n\n**Stoichiometric Calculations**\n\n**Step-by-step process**:\n1. Write balanced equation\n2. Convert given mass to moles\n3. Use molar ratio from equation\n4. Convert result to desired unit\n\n**Example**: **CH₄ + 2O₂ → CO₂ + 2H₂O**\nHow many grams of CO₂ are produced from 16 g of CH₄?\n\nStep 1: Balanced equation given\nStep 2: Moles of CH₄ = 16 g / 16 g/mol = 1 mole\nStep 3: From equation: 1 mol CH₄ → 1 mol CO₂\n        So 1 mole CH₄ → 1 mole CO₂\nStep 4: Mass of CO₂ = 1 mol × 44 g/mol = 44 g\n\n**Limiting Reagent**\n\nThe limiting reagent is the reactant that is completely consumed, limiting product formation.\n\n**Example**: **H₂ + Cl₂ → 2HCl**\nIf 4 moles H₂ and 1 mole Cl₂ are available:\n- H₂ requires: 4 moles ÷ 1 = 4 equivalents\n- Cl₂ requires: 1 mole ÷ 1 = 1 equivalent\n- Cl₂ is limiting (less available)\n- Produces: 1 × 2 = 2 moles HCl (limited by Cl₂)\n\n**Percentage Yield**\n\n**% Yield = (Actual Yield / Theoretical Yield) × 100%**\n\nTheoretical yield: maximum possible from stoichiometry\nActual yield: amount obtained experimentally\n\n**Example**: Theoretical yield = 50 g, actual yield = 40 g\n% Yield = (40 / 50) × 100 = 80%\n\n**Nigerian Context**: In fertilizer production at Dangote facility, percentage yield determines efficiency and profitability"
+    },
+    {
+      "section_id": "3.4",
+      "title": "Energy in Chemical Reactions",
+      "duration_minutes": 15,
+      "content": "**Exothermic and Endothermic Reactions**\n\n**Exothermic Reactions**\n- Release energy (usually as heat)\n- Energy flows OUT of system\n- Products have less energy than reactants\n- Temperature of surroundings increases\n- ΔH is negative (-)\n- Common examples: combustion, neutralization, condensation\n\n**Equation notation**: **Reactants → Products + Energy**\n\nExample: **CH₄ + 2O₂ → CO₂ + 2H₂O + 890 kJ**\n(Burning methane releases 890 kJ per mole)\n\n**Examples**:\n- Combustion: Fuel + O₂ → CO₂ + H₂O + heat\n- Neutralization: HCl + NaOH → NaCl + H₂O + heat\n- Rusting: 4Fe + 3O₂ → 2Fe₂O₃ + heat\n\n---\n\n**Endothermic Reactions**\n- Absorb energy (usually from surroundings)\n- Energy flows INTO system\n- Products have more energy than reactants\n- Temperature of surroundings decreases\n- ΔH is positive (+)\n- Examples: melting, boiling, photosynthesis, many decompositions\n\n**Equation notation**: **Reactants + Energy → Products**\n\nExample: **2HgO (heat)→ 2Hg + O₂**\n(Decomposition requires heat input)\n\n**Examples**:\n- Photosynthesis: 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂\n- Melting: Ice + heat → Water\n- Decomposition: CaCO₃ + heat → CaO + CO₂\n\n**Energy Diagrams**\n\nEnergy diagrams show relative energy of reactants and products:\n- **Exothermic**: Products lower than reactants (downward slope)\n- **Endothermic**: Products higher than reactants (upward slope)\n- **Activation Energy**: Minimum energy needed to start reaction\n\n**Catalysts**\n\nA catalyst is a substance that increases reaction rate without being consumed:\n- Lowers activation energy\n- Speeds up reaction\n- Not included in balanced equation (written above arrow)\n- Examples: MnO₂ in H₂O₂ decomposition, Pt in catalytic converters\n\n**Example**: **2H₂O₂ (MnO₂)→ 2H₂O + O₂**\n(MnO₂ speeds up decomposition but isn't consumed)\n\n**Nigerian Context**: In Lagos petroleum refineries, catalysts speed up crude oil cracking and refining processes, reducing energy requirements and time."
+    }
+  ],
+  "worked_examples": [
+    {
+      "example_id": "3.1",
+      "title": "Balancing Chemical Equation: Iron Combustion",
+      "context": "Iron burns in oxygen at high temperature in industrial settings.",
+      "problem": "Balance the equation: Fe + O₂ → Fe₂O₃",
+      "solution": "Step 1: Count atoms (unbalanced)\n- Fe: 1 left, 2 right\n- O: 2 left, 3 right\n\nStep 2: Try coefficient 2 for Fe: 2Fe + O₂ → Fe₂O₃\n- Fe: 2 left, 2 right ✓\n- O: 2 left, 3 right ✗\n\nStep 3: Try coefficient 3/2 for O₂: 2Fe + (3/2)O₂ → Fe₂O₃\n- Fe: 2 left, 2 right ✓\n- O: 3 left, 3 right ✓\n\nStep 4: Clear fractions by multiplying all by 2:\n4Fe + 3O₂ → 2Fe₂O₃\n\nVerify: Fe: 4 = 4 ✓; O: 6 = 6 ✓\n\nBalanced equation: **4Fe + 3O₂ → 2Fe₂O₃**",
+      "skills_tested": ["Equation balancing", "Stoichiometric coefficients", "Atom conservation"]
+    },
+    {
+      "example_id": "3.2",
+      "title": "Stoichiometric Mass Calculation: Ammonia Production",
+      "context": "Ammonia (NH₃) is produced from nitrogen and hydrogen in Nigerian fertilizer plants.",
+      "problem": "**N₂ + 3H₂ → 2NH₃** If 14 g N₂ reacts, how many grams of NH₃ are produced?",
+      "solution": "Given: 14 g N₂\nFind: Mass of NH₃\n\nStep 1: Calculate molar masses\n- N₂: 14 × 2 = 28 g/mol\n- NH₃: (14 + 3) = 17 g/mol\n\nStep 2: Convert N₂ to moles\nn(N₂) = 14 g / 28 g/mol = 0.5 mol\n\nStep 3: Use molar ratio from equation\nFrom equation: 1 mol N₂ → 2 mol NH₃\n0.5 mol N₂ → 0.5 × 2 = 1 mol NH₃\n\nStep 4: Convert NH₃ moles to grams\nm(NH₃) = 1 mol × 17 g/mol = 17 g\n\nAnswer: 17 g of NH₃ produced",
+      "skills_tested": ["Molar mass calculation", "Mole conversion", "Stoichiometric ratios"]
+    },
+    {
+      "example_id": "3.3",
+      "title": "Identifying Reaction Type and Energy Analysis",
+      "context": "Understanding combustion reactions at Lagos refineries.",
+      "problem": "Classify this reaction and predict energy change: 2C₈H₁₈ + 25O₂ → 16CO₂ + 18H₂O",
+      "solution": "Reaction type:\n- Substance (C₈H₁₈) reacts with O₂\n- Produces CO₂ and H₂O\n- This is a COMBUSTION reaction\n\nEnergy analysis:\n- Combustion reactions are EXOTHERMIC\n- Energy is released\n- Equation written: 2C₈H₁₈ + 25O₂ → 16CO₂ + 18H₂O + energy\n- ΔH is negative (-)\n- Typical: ~2,850 kJ released per mole of octane\n\nInterpretation: Diesel (octane) burning releases significant heat energy used to power engines and generate electricity in Nigeria's power plants.",
+      "skills_tested": ["Reaction classification", "Energy identification", "Exothermic vs endothermic"]
+    }
+  ],
+  "practice_problems": [
+    {
+      "tier": "basic",
+      "difficulty": 1,
+      "problem_id": "3.1.B",
+      "problem": "Balance: H₂ + Br₂ → HBr",
+      "answer": "H₂ + Br₂ → 2HBr",
+      "explanation": "Need 2 HBr to balance 2 H and 2 Br atoms on both sides"
+    },
+    {
+      "tier": "basic",
+      "difficulty": 1,
+      "problem_id": "3.2.B",
+      "problem": "Classify: Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag",
+      "answer": "Single displacement reaction (Cu more reactive than Ag)",
+      "explanation": "Cu replaces Ag in compound, showing greater reactivity"
+    },
+    {
+      "tier": "basic",
+      "difficulty": 1,
+      "problem_id": "3.3.B",
+      "problem": "Is combustion of fuel exothermic or endothermic?",
+      "answer": "Exothermic (releases heat energy)",
+      "explanation": "Fuel burns and releases energy as heat and light"
+    },
+    {
+      "tier": "basic",
+      "difficulty": 1,
+      "problem_id": "3.4.B",
+      "problem": "Calculate molar mass of CO₂ (C=12, O=16)",
+      "answer": "44 g/mol",
+      "explanation": "12 + (16 × 2) = 12 + 32 = 44 g/mol"
+    },
+    {
+      "tier": "core",
+      "difficulty": 2,
+      "problem_id": "3.5.C",
+      "problem": "Balance and classify: C + O₂ → CO₂",
+      "answer": "C + O₂ → CO₂ (synthesis reaction)",
+      "explanation": "Already balanced; C and O combine to form single product"
+    },
+    {
+      "tier": "core",
+      "difficulty": 2,
+      "problem_id": "3.6.C",
+      "problem": "**2H₂ + O₂ → 2H₂O** If 4 g H₂ reacts, find moles of H₂O produced",
+      "answer": "2 moles H₂O",
+      "explanation": "n(H₂) = 4/2 = 2 mol; ratio 2:2, so 2 mol H₂O produced"
+    },
+    {
+      "tier": "core",
+      "difficulty": 2,
+      "problem_id": "3.7.C",
+      "problem": "**N₂ + 3H₂ → 2NH₃** Which is limiting if 3 mol N₂ and 6 mol H₂?",
+      "answer": "H₂ is limiting (needs 9 mol for 3 mol N₂, only have 6)",
+      "explanation": "H₂ requirement exceeds availability; limits product formation"
+    },
+    {
+      "tier": "core",
+      "difficulty": 2,
+      "problem_id": "3.8.C",
+      "problem": "Theoretical yield = 100 g, actual yield = 75 g. Calculate percentage yield",
+      "answer": "75%",
+      "explanation": "(75/100) × 100 = 75%"
+    },
+    {
+      "tier": "challenge",
+      "difficulty": 3,
+      "problem_id": "3.9.CH",
+      "problem": "**2Fe + 3Cl₂ → 2FeCl₃** If 56 g Fe and 71 g Cl₂ react, find: (a) limiting reagent, (b) theoretical yield FeCl₃",
+      "answer": "(a) Cl₂ is limiting; (b) 97 g FeCl₃",
+      "explanation": "Fe: 56/56=1 mol; Cl₂: 71/71=1 mol. Need 1 Fe : 1.5 Cl₂ ratio; Cl₂ insufficient. Yield = 1 mol Cl₂ ÷ 1.5 × 2 mol FeCl₃ = 1.33 mol × 73 = 97 g"
+    },
+    {
+      "tier": "challenge",
+      "difficulty": 3,
+      "problem_id": "3.10.CH",
+      "problem": "**2C₈H₁₈ + 25O₂ → 16CO₂ + 18H₂O** Classify reaction, state energy change, and explain occurrence at refineries",
+      "answer": "Combustion reaction; exothermic (releases energy); occurs in furnaces/burners to produce heat for distillation and processing",
+      "explanation": "Octane combustion provides essential heat energy for refinery operations"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Chemical Equation",
+      "definition": "Symbolic representation of chemical reaction with reactants, products, and coefficients",
+      "example": "2H₂ + O₂ → 2H₂O"
+    },
+    {
+      "term": "Balanced Equation",
+      "definition": "Equation with equal atoms of each element on both sides",
+      "example": "2Na + Cl₂ → 2NaCl (balanced)"
+    },
+    {
+      "term": "Coefficient",
+      "definition": "Number in front of formula showing molar ratio",
+      "example": "In 2H₂O, coefficient 2 means 2 moles"
+    },
+    {
+      "term": "Stoichiometry",
+      "definition": "Quantitative relationships between reactants and products",
+      "example": "Molar ratios from balanced equation coefficients"
+    },
+    {
+      "term": "Limiting Reagent",
+      "definition": "Reactant that is completely consumed, determining amount of product",
+      "example": "In excess H₂ with limited O₂, O₂ is limiting"
+    },
+    {
+      "term": "Theoretical Yield",
+      "definition": "Maximum possible product from stoichiometry",
+      "example": "Calculated from balanced equation and reactant amounts"
+    },
+    {
+      "term": "Exothermic",
+      "definition": "Reaction that releases energy (ΔH negative)",
+      "example": "Combustion, neutralization reactions"
+    },
+    {
+      "term": "Endothermic",
+      "definition": "Reaction that absorbs energy (ΔH positive)",
+      "example": "Melting, photosynthesis, decomposition"
+    }
+  ],
+  "assessment": {
+    "quick_checks": [
+      "What does balancing a chemical equation achieve?",
+      "Explain the four main types of reactions",
+      "What is a limiting reagent and why does it matter?",
+      "Distinguish between theoretical and actual yield",
+      "Why is combustion always exothermic?"
+    ],
+    "end_of_lesson_quiz": [
+      {
+        "question": "Balance: 2Fe + 3Cl₂ → 2FeCl₃. This is a ___ reaction",
+        "options": ["Decomposition", "Displacement", "Synthesis", "Combustion"],
+        "correct": "Synthesis"
+      },
+      {
+        "question": "In **N₂ + 3H₂ → 2NH₃**, how many moles NH₃ from 2 mol N₂?",
+        "options": ["2 moles", "4 moles", "3 moles", "6 moles"],
+        "correct": "4 moles"
+      },
+      {
+        "question": "Which is exothermic?",
+        "options": ["Melting ice", "Photosynthesis", "Burning wood", "Evaporating water"],
+        "correct": "Burning wood"
+      }
+    ],
+    "exam_style_questions": [
+      {
+        "question": "WAEC-style: Balance **C₃H₈ + O₂ → CO₂ + H₂O** and calculate moles of CO₂ from 44 g C₃H₈",
+        "answer_guide": "Balanced: C₃H₈ + 5O₂ → 3CO₂ + 4H₂O\nn(C₃H₈) = 44/44 = 1 mol; ratio 1:3; produces 3 mol CO₂"
+      },
+      {
+        "question": "WAEC-style: Explain limiting reagent, give example, and describe how to identify it",
+        "answer_guide": "Limiting reagent: reactant consumed first, limiting product. Example: H₂ + Cl₂ → 2HCl with 3 mol H₂, 1 mol Cl₂; Cl₂ limiting. Identify: calculate moles needed vs available for each reactant; smallest ratio is limiting"
+      }
+    ]
+  },
+  "resources": {
+    "visual_aids": [
+      {
+        "id": "fig_3.1",
+        "title": "Types of Reactions Flow Chart",
+        "type": "diagram",
+        "description": "Decision tree for classifying reactions based on reactants/products"
+      },
+      {
+        "id": "fig_3.2",
+        "title": "Energy Diagrams",
+        "type": "graph_set",
+        "description": "Exothermic vs endothermic energy profiles with activation energy"
+      }
+    ],
+    "interactive_elements": [
+      {
+        "type": "equation_balancer",
+        "title": "Interactive Equation Balancer",
+        "description": "Practice balancing equations with instant feedback"
+      },
+      {
+        "type": "stoichiometry_solver",
+        "title": "Stoichiometry Problem Solver",
+        "description": "Step-by-step mole and mass calculations"
+      }
+    ],
+    "supplementary_reading": [
+      "Industrial Chemistry: Nigerian Refinery Processes",
+      "Reaction Rates and Catalysts in Manufacturing",
+      "Energy Efficiency in Chemical Production"
+    ]
+  },
+  "waec_tags": [
+    "chemical_equations",
+    "balancing",
+    "reactions",
+    "stoichiometry",
+    "moles",
+    "mass_calculations",
+    "limiting_reagent",
+    "exothermic",
+    "endothermic"
+  ],
+  "nerdc_references": [
+    "CH.SS1.3.1: Chemical equations and balancing",
+    "CH.SS1.3.2: Types of reactions",
+    "CH.SS1.3.3: Stoichiometry and calculations"
+  ],
+  "keywords": ["equation", "balancing", "reaction", "stoichiometry", "mole", "yield", "exothermic", "endothermic", "limiting"],
+  "difficulty_distribution": {
+    "basic": 4,
+    "core": 4,
+    "challenge": 2,
+    "total": 10
+  }
+}
