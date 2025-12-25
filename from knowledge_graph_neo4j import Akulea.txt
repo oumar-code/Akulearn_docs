@@ -1,0 +1,18 @@
+from knowledge_graph_neo4j import AkulearnKnowledgeGraph
+
+kg = AkulearnKnowledgeGraph()
+
+# Find prerequisites
+prereqs = kg.find_prerequisites("Calculus")
+print(f"Calculus requires: {[p['name'] for p in prereqs]}")
+
+# Get recommendations
+recommendations = kg.recommend_content({
+    "current_level": "intermediate",
+    "target_subjects": ["Mathematics"],
+    "completed_topics": ["Basic Algebra"]
+})
+
+# View statistics
+stats = kg.get_graph_statistics()
+print(f"Graph contains {stats['total_nodes']} nodes")
