@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "subject": "Geography",
+    "level": "SS1",
+    "unit": "3",
+    "unit_title": "Human Geography and Settlements",
+    "lesson": "3",
+    "lesson_title": "Human Geography and Settlements",
+    "duration_minutes": 90,
+    "estimated_pages": 13,
+    "curriculum_alignment": {
+      "nerdc_code": "GE.SS1.3.1-3.3",
+      "nerdc_description": "Population, migration, urbanization, cultural geography, sustainability",
+      "waec_topic": "Human Geography and Settlements",
+      "waec_weighting": "8%"
+    },
+    "learning_level": "foundational",
+    "nigerian_context": true
+  },
+  "learning_objectives": [
+    "Explain factors influencing population distribution and density",
+    "Describe causes and effects of migration and urban growth",
+    "Analyze cultural geography and human-environment interactions",
+    "Discuss sustainable development and planning in settlements",
+    "Apply concepts to Nigerian cities and rural areas"
+  ],
+  "prerequisites": [
+    "Basic map and data reading",
+    "Awareness of Nigerian regions and major cities",
+    "Understanding of population concepts (count, growth)"
+  ],
+  "content_sections": [
+    {
+      "section_id": "3.1",
+      "title": "Population Distribution and Density",
+      "duration_minutes": 22,
+      "content": "Population distribution = how people are spread; density = people per unit area. \n\n**Factors influencing distribution**: climate (rainfall, temperature), relief (highlands vs plains), soil fertility, water availability, resources, infrastructure, jobs, security. \n\n**Nigerian patterns**: Higher densities in Lagos, Kano, Anambra; lower in arid north-east and some riverine/swampy areas."
+    },
+    {
+      "section_id": "3.2",
+      "title": "Migration and Urban Growth",
+      "duration_minutes": 23,
+      "content": "**Migration**: movement of people from one place to another (internal/external; rural-urban, urban-rural). **Push factors**: unemployment, conflict, poor services. **Pull factors**: jobs, education, health, safety. \n\n**Urbanization**: increasing share of people living in urban areas. Causes: industrialization, services growth, rural push factors. \n\n**Nigerian context**: Rural–urban migration to Lagos, Abuja, Port Harcourt for jobs and education; creates pressure on housing, transport, water, waste management."
+    },
+    {
+      "section_id": "3.3",
+      "title": "Cultural Geography and Human-Environment Interaction",
+      "duration_minutes": 22,
+      "content": "Cultural geography studies how culture varies across space (language, religion, traditions). Nigeria is culturally diverse (Yoruba, Hausa, Igbo, many others). \n\n**Human-environment interaction**: how humans adapt to, modify, and depend on environment. Examples: irrigation in dry zones, deforestation for farming, building flood defenses. \n\n**Environmental impacts**: urban sprawl, pollution, loss of green areas. Sustainable planning seeks balance."
+    },
+    {
+      "section_id": "3.4",
+      "title": "Sustainable Development and Planning",
+      "duration_minutes": 23,
+      "content": "Sustainable development meets present needs without harming future generations. \n\n**Settlement planning**: zoning, transport planning, green spaces, water/waste systems. \n\n**Nigerian context**: BRT in Lagos to reduce congestion; Abuja planned city layout; need for affordable housing, resilient drainage against floods. \n\n**SDGs**: links to clean water, sustainable cities, climate action."
+    }
+  ],
+  "worked_examples": [
+    {
+      "example_id": "3.1",
+      "title": "Population Density Calculation",
+      "context": "State population 5,000,000; area 50,000 km².",
+      "problem": "Calculate population density.",
+      "solution": "Density = population / area = 5,000,000 / 50,000 = 100 people per km².",
+      "skills_tested": ["Density calculation", "Units"]
+    },
+    {
+      "example_id": "3.2",
+      "title": "Push and Pull Factors",
+      "context": "A young graduate moves from rural Benue to Abuja.",
+      "problem": "Identify likely push and pull factors.",
+      "solution": "Push: limited job opportunities, lower wages, fewer services. Pull: better employment, higher wages, universities, healthcare, infrastructure.",
+      "skills_tested": ["Migration reasoning", "Socioeconomic factors"]
+    },
+    {
+      "example_id": "3.3",
+      "title": "Sustainable Urban Planning Measure",
+      "context": "A city faces flooding and traffic congestion.",
+      "problem": "Suggest one sustainable planning measure for each issue.",
+      "solution": "Flooding: improve drainage, protect wetlands, permeable pavements. Traffic: expand public transit (BRT/light rail), enforce zoning to reduce long commutes.",
+      "skills_tested": ["Applied sustainability", "Urban planning"]
+    }
+  ],
+  "practice_problems": [
+    {"tier": "basic", "difficulty": 1, "problem_id": "3.1.B", "problem": "Define population density.", "answer": "People per unit area (e.g., per km²).", "explanation": "Density formula."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "3.2.B", "problem": "What is migration?", "answer": "Movement of people from one place to another to live or work.", "explanation": "Basic definition."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "3.3.B", "problem": "Name one push and one pull factor for urban migration.", "answer": "Push: unemployment; Pull: better jobs (examples vary).", "explanation": "Drivers of migration."},
+    {"tier": "core", "difficulty": 2, "problem_id": "3.4.C", "problem": "State one effect of rapid urbanization.", "answer": "Housing shortages, traffic congestion, waste management problems (any one).", "explanation": "Urban growth effects."},
+    {"tier": "core", "difficulty": 2, "problem_id": "3.5.C", "problem": "Give an example of human-environment interaction.", "answer": "Irrigation in dry areas, deforestation for farming, building dams (any).", "explanation": "Interaction examples."},
+    {"tier": "core", "difficulty": 2, "problem_id": "3.6.C", "problem": "Mention one Nigerian city experiencing rapid growth.", "answer": "Lagos or Abuja (others possible).", "explanation": "Urban centers."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "3.7.CH", "problem": "How can urban sprawl affect the environment?", "answer": "Consumes farmland/forests, increases car dependence and emissions, strains water/waste systems.", "explanation": "Sprawl impacts."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "3.8.CH", "problem": "Suggest two measures to improve sustainability in Lagos transport.", "answer": "Expand BRT/rail, promote non-motorized transport (walkways/bike lanes), traffic management, encourage mixed-use zoning.", "explanation": "Sustainable mobility."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "3.9.CH", "problem": "Give one cultural geography example in Nigeria.", "answer": "Distribution of languages (Yoruba SW, Hausa/Fulani North, Igbo SE) or religious patterns (Muslim-majority north, Christian-majority south).", "explanation": "Spatial culture patterns."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "3.10.CH", "problem": "If a city grows from 1m to 1.5m people in 10 years, what is the average annual growth rate (approx compound)?", "answer": "Using (1.5/1)^(1/10)-1 ≈ 0.041 or 4.1% per year.", "explanation": "Compound growth estimate."}
+  ],
+  "glossary": [
+    {"term": "Population density", "definition": "Number of people per unit area.", "example": "200 people per km²."},
+    {"term": "Migration", "definition": "Movement of people to live or work elsewhere.", "example": "Rural-urban move to Lagos."},
+    {"term": "Urbanization", "definition": "Rising share of people in urban areas.", "example": "Lagos megacity growth."},
+    {"term": "Push factor", "definition": "Condition driving people away from a place.", "example": "Lack of jobs."},
+    {"term": "Pull factor", "definition": "Attraction drawing people to a place.", "example": "Better schools, jobs."},
+    {"term": "Sustainable development", "definition": "Meeting present needs without harming future generations.", "example": "Transit and green spaces in city planning."},
+    {"term": "Cultural geography", "definition": "Study of cultural patterns across space.", "example": "Language and religion distributions."}
+  ],
+  "assessment": {
+    "quick_checks": [
+      "Define population density.",
+      "Name one push and one pull factor.",
+      "What is urbanization?",
+      "Give one example of human-environment interaction.",
+      "What is sustainable development?"
+    ],
+    "end_of_lesson_quiz": [
+      {"question": "High population density means:", "options": ["Many people per area", "Few people per area", "No people", "Only rural areas"], "correct": "Many people per area"},
+      {"question": "Push factor example:", "options": ["Job opportunities", "Good schools", "Conflict", "High wages"], "correct": "Conflict"},
+      {"question": "Urbanization is:", "options": ["Growth of rural areas", "Increase in urban population share", "Decline of cities", "Only migration abroad"], "correct": "Increase in urban population share"},
+      {"question": "Human-environment interaction example:", "options": ["Reading a book", "Planting crops", "Watching TV", "Sleeping"], "correct": "Planting crops"},
+      {"question": "Sustainable development aims to:", "options": ["Use all resources now", "Ignore environment", "Balance present and future needs", "Stop urban growth"], "correct": "Balance present and future needs"}
+    ],
+    "exam_style_questions": [
+      {"question": "Explain three factors affecting population distribution in Nigeria and illustrate with regional examples.", "answer_guide": "Climate/rainfall, relief/soil fertility, jobs/infrastructure; examples: dense Lagos, Kano vs sparsely populated NE arid areas."},
+      {"question": "Assess two environmental impacts of rapid urbanization in Lagos and propose planning measures to reduce them.", "answer_guide": "Impacts: congestion, pollution, flooding from poor drainage. Measures: BRT/rail, drainage upgrades, zoning, waste management, green spaces."}
+    ]
+  },
+  "resources": {
+    "visual_aids": [
+      {"title": "Nigeria Population Density Map", "type": "map", "description": "Choropleth showing dense urban regions."},
+      {"title": "Push-Pull Factors Chart", "type": "table", "description": "Common factors for migration decisions."},
+      {"title": "Sustainable City Diagram", "type": "infographic", "description": "Transit, green spaces, drainage, zoning."}
+    ]
+  },
+  "waec_tags": ["population", "migration", "urbanization", "cultural geography", "sustainability", "Nigeria", "settlements", "human-environment interaction"]
+}
