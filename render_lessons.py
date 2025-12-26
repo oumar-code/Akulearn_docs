@@ -27,6 +27,13 @@ class LessonRenderer:
         
         self.output_path = output_path
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        
+        # Setup asset directory reference
+        subject = self.lesson['metadata']['subject']
+        level = self.lesson['metadata']['level']
+        lesson_num = self.lesson['metadata']['lesson'].zfill(2)
+        self.asset_dir = Path(f"content/ai_generated/assets/{subject}/{level}/lesson_{lesson_num}")
+        self.rendered_asset_dir = Path(f"content/ai_rendered/assets/{subject}/{level}/lesson_{lesson_num}")
 
     def render(self) -> str:
         """Generate markdown content"""
@@ -139,6 +146,40 @@ class LessonRenderer:
         for section in self.lesson['content_sections']:
             md.append(f"- {section['section_id']}: {section['title']}\n")
 
+        # Generated visual assets
+        generated_assets = self._collect_generated_assets()
+        if generated_assets:
+            md.append("\n## Generated Visual Assets\n")
+            md.append("Diagrams and illustrations for this lesson:\n")
+            for asset_name, asset_path in generated_assets.items():
+                # Format asset name for display
+                display_name = asset_name.replace('_', ' ').title()
+                
+                # Check if it's an image (rendered) or diagram code (generated)
+                if asset_path.endswith(('.png', '.jpg', '.jpeg')):
+                    # Image embed
+                    md.append(f"\n### {display_name}\n")
+                    md.append(f"![{display_name}]({asset_path})\n")
+                elif asset_path.endswith('.plantuml'):
+                    # PlantUML diagram reference
+                    md.append(f"\n### {display_name}\n")
+                    md.append(f"📊 PlantUML Diagram: See [`{Path(asset_path).name}`]({asset_path})\n")
+                elif asset_path.endswith('.dot'):
+                    # Graphviz diagram reference
+                    md.append(f"\n### {display_name}\n")
+                    md.append(f"🔗 Network Diagram: See [`{Path(asset_path).name}`]({asset_path})\n")
+                elif asset_path.endswith('.txt'):
+                    # ASCII diagram
+                    md.append(f"\n### {display_name}\n")
+                    md.append(f"```\n")
+                    try:
+                        full_path = Path('content/ai_generated') / asset_path
+                        with open(full_path, 'r', encoding='utf-8') as f:
+                            md.append(f.read())
+                    except:
+                        md.append(f"See {asset_path}")
+                    md.append(f"\n```\n")
+
         # Additional resources
         if self.lesson['resources'].get('visual_aids'):
             md.append("\n## Visual Aids & Resources\n")
@@ -160,6 +201,23 @@ class LessonRenderer:
             f.write(content)
         print(f"✅ Rendered to: {self.output_path}")
         return self.output_path
+    
+    def _collect_generated_assets(self) -> Dict[str, str]:
+        """Collect generated asset files for this lesson"""
+        assets = {}
+        
+        if not self.asset_dir.exists():
+            return assets
+        
+        # Check for PlantUML, Graphviz, PNG, and ASCII files
+        for ext in ['*.plantuml', '*.dot', '*.png', '*.jpg', '*.jpeg', '*.txt']:
+            for asset_file in self.asset_dir.glob(ext):
+                asset_id = asset_file.stem
+                # Return relative path from ai_generated folder
+                relative_path = asset_file.relative_to(Path('content/ai_generated'))
+                assets[asset_id] = str(relative_path)
+        
+        return assets
 
 
 def batch_render(source_dir: str = "content/ai_generated/textbooks", 

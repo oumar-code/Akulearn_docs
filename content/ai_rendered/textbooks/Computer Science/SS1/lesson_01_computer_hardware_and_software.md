@@ -352,6 +352,56 @@ Key topics included:
 - 1.4: Software Types and Categories
 
 
+## Generated Visual Assets
+
+Diagrams and illustrations for this lesson:
+
+
+### I O Devices Table
+
+```
+
++-----------+
+| I/O Devices|
++-----------+
+| . Item 1  |
+| . Item 2  |
+| . Item 3  |
++-----------+
+
+```
+
+
+### Os Functions Chart
+
+```
+
++-----------+
+| OS Function|
++-----------+
+| . Item 1  |
+| . Item 2  |
+| . Item 3  |
++-----------+
+
+```
+
+
+### Pc Hardware Diagram
+
+```
+
++-----------+
+| PC Hardware|
++-----------+
+| . Item 1  |
+| . Item 2  |
+| . Item 3  |
++-----------+
+
+```
+
+
 ## Visual Aids & Resources
 
 
