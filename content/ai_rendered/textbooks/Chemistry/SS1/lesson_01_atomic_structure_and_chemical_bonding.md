@@ -1,6 +1,6 @@
 # Atomic Structure and Chemical Bonding
 
-**Chemistry | SS1 | Unit 1: Atomic Structure and Bonding**
+**Chemistry | SS1 | Unit 1: Atomic Structure and Chemical Bonding**
 
 ---
 
@@ -8,506 +8,168 @@
 
 - **Duration**: 90 minutes
 - **Estimated Pages**: 12
-- **NERDC Code**: CH.SS1.1.1
-- **NERDC Description**: Atomic structure: protons, neutrons, electrons, mass number, atomic number, electron configuration
-- **WAEC Topic**: Atomic Structure and Chemical Bonding (8%)
+- **NERDC Code**: CH.SS1.1.1-1.3
+- **NERDC Description**: Atomic structure (protons, neutrons, electrons), electron configuration, chemical bonding types, periodic table organization
+- **WAEC Topic**: Atomic Structure, Chemical Bonding, and the Periodic Table (8%)
 - **Learning Level**: Foundational
 
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
 
-1. Understand the structure of atoms (protons, neutrons, electrons)
-2. Apply mass number and atomic number concepts
-3. Determine electron configurations
-4. Understand valency and chemical bonding
-5. Distinguish between ionic, covalent, and metallic bonding
-6. Relate periodic table organization to electron configuration
-7. Apply atomic concepts to Nigerian industrial chemistry contexts
+1. Describe atomic structure: protons, neutrons, electrons, atomic number, mass number
+2. Write electron configurations and determine valency for elements
+3. Distinguish ionic, covalent, and metallic bonding with examples
+4. Navigate the periodic table and predict element properties from position
+5. Apply concepts to Nigerian industrial chemistry (petroleum, minerals)
 
 ## Prerequisites
 
 Before starting this lesson, ensure you understand:
 
-- Basic understanding of matter and elements from General Science
-- Familiarity with SI units and scientific notation from Physics
-- Understanding of number systems and place value
+- Basic understanding of matter and elements
+- Familiarity with symbols for common elements (H, O, C, N, Na, Cl)
+- Simple arithmetic for calculating atomic mass and electron counts
 
 ## Content
 
 
-### 1.1: Atomic Structure: Protons, Neutrons, and Electrons
+### 1.1: Atomic Structure: Building Blocks of Matter
 
-*Duration: 18 minutes*
+*Duration: 22 minutes*
 
-**The Atom**
+**Atoms** are smallest units retaining element properties. 
 
-All matter is made of atoms. An atom is the smallest particle of an element that retains the properties of that element.
+**Subatomic particles**: 
+- **Protons** (p⁺): positive charge, in nucleus, mass ~1 amu, define element identity. 
+- **Neutrons** (n⁰): neutral, in nucleus, mass ~1 amu, isotopes differ in neutron count. 
+- **Electrons** (e⁻): negative charge, orbit nucleus in shells/orbitals, negligible mass (~1/1836 proton). 
 
-**Subatomic Particles**
+**Atomic number (Z)**: number of protons (defines element). 
+**Mass number (A)**: protons + neutrons. 
+**Isotopes**: same Z, different A (e.g., Carbon-12 and Carbon-14). 
 
-Atoms are composed of three main subatomic particles:
+**Charge**: neutral atom has equal protons and electrons; ions form when gaining/losing electrons. 
 
-**1. Protons**
-- Location: In the nucleus (center) of the atom
-- Charge: Positive (+1)
-- Mass: Approximately 1 atomic mass unit (amu) or 1.67 × 10⁻²⁷ kg
-- Symbol in notation: p⁺ or p
+**Nigerian context**: Understanding atomic structure is key to petroleum chemistry (hydrocarbons, catalysts) and mineral processing (e.g., bauxite to aluminum in Kaduna).
 
-**2. Neutrons**
-- Location: In the nucleus
-- Charge: Neutral (0)
-- Mass: Approximately 1 amu (slightly heavier than proton)
-- Symbol: n⁰ or n
 
-**3. Electrons**
-- Location: Outside the nucleus in electron shells (orbitals)
-- Charge: Negative (-1)
-- Mass: Very small (~1/1836 the mass of a proton), negligible in calculations
-- Symbol: e⁻
+### 1.2: Electron Configuration and Valency
 
-**The Nucleus**
+*Duration: 23 minutes*
 
-The nucleus contains protons and neutrons. It is extremely dense and contains most of the atom's mass, but occupies only about 1/100,000 of the atom's volume.
+**Electron shells**: electrons occupy energy levels (K, L, M, N... or 1, 2, 3, 4...). Max capacity: 2n² (K=2, L=8, M=18, N=32). 
 
-**Electron Shells**
+**Electron configuration**: arrangement of electrons in shells (e.g., sodium Na: 2, 8, 1). Use notation: 1s² 2s² 2p⁶ 3s¹ (orbital notation). 
 
-Electrons orbit the nucleus in shells or energy levels:
-- **First shell (K)**: Can hold maximum 2 electrons
-- **Second shell (L)**: Can hold maximum 8 electrons
-- **Third shell (M)**: Can hold maximum 18 electrons
-- **Fourth shell (N)**: Can hold maximum 32 electrons
+**Valence electrons**: electrons in outermost shell; determine chemical behavior. 
+**Valency**: combining capacity (number of bonds an atom forms). Group 1 = valency 1; Group 2 = valency 2; Group 17 = valency 1 (gain electron). 
 
-**Key Principle**: Atoms are electrically neutral—the number of protons equals the number of electrons.
+**Octet rule**: atoms tend to gain/lose/share electrons to achieve 8 valence electrons (noble gas configuration). 
 
-**Nigerian Context**: In Lagos petrochemical refineries (e.g., NNPC facilities), understanding atomic structure is crucial for analyzing crude oil composition and chemical processes used to produce petrol, diesel, and other products.
+**Nigerian context**: Salt production in Lagos uses sodium chloride (NaCl); understanding valency explains why Na (valency 1) bonds with Cl (valency 1) in 1:1 ratio.
 
 
-### 1.2: Mass Number, Atomic Number, and Isotopes
+### 1.3: Chemical Bonding: Ionic, Covalent, and Metallic
 
-*Duration: 18 minutes*
+*Duration: 23 minutes*
 
-**Atomic Number (Z)**
+**Chemical bonds** form when atoms achieve stable electron configurations. 
 
-The atomic number is the number of protons in an atom's nucleus.
+**Ionic bonding**: electron transfer from metal to non-metal; forms ions (cations + anions); electrostatic attraction holds them. 
+- Example: NaCl (sodium loses 1e⁻ → Na⁺; chlorine gains 1e⁻ → Cl⁻). 
+- Properties: high melting/boiling points, conduct electricity when molten/dissolved, brittle crystals. 
 
-**Definition**: Atomic Number = Number of Protons
+**Covalent bonding**: electron sharing between non-metals; forms molecules. 
+- Example: H₂O (oxygen shares electrons with 2 hydrogens), Cl₂ (two chlorines share pair). 
+- Properties: lower melting/boiling points than ionic, poor conductors, can be gases/liquids/solids. 
 
-This number is unique to each element and determines what element the atom is.
+**Metallic bonding**: "sea" of delocalized electrons around metal cations; explains conductivity, malleability, luster. 
+- Example: Iron (Fe), aluminum (Al). 
 
-**Examples**:
-- Hydrogen (H): Atomic number = 1 (1 proton)
-- Carbon (C): Atomic number = 6 (6 protons)
-- Oxygen (O): Atomic number = 8 (8 protons)
-- Iron (Fe): Atomic number = 26 (26 protons)
+**Nigerian context**: Petroleum refining involves breaking/forming covalent bonds in hydrocarbons; aluminum smelting (bauxite) requires understanding metallic bonding.
 
-**Mass Number (A)**
 
-The mass number is the total number of protons and neutrons in the nucleus.
+### 1.4: Periodic Table Organization and Trends
 
-**Definition**: Mass Number = Protons + Neutrons
-**A = Z + N**
+*Duration: 22 minutes*
 
-where:
-- A = mass number
-- Z = atomic number (protons)
-- N = number of neutrons
+**Periodic table** organizes elements by atomic number (Z) in rows (periods) and columns (groups/families). 
 
-**Notation**:
+**Groups (1-18)**: elements in same group have similar valence electrons and properties. 
+- Group 1: alkali metals (Li, Na, K...), highly reactive, valency 1. 
+- Group 17: halogens (F, Cl, Br, I), reactive non-metals, valency 1. 
+- Group 18: noble gases (He, Ne, Ar...), inert/stable, full outer shells. 
 
-Isotopes are written as: **ᴬ_Z X** or **X-A**
+**Periods (1-7)**: rows indicate number of electron shells. 
 
-where X is the element symbol.
+**Trends**: 
+- **Atomic radius** decreases left→right (more protons pull electrons closer), increases top→bottom (more shells). 
+- **Ionization energy** (energy to remove electron) increases left→right, decreases top→bottom. 
+- **Electronegativity** (attraction for electrons) increases left→right, decreases top→bottom. 
 
-**Examples**:
-- ¹⁶₈O: Oxygen-16 (8 protons, 8 neutrons)
-- ¹⁸₈O: Oxygen-18 (8 protons, 10 neutrons)
-- ¹²₆C: Carbon-12 (6 protons, 6 neutrons)
-- ¹⁴₆C: Carbon-14 (6 protons, 8 neutrons)
+**Metals vs non-metals**: left/center = metals (conductors, malleable); right = non-metals (insulators, brittle); metalloids in between (semi-conductors). 
 
-**Isotopes**
-
-Isotopes are atoms of the same element (same atomic number) but with different numbers of neutrons (different mass numbers).
-
-**Properties of Isotopes**:
-- Same element (same number of protons)
-- Different mass numbers (different numbers of neutrons)
-- Chemical properties are very similar
-- Physical properties differ (density, melting point, radioactivity)
-
-**Examples**:
-- Hydrogen-1, Deuterium (Hydrogen-2), Tritium (Hydrogen-3)
-- Carbon-12 (stable), Carbon-14 (radioactive, used in dating)
-
-**Relative Atomic Mass**
-
-The relative atomic mass is the weighted average mass of all isotopes of an element.
-
-**Relative Atomic Mass = Σ(mass × abundance) / 100**
-
-**Nigerian Context**: Nigeria's oil industry deals with hydrocarbons containing carbon isotopes. Understanding mass number helps in analyzing crude oil composition and predicting chemical behavior during refining processes at facilities like the Dangote Refinery in Lagos.
-
-
-### 1.3: Electron Configuration and Valency
-
-*Duration: 20 minutes*
-
-**Electron Configuration**
-
-Electron configuration describes how electrons are distributed among the shells of an atom.
-
-**Rules for Electron Configuration**:
-
-1. **Aufbau Principle**: Electrons fill orbitals starting from the lowest energy level
-2. **Pauli Exclusion Principle**: Maximum 2 electrons per orbital
-3. **Hund's Rule**: Electrons occupy orbitals singly before pairing
-
-**Shell Capacity**:
-- **First shell (K)**: 2 electrons maximum (1s²)
-- **Second shell (L)**: 8 electrons maximum (2s² 2p⁶)
-- **Third shell (M)**: 18 electrons maximum (3s² 3p⁶ 3d¹⁰)
-
-**Writing Electron Configurations**
-
-**Method 1: Shell Notation (Simplified)**
-
-Write the number of electrons in each shell:
-
-**Examples**:
-- Hydrogen (H, Z=1): 1
-- Carbon (C, Z=6): 2,4
-- Oxygen (O, Z=8): 2,6
-- Sodium (Na, Z=11): 2,8,1
-- Chlorine (Cl, Z=17): 2,8,7
-- Argon (Ar, Z=18): 2,8,8
-
-**Method 2: Orbital Notation (Full)**
-
-Write the subshell designation and electron count:
-
-**Examples**:
-- Hydrogen (H): 1s¹
-- Carbon (C): 1s² 2s² 2p²
-- Oxygen (O): 1s² 2s² 2p⁴
-- Sodium (Na): 1s² 2s² 2p⁶ 3s¹
-
-**Valency**
-
-Valency is the combining capacity of an element. It represents the number of electrons an atom can lose, gain, or share to achieve a stable electron configuration.
-
-**Valency and Electron Configuration**:
-
-- **Atoms with full outer shells** (noble gases like Ne, Ar): Valency = 0 (inert)
-- **Atoms with 1 electron in outer shell**: Valency = 1 (lose 1 or share 1)
-- **Atoms with 2 electrons in outer shell**: Valency = 2 (lose 2 or share 2)
-- **Atoms with 3 electrons in outer shell**: Valency = 3 (lose 3 or share 3)
-- **Atoms with 4 electrons in outer shell**: Valency = 4 (share 4)
-- **Atoms with 5 electrons in outer shell**: Valency = 3 (share or gain 3)
-- **Atoms with 6 electrons in outer shell**: Valency = 2 (share or gain 2)
-- **Atoms with 7 electrons in outer shell**: Valency = 1 (gain 1 or share 1)
-
-**Examples**:
-- Sodium (Na): 2,8,1 → Valency = 1 (loses 1)
-- Chlorine (Cl): 2,8,7 → Valency = 1 (gains 1)
-- Oxygen (O): 2,6 → Valency = 2 (gains 2)
-- Carbon (C): 2,4 → Valency = 4 (shares 4)
-
-**Octet Rule**
-
-The octet rule states that atoms tend to gain, lose, or share electrons to achieve a stable configuration with 8 electrons in the outer shell (or 2 for hydrogen).
-
-**Nigerian Context**: In the Dangote Fertilizer plant in Lagos, understanding valency is essential for predicting how nitrogen, phosphorus, and potassium atoms will combine to form fertilizer compounds.
-
-
-### 1.4: Types of Chemical Bonding
-
-*Duration: 24 minutes*
-
-**Chemical Bonds**
-
-A chemical bond is the force that holds atoms together in molecules and compounds. Atoms bond to achieve stable electron configurations (usually 8 electrons in the outer shell, following the octet rule).
-
-**Three Main Types of Bonding**
-
----
-
-**1. IONIC BONDING**
-
-**Definition**: Ionic bonding occurs when electrons are transferred from one atom to another, creating oppositely charged ions that attract.
-
-**Characteristics**:
-- Complete electron transfer
-- Forms between metals and nonmetals
-- Creates cations (positive ions) and anions (negative ions)
-- Strong electrostatic attraction
-- Occurs in solid state
-
-**Mechanism**:
-1. Metal atom loses electron(s) → becomes cation (positive)
-2. Nonmetal atom gains electron(s) → becomes anion (negative)
-3. Electrostatic attraction between ions holds compound together
-
-**Examples**:
-- **NaCl (Sodium Chloride)**:
-  - Na (2,8,1) loses 1 electron → Na⁺ (2,8)
-  - Cl (2,8,7) gains 1 electron → Cl⁻ (2,8,8)
-  - Attraction: Na⁺ ← → Cl⁻
-
-- **MgO (Magnesium Oxide)**:
-  - Mg (2,8,2) loses 2 electrons → Mg²⁺
-  - O (2,6) gains 2 electrons → O²⁻
-
-**Properties of Ionic Compounds**:
-- Solids at room temperature
-- High melting and boiling points
-- Conduct electricity when molten or dissolved
-- Often soluble in polar solvents (water)
-- Brittle (shatter when hit)
-
-**Nigerian Context**: Table salt (NaCl) from Lagos coastal areas and evaporation ponds is a common ionic compound. Rock salt mining in Edo State produces halite (NaCl).
-
----
-
-**2. COVALENT BONDING**
-
-**Definition**: Covalent bonding occurs when atoms share pairs of electrons to achieve stable configurations.
-
-**Characteristics**:
-- Electron sharing (not transfer)
-- Forms between nonmetals
-- Creates molecules
-- Varies in strength (single, double, triple bonds)
-- Can be polar or nonpolar
-
-**Types of Covalent Bonds**:
-
-**Single Bond** (1 shared pair of electrons)
-- Example: H-H (hydrogen), C-H
-- Denoted by single line: —
-
-**Double Bond** (2 shared pairs)
-- Example: O=O (oxygen), C=O
-- Denoted by double line: =
-
-**Triple Bond** (3 shared pairs)
-- Example: N≡N (nitrogen), C≡C
-- Denoted by triple line: ≡
-
-**Examples**:
-- **H₂ (Hydrogen gas)**:
-  - Each H atom has 1 electron
-  - They share 1 pair: H:H or H-H
-  - Both achieve the stable 2-electron configuration
-
-- **H₂O (Water)**:
-  - O needs 2 electrons (has 6, needs 8)
-  - Each H needs 1 electron (has 1, needs 2)
-  - O forms 2 single bonds with H atoms
-  - Molecular formula: H-O-H
-
-- **CO₂ (Carbon dioxide)**:
-  - C needs 4 electrons (has 4, needs 8)
-  - O needs 2 electrons each (has 6, needs 8)
-  - C forms double bonds with each O: O=C=O
-
-**Polar vs Nonpolar Covalent**:
-- **Nonpolar**: Electrons shared equally (e.g., Cl-Cl, H-H)
-- **Polar**: Electrons shared unequally (e.g., H-O, C-O)
-
-**Properties of Covalent Compounds**:
-- Low melting and boiling points
-- Poor electrical conductivity
-- Often soluble in nonpolar solvents (oils, fats)
-- Many are gases or liquids
-- Softer than ionic compounds
-
-**Nigerian Context**: Petroleum compounds (hydrocarbons) are covalent compounds. Petrol (C₈H₁₈), diesel (C₁₆H₃₄), and other fuel products from Nigerian oil refineries contain covalent bonds.
-
----
-
-**3. METALLIC BONDING**
-
-**Definition**: Metallic bonding occurs when metal atoms lose valence electrons, which move freely in a "sea" around the cations.
-
-**Characteristics**:
-- Electrons delocalized (mobile)
-- Forms between metal atoms
-- Creates "sea" of electrons
-- Strong but flexible bonding
-
-**Mechanism**:
-- Metal atoms lose valence electrons
-- Electrons form a mobile "electron sea"
-- Metal cations held in place by attraction to electron sea
-
-**Examples**:
-- **Iron (Fe)**: Fe atoms lose valence electrons; electrons form sea
-- **Copper (Cu)**: Cu atoms form electron sea; high electrical conductivity
-
-**Properties of Metals**:
-- High melting and boiling points
-- Excellent electrical and thermal conductivity
-- Malleability (can be hammered into sheets)
-- Ductility (can be drawn into wires)
-- Lustrous (shiny)
-- Solids at room temperature (except Hg)
-
-**Nigerian Context**: Iron ore mining in Nigeria (Kogi, Enugu) produces Fe₂O₃ which is reduced to pure iron. Steel production uses metallic bonding principles. Aluminum production also relies on metallic bonding concepts.
-
----
-
-**Comparison Table**
-
-| Property | Ionic | Covalent | Metallic |
-|----------|-------|----------|----------|
-| Electron behavior | Transfer | Share | Delocalized |
-| Types of atoms | Metal + Nonmetal | Nonmetals | Metals |
-| State | Usually solid | Varied | Solid (mostly) |
-| Melting point | High | Low-High | High |
-| Electrical conductivity | Only when molten/dissolved | Poor | Excellent |
-| Solubility | Often water-soluble | Varied | Insoluble in water |
-| Example | NaCl, CaCO₃ | H₂O, CO₂, O₂ | Fe, Cu, Al |
-
-
-### 1.5: Periodic Table Organization
-
-*Duration: 10 minutes*
-
-**Organization of the Periodic Table**
-
-The periodic table arranges elements by atomic number and electron configuration.
-
-**Rows (Periods)**
-
-Each row represents one shell of electrons:
-- **Period 1**: Elements with 1 shell (H, He)
-- **Period 2**: Elements with 2 shells (Li through Ne)
-- **Period 3**: Elements with 3 shells (Na through Ar)
-
-As you move down the periodic table, elements have more electron shells.
-
-**Columns (Groups)**
-
-Elements in the same group have the same number of valence electrons and similar chemical properties:
-- **Group 1** (Alkali metals): 1 valence electron
-- **Group 2** (Alkaline earth metals): 2 valence electrons
-- **Group 13-17**: 3-7 valence electrons
-- **Group 18** (Noble gases): 8 valence electrons (full outer shell, inert)
-
-**Blocks**
-- **s-block**: Groups 1-2
-- **p-block**: Groups 13-18
-- **d-block**: Transition metals
-- **f-block**: Lanthanides and actinides
-
-**Trend: Valency and Group Number**
-
-For main group elements (s and p blocks):
-- Valency = Group number (for Groups 1-4)
-- Valency = 8 - Group number (for Groups 5-7)
-- Valency = 0 (Group 18, noble gases)
-
-**Nigerian Context**: The periodic table helps Nigerian chemists and engineers identify elements found in mineral deposits. Nigeria has reserves of elements like tin (Sn), tantalum (Ta), columbite, and iron (Fe) that are positioned in specific groups based on their properties.
+**Nigerian context**: Nigeria's mineral wealth includes metals like iron, tin, and columbite; periodic table helps predict extraction methods and reactivity.
 
 
 ## Worked Examples
 
 
-### Example 1.1: Determining Atomic Structure from Atomic Number and Mass Number
+### Example 1.1: Determining Atomic Composition
 
-**Context**: A student examines a calcium atom with mass number 40.
+**Context**: Chlorine-35 has atomic number 17 and mass number 35.
 
-**Problem**: For ⁴⁰₂₀Ca, determine: (a) number of protons, (b) number of neutrons, (c) number of electrons (assuming neutral atom), (d) electron configuration
-
-**Solution**:
-```
-Given: Mass number (A) = 40, Atomic number (Z) = 20 (Calcium)
-
-(a) Number of protons = Atomic number = 20 protons
-
-(b) Number of neutrons = Mass number - Atomic number = 40 - 20 = 20 neutrons
-
-(c) For neutral atom: Number of electrons = Number of protons = 20 electrons
-
-(d) Electron configuration (shell notation):
-- First shell (K): 2 electrons (full)
-- Second shell (L): 8 electrons (full)
-- Third shell (M): 8 electrons (full)
-- Fourth shell (N): 2 electrons
-
-Electron configuration: 2,8,8,2
-
-Or in orbital notation: 1s² 2s² 2p⁶ 3s² 3p⁶ 4s²
-```
-
-**Skills Tested**: Mass number concept, Atomic number application, Electron configuration, Subatomic particle identification
-
-
-### Example 1.2: Identifying Ionic Bonding and Electron Transfer
-
-**Context**: A chemistry student examines the formation of magnesium chloride (MgCl₂) in a Nigerian chemical manufacturing plant.
-
-**Problem**: Show how MgCl₂ forms through ionic bonding. Include electron configurations before and after bonding.
+**Problem**: Find the number of protons, neutrons, and electrons in a neutral chlorine-35 atom.
 
 **Solution**:
 ```
-Magnesium (Mg, Z=12) and Chlorine (Cl, Z=17)
+**Protons** = Z = 17. 
+**Neutrons** = A - Z = 35 - 17 = 18. 
+**Electrons** = protons (neutral atom) = 17. 
 
-Initial electron configurations:
-- Mg: 2,8,2 (12 electrons)
-- Cl: 2,8,7 (17 electrons)
-
-Electron transfer:
-1. Mg atom loses 2 electrons (valency = 2)
-   Mg → Mg²⁺ + 2e⁻
-   Becomes: 2,8 configuration (10 electrons)
-
-2. Each Cl atom gains 1 electron (valency = 1)
-   Cl + e⁻ → Cl⁻
-   Becomes: 2,8,8 configuration (18 electrons)
-
-Formula: MgCl₂ (one Mg²⁺ and two Cl⁻ ions)
-
-Structure: Mg²⁺ [Cl⁻, Cl⁻] with electrostatic attractions
-
-All ions achieve noble gas configuration (full outer shells).
+**Answer**: 17 protons, 18 neutrons, 17 electrons.
 ```
 
-**Skills Tested**: Electron transfer, Ionic bonding mechanism, Ion formation, Valency application
+**Skills Tested**: Atomic number interpretation, Mass number calculation
 
 
-### Example 1.3: Analyzing Covalent Bonding in Water
+### Example 1.2: Writing Electron Configuration
 
-**Context**: A student analyzes the molecular structure of water (H₂O), essential in Nigerian water purification and industrial processes.
+**Context**: Oxygen has atomic number 8.
 
-**Problem**: Explain how oxygen and hydrogen atoms bond in water. Show electron configurations and identify the type of covalent bonding.
+**Problem**: Write the electron configuration for oxygen.
 
 **Solution**:
 ```
-Oxygen (O, Z=8) and Hydrogen (H, Z=1)
+O has 8 electrons. 
+Shell distribution: K=2, L=6 (2, 6). 
+Orbital notation: 1s² 2s² 2p⁴. 
 
-Initial electron configurations:
-- O: 2,6 (needs 2 more electrons for stability)
-- H: 1 (needs 1 more electron for stability)
+**Valency**: 6 valence electrons; needs 2 more to reach octet → valency 2 (forms 2 bonds, e.g., H₂O). 
 
-Bonding mechanism:
-1. Oxygen needs 2 electrons; forms 2 single bonds
-2. Each hydrogen needs 1 electron; shares with oxygen
-3. Covalent bonding: O-H and O-H (two single bonds)
-4. Molecular formula: H-O-H or H₂O
-
-Electron sharing:
-- O shares 1 pair with 1st H
-- O shares 1 pair with 2nd H
-- Both H atoms achieve 2-electron configuration (H₂ equivalent)
-- O achieves 8-electron configuration
-
-Type: Polar covalent (because O pulls electrons more strongly than H)
-
-Result: Water molecule is stable, abundant in Nigerian waterways.
+**Answer**: 2, 6 or 1s² 2s² 2p⁴; valency 2.
 ```
 
-**Skills Tested**: Covalent bonding concept, Electron sharing, Octet rule, Molecular structure determination
+**Skills Tested**: Electron configuration, Valency determination
+
+
+### Example 1.3: Identifying Bond Type
+
+**Context**: Determine bonding in (a) NaCl, (b) H₂, (c) Fe metal.
+
+**Problem**: Classify each as ionic, covalent, or metallic.
+
+**Solution**:
+```
+(a) **NaCl**: sodium (metal) + chlorine (non-metal) → electron transfer → **ionic**. 
+(b) **H₂**: hydrogen (non-metal) + hydrogen (non-metal) → electron sharing → **covalent**. 
+(c) **Fe**: metal atoms → delocalized electron sea → **metallic**. 
+
+**Answer**: (a) ionic, (b) covalent, (c) metallic.
+```
+
+**Skills Tested**: Bonding classification, Element property recognition
 
 
 ## Practice Problems
@@ -516,123 +178,143 @@ Result: Water molecule is stable, abundant in Nigerian waterways.
 ### Basic Level
 
 
-**1.1.B**: Define the atomic number of an element
+**1.1.B**: What is the charge of a proton?
 
-> **Answer**: The atomic number is the number of protons in an atom's nucleus (also equals number of electrons in neutral atoms)
+> **Answer**: Positive (+1).
 
-> **Explanation**: Atomic number = number of protons. This unique number identifies each element.
-
-
-**1.2.B**: What is the mass number of an atom with 8 protons and 8 neutrons?
-
-> **Answer**: 16
-
-> **Explanation**: Mass number = Protons + Neutrons = 8 + 8 = 16
+> **Explanation**: Fundamental subatomic particle property.
 
 
-**1.3.B**: How many electrons can the second shell (L) hold?
+**1.2.B**: Which particle has negligible mass?
 
-> **Answer**: 8 electrons
+> **Answer**: Electron.
 
-> **Explanation**: Second shell capacity: 2s² 2p⁶ = 2 + 6 = 8 electrons maximum
+> **Explanation**: Mass ~1/1836 of proton.
+
+
+**1.3.B**: Define atomic number.
+
+> **Answer**: Number of protons in an atom's nucleus.
+
+> **Explanation**: Defines element identity.
 
 
 **1.4.B**: What is an isotope?
 
-> **Answer**: Atoms of the same element with different numbers of neutrons (different mass numbers)
+> **Answer**: Atoms of same element with different neutron counts (different mass numbers).
 
-> **Explanation**: Isotopes have same atomic number (protons) but different mass numbers (neutrons)
+> **Explanation**: Same Z, different A.
 
 
 ### Core Level
 
 
-**1.5.C**: Write the electron configuration of nitrogen (N, Z=7) in shell notation
+**1.5.C**: Carbon-12 has 6 protons. How many neutrons?
 
-> **Answer**: 2,5
+> **Answer**: A = 12, Z = 6 → neutrons = 12 - 6 = 6.
 
-> **Explanation**: N has 7 electrons: 2 in first shell, 5 in second shell
-
-
-**1.6.C**: What is the valency of sulfur (S) with electron configuration 2,8,6?
-
-> **Answer**: 2 (or 6 depending on context)
-
-> **Explanation**: Sulfur has 6 valence electrons; needs 2 more for octet. Can gain 2 or share 2, so valency = 2
+> **Explanation**: Mass number calculation.
 
 
-**1.7.C**: For ³⁵₁₇Cl (chlorine-35), determine: (a) protons, (b) neutrons, (c) electrons (neutral atom)
+**1.6.C**: Write electron configuration for magnesium (Z=12).
 
-> **Answer**: (a) 17 protons, (b) 18 neutrons, (c) 17 electrons
+> **Answer**: 2, 8, 2 or 1s² 2s² 2p⁶ 3s².
 
-> **Explanation**: Atomic number = protons = 17; Neutrons = 35 - 17 = 18; Electrons = protons (neutral) = 17
+> **Explanation**: Valency 2 (2 valence electrons).
 
 
-**1.8.C**: Explain why NaCl is an ionic compound but H₂O is covalent
+**1.7.C**: Why is NaCl an ionic compound?
 
-> **Answer**: NaCl: Na (metal) transfers electron to Cl (nonmetal), forming ions. H₂O: H and O (both nonmetals) share electrons
+> **Answer**: Metal (Na) transfers electron to non-metal (Cl), forming Na⁺ and Cl⁻ ions held by electrostatic force.
 
-> **Explanation**: Ionic bonding occurs between metal and nonmetal; covalent bonding occurs between nonmetals
+> **Explanation**: Electron transfer between metal/non-metal.
+
+
+**1.8.C**: Name two elements in Group 1 (alkali metals).
+
+> **Answer**: Lithium (Li), sodium (Na), potassium (K) (any two).
+
+> **Explanation**: Group 1 elements.
 
 
 ### Challenge Level
 
 
-**1.9.CH**: A chlorine atom has 17 protons. How many electrons does Cl⁻ (chloride ion) have? Explain the electron configuration
+**1.9.CH**: Aluminum (Z=13) forms Al³⁺ ion. Explain electron configuration change.
 
-> **Answer**: 18 electrons; configuration 2,8,8 (achieved noble gas argon configuration)
+> **Answer**: Neutral Al: 2, 8, 3. Loses 3 valence electrons → Al³⁺: 2, 8 (stable octet like noble gas neon).
 
-> **Explanation**: Neutral Cl has 17 electrons. Cl⁻ gains 1 electron → 18 electrons total, achieving stable octet
+> **Explanation**: Ion formation to achieve stability.
 
 
-**1.10.CH**: Compare the bonding in NaCl (ionic), Cl₂ (covalent), and Fe (metallic) in terms of electron behavior
+**1.10.CH**: Predict bond type between calcium and oxygen. Justify.
 
-> **Answer**: NaCl: complete electron transfer (ions). Cl₂: electrons shared between atoms. Fe: electrons delocalized in 'sea'
+> **Answer**: Ionic. Ca (metal, Group 2) loses 2e⁻ → Ca²⁺; O (non-metal, Group 16) gains 2e⁻ → O²⁻. Electrostatic attraction forms CaO.
 
-> **Explanation**: Three bonding types represent different electron arrangements: transfer, sharing, and delocalization
+> **Explanation**: Metal-non-metal electron transfer.
 
 
 ## Glossary
 
 
-**Atom**: Smallest unit of an element that retains its properties; composed of protons, neutrons, and electrons
+**Atom**: Smallest unit of an element retaining its properties.
 
-- *Example*: A carbon atom has 6 protons, 6 neutrons, and 6 electrons
-
-
-**Atomic Number**: Number of protons in an atom's nucleus; uniquely identifies an element
-
-- *Example*: Oxygen has atomic number 8 (8 protons)
+- *Example*: Carbon atom in diamond.
 
 
-**Mass Number**: Total number of protons and neutrons in an atom
+**Proton**: Positively charged subatomic particle in nucleus; defines element.
 
-- *Example*: Carbon-12 has mass number 12 (6 protons + 6 neutrons)
-
-
-**Isotope**: Atoms of the same element with different numbers of neutrons
-
-- *Example*: Carbon-12 and Carbon-14 are isotopes of carbon
+- *Example*: Hydrogen has 1 proton.
 
 
-**Valency**: Combining capacity of an element; number of electrons lost, gained, or shared
+**Neutron**: Neutral subatomic particle in nucleus; affects mass number.
 
-- *Example*: Chlorine has valency 1 (gains or shares 1 electron)
-
-
-**Ionic Bond**: Chemical bond formed by complete electron transfer between atoms, creating oppositely charged ions
-
-- *Example*: NaCl forms when Na transfers an electron to Cl
+- *Example*: Carbon-12 has 6 neutrons.
 
 
-**Covalent Bond**: Chemical bond formed by sharing electron pairs between atoms
+**Electron**: Negatively charged particle orbiting nucleus; determines chemical behavior.
 
-- *Example*: H₂O forms covalent bonds between H and O atoms
+- *Example*: Sodium loses 1 electron to form Na⁺.
 
 
-**Metallic Bond**: Chemical bond formed by delocalized electrons around metal cations
+**Atomic Number (Z)**: Number of protons; unique identifier for element.
 
-- *Example*: Iron has metallic bonding allowing electrical conductivity
+- *Example*: Oxygen: Z=8.
+
+
+**Mass Number (A)**: Protons + neutrons in nucleus.
+
+- *Example*: Chlorine-35: A=35.
+
+
+**Isotope**: Atoms of same element with different neutron counts.
+
+- *Example*: Carbon-12 and Carbon-14.
+
+
+**Valency**: Combining capacity; number of bonds an atom forms.
+
+- *Example*: Oxygen: valency 2.
+
+
+**Ionic Bond**: Bond formed by electron transfer; creates ions.
+
+- *Example*: NaCl (Na⁺Cl⁻).
+
+
+**Covalent Bond**: Bond formed by electron sharing between non-metals.
+
+- *Example*: H₂O (water).
+
+
+**Metallic Bond**: Bond in metals; delocalized electrons around cations.
+
+- *Example*: Iron (Fe).
+
+
+**Periodic Table**: Organized chart of elements by atomic number.
+
+- *Example*: Group 1 contains alkali metals.
 
 
 ## Assessment
@@ -640,73 +322,11 @@ Result: Water molecule is stable, abundant in Nigerian waterways.
 
 ### Quick Checks (Understanding Check)
 
-1. Explain the difference between atomic number and mass number
+1. Label parts of an atom (proton, neutron, electron, nucleus).
 
-2. Why do atoms form chemical bonds?
+2. Given atomic number and mass number, calculate neutrons.
 
-3. What is the octet rule and why is it important?
-
-4. Describe the three main types of chemical bonding
-
-5. How does electron configuration relate to an element's position in the periodic table?
-
-
-### End-of-Lesson Quiz
-
-
-**1. What is the electron configuration of sodium (Na, Z=11)?**
-
-- 2,8
-
-- 2,7,2
-
-- 2,8,1
-
-- 2,8,3
-
-> **Correct Answer**: 2,8,1
-
-
-**2. Which type of bond involves complete electron transfer?**
-
-- Covalent
-
-- Ionic
-
-- Metallic
-
-- Hydrogen
-
-> **Correct Answer**: Ionic
-
-
-**3. An atom with atomic number 17 is...**
-
-- Argon
-
-- Chlorine
-
-- Sulfur
-
-- Potassium
-
-> **Correct Answer**: Chlorine
-
-
-### WAEC Exam-Style Questions
-
-
-**1. WAEC-style: (a) Define atomic number and mass number. (b) For ⁶⁴₂₉Cu, determine the number of protons, neutrons, and electrons. (c) Explain how copper achieves a stable configuration.**
-
-> **Answer Guide**: (a) Atomic number = protons; Mass number = protons + neutrons
-(b) Protons = 29; Neutrons = 64 - 29 = 35; Electrons = 29 (neutral)
-(c) Copper loses 1 electron in metallic bonding, achieving stable configuration with electron sea
-
-
-**2. WAEC-style: Compare ionic and covalent bonding in terms of electron behavior, compound types, and physical properties**
-
-> **Answer Guide**: Ionic: electron transfer, metal+nonmetal, high melting point, conduct when melted
-Covalent: electron sharing, nonmetals, low melting point, poor conductors
+3. Identify bond type from element pairs (e.g., Na+Cl, H+H, Fe+Fe).
 
 
 ## Summary
@@ -716,27 +336,13 @@ This lesson covered the fundamentals of Chemistry at SS1 level.
 
 Key topics included:
 
-- 1.1: Atomic Structure: Protons, Neutrons, and Electrons
+- 1.1: Atomic Structure: Building Blocks of Matter
 
-- 1.2: Mass Number, Atomic Number, and Isotopes
+- 1.2: Electron Configuration and Valency
 
-- 1.3: Electron Configuration and Valency
+- 1.3: Chemical Bonding: Ionic, Covalent, and Metallic
 
-- 1.4: Types of Chemical Bonding
-
-- 1.5: Periodic Table Organization
-
-
-## Visual Aids & Resources
-
-
-- **Atomic Structure Diagram** (diagram): Nucleus (protons, neutrons) and electron shells with orbital representation
-
-
-- **Ionic Bonding Animation Storyboard** (diagram_set): Step-by-step electron transfer in NaCl formation
-
-
-- **Three Types of Bonding Comparison** (table): Side-by-side comparison of ionic, covalent, and metallic bonding
+- 1.4: Periodic Table Organization and Trends
 
 
 ---
@@ -744,6 +350,6 @@ Key topics included:
 
 **Prepared for**: Chemistry SS1
 
-**WAEC Tags**: atomic_structure, mass_number, atomic_number, electron_configuration, valency...
+**WAEC Tags**: atomic_structure, chemical_bonding, periodic_table, electron_configuration, valency...
 
-**Learning Path**: Unit 1 → Atomic Structure and Bonding
+**Learning Path**: Unit 1 → Atomic Structure and Chemical Bonding
