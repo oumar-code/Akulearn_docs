@@ -535,7 +535,7 @@ def main():
     print("\n4. Time-on-task analytics (7 days)...")
     analytics = tracker.get_time_on_task_analytics("STU001", days=7)
     print(f"   Total Time: {analytics.get('total_time_hours', 0):.2f} hours")
-    print(f("   Daily Average: {analytics.get('daily_average_minutes', 0):.1f} minutes")
+    print(f"   Daily Average: {analytics.get('daily_average_minutes', 0):.1f} minutes")
     print(f"   Total Activities: {analytics.get('total_activities', 0)}")
     
     # Get recommendations

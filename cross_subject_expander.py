@@ -35,6 +35,7 @@ class ConnectionType(Enum):
     ECONOMIC_GEOGRAPHY = "economic_geography"
     SCIENTIFIC_COMMUNICATION = "scientific_communication"
     DATA_SCIENCE = "data_science"
+    SYSTEMS_THINKING = "systems_thinking"
 
 
 class SkillType(Enum):
