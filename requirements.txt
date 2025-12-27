@@ -1,15 +1,41 @@
-# Added for Cyber AIops prototype
-scikit-learn>=1.2
-pandas>=1.5
-joblib
-scipy
-PyPDF2>=3.0
-pypdf>=3.0
-# To ensure app dependencies are ported from your virtual environment/host machine into your container, run 'pip freeze > requirements.txt' in the terminal to overwrite this file
+# Core dependencies
 fastapi[all]==0.109.0
 uvicorn[standard]==0.27.0
 gunicorn==21.2.0
-# Embedding based auto-tagging
+pydantic>=2.0
+
+# Data science and ML
+scikit-learn>=1.2
+pandas>=1.5
+numpy
+joblib
+scipy
+
+# NLP and embeddings
 sentence-transformers>=2.2.2
 faiss-cpu
-numpy
+
+# PDF processing
+PyPDF2>=3.0
+pypdf>=3.0
+
+# Graph database
+neo4j>=5.14.0
+
+# Visualization
+matplotlib>=3.5.0
+plotly>=5.18.0
+networkx>=3.0
+seaborn>=0.12.0
+
+# API and WebSocket
+websockets>=12.0
+httpx>=0.25.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Utilities
+python-dateutil>=2.8.0
+python-multipart>=0.0.6
