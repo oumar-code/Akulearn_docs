@@ -96,12 +96,12 @@ class LessonType(ObjectType):
     
     # Content
     introduction = String()
-    learning_objectives = List(Field(LearningObjectiveType))
-    content_sections = List(Field(ContentSectionType))
-    worked_examples = List(Field(WorkedExampleType))
-    practice_problems = List(Field(PracticeProblemType))
-    glossary = List(Field(GlossaryTermType))
-    resources = List(Field(ResourceType))
+    learning_objectives = List(LearningObjectiveType)
+    content_sections = List(ContentSectionType)
+    worked_examples = List(WorkedExampleType)
+    practice_problems = List(PracticeProblemType)
+    glossary = List(GlossaryTermType)
+    resources = List(ResourceType)
     assessment = Field(AssessmentType)
     
     # Metadata

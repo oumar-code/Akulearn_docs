@@ -6,6 +6,7 @@ Integrates WebSocket, GraphQL, Recommendations, Gamification, and Advanced Analy
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
 import asyncio
 import uvicorn
 
@@ -44,10 +45,23 @@ except ImportError:
 
 def create_advanced_app() -> FastAPI:
     """Create FastAPI app with all advanced features"""
+    
+    # Lifespan context manager for startup/shutdown
+    @asynccontextmanager
+    async def lifespan(app: FastAPI):
+        # Startup
+        if WEBSOCKET_AVAILABLE:
+            task = asyncio.create_task(heartbeat())
+        yield
+        # Shutdown
+        if WEBSOCKET_AVAILABLE:
+            task.cancel()
+    
     app = FastAPI(
         title="Akulearn Wave 3 - Advanced Platform",
         description="Complete learning platform with AI recommendations, gamification, and predictive analytics",
-        version="3.0.0"
+        version="3.0.0",
+        lifespan=lifespan
     )
     
     # CORS
@@ -91,11 +105,6 @@ def create_advanced_app() -> FastAPI:
         async def ws_endpoint(websocket: WebSocket, student_id: str):
             """Real-time updates via WebSocket"""
             await websocket_endpoint(websocket, student_id)
-        
-        @app.on_event("startup")
-        async def startup_websocket():
-            """Start heartbeat on startup"""
-            asyncio.create_task(heartbeat())
     
     # GraphQL endpoint
     if GRAPHQL_AVAILABLE:
