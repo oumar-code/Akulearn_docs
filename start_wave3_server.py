@@ -23,13 +23,13 @@ try:
         ANALYTICS_AVAILABLE
     )
     
-    print("\n✓ Successfully imported wave3_advanced_platform")
+    print("\n[OK] Successfully imported wave3_advanced_platform")
     print("\nFeature Status:")
-    print(f"  {'✓' if WEBSOCKET_AVAILABLE else '✗'} WebSocket Real-Time Updates")
-    print(f"  {'✓' if GRAPHQL_AVAILABLE else '✗'} GraphQL API")
-    print(f"  {'✓' if RECOMMENDATIONS_AVAILABLE else '✗'} AI Recommendations")
-    print(f"  {'✓' if GAMIFICATION_AVAILABLE else '✗'} Gamification System")
-    print(f"  {'✓' if ANALYTICS_AVAILABLE else '✗'} Advanced Analytics")
+    print(f"  [{'OK' if WEBSOCKET_AVAILABLE else 'NO'}] WebSocket Real-Time Updates")
+    print(f"  [{'OK' if GRAPHQL_AVAILABLE else 'NO'}] GraphQL API")
+    print(f"  [{'OK' if RECOMMENDATIONS_AVAILABLE else 'NO'}] AI Recommendations")
+    print(f"  [{'OK' if GAMIFICATION_AVAILABLE else 'NO'}] Gamification System")
+    print(f"  [{'OK' if ANALYTICS_AVAILABLE else 'NO'}] Advanced Analytics")
     
     enabled_features = sum([
         WEBSOCKET_AVAILABLE,
@@ -42,20 +42,20 @@ try:
     print(f"\n{enabled_features}/5 features enabled")
     
     if enabled_features == 5:
-        print("\n🎉 All features loaded successfully!")
+        print("\n[SUCCESS] All features loaded successfully!")
     elif enabled_features > 0:
-        print("\n⚠️ Some features are disabled (check dependencies)")
+        print("\n[WARNING] Some features are disabled (check dependencies)")
     else:
-        print("\n❌ No features loaded (check installation)")
+        print("\n[ERROR] No features loaded (check installation)")
         sys.exit(1)
     
     print("\nServer Endpoints:")
-    print("  • Health Check: http://localhost:8000/api/v3/health")
-    print("  • API Documentation: http://localhost:8000/docs")
+    print("  * Health Check: http://localhost:8000/api/v3/health")
+    print("  * API Documentation: http://localhost:8000/docs")
     if GRAPHQL_AVAILABLE:
-        print("  • GraphQL Playground: http://localhost:8000/graphql")
+        print("  * GraphQL Playground: http://localhost:8000/graphql")
     if WEBSOCKET_AVAILABLE:
-        print("  • WebSocket: ws://localhost:8000/ws/{student_id}")
+        print("  * WebSocket: ws://localhost:8000/ws/{student_id}")
     
     print("\nStarting server on http://0.0.0.0:8000...")
     print("=" * 70)
@@ -66,12 +66,12 @@ try:
     uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
     
 except ImportError as e:
-    print(f"\n❌ Import Error: {e}")
+    print(f"\n[ERROR] Import Error: {e}")
     print("\nMake sure you have installed all dependencies:")
     print("  pip install -r requirements.txt")
     sys.exit(1)
 except Exception as e:
-    print(f"\n❌ Error: {e}")
+    print(f"\n[ERROR] Error: {e}")
     import traceback
     traceback.print_exc()
     sys.exit(1)
