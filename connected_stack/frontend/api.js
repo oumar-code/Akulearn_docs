@@ -1,5 +1,6 @@
 // Akulearn Connected App API Service
 const BASE_URL = 'http://localhost:8000/api'; // Update this for production
+const WAVE3_BASE_URL = 'http://localhost:8000/api/v3'; // Wave 3 API
 
 // Authentication APIs
 export async function registerUser(userData) {
@@ -552,4 +553,241 @@ export async function predictPerformance(userId, subject, token) {
   });
   if (!res.ok) throw new Error('Failed to predict performance');
   return res.json();
+}
+
+// ============================================================================
+// WAVE 3 ADVANCED APIs
+// ============================================================================
+
+// Wave 3 Health & Features
+export async function getWave3Health() {
+  const res = await fetch(`${WAVE3_BASE_URL}/health`);
+  if (!res.ok) throw new Error('Wave 3 health check failed');
+  return res.json();
+}
+
+export async function getWave3Features() {
+  const res = await fetch(`${WAVE3_BASE_URL}/features`);
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 features');
+  return res.json();
+}
+
+// Wave 3 Lessons
+export async function getWave3Lessons(subject = null, grade = null, token = null) {
+  const params = new URLSearchParams();
+  if (subject) params.append('subject', subject);
+  if (grade) params.append('grade', grade);
+  
+  const res = await fetch(`${WAVE3_BASE_URL}/lessons?${params.toString()}`, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 lessons');
+  return res.json();
+}
+
+export async function getWave3Lesson(lessonId, token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/lessons/${lessonId}`, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 lesson');
+  return res.json();
+}
+
+export async function searchWave3Lessons(query, searchType = 'keyword', token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/lessons/search`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token ? { 'Authorization': `Bearer ${token}` } : {})
+    },
+    body: JSON.stringify({ query, search_type: searchType }),
+  });
+  if (!res.ok) throw new Error('Wave 3 lesson search failed');
+  return res.json();
+}
+
+// Wave 3 Recommendations
+export async function getWave3Recommendations(studentId, method = 'hybrid', limit = 5, token = null) {
+  const params = new URLSearchParams({ method, limit: limit.toString() });
+  const res = await fetch(`${WAVE3_BASE_URL}/recommendations/${studentId}?${params.toString()}`, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 recommendations');
+  return res.json();
+}
+
+export async function recordWave3Interaction(studentId, lessonId, interactionType, metadata = {}, token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/recommendations/interaction`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token ? { 'Authorization': `Bearer ${token}` } : {})
+    },
+    body: JSON.stringify({
+      student_id: studentId,
+      lesson_id: lessonId,
+      interaction_type: interactionType,
+      metadata
+    }),
+  });
+  if (!res.ok) throw new Error('Failed to record Wave 3 interaction');
+  return res.json();
+}
+
+// Wave 3 Gamification
+export async function getWave3StudentStats(studentId, token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/gamification/stats/${studentId}`, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 student stats');
+  return res.json();
+}
+
+export async function getWave3Achievements(studentId = null, token = null) {
+  const url = studentId 
+    ? `${WAVE3_BASE_URL}/gamification/achievements/${studentId}`
+    : `${WAVE3_BASE_URL}/gamification/achievements`;
+  const res = await fetch(url, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 achievements');
+  return res.json();
+}
+
+export async function getWave3Leaderboard(scope = 'global', limit = 10, token = null) {
+  const params = new URLSearchParams({ scope, limit: limit.toString() });
+  const res = await fetch(`${WAVE3_BASE_URL}/gamification/leaderboard?${params.toString()}`, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 leaderboard');
+  return res.json();
+}
+
+export async function getWave3Streak(studentId, token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/gamification/streak/${studentId}`, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 streak');
+  return res.json();
+}
+
+// Wave 3 Analytics
+export async function predictWave3Mastery(studentId, lessonId, token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/analytics/predict-mastery/${studentId}/${lessonId}`, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to predict Wave 3 mastery');
+  return res.json();
+}
+
+export async function getWave3StudyRecommendation(studentId, token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/analytics/study-recommendation/${studentId}`, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 study recommendation');
+  return res.json();
+}
+
+export async function getWave3LearningVelocity(studentId, token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/analytics/learning-velocity/${studentId}`, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 learning velocity');
+  return res.json();
+}
+
+export async function getWave3AtRiskStatus(studentId, token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/analytics/at-risk/${studentId}`, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 at-risk status');
+  return res.json();
+}
+
+// Wave 3 Progress
+export async function submitWave3Quiz(quizData, token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/progress/quiz`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token ? { 'Authorization': `Bearer ${token}` } : {})
+    },
+    body: JSON.stringify(quizData),
+  });
+  if (!res.ok) throw new Error('Failed to submit Wave 3 quiz');
+  return res.json();
+}
+
+export async function recordWave3Activity(activityData, token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/progress/activity`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token ? { 'Authorization': `Bearer ${token}` } : {})
+    },
+    body: JSON.stringify(activityData),
+  });
+  if (!res.ok) throw new Error('Failed to record Wave 3 activity');
+  return res.json();
+}
+
+export async function getWave3Mastery(studentId, lessonId, token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/progress/mastery/${studentId}/${lessonId}`, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 mastery');
+  return res.json();
+}
+
+export async function getWave3Progress(studentId, token = null) {
+  const res = await fetch(`${WAVE3_BASE_URL}/progress/${studentId}`, {
+    headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error('Failed to fetch Wave 3 progress');
+  return res.json();
+}
+
+// WebSocket connection helper
+export function createWave3WebSocket(studentId, onMessage, onError = null) {
+  const ws = new WebSocket(`ws://localhost:8000/ws/${studentId}`);
+  
+  ws.onopen = () => {
+    console.log('Wave 3 WebSocket connected');
+  };
+  
+  ws.onmessage = (event) => {
+    try {
+      const data = JSON.parse(event.data);
+      onMessage(data);
+    } catch (error) {
+      console.error('WebSocket message parse error:', error);
+    }
+  };
+  
+  ws.onerror = (error) => {
+    console.error('WebSocket error:', error);
+    if (onError) onError(error);
+  };
+  
+  ws.onclose = () => {
+    console.log('Wave 3 WebSocket disconnected');
+  };
+  
+  return ws;
+}
+
+// GraphQL query helper
+export async function queryWave3GraphQL(query, variables = {}, token = null) {
+  const res = await fetch(`http://localhost:8000/graphql`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token ? { 'Authorization': `Bearer ${token}` } : {})
+    },
+    body: JSON.stringify({ query, variables }),
+  });
+  if (!res.ok) throw new Error('GraphQL query failed');
+  const result = await res.json();
+  if (result.errors) throw new Error(result.errors[0].message);
+  return result.data;
 }
