@@ -42,6 +42,12 @@ try:
 except ImportError:
     ANALYTICS_AVAILABLE = False
 
+try:
+    from wave3_knowledge_graph import KnowledgeGraphGenerator
+    KNOWLEDGE_GRAPH_AVAILABLE = True
+except ImportError:
+    KNOWLEDGE_GRAPH_AVAILABLE = False
+
 
 def create_advanced_app() -> FastAPI:
     """Create FastAPI app with all advanced features"""
@@ -272,6 +278,101 @@ def create_advanced_app() -> FastAPI:
                 **velocity_data
             }
     
+    # Knowledge Graph endpoints
+    if KNOWLEDGE_GRAPH_AVAILABLE:
+        @app.get("/api/v3/knowledge-graph")
+        async def get_knowledge_graph(
+            subject: str = None, 
+            difficulty: str = None,
+            layout: str = "force",
+            include_topics: bool = True
+        ):
+            """
+            Get knowledge graph data for visualization
+            Layouts: force, hierarchical, circular
+            """
+            generator = KnowledgeGraphGenerator()
+            
+            # Build sample graph (replace with real database query)
+            generator.build_sample_graph()
+            
+            # Apply layout
+            if layout == "hierarchical":
+                generator.apply_hierarchical_layout()
+            elif layout == "circular":
+                generator.apply_circular_layout()
+            else:  # force-directed
+                generator.apply_force_directed_layout()
+            
+            # Export with filters
+            graph_data = generator.export_for_visualization(
+                include_topics=include_topics,
+                filter_subject=subject
+            )
+            
+            return graph_data
+        
+        @app.get("/api/v3/learning-paths")
+        async def get_learning_paths(subject: str = None):
+            """Get available learning pathways with lesson details"""
+            generator = KnowledgeGraphGenerator()
+            generator.build_sample_graph()
+            
+            # Generate learning paths
+            all_paths = []
+            lesson_ids = [node.id for node in generator.nodes.values() if node.type == "lesson"]
+            
+            if len(lesson_ids) >= 2:
+                # Generate paths between lessons
+                start_lessons = [l for l in lesson_ids if "1" in l or "Basic" in generator.nodes[l].label]
+                end_lessons = [l for l in lesson_ids if "5" in l or "Advanced" in generator.nodes[l].label]
+                
+                for start in start_lessons[:3]:  # Limit to 3 starting points
+                    for end in end_lessons[:2]:  # Limit to 2 end points
+                        if start != end:
+                            path = generator.generate_learning_path(start, end)
+                            if path:
+                                all_paths.append(path)
+            
+            # Format for frontend
+            pathways = []
+            lessons_dict = {}
+            
+            for idx, path in enumerate(all_paths[:5]):  # Limit to 5 pathways
+                start_node = generator.nodes.get(path.nodes[0])
+                end_node = generator.nodes.get(path.nodes[-1])
+                
+                pathway = {
+                    "id": f"PATH_{idx+1}",
+                    "name": f"{start_node.label} → {end_node.label}",
+                    "description": f"Learning path from {start_node.label} to {end_node.label}",
+                    "subject": start_node.subject,
+                    "difficulty": start_node.difficulty,
+                    "estimated_duration_hours": len(path.nodes) * 2,  # Estimate 2 hours per lesson
+                    "nodes": path.nodes
+                }
+                pathways.append(pathway)
+                
+                # Add lesson details
+                for node_id in path.nodes:
+                    if node_id not in lessons_dict:
+                        node = generator.nodes.get(node_id)
+                        if node:
+                            lessons_dict[node_id] = {
+                                "id": node.id,
+                                "title": node.label,
+                                "type": node.type,
+                                "subject": node.subject,
+                                "difficulty": node.difficulty,
+                                "duration_minutes": 45,  # Default duration
+                                "topics": node.topics
+                            }
+            
+            return {
+                "pathways": pathways,
+                "lessons": lessons_dict
+            }
+    
     # Feature documentation
     @app.get("/api/v3/features")
     async def list_features():
@@ -311,6 +412,18 @@ def create_advanced_app() -> FastAPI:
                 "name": "Advanced Analytics",
                 "endpoint": "/api/v3/analytics/*",
                 "description": "Predictive mastery, at-risk identification, optimal study time"
+            })
+        
+        if KNOWLEDGE_GRAPH_AVAILABLE:
+            features.append({
+                "name": "Knowledge Graph Visualization",
+                "endpoint": "/api/v3/knowledge-graph",
+                "description": "Interactive graph showing lessons, connections, and learning pathways"
+            })
+            features.append({
+                "name": "Learning Pathways",
+                "endpoint": "/api/v3/learning-paths",
+                "description": "Curated sequential learning paths with lesson details"
             })
         
         return {
