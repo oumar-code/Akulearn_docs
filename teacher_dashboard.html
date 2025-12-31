@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - Akulearn</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .welcome {
+            font-size: 32px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .class-selector {
+            display: flex;
+            gap: 8px;
+        }
+
+        .class-btn {
+            padding: 12px 20px;
+            background: #f3f4f6;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .class-btn.active {
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            color: white;
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .stat-card {
+            padding: 20px;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            color: white;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .stat-change {
+            font-size: 12px;
+            margin-top: 4px;
+            opacity: 0.8;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 20px;
+            color: #111827;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .student-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: #f9fafb;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .student-item:hover {
+            background: #f3f4f6;
+            transform: translateX(4px);
+        }
+
+        .student-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .student-info {
+            flex: 1;
+        }
+
+        .student-name {
+            font-weight: 600;
+            color: #111827;
+            font-size: 15px;
+        }
+
+        .student-meta {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .alert-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .alert-badge.danger {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .alert-badge.warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .alert-badge.success {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .assignment-item {
+            padding: 16px;
+            background: #f9fafb;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .assignment-item:hover {
+            background: #f3f4f6;
+        }
+
+        .assignment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .assignment-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .assignment-status {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-grading {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-completed {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .assignment-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .progress-ring {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+        }
+
+        .progress-ring svg {
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring circle {
+            fill: none;
+            stroke-width: 8;
+        }
+
+        .progress-ring .bg {
+            stroke: #e5e7eb;
+        }
+
+        .progress-ring .progress {
+            stroke: url(#gradient);
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.5s;
+        }
+
+        .progress-ring .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .action-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 12px;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(6, 182, 212, 0.4);
+        }
+
+        .action-btn.secondary {
+            background: white;
+            color: #06b6d4;
+            border: 2px solid #06b6d4;
+        }
+
+        .notification-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px;
+            background: #f9fafb;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            border-left: 4px solid #06b6d4;
+        }
+
+        .notification-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .notification-content {
+            flex: 1;
+        }
+
+        .notification-text {
+            font-size: 14px;
+            color: #111827;
+            margin-bottom: 4px;
+        }
+
+        .notification-time {
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .quick-action-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .quick-action {
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quick-action:hover {
+            background: #f3f4f6;
+            transform: translateY(-4px);
+        }
+
+        .quick-action-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .quick-action-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        @media (max-width: 1024px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <div class="header-top">
+                <div>
+                    <h1 class="welcome">Teacher Dashboard 👨‍🏫</h1>
+                    <p style="color: #6b7280; margin-top: 8px;">Ms. Johnson's Classes · Spring 2025</p>
+                </div>
+                <div class="class-selector">
+                    <button class="class-btn active" onclick="selectClass('10A')">Class 10A</button>
+                    <button class="class-btn" onclick="selectClass('10B')">Class 10B</button>
+                    <button class="class-btn" onclick="selectClass('11A')">Class 11A</button>
+                </div>
+            </div>
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <div class="stat-value">32</div>
+                    <div class="stat-label">Total Students</div>
+                    <div class="stat-change">↑ 2 from last term</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">87%</div>
+                    <div class="stat-label">Class Average</div>
+                    <div class="stat-change">↑ 3% this week</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Pending Grades</div>
+                    <div class="stat-change">Due in 2 days</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">At-Risk Students</div>
+                    <div class="stat-change">Need attention</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- Class Performance -->
+            <div class="card" style="grid-column: span 2;">
+                <h2>📊 Class Performance Trends</h2>
+                <canvas id="performanceChart" width="400" height="200"></canvas>
+            </div>
+
+            <!-- At-Risk Students -->
+            <div class="card">
+                <h2>⚠️ Students Needing Attention</h2>
+                <div class="student-item" onclick="viewStudent('S1')">
+                    <div class="student-avatar">JD</div>
+                    <div class="student-info">
+                        <div class="student-name">John Doe</div>
+                        <div class="student-meta">Attendance: 65% · Last active: 5 days ago</div>
+                    </div>
+                    <div class="alert-badge danger">High Risk</div>
+                </div>
+                <div class="student-item" onclick="viewStudent('S2')">
+                    <div class="student-avatar">ES</div>
+                    <div class="student-info">
+                        <div class="student-name">Emily Smith</div>
+                        <div class="student-meta">Math performance declining · 2 missed assignments</div>
+                    </div>
+                    <div class="alert-badge warning">Medium Risk</div>
+                </div>
+                <div class="student-item" onclick="viewStudent('S3')">
+                    <div class="student-avatar">MR</div>
+                    <div class="student-info">
+                        <div class="student-name">Michael Roberts</div>
+                        <div class="student-meta">Quiz scores below 70% · Needs help</div>
+                    </div>
+                    <div class="alert-badge warning">Medium Risk</div>
+                </div>
+                <button class="action-btn" onclick="viewAllRisks()">View All At-Risk Students</button>
+            </div>
+
+            <!-- Recent Notifications -->
+            <div class="card">
+                <h2>🔔 Recent Notifications</h2>
+                <div class="notification-item">
+                    <div class="notification-icon">📝</div>
+                    <div class="notification-content">
+                        <div class="notification-text">12 new quiz submissions to grade</div>
+                        <div class="notification-time">10 minutes ago</div>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <div class="notification-icon">🎯</div>
+                    <div class="notification-content">
+                        <div class="notification-text">Sarah Chen achieved perfect score!</div>
+                        <div class="notification-time">1 hour ago</div>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <div class="notification-icon">⚠️</div>
+                    <div class="notification-content">
+                        <div class="notification-text">Assignment deadline reminder: Tomorrow</div>
+                        <div class="notification-time">2 hours ago</div>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <div class="notification-icon">💬</div>
+                    <div class="notification-content">
+                        <div class="notification-text">3 new parent messages</div>
+                        <div class="notification-time">3 hours ago</div>
+                    </div>
+                </div>
+                <button class="action-btn secondary" onclick="viewAllNotifications()">View All</button>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- Assignments to Grade -->
+            <div class="card">
+                <h2>📋 Assignments to Grade</h2>
+                <div class="assignment-item" onclick="gradeAssignment('A1')">
+                    <div class="assignment-header">
+                        <div class="assignment-title">Quadratic Equations Quiz</div>
+                        <div class="assignment-status status-grading">12 Submitted</div>
+                    </div>
+                    <div class="assignment-meta">
+                        <span>📅 Due: Dec 28</span>
+                        <span>👥 32 students</span>
+                        <span>⏰ 2 days left</span>
+                    </div>
+                </div>
+                <div class="assignment-item" onclick="gradeAssignment('A2')">
+                    <div class="assignment-header">
+                        <div class="assignment-title">Physics Lab Report</div>
+                        <div class="assignment-status status-pending">8 Submitted</div>
+                    </div>
+                    <div class="assignment-meta">
+                        <span>📅 Due: Dec 30</span>
+                        <span>👥 28 students</span>
+                        <span>⏰ 4 days left</span>
+                    </div>
+                </div>
+                <div class="assignment-item" onclick="gradeAssignment('A3')">
+                    <div class="assignment-header">
+                        <div class="assignment-title">Algebra Final Exam</div>
+                        <div class="assignment-status status-completed">32 Graded</div>
+                    </div>
+                    <div class="assignment-meta">
+                        <span>📅 Completed</span>
+                        <span>👥 32 students</span>
+                        <span>✅ Done</span>
+                    </div>
+                </div>
+                <button class="action-btn" onclick="startGrading()">Start Grading Session</button>
+            </div>
+
+            <!-- Class Attendance -->
+            <div class="card">
+                <h2>👥 Class Attendance</h2>
+                <div class="progress-ring">
+                    <svg width="120" height="120">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#06b6d4"/>
+                                <stop offset="100%" style="stop-color:#3b82f6"/>
+                            </linearGradient>
+                        </defs>
+                        <circle class="bg" cx="60" cy="60" r="52"/>
+                        <circle class="progress" cx="60" cy="60" r="52"
+                                stroke-dasharray="327" 
+                                stroke-dashoffset="65"/>
+                    </svg>
+                    <div class="text">80%</div>
+                </div>
+                <div style="text-align: center; margin-top: 16px; color: #6b7280;">
+                    <p style="font-size: 14px;">26 of 32 students present today</p>
+                </div>
+                <canvas id="attendanceChart" width="300" height="150" style="margin-top: 20px;"></canvas>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="card">
+                <h2>⚡ Quick Actions</h2>
+                <div class="quick-action-grid">
+                    <div class="quick-action" onclick="createAssignment()">
+                        <div class="quick-action-icon">📝</div>
+                        <div class="quick-action-label">New Assignment</div>
+                    </div>
+                    <div class="quick-action" onclick="sendMessage()">
+                        <div class="quick-action-icon">💬</div>
+                        <div class="quick-action-label">Message Class</div>
+                    </div>
+                    <div class="quick-action" onclick="scheduleQuiz()">
+                        <div class="quick-action-icon">🎯</div>
+                        <div class="quick-action-label">Schedule Quiz</div>
+                    </div>
+                    <div class="quick-action" onclick="generateReport()">
+                        <div class="quick-action-icon">📊</div>
+                        <div class="quick-action-label">Generate Report</div>
+                    </div>
+                    <div class="quick-action" onclick="viewAnalytics()">
+                        <div class="quick-action-icon">📈</div>
+                        <div class="quick-action-label">Analytics</div>
+                    </div>
+                    <div class="quick-action" onclick="exportGrades()">
+                        <div class="quick-action-icon">💾</div>
+                        <div class="quick-action-label">Export Grades</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Performers -->
+            <div class="card">
+                <h2>⭐ Top Performers This Week</h2>
+                <div class="student-item" onclick="viewStudent('SP1')">
+                    <div class="student-avatar" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">SC</div>
+                    <div class="student-info">
+                        <div class="student-name">Sarah Chen</div>
+                        <div class="student-meta">Perfect scores on all quizzes · 7-day streak</div>
+                    </div>
+                    <div class="alert-badge success">🏆</div>
+                </div>
+                <div class="student-item" onclick="viewStudent('SP2')">
+                    <div class="student-avatar" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">DL</div>
+                    <div class="student-info">
+                        <div class="student-name">David Lee</div>
+                        <div class="student-meta">95% average · Completed all assignments early</div>
+                    </div>
+                    <div class="alert-badge success">🌟</div>
+                </div>
+                <div class="student-item" onclick="viewStudent('SP3')">
+                    <div class="student-avatar" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">EW</div>
+                    <div class="student-info">
+                        <div class="student-name">Emma Wilson</div>
+                        <div class="student-meta">Most improved · +15% this month</div>
+                    </div>
+                    <div class="alert-badge success">📈</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Performance Chart
+        const perfCtx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(perfCtx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'],
+                datasets: [
+                    {
+                        label: 'Class Average',
+                        data: [78, 82, 84, 85, 87],
+                        borderColor: '#06b6d4',
+                        backgroundColor: 'rgba(6, 182, 212, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    },
+                    {
+                        label: 'Attendance Rate',
+                        data: [85, 82, 88, 79, 80],
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+
+        // Attendance Chart
+        const attCtx = document.getElementById('attendanceChart').getContext('2d');
+        new Chart(attCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                datasets: [{
+                    label: 'Present',
+                    data: [28, 30, 26, 29, 26],
+                    backgroundColor: 'rgba(6, 182, 212, 0.8)'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, max: 32 }
+                }
+            }
+        });
+
+        // Interactive functions
+        function selectClass(className) {
+            document.querySelectorAll('.class-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            alert(`Switched to ${className}\nLoading class data...`);
+        }
+
+        function viewStudent(studentId) {
+            alert(`Opening detailed view for student: ${studentId}\nView progress, grades, and analytics!`);
+        }
+
+        function viewAllRisks() {
+            alert('Opening at-risk students dashboard...\nDetailed interventions and recommendations!');
+        }
+
+        function viewAllNotifications() {
+            alert('Opening notifications center...\nAll alerts and updates!');
+        }
+
+        function gradeAssignment(assignmentId) {
+            alert(`Opening grading interface for: ${assignmentId}\nQuick grade, add feedback, and view submissions!`);
+        }
+
+        function startGrading() {
+            alert('Starting grading session...\nBatch grade multiple assignments efficiently!');
+        }
+
+        function createAssignment() {
+            alert('Opening assignment creator...\nCreate quizzes, homework, and projects!');
+        }
+
+        function sendMessage() {
+            alert('Opening message composer...\nSend announcements to the whole class!');
+        }
+
+        function scheduleQuiz() {
+            alert('Opening quiz scheduler...\nCreate and schedule new assessments!');
+        }
+
+        function generateReport() {
+            alert('Opening report generator...\nComprehensive class performance reports!');
+        }
+
+        function viewAnalytics() {
+            alert('Opening analytics dashboard...\nDetailed insights and visualizations!');
+        }
+
+        function exportGrades() {
+            alert('Exporting grades...\nDownload as CSV or Excel format!');
+        }
+    </script>
+</body>
+</html>
