@@ -48,6 +48,12 @@ try:
 except ImportError:
     KNOWLEDGE_GRAPH_AVAILABLE = False
 
+try:
+    from wave3_content_service import ContentService, get_content_service
+    CONTENT_SERVICE_AVAILABLE = True
+except ImportError:
+    CONTENT_SERVICE_AVAILABLE = False
+
 
 def create_advanced_app() -> FastAPI:
     """Create FastAPI app with all advanced features"""
@@ -89,6 +95,9 @@ def create_advanced_app() -> FastAPI:
     if ANALYTICS_AVAILABLE:
         app.state.analytics_engine = AdvancedAnalytics()
     
+    if CONTENT_SERVICE_AVAILABLE:
+        app.state.content_service = get_content_service()
+    
     # Health check
     @app.get("/api/v3/health")
     async def health_check():
@@ -101,7 +110,8 @@ def create_advanced_app() -> FastAPI:
                 "graphql": GRAPHQL_AVAILABLE,
                 "recommendations": RECOMMENDATIONS_AVAILABLE,
                 "gamification": GAMIFICATION_AVAILABLE,
-                "analytics": ANALYTICS_AVAILABLE
+                "analytics": ANALYTICS_AVAILABLE,
+                "content_service": CONTENT_SERVICE_AVAILABLE
             }
         }
     
@@ -373,6 +383,169 @@ def create_advanced_app() -> FastAPI:
                 "lessons": lessons_dict
             }
     
+    # Content Management endpoints
+    if CONTENT_SERVICE_AVAILABLE:
+        @app.get("/api/v3/content")
+        async def get_all_content(limit: int = 50, offset: int = 0):
+            """Get all content with pagination"""
+            service = app.state.content_service
+            return service.get_all_content(limit, offset)
+        
+        @app.get("/api/v3/content/{content_id}")
+        async def get_content(content_id: str):
+            """Get specific content item by ID"""
+            service = app.state.content_service
+            content = service.get_content_by_id(content_id)
+            
+            if content:
+                # Increment view count
+                service.update_content_views(content_id)
+                return content
+            
+            return {"error": "Content not found", "content_id": content_id}
+        
+        @app.get("/api/v3/content/subject/{subject}")
+        async def get_content_by_subject(subject: str, limit: int = 50):
+            """Get content for a specific subject"""
+            service = app.state.content_service
+            content = service.get_content_by_subject(subject, limit)
+            
+            return {
+                "subject": subject,
+                "count": len(content),
+                "content": content
+            }
+        
+        @app.get("/api/v3/content/subject/{subject}/topic/{topic}")
+        async def get_content_by_topic(subject: str, topic: str, limit: int = 50):
+            """Get content for a specific subject and topic"""
+            service = app.state.content_service
+            content = service.get_content_by_topic(subject, topic, limit)
+            
+            return {
+                "subject": subject,
+                "topic": topic,
+                "count": len(content),
+                "content": content
+            }
+        
+        @app.get("/api/v3/content/difficulty/{difficulty}")
+        async def get_content_by_difficulty(difficulty: str, limit: int = 50):
+            """Get content filtered by difficulty (basic, intermediate, advanced)"""
+            service = app.state.content_service
+            content = service.get_content_by_difficulty(difficulty, limit)
+            
+            return {
+                "difficulty": difficulty,
+                "count": len(content),
+                "content": content
+            }
+        
+        @app.get("/api/v3/content/type/{content_type}")
+        async def get_content_by_type(content_type: str, limit: int = 50):
+            """Get content filtered by type (study_guide, reference, tutorial, etc.)"""
+            service = app.state.content_service
+            content = service.get_content_by_type(content_type, limit)
+            
+            return {
+                "content_type": content_type,
+                "count": len(content),
+                "content": content
+            }
+        
+        @app.get("/api/v3/content/search")
+        async def search_content(q: str, limit: int = 20):
+            """Search content by title, topic, or tags"""
+            service = app.state.content_service
+            results = service.search_content(q, limit)
+            
+            return {
+                "query": q,
+                "count": len(results),
+                "results": results
+            }
+        
+        @app.get("/api/v3/subjects")
+        async def get_subjects():
+            """Get list of all available subjects"""
+            service = app.state.content_service
+            subjects = service.get_subjects()
+            
+            return {
+                "count": len(subjects),
+                "subjects": subjects
+            }
+        
+        @app.get("/api/v3/subjects/{subject}/topics")
+        async def get_topics(subject: str):
+            """Get list of topics for a subject"""
+            service = app.state.content_service
+            topics = service.get_topics_by_subject(subject)
+            
+            return {
+                "subject": subject,
+                "count": len(topics),
+                "topics": topics
+            }
+        
+        @app.get("/api/v3/content/statistics")
+        async def get_statistics():
+            """Get content statistics"""
+            service = app.state.content_service
+            stats = service.get_content_statistics()
+            
+            return {
+                "statistics": stats
+            }
+        
+        @app.post("/api/v3/content/{content_id}/like")
+        async def like_content(content_id: str):
+            """Like a content item"""
+            service = app.state.content_service
+            success = service.update_content_likes(content_id, 1)
+            
+            if success:
+                content = service.get_content_by_id(content_id)
+                return {
+                    "status": "liked",
+                    "content_id": content_id,
+                    "likes": content.get('likes', 0)
+                }
+            
+            return {"error": "Content not found"}
+        
+        @app.post("/api/v3/content/{content_id}/complete")
+        async def complete_content(content_id: str, completion_rate: float = 1.0):
+            """Mark content as completed with completion rate"""
+            service = app.state.content_service
+            success = service.update_completion_rate(content_id, completion_rate)
+            
+            if success:
+                return {
+                    "status": "updated",
+                    "content_id": content_id,
+                    "completion_rate": completion_rate
+                }
+            
+            return {"error": "Content not found"}
+        
+        @app.get("/api/v3/content/recommended")
+        async def get_recommended_content(
+            student_level: str = "SS2",
+            subject: str = None,
+            limit: int = 5
+        ):
+            """Get recommended content for student"""
+            service = app.state.content_service
+            recommendations = service.get_recommended_content(student_level, subject, limit)
+            
+            return {
+                "student_level": student_level,
+                "subject": subject,
+                "count": len(recommendations),
+                "recommendations": recommendations
+            }
+    
     # Feature documentation
     @app.get("/api/v3/features")
     async def list_features():
@@ -426,6 +599,13 @@ def create_advanced_app() -> FastAPI:
                 "description": "Curated sequential learning paths with lesson details"
             })
         
+        if CONTENT_SERVICE_AVAILABLE:
+            features.append({
+                "name": "Content Management",
+                "endpoint": "/api/v3/content",
+                "description": "Educational content library with search, filtering, and recommendations"
+            })
+        
         return {
             "version": "3.0.0",
             "total_features": len(features),
@@ -449,10 +629,12 @@ if __name__ == "__main__":
     print(f"  • Recommendations: {RECOMMENDATIONS_AVAILABLE}")
     print(f"  • Gamification: {GAMIFICATION_AVAILABLE}")
     print(f"  • Analytics: {ANALYTICS_AVAILABLE}")
+    print(f"  • Content Service: {CONTENT_SERVICE_AVAILABLE}")
     print("\nEndpoints:")
     print("  • API Docs: http://localhost:8000/docs")
     print("  • GraphQL: http://localhost:8000/graphql")
     print("  • WebSocket: ws://localhost:8000/ws/{student_id}")
+    print("  • Content: http://localhost:8000/api/v3/content")
     print("\nStarting server on http://0.0.0.0:8000")
     print("="*70)
     
