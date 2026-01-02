@@ -2,7 +2,7 @@
   "metadata": {
     "version": "3.0.0",
     "generated_at": "2026-01-01T06:40:02.984645",
-    "total_items": 27,
+    "total_items": 32,
     "statistics": {
       "total_imported": 27,
       "by_subject": {
@@ -23,7 +23,8 @@
         "advanced": 5
       },
       "errors": []
-    }
+    },
+    "last_updated": "2026-01-02T06:53:22.303217"
   },
   "content": [
     {
@@ -66,7 +67,7 @@
       "created_at": "2026-01-01T06:40:01.927089",
       "updated_at": "2026-01-01T06:40:01.927125",
       "status": "published",
-      "views": 0,
+      "views": 1,
       "likes": 0,
       "completion_rate": 0.0
     },
@@ -1250,6 +1251,373 @@
       "views": 0,
       "likes": 0,
       "completion_rate": 0.0
+    },
+    {
+      "id": "math_quadratic_equations_enhanced",
+      "title": "Quadratic Equations: Complete Guide with Solutions",
+      "subject": "Mathematics",
+      "topic": "Quadratic Equations",
+      "subtopic": "Solving Methods and Applications",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Quadratic Equations: Mastery Guide\n\n## 1. Introduction\n\nA **quadratic equation** is a polynomial equation of degree 2, written in the standard form:\n\n**ax² + bx + c = 0**\n\nWhere:\n- a, b, c are constants (a ≠ 0)\n- x is the variable\n- a is the coefficient of x²\n- b is the coefficient of x\n- c is the constant term\n\n## 2. Methods of Solving Quadratic Equations\n\n### Method 1: Factorization\n\n**When to use**: When the equation can be easily factored\n\n**Steps**:\n1. Write equation in standard form (ax² + bx + c = 0)\n2. Factor the left side into two binomials\n3. Set each factor equal to zero\n4. Solve for x\n\n**Example**: x² - 5x + 6 = 0\n- Factor: (x - 2)(x - 3) = 0\n- Solutions: x = 2 or x = 3\n\n### Method 2: Completing the Square\n\n**When to use**: When factorization is difficult, or to derive the quadratic formula\n\n**Steps**:\n1. Move constant to right side\n2. Make coefficient of x² equal to 1\n3. Add (b/2)² to both sides\n4. Take square root of both sides\n5. Solve for x\n\n**Example**: x² + 6x + 5 = 0\n- x² + 6x = -5\n- x² + 6x + 9 = -5 + 9\n- (x + 3)² = 4\n- x + 3 = ±2\n- x = -3 ± 2\n- Solutions: x = -1 or x = -5\n\n### Method 3: Quadratic Formula (Most Powerful!)\n\nFor any quadratic equation ax² + bx + c = 0:\n\n**x = [-b ± √(b² - 4ac)] / 2a**\n\n**Discriminant (Δ)**: b² - 4ac\n\nNature of roots:\n- If Δ > 0: Two distinct real roots\n- If Δ = 0: One repeated real root\n- If Δ < 0: No real roots (complex roots)\n\n## 3. Nigerian Context Examples\n\n### Example 1: Market Pricing (Lagos)\nA trader at Idumota Market sells phones. The profit P (in Naira) is given by:\nP = -2x² + 120x - 1000\n\nWhere x is the number of phones sold per day.\n\n**Question**: How many phones should be sold to break even (P = 0)?\n\n**Solution**:\n-2x² + 120x - 1000 = 0\nDivide by -2: x² - 60x + 500 = 0\n\nUsing quadratic formula:\nx = [60 ± √(3600 - 2000)] / 2\nx = [60 ± √1600] / 2\nx = [60 ± 40] / 2\n\nx = 50 or x = 10\n\n**Answer**: The trader breaks even by selling either 10 or 50 phones per day.\n\n### Example 2: Construction (Abuja)\nA rectangular plot in Abuja has length 5m more than its width. The area is 300m².\n\n**Find**: The dimensions of the plot.\n\n**Solution**:\nLet width = x meters\nLength = (x + 5) meters\nArea: x(x + 5) = 300\nx² + 5x - 300 = 0\n\nFactor or use formula:\nx = [-5 ± √(25 + 1200)] / 2\nx = [-5 ± 35] / 2\n\nx = 15 or x = -20 (reject negative)\n\n**Answer**: Width = 15m, Length = 20m\n\n## 4. Graphing Quadratic Functions\n\nThe graph of y = ax² + bx + c is a **parabola**.\n\n**Key Features**:\n- **Vertex**: Turning point at x = -b/2a\n- **Axis of symmetry**: Vertical line through vertex\n- **Y-intercept**: Point (0, c)\n- **X-intercepts**: Roots of the equation\n\n**Direction**:\n- If a > 0: Opens upward (U-shape)\n- If a < 0: Opens downward (∩-shape)\n\n## 5. Exam Tips for WAEC\n\n✅ **Always check your discriminant first** - it tells you how many solutions to expect\n\n✅ **Show all working** - even if you use calculator, write down the formula and substitution\n\n✅ **Check your solutions** by substituting back into the original equation\n\n✅ **Watch for word problems** - translate Nigerian context into equations carefully\n\n✅ **Remember units** - if the problem mentions Naira (₦), meters, or time, include units in your answer\n\n## 6. Common Mistakes to Avoid\n\n❌ Forgetting the ± sign in the quadratic formula\n❌ Arithmetic errors when calculating discriminant\n❌ Dividing by 2a instead of 2 in the formula\n❌ Not writing equation in standard form first\n❌ Accepting negative solutions for length, time, or quantity problems\n\n## 7. Practice Problems (Self-Check)\n\nSolve using any method:\n\n1. x² - 7x + 12 = 0\n2. 2x² + 5x - 3 = 0\n3. x² - 6x + 9 = 0\n4. x² + 4x + 5 = 0 (Find nature of roots)\n\n**Challenge Problem**: \nA ball is thrown upward from ground level in Port Harcourt. Its height h (in meters) after t seconds is:\nh = -5t² + 20t\n\nFind: (a) Maximum height reached\n      (b) Time when ball hits the ground\n\n## Summary\n\n- Three main solving methods: Factorization, Completing the Square, Quadratic Formula\n- Discriminant determines nature of roots\n- Real-world applications: projectiles, area, profit maximization\n- Always check your work by substitution\n",
+      "summary": "A **quadratic equation** is a polynomial equation of degree 2, written in the standard form:",
+      "learning_objectives": [
+        "Solve quadratic equations using three methods",
+        "Determine nature of roots using discriminant",
+        "Apply quadratic equations to real-world problems",
+        "Sketch parabolas and identify key features"
+      ],
+      "prerequisites": [
+        "Factorization",
+        "Basic algebra"
+      ],
+      "estimated_read_time": 25,
+      "worked_examples": [
+        {
+          "problem": "Solve: x² + 7x + 10 = 0",
+          "solution": "Step 1: Factor → (x + 2)(x + 5) = 0\nStep 2: Set each factor to zero → x + 2 = 0 or x + 5 = 0\nStep 3: Solve → x = -2 or x = -5",
+          "answer": "x = -2 or x = -5"
+        },
+        {
+          "problem": "Solve using quadratic formula: 2x² - 3x - 2 = 0",
+          "solution": "a = 2, b = -3, c = -2\nΔ = b² - 4ac = 9 + 16 = 25\nx = [3 ± √25] / 4 = [3 ± 5] / 4\nx = 8/4 or -2/4",
+          "answer": "x = 2 or x = -0.5"
+        },
+        {
+          "problem": "A rectangular garden in Kano has area 48m². Length is 2m more than width. Find dimensions.",
+          "solution": "Let width = x\nLength = x + 2\nArea: x(x + 2) = 48\nx² + 2x - 48 = 0\nFactor: (x + 8)(x - 6) = 0\nx = 6 (reject -8)",
+          "answer": "Width = 6m, Length = 8m"
+        }
+      ],
+      "practice_problems": [
+        {
+          "question": "Solve: x² - 9 = 0",
+          "difficulty": "basic",
+          "answer": "x = 3 or x = -3",
+          "hint": "This is a difference of squares"
+        },
+        {
+          "question": "Solve: x² + 10x + 25 = 0",
+          "difficulty": "basic",
+          "answer": "x = -5 (repeated root)",
+          "hint": "Perfect square trinomial"
+        },
+        {
+          "question": "Find the discriminant and nature of roots: 3x² - 2x + 5 = 0",
+          "difficulty": "intermediate",
+          "answer": "Δ = -56 (no real roots)",
+          "hint": "Calculate b² - 4ac"
+        },
+        {
+          "question": "A phone seller in Aba has profit function P = -x² + 40x - 300 (in thousands of ₦). Find break-even points.",
+          "difficulty": "advanced",
+          "answer": "x = 10 or x = 30 phones",
+          "hint": "Set P = 0 and solve"
+        }
+      ],
+      "diagrams": [
+        "generated_content\\diagrams\\math_quadratic_equations_enhanced_parabola.png"
+      ],
+      "videos": [],
+      "interactive_elements": [],
+      "nigerian_context": "In Lagos, a projectile launcher costs ₦15,000...",
+      "real_world_applications": [],
+      "views": 0,
+      "likes": 0,
+      "completion_rate": 0.0,
+      "average_rating": 0.0,
+      "total_ratings": 0,
+      "created_at": "2026-01-02T02:11:39.843291",
+      "updated_at": "2026-01-02T06:53:22.210898",
+      "status": "published",
+      "tags": [
+        "mathematics",
+        "quadratic_equations",
+        "intermediate",
+        "waec",
+        "with_diagrams",
+        "worked_examples",
+        "practice_problems"
+      ],
+      "source": "pilot_content_generator",
+      "version": "1.0"
+    },
+    {
+      "id": "physics_current_electricity_enhanced",
+      "title": "Current Electricity: Circuits and Ohm's Law",
+      "subject": "Physics",
+      "topic": "Current Electricity",
+      "subtopic": "Series and Parallel Circuits",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Current Electricity: Complete Guide\n\n## 1. Fundamental Concepts\n\n### Electric Current (I)\n- **Definition**: Rate of flow of electric charge\n- **Formula**: I = Q/t\n- **Unit**: Ampere (A) or Coulomb per second (C/s)\n- **Direction**: Conventional current flows from positive to negative\n\n### Potential Difference/Voltage (V)\n- **Definition**: Work done per unit charge\n- **Formula**: V = W/Q\n- **Unit**: Volt (V) or Joule per Coulomb (J/C)\n- **Meaning**: \"Electrical pressure\" that pushes charges\n\n### Resistance (R)\n- **Definition**: Opposition to current flow\n- **Formula**: R = ρL/A (where ρ = resistivity, L = length, A = area)\n- **Unit**: Ohm (Ω)\n- **Factors**: Material, length, cross-sectional area, temperature\n\n## 2. Ohm's Law ⭐⭐⭐\n\n**V = IR**\n\nMost important formula in electricity!\n\nIf you know any two quantities, you can find the third:\n- V = IR (voltage equals current times resistance)\n- I = V/R (current equals voltage divided by resistance)\n- R = V/I (resistance equals voltage divided by current)\n\n## 3. Series Circuits\n\n**Characteristics**:\n- Current is **same** through all components: I = I₁ = I₂ = I₃\n- Voltage is **shared**: V = V₁ + V₂ + V₃\n- Total resistance **adds up**: Rtotal = R₁ + R₂ + R₃\n\n**When to use**: Christmas lights, simple torch circuits\n\n## 4. Parallel Circuits\n\n**Characteristics**:\n- Voltage is **same** across all branches: V = V₁ = V₂ = V₃\n- Current is **shared**: I = I₁ + I₂ + I₃\n- Reciprocal of total resistance: 1/Rtotal = 1/R₁ + 1/R₂ + 1/R₃\n\n**When to use**: Home wiring, appliances that need same voltage\n\n## 5. Electrical Power and Energy\n\n**Power Formulas**:\n- P = VI (most common)\n- P = I²R (useful when you know current and resistance)\n- P = V²/R (useful when you know voltage and resistance)\n\n**Energy**: E = Pt (Energy = Power × Time)\n\n**Cost of Electricity** (Nigerian Context):\nCost = Energy (kWh) × Tariff (₦/kWh)\n\n## 6. Nigerian Context: NEPA/PHCN Calculations\n\n### Example: Monthly Electricity Bill in Lagos\n\n**Appliances in a home**:\n- 5 LED bulbs (10W each) × 6 hours/day\n- 1 Fan (75W) × 8 hours/day\n- 1 TV (100W) × 4 hours/day\n- 1 Fridge (150W) × 24 hours/day\n\n**Monthly consumption**:\n- Bulbs: 5 × 10W × 6h × 30 days = 9 kWh\n- Fan: 75W × 8h × 30 = 18 kWh\n- TV: 100W × 4h × 30 = 12 kWh\n- Fridge: 150W × 24h × 30 = 108 kWh\n- **Total**: 147 kWh/month\n\n**Cost** (at ₦68/kWh):\n147 kWh × ₦68 = ₦9,996 per month\n\n## 7. WAEC Exam Tips\n\n✅ **Always write formulas first** - shows you know the concept\n\n✅ **List given values** - helps you organize your solution\n\n✅ **Show unit conversions** - mA to A, kW to W, etc.\n\n✅ **Draw circuit diagrams** when asked - label all components\n\n✅ **Check your answer** - Does the current make sense? Is resistance positive?\n\n## 8. Common Mistakes\n\n❌ Forgetting to convert units (mA to A, kW to W)\n❌ Using series formulas for parallel circuits (and vice versa)\n❌ Mixing up voltage division vs current division\n❌ Not showing working - even if you use calculator\n❌ Wrong formula for parallel resistance (don't just add!)\n\n## Summary\n\n- Ohm's Law: V = IR (memorize this!)\n- Series: Same current, voltage adds\n- Parallel: Same voltage, current adds\n- Power: P = VI = I²R = V²/R\n- Practice with Nigerian context problems\n",
+      "summary": "- **Definition**: Rate of flow of electric charge",
+      "learning_objectives": [
+        "Apply Ohm's Law to calculate V, I, and R",
+        "Analyze series and parallel circuits",
+        "Calculate power consumption and cost",
+        "Solve WAEC-style circuit problems"
+      ],
+      "prerequisites": [
+        "Basic electricity",
+        "Mathematics"
+      ],
+      "estimated_read_time": 30,
+      "worked_examples": [
+        {
+          "problem": "A bulb has resistance 240Ω and is connected to 240V mains. Calculate current.",
+          "solution": "Given: V = 240V, R = 240Ω\nUsing Ohm's Law: I = V/R\nI = 240/240 = 1A",
+          "answer": "Current = 1A"
+        },
+        {
+          "problem": "Three resistors 2Ω, 3Ω, and 5Ω are connected in series to a 20V battery. Find total resistance and current.",
+          "solution": "Series: Rtotal = R₁ + R₂ + R₃\nRtotal = 2 + 3 + 5 = 10Ω\nI = V/R = 20/10 = 2A",
+          "answer": "Rtotal = 10Ω, I = 2A"
+        },
+        {
+          "problem": "A Nigerian home uses a 1.5kW heater for 3 hours daily. If electricity costs ₦65/kWh, find monthly cost (30 days).",
+          "solution": "Daily energy = 1.5kW × 3h = 4.5kWh\nMonthly energy = 4.5 × 30 = 135kWh\nCost = 135 × ₦65 = ₦8,775",
+          "answer": "Monthly cost = ₦8,775"
+        }
+      ],
+      "practice_problems": [
+        {
+          "question": "Calculate the voltage across a 50Ω resistor when 0.5A flows through it.",
+          "difficulty": "basic",
+          "answer": "V = 25V",
+          "hint": "Use Ohm's Law: V = IR"
+        },
+        {
+          "question": "Two resistors 4Ω and 6Ω are in parallel. Find the equivalent resistance.",
+          "difficulty": "intermediate",
+          "answer": "Req = 2.4Ω",
+          "hint": "Use 1/Req = 1/R₁ + 1/R₂"
+        },
+        {
+          "question": "A NEPA prepaid meter shows 50 kWh remaining. How many hours can you run a 2kW air conditioner?",
+          "difficulty": "intermediate",
+          "answer": "25 hours",
+          "hint": "Time = Energy / Power"
+        }
+      ],
+      "diagrams": [
+        "generated_content\\diagrams\\physics_current_electricity_enhanced_circuits.png"
+      ],
+      "videos": [],
+      "interactive_elements": [],
+      "nigerian_context": "NEPA/PHCN power calculations for Nigerian homes...",
+      "real_world_applications": [],
+      "views": 0,
+      "likes": 0,
+      "completion_rate": 0.0,
+      "average_rating": 0.0,
+      "total_ratings": 0,
+      "created_at": "2026-01-02T02:11:45.453745",
+      "updated_at": "2026-01-02T06:53:22.302634",
+      "status": "published",
+      "tags": [
+        "physics",
+        "current_electricity",
+        "intermediate",
+        "waec",
+        "with_diagrams",
+        "worked_examples",
+        "practice_problems",
+        "nigerian_context"
+      ],
+      "source": "pilot_content_generator",
+      "version": "1.0"
+    },
+    {
+      "id": "chemistry_chemical_bonding_enhanced",
+      "title": "Chemical Bonding: Ionic, Covalent, and Metallic",
+      "subject": "Chemistry",
+      "topic": "Chemical Bonding",
+      "subtopic": "Types of Chemical Bonds",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Chemical Bonding: Complete Guide\n\n## 1. Why Atoms Bond\n\nAtoms bond to achieve **stable electron configuration** (usually 8 valence electrons - octet rule).\n\n**Exceptions**: H and He need only 2 electrons (duplet rule).\n\n## 2. Ionic Bonding\n\n### Definition\n- Transfer of electrons from metal to non-metal\n- Forms oppositely charged ions\n- Electrostatic attraction holds ions together\n\n### Example: Sodium Chloride (NaCl)\n- Na (2,8,1) → Na⁺ (2,8) + e⁻\n- Cl (2,8,7) + e⁻ → Cl⁻ (2,8,8)\n- Na⁺Cl⁻ forms ionic compound\n\n### Properties\n✓ High melting/boiling points\n✓ Conduct electricity when molten or in solution\n✓ Hard but brittle crystals\n✓ Soluble in water\n\n### Nigerian Example\nCommon salt from Lagos salt industry - NaCl is ionic compound.\n\n## 3. Covalent Bonding\n\n### Definition\n- Sharing of electron pairs between non-metals\n- Both atoms contribute electrons\n- Strong directional bonds\n\n### Types\n**Single Bond**: 1 pair shared (H-H)\n**Double Bond**: 2 pairs shared (O=O)\n**Triple Bond**: 3 pairs shared (N≡N)\n\n### Example: Water (H₂O)\n- O needs 2 electrons\n- Each H shares 1 electron with O\n- 2 O-H bonds form\n\n### Properties\n✓ Variable melting/boiling points\n✓ Poor electrical conductors\n✓ Can be gases, liquids, or solids\n✓ Variable solubility\n\n## 4. Metallic Bonding\n\n### Definition\n- Bonding in metals\n- Positive metal ions in lattice\n- Delocalized \"sea of electrons\" moving freely\n\n### Properties\n✓ High electrical/thermal conductivity\n✓ Malleable and ductile\n✓ Metallic luster\n✓ High melting points (usually)\n\n### Nigerian Context\nCopper wiring in Lagos homes - metallic bonding enables conductivity.\n\n## 5. WAEC Exam Tips\n\n✅ Draw electron diagrams clearly\n✅ Show electron transfer (ionic) vs sharing (covalent)\n✅ State properties and relate to bond type\n✅ Practice dot-and-cross diagrams\n✅ Learn common examples for each bond type\n\n## Practice Problems\n\n1. Draw electron configuration for MgO formation\n2. Explain why NaCl conducts when molten\n3. Why is diamond hard but graphite soft? (both covalent)\n4. Predict bond type: CaCl₂, H₂, Al\n",
+      "summary": "Atoms bond to achieve **stable electron configuration** (usually 8 valence electrons - octet rule).",
+      "learning_objectives": [
+        "Distinguish between ionic, covalent, and metallic bonding",
+        "Draw electron transfer and sharing diagrams",
+        "Relate properties to bond type"
+      ],
+      "prerequisites": [
+        "Atomic structure",
+        "Electron configuration"
+      ],
+      "estimated_read_time": 20,
+      "worked_examples": [
+        {
+          "problem": "Explain the bonding in magnesium oxide (MgO).",
+          "solution": "Mg (2,8,2) loses 2e⁻ → Mg²⁺ (2,8)\nO (2,6) gains 2e⁻ → O²⁻ (2,8)\nIonic bonding by electron transfer.",
+          "answer": "Ionic bond, Mg²⁺O²⁻"
+        }
+      ],
+      "practice_problems": [
+        {
+          "question": "What type of bonding exists in CO₂?",
+          "difficulty": "basic",
+          "answer": "Covalent (double bonds)",
+          "hint": "Non-metal + Non-metal"
+        }
+      ],
+      "diagrams": [
+        "generated_content\\diagrams\\chemistry_chemical_bonding_enhanced_bonding.png"
+      ],
+      "videos": [],
+      "interactive_elements": [],
+      "nigerian_context": "Salt industry in Lagos, copper wiring in homes",
+      "real_world_applications": [],
+      "views": 0,
+      "likes": 0,
+      "completion_rate": 0.0,
+      "average_rating": 0.0,
+      "total_ratings": 0,
+      "created_at": "2026-01-02T02:23:21.424935",
+      "updated_at": "2026-01-02T06:53:22.302801",
+      "status": "published",
+      "tags": [
+        "chemistry",
+        "chemical_bonding",
+        "intermediate",
+        "waec",
+        "with_diagrams",
+        "worked_examples",
+        "practice_problems"
+      ],
+      "source": "pilot_content_generator",
+      "version": "1.0"
+    },
+    {
+      "id": "biology_cell_structure_enhanced",
+      "title": "Cell Structure and Functions",
+      "subject": "Biology",
+      "topic": "Cell Biology",
+      "subtopic": "Cell Structure and Organelles",
+      "content_type": "study_guide",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Cell Structure: The Building Blocks of Life\n\n## 1. Cell Theory\n\n**Three Principles**:\n1. All living things are made of cells\n2. Cells are the basic unit of life\n3. All cells come from pre-existing cells\n\n## 2. Types of Cells\n\n### Prokaryotic Cells\n- No true nucleus\n- No membrane-bound organelles\n- Example: Bacteria\n\n### Eukaryotic Cells\n- True nucleus with nuclear membrane\n- Membrane-bound organelles\n- Examples: Plant and animal cells\n\n## 3. Animal Cell Organelles\n\n### Nucleus\n- **Function**: Controls cell activities, contains DNA\n- **Nigerian Context**: Like Aso Rock - the control center of Nigeria\n\n### Mitochondrion (plural: Mitochondria)\n- **Function**: Powerhouse of cell, produces energy (ATP)\n- **Formula**: Glucose + O₂ → CO₂ + H₂O + Energy\n- **Like**: NEPA generating electricity\n\n### Ribosome\n- **Function**: Protein synthesis\n- **Location**: Free in cytoplasm or on ER\n\n### Lysosome\n- **Function**: Digestion, waste removal\n- **Contains**: Digestive enzymes\n- **Like**: Lagos waste management agency\n\n### Cell Membrane\n- **Function**: Controls what enters/exits cell\n- **Structure**: Phospholipid bilayer\n- **Property**: Selectively permeable\n\n## 4. Plant Cell Organelles\n\n### Cell Wall\n- **Function**: Protection, shape, support\n- **Composition**: Cellulose\n- **Unique to**: Plants, fungi, bacteria\n\n### Chloroplast\n- **Function**: Photosynthesis\n- **Contains**: Chlorophyll (green pigment)\n- **Equation**: 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂\n\n### Large Central Vacuole\n- **Function**: Storage of water, nutrients, waste\n- **Contains**: Cell sap\n- **Provides**: Turgidity (firmness)\n\n## 5. Differences: Plant vs Animal Cells\n\n| Feature | Plant Cell | Animal Cell |\n|---------|-----------|-------------|\n| Cell Wall | ✓ Present | ✗ Absent |\n| Chloroplasts | ✓ Present | ✗ Absent |\n| Vacuole | Large, central | Small, many |\n| Shape | Fixed (rectangular) | Irregular |\n| Nutrition | Autotrophic | Heterotrophic |\n\n## 6. Cell Processes\n\n### Diffusion\n- Movement from high to low concentration\n- No energy required\n- Example: Oxygen into cells\n\n### Osmosis\n- Diffusion of water through membrane\n- Important for plant turgidity\n\n### Active Transport\n- Movement against concentration gradient\n- Requires energy (ATP)\n- Example: Mineral absorption by roots\n\n## 7. WAEC Exam Tips\n\n✅ **Draw clear diagrams** - label at least 5 organelles\n✅ **State functions** - don't just name organelles\n✅ **Know differences** - plant vs animal cells\n✅ **Understand processes** - diffusion, osmosis, active transport\n✅ **Use Nigerian examples** - makes answers relatable\n\n## 8. Nigerian Context Examples\n\n**Plantain Cell**: Has cell wall (gives firm texture), chloroplasts (green when unripe), large vacuole (stores starch)\n\n**Human Blood Cell**: No cell wall (flexible for moving through vessels), mitochondria (energy for oxygen transport)\n\n## Practice Questions\n\n1. List 3 differences between plant and animal cells\n2. Explain the function of mitochondria\n3. Why do plants cells have cell walls?\n4. Draw and label an animal cell (5 parts minimum)\n5. What happens to plant cells in salty water? (osmosis)\n\n## Summary\n\n- Cells are basic units of life\n- Animal cells: nucleus, mitochondria, ribosomes, lysosomes\n- Plant cells: also have cell wall, chloroplasts, large vacuole\n- Each organelle has specific function\n- Understand cell processes: diffusion, osmosis, active transport\n",
+      "summary": "**Three Principles**:",
+      "learning_objectives": [
+        "Identify cell organelles and their functions",
+        "Distinguish plant and animal cells",
+        "Understand cell processes"
+      ],
+      "prerequisites": [
+        "Basic biology"
+      ],
+      "estimated_read_time": 22,
+      "worked_examples": [
+        {
+          "problem": "Why do plant cells not burst when placed in water?",
+          "solution": "Cell wall provides support and prevents bursting. Water enters by osmosis, cell becomes turgid, but wall resists further expansion.",
+          "answer": "Cell wall prevents bursting"
+        }
+      ],
+      "practice_problems": [
+        {
+          "question": "Name the organelle that contains chlorophyll.",
+          "difficulty": "basic",
+          "answer": "Chloroplast",
+          "hint": "Used for photosynthesis"
+        }
+      ],
+      "diagrams": [
+        "generated_content\\diagrams\\biology_cell_structure_enhanced_cells.png"
+      ],
+      "videos": [],
+      "interactive_elements": [],
+      "nigerian_context": "Plantain cells, blood cells, yam storage",
+      "real_world_applications": [],
+      "views": 0,
+      "likes": 0,
+      "completion_rate": 0.0,
+      "average_rating": 0.0,
+      "total_ratings": 0,
+      "created_at": "2026-01-02T02:23:24.441692",
+      "updated_at": "2026-01-02T06:53:22.302935",
+      "status": "published",
+      "tags": [
+        "biology",
+        "cell_biology",
+        "basic",
+        "waec",
+        "with_diagrams",
+        "worked_examples",
+        "practice_problems"
+      ],
+      "source": "pilot_content_generator",
+      "version": "1.0"
+    },
+    {
+      "id": "biology_reproduction_enhanced",
+      "title": "Reproduction in Living Organisms",
+      "subject": "Biology",
+      "topic": "Reproduction",
+      "subtopic": "Asexual and Sexual Reproduction",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Reproduction: Continuity of Life\n\n## 1. Types of Reproduction\n\n### Asexual Reproduction\n- **One parent** only\n- **No gametes** (sex cells)\n- Offspring **genetically identical** to parent (clones)\n- **Faster** than sexual reproduction\n\n### Sexual Reproduction\n- **Two parents** (male and female)\n- Involves **gametes** (sperm and egg)\n- Offspring **genetically different** from parents\n- Provides **variation** for adaptation\n\n## 2. Asexual Reproduction Methods\n\n### Binary Fission\n- Single organism splits into two\n- Example: Bacteria, Amoeba\n- Very rapid multiplication\n\n### Budding\n- Small outgrowth (bud) forms on parent\n- Bud detaches and grows independently\n- Example: Yeast, Hydra\n\n### Vegetative Propagation\n- New plants from vegetative parts\n- Examples:\n  * Stem: Cassava, Sugarcane\n  * Root: Sweet potato\n  * Tuber: Yam, Potato\n  * Bulb: Onion, Garlic\n  * Rhizome: Ginger\n\n### Spore Formation\n- Produces many spores\n- Spores dispersed by wind\n- Example: Fungi, Ferns\n\n## 3. Sexual Reproduction in Flowering Plants\n\n### Parts of a Flower\n\n**Male Parts (Stamen)**:\n- Anther: Produces pollen grains\n- Filament: Supports anther\n\n**Female Parts (Carpel/Pistil)**:\n- Stigma: Receives pollen\n- Style: Tube connecting stigma to ovary\n- Ovary: Contains ovules (eggs)\n\n### Pollination\n**Definition**: Transfer of pollen from anther to stigma\n\n**Types**:\n1. **Self-Pollination**: Same flower or same plant\n2. **Cross-Pollination**: Different plants (same species)\n\n**Agents of Pollination**:\n- **Wind**: Light, dry pollen; abundant; feathery stigma (e.g., maize, grasses)\n- **Insects**: Bright colors, nectar, scent, sticky pollen (e.g., hibiscus, sunflower)\n- **Birds**: Bright red/orange, lots of nectar (e.g., bird of paradise)\n- **Water**: Aquatic plants\n\n### Fertilization\n1. Pollen lands on stigma\n2. Pollen tube grows down style\n3. Male nucleus travels through tube\n4. Reaches ovary, fuses with egg\n5. Forms zygote → embryo → seed\n6. Ovary becomes fruit\n\n## 4. Sexual Reproduction in Humans\n\n### Male Reproductive System\n- Testes: Produce sperm and testosterone\n- Sperm duct: Transports sperm\n- Penis: Delivers sperm\n\n### Female Reproductive System\n- Ovaries: Produce eggs (ova) and hormones\n- Fallopian tubes: Site of fertilization\n- Uterus: Where baby develops\n- Vagina: Birth canal\n\n### Fertilization\n- Sperm meets egg in fallopian tube\n- Fusion forms zygote\n- Zygote implants in uterus\n- Develops into embryo → fetus → baby\n- **Gestation period**: 9 months (280 days)\n\n## 5. Nigerian Agricultural Context\n\n### Asexual Reproduction in Farming\n- **Cassava**: Stem cuttings planted\n- **Yam**: Seed yam (tuber piece) planted\n- **Plantain**: Suckers transplanted\n- **Advantages**: Faster, maintains good traits\n\n### Sexual Reproduction in Farming\n- **Maize**: Pollinated by wind, grows from seed\n- **Tomatoes**: Insect-pollinated, grows from seed\n- **Advantages**: Produces variation, disease resistance\n\n## 6. WAEC Exam Tips\n\n✅ **Label flower diagrams** clearly (stigma, anther, ovary, etc.)\n✅ **Distinguish** self vs cross-pollination\n✅ **State agents** of pollination with examples\n✅ **Compare** asexual vs sexual reproduction\n✅ **Use Nigerian examples** (cassava, yam, maize)\n✅ **Know fertilization process** step-by-step\n\n## 7. Common WAEC Questions\n\n1. Explain the term pollination\n2. State 3 differences between asexual and sexual reproduction\n3. Draw and label parts of a flower\n4. Describe fertilization in flowering plants\n5. Name 2 crops propagated vegetatively\n\n## Practice Questions\n\n1. What is the male gamete in plants?\n2. Where does fertilization occur in humans?\n3. Give 2 advantages of sexual reproduction\n4. Name the process by which yam is propagated\n5. State 3 agents of cross-pollination\n\n## Summary\n\n- Two main types: Asexual (one parent) and Sexual (two parents)\n- Asexual: Binary fission, budding, vegetative propagation, spores\n- Sexual (plants): Pollination → Fertilization → Seed formation\n- Nigerian crops: Cassava (asexual), Maize (sexual)\n- Sexual reproduction provides variation for adaptation\n",
+      "summary": "- **One parent** only",
+      "learning_objectives": [
+        "Distinguish asexual and sexual reproduction",
+        "Describe pollination and fertilization in plants",
+        "Relate reproduction to Nigerian agriculture"
+      ],
+      "prerequisites": [
+        "Cell structure",
+        "Plant structure"
+      ],
+      "estimated_read_time": 28,
+      "worked_examples": [
+        {
+          "problem": "Explain how cassava is propagated in Nigerian farms.",
+          "solution": "Cassava is propagated vegetatively using stem cuttings. Mature stems are cut into pieces (15-20cm), planted in soil. Each cutting grows roots and shoots, forming new cassava plant identical to parent.",
+          "answer": "Vegetative propagation via stem cuttings"
+        }
+      ],
+      "practice_problems": [
+        {
+          "question": "What type of reproduction occurs in yam cultivation?",
+          "difficulty": "basic",
+          "answer": "Asexual (vegetative propagation using seed yam)",
+          "hint": "Farmers plant pieces of yam tuber"
+        }
+      ],
+      "diagrams": [
+        "generated_content\\diagrams\\biology_reproduction_enhanced_reproduction.png"
+      ],
+      "videos": [],
+      "interactive_elements": [],
+      "nigerian_context": "Cassava, yam, plantain propagation; maize pollination",
+      "real_world_applications": [],
+      "views": 0,
+      "likes": 0,
+      "completion_rate": 0.0,
+      "average_rating": 0.0,
+      "total_ratings": 0,
+      "created_at": "2026-01-02T02:23:35.963420",
+      "updated_at": "2026-01-02T06:53:22.303171",
+      "status": "published",
+      "tags": [
+        "biology",
+        "reproduction",
+        "intermediate",
+        "waec",
+        "with_diagrams",
+        "worked_examples",
+        "practice_problems"
+      ],
+      "source": "pilot_content_generator",
+      "version": "1.0"
     }
   ],
   "subjects": [
