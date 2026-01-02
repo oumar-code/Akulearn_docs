@@ -49,6 +49,12 @@ except ImportError:
     KNOWLEDGE_GRAPH_AVAILABLE = False
 
 try:
+    from wave3_progress_service import ProgressTrackingService, get_progress_service
+    PROGRESS_TRACKING_AVAILABLE = True
+except ImportError:
+    PROGRESS_TRACKING_AVAILABLE = False
+
+try:
     from wave3_content_service import ContentService, get_content_service
     CONTENT_SERVICE_AVAILABLE = True
 except ImportError:
@@ -98,6 +104,9 @@ def create_advanced_app() -> FastAPI:
     if CONTENT_SERVICE_AVAILABLE:
         app.state.content_service = get_content_service()
     
+    if PROGRESS_TRACKING_AVAILABLE:
+        app.state.progress_service = get_progress_service()
+    
     # Health check
     @app.get("/api/v3/health")
     async def health_check():
@@ -111,7 +120,8 @@ def create_advanced_app() -> FastAPI:
                 "recommendations": RECOMMENDATIONS_AVAILABLE,
                 "gamification": GAMIFICATION_AVAILABLE,
                 "analytics": ANALYTICS_AVAILABLE,
-                "content_service": CONTENT_SERVICE_AVAILABLE
+                "content_service": CONTENT_SERVICE_AVAILABLE,
+                "progress_tracking": PROGRESS_TRACKING_AVAILABLE
             }
         }
     
@@ -544,6 +554,149 @@ def create_advanced_app() -> FastAPI:
                 "subject": subject,
                 "count": len(recommendations),
                 "recommendations": recommendations
+            }
+    
+    # ===== Progress Tracking Endpoints =====
+    if PROGRESS_TRACKING_AVAILABLE:
+        
+        @app.post("/api/v3/progress/start")
+        async def start_content_progress(student_id: str, content_id: str):
+            """Record when a student starts a content item"""
+            service = app.state.progress_service
+            progress = service.start_content(student_id, content_id)
+            
+            return {
+                "status": "started",
+                "progress": progress
+            }
+        
+        @app.post("/api/v3/progress/update")
+        async def update_content_progress(
+            student_id: str, 
+            content_id: str,
+            progress_percentage: float,
+            time_spent_minutes: int = 0
+        ):
+            """Update progress for a content item"""
+            service = app.state.progress_service
+            progress = service.update_progress(
+                student_id, content_id, progress_percentage, time_spent_minutes
+            )
+            
+            return {
+                "status": "updated",
+                "progress": progress
+            }
+        
+        @app.post("/api/v3/progress/complete")
+        async def complete_content_progress(
+            student_id: str,
+            content_id: str,
+            quiz_score: float = None
+        ):
+            """Mark content as completed"""
+            service = app.state.progress_service
+            progress = service.complete_content(student_id, content_id, quiz_score)
+            
+            return {
+                "status": "completed",
+                "progress": progress
+            }
+        
+        @app.get("/api/v3/progress/{student_id}")
+        async def get_student_progress(student_id: str, content_id: str = None):
+            """Get progress for a student (all or specific content)"""
+            service = app.state.progress_service
+            progress = service.get_student_progress(student_id, content_id)
+            
+            if progress is None:
+                return {"error": "No progress found"}
+            
+            return {
+                "student_id": student_id,
+                "progress": progress
+            }
+        
+        @app.get("/api/v3/progress/{student_id}/all")
+        async def get_all_student_progress(student_id: str):
+            """Get all progress records for a student"""
+            service = app.state.progress_service
+            progress_list = service.get_all_progress_for_student(student_id)
+            
+            return {
+                "student_id": student_id,
+                "count": len(progress_list),
+                "progress": progress_list
+            }
+        
+        @app.get("/api/v3/progress/{student_id}/completed")
+        async def get_completed_content(student_id: str):
+            """Get all completed content for a student"""
+            service = app.state.progress_service
+            completed = service.get_completed_content(student_id)
+            
+            return {
+                "student_id": student_id,
+                "count": len(completed),
+                "completed": completed
+            }
+        
+        @app.get("/api/v3/progress/{student_id}/in-progress")
+        async def get_in_progress_content(student_id: str):
+            """Get all in-progress content for a student"""
+            service = app.state.progress_service
+            in_progress = service.get_in_progress_content(student_id)
+            
+            return {
+                "student_id": student_id,
+                "count": len(in_progress),
+                "in_progress": in_progress
+            }
+        
+        @app.get("/api/v3/progress/{student_id}/statistics")
+        async def get_student_statistics(student_id: str):
+            """Get learning statistics for a student"""
+            service = app.state.progress_service
+            stats = service.get_statistics(student_id)
+            
+            return {
+                "student_id": student_id,
+                "statistics": stats
+            }
+        
+        @app.get("/api/v3/progress/{student_id}/subject/{subject}")
+        async def get_subject_progress(student_id: str, subject: str):
+            """Get progress statistics for a specific subject"""
+            progress_service = app.state.progress_service
+            content_service = app.state.content_service if CONTENT_SERVICE_AVAILABLE else None
+            
+            if not content_service:
+                return {"error": "Content service not available"}
+            
+            stats = progress_service.get_subject_statistics(student_id, subject, content_service)
+            
+            return stats
+        
+        @app.post("/api/v3/progress/{student_id}/note")
+        async def add_content_note(student_id: str, content_id: str, note: str):
+            """Add or update notes for content"""
+            service = app.state.progress_service
+            success = service.add_note(student_id, content_id, note)
+            
+            if success:
+                return {"status": "note_added"}
+            
+            return {"error": "Failed to add note"}
+        
+        @app.get("/api/v3/leaderboard")
+        async def get_leaderboard(limit: int = 10):
+            """Get leaderboard of top students"""
+            service = app.state.progress_service
+            leaderboard = service.get_leaderboard(limit)
+            
+            return {
+                "count": len(leaderboard),
+                "leaderboard": leaderboard
             }
     
     # Feature documentation

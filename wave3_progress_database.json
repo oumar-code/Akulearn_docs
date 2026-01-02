@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "version": "3.0.0",
+    "last_updated": "2026-01-02T00:19:01.194892",
+    "total_records": 1
+  },
+  "progress": {
+    "demo_student_001": {
+      "biology_cell_biology_cell_structure_20260101064001": {
+        "student_id": "demo_student_001",
+        "content_id": "biology_cell_biology_cell_structure_20260101064001",
+        "status": "in_progress",
+        "progress_percentage": 0.0,
+        "time_spent_minutes": 0,
+        "started_at": "2026-01-02T00:19:01.194803",
+        "completed_at": null,
+        "last_accessed": "2026-01-02T00:19:01.194820",
+        "quiz_score": null,
+        "notes": ""
+      }
+    }
+  }
+}
