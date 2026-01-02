@@ -1,0 +1,765 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-01-02T01:44:37.162003",
+    "exam_boards": [
+      "WAEC",
+      "NECO",
+      "JAMB"
+    ],
+    "target_level": "SS2"
+  },
+  "subjects": {
+    "Mathematics": {
+      "name": "Mathematics",
+      "exam_boards": [
+        "WAEC",
+        "NECO",
+        "JAMB"
+      ],
+      "topics": [
+        {
+          "id": "math_001",
+          "name": "Number Bases",
+          "subtopics": [
+            "Conversion between bases",
+            "Basic operations in other bases",
+            "Application to computer systems"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "medium",
+          "prerequisites": [
+            "Basic arithmetic",
+            "Place value"
+          ]
+        },
+        {
+          "id": "math_002",
+          "name": "Modular Arithmetic",
+          "subtopics": [
+            "Properties of modular arithmetic",
+            "Application to real-world problems",
+            "Clock arithmetic"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "medium",
+          "prerequisites": [
+            "Division",
+            "Remainders"
+          ]
+        },
+        {
+          "id": "math_003",
+          "name": "Sequence and Series",
+          "subtopics": [
+            "Arithmetic progression (AP)",
+            "Geometric progression (GP)",
+            "Sum of AP and GP",
+            "Applications"
+          ],
+          "difficulty": "advanced",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Patterns",
+            "Algebra"
+          ]
+        },
+        {
+          "id": "math_004",
+          "name": "Binary Operations",
+          "subtopics": [
+            "Definition of binary operations",
+            "Properties (closure, commutativity, associativity)",
+            "Identity and inverse elements"
+          ],
+          "difficulty": "advanced",
+          "exam_weight": "medium",
+          "prerequisites": [
+            "Set theory",
+            "Functions"
+          ]
+        },
+        {
+          "id": "math_005",
+          "name": "Matrices and Determinants",
+          "subtopics": [
+            "Matrix operations",
+            "Determinants",
+            "Inverse of a matrix",
+            "Solution of simultaneous equations"
+          ],
+          "difficulty": "advanced",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Algebra",
+            "Simultaneous equations"
+          ]
+        },
+        {
+          "id": "math_006",
+          "name": "Quadratic Equations",
+          "subtopics": [
+            "Factorization method",
+            "Completing the square",
+            "Quadratic formula",
+            "Nature of roots",
+            "Application to problems"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Factorization",
+            "Basic algebra"
+          ]
+        },
+        {
+          "id": "math_007",
+          "name": "Variation",
+          "subtopics": [
+            "Direct variation",
+            "Inverse variation",
+            "Joint variation",
+            "Partial variation"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Ratios",
+            "Proportions"
+          ]
+        },
+        {
+          "id": "math_008",
+          "name": "Angles and Triangles",
+          "subtopics": [
+            "Angles in polygons",
+            "Similar triangles",
+            "Congruent triangles",
+            "Pythagoras theorem"
+          ],
+          "difficulty": "basic",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Basic geometry"
+          ]
+        },
+        {
+          "id": "math_009",
+          "name": "Circle Theorems",
+          "subtopics": [
+            "Angles in a circle",
+            "Tangent properties",
+            "Chord properties",
+            "Cyclic quadrilaterals"
+          ],
+          "difficulty": "advanced",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Angles",
+            "Triangles"
+          ]
+        },
+        {
+          "id": "math_010",
+          "name": "Trigonometry",
+          "subtopics": [
+            "Sine, cosine, tangent ratios",
+            "Angles of elevation and depression",
+            "Bearings",
+            "Sine and cosine rules",
+            "Area of triangle"
+          ],
+          "difficulty": "advanced",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Triangles",
+            "Pythagoras theorem"
+          ]
+        },
+        {
+          "id": "math_011",
+          "name": "Coordinate Geometry",
+          "subtopics": [
+            "Distance between two points",
+            "Midpoint of a line",
+            "Gradient of a line",
+            "Equation of a straight line",
+            "Parallel and perpendicular lines"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Cartesian plane",
+            "Linear equations"
+          ]
+        },
+        {
+          "id": "math_012",
+          "name": "Differentiation",
+          "subtopics": [
+            "Limits and derivatives",
+            "Differentiation of polynomials",
+            "Product and quotient rules",
+            "Chain rule",
+            "Applications (maxima, minima, rates)"
+          ],
+          "difficulty": "advanced",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Functions",
+            "Algebra"
+          ]
+        },
+        {
+          "id": "math_013",
+          "name": "Integration",
+          "subtopics": [
+            "Integration as reverse of differentiation",
+            "Integration of polynomials",
+            "Area under curves",
+            "Definite and indefinite integrals"
+          ],
+          "difficulty": "advanced",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Differentiation"
+          ]
+        },
+        {
+          "id": "math_014",
+          "name": "Statistics",
+          "subtopics": [
+            "Measures of central tendency",
+            "Measures of dispersion",
+            "Frequency distributions",
+            "Cumulative frequency",
+            "Histograms and ogives"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Data representation"
+          ]
+        },
+        {
+          "id": "math_015",
+          "name": "Probability",
+          "subtopics": [
+            "Experimental and theoretical probability",
+            "Addition and multiplication rules",
+            "Conditional probability",
+            "Tree diagrams"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Fractions",
+            "Sets"
+          ]
+        }
+      ],
+      "total_topics": 15,
+      "coverage_status": "not_started",
+      "priority": "high"
+    },
+    "Physics": {
+      "name": "Physics",
+      "exam_boards": [
+        "WAEC",
+        "NECO",
+        "JAMB"
+      ],
+      "topics": [
+        {
+          "id": "phy_001",
+          "name": "Motion",
+          "subtopics": [
+            "Linear motion",
+            "Equations of motion",
+            "Graphs of motion",
+            "Free fall"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Measurement",
+            "Vectors"
+          ]
+        },
+        {
+          "id": "phy_002",
+          "name": "Force, Mass and Acceleration",
+          "subtopics": [
+            "Newton's laws of motion",
+            "Force and acceleration",
+            "Momentum",
+            "Impulse"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Motion"
+          ]
+        },
+        {
+          "id": "phy_003",
+          "name": "Work, Energy and Power",
+          "subtopics": [
+            "Work done",
+            "Kinetic and potential energy",
+            "Conservation of energy",
+            "Power",
+            "Efficiency"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Force",
+            "Motion"
+          ]
+        },
+        {
+          "id": "phy_004",
+          "name": "Simple Machines",
+          "subtopics": [
+            "Levers",
+            "Pulleys",
+            "Inclined plane",
+            "Mechanical advantage",
+            "Velocity ratio"
+          ],
+          "difficulty": "basic",
+          "exam_weight": "medium",
+          "prerequisites": [
+            "Force",
+            "Work"
+          ]
+        },
+        {
+          "id": "phy_005",
+          "name": "Temperature and Heat",
+          "subtopics": [
+            "Temperature scales",
+            "Thermometers",
+            "Heat capacity",
+            "Specific heat capacity",
+            "Latent heat"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Measurement"
+          ]
+        },
+        {
+          "id": "phy_006",
+          "name": "Gas Laws",
+          "subtopics": [
+            "Boyle's law",
+            "Charles's law",
+            "Pressure law",
+            "General gas equation",
+            "Kinetic theory"
+          ],
+          "difficulty": "advanced",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Temperature"
+          ]
+        },
+        {
+          "id": "phy_007",
+          "name": "Static Electricity",
+          "subtopics": [
+            "Charging by friction",
+            "Electric field",
+            "Capacitors",
+            "Applications"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "medium",
+          "prerequisites": [
+            "Atomic structure"
+          ]
+        },
+        {
+          "id": "phy_008",
+          "name": "Current Electricity",
+          "subtopics": [
+            "Electric current",
+            "Potential difference",
+            "Resistance",
+            "Ohm's law",
+            "Series and parallel circuits"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Static electricity"
+          ]
+        },
+        {
+          "id": "phy_009",
+          "name": "Electrical Energy and Power",
+          "subtopics": [
+            "Electrical energy",
+            "Electrical power",
+            "Cost of electricity",
+            "Efficiency of appliances"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Current electricity"
+          ]
+        },
+        {
+          "id": "phy_010",
+          "name": "Waves",
+          "subtopics": [
+            "Types of waves",
+            "Wave properties",
+            "Sound waves",
+            "Electromagnetic spectrum"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Energy transfer"
+          ]
+        },
+        {
+          "id": "phy_011",
+          "name": "Light and Optics",
+          "subtopics": [
+            "Reflection",
+            "Refraction",
+            "Mirrors",
+            "Lenses",
+            "Total internal reflection"
+          ],
+          "difficulty": "advanced",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Waves"
+          ]
+        }
+      ],
+      "total_topics": 11,
+      "coverage_status": "not_started",
+      "priority": "high"
+    },
+    "Chemistry": {
+      "name": "Chemistry",
+      "exam_boards": [
+        "WAEC",
+        "NECO",
+        "JAMB"
+      ],
+      "topics": [
+        {
+          "id": "chem_001",
+          "name": "Chemical Bonding",
+          "subtopics": [
+            "Ionic bonding",
+            "Covalent bonding",
+            "Metallic bonding",
+            "Intermolecular forces"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Atomic structure"
+          ]
+        },
+        {
+          "id": "chem_002",
+          "name": "Rates of Chemical Reactions",
+          "subtopics": [
+            "Factors affecting reaction rates",
+            "Collision theory",
+            "Catalysts",
+            "Reversible reactions"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Chemical reactions"
+          ]
+        },
+        {
+          "id": "chem_003",
+          "name": "Acids, Bases and Salts",
+          "subtopics": [
+            "Properties of acids and bases",
+            "pH scale",
+            "Neutralization",
+            "Preparation of salts"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Chemical equations"
+          ]
+        },
+        {
+          "id": "chem_004",
+          "name": "Organic Chemistry - Hydrocarbons",
+          "subtopics": [
+            "Alkanes",
+            "Alkenes",
+            "Alkynes",
+            "Isomerism",
+            "Petrochemicals"
+          ],
+          "difficulty": "advanced",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Carbon compounds"
+          ]
+        },
+        {
+          "id": "chem_005",
+          "name": "Electrochemistry",
+          "subtopics": [
+            "Electrolysis",
+            "Electrochemical cells",
+            "Faraday's laws",
+            "Applications"
+          ],
+          "difficulty": "advanced",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Ionic bonding",
+            "Electricity"
+          ]
+        }
+      ],
+      "total_topics": 5,
+      "coverage_status": "not_started",
+      "priority": "high"
+    },
+    "Biology": {
+      "name": "Biology",
+      "exam_boards": [
+        "WAEC",
+        "NECO",
+        "JAMB"
+      ],
+      "topics": [
+        {
+          "id": "bio_001",
+          "name": "Cell Structure and Organization",
+          "subtopics": [
+            "Cell structure",
+            "Cell organelles",
+            "Differences between plant and animal cells",
+            "Levels of organization"
+          ],
+          "difficulty": "basic",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Microscopy"
+          ]
+        },
+        {
+          "id": "bio_002",
+          "name": "Nutrition in Plants",
+          "subtopics": [
+            "Photosynthesis",
+            "Factors affecting photosynthesis",
+            "Mineral nutrition",
+            "Transport in plants"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Plant structure"
+          ]
+        },
+        {
+          "id": "bio_003",
+          "name": "Nutrition in Animals",
+          "subtopics": [
+            "Types of nutrition",
+            "Human digestive system",
+            "Digestion and absorption",
+            "Food tests"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Food nutrients"
+          ]
+        },
+        {
+          "id": "bio_004",
+          "name": "Circulatory System",
+          "subtopics": [
+            "Blood and blood vessels",
+            "Heart structure and function",
+            "Circulation",
+            "Lymphatic system"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Human body systems"
+          ]
+        },
+        {
+          "id": "bio_005",
+          "name": "Respiratory System",
+          "subtopics": [
+            "Gaseous exchange",
+            "Breathing mechanism",
+            "Respiratory organs",
+            "Diseases of respiratory system"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Human anatomy"
+          ]
+        },
+        {
+          "id": "bio_006",
+          "name": "Excretory System",
+          "subtopics": [
+            "Excretory organs",
+            "Kidney structure and function",
+            "Urine formation",
+            "Skin as excretory organ"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "medium",
+          "prerequisites": [
+            "Body systems"
+          ]
+        },
+        {
+          "id": "bio_007",
+          "name": "Reproduction",
+          "subtopics": [
+            "Asexual reproduction",
+            "Sexual reproduction in plants",
+            "Sexual reproduction in animals",
+            "Human reproductive system"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Cell division"
+          ]
+        },
+        {
+          "id": "bio_008",
+          "name": "Genetics",
+          "subtopics": [
+            "Mendel's laws",
+            "Inheritance patterns",
+            "Sex determination",
+            "Variation"
+          ],
+          "difficulty": "advanced",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Reproduction"
+          ]
+        }
+      ],
+      "total_topics": 8,
+      "coverage_status": "not_started",
+      "priority": "high"
+    },
+    "English Language": {
+      "name": "English Language",
+      "exam_boards": [
+        "WAEC",
+        "NECO",
+        "JAMB"
+      ],
+      "topics": [
+        {
+          "id": "eng_001",
+          "name": "Comprehension and Summary",
+          "subtopics": [
+            "Reading comprehension passages",
+            "Summary writing techniques",
+            "Note-making",
+            "Critical analysis"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Reading skills"
+          ]
+        },
+        {
+          "id": "eng_002",
+          "name": "Grammar and Usage",
+          "subtopics": [
+            "Parts of speech",
+            "Tenses",
+            "Concord",
+            "Reported speech",
+            "Active and passive voice"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Basic grammar"
+          ]
+        },
+        {
+          "id": "eng_003",
+          "name": "Essay Writing",
+          "subtopics": [
+            "Narrative essays",
+            "Descriptive essays",
+            "Argumentative essays",
+            "Letter writing"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": [
+            "Writing skills"
+          ]
+        },
+        {
+          "id": "eng_004",
+          "name": "Oral English",
+          "subtopics": [
+            "Phonetics",
+            "Stress and intonation",
+            "Consonants and vowels",
+            "Word stress"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "medium",
+          "prerequisites": [
+            "Pronunciation"
+          ]
+        },
+        {
+          "id": "eng_005",
+          "name": "Literature",
+          "subtopics": [
+            "Drama",
+            "Poetry",
+            "Prose",
+            "Literary devices"
+          ],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": [
+            "Reading comprehension"
+          ]
+        }
+      ],
+      "total_topics": 5,
+      "coverage_status": "not_started",
+      "priority": "high"
+    }
+  }
+}
