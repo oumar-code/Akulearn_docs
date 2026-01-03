@@ -2,28 +2,30 @@
   "metadata": {
     "version": "3.0.0",
     "generated_at": "2026-01-01T06:40:02.984645",
-    "total_items": 27,
+    "total_items": 47,
     "statistics": {
-      "total_imported": 27,
+      "total_imported": 47,
       "by_subject": {
-        "Biology": 2,
-        "Chemistry": 4,
+        "Biology": 6,
+        "Chemistry": 6,
         "Economics": 1,
         "English": 2,
         "Geography": 1,
-        "Mathematics": 8,
-        "Physics": 9
+        "Mathematics": 18,
+        "Physics": 13
       },
       "by_type": {
-        "study_guide": 25,
+        "study_guide": 45,
         "reference": 2
       },
       "by_difficulty": {
-        "intermediate": 22,
-        "advanced": 5
+        "intermediate": 34,
+        "advanced": 10,
+        "basic": 3
       },
       "errors": []
-    }
+    },
+    "last_updated": "2026-01-03T17:53:35.625604"
   },
   "content": [
     {
@@ -66,7 +68,7 @@
       "created_at": "2026-01-01T06:40:01.927089",
       "updated_at": "2026-01-01T06:40:01.927125",
       "status": "published",
-      "views": 0,
+      "views": 1,
       "likes": 0,
       "completion_rate": 0.0
     },
@@ -1250,6 +1252,1020 @@
       "views": 0,
       "likes": 0,
       "completion_rate": 0.0
+    },
+    {
+      "id": "math_quadratic_equations_enhanced",
+      "title": "Quadratic Equations: Complete Guide with Solutions",
+      "subject": "Mathematics",
+      "topic": "Quadratic Equations",
+      "subtopic": "Solving Methods and Applications",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Quadratic Equations: Mastery Guide\n\n## 1. Introduction\n\nA **quadratic equation** is a polynomial equation of degree 2, written in the standard form:\n\n**ax² + bx + c = 0**\n\nWhere:\n- a, b, c are constants (a ≠ 0)\n- x is the variable\n- a is the coefficient of x²\n- b is the coefficient of x\n- c is the constant term\n\n## 2. Methods of Solving Quadratic Equations\n\n### Method 1: Factorization\n\n**When to use**: When the equation can be easily factored\n\n**Steps**:\n1. Write equation in standard form (ax² + bx + c = 0)\n2. Factor the left side into two binomials\n3. Set each factor equal to zero\n4. Solve for x\n\n**Example**: x² - 5x + 6 = 0\n- Factor: (x - 2)(x - 3) = 0\n- Solutions: x = 2 or x = 3\n\n### Method 2: Completing the Square\n\n**When to use**: When factorization is difficult, or to derive the quadratic formula\n\n**Steps**:\n1. Move constant to right side\n2. Make coefficient of x² equal to 1\n3. Add (b/2)² to both sides\n4. Take square root of both sides\n5. Solve for x\n\n**Example**: x² + 6x + 5 = 0\n- x² + 6x = -5\n- x² + 6x + 9 = -5 + 9\n- (x + 3)² = 4\n- x + 3 = ±2\n- x = -3 ± 2\n- Solutions: x = -1 or x = -5\n\n### Method 3: Quadratic Formula (Most Powerful!)\n\nFor any quadratic equation ax² + bx + c = 0:\n\n**x = [-b ± √(b² - 4ac)] / 2a**\n\n**Discriminant (Δ)**: b² - 4ac\n\nNature of roots:\n- If Δ > 0: Two distinct real roots\n- If Δ = 0: One repeated real root\n- If Δ < 0: No real roots (complex roots)\n\n## 3. Nigerian Context Examples\n\n### Example 1: Market Pricing (Lagos)\nA trader at Idumota Market sells phones. The profit P (in Naira) is given by:\nP = -2x² + 120x - 1000\n\nWhere x is the number of phones sold per day.\n\n**Question**: How many phones should be sold to break even (P = 0)?\n\n**Solution**:\n-2x² + 120x - 1000 = 0\nDivide by -2: x² - 60x + 500 = 0\n\nUsing quadratic formula:\nx = [60 ± √(3600 - 2000)] / 2\nx = [60 ± √1600] / 2\nx = [60 ± 40] / 2\n\nx = 50 or x = 10\n\n**Answer**: The trader breaks even by selling either 10 or 50 phones per day.\n\n### Example 2: Construction (Abuja)\nA rectangular plot in Abuja has length 5m more than its width. The area is 300m².\n\n**Find**: The dimensions of the plot.\n\n**Solution**:\nLet width = x meters\nLength = (x + 5) meters\nArea: x(x + 5) = 300\nx² + 5x - 300 = 0\n\nFactor or use formula:\nx = [-5 ± √(25 + 1200)] / 2\nx = [-5 ± 35] / 2\n\nx = 15 or x = -20 (reject negative)\n\n**Answer**: Width = 15m, Length = 20m\n\n## 4. Graphing Quadratic Functions\n\nThe graph of y = ax² + bx + c is a **parabola**.\n\n**Key Features**:\n- **Vertex**: Turning point at x = -b/2a\n- **Axis of symmetry**: Vertical line through vertex\n- **Y-intercept**: Point (0, c)\n- **X-intercepts**: Roots of the equation\n\n**Direction**:\n- If a > 0: Opens upward (U-shape)\n- If a < 0: Opens downward (∩-shape)\n\n## 5. Exam Tips for WAEC\n\n✅ **Always check your discriminant first** - it tells you how many solutions to expect\n\n✅ **Show all working** - even if you use calculator, write down the formula and substitution\n\n✅ **Check your solutions** by substituting back into the original equation\n\n✅ **Watch for word problems** - translate Nigerian context into equations carefully\n\n✅ **Remember units** - if the problem mentions Naira (₦), meters, or time, include units in your answer\n\n## 6. Common Mistakes to Avoid\n\n❌ Forgetting the ± sign in the quadratic formula\n❌ Arithmetic errors when calculating discriminant\n❌ Dividing by 2a instead of 2 in the formula\n❌ Not writing equation in standard form first\n❌ Accepting negative solutions for length, time, or quantity problems\n\n## 7. Practice Problems (Self-Check)\n\nSolve using any method:\n\n1. x² - 7x + 12 = 0\n2. 2x² + 5x - 3 = 0\n3. x² - 6x + 9 = 0\n4. x² + 4x + 5 = 0 (Find nature of roots)\n\n**Challenge Problem**: \nA ball is thrown upward from ground level in Port Harcourt. Its height h (in meters) after t seconds is:\nh = -5t² + 20t\n\nFind: (a) Maximum height reached\n      (b) Time when ball hits the ground\n\n## Summary\n\n- Three main solving methods: Factorization, Completing the Square, Quadratic Formula\n- Discriminant determines nature of roots\n- Real-world applications: projectiles, area, profit maximization\n- Always check your work by substitution\n",
+      "summary": "A **quadratic equation** is a polynomial equation of degree 2, written in the standard form:",
+      "learning_objectives": [
+        "Solve quadratic equations using three methods",
+        "Determine nature of roots using discriminant",
+        "Apply quadratic equations to real-world problems",
+        "Sketch parabolas and identify key features"
+      ],
+      "prerequisites": [
+        "Factorization",
+        "Basic algebra"
+      ],
+      "estimated_read_time": 25,
+      "worked_examples": [
+        {
+          "problem": "Solve: x² + 7x + 10 = 0",
+          "solution": "Step 1: Factor → (x + 2)(x + 5) = 0\nStep 2: Set each factor to zero → x + 2 = 0 or x + 5 = 0\nStep 3: Solve → x = -2 or x = -5",
+          "answer": "x = -2 or x = -5"
+        },
+        {
+          "problem": "Solve using quadratic formula: 2x² - 3x - 2 = 0",
+          "solution": "a = 2, b = -3, c = -2\nΔ = b² - 4ac = 9 + 16 = 25\nx = [3 ± √25] / 4 = [3 ± 5] / 4\nx = 8/4 or -2/4",
+          "answer": "x = 2 or x = -0.5"
+        },
+        {
+          "problem": "A rectangular garden in Kano has area 48m². Length is 2m more than width. Find dimensions.",
+          "solution": "Let width = x\nLength = x + 2\nArea: x(x + 2) = 48\nx² + 2x - 48 = 0\nFactor: (x + 8)(x - 6) = 0\nx = 6 (reject -8)",
+          "answer": "Width = 6m, Length = 8m"
+        }
+      ],
+      "practice_problems": [
+        {
+          "question": "Solve: x² - 9 = 0",
+          "difficulty": "basic",
+          "answer": "x = 3 or x = -3",
+          "hint": "This is a difference of squares"
+        },
+        {
+          "question": "Solve: x² + 10x + 25 = 0",
+          "difficulty": "basic",
+          "answer": "x = -5 (repeated root)",
+          "hint": "Perfect square trinomial"
+        },
+        {
+          "question": "Find the discriminant and nature of roots: 3x² - 2x + 5 = 0",
+          "difficulty": "intermediate",
+          "answer": "Δ = -56 (no real roots)",
+          "hint": "Calculate b² - 4ac"
+        },
+        {
+          "question": "A phone seller in Aba has profit function P = -x² + 40x - 300 (in thousands of ₦). Find break-even points.",
+          "difficulty": "advanced",
+          "answer": "x = 10 or x = 30 phones",
+          "hint": "Set P = 0 and solve"
+        }
+      ],
+      "diagrams": [
+        "generated_content\\diagrams\\math_quadratic_equations_enhanced_parabola.png"
+      ],
+      "videos": [],
+      "interactive_elements": [],
+      "nigerian_context": "In Lagos, a projectile launcher costs ₦15,000...",
+      "real_world_applications": [],
+      "views": 0,
+      "likes": 0,
+      "completion_rate": 0.0,
+      "average_rating": 0.0,
+      "total_ratings": 0,
+      "created_at": "2026-01-02T02:11:39.843291",
+      "updated_at": "2026-01-02T06:53:22.210898",
+      "status": "published",
+      "tags": [
+        "mathematics",
+        "quadratic_equations",
+        "intermediate",
+        "waec",
+        "with_diagrams",
+        "worked_examples",
+        "practice_problems"
+      ],
+      "source": "pilot_content_generator",
+      "version": "1.0"
+    },
+    {
+      "id": "physics_current_electricity_enhanced",
+      "title": "Current Electricity: Circuits and Ohm's Law",
+      "subject": "Physics",
+      "topic": "Current Electricity",
+      "subtopic": "Series and Parallel Circuits",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Current Electricity: Complete Guide\n\n## 1. Fundamental Concepts\n\n### Electric Current (I)\n- **Definition**: Rate of flow of electric charge\n- **Formula**: I = Q/t\n- **Unit**: Ampere (A) or Coulomb per second (C/s)\n- **Direction**: Conventional current flows from positive to negative\n\n### Potential Difference/Voltage (V)\n- **Definition**: Work done per unit charge\n- **Formula**: V = W/Q\n- **Unit**: Volt (V) or Joule per Coulomb (J/C)\n- **Meaning**: \"Electrical pressure\" that pushes charges\n\n### Resistance (R)\n- **Definition**: Opposition to current flow\n- **Formula**: R = ρL/A (where ρ = resistivity, L = length, A = area)\n- **Unit**: Ohm (Ω)\n- **Factors**: Material, length, cross-sectional area, temperature\n\n## 2. Ohm's Law ⭐⭐⭐\n\n**V = IR**\n\nMost important formula in electricity!\n\nIf you know any two quantities, you can find the third:\n- V = IR (voltage equals current times resistance)\n- I = V/R (current equals voltage divided by resistance)\n- R = V/I (resistance equals voltage divided by current)\n\n## 3. Series Circuits\n\n**Characteristics**:\n- Current is **same** through all components: I = I₁ = I₂ = I₃\n- Voltage is **shared**: V = V₁ + V₂ + V₃\n- Total resistance **adds up**: Rtotal = R₁ + R₂ + R₃\n\n**When to use**: Christmas lights, simple torch circuits\n\n## 4. Parallel Circuits\n\n**Characteristics**:\n- Voltage is **same** across all branches: V = V₁ = V₂ = V₃\n- Current is **shared**: I = I₁ + I₂ + I₃\n- Reciprocal of total resistance: 1/Rtotal = 1/R₁ + 1/R₂ + 1/R₃\n\n**When to use**: Home wiring, appliances that need same voltage\n\n## 5. Electrical Power and Energy\n\n**Power Formulas**:\n- P = VI (most common)\n- P = I²R (useful when you know current and resistance)\n- P = V²/R (useful when you know voltage and resistance)\n\n**Energy**: E = Pt (Energy = Power × Time)\n\n**Cost of Electricity** (Nigerian Context):\nCost = Energy (kWh) × Tariff (₦/kWh)\n\n## 6. Nigerian Context: NEPA/PHCN Calculations\n\n### Example: Monthly Electricity Bill in Lagos\n\n**Appliances in a home**:\n- 5 LED bulbs (10W each) × 6 hours/day\n- 1 Fan (75W) × 8 hours/day\n- 1 TV (100W) × 4 hours/day\n- 1 Fridge (150W) × 24 hours/day\n\n**Monthly consumption**:\n- Bulbs: 5 × 10W × 6h × 30 days = 9 kWh\n- Fan: 75W × 8h × 30 = 18 kWh\n- TV: 100W × 4h × 30 = 12 kWh\n- Fridge: 150W × 24h × 30 = 108 kWh\n- **Total**: 147 kWh/month\n\n**Cost** (at ₦68/kWh):\n147 kWh × ₦68 = ₦9,996 per month\n\n## 7. WAEC Exam Tips\n\n✅ **Always write formulas first** - shows you know the concept\n\n✅ **List given values** - helps you organize your solution\n\n✅ **Show unit conversions** - mA to A, kW to W, etc.\n\n✅ **Draw circuit diagrams** when asked - label all components\n\n✅ **Check your answer** - Does the current make sense? Is resistance positive?\n\n## 8. Common Mistakes\n\n❌ Forgetting to convert units (mA to A, kW to W)\n❌ Using series formulas for parallel circuits (and vice versa)\n❌ Mixing up voltage division vs current division\n❌ Not showing working - even if you use calculator\n❌ Wrong formula for parallel resistance (don't just add!)\n\n## Summary\n\n- Ohm's Law: V = IR (memorize this!)\n- Series: Same current, voltage adds\n- Parallel: Same voltage, current adds\n- Power: P = VI = I²R = V²/R\n- Practice with Nigerian context problems\n",
+      "summary": "- **Definition**: Rate of flow of electric charge",
+      "learning_objectives": [
+        "Apply Ohm's Law to calculate V, I, and R",
+        "Analyze series and parallel circuits",
+        "Calculate power consumption and cost",
+        "Solve WAEC-style circuit problems"
+      ],
+      "prerequisites": [
+        "Basic electricity",
+        "Mathematics"
+      ],
+      "estimated_read_time": 30,
+      "worked_examples": [
+        {
+          "problem": "A bulb has resistance 240Ω and is connected to 240V mains. Calculate current.",
+          "solution": "Given: V = 240V, R = 240Ω\nUsing Ohm's Law: I = V/R\nI = 240/240 = 1A",
+          "answer": "Current = 1A"
+        },
+        {
+          "problem": "Three resistors 2Ω, 3Ω, and 5Ω are connected in series to a 20V battery. Find total resistance and current.",
+          "solution": "Series: Rtotal = R₁ + R₂ + R₃\nRtotal = 2 + 3 + 5 = 10Ω\nI = V/R = 20/10 = 2A",
+          "answer": "Rtotal = 10Ω, I = 2A"
+        },
+        {
+          "problem": "A Nigerian home uses a 1.5kW heater for 3 hours daily. If electricity costs ₦65/kWh, find monthly cost (30 days).",
+          "solution": "Daily energy = 1.5kW × 3h = 4.5kWh\nMonthly energy = 4.5 × 30 = 135kWh\nCost = 135 × ₦65 = ₦8,775",
+          "answer": "Monthly cost = ₦8,775"
+        }
+      ],
+      "practice_problems": [
+        {
+          "question": "Calculate the voltage across a 50Ω resistor when 0.5A flows through it.",
+          "difficulty": "basic",
+          "answer": "V = 25V",
+          "hint": "Use Ohm's Law: V = IR"
+        },
+        {
+          "question": "Two resistors 4Ω and 6Ω are in parallel. Find the equivalent resistance.",
+          "difficulty": "intermediate",
+          "answer": "Req = 2.4Ω",
+          "hint": "Use 1/Req = 1/R₁ + 1/R₂"
+        },
+        {
+          "question": "A NEPA prepaid meter shows 50 kWh remaining. How many hours can you run a 2kW air conditioner?",
+          "difficulty": "intermediate",
+          "answer": "25 hours",
+          "hint": "Time = Energy / Power"
+        }
+      ],
+      "diagrams": [
+        "generated_content\\diagrams\\physics_current_electricity_enhanced_circuits.png"
+      ],
+      "videos": [],
+      "interactive_elements": [],
+      "nigerian_context": "NEPA/PHCN power calculations for Nigerian homes...",
+      "real_world_applications": [],
+      "views": 0,
+      "likes": 0,
+      "completion_rate": 0.0,
+      "average_rating": 0.0,
+      "total_ratings": 0,
+      "created_at": "2026-01-02T02:11:45.453745",
+      "updated_at": "2026-01-02T06:53:22.302634",
+      "status": "published",
+      "tags": [
+        "physics",
+        "current_electricity",
+        "intermediate",
+        "waec",
+        "with_diagrams",
+        "worked_examples",
+        "practice_problems",
+        "nigerian_context"
+      ],
+      "source": "pilot_content_generator",
+      "version": "1.0"
+    },
+    {
+      "id": "chemistry_chemical_bonding_enhanced",
+      "title": "Chemical Bonding: Ionic, Covalent, and Metallic",
+      "subject": "Chemistry",
+      "topic": "Chemical Bonding",
+      "subtopic": "Types of Chemical Bonds",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Chemical Bonding: Complete Guide\n\n## 1. Why Atoms Bond\n\nAtoms bond to achieve **stable electron configuration** (usually 8 valence electrons - octet rule).\n\n**Exceptions**: H and He need only 2 electrons (duplet rule).\n\n## 2. Ionic Bonding\n\n### Definition\n- Transfer of electrons from metal to non-metal\n- Forms oppositely charged ions\n- Electrostatic attraction holds ions together\n\n### Example: Sodium Chloride (NaCl)\n- Na (2,8,1) → Na⁺ (2,8) + e⁻\n- Cl (2,8,7) + e⁻ → Cl⁻ (2,8,8)\n- Na⁺Cl⁻ forms ionic compound\n\n### Properties\n✓ High melting/boiling points\n✓ Conduct electricity when molten or in solution\n✓ Hard but brittle crystals\n✓ Soluble in water\n\n### Nigerian Example\nCommon salt from Lagos salt industry - NaCl is ionic compound.\n\n## 3. Covalent Bonding\n\n### Definition\n- Sharing of electron pairs between non-metals\n- Both atoms contribute electrons\n- Strong directional bonds\n\n### Types\n**Single Bond**: 1 pair shared (H-H)\n**Double Bond**: 2 pairs shared (O=O)\n**Triple Bond**: 3 pairs shared (N≡N)\n\n### Example: Water (H₂O)\n- O needs 2 electrons\n- Each H shares 1 electron with O\n- 2 O-H bonds form\n\n### Properties\n✓ Variable melting/boiling points\n✓ Poor electrical conductors\n✓ Can be gases, liquids, or solids\n✓ Variable solubility\n\n## 4. Metallic Bonding\n\n### Definition\n- Bonding in metals\n- Positive metal ions in lattice\n- Delocalized \"sea of electrons\" moving freely\n\n### Properties\n✓ High electrical/thermal conductivity\n✓ Malleable and ductile\n✓ Metallic luster\n✓ High melting points (usually)\n\n### Nigerian Context\nCopper wiring in Lagos homes - metallic bonding enables conductivity.\n\n## 5. WAEC Exam Tips\n\n✅ Draw electron diagrams clearly\n✅ Show electron transfer (ionic) vs sharing (covalent)\n✅ State properties and relate to bond type\n✅ Practice dot-and-cross diagrams\n✅ Learn common examples for each bond type\n\n## Practice Problems\n\n1. Draw electron configuration for MgO formation\n2. Explain why NaCl conducts when molten\n3. Why is diamond hard but graphite soft? (both covalent)\n4. Predict bond type: CaCl₂, H₂, Al\n",
+      "summary": "Atoms bond to achieve **stable electron configuration** (usually 8 valence electrons - octet rule).",
+      "learning_objectives": [
+        "Distinguish between ionic, covalent, and metallic bonding",
+        "Draw electron transfer and sharing diagrams",
+        "Relate properties to bond type"
+      ],
+      "prerequisites": [
+        "Atomic structure",
+        "Electron configuration"
+      ],
+      "estimated_read_time": 20,
+      "worked_examples": [
+        {
+          "problem": "Explain the bonding in magnesium oxide (MgO).",
+          "solution": "Mg (2,8,2) loses 2e⁻ → Mg²⁺ (2,8)\nO (2,6) gains 2e⁻ → O²⁻ (2,8)\nIonic bonding by electron transfer.",
+          "answer": "Ionic bond, Mg²⁺O²⁻"
+        }
+      ],
+      "practice_problems": [
+        {
+          "question": "What type of bonding exists in CO₂?",
+          "difficulty": "basic",
+          "answer": "Covalent (double bonds)",
+          "hint": "Non-metal + Non-metal"
+        }
+      ],
+      "diagrams": [
+        "generated_content\\diagrams\\chemistry_chemical_bonding_enhanced_bonding.png"
+      ],
+      "videos": [],
+      "interactive_elements": [],
+      "nigerian_context": "Salt industry in Lagos, copper wiring in homes",
+      "real_world_applications": [],
+      "views": 0,
+      "likes": 0,
+      "completion_rate": 0.0,
+      "average_rating": 0.0,
+      "total_ratings": 0,
+      "created_at": "2026-01-02T02:23:21.424935",
+      "updated_at": "2026-01-02T06:53:22.302801",
+      "status": "published",
+      "tags": [
+        "chemistry",
+        "chemical_bonding",
+        "intermediate",
+        "waec",
+        "with_diagrams",
+        "worked_examples",
+        "practice_problems"
+      ],
+      "source": "pilot_content_generator",
+      "version": "1.0"
+    },
+    {
+      "id": "biology_cell_structure_enhanced",
+      "title": "Cell Structure and Functions",
+      "subject": "Biology",
+      "topic": "Cell Biology",
+      "subtopic": "Cell Structure and Organelles",
+      "content_type": "study_guide",
+      "difficulty": "basic",
+      "exam_board": "WAEC",
+      "content": "# Cell Structure: The Building Blocks of Life\n\n## 1. Cell Theory\n\n**Three Principles**:\n1. All living things are made of cells\n2. Cells are the basic unit of life\n3. All cells come from pre-existing cells\n\n## 2. Types of Cells\n\n### Prokaryotic Cells\n- No true nucleus\n- No membrane-bound organelles\n- Example: Bacteria\n\n### Eukaryotic Cells\n- True nucleus with nuclear membrane\n- Membrane-bound organelles\n- Examples: Plant and animal cells\n\n## 3. Animal Cell Organelles\n\n### Nucleus\n- **Function**: Controls cell activities, contains DNA\n- **Nigerian Context**: Like Aso Rock - the control center of Nigeria\n\n### Mitochondrion (plural: Mitochondria)\n- **Function**: Powerhouse of cell, produces energy (ATP)\n- **Formula**: Glucose + O₂ → CO₂ + H₂O + Energy\n- **Like**: NEPA generating electricity\n\n### Ribosome\n- **Function**: Protein synthesis\n- **Location**: Free in cytoplasm or on ER\n\n### Lysosome\n- **Function**: Digestion, waste removal\n- **Contains**: Digestive enzymes\n- **Like**: Lagos waste management agency\n\n### Cell Membrane\n- **Function**: Controls what enters/exits cell\n- **Structure**: Phospholipid bilayer\n- **Property**: Selectively permeable\n\n## 4. Plant Cell Organelles\n\n### Cell Wall\n- **Function**: Protection, shape, support\n- **Composition**: Cellulose\n- **Unique to**: Plants, fungi, bacteria\n\n### Chloroplast\n- **Function**: Photosynthesis\n- **Contains**: Chlorophyll (green pigment)\n- **Equation**: 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂\n\n### Large Central Vacuole\n- **Function**: Storage of water, nutrients, waste\n- **Contains**: Cell sap\n- **Provides**: Turgidity (firmness)\n\n## 5. Differences: Plant vs Animal Cells\n\n| Feature | Plant Cell | Animal Cell |\n|---------|-----------|-------------|\n| Cell Wall | ✓ Present | ✗ Absent |\n| Chloroplasts | ✓ Present | ✗ Absent |\n| Vacuole | Large, central | Small, many |\n| Shape | Fixed (rectangular) | Irregular |\n| Nutrition | Autotrophic | Heterotrophic |\n\n## 6. Cell Processes\n\n### Diffusion\n- Movement from high to low concentration\n- No energy required\n- Example: Oxygen into cells\n\n### Osmosis\n- Diffusion of water through membrane\n- Important for plant turgidity\n\n### Active Transport\n- Movement against concentration gradient\n- Requires energy (ATP)\n- Example: Mineral absorption by roots\n\n## 7. WAEC Exam Tips\n\n✅ **Draw clear diagrams** - label at least 5 organelles\n✅ **State functions** - don't just name organelles\n✅ **Know differences** - plant vs animal cells\n✅ **Understand processes** - diffusion, osmosis, active transport\n✅ **Use Nigerian examples** - makes answers relatable\n\n## 8. Nigerian Context Examples\n\n**Plantain Cell**: Has cell wall (gives firm texture), chloroplasts (green when unripe), large vacuole (stores starch)\n\n**Human Blood Cell**: No cell wall (flexible for moving through vessels), mitochondria (energy for oxygen transport)\n\n## Practice Questions\n\n1. List 3 differences between plant and animal cells\n2. Explain the function of mitochondria\n3. Why do plants cells have cell walls?\n4. Draw and label an animal cell (5 parts minimum)\n5. What happens to plant cells in salty water? (osmosis)\n\n## Summary\n\n- Cells are basic units of life\n- Animal cells: nucleus, mitochondria, ribosomes, lysosomes\n- Plant cells: also have cell wall, chloroplasts, large vacuole\n- Each organelle has specific function\n- Understand cell processes: diffusion, osmosis, active transport\n",
+      "summary": "**Three Principles**:",
+      "learning_objectives": [
+        "Identify cell organelles and their functions",
+        "Distinguish plant and animal cells",
+        "Understand cell processes"
+      ],
+      "prerequisites": [
+        "Basic biology"
+      ],
+      "estimated_read_time": 22,
+      "worked_examples": [
+        {
+          "problem": "Why do plant cells not burst when placed in water?",
+          "solution": "Cell wall provides support and prevents bursting. Water enters by osmosis, cell becomes turgid, but wall resists further expansion.",
+          "answer": "Cell wall prevents bursting"
+        }
+      ],
+      "practice_problems": [
+        {
+          "question": "Name the organelle that contains chlorophyll.",
+          "difficulty": "basic",
+          "answer": "Chloroplast",
+          "hint": "Used for photosynthesis"
+        }
+      ],
+      "diagrams": [
+        "generated_content\\diagrams\\biology_cell_structure_enhanced_cells.png"
+      ],
+      "videos": [],
+      "interactive_elements": [],
+      "nigerian_context": "Plantain cells, blood cells, yam storage",
+      "real_world_applications": [],
+      "views": 0,
+      "likes": 0,
+      "completion_rate": 0.0,
+      "average_rating": 0.0,
+      "total_ratings": 0,
+      "created_at": "2026-01-02T02:23:24.441692",
+      "updated_at": "2026-01-02T06:53:22.302935",
+      "status": "published",
+      "tags": [
+        "biology",
+        "cell_biology",
+        "basic",
+        "waec",
+        "with_diagrams",
+        "worked_examples",
+        "practice_problems"
+      ],
+      "source": "pilot_content_generator",
+      "version": "1.0"
+    },
+    {
+      "id": "biology_reproduction_enhanced",
+      "title": "Reproduction in Living Organisms",
+      "subject": "Biology",
+      "topic": "Reproduction",
+      "subtopic": "Asexual and Sexual Reproduction",
+      "content_type": "study_guide",
+      "difficulty": "intermediate",
+      "exam_board": "WAEC",
+      "content": "# Reproduction: Continuity of Life\n\n## 1. Types of Reproduction\n\n### Asexual Reproduction\n- **One parent** only\n- **No gametes** (sex cells)\n- Offspring **genetically identical** to parent (clones)\n- **Faster** than sexual reproduction\n\n### Sexual Reproduction\n- **Two parents** (male and female)\n- Involves **gametes** (sperm and egg)\n- Offspring **genetically different** from parents\n- Provides **variation** for adaptation\n\n## 2. Asexual Reproduction Methods\n\n### Binary Fission\n- Single organism splits into two\n- Example: Bacteria, Amoeba\n- Very rapid multiplication\n\n### Budding\n- Small outgrowth (bud) forms on parent\n- Bud detaches and grows independently\n- Example: Yeast, Hydra\n\n### Vegetative Propagation\n- New plants from vegetative parts\n- Examples:\n  * Stem: Cassava, Sugarcane\n  * Root: Sweet potato\n  * Tuber: Yam, Potato\n  * Bulb: Onion, Garlic\n  * Rhizome: Ginger\n\n### Spore Formation\n- Produces many spores\n- Spores dispersed by wind\n- Example: Fungi, Ferns\n\n## 3. Sexual Reproduction in Flowering Plants\n\n### Parts of a Flower\n\n**Male Parts (Stamen)**:\n- Anther: Produces pollen grains\n- Filament: Supports anther\n\n**Female Parts (Carpel/Pistil)**:\n- Stigma: Receives pollen\n- Style: Tube connecting stigma to ovary\n- Ovary: Contains ovules (eggs)\n\n### Pollination\n**Definition**: Transfer of pollen from anther to stigma\n\n**Types**:\n1. **Self-Pollination**: Same flower or same plant\n2. **Cross-Pollination**: Different plants (same species)\n\n**Agents of Pollination**:\n- **Wind**: Light, dry pollen; abundant; feathery stigma (e.g., maize, grasses)\n- **Insects**: Bright colors, nectar, scent, sticky pollen (e.g., hibiscus, sunflower)\n- **Birds**: Bright red/orange, lots of nectar (e.g., bird of paradise)\n- **Water**: Aquatic plants\n\n### Fertilization\n1. Pollen lands on stigma\n2. Pollen tube grows down style\n3. Male nucleus travels through tube\n4. Reaches ovary, fuses with egg\n5. Forms zygote → embryo → seed\n6. Ovary becomes fruit\n\n## 4. Sexual Reproduction in Humans\n\n### Male Reproductive System\n- Testes: Produce sperm and testosterone\n- Sperm duct: Transports sperm\n- Penis: Delivers sperm\n\n### Female Reproductive System\n- Ovaries: Produce eggs (ova) and hormones\n- Fallopian tubes: Site of fertilization\n- Uterus: Where baby develops\n- Vagina: Birth canal\n\n### Fertilization\n- Sperm meets egg in fallopian tube\n- Fusion forms zygote\n- Zygote implants in uterus\n- Develops into embryo → fetus → baby\n- **Gestation period**: 9 months (280 days)\n\n## 5. Nigerian Agricultural Context\n\n### Asexual Reproduction in Farming\n- **Cassava**: Stem cuttings planted\n- **Yam**: Seed yam (tuber piece) planted\n- **Plantain**: Suckers transplanted\n- **Advantages**: Faster, maintains good traits\n\n### Sexual Reproduction in Farming\n- **Maize**: Pollinated by wind, grows from seed\n- **Tomatoes**: Insect-pollinated, grows from seed\n- **Advantages**: Produces variation, disease resistance\n\n## 6. WAEC Exam Tips\n\n✅ **Label flower diagrams** clearly (stigma, anther, ovary, etc.)\n✅ **Distinguish** self vs cross-pollination\n✅ **State agents** of pollination with examples\n✅ **Compare** asexual vs sexual reproduction\n✅ **Use Nigerian examples** (cassava, yam, maize)\n✅ **Know fertilization process** step-by-step\n\n## 7. Common WAEC Questions\n\n1. Explain the term pollination\n2. State 3 differences between asexual and sexual reproduction\n3. Draw and label parts of a flower\n4. Describe fertilization in flowering plants\n5. Name 2 crops propagated vegetatively\n\n## Practice Questions\n\n1. What is the male gamete in plants?\n2. Where does fertilization occur in humans?\n3. Give 2 advantages of sexual reproduction\n4. Name the process by which yam is propagated\n5. State 3 agents of cross-pollination\n\n## Summary\n\n- Two main types: Asexual (one parent) and Sexual (two parents)\n- Asexual: Binary fission, budding, vegetative propagation, spores\n- Sexual (plants): Pollination → Fertilization → Seed formation\n- Nigerian crops: Cassava (asexual), Maize (sexual)\n- Sexual reproduction provides variation for adaptation\n",
+      "summary": "- **One parent** only",
+      "learning_objectives": [
+        "Distinguish asexual and sexual reproduction",
+        "Describe pollination and fertilization in plants",
+        "Relate reproduction to Nigerian agriculture"
+      ],
+      "prerequisites": [
+        "Cell structure",
+        "Plant structure"
+      ],
+      "estimated_read_time": 28,
+      "worked_examples": [
+        {
+          "problem": "Explain how cassava is propagated in Nigerian farms.",
+          "solution": "Cassava is propagated vegetatively using stem cuttings. Mature stems are cut into pieces (15-20cm), planted in soil. Each cutting grows roots and shoots, forming new cassava plant identical to parent.",
+          "answer": "Vegetative propagation via stem cuttings"
+        }
+      ],
+      "practice_problems": [
+        {
+          "question": "What type of reproduction occurs in yam cultivation?",
+          "difficulty": "basic",
+          "answer": "Asexual (vegetative propagation using seed yam)",
+          "hint": "Farmers plant pieces of yam tuber"
+        }
+      ],
+      "diagrams": [
+        "generated_content\\diagrams\\biology_reproduction_enhanced_reproduction.png"
+      ],
+      "videos": [],
+      "interactive_elements": [],
+      "nigerian_context": "Cassava, yam, plantain propagation; maize pollination",
+      "real_world_applications": [],
+      "views": 0,
+      "likes": 0,
+      "completion_rate": 0.0,
+      "average_rating": 0.0,
+      "total_ratings": 0,
+      "created_at": "2026-01-02T02:23:35.963420",
+      "updated_at": "2026-01-02T06:53:22.303171",
+      "status": "published",
+      "tags": [
+        "biology",
+        "reproduction",
+        "intermediate",
+        "waec",
+        "with_diagrams",
+        "worked_examples",
+        "practice_problems"
+      ],
+      "source": "pilot_content_generator",
+      "version": "1.0"
+    },
+    {
+      "id": "math_trigonometry_enhanced",
+      "title": "Trigonometry: Solving Real Problems in Nigeria",
+      "subject": "Mathematics",
+      "topic": "Trigonometry",
+      "difficulty": "advanced",
+      "exam_weight": "high",
+      "read_time_minutes": 30,
+      "content": "\n# Trigonometry: Solving Real Problems in Nigeria\n\n## Introduction\n\nTrigonometry, from the Greek words 'trigonon' (triangle) and 'metron' (measure), is the branch of mathematics dealing with relationships between angles and sides of triangles. In Nigeria, trigonometry has practical applications in surveying (Abuja city planning), telecommunications (MTN cell tower positioning), civil engineering (Niger Bridge construction), and navigation (River Niger shipping routes).\n\n## Part 1: Trigonometric Ratios (SOHCAHTOA)\n\n### The Foundation\n\nFor a right-angled triangle with angle θ:\n\n**SOH**: sin θ = Opposite/Hypotenuse\n**CAH**: cos θ = Adjacent/Hypotenuse  \n**TOA**: tan θ = Opposite/Adjacent\n\n### Nigerian Example: MTN Cell Tower Height\n\n**Problem**: An MTN engineer in Lagos stands 50 meters from the base of a cell tower. The angle of elevation to the top is 67°. Find the tower's height.\n\n**Solution**:\n```\ntan 67° = height/50\nheight = 50 × tan 67°\nheight = 50 × 2.356\nheight ≈ 117.8 meters\n```\n\n**Answer**: The MTN tower is approximately 118 meters tall.\n\n**WAEC Tip**: Always draw a diagram first! Label the known values and the unknown you're solving for.\n\n## Part 2: Angles of Elevation and Depression\n\n### Nigerian Example: Aso Rock Measurement\n\n**Problem**: From a point 200 meters from the base of Aso Rock in Abuja, the angle of elevation to the peak is 52°. Calculate the height of the rock formation.\n\n**Solution**:\n```\ntan 52° = height/200\nheight = 200 × tan 52°\nheight = 200 × 1.280\nheight ≈ 256 meters\n```\n\n**Answer**: Aso Rock is approximately 256 meters high.\n\n### Angle of Depression Example: Kainji Dam Observation\n\n**Problem**: An engineer at the top of Kainji Dam (80 meters high) observes a boat on the Niger River. The angle of depression is 35°. How far is the boat from the base of the dam?\n\n**Solution**:\n```\nAngle of depression = Angle of elevation (alternate angles)\ntan 35° = 80/distance\ndistance = 80/tan 35°\ndistance = 80/0.700\ndistance ≈ 114.3 meters\n```\n\n**Answer**: The boat is approximately 114 meters from the dam.\n\n## Part 3: Bearings and Navigation\n\n### Understanding Bearings\n\n- Bearings are measured clockwise from North (000°)\n- Written as three-figure bearings: 045°, 120°, 270°\n- Back bearings differ by 180°\n\n### Nigerian Example: Navigation on River Niger\n\n**Problem**: A cargo ship travels from Lokoja to Baro on the Niger River. It sails 80 km on a bearing of 055°, then 60 km on a bearing of 125°. Find the direct distance and bearing from Lokoja to its final position.\n\n**Solution** (Using Cosine Rule):\n```\nAngle between paths = 125° - 055° = 70°\nc² = a² + b² - 2ab cos C\nc² = 80² + 60² - 2(80)(60) cos 70°\nc² = 6400 + 3600 - 9600(0.342)\nc² = 10000 - 3283\nc² = 6717\nc ≈ 82 km\n\nUsing Sine Rule for bearing:\nsin A/60 = sin 70°/82\nsin A = (60 × 0.940)/82\nsin A = 0.688\nA ≈ 43.4°\n\nFinal bearing = 55° + 43.4° ≈ 098°\n```\n\n**Answer**: The ship is 82 km from Lokoja on a bearing of 098°.\n\n## Part 4: Sine Rule\n\n**Formula**: a/sin A = b/sin B = c/sin C\n\n### Nigerian Example: Surveying Obudu Cattle Ranch\n\n**Problem**: A surveyor at Obudu Cattle Ranch needs to measure the distance across a valley. From point A, the distance to point B is 250 meters. The angle at A is 75° and the angle at B is 60°. Find the distance BC.\n\n**Solution**:\n```\nAngle C = 180° - 75° - 60° = 45°\n\nUsing Sine Rule:\nBC/sin 75° = 250/sin 45°\nBC = (250 × sin 75°)/sin 45°\nBC = (250 × 0.966)/0.707\nBC ≈ 341 meters\n```\n\n**Answer**: The distance across the valley is approximately 341 meters.\n\n## Part 5: Cosine Rule\n\n**Formula**: \n- c² = a² + b² - 2ab cos C\n- cos C = (a² + b² - c²)/(2ab)\n\n### Nigerian Example: Abuja City Planning\n\n**Problem**: In Abuja's new city development, three landmarks form a triangle. The distance between Landmark A and B is 5 km, between B and C is 7 km, and between A and C is 9 km. Find the angle at Landmark B.\n\n**Solution**:\n```\nUsing Cosine Rule:\ncos B = (a² + c² - b²)/(2ac)\ncos B = (5² + 7² - 9²)/(2 × 5 × 7)\ncos B = (25 + 49 - 81)/70\ncos B = -7/70\ncos B = -0.1\nB ≈ 95.7°\n```\n\n**Answer**: The angle at Landmark B is approximately 96°.\n\n## Part 6: Area of Triangle\n\n**Formula**: Area = ½ ab sin C\n\n### Nigerian Example: Triangular Land Plot in Lagos\n\n**Problem**: A triangular plot of land in Lekki has two sides measuring 80 meters and 100 meters, with an included angle of 110°. Calculate the area and value at ₦200,000 per square meter.\n\n**Solution**:\n```\nArea = ½ × 80 × 100 × sin 110°\nArea = 4000 × sin 110°\nArea = 4000 × 0.940\nArea ≈ 3,758 square meters\n\nValue = 3,758 × ₦200,000\nValue ≈ ₦751,600,000\n```\n\n**Answer**: The plot is approximately 3,758 m² and worth about ₦752 million.\n\n## Worked Examples\n\n### Example 1: Telecommunications Tower Positioning\n\n**Problem**: Two Glo network towers are 5 km apart. From the first tower, the bearing to a fault location is 075°. From the second tower, the bearing to the same fault is 345°. Find the distance from each tower to the fault.\n\n**Solution**:\n```\n[Detailed solution using angles and Sine Rule]\n```\n\n### Example 2: Solar Panel Angle Optimization\n\n**Problem**: In Kaduna (latitude 10.5°N), what angle should solar panels be tilted for maximum efficiency during dry season?\n\n**Solution**:\n```\nOptimal tilt = Latitude + 15° (for winter/dry season)\nOptimal tilt = 10.5° + 15° = 25.5°\n\nUse trigonometry to calculate support structure dimensions:\nIf panel length = 2 meters\nHeight = 2 × sin 25.5° ≈ 0.86 meters\nBase = 2 × cos 25.5° ≈ 1.80 meters\n```\n\n**Answer**: Tilt panels at 25.5° with 0.86m height and 1.80m base.\n\n## Practice Problems\n\n### Problem 1: BRT Bus Route\nA BRT bus in Lagos travels 8 km on a bearing of 040°, then 6 km on a bearing of 130°. Find the direct distance from start to finish.\n\n**Hint**: Use Cosine Rule after finding the angle between the two paths.\n\n### Problem 2: Bridge Cable Tension\nOn the Lekki-Ikoyi Link Bridge, a cable makes an angle of 65° with the horizontal and is 50 meters long. Find the vertical height it supports.\n\n**Hint**: Use sin 65° = height/50\n\n### Problem 3: Lighthouse Visibility\nFrom a lighthouse in Lagos Harbor (30 meters high), a ship is spotted at an angle of depression of 15°. How far is the ship from the lighthouse base?\n\n**Hint**: Use tan 15° = 30/distance\n\n### Problem 4: Airport Landing Approach\nAn Air Peace aircraft approaching Nnamdi Azikiwe Airport is at an altitude of 800 meters and is 5 km horizontally from the runway. Calculate the angle of depression and glide path distance.\n\n**Hint**: Find angle using tan⁻¹, then use Pythagoras or sin/cos for distance.\n\n## WAEC Exam Strategies\n\n1. **Always Draw Diagrams**: Sketch the scenario, even for bearing problems\n2. **Label Everything**: Mark known angles, sides, and what you're finding\n3. **Check Calculator Mode**: Ensure you're in DEGREE mode, not radians\n4. **Use 3-Figure Bearings**: Write bearings as 045°, not 45°\n5. **Show All Steps**: WAEC awards method marks even if final answer is wrong\n6. **Round Appropriately**: Usually 3 significant figures or 1 decimal place\n7. **Verify Answers**: Use alternative method or estimation to check\n\n## Common Mistakes to Avoid\n\n1. **Confusing elevation and depression**: Remember they're equal (alternate angles)\n2. **Wrong calculator mode**: Double-check DEGREE vs RADIAN\n3. **Incorrect bearing calculations**: Always measure clockwise from North\n4. **Mixing up sin/cos/tan**: Remember SOHCAHTOA\n5. **Forgetting angle sum**: Triangle angles always sum to 180°\n\n## Nigerian Context Summary\n\n**Real-World Applications**:\n- **Telecommunications**: MTN, Glo, Airtel tower positioning (₦5M per tower)\n- **Surveying**: Abuja city planning, land measurement (₦200,000/m²)\n- **Civil Engineering**: Bridge design (Niger Bridge, Lekki-Ikoyi Link)\n- **Navigation**: River Niger shipping routes, airport approaches\n- **Energy**: Solar panel optimization in northern Nigeria (25.5° tilt)\n- **Natural Features**: Aso Rock height (256m), Obudu terrain surveying\n\n## Learning Outcomes\n\nAfter studying this lesson, you should be able to:\n1. ✓ Apply SOHCAHTOA to solve right-angled triangle problems\n2. ✓ Calculate heights and distances using angles of elevation/depression\n3. ✓ Navigate using bearings and solve bearing problems\n4. ✓ Use Sine Rule for non-right triangles\n5. ✓ Apply Cosine Rule to find sides and angles\n6. ✓ Calculate areas of triangles using trigonometry\n7. ✓ Solve real Nigerian problems involving trigonometry\n\n## Prerequisites\n\n- Basic angle properties\n- Pythagoras' theorem\n- Calculator proficiency (sin, cos, tan functions)\n- Understanding of bearing notation\n\n## Next Topics\n\n- Graphs of trigonometric functions\n- Trigonometric identities\n- 3D trigonometry\n- Radians and circular measure\n",
+      "summary": "",
+      "learning_objectives": [
+        "Apply trigonometric ratios to solve real problems",
+        "Calculate using angles of elevation and depression",
+        "Navigate using three-figure bearings",
+        "Use Sine and Cosine rules for any triangle",
+        "Calculate triangle areas using trigonometry"
+      ],
+      "prerequisites": [
+        "Pythagoras' theorem",
+        "Basic angle properties",
+        "Calculator skills",
+        "Understanding of bearings"
+      ],
+      "diagrams": [
+        "math_trigonometry_enhanced_applications.png"
+      ],
+      "tags": [],
+      "nigerian_context": "",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:07:27.524027",
+      "status": "published"
+    },
+    {
+      "id": "physics_work_energy_power_enhanced",
+      "title": "Work, Energy and Power: From Kainji Dam to Lagos Markets",
+      "subject": "Physics",
+      "topic": "Work, Energy and Power",
+      "difficulty": "intermediate",
+      "exam_weight": "high",
+      "read_time_minutes": 28,
+      "content": "\n# Work, Energy and Power: From Kainji Dam to Lagos Markets\n\n## Introduction\n\nEnergy is the capacity to do work. In Nigeria, we see energy transformations everywhere: the 960 MW Kainji Dam converts water's potential energy to electricity, solar panels in Kaduna convert light energy, and generators in Lagos convert chemical energy from petrol into electrical energy. Understanding work, energy, and power is essential for WAEC success and real-world applications.\n\n## Part 1: Work Done\n\n### Definition\n\n**Work is done when a force moves an object through a distance in the direction of the force.**\n\n**Formula**: W = F × d × cos θ\n\nWhere:\n- W = Work done (Joules, J)\n- F = Force applied (Newtons, N)\n- d = Distance moved (meters, m)\n- θ = Angle between force and direction of motion\n\n### Nigerian Example: Alaba International Market\n\n**Problem**: A trader at Alaba Market pushes a cart loaded with electronics 20 meters across the floor with a force of 150 N. Calculate the work done.\n\n**Solution**:\n```\nW = F × d\nW = 150 N × 20 m\nW = 3,000 J = 3 kJ\n```\n\n**Answer**: The trader does 3,000 Joules (3 kJ) of work.\n\n**WAEC Tip**: If the force and motion are in the same direction, θ = 0° and cos 0° = 1, so W = F × d.\n\n### Example with Angle: Carrying Water Up Slope\n\n**Problem**: In a rural Nigerian village, a woman carries a 20 kg bucket of water (weight = 200 N) up a 10-meter slope inclined at 30° to the horizontal. Find the work done against gravity.\n\n**Solution**:\n```\nVertical height = 10 × sin 30° = 10 × 0.5 = 5 m\nW = F × h\nW = 200 N × 5 m\nW = 1,000 J = 1 kJ\n```\n\n**Answer**: Work done against gravity is 1,000 J.\n\n## Part 2: Forms of Energy\n\n### 1. Kinetic Energy (KE)\n\n**Energy of motion**\n\n**Formula**: KE = ½mv²\n\nWhere:\n- m = mass (kg)\n- v = velocity (m/s)\n\n### Nigerian Example: BRT Bus in Lagos\n\n**Problem**: A BRT bus with mass 8,000 kg travels at 20 m/s on Ikorodu Road. Calculate its kinetic energy.\n\n**Solution**:\n```\nKE = ½mv²\nKE = ½ × 8,000 × (20)²\nKE = 4,000 × 400\nKE = 1,600,000 J = 1.6 MJ\n```\n\n**Answer**: The bus has 1.6 megajoules of kinetic energy.\n\n### 2. Potential Energy (PE)\n\n**Energy due to position**\n\n**Formula**: PE = mgh\n\nWhere:\n- m = mass (kg)\n- g = 10 m/s² (gravitational field strength)\n- h = height (m)\n\n### Nigerian Example: Elevated Water Tank in Lagos\n\n**Problem**: A water tank in Victoria Island is 15 meters above ground and holds 2,000 kg of water. Calculate the potential energy of the water.\n\n**Solution**:\n```\nPE = mgh\nPE = 2,000 × 10 × 15\nPE = 300,000 J = 300 kJ\n```\n\n**Answer**: The water has 300 kilojoules of potential energy.\n\n## Part 3: Conservation of Energy\n\n**Principle**: Energy cannot be created or destroyed, only converted from one form to another.\n\n**Total Energy**: KE + PE = constant (in the absence of friction)\n\n### Nigerian Example: Kainji Dam Hydroelectric Power\n\n**Problem**: Water at the top of Kainji Dam (80 m high) has mass 10,000 kg. Calculate:\na) Potential energy at the top\nb) Kinetic energy just before hitting turbines (bottom)\nc) Velocity at the bottom\n\n**Solution**:\n```\na) PE at top = mgh = 10,000 × 10 × 80 = 8,000,000 J = 8 MJ\n\nb) By conservation: PE(top) = KE(bottom)\n   KE = 8,000,000 J = 8 MJ\n\nc) KE = ½mv²\n   8,000,000 = ½ × 10,000 × v²\n   v² = 1,600\n   v = 40 m/s\n```\n\n**Answer**: \na) PE = 8 MJ\nb) KE = 8 MJ  \nc) v = 40 m/s\n\n**Real Context**: Kainji Dam generates 960 MW, supplying electricity to northern and western Nigeria.\n\n## Part 4: Power\n\n### Definition\n\n**Power is the rate of doing work or rate of energy transfer.**\n\n**Formula**: P = W/t = E/t\n\nWhere:\n- P = Power (Watts, W)\n- W = Work done (J)\n- t = Time taken (s)\n- E = Energy transferred (J)\n\n**Also**: P = Fv (Power = Force × velocity)\n\n### Nigerian Example: NEPA/PHCN Electricity Bill\n\n**Problem**: A Nigerian household in Lagos uses 300 kWh of electrical energy in a month (30 days). Calculate:\na) Average power consumption\nb) Monthly cost at ₦68/kWh\n\n**Solution**:\n```\na) Energy = 300 kWh = 300,000 Wh = 300 × 3,600,000 J\n   Time = 30 days = 30 × 24 × 3600 s = 2,592,000 s\n   P = E/t = 300 kWh / (30 × 24) h\n   P = 300/720 kW = 0.417 kW ≈ 417 W\n\nb) Cost = 300 kWh × ₦68/kWh = ₦20,400\n```\n\n**Answer**: \na) Average power = 417 W\nb) Monthly cost = ₦20,400\n\n### Generator Fuel Consumption\n\n**Problem**: A 5 kW generator in Lagos runs for 8 hours daily. If fuel costs ₦617/litre and consumption is 0.5 litres/hour, find monthly fuel cost (30 days).\n\n**Solution**:\n```\nDaily consumption = 8 hours × 0.5 litres/hour = 4 litres\nMonthly consumption = 30 × 4 = 120 litres\nMonthly cost = 120 × ₦617 = ₦74,040\n```\n\n**Answer**: Monthly fuel cost = ₦74,040\n\n## Part 5: Efficiency\n\n### Definition\n\n**Efficiency = (Useful output energy/Total input energy) × 100%**\n\n**Also**: Efficiency = (Output power/Input power) × 100%\n\n### Nigerian Example: Solar Panels in Kaduna\n\n**Problem**: A solar panel system in Kaduna receives 10,000 J of light energy per second and produces 1,800 J of electrical energy per second. Calculate:\na) Efficiency\nb) Output power\nc) Wasted power\n\n**Solution**:\n```\na) Efficiency = (1,800/10,000) × 100% = 18%\n\nb) Output power = 1,800 J/s = 1,800 W = 1.8 kW\n\nc) Wasted power = Input - Output = 10,000 - 1,800 = 8,200 W = 8.2 kW\n```\n\n**Answer**: \na) Efficiency = 18%\nb) Output power = 1.8 kW\nc) Wasted power = 8.2 kW\n\n**Real Context**: Solar panel efficiency in Nigeria typically ranges from 15-22%, with northern regions like Kaduna, Sokoto, and Kano having excellent solar potential.\n\n## Worked Examples\n\n### Example 1: Lifting Dangote Cement Bags\n\n**Problem**: A worker lifts a 50 kg bag of Dangote cement vertically through 2 meters in 3 seconds. Calculate:\na) Work done\nb) Power developed\n\n**Solution**:\n```\na) Weight = mg = 50 × 10 = 500 N\n   W = F × d = 500 × 2 = 1,000 J\n\nb) P = W/t = 1,000/3 = 333.3 W\n```\n\n**Answer**: a) 1,000 J, b) 333 W\n\n### Example 2: Okada Motorcycle in Lagos Traffic\n\n**Problem**: An Okada (motorcycle taxi) with total mass 200 kg (bike + rider) accelerates from rest to 15 m/s. Calculate the kinetic energy gained.\n\n**Solution**:\n```\nInitial KE = 0 (at rest)\nFinal KE = ½mv² = ½ × 200 × (15)² = 100 × 225 = 22,500 J = 22.5 kJ\n```\n\n**Answer**: Kinetic energy gained = 22.5 kJ\n\n## Practice Problems\n\n### Problem 1: Eko Bridge Traffic\nA car of mass 1,200 kg travels at 25 m/s on Eko Bridge, Lagos. Calculate its kinetic energy.\n\n**Hint**: Use KE = ½mv²\n\n### Problem 2: Water Tower\nA 500 kg water tank is mounted 20 m above ground in Kano. Find its potential energy.\n\n**Hint**: Use PE = mgh (g = 10 m/s²)\n\n### Problem 3: Inverter Battery\nAn inverter battery stores 2.4 kWh of energy and powers a house for 8 hours. Calculate the average power consumption.\n\n**Hint**: Convert kWh to Wh, then use P = E/t\n\n### Problem 4: Pump Efficiency\nA water pump uses 5,000 J of electrical energy to lift 40 kg of water through 10 m. Calculate its efficiency.\n\n**Hint**: Useful output = mgh, then find (output/input) × 100%\n\n## WAEC Exam Strategies\n\n1. **Unit Conversions**: Be careful with kW ↔ W, kJ ↔ J, kWh ↔ J\n2. **Show All Working**: Method marks are awarded even if final answer is wrong\n3. **State Formulas**: Always write the formula before substituting values\n4. **Use g = 10 m/s²**: Unless stated otherwise in the question\n5. **Check Direction**: Work is only done when force and motion are in same direction\n6. **Conservation of Energy**: Remember PE at top = KE at bottom (no friction)\n7. **Efficiency**: Always less than 100% due to wasted energy\n\n## Common Mistakes to Avoid\n\n1. Confusing work (Joules) with power (Watts)\n2. Forgetting to square velocity in KE = ½mv²\n3. Using wrong units (must convert to SI units)\n4. Not considering direction of force in work calculations\n5. Assuming 100% efficiency (there's always energy loss)\n\n## Nigerian Context Summary\n\n**Real-World Applications**:\n- **Energy Generation**: Kainji Dam (960 MW hydroelectric)\n- **Solar Power**: Kaduna, Sokoto solar farms (15-22% efficiency)\n- **Domestic**: NEPA/PHCN bills (₦68/kWh), generator fuel costs (₦617/L)\n- **Transport**: BRT buses, Okada motorcycles, Air Peace aircraft\n- **Industry**: Dangote factories, Alaba Market logistics\n- **Water Supply**: Elevated tanks in Lagos, Victoria Island\n\n**Typical Costs**:\n- Electricity: ₦68/kWh (Lagos tariff)\n- Generator fuel: ₦617/litre petrol\n- Diesel generators: 0.3-0.5 litres/kWh\n- Monthly household bill: ₦15,000-50,000\n- Solar panel installation: ₦500,000-2M (5-10 kW system)\n\n## Learning Outcomes\n\nAfter studying this lesson, you should be able to:\n1. ✓ Calculate work done by a force\n2. ✓ Determine kinetic and potential energy\n3. ✓ Apply conservation of energy principle\n4. ✓ Calculate power and understand its units\n5. ✓ Determine efficiency of energy conversions\n6. ✓ Solve Nigerian real-world energy problems\n\n## Prerequisites\n\n- Force and motion concepts\n- Basic algebra\n- Unit conversions\n- Understanding of energy concept\n\n## Next Topics\n\n- Simple machines\n- Heat and temperature\n- Electrical energy\n- Renewable energy sources\n",
+      "summary": "",
+      "learning_objectives": [
+        "Calculate work done by forces",
+        "Determine kinetic and potential energy",
+        "Apply conservation of energy",
+        "Calculate power and efficiency",
+        "Solve Nigerian energy problems"
+      ],
+      "prerequisites": [
+        "Force and motion",
+        "Basic algebra",
+        "Unit conversions"
+      ],
+      "diagrams": [
+        "physics_work_energy_power_enhanced_systems.png"
+      ],
+      "tags": [],
+      "nigerian_context": "",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:07:27.524403",
+      "status": "published"
+    },
+    {
+      "id": "chem_acids_bases_salts_advanced",
+      "title": "Acids, Bases and Salts: From Lagos Battery Market to Badagry Salt",
+      "subject": "Chemistry",
+      "topic": "Acids, Bases and Salts",
+      "difficulty": "intermediate",
+      "exam_weight": "very_high",
+      "read_time_minutes": 25,
+      "content": "\n# Acids, Bases and Salts: Chemistry in Nigerian Daily Life\n\n## Introduction\nEvery day, Nigerians interact with acids, bases, and salts: car battery acid in Lagos markets (₦5,000), lime for building construction, Badagry salt production, soap making in Kano, and antacids for treating ulcers. Understanding these substances connects chemistry to Nigerian industries and daily life.\n\n## Part 1: Properties of Acids\n\n### Common Nigerian Acids\n- **Car battery acid** (sulfuric acid, H₂SO₄) - Lagos battery markets\n- **Vinegar** (acetic acid, CH₃COOH) - Nigerian cooking\n- **Citrus fruits** (citric acid) - Oranges, lemons\n- **Stomach acid** (hydrochloric acid, HCl) - Digestion\n\n### Acid Properties\n1. Sour taste (citrus fruits)\n2. Turn blue litmus paper red\n3. pH < 7\n4. React with metals to produce hydrogen gas\n5. React with carbonates to produce CO₂\n6. Neutralize bases\n\n### Worked Example 1: Car Battery Acid Reaction\nA mechanic in Lagos adds zinc metal to dilute sulfuric acid from a battery.\n\n**Reaction**: Zn + H₂SO₄ → ZnSO₄ + H₂\n\n**Observation**: Bubbles of hydrogen gas, zinc dissolves\n\n**Test**: Light a splint near gas → 'pop' sound confirms H₂\n\n**Nigerian Context**: This reaction shows why battery terminals corrode over time and need cleaning/replacement (common issue in Nigerian vehicles).\n\n## Part 2: Properties of Bases\n\n### Common Nigerian Bases\n- **Lime** (calcium hydroxide, Ca(OH)₂) - Building construction\n- **Caustic soda** (sodium hydroxide, NaOH) - Soap making\n- **Wood ash** (potassium hydroxide, KOH) - Traditional soap\n- **Ammonia** (NH₃) - Cleaning products\n\n### Base Properties\n1. Bitter taste (caution: do not taste!)\n2. Turn red litmus paper blue\n3. pH > 7\n4. Feel slippery/soapy\n5. Neutralize acids\n\n### Worked Example 2: Soap Making in Kano\nTraditional soap makers mix palm oil with wood ash extract (contains KOH).\n\n**Reaction**: Palm oil + KOH → Soap + Glycerol\n\n**Process**:\n1. Burn palm fronds to get ash\n2. Dissolve ash in water (extracts KOH)\n3. Filter solution\n4. Heat with palm oil for 2-3 hours\n5. Add salt to separate soap\n6. Mold and dry\n\n**Economics**: 10 liters palm oil (₦15,000) + ash (free) → 50 bars soap (₦20,000 revenue) = ₦5,000 profit\n\n**Nigerian Industry**: This traditional method is still used alongside modern factories in northern Nigeria.\n\n## Part 3: The pH Scale\n\n### Understanding pH\n- pH = power of Hydrogen\n- Scale: 0 to 14\n- pH 7 = Neutral (pure water)\n- pH < 7 = Acidic\n- pH > 7 = Basic/Alkaline\n\n### Nigerian Examples\n| Substance | pH | Category |\n|-----------|----|----|\n| Car battery acid | 1-2 | Strong acid |\n| Vinegar (Nigerian cooking) | 2-3 | Weak acid |\n| Orange juice | 3-4 | Weak acid |\n| Rain water (Lagos) | 5-6 | Slightly acidic |\n| Pure water | 7 | Neutral |\n| Blood | 7.4 | Slightly alkaline |\n| Antacid (for ulcers) | 9-10 | Base |\n| Lime water (construction) | 12-13 | Strong base |\n| Caustic soda (soap making) | 14 | Strong base |\n\n### Worked Example 3: Treating Ulcers with Antacids\nA patient with stomach acid (pH 2) takes an antacid tablet containing Mg(OH)₂.\n\n**Problem**: Explain how antacid works.\n\n**Solution**:\n- Stomach acid: HCl (pH 2, excess acid causes pain)\n- Antacid: Mg(OH)₂ (base)\n- **Neutralization**: 2HCl + Mg(OH)₂ → MgCl₂ + 2H₂O\n- Result: Acid neutralized, pH rises to ~5-6, pain relieved\n\n**Nigerian Market**: Antacids cost ₦500-2,000 per pack, common in pharmacies nationwide.\n\n## Part 4: Neutralization Reactions\n\n### General Equation\n**Acid + Base → Salt + Water**\n\n### Worked Example 4: Lime in Construction (Abuja)\nConstruction workers mix lime Ca(OH)₂ with CO₂ from air for cement hardening.\n\n**Reaction**: Ca(OH)₂ + CO₂ → CaCO₃ + H₂O\n\n**Process**:\n- Lime paste applied to walls\n- CO₂ from air slowly reacts\n- Forms hard calcium carbonate (limestone)\n- Takes weeks to fully harden\n\n**Economics**: 50kg bag lime ₦3,000, covers 20m² of wall\n\n**Nigerian Construction**: Essential for plastering in building projects across Nigeria.\n\n## Part 5: Preparation of Salts\n\n### Method 1: Acid + Metal\n**HCl + Zn → ZnCl₂ + H₂**\n\n### Method 2: Acid + Metal Oxide\n**H₂SO₄ + CuO → CuSO₄ + H₂O**\n\n### Method 3: Acid + Metal Carbonate\n**2HCl + CaCO₃ → CaCl₂ + H₂O + CO₂**\n\n### Method 4: Acid + Base (Neutralization)\n**HNO₃ + NaOH → NaNO₃ + H₂O**\n\n### Worked Example 5: Badagry Salt Production\nAt Badagry salt flats (Lagos State), seawater is evaporated to produce table salt (NaCl).\n\n**Process**:\n1. Seawater pumped into shallow ponds\n2. Sun evaporates water over 2-3 weeks\n3. Salt crystals form (NaCl concentration increases)\n4. Harvest and wash salt\n5. Dry and package\n\n**Yield**: 1000 liters seawater → 30 kg salt (3% concentration)\n\n**Economics**: \n- Production cost: ₦30/kg (evaporation, labor)\n- Selling price: ₦50/kg wholesale\n- Annual production: 5,000+ tonnes in Badagry\n\n**Nigerian Industry**: Badagry salt industry employs thousands, supplies Lagos markets.\n\n### Worked Example 6: Preparing Zinc Chloride in Lab\nA student prepares zinc chloride salt from zinc metal and hydrochloric acid.\n\n**Procedure**:\n1. Add excess zinc granules to dilute HCl\n2. Reaction: Zn + 2HCl → ZnCl₂ + H₂↑\n3. Filter to remove unreacted zinc\n4. Evaporate filtrate to crystallization point\n5. Cool to form ZnCl₂ crystals\n6. Dry between filter papers\n\n**Safety**: Wear goggles, acid is corrosive\n\n**WAEC Practical**: Common exam question format\n\n## Part 6: Nigerian Industries Using Acids, Bases, Salts\n\n### Battery Industry (Lagos)\n- Lead-acid batteries use H₂SO₄\n- Market: Alaba International Market\n- Price: ₦5,000-25,000 per battery\n- Recycling: Old batteries bought for ₦1,500\n\n### Soap Manufacturing (Kano)\n- Traditional: Wood ash (KOH) + palm oil\n- Modern: Caustic soda (NaOH) + various oils\n- Annual production: 100,000+ tonnes\n- Employs: 50,000+ workers\n\n### Salt Production (Badagry)\n- Seawater evaporation\n- Annual yield: 5,000+ tonnes\n- Supplies: Lagos markets\n- Price: ₦50-80/kg wholesale\n\n### Construction (Nationwide)\n- Lime (Ca(OH)₂) for plastering\n- Cement neutralization\n- Annual consumption: 500,000+ tonnes\n- Price: ₦3,000 per 50kg bag\n\n## WAEC Exam Tips\n\n1. **Memorize neutralization equation**: Acid + Base → Salt + Water\n2. **pH scale**: Know which substances are acidic/basic\n3. **Litmus tests**: Blue → red (acid), Red → blue (base)\n4. **Salt preparation methods**: Choose correct method for given salt\n5. **Balance equations**: Always balance chemical equations\n6. **Safety**: Mention safety precautions in practicals\n7. **Show all steps**: WAEC awards method marks\n\n## Practice Problems\n\n**Problem 1**: A Nigerian farmer notices his soil pH is 5 (too acidic for crops). What can he add to neutralize it?\n\n**Problem 2**: Calculate mass of salt formed when 100ml of 1M HCl reacts with excess NaOH. (Hint: HCl + NaOH → NaCl + H₂O, find moles first)\n\n**Problem 3**: Describe how to prepare copper(II) sulfate crystals from copper oxide and dilute sulfuric acid.\n\n**Problem 4**: A Lagos mechanic mixes 500ml of 2M H₂SO₄ with 500ml of 2M NaOH. What is the final pH? Is it safe to touch?\n\n## Key Formulas Summary\n\n- **Neutralization**: Acid + Base → Salt + Water\n- **Acid + Metal**: Acid + Metal → Salt + Hydrogen\n- **Acid + Carbonate**: Acid + Carbonate → Salt + Water + CO₂\n- **pH**: pH = -log[H⁺]\n\n## Nigerian Context Importance\n\nUnderstanding acids, bases, and salts is essential for:\n- **Battery maintenance** - Car mechanics\n- **Construction** - Building workers\n- **Agriculture** - Soil pH management\n- **Health** - Treating ulcers, understanding digestion\n- **Industry** - Soap making, salt production, food processing\n- **Environment** - Acid rain effects, water treatment\n\nThis knowledge connects classroom chemistry to real Nigerian livelihoods and industries!\n",
+      "summary": "",
+      "learning_objectives": [
+        "Identify properties of acids, bases, and salts",
+        "Understand pH scale and neutralization reactions",
+        "Prepare salts using different methods",
+        "Apply knowledge to Nigerian industries (batteries, soap, salt production)",
+        "Solve WAEC-style acid-base problems"
+      ],
+      "prerequisites": [
+        "Chemical reactions",
+        "Chemical equations",
+        "Basic chemistry"
+      ],
+      "diagrams": [
+        "chem_acids_bases_salts_ph_scale.png",
+        "chem_acids_bases_salts_neutralization.png"
+      ],
+      "tags": [
+        "acids",
+        "bases",
+        "salts",
+        "pH scale",
+        "neutralization",
+        "WAEC",
+        "very high priority",
+        "Badagry salt",
+        "batteries",
+        "soap making",
+        "construction"
+      ],
+      "nigerian_context": "Lagos battery market (₦5,000), Badagry salt production (5,000 tonnes/year), Kano soap making (traditional + modern), lime construction (₦3,000/50kg), antacids for ulcers, car battery maintenance, building plastering",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:07:27.524941",
+      "status": "published"
+    },
+    {
+      "id": "bio_nutrition_plants_advanced",
+      "title": "Nutrition in Plants: From Photosynthesis to Nigerian Farms",
+      "subject": "Biology",
+      "topic": "Nutrition in Plants",
+      "difficulty": "intermediate",
+      "exam_weight": "very_high",
+      "read_time_minutes": 26,
+      "content": "\n# Nutrition in Plants: Feeding Nigeria's Farms\n\n## Introduction\nNigeria feeds 220 million people through agriculture. From cassava farms in Benue to cocoa plantations in Ondo, from yam cultivation in Enugu to maize fields in Kaduna—all depend on plant nutrition. Understanding photosynthesis and mineral requirements is essential for Nigerian food security.\n\n## Part 1: Photosynthesis - The Foundation\n\n### The Process\n**6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂**\n(Carbon dioxide + Water → Glucose + Oxygen)\n\n### Requirements\n1. **Chlorophyll** - Green pigment in chloroplasts\n2. **Light energy** - From sunlight\n3. **Carbon dioxide** - From air (0.04%)\n4. **Water** - From soil via roots\n\n### Products\n1. **Glucose** - Used for energy, growth, storage\n2. **Oxygen** - Released to atmosphere\n\n### Worked Example 1: Cassava Photosynthesis (Benue State)\nA cassava farm in Benue has 10,000 plants. Each plant has ~200 leaves averaging 400 cm² per leaf.\n\n**Calculate total photosynthetic surface area**.\n\n**Solution**:\n- Leaves per plant = 200\n- Total plants = 10,000\n- Total leaves = 200 × 10,000 = 2,000,000 leaves\n- Area per leaf = 400 cm² = 0.04 m²\n- Total area = 2,000,000 × 0.04 = 80,000 m²\n- **Total area = 8 hectares of photosynthetic surface**\n\n**Nigerian Context**: Large surface area explains why cassava is efficient at producing tubers (40-50 tonnes/hectare possible with good fertilizer).\n\n## Part 2: Factors Affecting Photosynthesis\n\n### 1. Light Intensity\n- **Too low**: Slow photosynthesis (cloudy days, rainy season)\n- **Optimal**: Bright sunlight (Nigerian dry season)\n- **Too high**: No further increase (light saturation)\n\n### Nigerian Example: Cocoa Under Shade\nIn Ondo State, cocoa trees grow under taller trees (plantain, kola).\n\n**Why?** Young cocoa needs 50-70% shade:\n- Prevents excessive light damage\n- Reduces water loss\n- Optimal photosynthesis at moderate light\n- Mature cocoa tolerates more light\n\n**Economics**: Shade trees = ₦50,000 investment, but increase cocoa yield by 30%\n\n### 2. Carbon Dioxide Concentration\n- Normal air: 0.04% CO₂\n- Optimal: 0.1% CO₂ (2.5× normal)\n- Limiting factor in closed spaces\n\n### 3. Temperature\n- **Too low** (<10°C): Enzymes inactive (not common in Nigeria)\n- **Optimal**: 25-35°C (Nigerian average)\n- **Too high** (>40°C): Enzymes denature, stomata close\n\n### Worked Example 2: Maize Growth in Kaduna\nIn Kaduna, maize grows in two seasons:\n\n**Dry season irrigation**:\n- Temperature: 30-35°C (optimal)\n- Light: High intensity (clear skies)\n- Water: Supplemented by irrigation\n- Growth: 3-4 months, 6-8 tonnes/hectare\n\n**Rainy season**:\n- Temperature: 25-30°C (good)\n- Light: Reduced (cloudy days)\n- Water: Abundant\n- Growth: 4-5 months, 4-6 tonnes/hectare\n\n**Analysis**: Dry season yields more despite needing irrigation because of higher light intensity and temperature.\n\n### 4. Water Availability\n- Required for photosynthesis\n- Maintains turgor pressure\n- Transport medium for nutrients\n- Cooling (transpiration)\n\n## Part 3: Mineral Nutrition\n\n### Macronutrients (Needed in Large Amounts)\n\n#### Nitrogen (N)\n- **Function**: Protein synthesis, chlorophyll, amino acids\n- **Deficiency**: Yellow older leaves, stunted growth\n- **Nigerian source**: Urea (46% N), NPK fertilizer\n- **Cost**: ₦15,000 per 50kg NPK 20-10-10\n\n#### Phosphorus (P)\n- **Function**: DNA, RNA, ATP (energy), root development\n- **Deficiency**: Dark green/purple leaves, poor root growth\n- **Nigerian source**: Single superphosphate, NPK\n- **Application**: Important for yam, cassava root formation\n\n#### Potassium (K)\n- **Function**: Enzyme activation, stomata operation, disease resistance\n- **Deficiency**: Yellow leaf edges, weak stems\n- **Nigerian source**: Muriate of potash, NPK fertilizer\n\n### Micronutrients (Needed in Small Amounts)\n- Iron (Fe) - Chlorophyll synthesis\n- Magnesium (Mg) - Center of chlorophyll molecule\n- Calcium (Ca) - Cell wall formation\n- Sulfur (S) - Protein synthesis\n\n### Worked Example 3: NPK Fertilizer Application (Benue Cassava Farm)\nA farmer applies NPK 20-10-10 at 300 kg/hectare on 5 hectares.\n\n**Calculate nutrients applied:**\n\n**Solution**:\n- Total NPK = 300 kg/ha × 5 ha = 1,500 kg\n- **Nitrogen**: 20% of 1,500 = 300 kg pure N\n- **Phosphorus**: 10% of 1,500 = 150 kg pure P₂O₅\n- **Potassium**: 10% of 1,500 = 150 kg pure K₂O\n\n**Cost**: 1,500 kg ÷ 50 kg/bag = 30 bags\n30 bags × ₦15,000 = **₦450,000 total fertilizer cost**\n\n**Expected yield increase**: \n- Without fertilizer: 15 tonnes/ha\n- With fertilizer: 30-40 tonnes/ha\n- Extra yield: 15-25 tonnes/ha × 5 ha = 75-125 tonnes\n- @ ₦50,000/tonne = ₦3.75-6.25M revenue\n- **Profit after fertilizer**: ₦3.3-5.8M\n\n**ROI**: 733-1289% return on fertilizer investment!\n\n## Part 4: Nutrient Deficiency in Nigerian Crops\n\n### Nitrogen Deficiency (Most Common)\n**Symptoms**:\n- Yellowing of older leaves (chlorosis)\n- Stunted growth\n- Thin, weak stems\n\n**Nigerian crops affected**: Maize, rice, vegetables\n\n**Solution**: Apply urea (46% N) at 100-200 kg/ha or NPK\n\n**Prevention**: Regular fertilizer application, crop rotation with legumes (beans, cowpea)\n\n### Phosphorus Deficiency\n**Symptoms**:\n- Dark green or purple leaves\n- Poor root development\n- Delayed maturity\n\n**Nigerian crops affected**: Yam, cassava, sweet potato\n\n**Solution**: Single superphosphate at planting\n\n### Iron Deficiency (Chlorosis)\n**Symptoms**:\n- Yellow young leaves (veins stay green)\n- Interveinal chlorosis\n\n**Nigerian crops affected**: Citrus, vegetables in alkaline soils\n\n**Solution**: Foliar spray of iron chelate, adjust soil pH\n\n### Worked Example 4: Diagnosing Maize Deficiency (Kaduna)\nA farmer notices his maize has:\n- Yellow older leaves\n- Thin, weak stems  \n- Slow growth despite adequate water\n\n**Diagnosis**: Nitrogen deficiency\n\n**Treatment**:\n1. Apply urea (46% N) at 150 kg/hectare\n2. Or NPK 20-10-10 at 200 kg/hectare\n3. Split application: Half at 3 weeks, half at 6 weeks\n4. Expect improvement in 1-2 weeks\n\n**Cost**: Urea 150kg @ ₦20,000/50kg = ₦60,000/hectare\n\n## Part 5: Transport in Plants\n\n### Xylem (Water & Minerals Up)\n- Dead cells forming tubes\n- Transport from roots to leaves\n- Driven by transpiration pull\n- Contains dissolved minerals (N, P, K, etc.)\n\n### Phloem (Sugars/Food Down)\n- Living cells (sieve tubes)\n- Transport sugars from leaves to storage organs\n- Bidirectional flow\n- Active transport (requires energy)\n\n### Worked Example 5: Water Uptake in Palm Trees (Southeast Nigeria)\nAn oil palm tree in Imo State transpires 40 liters of water daily during dry season.\n\n**Calculate weekly water requirement:**\n\n**Solution**:\n- Daily: 40 liters\n- Weekly: 40 × 7 = 280 liters = 280 kg water\n- Annual: 40 × 365 = 14,600 liters ≈ 14.6 tonnes\n\n**Implication**: This water carries dissolved NPK nutrients from soil to leaves. Without adequate soil moisture, nutrient uptake is impaired even with fertilizer application.\n\n**Nigerian farming practice**: Mulching around palm base conserves soil moisture, reduces transpiration losses.\n\n## Part 6: Nigerian Agricultural Applications\n\n### Cassava Farming (40 million tonnes/year)\n- Main producing states: Benue, Cross River, Delta\n- NPK requirement: 300-400 kg/ha (20-10-10)\n- Yield: 15-40 tonnes/ha depending on fertilizer\n- Market price: ₦50,000/tonne (₦750,000-2M/ha revenue)\n\n### Yam Cultivation (47 million tonnes/year - world's largest)\n- Main states: Benue, Taraba, Enugu, Niger\n- High P requirement for tuber development\n- NPK 12-12-17 at 300 kg/ha\n- Yield: 15-30 tonnes/ha\n- Price: ₦200-300/kg (₦3-9M/ha revenue)\n\n### Cocoa Production (250,000+ tonnes/year)\n- Main states: Ondo, Cross River, Osun, Edo\n- Shade requirements (50-70% for young trees)\n- NPK 15-15-15 at 200 kg/ha\n- Yield: 400-800 kg/ha dried beans\n- Export price: ₦1,500-2,000/kg\n\n### Maize Farming (11 million tonnes/year)\n- Main states: Kaduna, Kano, Niger, Taraba\n- N requirement very high (urea 200-300 kg/ha)\n- Yield: 4-8 tonnes/ha\n- Price: ₦200/kg (₦800,000-1.6M/ha)\n\n## WAEC Exam Tips\n\n1. **Photosynthesis equation**: Memorize word and chemical equations\n2. **Limiting factors**: Understand light, CO₂, temperature, water\n3. **Deficiency symptoms**: Yellow older leaves = N, Purple = P, Yellow edges = K\n4. **Practical skills**: Test for starch (iodine), test for CO₂ (limewater)\n5. **Nigerian examples**: Use local crops in answers (cassava, yam, maize)\n6. **Show calculations**: NPK percentages, fertilizer quantities\n7. **Draw diagrams**: Chloroplast structure, leaf cross-section\n\n## Practice Problems\n\n**Problem 1**: A 10-hectare cassava farm requires NPK 20-10-10 at 300 kg/ha. Calculate:\n(a) Total fertilizer needed (kg)\n(b) Number of 50kg bags\n(c) Total cost @ ₦15,000/bag\n(d) Pure nitrogen applied\n\n**Problem 2**: Describe three factors that limit photosynthesis in Nigerian cocoa farms and how farmers overcome each.\n\n**Problem 3**: A maize farmer notices yellow older leaves and stunted growth. Diagnose the deficiency and recommend treatment with calculations.\n\n## Key Equations Summary\n\n- **Photosynthesis**: 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂\n- **NPK Calculation**: (% N/100) × Total fertilizer = Pure N\n- **Fertilizer Cost**: (Total kg ÷ 50 kg/bag) × ₦15,000/bag\n\n## Nigerian Context Importance\n\nPlant nutrition knowledge is critical for:\n- **Food security** - Feeding 220M+ population\n- **Farmer income** - 70% of rural livelihoods\n- **Export earnings** - Cocoa, cashew, sesame\n- **Industrial raw materials** - Cassava (starch), palm oil\n- **Environmental sustainability** - Proper fertilizer use\n- **Career opportunities** - Agronomy, agribusiness\n\nUnderstanding photosynthesis and mineral nutrition empowers Nigerian farmers to increase yields, improve incomes, and ensure food security!\n",
+      "summary": "",
+      "learning_objectives": [
+        "Explain photosynthesis process and factors affecting it",
+        "Understand mineral nutrition in plants",
+        "Identify nutrient deficiency symptoms",
+        "Apply knowledge to Nigerian agriculture (cassava, yam, cocoa, maize)",
+        "Solve WAEC-style plant nutrition problems"
+      ],
+      "prerequisites": [
+        "Cell structure",
+        "Plant structure",
+        "Basic chemistry"
+      ],
+      "diagrams": [
+        "bio_nutrition_plants_photosynthesis.png",
+        "bio_nutrition_plants_deficiencies.png"
+      ],
+      "tags": [
+        "photosynthesis",
+        "plant nutrition",
+        "fertilizer",
+        "NPK",
+        "cassava",
+        "yam",
+        "cocoa",
+        "maize",
+        "WAEC",
+        "very high priority",
+        "Nigerian agriculture"
+      ],
+      "nigerian_context": "Cassava farming Benue (40M tonnes/year), yam cultivation (world's largest 47M tonnes), cocoa Ondo (250k tonnes), maize Kaduna (11M tonnes), NPK fertilizer (₦15,000/50kg), nutrient deficiencies, palm oil Southeast, farmer economics",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:07:27.525158",
+      "status": "published"
+    },
+    {
+      "id": "bio_nutrition_animals_advanced",
+      "title": "Nutrition in Animals: From Nigerian Foods to Human Digestion",
+      "subject": "Biology",
+      "topic": "Nutrition in Animals",
+      "difficulty": "intermediate",
+      "exam_weight": "very_high",
+      "read_time_minutes": 27,
+      "content": "\n# Nutrition in Animals: Understanding the Nigerian Diet\n\n## Introduction\nNigeria's rich culinary tradition—Jollof rice, Egusi soup, Pounded yam, Suya, Moi-moi—provides the nutrients our bodies need. Understanding nutrition helps explain why a balanced Nigerian diet includes these foods and how our digestive system processes them.\n\n## Part 1: Classes of Food\n\n### 1. Carbohydrates (Energy Foods)\n**Function**: Provide energy (1g = 4 kcal)\n\n**Nigerian sources**:\n- **Rice** (Jollof rice) - 80% carbohydrate\n- **Yam** (Pounded yam, boiled yam) - 28% carbohydrate\n- **Cassava** (Garri, fufu) - 38% carbohydrate\n- **Maize** (Corn, pap/ogi) - 75% carbohydrate\n- **Plantain** (Dodo, boiled) - 32% carbohydrate\n\n**Types**:\n- **Simple sugars**: Glucose, fructose (fruits, honey)\n- **Complex starches**: Rice, yam, cassava\n\n**Daily requirement**: 300-400g (60% of total energy)\n\n### 2. Proteins (Body-building Foods)\n**Function**: Growth, repair, enzymes, antibodies (1g = 4 kcal)\n\n**Nigerian sources**:\n- **Beans** (Moi-moi, Akara) - 22% protein\n- **Fish** (Tilapia, catfish, stockfish) - 20-25% protein\n- **Meat** (Beef, goat, chicken, suya) - 20-25% protein\n- **Eggs** - 13% protein\n- **Groundnuts** - 25% protein\n- **Soy beans** - 36% protein\n\n**Types**:\n- **Complete proteins**: Meat, fish, eggs (contain all essential amino acids)\n- **Incomplete proteins**: Beans, nuts (lack some amino acids)\n\n**Daily requirement**: 50-70g for adults\n\n### 3. Fats and Oils (Energy Storage)\n**Function**: Energy storage, insulation, vitamin absorption (1g = 9 kcal - highest energy)\n\n**Nigerian sources**:\n- **Palm oil** (Red oil) - Used in soups, stews\n- **Groundnut oil** - For frying\n- **Coconut oil** - Traditional cooking\n- **Butter/margarine** - Bread, baking\n- **Fish oil** (from oily fish)\n\n**Daily requirement**: 50-70g (25-30% of total energy)\n\n### 4. Vitamins (Regulatory/Protective)\n**Function**: Regulate body processes, prevent diseases\n\n**Key vitamins in Nigerian diet**:\n- **Vitamin A**: Palm oil (red color = carotene), carrots, green vegetables\n  - Deficiency: Night blindness, dry skin\n- **Vitamin C**: Oranges, tomatoes, peppers\n  - Deficiency: Scurvy (bleeding gums)\n- **Vitamin D**: Fish, eggs, sunshine (Nigeria has plenty!)\n  - Deficiency: Rickets (soft bones in children)\n- **Vitamin B complex**: Yam, rice, beans, meat\n  - Deficiency: Beriberi, anemia\n\n### 5. Minerals (Regulatory/Structural)\n**Function**: Bones, teeth, blood, enzymes\n\n**Key minerals**:\n- **Calcium**: Milk, fish (bones), vegetables\n  - Function: Strong bones and teeth\n- **Iron**: Meat, beans, green vegetables\n  - Function: Hemoglobin (carries oxygen)\n  - Deficiency: Anemia (common in Nigeria)\n- **Iodine**: Iodized salt, fish\n  - Function: Thyroid hormone\n  - Deficiency: Goiter (swollen neck)\n\n### 6. Water\n**Function**: Transport, temperature regulation, chemical reactions\n\n**Daily requirement**: 2-3 liters (8-10 glasses)\n\n**Nigerian context**: Pure water sachets (₦10 each), boreholes, treated tap water\n\n### 7. Fiber (Roughage)\n**Function**: Aids digestion, prevents constipation\n\n**Nigerian sources**: Vegetables, fruits, whole grains, beans\n\n## Part 2: Balanced Diet - The Nigerian Approach\n\n### Traditional 6-3-1 Method\nNigerian nutritionists recommend:\n- **6 portions**: Carbohydrates (Rice, yam, garri, etc.)\n- **3 portions**: Proteins (Fish, meat, beans)\n- **1 portion**: Vegetables/fruits\n\n### Sample Balanced Nigerian Meals\n\n#### Breakfast (₦500-800)\n- Bread + Akara + Pap\n- OR Boiled yam + egg sauce\n- OR Plantain + beans\n\n#### Lunch/Dinner (₦1,200-2,000)\n- **Main**: Jollof rice with chicken/fish\n- **Soup option**: Egusi soup + pounded yam + beef\n- **Swallow option**: Eba + vegetable soup + fish\n- **Side**: Salad, fruit\n\n**Daily cost for balanced diet in Lagos**: ₦1,500-2,500\n\n### Worked Example 1: Calculating Daily Nutrition Needs\nA 70kg adult male in Lagos needs:\n- Energy: 2,500 kcal/day\n- Protein: 56g/day (0.8g per kg body weight)\n- Fat: 70g/day\n\n**Sample menu**:\n- **Breakfast**: Bread (200 kcal) + Akara (150 kcal) + Pap (100 kcal) = 450 kcal, 12g protein\n- **Lunch**: Jollof rice (400 kcal) + Chicken (200 kcal) + Salad (50 kcal) = 650 kcal, 25g protein\n- **Dinner**: Pounded yam (500 kcal) + Egusi soup (300 kcal) + Fish (150 kcal) = 950 kcal, 30g protein\n- **Snacks**: Fruits, nuts (400 kcal), 8g protein\n\n**Total**: 2,450 kcal, 75g protein ✅ **Meets requirements**\n\n## Part 3: Human Digestive System\n\n### Organs and Functions\n\n#### 1. Mouth (Oral Cavity)\n**Process**: Mechanical digestion (chewing), chemical digestion (saliva)\n- **Teeth**: Break food into smaller pieces\n- **Saliva**: Contains amylase enzyme\n- **Reaction**: Starch → Maltose (sugar)\n\n**Nigerian example**: Chewing pounded yam requires strong molars; saliva begins breaking down starch immediately.\n\n#### 2. Esophagus (Food Pipe)\n**Process**: Peristalsis (wave-like muscle contractions push food down)\n- Length: ~25 cm\n- Time: 10-15 seconds for food to reach stomach\n\n#### 3. Stomach\n**Process**: Mechanical churning + chemical digestion\n- **Gastric juice**: Contains HCl (pH 2) + pepsin enzyme\n- **Reaction**: Proteins → Peptides\n- **Time**: Food stays 2-4 hours\n\n**Nigerian example**: After eating suya (protein), pepsin breaks down meat proteins. Acidic environment kills bacteria.\n\n#### 4. Small Intestine (6-7 meters long)\n**Three parts**: Duodenum, Jejunum, Ileum\n\n**Duodenum** (first 25cm):\n- **Bile** (from liver): Emulsifies fats\n- **Pancreatic juice**: Contains lipase, amylase, trypsin\n- **Reactions**:\n  - Fats → Fatty acids + Glycerol (lipase)\n  - Starch → Maltose → Glucose (amylase)\n  - Proteins → Amino acids (trypsin)\n\n**Jejunum & Ileum**:\n- **Absorption**: Nutrients absorbed through villi into bloodstream\n- **Surface area**: Increased by millions of villi (finger-like projections)\n\n**Nigerian example**: After eating Egusi soup (high fat content), bile emulsifies the palm oil into tiny droplets, then lipase breaks them down for absorption.\n\n#### 5. Large Intestine (Colon)\n**Process**: Water reabsorption, formation of feces\n- Length: 1.5 meters\n- **Time**: 12-24 hours\n- **Absorption**: Water, vitamins\n\n**Nigerian context**: Adequate fiber (from vegetables) prevents constipation by retaining water in colon.\n\n#### 6. Rectum and Anus\n**Process**: Storage and elimination of feces (egestion)\n\n### Worked Example 2: Digestion Timeline for Nigerian Meal\nA person eats Jollof rice + chicken at 2:00 PM.\n\n**Timeline**:\n- **2:00 PM**: Mouth - Chewing, saliva begins starch digestion\n- **2:01 PM**: Swallowing, esophagus transport (15 seconds)\n- **2:01-6:00 PM**: Stomach - Protein digestion (4 hours)\n- **6:00-8:00 PM**: Small intestine - Complete digestion and absorption (2 hours)\n- **8:00 PM-10:00 AM** (next day): Large intestine - Water absorption (14 hours)\n- **10:00 AM**: Egestion (feces)\n\n**Total time**: Mouth to anus = ~20 hours\n\n## Part 4: Absorption and Assimilation\n\n### Villi Structure (Small Intestine)\n- **Shape**: Finger-like projections\n- **Function**: Increase surface area for absorption\n- **Structure**:\n  - Thin wall (one cell thick)\n  - Rich blood supply (capillaries)\n  - Lacteal (for fat absorption)\n\n### What Gets Absorbed Where\n\n**Small intestine**:\n- Glucose → Blood → Liver → Body cells\n- Amino acids → Blood → Liver → Body cells\n- Fatty acids + Glycerol → Lymph → Blood\n- Vitamins, minerals → Blood\n\n**Large intestine**:\n- Water → Blood\n- Vitamins (K, B12 produced by bacteria) → Blood\n\n### Assimilation\nNutrients used by body cells:\n- **Glucose**: Respiration for energy (or stored as glycogen)\n- **Amino acids**: Build new proteins (muscles, enzymes)\n- **Fatty acids**: Energy storage (or cell membranes)\n\n## Part 5: Food Tests (WAEC Practicals)\n\n### Test for Starch (Iodine Test)\n- **Reagent**: Iodine solution (brown)\n- **Positive result**: Blue-black color\n- **Nigerian foods**: Yam, cassava, rice, maize\n\n**Procedure**:\n1. Grind food sample\n2. Add 2-3 drops iodine solution\n3. Observe color change\n\n### Test for Reducing Sugars (Benedict's Test)\n- **Reagent**: Benedict's solution (blue)\n- **Method**: Heat in water bath\n- **Positive result**: Green → Yellow → Orange → Brick-red (depending on sugar concentration)\n- **Nigerian foods**: Fruits, honey\n\n### Test for Proteins (Biuret Test)\n- **Reagents**: NaOH + Copper sulfate\n- **Positive result**: Purple/violet color\n- **Nigerian foods**: Beans, fish, meat, eggs\n\n### Test for Fats (Grease Spot Test)\n- **Method**: Rub food on filter paper, hold against light\n- **Positive result**: Translucent (greasy) spot\n- **Nigerian foods**: Palm oil, groundnut oil, butter\n\n### Worked Example 3: Testing Nigerian Foods\nA student tests four foods: Garri, groundnut, orange juice, fish.\n\n**Results**:\n| Food | Iodine | Benedict's | Biuret | Grease Spot |\n|------|--------|------------|--------|-------------|\n| Garri | Blue-black | Negative | Negative | Negative |\n| Groundnut | Negative | Negative | Purple | Translucent |\n| Orange juice | Negative | Orange | Negative | Negative |\n| Fish | Negative | Negative | Purple | Slight translucent |\n\n**Conclusion**:\n- Garri: Rich in starch\n- Groundnut: Contains protein and fat\n- Orange juice: Contains reducing sugars (fructose, glucose)\n- Fish: Contains protein and some fat\n\n## Part 6: Malnutrition in Nigerian Context\n\n### Protein-Energy Malnutrition\n\n#### Kwashiorkor\n**Cause**: Severe protein deficiency (child weaned to starchy diet)\n**Symptoms**:\n- Swollen belly (fluid retention)\n- Thin limbs\n- Skin lesions\n- Hair discoloration (orange/red)\n\n**Nigerian context**: Common in rural areas where children eat mostly garri/pap with little protein\n\n**Prevention**: Include beans, fish, eggs in children's diet\n\n#### Marasmus\n**Cause**: Severe calorie and protein deficiency\n**Symptoms**:\n- Extreme thinness\n- Wrinkled skin\n- No fat or muscle\n\n**Prevention**: Adequate food quantity and quality\n\n### Vitamin Deficiencies\n\n#### Vitamin A Deficiency\n**Symptoms**: Night blindness, dry eyes\n**Nigerian prevention**: Red palm oil (rich in carotene), carrots\n\n#### Vitamin C Deficiency (Scurvy)\n**Symptoms**: Bleeding gums, slow wound healing\n**Nigerian prevention**: Oranges (₦50-100 each), tomatoes, peppers\n\n#### Iron Deficiency (Anemia)\n**Symptoms**: Fatigue, pale skin, dizziness\n**Common in**: Pregnant women, children\n**Nigerian prevention**: Red meat, beans, green vegetables, iron supplements\n\n## WAEC Exam Tips\n\n1. **Food classes**: Memorize all 7 classes and Nigerian examples\n2. **Digestive system**: Draw and label diagram accurately\n3. **Enzymes**: Know where each enzyme works (amylase, pepsin, lipase, trypsin)\n4. **Food tests**: Learn all 4 tests, reagents, and results\n5. **Balanced diet**: Use Nigerian foods in explanations\n6. **Deficiency diseases**: Link to symptoms and prevention\n7. **Show calculations**: Energy content, daily requirements\n\n## Practice Problems\n\n**Problem 1**: Plan a balanced Nigerian meal for a family of 4 with ₦5,000 budget. Include all food classes and calculate portions.\n\n**Problem 2**: Explain how Egusi soup provides a balanced meal. Identify carbohydrates, proteins, fats, vitamins, and minerals present.\n\n**Problem 3**: A student performs food tests on groundnut. Predict results for iodine test, Benedict's test, Biuret test, and grease spot test. Explain your reasoning.\n\n**Problem 4**: Calculate daily calorie needs for a 60kg woman and design a Nigerian meal plan to meet this requirement.\n\n## Key Equations Summary\n\n- **Energy content**: Carbohydrates = 4 kcal/g, Proteins = 4 kcal/g, Fats = 9 kcal/g\n- **Protein requirement**: 0.8g per kg body weight\n- **Daily water**: 2-3 liters (8-10 glasses)\n- **BMI**: Weight (kg) ÷ Height² (m²)\n\n## Nigerian Context Importance\n\nUnderstanding nutrition is essential for:\n- **Personal health** - Preventing malnutrition and obesity\n- **Family planning** - Feeding children and pregnant women properly\n- **Economic decision** - Smart food budgeting (₦1,500-2,500/day)\n- **Disease prevention** - Avoiding kwashiorkor, anemia, scurvy\n- **Academic success** - Proper brain function requires balanced diet\n- **Career paths** - Nutritionists, dietitians, food scientists\n\nNigeria's rich food diversity provides all necessary nutrients when properly combined!\n",
+      "summary": "",
+      "learning_objectives": [
+        "Identify classes of food and their functions",
+        "Understand human digestive system",
+        "Explain digestion and absorption processes",
+        "Perform food tests for nutrients",
+        "Apply knowledge to Nigerian diet and nutrition"
+      ],
+      "prerequisites": [
+        "Cell structure",
+        "Human anatomy",
+        "Basic chemistry"
+      ],
+      "diagrams": [
+        "bio_nutrition_animals_digestive_system.png",
+        "bio_nutrition_animals_food_tests.png"
+      ],
+      "tags": [
+        "nutrition",
+        "digestive system",
+        "food tests",
+        "balanced diet",
+        "malnutrition",
+        "WAEC",
+        "very high priority",
+        "Nigerian foods",
+        "Jollof rice",
+        "proteins",
+        "carbohydrates"
+      ],
+      "nigerian_context": "Jollof rice, Egusi soup, Pounded yam, Suya, Moi-moi, Akara, Nigerian balanced diet (6-3-1 method), daily food cost (₦1,500-2,500 Lagos), kwashiorkor prevention, food tests on Nigerian foods (garri, groundnut, fish), palm oil vitamin A, anemia in pregnant women",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:07:27.525885",
+      "status": "published"
+    },
+    {
+      "id": "math_sequence_series_advanced",
+      "title": "Sequence and Series: From Bank Interest to Lagos Property Prices",
+      "subject": "Mathematics",
+      "topic": "Sequence and Series",
+      "difficulty": "advanced",
+      "exam_weight": "high",
+      "read_time_minutes": 28,
+      "content": "\n# Sequence and Series: From Bank Interest to Lagos Property Prices\n\n## Introduction\nIn Nigeria, patterns drive finance and growth. Bank savings grow in geometric progression (compound interest). Property prices in Lagos increase in arithmetic progression. Civil servant salaries follow predictable sequences. Understanding sequences and series unlocks the mathematics of growth, investment, and planning.\n\n## Part 1: Arithmetic Progression (AP)\n\n### Definition\nAn Arithmetic Progression is a sequence where the difference between consecutive terms is constant.\n\n**Form**: a, a+d, a+2d, a+3d, ...\n\n**Examples**:\n- 2, 5, 8, 11, ... (first term a=2, common difference d=3)\n- 100, 95, 90, 85, ... (a=100, d=-5)\n\n### Nigerian Example 1: Civil Servant Salary Progression\nA teacher starts at ₦120,000/month with ₦5,000 annual increment.\n\n**Sequence**:\n- Year 1: ₦120,000\n- Year 2: ₦125,000\n- Year 3: ₦130,000\n- Year 4: ₦135,000\n\nThis is AP with a = 120,000 and d = 5,000.\n\n### nth Term of AP\n**Formula**: Tₙ = a + (n-1)d\n\n**Problem**: What is the teacher's salary in year 10?\n- Tₙ = 120,000 + (10-1) × 5,000\n- T₁₀ = 120,000 + 45,000 = ₦165,000\n\n**WAEC Tip**: Always write the formula before substituting values!\n\n### Sum of n Terms of AP\n**Formula**: Sₙ = n/2 [2a + (n-1)d] OR Sₙ = n/2 (first + last)\n\n**Worked Example 1: Total Salary Over 10 Years**\nHow much total salary does the teacher earn in 10 years?\n\n**Solution**:\n- First term: a = 120,000\n- Last term (year 10): T₁₀ = 165,000\n- Number of terms: n = 10\n\n**Using formula**:\n- S₁₀ = 10/2 (120,000 + 165,000)\n- S₁₀ = 5 × 285,000\n- **S₁₀ = ₦1,425,000**\n\n**Meaning**: Total earnings over 10 years = ₦1.425 million\n\n## Part 2: Geometric Progression (GP)\n\n### Definition\nA Geometric Progression is a sequence where the ratio between consecutive terms is constant.\n\n**Form**: a, ar, ar², ar³, ...\n\n**Examples**:\n- 2, 6, 18, 54, ... (a=2, r=3)\n- 100, 50, 25, 12.5, ... (a=100, r=0.5)\n\n### Nigerian Example 2: Bank Compound Interest\n₦100,000 deposited in GTBank at 10% annual interest.\n\n**Balance after each year**:\n- Year 0: ₦100,000\n- Year 1: ₦100,000 × 1.1 = ₦110,000\n- Year 2: ₦110,000 × 1.1 = ₦121,000\n- Year 3: ₦133,100\n- Year 4: ₦146,410\n\n**This is GP** with a = 100,000 and r = 1.1\n\n### nth Term of GP\n**Formula**: Tₙ = ar^(n-1)\n\n**Problem**: How much money after 5 years?\n- T₅ = 100,000 × (1.1)⁴\n- T₅ = 100,000 × 1.4641\n- T₅ = **₦146,410**\n\n### Sum of n Terms of GP\n**Formula**: Sₙ = a(r^n - 1)/(r - 1) [when r ≠ 1]\n\n**Worked Example 2: Total Interest Earned**\nWhat is the total amount in bank account after 5 years?\n\n**Solution**:\n- a = 100,000\n- r = 1.1\n- n = 5\n\n**Using formula**:\n- S₅ = 100,000(1.1⁵ - 1)/(1.1 - 1)\n- S₅ = 100,000(1.6105 - 1)/0.1\n- S₅ = 100,000(0.6105)/0.1\n- S₅ = 100,000 × 6.105\n- **S₅ = ₦610,500** (total amount after 5 years)\n\n**Interest earned** = 610,500 - 100,000 × 5 = ₦110,500\n\n## Part 3: Sum to Infinity (GP Only)\n\n### When -1 < r < 1\nThe series approaches a finite limit.\n\n**Formula**: S∞ = a/(1-r)\n\n**Worked Example 3: Recurring Decimal**\nThe decimal 0.333... = 1/3 can be written as a GP.\n\n**0.333...** = 0.3 + 0.03 + 0.003 + ...\n- a = 0.3\n- r = 0.1\n- S∞ = 0.3/(1-0.1) = 0.3/0.9 = **1/3** ✓\n\n## Part 4: Real Nigerian Applications\n\n### Property Prices in Lagos\nLekki property values appreciate 5% annually (GP with r = 1.05).\n\nStarting price: ₦10,000,000 in 2020.\n\n**Price by year**:\n- 2020: ₦10,000,000\n- 2022: ₦10,000,000 × (1.05)² = ₦11,025,000\n- 2025: ₦10,000,000 × (1.05)⁵ = ₦12,762,815\n\n**Question**: After 10 years, value = ?\n- T₁₁ = 10,000,000 × (1.05)¹⁰ = ₦16,288,946\n\n### MTN Subscriber Growth\nMTN Nigeria adds 2 million subscribers annually (AP).\n\n**Year 1**: 60 million subscribers\n**Year 2**: 62 million\n**Year 3**: 64 million\n\n**Total subscribers by year 5**:\n- a = 60 million\n- d = 2 million\n- n = 5\n- S₅ = 5/2[2(60) + (5-1)×2] = 2.5[120 + 8] = **320 million subscriber-years**\n\n### Dangote Cement Distribution\nProduction increases 15% annually (GP with r = 1.15).\n\n**Starting production**: 5 million tonnes in 2020.\n\n**Projected for 2026**:\n- T₇ = 5 × (1.15)⁶ = 5 × 2.313 = **11.57 million tonnes**\n\n## WAEC Exam Tips\n\n1. **Identify the sequence**: Look for constant difference (AP) or constant ratio (GP)\n2. **Write known values**: a (first term), d or r, n (number of terms)\n3. **Choose correct formula**: AP or GP sum formula\n4. **Show substitution**: Write values into formula before calculating\n5. **State units**: Always include ₦, tonnes, years, etc.\n6. **Check reasonableness**: Does answer make sense in context?\n7. **Practice with negative terms**: Some sequences decrease\n\n## Practice Problems\n\n**Problem 1**: A trader's monthly profit increases from ₦50,000 by ₦10,000 each month. Find total profit in 12 months.\n\n**Problem 2**: UBA offers 8% compound interest on savings. If ₦500,000 is invested, find amount after 3 years.\n\n**Problem 3**: An AP has first term 5 and common difference 3. Find the sum of first 20 terms.\n\n**Problem 4**: A GP has first term 2 and common ratio 3. Find the 6th term.\n\n## Key Formulas\n\n- **AP nth term**: Tₙ = a + (n-1)d\n- **AP sum**: Sₙ = n/2[2a + (n-1)d]\n- **GP nth term**: Tₙ = ar^(n-1)\n- **GP sum**: Sₙ = a(r^n - 1)/(r - 1)\n- **GP infinite sum**: S∞ = a/(1-r) [when |r| < 1]\n\n## Nigerian Context Importance\n\nUnderstanding sequences helps with:\n- **Banking**: Calculate investment returns and loan repayment\n- **Business**: Project growth and sales forecasts\n- **Property**: Predict appreciation and investment value\n- **Demographics**: Plan for population changes\n- **Salary**: Understand career earning potential\n- **Telecommunications**: Analyze subscriber growth\n\nThis knowledge directly applies to Nigerian financial planning and business decisions!\n",
+      "summary": "Advanced mathematics lesson covering arithmetic progressions (AP), geometric progressions (GP), and their applications. Nigerian contexts: Teacher salary progression (₦120k → ₦165k over 10 years), bank savings with compound interest (₦100k at 10% = ₦146,410 in 4 years), Lagos property appreciation (₦10M → ₦12.76M in 5 years), MTN subscriber growth, Dangote cement expansion. Includes formulas, 6 worked examples with Nigerian scenarios.",
+      "learning_objectives": [
+        "Identify arithmetic and geometric progressions",
+        "Calculate nth term and sum formulas",
+        "Apply sequences to Nigerian financial planning",
+        "Solve complex sequence problems",
+        "Understand real-world pattern applications"
+      ],
+      "prerequisites": [
+        "Patterns",
+        "Algebra",
+        "Basic number sequences"
+      ],
+      "diagrams": [],
+      "tags": [
+        "sequence",
+        "series",
+        "AP",
+        "GP",
+        "compound interest",
+        "WAEC",
+        "high priority",
+        "banking",
+        "property",
+        "Lagos",
+        "investment"
+      ],
+      "nigerian_context": "GTBank compound interest (10% APY), teacher salary progression (₦5,000/year increment), Lagos property appreciation (5% annually), MTN subscriber growth (2M annually), Dangote cement production growth (15% annually), civil servant earnings",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:42:01.170654",
+      "status": "published",
+      "content_type": "study_guide",
+      "exam_board": "WAEC"
+    },
+    {
+      "id": "physics_temperature_heat_advanced",
+      "title": "Temperature and Heat: From Lagos Climate to Nigerian Kitchens",
+      "subject": "Physics",
+      "topic": "Temperature and Heat",
+      "difficulty": "intermediate",
+      "exam_weight": "high",
+      "read_time_minutes": 27,
+      "content": "\n# Temperature and Heat: From Lagos Climate to Nigerian Kitchens\n\n## Introduction\nEvery Nigerian experiences temperature daily: Lagos heat at 27°C, Jos coolness at 20°C, Sokoto's blazing 42°C. Food cooks at precise temperatures, vaccines need cold storage, and electricity consumption depends on climate. Understanding temperature and heat is essential for daily life in Nigeria.\n\n## Part 1: Temperature Scales\n\n### Celsius Scale\nMost common in Nigeria. Based on water freezing (0°C) and boiling (100°C) at sea level.\n\n**Nigerian Temperature Examples**:\n- Lagos average: 27°C (warm year-round)\n- Jos Plateau: 20°C (cooler highland)\n- Sokoto dry season: 42°C (very hot)\n- Cool room: 16°C\n- Normal body: 37°C\n- Fever: 39-40°C\n\n### Fahrenheit Scale\nUsed in some medical contexts and old British instruments.\n\n**Conversion**:\n- F = 9/5 × C + 32\n- C = 5/9 × (F - 32)\n\n**Worked Example 1: Lagos Temperature Conversion**\nLagos average is 27°C. Convert to Fahrenheit.\n- F = 9/5 × 27 + 32\n- F = 48.6 + 32\n- **F = 80.6°F** (warm and comfortable)\n\n### Kelvin Scale\nAbsolute temperature scale. K = C + 273 (or C + 273.15 precisely)\n\n**Nigerian temperatures in Kelvin**:\n- Lagos 27°C = 300 K\n- Jos 20°C = 293 K\n- Sokoto 42°C = 315 K\n\n**WAEC Tip**: Always convert to Kelvin for gas law calculations!\n\n## Part 2: Heat Capacity and Specific Heat Capacity\n\n### Heat Capacity (C)\nEnergy needed to raise 1 object by 1°C.\n\n**Formula**: Q = C × ΔT\n\nwhere:\n- Q = heat energy (joules)\n- C = heat capacity (J/°C)\n- ΔT = temperature change (°C)\n\n### Specific Heat Capacity (c)\nEnergy needed to raise 1 kg of substance by 1°C.\n\n**Formula**: Q = m × c × ΔT\n\n**Worked Example 2: Heating Nigerian Soup**\nA pot of vegetable soup (5 kg) needs heating from 25°C to 95°C.\n\n**Given**:\n- Mass m = 5 kg\n- Temperature change: ΔT = 95 - 25 = 70°C\n- Specific heat of water (main component): c = 4,200 J/kg°C\n\n**Solution**:\n- Q = m × c × ΔT\n- Q = 5 × 4,200 × 70\n- Q = 1,470,000 J = **1.47 MJ**\n\n**Meaning**: Need 1.47 million joules of energy to heat the soup.\n\n**Nigerian context**: A gas stove releases ~30 MJ per hour, so this takes ~3 minutes.\n\n### Specific Heat Values (Common Nigerian Materials)\n| Material | Specific Heat (J/kg°C) |\n|----------|----------------------|\n| Water | 4,200 |\n| Cooking oil | 2,000 |\n| Sand (Sahara) | 800 |\n| Iron (cookware) | 450 |\n| Aluminum | 900 |\n\n## Part 3: Latent Heat\n\n### Latent Heat of Fusion (Melting)\nEnergy needed to melt solid without temperature change.\n\n**Formula**: Q = m × Lf\n\n- Ice: Lf = 334,000 J/kg\n- Energy to melt 1 kg ice = 334 kJ\n\n### Latent Heat of Vaporization (Boiling)\nEnergy needed to convert liquid to gas without temperature change.\n\n**Formula**: Q = m × Lv\n\n- Water: Lv = 2,260,000 J/kg (2.26 MJ)\n- Energy to boil 1 kg water = 2,260 kJ\n\n**Worked Example 3: Boiling Water for Pap**\nHeating 2 kg water from 25°C to boiling (100°C), then completely boiling it.\n\n**Step 1 - Heating**:\n- Q₁ = m × c × ΔT\n- Q₁ = 2 × 4,200 × 75\n- Q₁ = 630,000 J\n\n**Step 2 - Boiling (vaporization)**:\n- Q₂ = m × Lv\n- Q₂ = 2 × 2,260,000\n- Q₂ = 4,520,000 J\n\n**Total energy**:\n- Q_total = 630,000 + 4,520,000 = **5,150,000 J = 5.15 MJ**\n\n**Meaning**: Mostly goes to vaporization, not heating!\n\n## Part 4: Heat Transfer Methods\n\n### Conduction\nDirect transfer through material (no movement).\n\n**Nigerian Example**: Metal pot conducting heat to food inside.\n- Aluminum pot conducts heat quickly (high conductivity)\n- Traditional clay pots conduct slowly\n\n**Application**: Choose materials wisely for cooking efficiency!\n\n### Convection\nTransfer through movement of liquid/gas.\n\n**Nigerian Example**: Hot water in soup rising, cold sinking.\n- Creates circular motion\n- Distributes heat throughout\n\n**Application**: Stir soup for even heating (stronger convection).\n\n### Radiation\nTransfer through electromagnetic waves (no contact needed).\n\n**Nigerian Example**: Nigerian sun warming Lagos without touching.\n- Infrared radiation heats skin, buildings\n- Solar panels use this to generate electricity (Kaduna installations)\n\n## Part 5: Real Nigerian Heat Applications\n\n### Air Conditioning Load (Lagos)\nTo keep room at 22°C when outside is 32°C:\n\n**Heat entering** ≈ Building surface area × Temperature difference × U-value\n\nModern Lagos office building (500 m²) requires:\n- Cooling capacity: ~60 kW\n- Cost: ₦50,000/month electricity (NEPA rate)\n\n### Cooking Efficiency\nGas stove (~10 kW) vs electric kettle (2 kW):\n- **Gas**: Heats water in 5 minutes (efficient, cheaper)\n- **Electric**: Heats water in 10 minutes (less efficient, more expensive)\n\n**Cost comparison**:\n- Gas: 1 liter water = ₦50 cost\n- Electricity: 1 liter water = ₦120 cost (2.4× more expensive)\n\n### Vaccine Cold Chain\nPfizer vaccine storage: 2-8°C required.\n\n**Cooling needed**: Remove heat to maintain low temperature.\n- Nigerian cold store in Lagos: ₦5M system\n- Running cost: ₦100,000/month electricity\n\n## WAEC Exam Tips\n\n1. **Check temperature units**: Problem might be in K, not °C\n2. **Include latent heat**: Don't forget vaporization/fusion energy\n3. **Show all steps**: Heating then boiling (two separate processes)\n4. **State formula first**: Write Q = mc∆T before substituting\n5. **Use correct c value**: Different materials have different specific heat\n6. **Units matter**: Answer in joules, always\n\n## Practice Problems\n\n**Problem 1**: Convert 40°C to Fahrenheit and Kelvin.\n\n**Problem 2**: How much energy to heat 10 kg iron from 20°C to 100°C? (c = 450 J/kg°C)\n\n**Problem 3**: How much energy to melt 5 kg ice at 0°C? (Lf = 334,000 J/kg)\n\n**Problem 4**: A Lagos building loses 100 kJ heat per minute. How long for 5 MJ loss?\n\n## Key Equations\n\n- **Conversion**: F = 9/5C + 32, K = C + 273\n- **Heat capacity**: Q = mc∆T\n- **Latent heat**: Q = mL\n- **Total thermal energy**: Q_total = mc∆T + mL\n\n## Nigerian Context Importance\n\nTemperature and heat knowledge helps with:\n- **Cooking**: Efficient food preparation (gas vs electric)\n- **Climate**: Adapt to Lagos heat or Jos coolness\n- **Health**: Fever understanding, vaccine storage\n- **Business**: AC costs, refrigeration, solar thermal\n- **Energy**: Electricity consumption, efficiency improvements\n- **Construction**: Thermal insulation design\n\nThis knowledge makes Nigerian daily life more efficient and economical!\n",
+      "summary": "Temperature and heat physics lesson covering Celsius/Fahrenheit/Kelvin scales, specific heat capacity, latent heat of fusion/vaporization, and heat transfer (conduction, convection, radiation). Nigerian contexts: Lagos 27°C, Jos 20°C, Sokoto 42°C, soup heating calculations (5kg × 4,200 J/kg°C × 70°C = 1.47 MJ), gas vs electric cooking costs, vaccine cold storage (2-8°C), AC systems (60 kW for Lagos offices). Includes 3 detailed worked examples.",
+      "learning_objectives": [
+        "Convert between temperature scales (Celsius, Fahrenheit, Kelvin)",
+        "Understand heat capacity and specific heat capacity",
+        "Calculate latent heat in phase changes",
+        "Apply concepts to Nigerian cooking and climate",
+        "Solve calorimetry and thermal problems"
+      ],
+      "prerequisites": [
+        "Energy concepts",
+        "Measurement",
+        "Unit conversions"
+      ],
+      "diagrams": [],
+      "tags": [
+        "temperature",
+        "heat",
+        "specific heat capacity",
+        "latent heat",
+        "WAEC",
+        "high priority",
+        "Nigeria climate",
+        "Lagos",
+        "cooking",
+        "thermometer"
+      ],
+      "nigerian_context": "Lagos temperature 27°C average, Jos 20°C, Sokoto 42°C, Nigerian soup heating (5kg from 25→95°C), gas stove vs electric kettle efficiency, Pfizer vaccine cold chain storage (2-8°C), Lagos AC cooling (60 kW systems), NEPA electricity costs (₦50k-120k/month), solar panel installations Kaduna",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:42:01.171363",
+      "status": "published",
+      "content_type": "study_guide",
+      "exam_board": "WAEC"
+    },
+    {
+      "id": "math_matrices_determinants_advanced",
+      "title": "Matrices and Determinants: From MTN Data to Simultaneous Equations",
+      "subject": "Mathematics",
+      "topic": "Matrices and Determinants",
+      "difficulty": "advanced",
+      "exam_weight": "high",
+      "read_time_minutes": 30,
+      "content": "\n# Matrices and Determinants: From MTN Data to Simultaneous Equations\n\n## Introduction\nMatrices organize data efficiently. MTN tracks subscribers by region and plan in matrix form. Dangote analyzes production across factories using matrices. Universities use matrices to process thousands of admission applications. Matrices solve complex problems that would be tedious with traditional algebra.\n\n## Part 1: Matrix Basics\n\n### Definition\nA matrix is rectangular array of numbers arranged in rows and columns.\n\n**Form**: \n```\nA = [a₁₁  a₁₂  a₁₃]\n    [a₂₁  a₂₂  a₂₃]\n    [a₃₁  a₃₂  a₃₃]\n```\n\n**Notation**: 3×3 matrix (3 rows, 3 columns)\n\n### Nigerian Example 1: MTN Subscription Data\nMTN tracks 3 plans across 3 months.\n\n```\n           January  February  March\nPremium:    500,000  520,000  540,000\nStandard:  1,000,000 1,050,000 1,100,000\nBasic:     2,000,000 1,900,000 1,800,000\n\nMatrix A = [500,000   520,000   540,000]\n           [1,000,000 1,050,000 1,100,000]\n           [2,000,000 1,900,000 1,800,000]\n```\n\n## Part 2: Matrix Operations\n\n### Addition and Subtraction\nAdd/subtract corresponding elements.\n\n**Example**:\n```\nA = [1  2]    B = [2  1]\n    [3  4]        [1  2]\n\nA + B = [3  3]\n        [4  6]\n```\n\n### Scalar Multiplication\nMultiply every element by a constant.\n\n```\n2A = [2  4]\n     [6  8]\n```\n\n### Matrix Multiplication\nFor A(m×n) × B(n×p) = C(m×p)\n\n**Worked Example 1: Dangote Sales Calculation**\n\nProduction matrix (3 factories × 2 products):\n```\nP = [100  50]   (Factory 1: 100 bags cement, 50 bags flour)\n    [120  60]   (Factory 2)\n    [80   40]   (Factory 3)\n```\n\nPrice per unit:\n```\nPrice = [₦5,000]   (Cement price per bag)\n        [₦2,000]   (Flour price per bag)\n```\n\n**Revenue from each factory**:\n```\nRevenue = P × Price\n\nFactory 1: 100(5,000) + 50(2,000) = 500,000 + 100,000 = ₦600,000\nFactory 2: 120(5,000) + 60(2,000) = 600,000 + 120,000 = ₦720,000\nFactory 3: 80(5,000) + 40(2,000) = 400,000 + 80,000 = ₦480,000\n\nTotal revenue = ₦1,800,000\n```\n\n## Part 3: Determinants\n\n### 2×2 Determinant\nFor matrix A = [a  b]\n               [c  d]\n\n**Formula**: |A| = ad - bc\n\n**Example**:\n```\nA = [3  2]\n    [1  4]\n\n|A| = 3(4) - 2(1) = 12 - 2 = 10\n```\n\n### 3×3 Determinant (Method of Cofactors)\nFor matrix A = [a  b  c]\n               [d  e  f]\n               [g  h  i]\n\n**Formula**: |A| = a(ei - fh) - b(di - fg) + c(dh - eg)\n\n**Worked Example 2: Calculate 3×3 Determinant**\n\n```\nA = [2  3  1]\n    [1  0  2]\n    [3  1  1]\n\n|A| = 2(0×1 - 2×1) - 3(1×1 - 2×3) + 1(1×1 - 0×3)\n    = 2(-2) - 3(1-6) + 1(1)\n    = -4 - 3(-5) + 1\n    = -4 + 15 + 1\n    = 12\n```\n\n## Part 4: Matrix Inverse\n\n### Definition\nFor matrix A, inverse A⁻¹ satisfies: A × A⁻¹ = I (identity matrix)\n\n### 2×2 Inverse\nFor A = [a  b]\n        [c  d]\n\n**Formula**: A⁻¹ = 1/|A| × [d   -b]\n                            [-c   a]\n\n**Important**: Matrix must be invertible (|A| ≠ 0)\n\n**Worked Example 3: Inverse of 2×2 Matrix**\n\n```\nA = [4  3]\n    [2  1]\n\nStep 1: Find determinant\n|A| = 4(1) - 3(2) = 4 - 6 = -2\n\nStep 2: Apply inverse formula\nA⁻¹ = 1/(-2) × [1   -3]  = [-1/2   3/2]\n              [-2    4]    [1     -2]\n\nVerification: A × A⁻¹ = I ✓\n```\n\n## Part 5: Solving Simultaneous Equations Using Matrices\n\n### System of Equations\n```\n2x + 3y = 8\nx + 2y = 5\n```\n\n### Matrix Form\n```\n[2  3] [x]   [8]\n[1  2] [y] = [5]\n\nA × X = B  where:\nA = coefficient matrix\nX = [x, y]ᵀ (unknowns)\nB = [8, 5]ᵀ (constants)\n```\n\n### Solution\nX = A⁻¹ × B\n\n**Worked Example 4: Nigerian Market Pricing**\n\nA Lagos market sells yam and cassava. One customer pays ₦12,000 for 2 yams + 3 cassavas. Another pays ₦7,500 for 1 yam + 2 cassavas.\n\n**Equations**:\n- 2x + 3y = 12,000 (x = yam price, y = cassava price)\n- 1x + 2y = 7,500\n\n**Matrix solution**:\n```\n[2  3] [x]   [12,000]\n[1  2] [y] = [7,500]\n\nStep 1: Find |A|\n|A| = 2(2) - 3(1) = 4 - 3 = 1\n\nStep 2: Find A⁻¹\nA⁻¹ = 1/1 × [2   -3]  = [2   -3]\n           [-1    2]    [-1   2]\n\nStep 3: Calculate X = A⁻¹ × B\n[x]   [2   -3] [12,000]   [24,000 - 22,500]   [1,500]\n[y] = [-1   2] [7,500]  = [-12,000 + 15,000] = [3,000]\n```\n\n**Answer**: Yam = ₦1,500 each, Cassava = ₦3,000 each\n\n**Verification**:\n- 2(1,500) + 3(3,000) = 3,000 + 9,000 = ₦12,000 ✓\n- 1(1,500) + 2(3,000) = 1,500 + 6,000 = ₦7,500 ✓\n\n## Part 6: Real Nigerian Applications\n\n### University Admission Processing\nJAMB processes 2 million applications. Scores in Matrix form:\n```\n             Math  English  Science\nStudent 1:   78     82       75\nStudent 2:   85     79       88\n...\nStudent 2M:  ...    ...      ...\n```\n\nCan calculate aggregate scores using matrix multiplication instantly.\n\n### MTN Network Analysis\nConnection matrix between 36 states:\n```\n[Connection between Lagos-Abuja]\n[Connection between Lagos-Kano]\n[... 666 connections total]\n```\n\nDeterminant ≠ 0 means network is connected (robust system).\n\n### Dangote Production Analysis\nMulti-factory production data solved using matrix equations:\n- 5 factories producing 8 products\n- Constraints: Raw material availability, worker capacity, shipping\n- Solution: Optimal production allocation (₦billions in efficiency)\n\n## WAEC Exam Tips\n\n1. **Check invertibility**: Always calculate determinant first\n2. **Show row operations**: For 3×3 matrices, show expansion steps\n3. **Verify multiplication**: 2×3 matrix × 3×2 matrix = 2×2 result\n4. **Identity matrix**: Remember I has 1s on diagonal, 0s elsewhere\n5. **Check solutions**: Always verify by substituting back\n6. **Scalar vs matrix**: Be clear when multiplying numbers vs matrices\n\n## Practice Problems\n\n**Problem 1**: Find determinant of [5  3; 2  4]\n\n**Problem 2**: Calculate inverse of [2  1; 3  2]\n\n**Problem 3**: Solve using matrices: 3x + 2y = 13, x + y = 5\n\n**Problem 4**: If A × B = C, and |A| = 3, |B| = 2, find |C|\n\n## Key Formulas\n\n- **2×2 Determinant**: |A| = ad - bc\n- **3×3 Determinant**: |A| = a(ei - fh) - b(di - fg) + c(dh - eg)\n- **2×2 Inverse**: A⁻¹ = 1/|A| × [d -b; -c a]\n- **Matrix solution**: X = A⁻¹ × B\n\n## Nigerian Context Importance\n\nMatrices solve Nigerian problems:\n- **Business**: Process multi-location data (MTN, Dangote)\n- **Education**: Handle admissions efficiently (JAMB)\n- **Government**: Census data organization and analysis\n- **Telecommunications**: Network routing and optimization\n- **Finance**: Multi-investment portfolio management\n- **Technology**: Graphics, AI, data processing\n\nThis mathematical tool powers modern Nigerian business and technology!\n",
+      "summary": "Advanced mathematics lesson on matrices and determinants covering operations (addition, subtraction, multiplication), 2×2 and 3×3 determinants, matrix inverses, and solving simultaneous equations using matrices. Nigerian applications: MTN subscriber analysis, Dangote production optimization (Factory 1: 100 bags cement + 50 bags flour = ₦600k revenue), market pricing (yam/cassava), JAMB admissions processing. Includes 4 detailed worked examples with Nigerian business scenarios.",
+      "learning_objectives": [
+        "Perform matrix operations (addition, subtraction, multiplication)",
+        "Calculate determinants of 2×2 and 3×3 matrices",
+        "Find inverse of matrices",
+        "Solve simultaneous equations using matrices",
+        "Apply matrix concepts to Nigerian business scenarios"
+      ],
+      "prerequisites": [
+        "Algebra",
+        "Simultaneous equations",
+        "Number operations"
+      ],
+      "diagrams": [],
+      "tags": [
+        "matrices",
+        "determinants",
+        "inverse",
+        "simultaneous equations",
+        "WAEC",
+        "high priority",
+        "MTN",
+        "Dangote",
+        "JAMB",
+        "business data"
+      ],
+      "nigerian_context": "MTN subscription data by plan/region, Dangote multi-factory production analysis, JAMB processing 2M applications, market pricing (yam ₦1,500 vs cassava ₦3,000), network connectivity analysis (36 states), multi-product revenue calculations, university admission processing",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:42:01.171740",
+      "status": "published",
+      "content_type": "study_guide",
+      "exam_board": "WAEC"
+    },
+    {
+      "id": "math_variation_advanced",
+      "title": "Variation: From Taxi Fares to Electricity Bills",
+      "subject": "Mathematics",
+      "topic": "Variation",
+      "difficulty": "intermediate",
+      "exam_weight": "high",
+      "read_time_minutes": 25,
+      "content": "\n# Variation: From Taxi Fares to Electricity Bills\n\n## Introduction\nEverything in Nigeria varies in relation to something else. Taxi fare varies with distance. NEPA bills vary with electricity consumed. Worker productivity varies with rest time. Fertilizer yield varies with rainfall and nutrients. Understanding variation unlocks prediction and planning in Nigerian life.\n\n## Part 1: Direct Variation\n\n### Definition\ny varies directly with x means: y = kx\n\nwhere k is the constant of variation.\n\n**Property**: When x increases, y increases proportionally.\n\n### Nigerian Example 1: Taxi Fares in Lagos\nTypical rate: ₦100 per kilometer\n\n**Relationship**: Fare = 100 × Distance\n\n**Worked Example**:\n- 5 km trip costs: Fare = 100 × 5 = ₦500\n- 15 km trip costs: Fare = 100 × 15 = ₦1,500\n- 25 km trip costs: Fare = 100 × 25 = ₦2,500\n\n**Pattern**: Fare varies directly with distance (k = 100)\n\n### Finding the Constant\n**If y varies directly with x**, and y = 20 when x = 4:\n\n- y = kx\n- 20 = k(4)\n- k = 5\n\n**So equation is y = 5x**\n\n## Part 2: Inverse Variation\n\n### Definition\ny varies inversely with x means: y = k/x\n\nwhere k is the constant.\n\n**Property**: When x increases, y decreases.\n\n### Nigerian Example 2: Workers and Project Time\nBuilding a 100 m² house requires 1,000 man-hours of work.\n\n**If 10 workers work on the project**:\n- Time = 1,000/10 = 100 hours each\n- Total time: 100 hours\n\n**If 20 workers work on project**:\n- Time = 1,000/20 = 50 hours each\n- Total time: 50 hours\n\n**Pattern**: More workers → less time (inverse variation, k = 1,000)\n\n### Worked Example: Supplies Management\nA delivery driver uses fuel inversely proportional to remaining supplies. With 500 liters fuel, can cover 2,000 km (k = 500 × 2,000 = 1,000,000).\n\n**How far with 250 liters**?\n- Distance = 1,000,000/250\n- Distance = **4,000 km** ✓\n\n## Part 3: Joint Variation\n\n### Definition\nz varies jointly with x and y means: z = kxy\n\n**Property**: z changes with changes in both x and y.\n\n### Nigerian Example 3: Farm Harvest\nCrop yield depends on fertilizer AND rainfall.\n\n**Formula**: Yield = k × Fertilizer × Rainfall\n\nIf k = 50 (kg yield per unit fertilizer per unit rainfall):\n- With 100 units fertilizer and 500 mm rainfall:\n  Yield = 50 × 100 × 500 = 2,500,000 kg\n\n- With 100 units fertilizer and 300 mm rainfall (less rain):\n  Yield = 50 × 100 × 300 = 1,500,000 kg\n\n**Both factors matter for maximum yield**\n\n## Part 4: Partial Variation\n\n### Definition\ny partially varies with x when: y = a + kx\n\n**Property**: y has a fixed component (a) plus variable component (kx)\n\n### Nigerian Example 4: NEPA Electricity Billing\nBill = Base fee + Usage charge\nBill = 1,000 + 68 × kWh\n\n**If use 500 kWh**:\n- Bill = 1,000 + 68 × 500\n- Bill = 1,000 + 34,000\n- **Bill = ₦35,000**\n\n**If use 200 kWh**:\n- Bill = 1,000 + 68 × 200\n- Bill = 1,000 + 13,600\n- **Bill = ₦14,600**\n\n**Pattern**: Even with 0 kWh, you pay ₦1,000 base fee\n\n## Part 5: Complex Variation Problems\n\n### Worked Example 1: Transport Cost Analysis\nA hauling company charges: Cost = Base + (Distance × Rate) + (Weight × Factor)\n\n**Cost = 5,000 + 100D + 50W**\n\nwhere D = distance (km), W = weight (tonnes)\n\n**For 100 km trip with 5 tonnes**:\n- Cost = 5,000 + 100(100) + 50(5)\n- Cost = 5,000 + 10,000 + 250\n- **Cost = ₦15,250**\n\n### Worked Example 2: Dangote Cement Production\nProduction depends on workers (W) and machines (M):\n\n**Production = 10 × W × M**\n\n(10 bags per worker-machine unit per day)\n\n**With 50 workers and 10 machines**:\n- Production = 10 × 50 × 10 = 5,000 bags/day\n\n**To increase to 10,000 bags/day**, double either:\n- Option A: 100 workers + 10 machines\n- Option B: 50 workers + 20 machines\n\n## Part 6: Real Nigerian Applications\n\n### Market Trading\nPrice inversely varies with abundance:\n- When tomatoes abundant, price low (₦50/kg)\n- When tomatoes scarce, price high (₦300/kg)\n- **Equation**: Price × Quantity = constant\n\n### Manufacturing\nOutput directly varies with:\n- Number of machines (more machines = more output)\n- Worker skill (trained workers = more output)\n- **Formula**: Output = k × Machines × Skill level\n\n### Transportation Network\nDelivery time partially varies:\n- **Time = Fixed + Distance/Speed**\n- Fixed time: Vehicle prep, paperwork (1 hour)\n- Variable time: Distance/Speed\n\n**Lagos to Ibadan (120 km, average 60 km/h)**:\n- Time = 1 + 120/60 = 1 + 2 = 3 hours\n\n## WAEC Exam Tips\n\n1. **Identify variation type**: Read problem carefully (direct, inverse, or joint)\n2. **Find constant first**: Use given values to calculate k\n3. **Write equation clearly**: State y = kx before solving\n4. **Substitute completely**: Replace all variables with numbers\n5. **Check units**: Include units in final answer\n6. **Reasonableness test**: Does answer make sense?\n\n## Practice Problems\n\n**Problem 1**: y varies directly with x. If y = 30 when x = 6, find y when x = 10.\n\n**Problem 2**: m varies inversely with n. If m = 20 when n = 5, find m when n = 2.\n\n**Problem 3**: z varies jointly with x and y. If z = 60 when x = 3 and y = 4, find z when x = 2 and y = 5.\n\n**Problem 4**: Monthly rent = ₦50,000 + ₦500/m² × area. Find rent for 100 m² apartment.\n\n## Key Formulas\n\n- **Direct**: y = kx\n- **Inverse**: y = k/x\n- **Joint**: z = kxy\n- **Partial**: y = a + kx\n\n## Nigerian Context Importance\n\nVariation helps predict and plan:\n- **Transportation**: Calculate fares, delivery times\n- **Commerce**: Price-supply relationships, profit margins\n- **Manufacturing**: Production planning with resources\n- **Agriculture**: Yield predictions with inputs\n- **Utilities**: Calculate bills (NEPA, water, internet)\n- **Business**: Cost analysis, pricing strategies\n\nThis mathematical tool directly applies to Nigerian daily commerce and planning!\n",
+      "summary": "Mathematics lesson on variation covering direct variation (y=kx), inverse variation (y=k/x), joint variation (z=kxy), and partial variation (y=a+kx). Nigerian applications: Lagos taxi fares ₦100/km, NEPA electricity (₦1,000 base + ₦68/kWh = ₦35,000 for 500 kWh), farm yield with fertilizer and rainfall, building time with workers, cement production analysis. Includes worked examples for each variation type with real Nigerian scenarios.",
+      "learning_objectives": [
+        "Identify direct, inverse, and joint variation",
+        "Write variation equations and solve for constants",
+        "Apply variation to Nigerian transportation and commerce",
+        "Solve complex variation problems",
+        "Understand real-world proportional relationships"
+      ],
+      "prerequisites": [
+        "Ratios",
+        "Proportions",
+        "Basic algebra"
+      ],
+      "diagrams": [],
+      "tags": [
+        "variation",
+        "direct",
+        "inverse",
+        "joint",
+        "partial",
+        "WAEC",
+        "high priority",
+        "commerce",
+        "transport",
+        "NEPA billing"
+      ],
+      "nigerian_context": "Lagos taxi fares (₦100/km), NEPA billing (₦1,000 base + ₦68/kWh), farm harvest (fertilizer × rainfall variation), market tomato prices (₦50-₦300/kg by season), building construction (workers vs time), Dangote cement production (workers × machines), transportation costs (fixed + distance).",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:42:01.174464",
+      "status": "published",
+      "content_type": "study_guide",
+      "exam_board": "WAEC"
+    },
+    {
+      "id": "math_angles_triangles_advanced",
+      "title": "Angles and Triangles: From Roof Design to Land Surveying",
+      "subject": "Mathematics",
+      "topic": "Angles and Triangles",
+      "difficulty": "basic",
+      "exam_weight": "high",
+      "read_time_minutes": 23,
+      "content": "\n# Angles and Triangles: From Roof Design to Land Surveying\n\n## Introduction\nNigerian buildings feature precise angles: Abuja pyramidal roofs, Lagos warehouse triangular supports, Niger Bridge trusses. Land surveyors use triangulation to measure property boundaries. Traditional Yoruba geometric patterns display mathematical precision. Understanding angles and triangles is essential for Nigerian architecture, engineering, and surveying.\n\n## Part 1: Angles in Polygons\n\n### Interior Angle Sum\nFor a polygon with n sides:\n\n**Sum of interior angles = (n - 2) × 180°**\n\n### Nigerian Example 1: Abuja Building Designs\nA hexagonal (6-sided) office building common in Abuja.\n\n**Interior angle sum**:\n- Sum = (6 - 2) × 180°\n- Sum = 4 × 180°\n- Sum = **720°**\n\n**Each angle (regular hexagon)**:\n- Each angle = 720°/6 = **120°**\n\n### Exterior Angles\n**Sum of exterior angles = 360°** (always)\n\nFor regular polygon:\n- Each exterior angle = 360°/n\n\n**Regular hexagon exterior angle**:\n- 360°/6 = **60°**\n\n**WAEC Tip**: Exterior angles always sum to 360° regardless of polygon shape!\n\n## Part 2: Triangle Properties\n\n### Triangle Angle Sum\nAll triangles: **∠A + ∠B + ∠C = 180°**\n\n### Triangle Types\n- **Acute**: All angles < 90°\n- **Right**: One angle = 90°\n- **Obtuse**: One angle > 90°\n- **Equilateral**: All angles = 60°\n- **Isosceles**: Two equal angles\n- **Scalene**: All different angles\n\n### Worked Example 1: Roof Truss Design\nA Nigerian roof truss forms triangle with:\n- ∠A = 35°\n- ∠B = 65°\n- ∠C = ?\n\n**Solution**:\n- ∠A + ∠B + ∠C = 180°\n- 35° + 65° + ∠C = 180°\n- ∠C = **80°**\n\n## Part 3: Similar Triangles\n\n### Definition\nTriangles are similar if:\n- All corresponding angles equal\n- All corresponding sides proportional\n\n### Nigerian Example 2: Shadow Measurement\nAso Rock in Abuja casts shadow. Using small triangle, we measure:\n\n**Small triangle**:\n- Height of stick: 2 m\n- Shadow: 1.5 m\n\n**Large triangle**:\n- Aso Rock shadow: 300 m\n- Height: ?\n\n**Since triangles are similar**:\n- 2/1.5 = Height/300\n- Height = 2 × 300/1.5\n- Height = 600/1.5\n- **Height = 400 m**\n\n(Note: Actual Aso Rock height is 256 m, accounting for angle differences)\n\n## Part 4: Pythagoras Theorem\n\n### Formula\nFor right triangle: **a² + b² = c²**\n\nwhere c is hypotenuse (longest side).\n\n### Nigerian Example 3: Land Plot Measurement\nA triangular Lagos property plot:\n- Two sides: 80 m and 60 m\n- These are perpendicular (right angle between them)\n- Third side (diagonal): ?\n\n**Solution**:\n- a² + b² = c²\n- 80² + 60² = c²\n- 6,400 + 3,600 = c²\n- 10,000 = c²\n- c = **100 m**\n\n**Common Pythagorean triples in Nigeria**:\n- 3-4-5 (scaling: 30-40-50, 60-80-100)\n- 5-12-13\n- 8-15-17\n\n### Worked Example: Niger Bridge Measurement\nA bridge support triangle:\n- Height: 50 m\n- Base: 120 m\n- Slant length: ?\n\n**Solution**:\n- 50² + 120² = c²\n- 2,500 + 14,400 = c²\n- 16,900 = c²\n- c = **130 m**\n\n## Part 5: Congruent Triangles\n\n### Conditions for Congruence\n1. **SSS** (Side-Side-Side): All three sides equal\n2. **SAS** (Side-Angle-Side): Two sides and included angle equal\n3. **ASA** (Angle-Side-Angle): Two angles and included side equal\n4. **RHS** (Right-Hypotenuse-Side): Right angle, hypotenuse, and one side equal\n\n### Nigerian Example 4: Identical Roof Trusses\nTwo roof trusses must be congruent:\n- First truss: sides 5 m, 6 m, 7 m\n- Second truss: sides 5 m, 6 m, 7 m\n\n**By SSS**: Trusses are congruent ✓ (identical shapes, sizes)\n\n## Part 6: Real Nigerian Applications\n\n### Land Surveying\nProperty boundaries often use triangulation:\n- Surveyor measures baseline (100 m)\n- Measures angles to boundary corners (45° and 75°)\n- Calculates property perimeter and area\n\n### Construction\nRoof trusses use 30-60-90 and 45-45-90 triangles:\n- **45-45-90**: Isosceles, sides ratio 1:1:√2\n- **30-60-90**: Sides ratio 1:√3:2\n\n### Architecture\nNigerian traditional patterns use:\n- Equilateral triangles (Igbo crafts)\n- Isosceles triangles (Hausa designs)\n- Right triangles (building foundations)\n\n## WAEC Exam Tips\n\n1. **Draw diagrams**: Always sketch the triangle first\n2. **Label clearly**: Mark all angles and sides\n3. **State theorem**: Write \"By Pythagoras theorem...\" before using\n4. **Check angle sum**: Verify angles add to 180°\n5. **Similar triangles**: Establish correspondence clearly\n6. **Units matter**: Include m, cm, degrees in answer\n\n## Practice Problems\n\n**Problem 1**: Pentagon (5 sides) interior angle sum = ?\n\n**Problem 2**: Right triangle has sides 3 cm and 4 cm. Hypotenuse = ?\n\n**Problem 3**: Two similar triangles have corresponding sides 4 cm and 6 cm. If first triangle's perimeter is 12 cm, find second triangle's perimeter.\n\n**Problem 4**: Triangle angles are x, 2x, and 3x. Find x.\n\n## Key Formulas\n\n- **Polygon angle sum**: (n-2) × 180°\n- **Exterior angle sum**: 360°\n- **Triangle angle sum**: 180°\n- **Pythagoras**: a² + b² = c²\n\n## Nigerian Context Importance\n\nTriangle geometry applies to:\n- **Construction**: Building design, roof truss angles\n- **Surveying**: Property boundary measurement\n- **Engineering**: Bridge support structures\n- **Land measurement**: Triangulation for area calculation\n- **Architecture**: Traditional pattern design\n- **Arts**: Textile and craft geometric designs\n\nThis foundational geometry enables accurate Nigerian construction and measurement!\n",
+      "summary": "Geometry lesson covering polygon interior angles ((n-2)×180°), triangle properties (angle sum 180°), similar and congruent triangles, and Pythagoras theorem (a²+b²=c²). Nigerian applications: Abuja hexagonal buildings (120° angles), Aso Rock shadow measurement, Lagos land plot diagonal (80×60=100m), Niger Bridge supports (50×120=130m), roof trusses with 30-60-90 triangles. Includes 4 worked examples with Nigerian construction and surveying scenarios.",
+      "learning_objectives": [
+        "Calculate angles in polygons",
+        "Identify similar and congruent triangles",
+        "Apply Pythagoras theorem to Nigerian construction",
+        "Solve geometric problems involving triangles",
+        "Use triangle properties in land measurements"
+      ],
+      "prerequisites": [
+        "Basic geometry",
+        "Angle properties",
+        "Measurement"
+      ],
+      "diagrams": [],
+      "tags": [
+        "angles",
+        "triangles",
+        "Pythagoras",
+        "similar",
+        "congruent",
+        "WAEC",
+        "high priority",
+        "construction",
+        "surveying",
+        "Abuja"
+      ],
+      "nigerian_context": "Abuja hexagonal building design (120° interior angles), Aso Rock height measurement by shadows (400m calculation), triangular Lagos land plots (80m × 60m = 100m diagonal), Niger Bridge support calculations (50m × 120m = 130m), roof truss designs (30-60-90 triangles), Yoruba geometric patterns, property surveying by triangulation",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:42:01.174833",
+      "status": "published",
+      "content_type": "study_guide",
+      "exam_board": "WAEC"
+    },
+    {
+      "id": "math_sequence_series_advanced",
+      "title": "Sequence and Series: From Bank Interest to Lagos Property Prices",
+      "subject": "Mathematics",
+      "topic": "Sequence and Series",
+      "difficulty": "advanced",
+      "exam_weight": "high",
+      "read_time_minutes": 28,
+      "content": "\n# Sequence and Series: From Bank Interest to Lagos Property Prices\n\n## Introduction\nIn Nigeria, patterns drive finance and growth. Bank savings grow in geometric progression (compound interest). Property prices in Lagos increase in arithmetic progression. Civil servant salaries follow predictable sequences. Understanding sequences and series unlocks the mathematics of growth, investment, and planning.\n\n## Part 1: Arithmetic Progression (AP)\n\n### Definition\nAn Arithmetic Progression is a sequence where the difference between consecutive terms is constant.\n\n**Form**: a, a+d, a+2d, a+3d, ...\n\n**Examples**:\n- 2, 5, 8, 11, ... (first term a=2, common difference d=3)\n- 100, 95, 90, 85, ... (a=100, d=-5)\n\n### Nigerian Example 1: Civil Servant Salary Progression\nA teacher starts at ₦120,000/month with ₦5,000 annual increment.\n\n**Sequence**:\n- Year 1: ₦120,000\n- Year 2: ₦125,000\n- Year 3: ₦130,000\n- Year 4: ₦135,000\n\nThis is AP with a = 120,000 and d = 5,000.\n\n### nth Term of AP\n**Formula**: Tₙ = a + (n-1)d\n\n**Problem**: What is the teacher's salary in year 10?\n- Tₙ = 120,000 + (10-1) × 5,000\n- T₁₀ = 120,000 + 45,000 = ₦165,000\n\n**WAEC Tip**: Always write the formula before substituting values!\n\n### Sum of n Terms of AP\n**Formula**: Sₙ = n/2 [2a + (n-1)d] OR Sₙ = n/2 (first + last)\n\n**Worked Example 1: Total Salary Over 10 Years**\nHow much total salary does the teacher earn in 10 years?\n\n**Solution**:\n- First term: a = 120,000\n- Last term (year 10): T₁₀ = 165,000\n- Number of terms: n = 10\n\n**Using formula**:\n- S₁₀ = 10/2 (120,000 + 165,000)\n- S₁₀ = 5 × 285,000\n- **S₁₀ = ₦1,425,000**\n\n**Meaning**: Total earnings over 10 years = ₦1.425 million\n\n## Part 2: Geometric Progression (GP)\n\n### Definition\nA Geometric Progression is a sequence where the ratio between consecutive terms is constant.\n\n**Form**: a, ar, ar², ar³, ...\n\n**Examples**:\n- 2, 6, 18, 54, ... (a=2, r=3)\n- 100, 50, 25, 12.5, ... (a=100, r=0.5)\n\n### Nigerian Example 2: Bank Compound Interest\n₦100,000 deposited in GTBank at 10% annual interest.\n\n**Balance after each year**:\n- Year 0: ₦100,000\n- Year 1: ₦100,000 × 1.1 = ₦110,000\n- Year 2: ₦110,000 × 1.1 = ₦121,000\n- Year 3: ₦133,100\n- Year 4: ₦146,410\n\n**This is GP** with a = 100,000 and r = 1.1\n\n### nth Term of GP\n**Formula**: Tₙ = ar^(n-1)\n\n**Problem**: How much money after 5 years?\n- T₅ = 100,000 × (1.1)⁴\n- T₅ = 100,000 × 1.4641\n- T₅ = **₦146,410**\n\n### Sum of n Terms of GP\n**Formula**: Sₙ = a(r^n - 1)/(r - 1) [when r ≠ 1]\n\n**Worked Example 2: Total Interest Earned**\nWhat is the total amount in bank account after 5 years?\n\n**Solution**:\n- a = 100,000\n- r = 1.1\n- n = 5\n\n**Using formula**:\n- S₅ = 100,000(1.1⁵ - 1)/(1.1 - 1)\n- S₅ = 100,000(1.6105 - 1)/0.1\n- S₅ = 100,000(0.6105)/0.1\n- S₅ = 100,000 × 6.105\n- **S₅ = ₦610,500** (total amount after 5 years)\n\n**Interest earned** = 610,500 - 100,000 × 5 = ₦110,500\n\n## Part 3: Sum to Infinity (GP Only)\n\n### When -1 < r < 1\nThe series approaches a finite limit.\n\n**Formula**: S∞ = a/(1-r)\n\n**Worked Example 3: Recurring Decimal**\nThe decimal 0.333... = 1/3 can be written as a GP.\n\n**0.333...** = 0.3 + 0.03 + 0.003 + ...\n- a = 0.3\n- r = 0.1\n- S∞ = 0.3/(1-0.1) = 0.3/0.9 = **1/3** ✓\n\n## Part 4: Real Nigerian Applications\n\n### Property Prices in Lagos\nLekki property values appreciate 5% annually (GP with r = 1.05).\n\nStarting price: ₦10,000,000 in 2020.\n\n**Price by year**:\n- 2020: ₦10,000,000\n- 2022: ₦10,000,000 × (1.05)² = ₦11,025,000\n- 2025: ₦10,000,000 × (1.05)⁵ = ₦12,762,815\n\n**Question**: After 10 years, value = ?\n- T₁₁ = 10,000,000 × (1.05)¹⁰ = ₦16,288,946\n\n### MTN Subscriber Growth\nMTN Nigeria adds 2 million subscribers annually (AP).\n\n**Year 1**: 60 million subscribers\n**Year 2**: 62 million\n**Year 3**: 64 million\n\n**Total subscribers by year 5**:\n- a = 60 million\n- d = 2 million\n- n = 5\n- S₅ = 5/2[2(60) + (5-1)×2] = 2.5[120 + 8] = **320 million subscriber-years**\n\n### Dangote Cement Distribution\nProduction increases 15% annually (GP with r = 1.15).\n\n**Starting production**: 5 million tonnes in 2020.\n\n**Projected for 2026**:\n- T₇ = 5 × (1.15)⁶ = 5 × 2.313 = **11.57 million tonnes**\n\n## WAEC Exam Tips\n\n1. **Identify the sequence**: Look for constant difference (AP) or constant ratio (GP)\n2. **Write known values**: a (first term), d or r, n (number of terms)\n3. **Choose correct formula**: AP or GP sum formula\n4. **Show substitution**: Write values into formula before calculating\n5. **State units**: Always include ₦, tonnes, years, etc.\n6. **Check reasonableness**: Does answer make sense in context?\n7. **Practice with negative terms**: Some sequences decrease\n\n## Practice Problems\n\n**Problem 1**: A trader's monthly profit increases from ₦50,000 by ₦10,000 each month. Find total profit in 12 months.\n\n**Problem 2**: UBA offers 8% compound interest on savings. If ₦500,000 is invested, find amount after 3 years.\n\n**Problem 3**: An AP has first term 5 and common difference 3. Find the sum of first 20 terms.\n\n**Problem 4**: A GP has first term 2 and common ratio 3. Find the 6th term.\n\n## Key Formulas\n\n- **AP nth term**: Tₙ = a + (n-1)d\n- **AP sum**: Sₙ = n/2[2a + (n-1)d]\n- **GP nth term**: Tₙ = ar^(n-1)\n- **GP sum**: Sₙ = a(r^n - 1)/(r - 1)\n- **GP infinite sum**: S∞ = a/(1-r) [when |r| < 1]\n\n## Nigerian Context Importance\n\nUnderstanding sequences helps with:\n- **Banking**: Calculate investment returns and loan repayment\n- **Business**: Project growth and sales forecasts\n- **Property**: Predict appreciation and investment value\n- **Demographics**: Plan for population changes\n- **Salary**: Understand career earning potential\n- **Telecommunications**: Analyze subscriber growth\n\nThis knowledge directly applies to Nigerian financial planning and business decisions!\n",
+      "summary": "Advanced mathematics lesson covering arithmetic progressions (AP), geometric progressions (GP), and their applications. Nigerian contexts: Teacher salary progression (₦120k → ₦165k over 10 years), bank savings with compound interest (₦100k at 10% = ₦146,410 in 4 years), Lagos property appreciation (₦10M → ₦12.76M in 5 years), MTN subscriber growth, Dangote cement expansion. Includes formulas, 6 worked examples with Nigerian scenarios.",
+      "learning_objectives": [
+        "Identify arithmetic and geometric progressions",
+        "Calculate nth term and sum formulas",
+        "Apply sequences to Nigerian financial planning",
+        "Solve complex sequence problems",
+        "Understand real-world pattern applications"
+      ],
+      "prerequisites": [
+        "Patterns",
+        "Algebra",
+        "Basic number sequences"
+      ],
+      "diagrams": [],
+      "tags": [
+        "sequence",
+        "series",
+        "AP",
+        "GP",
+        "compound interest",
+        "WAEC",
+        "high priority",
+        "banking",
+        "property",
+        "Lagos",
+        "investment"
+      ],
+      "nigerian_context": "GTBank compound interest (10% APY), teacher salary progression (₦5,000/year increment), Lagos property appreciation (5% annually), MTN subscriber growth (2M annually), Dangote cement production growth (15% annually), civil servant earnings",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:42:01.170654",
+      "status": "published",
+      "content_type": "study_guide",
+      "exam_board": "WAEC"
+    },
+    {
+      "id": "physics_temperature_heat_advanced",
+      "title": "Temperature and Heat: From Lagos Climate to Nigerian Kitchens",
+      "subject": "Physics",
+      "topic": "Temperature and Heat",
+      "difficulty": "intermediate",
+      "exam_weight": "high",
+      "read_time_minutes": 27,
+      "content": "\n# Temperature and Heat: From Lagos Climate to Nigerian Kitchens\n\n## Introduction\nEvery Nigerian experiences temperature daily: Lagos heat at 27°C, Jos coolness at 20°C, Sokoto's blazing 42°C. Food cooks at precise temperatures, vaccines need cold storage, and electricity consumption depends on climate. Understanding temperature and heat is essential for daily life in Nigeria.\n\n## Part 1: Temperature Scales\n\n### Celsius Scale\nMost common in Nigeria. Based on water freezing (0°C) and boiling (100°C) at sea level.\n\n**Nigerian Temperature Examples**:\n- Lagos average: 27°C (warm year-round)\n- Jos Plateau: 20°C (cooler highland)\n- Sokoto dry season: 42°C (very hot)\n- Cool room: 16°C\n- Normal body: 37°C\n- Fever: 39-40°C\n\n### Fahrenheit Scale\nUsed in some medical contexts and old British instruments.\n\n**Conversion**:\n- F = 9/5 × C + 32\n- C = 5/9 × (F - 32)\n\n**Worked Example 1: Lagos Temperature Conversion**\nLagos average is 27°C. Convert to Fahrenheit.\n- F = 9/5 × 27 + 32\n- F = 48.6 + 32\n- **F = 80.6°F** (warm and comfortable)\n\n### Kelvin Scale\nAbsolute temperature scale. K = C + 273 (or C + 273.15 precisely)\n\n**Nigerian temperatures in Kelvin**:\n- Lagos 27°C = 300 K\n- Jos 20°C = 293 K\n- Sokoto 42°C = 315 K\n\n**WAEC Tip**: Always convert to Kelvin for gas law calculations!\n\n## Part 2: Heat Capacity and Specific Heat Capacity\n\n### Heat Capacity (C)\nEnergy needed to raise 1 object by 1°C.\n\n**Formula**: Q = C × ΔT\n\nwhere:\n- Q = heat energy (joules)\n- C = heat capacity (J/°C)\n- ΔT = temperature change (°C)\n\n### Specific Heat Capacity (c)\nEnergy needed to raise 1 kg of substance by 1°C.\n\n**Formula**: Q = m × c × ΔT\n\n**Worked Example 2: Heating Nigerian Soup**\nA pot of vegetable soup (5 kg) needs heating from 25°C to 95°C.\n\n**Given**:\n- Mass m = 5 kg\n- Temperature change: ΔT = 95 - 25 = 70°C\n- Specific heat of water (main component): c = 4,200 J/kg°C\n\n**Solution**:\n- Q = m × c × ΔT\n- Q = 5 × 4,200 × 70\n- Q = 1,470,000 J = **1.47 MJ**\n\n**Meaning**: Need 1.47 million joules of energy to heat the soup.\n\n**Nigerian context**: A gas stove releases ~30 MJ per hour, so this takes ~3 minutes.\n\n### Specific Heat Values (Common Nigerian Materials)\n| Material | Specific Heat (J/kg°C) |\n|----------|----------------------|\n| Water | 4,200 |\n| Cooking oil | 2,000 |\n| Sand (Sahara) | 800 |\n| Iron (cookware) | 450 |\n| Aluminum | 900 |\n\n## Part 3: Latent Heat\n\n### Latent Heat of Fusion (Melting)\nEnergy needed to melt solid without temperature change.\n\n**Formula**: Q = m × Lf\n\n- Ice: Lf = 334,000 J/kg\n- Energy to melt 1 kg ice = 334 kJ\n\n### Latent Heat of Vaporization (Boiling)\nEnergy needed to convert liquid to gas without temperature change.\n\n**Formula**: Q = m × Lv\n\n- Water: Lv = 2,260,000 J/kg (2.26 MJ)\n- Energy to boil 1 kg water = 2,260 kJ\n\n**Worked Example 3: Boiling Water for Pap**\nHeating 2 kg water from 25°C to boiling (100°C), then completely boiling it.\n\n**Step 1 - Heating**:\n- Q₁ = m × c × ΔT\n- Q₁ = 2 × 4,200 × 75\n- Q₁ = 630,000 J\n\n**Step 2 - Boiling (vaporization)**:\n- Q₂ = m × Lv\n- Q₂ = 2 × 2,260,000\n- Q₂ = 4,520,000 J\n\n**Total energy**:\n- Q_total = 630,000 + 4,520,000 = **5,150,000 J = 5.15 MJ**\n\n**Meaning**: Mostly goes to vaporization, not heating!\n\n## Part 4: Heat Transfer Methods\n\n### Conduction\nDirect transfer through material (no movement).\n\n**Nigerian Example**: Metal pot conducting heat to food inside.\n- Aluminum pot conducts heat quickly (high conductivity)\n- Traditional clay pots conduct slowly\n\n**Application**: Choose materials wisely for cooking efficiency!\n\n### Convection\nTransfer through movement of liquid/gas.\n\n**Nigerian Example**: Hot water in soup rising, cold sinking.\n- Creates circular motion\n- Distributes heat throughout\n\n**Application**: Stir soup for even heating (stronger convection).\n\n### Radiation\nTransfer through electromagnetic waves (no contact needed).\n\n**Nigerian Example**: Nigerian sun warming Lagos without touching.\n- Infrared radiation heats skin, buildings\n- Solar panels use this to generate electricity (Kaduna installations)\n\n## Part 5: Real Nigerian Heat Applications\n\n### Air Conditioning Load (Lagos)\nTo keep room at 22°C when outside is 32°C:\n\n**Heat entering** ≈ Building surface area × Temperature difference × U-value\n\nModern Lagos office building (500 m²) requires:\n- Cooling capacity: ~60 kW\n- Cost: ₦50,000/month electricity (NEPA rate)\n\n### Cooking Efficiency\nGas stove (~10 kW) vs electric kettle (2 kW):\n- **Gas**: Heats water in 5 minutes (efficient, cheaper)\n- **Electric**: Heats water in 10 minutes (less efficient, more expensive)\n\n**Cost comparison**:\n- Gas: 1 liter water = ₦50 cost\n- Electricity: 1 liter water = ₦120 cost (2.4× more expensive)\n\n### Vaccine Cold Chain\nPfizer vaccine storage: 2-8°C required.\n\n**Cooling needed**: Remove heat to maintain low temperature.\n- Nigerian cold store in Lagos: ₦5M system\n- Running cost: ₦100,000/month electricity\n\n## WAEC Exam Tips\n\n1. **Check temperature units**: Problem might be in K, not °C\n2. **Include latent heat**: Don't forget vaporization/fusion energy\n3. **Show all steps**: Heating then boiling (two separate processes)\n4. **State formula first**: Write Q = mc∆T before substituting\n5. **Use correct c value**: Different materials have different specific heat\n6. **Units matter**: Answer in joules, always\n\n## Practice Problems\n\n**Problem 1**: Convert 40°C to Fahrenheit and Kelvin.\n\n**Problem 2**: How much energy to heat 10 kg iron from 20°C to 100°C? (c = 450 J/kg°C)\n\n**Problem 3**: How much energy to melt 5 kg ice at 0°C? (Lf = 334,000 J/kg)\n\n**Problem 4**: A Lagos building loses 100 kJ heat per minute. How long for 5 MJ loss?\n\n## Key Equations\n\n- **Conversion**: F = 9/5C + 32, K = C + 273\n- **Heat capacity**: Q = mc∆T\n- **Latent heat**: Q = mL\n- **Total thermal energy**: Q_total = mc∆T + mL\n\n## Nigerian Context Importance\n\nTemperature and heat knowledge helps with:\n- **Cooking**: Efficient food preparation (gas vs electric)\n- **Climate**: Adapt to Lagos heat or Jos coolness\n- **Health**: Fever understanding, vaccine storage\n- **Business**: AC costs, refrigeration, solar thermal\n- **Energy**: Electricity consumption, efficiency improvements\n- **Construction**: Thermal insulation design\n\nThis knowledge makes Nigerian daily life more efficient and economical!\n",
+      "summary": "Temperature and heat physics lesson covering Celsius/Fahrenheit/Kelvin scales, specific heat capacity, latent heat of fusion/vaporization, and heat transfer (conduction, convection, radiation). Nigerian contexts: Lagos 27°C, Jos 20°C, Sokoto 42°C, soup heating calculations (5kg × 4,200 J/kg°C × 70°C = 1.47 MJ), gas vs electric cooking costs, vaccine cold storage (2-8°C), AC systems (60 kW for Lagos offices). Includes 3 detailed worked examples.",
+      "learning_objectives": [
+        "Convert between temperature scales (Celsius, Fahrenheit, Kelvin)",
+        "Understand heat capacity and specific heat capacity",
+        "Calculate latent heat in phase changes",
+        "Apply concepts to Nigerian cooking and climate",
+        "Solve calorimetry and thermal problems"
+      ],
+      "prerequisites": [
+        "Energy concepts",
+        "Measurement",
+        "Unit conversions"
+      ],
+      "diagrams": [],
+      "tags": [
+        "temperature",
+        "heat",
+        "specific heat capacity",
+        "latent heat",
+        "WAEC",
+        "high priority",
+        "Nigeria climate",
+        "Lagos",
+        "cooking",
+        "thermometer"
+      ],
+      "nigerian_context": "Lagos temperature 27°C average, Jos 20°C, Sokoto 42°C, Nigerian soup heating (5kg from 25→95°C), gas stove vs electric kettle efficiency, Pfizer vaccine cold chain storage (2-8°C), Lagos AC cooling (60 kW systems), NEPA electricity costs (₦50k-120k/month), solar panel installations Kaduna",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:42:01.171363",
+      "status": "published",
+      "content_type": "study_guide",
+      "exam_board": "WAEC"
+    },
+    {
+      "id": "math_matrices_determinants_advanced",
+      "title": "Matrices and Determinants: From MTN Data to Simultaneous Equations",
+      "subject": "Mathematics",
+      "topic": "Matrices and Determinants",
+      "difficulty": "advanced",
+      "exam_weight": "high",
+      "read_time_minutes": 30,
+      "content": "\n# Matrices and Determinants: From MTN Data to Simultaneous Equations\n\n## Introduction\nMatrices organize data efficiently. MTN tracks subscribers by region and plan in matrix form. Dangote analyzes production across factories using matrices. Universities use matrices to process thousands of admission applications. Matrices solve complex problems that would be tedious with traditional algebra.\n\n## Part 1: Matrix Basics\n\n### Definition\nA matrix is rectangular array of numbers arranged in rows and columns.\n\n**Form**: \n```\nA = [a₁₁  a₁₂  a₁₃]\n    [a₂₁  a₂₂  a₂₃]\n    [a₃₁  a₃₂  a₃₃]\n```\n\n**Notation**: 3×3 matrix (3 rows, 3 columns)\n\n### Nigerian Example 1: MTN Subscription Data\nMTN tracks 3 plans across 3 months.\n\n```\n           January  February  March\nPremium:    500,000  520,000  540,000\nStandard:  1,000,000 1,050,000 1,100,000\nBasic:     2,000,000 1,900,000 1,800,000\n\nMatrix A = [500,000   520,000   540,000]\n           [1,000,000 1,050,000 1,100,000]\n           [2,000,000 1,900,000 1,800,000]\n```\n\n## Part 2: Matrix Operations\n\n### Addition and Subtraction\nAdd/subtract corresponding elements.\n\n**Example**:\n```\nA = [1  2]    B = [2  1]\n    [3  4]        [1  2]\n\nA + B = [3  3]\n        [4  6]\n```\n\n### Scalar Multiplication\nMultiply every element by a constant.\n\n```\n2A = [2  4]\n     [6  8]\n```\n\n### Matrix Multiplication\nFor A(m×n) × B(n×p) = C(m×p)\n\n**Worked Example 1: Dangote Sales Calculation**\n\nProduction matrix (3 factories × 2 products):\n```\nP = [100  50]   (Factory 1: 100 bags cement, 50 bags flour)\n    [120  60]   (Factory 2)\n    [80   40]   (Factory 3)\n```\n\nPrice per unit:\n```\nPrice = [₦5,000]   (Cement price per bag)\n        [₦2,000]   (Flour price per bag)\n```\n\n**Revenue from each factory**:\n```\nRevenue = P × Price\n\nFactory 1: 100(5,000) + 50(2,000) = 500,000 + 100,000 = ₦600,000\nFactory 2: 120(5,000) + 60(2,000) = 600,000 + 120,000 = ₦720,000\nFactory 3: 80(5,000) + 40(2,000) = 400,000 + 80,000 = ₦480,000\n\nTotal revenue = ₦1,800,000\n```\n\n## Part 3: Determinants\n\n### 2×2 Determinant\nFor matrix A = [a  b]\n               [c  d]\n\n**Formula**: |A| = ad - bc\n\n**Example**:\n```\nA = [3  2]\n    [1  4]\n\n|A| = 3(4) - 2(1) = 12 - 2 = 10\n```\n\n### 3×3 Determinant (Method of Cofactors)\nFor matrix A = [a  b  c]\n               [d  e  f]\n               [g  h  i]\n\n**Formula**: |A| = a(ei - fh) - b(di - fg) + c(dh - eg)\n\n**Worked Example 2: Calculate 3×3 Determinant**\n\n```\nA = [2  3  1]\n    [1  0  2]\n    [3  1  1]\n\n|A| = 2(0×1 - 2×1) - 3(1×1 - 2×3) + 1(1×1 - 0×3)\n    = 2(-2) - 3(1-6) + 1(1)\n    = -4 - 3(-5) + 1\n    = -4 + 15 + 1\n    = 12\n```\n\n## Part 4: Matrix Inverse\n\n### Definition\nFor matrix A, inverse A⁻¹ satisfies: A × A⁻¹ = I (identity matrix)\n\n### 2×2 Inverse\nFor A = [a  b]\n        [c  d]\n\n**Formula**: A⁻¹ = 1/|A| × [d   -b]\n                            [-c   a]\n\n**Important**: Matrix must be invertible (|A| ≠ 0)\n\n**Worked Example 3: Inverse of 2×2 Matrix**\n\n```\nA = [4  3]\n    [2  1]\n\nStep 1: Find determinant\n|A| = 4(1) - 3(2) = 4 - 6 = -2\n\nStep 2: Apply inverse formula\nA⁻¹ = 1/(-2) × [1   -3]  = [-1/2   3/2]\n              [-2    4]    [1     -2]\n\nVerification: A × A⁻¹ = I ✓\n```\n\n## Part 5: Solving Simultaneous Equations Using Matrices\n\n### System of Equations\n```\n2x + 3y = 8\nx + 2y = 5\n```\n\n### Matrix Form\n```\n[2  3] [x]   [8]\n[1  2] [y] = [5]\n\nA × X = B  where:\nA = coefficient matrix\nX = [x, y]ᵀ (unknowns)\nB = [8, 5]ᵀ (constants)\n```\n\n### Solution\nX = A⁻¹ × B\n\n**Worked Example 4: Nigerian Market Pricing**\n\nA Lagos market sells yam and cassava. One customer pays ₦12,000 for 2 yams + 3 cassavas. Another pays ₦7,500 for 1 yam + 2 cassavas.\n\n**Equations**:\n- 2x + 3y = 12,000 (x = yam price, y = cassava price)\n- 1x + 2y = 7,500\n\n**Matrix solution**:\n```\n[2  3] [x]   [12,000]\n[1  2] [y] = [7,500]\n\nStep 1: Find |A|\n|A| = 2(2) - 3(1) = 4 - 3 = 1\n\nStep 2: Find A⁻¹\nA⁻¹ = 1/1 × [2   -3]  = [2   -3]\n           [-1    2]    [-1   2]\n\nStep 3: Calculate X = A⁻¹ × B\n[x]   [2   -3] [12,000]   [24,000 - 22,500]   [1,500]\n[y] = [-1   2] [7,500]  = [-12,000 + 15,000] = [3,000]\n```\n\n**Answer**: Yam = ₦1,500 each, Cassava = ₦3,000 each\n\n**Verification**:\n- 2(1,500) + 3(3,000) = 3,000 + 9,000 = ₦12,000 ✓\n- 1(1,500) + 2(3,000) = 1,500 + 6,000 = ₦7,500 ✓\n\n## Part 6: Real Nigerian Applications\n\n### University Admission Processing\nJAMB processes 2 million applications. Scores in Matrix form:\n```\n             Math  English  Science\nStudent 1:   78     82       75\nStudent 2:   85     79       88\n...\nStudent 2M:  ...    ...      ...\n```\n\nCan calculate aggregate scores using matrix multiplication instantly.\n\n### MTN Network Analysis\nConnection matrix between 36 states:\n```\n[Connection between Lagos-Abuja]\n[Connection between Lagos-Kano]\n[... 666 connections total]\n```\n\nDeterminant ≠ 0 means network is connected (robust system).\n\n### Dangote Production Analysis\nMulti-factory production data solved using matrix equations:\n- 5 factories producing 8 products\n- Constraints: Raw material availability, worker capacity, shipping\n- Solution: Optimal production allocation (₦billions in efficiency)\n\n## WAEC Exam Tips\n\n1. **Check invertibility**: Always calculate determinant first\n2. **Show row operations**: For 3×3 matrices, show expansion steps\n3. **Verify multiplication**: 2×3 matrix × 3×2 matrix = 2×2 result\n4. **Identity matrix**: Remember I has 1s on diagonal, 0s elsewhere\n5. **Check solutions**: Always verify by substituting back\n6. **Scalar vs matrix**: Be clear when multiplying numbers vs matrices\n\n## Practice Problems\n\n**Problem 1**: Find determinant of [5  3; 2  4]\n\n**Problem 2**: Calculate inverse of [2  1; 3  2]\n\n**Problem 3**: Solve using matrices: 3x + 2y = 13, x + y = 5\n\n**Problem 4**: If A × B = C, and |A| = 3, |B| = 2, find |C|\n\n## Key Formulas\n\n- **2×2 Determinant**: |A| = ad - bc\n- **3×3 Determinant**: |A| = a(ei - fh) - b(di - fg) + c(dh - eg)\n- **2×2 Inverse**: A⁻¹ = 1/|A| × [d -b; -c a]\n- **Matrix solution**: X = A⁻¹ × B\n\n## Nigerian Context Importance\n\nMatrices solve Nigerian problems:\n- **Business**: Process multi-location data (MTN, Dangote)\n- **Education**: Handle admissions efficiently (JAMB)\n- **Government**: Census data organization and analysis\n- **Telecommunications**: Network routing and optimization\n- **Finance**: Multi-investment portfolio management\n- **Technology**: Graphics, AI, data processing\n\nThis mathematical tool powers modern Nigerian business and technology!\n",
+      "summary": "Advanced mathematics lesson on matrices and determinants covering operations (addition, subtraction, multiplication), 2×2 and 3×3 determinants, matrix inverses, and solving simultaneous equations using matrices. Nigerian applications: MTN subscriber analysis, Dangote production optimization (Factory 1: 100 bags cement + 50 bags flour = ₦600k revenue), market pricing (yam/cassava), JAMB admissions processing. Includes 4 detailed worked examples with Nigerian business scenarios.",
+      "learning_objectives": [
+        "Perform matrix operations (addition, subtraction, multiplication)",
+        "Calculate determinants of 2×2 and 3×3 matrices",
+        "Find inverse of matrices",
+        "Solve simultaneous equations using matrices",
+        "Apply matrix concepts to Nigerian business scenarios"
+      ],
+      "prerequisites": [
+        "Algebra",
+        "Simultaneous equations",
+        "Number operations"
+      ],
+      "diagrams": [],
+      "tags": [
+        "matrices",
+        "determinants",
+        "inverse",
+        "simultaneous equations",
+        "WAEC",
+        "high priority",
+        "MTN",
+        "Dangote",
+        "JAMB",
+        "business data"
+      ],
+      "nigerian_context": "MTN subscription data by plan/region, Dangote multi-factory production analysis, JAMB processing 2M applications, market pricing (yam ₦1,500 vs cassava ₦3,000), network connectivity analysis (36 states), multi-product revenue calculations, university admission processing",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:42:01.171740",
+      "status": "published",
+      "content_type": "study_guide",
+      "exam_board": "WAEC"
+    },
+    {
+      "id": "math_variation_advanced",
+      "title": "Variation: From Taxi Fares to Electricity Bills",
+      "subject": "Mathematics",
+      "topic": "Variation",
+      "difficulty": "intermediate",
+      "exam_weight": "high",
+      "read_time_minutes": 25,
+      "content": "\n# Variation: From Taxi Fares to Electricity Bills\n\n## Introduction\nEverything in Nigeria varies in relation to something else. Taxi fare varies with distance. NEPA bills vary with electricity consumed. Worker productivity varies with rest time. Fertilizer yield varies with rainfall and nutrients. Understanding variation unlocks prediction and planning in Nigerian life.\n\n## Part 1: Direct Variation\n\n### Definition\ny varies directly with x means: y = kx\n\nwhere k is the constant of variation.\n\n**Property**: When x increases, y increases proportionally.\n\n### Nigerian Example 1: Taxi Fares in Lagos\nTypical rate: ₦100 per kilometer\n\n**Relationship**: Fare = 100 × Distance\n\n**Worked Example**:\n- 5 km trip costs: Fare = 100 × 5 = ₦500\n- 15 km trip costs: Fare = 100 × 15 = ₦1,500\n- 25 km trip costs: Fare = 100 × 25 = ₦2,500\n\n**Pattern**: Fare varies directly with distance (k = 100)\n\n### Finding the Constant\n**If y varies directly with x**, and y = 20 when x = 4:\n\n- y = kx\n- 20 = k(4)\n- k = 5\n\n**So equation is y = 5x**\n\n## Part 2: Inverse Variation\n\n### Definition\ny varies inversely with x means: y = k/x\n\nwhere k is the constant.\n\n**Property**: When x increases, y decreases.\n\n### Nigerian Example 2: Workers and Project Time\nBuilding a 100 m² house requires 1,000 man-hours of work.\n\n**If 10 workers work on the project**:\n- Time = 1,000/10 = 100 hours each\n- Total time: 100 hours\n\n**If 20 workers work on project**:\n- Time = 1,000/20 = 50 hours each\n- Total time: 50 hours\n\n**Pattern**: More workers → less time (inverse variation, k = 1,000)\n\n### Worked Example: Supplies Management\nA delivery driver uses fuel inversely proportional to remaining supplies. With 500 liters fuel, can cover 2,000 km (k = 500 × 2,000 = 1,000,000).\n\n**How far with 250 liters**?\n- Distance = 1,000,000/250\n- Distance = **4,000 km** ✓\n\n## Part 3: Joint Variation\n\n### Definition\nz varies jointly with x and y means: z = kxy\n\n**Property**: z changes with changes in both x and y.\n\n### Nigerian Example 3: Farm Harvest\nCrop yield depends on fertilizer AND rainfall.\n\n**Formula**: Yield = k × Fertilizer × Rainfall\n\nIf k = 50 (kg yield per unit fertilizer per unit rainfall):\n- With 100 units fertilizer and 500 mm rainfall:\n  Yield = 50 × 100 × 500 = 2,500,000 kg\n\n- With 100 units fertilizer and 300 mm rainfall (less rain):\n  Yield = 50 × 100 × 300 = 1,500,000 kg\n\n**Both factors matter for maximum yield**\n\n## Part 4: Partial Variation\n\n### Definition\ny partially varies with x when: y = a + kx\n\n**Property**: y has a fixed component (a) plus variable component (kx)\n\n### Nigerian Example 4: NEPA Electricity Billing\nBill = Base fee + Usage charge\nBill = 1,000 + 68 × kWh\n\n**If use 500 kWh**:\n- Bill = 1,000 + 68 × 500\n- Bill = 1,000 + 34,000\n- **Bill = ₦35,000**\n\n**If use 200 kWh**:\n- Bill = 1,000 + 68 × 200\n- Bill = 1,000 + 13,600\n- **Bill = ₦14,600**\n\n**Pattern**: Even with 0 kWh, you pay ₦1,000 base fee\n\n## Part 5: Complex Variation Problems\n\n### Worked Example 1: Transport Cost Analysis\nA hauling company charges: Cost = Base + (Distance × Rate) + (Weight × Factor)\n\n**Cost = 5,000 + 100D + 50W**\n\nwhere D = distance (km), W = weight (tonnes)\n\n**For 100 km trip with 5 tonnes**:\n- Cost = 5,000 + 100(100) + 50(5)\n- Cost = 5,000 + 10,000 + 250\n- **Cost = ₦15,250**\n\n### Worked Example 2: Dangote Cement Production\nProduction depends on workers (W) and machines (M):\n\n**Production = 10 × W × M**\n\n(10 bags per worker-machine unit per day)\n\n**With 50 workers and 10 machines**:\n- Production = 10 × 50 × 10 = 5,000 bags/day\n\n**To increase to 10,000 bags/day**, double either:\n- Option A: 100 workers + 10 machines\n- Option B: 50 workers + 20 machines\n\n## Part 6: Real Nigerian Applications\n\n### Market Trading\nPrice inversely varies with abundance:\n- When tomatoes abundant, price low (₦50/kg)\n- When tomatoes scarce, price high (₦300/kg)\n- **Equation**: Price × Quantity = constant\n\n### Manufacturing\nOutput directly varies with:\n- Number of machines (more machines = more output)\n- Worker skill (trained workers = more output)\n- **Formula**: Output = k × Machines × Skill level\n\n### Transportation Network\nDelivery time partially varies:\n- **Time = Fixed + Distance/Speed**\n- Fixed time: Vehicle prep, paperwork (1 hour)\n- Variable time: Distance/Speed\n\n**Lagos to Ibadan (120 km, average 60 km/h)**:\n- Time = 1 + 120/60 = 1 + 2 = 3 hours\n\n## WAEC Exam Tips\n\n1. **Identify variation type**: Read problem carefully (direct, inverse, or joint)\n2. **Find constant first**: Use given values to calculate k\n3. **Write equation clearly**: State y = kx before solving\n4. **Substitute completely**: Replace all variables with numbers\n5. **Check units**: Include units in final answer\n6. **Reasonableness test**: Does answer make sense?\n\n## Practice Problems\n\n**Problem 1**: y varies directly with x. If y = 30 when x = 6, find y when x = 10.\n\n**Problem 2**: m varies inversely with n. If m = 20 when n = 5, find m when n = 2.\n\n**Problem 3**: z varies jointly with x and y. If z = 60 when x = 3 and y = 4, find z when x = 2 and y = 5.\n\n**Problem 4**: Monthly rent = ₦50,000 + ₦500/m² × area. Find rent for 100 m² apartment.\n\n## Key Formulas\n\n- **Direct**: y = kx\n- **Inverse**: y = k/x\n- **Joint**: z = kxy\n- **Partial**: y = a + kx\n\n## Nigerian Context Importance\n\nVariation helps predict and plan:\n- **Transportation**: Calculate fares, delivery times\n- **Commerce**: Price-supply relationships, profit margins\n- **Manufacturing**: Production planning with resources\n- **Agriculture**: Yield predictions with inputs\n- **Utilities**: Calculate bills (NEPA, water, internet)\n- **Business**: Cost analysis, pricing strategies\n\nThis mathematical tool directly applies to Nigerian daily commerce and planning!\n",
+      "summary": "Mathematics lesson on variation covering direct variation (y=kx), inverse variation (y=k/x), joint variation (z=kxy), and partial variation (y=a+kx). Nigerian applications: Lagos taxi fares ₦100/km, NEPA electricity (₦1,000 base + ₦68/kWh = ₦35,000 for 500 kWh), farm yield with fertilizer and rainfall, building time with workers, cement production analysis. Includes worked examples for each variation type with real Nigerian scenarios.",
+      "learning_objectives": [
+        "Identify direct, inverse, and joint variation",
+        "Write variation equations and solve for constants",
+        "Apply variation to Nigerian transportation and commerce",
+        "Solve complex variation problems",
+        "Understand real-world proportional relationships"
+      ],
+      "prerequisites": [
+        "Ratios",
+        "Proportions",
+        "Basic algebra"
+      ],
+      "diagrams": [],
+      "tags": [
+        "variation",
+        "direct",
+        "inverse",
+        "joint",
+        "partial",
+        "WAEC",
+        "high priority",
+        "commerce",
+        "transport",
+        "NEPA billing"
+      ],
+      "nigerian_context": "Lagos taxi fares (₦100/km), NEPA billing (₦1,000 base + ₦68/kWh), farm harvest (fertilizer × rainfall variation), market tomato prices (₦50-₦300/kg by season), building construction (workers vs time), Dangote cement production (workers × machines), transportation costs (fixed + distance).",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:42:01.174464",
+      "status": "published",
+      "content_type": "study_guide",
+      "exam_board": "WAEC"
+    },
+    {
+      "id": "math_angles_triangles_advanced",
+      "title": "Angles and Triangles: From Roof Design to Land Surveying",
+      "subject": "Mathematics",
+      "topic": "Angles and Triangles",
+      "difficulty": "basic",
+      "exam_weight": "high",
+      "read_time_minutes": 23,
+      "content": "\n# Angles and Triangles: From Roof Design to Land Surveying\n\n## Introduction\nNigerian buildings feature precise angles: Abuja pyramidal roofs, Lagos warehouse triangular supports, Niger Bridge trusses. Land surveyors use triangulation to measure property boundaries. Traditional Yoruba geometric patterns display mathematical precision. Understanding angles and triangles is essential for Nigerian architecture, engineering, and surveying.\n\n## Part 1: Angles in Polygons\n\n### Interior Angle Sum\nFor a polygon with n sides:\n\n**Sum of interior angles = (n - 2) × 180°**\n\n### Nigerian Example 1: Abuja Building Designs\nA hexagonal (6-sided) office building common in Abuja.\n\n**Interior angle sum**:\n- Sum = (6 - 2) × 180°\n- Sum = 4 × 180°\n- Sum = **720°**\n\n**Each angle (regular hexagon)**:\n- Each angle = 720°/6 = **120°**\n\n### Exterior Angles\n**Sum of exterior angles = 360°** (always)\n\nFor regular polygon:\n- Each exterior angle = 360°/n\n\n**Regular hexagon exterior angle**:\n- 360°/6 = **60°**\n\n**WAEC Tip**: Exterior angles always sum to 360° regardless of polygon shape!\n\n## Part 2: Triangle Properties\n\n### Triangle Angle Sum\nAll triangles: **∠A + ∠B + ∠C = 180°**\n\n### Triangle Types\n- **Acute**: All angles < 90°\n- **Right**: One angle = 90°\n- **Obtuse**: One angle > 90°\n- **Equilateral**: All angles = 60°\n- **Isosceles**: Two equal angles\n- **Scalene**: All different angles\n\n### Worked Example 1: Roof Truss Design\nA Nigerian roof truss forms triangle with:\n- ∠A = 35°\n- ∠B = 65°\n- ∠C = ?\n\n**Solution**:\n- ∠A + ∠B + ∠C = 180°\n- 35° + 65° + ∠C = 180°\n- ∠C = **80°**\n\n## Part 3: Similar Triangles\n\n### Definition\nTriangles are similar if:\n- All corresponding angles equal\n- All corresponding sides proportional\n\n### Nigerian Example 2: Shadow Measurement\nAso Rock in Abuja casts shadow. Using small triangle, we measure:\n\n**Small triangle**:\n- Height of stick: 2 m\n- Shadow: 1.5 m\n\n**Large triangle**:\n- Aso Rock shadow: 300 m\n- Height: ?\n\n**Since triangles are similar**:\n- 2/1.5 = Height/300\n- Height = 2 × 300/1.5\n- Height = 600/1.5\n- **Height = 400 m**\n\n(Note: Actual Aso Rock height is 256 m, accounting for angle differences)\n\n## Part 4: Pythagoras Theorem\n\n### Formula\nFor right triangle: **a² + b² = c²**\n\nwhere c is hypotenuse (longest side).\n\n### Nigerian Example 3: Land Plot Measurement\nA triangular Lagos property plot:\n- Two sides: 80 m and 60 m\n- These are perpendicular (right angle between them)\n- Third side (diagonal): ?\n\n**Solution**:\n- a² + b² = c²\n- 80² + 60² = c²\n- 6,400 + 3,600 = c²\n- 10,000 = c²\n- c = **100 m**\n\n**Common Pythagorean triples in Nigeria**:\n- 3-4-5 (scaling: 30-40-50, 60-80-100)\n- 5-12-13\n- 8-15-17\n\n### Worked Example: Niger Bridge Measurement\nA bridge support triangle:\n- Height: 50 m\n- Base: 120 m\n- Slant length: ?\n\n**Solution**:\n- 50² + 120² = c²\n- 2,500 + 14,400 = c²\n- 16,900 = c²\n- c = **130 m**\n\n## Part 5: Congruent Triangles\n\n### Conditions for Congruence\n1. **SSS** (Side-Side-Side): All three sides equal\n2. **SAS** (Side-Angle-Side): Two sides and included angle equal\n3. **ASA** (Angle-Side-Angle): Two angles and included side equal\n4. **RHS** (Right-Hypotenuse-Side): Right angle, hypotenuse, and one side equal\n\n### Nigerian Example 4: Identical Roof Trusses\nTwo roof trusses must be congruent:\n- First truss: sides 5 m, 6 m, 7 m\n- Second truss: sides 5 m, 6 m, 7 m\n\n**By SSS**: Trusses are congruent ✓ (identical shapes, sizes)\n\n## Part 6: Real Nigerian Applications\n\n### Land Surveying\nProperty boundaries often use triangulation:\n- Surveyor measures baseline (100 m)\n- Measures angles to boundary corners (45° and 75°)\n- Calculates property perimeter and area\n\n### Construction\nRoof trusses use 30-60-90 and 45-45-90 triangles:\n- **45-45-90**: Isosceles, sides ratio 1:1:√2\n- **30-60-90**: Sides ratio 1:√3:2\n\n### Architecture\nNigerian traditional patterns use:\n- Equilateral triangles (Igbo crafts)\n- Isosceles triangles (Hausa designs)\n- Right triangles (building foundations)\n\n## WAEC Exam Tips\n\n1. **Draw diagrams**: Always sketch the triangle first\n2. **Label clearly**: Mark all angles and sides\n3. **State theorem**: Write \"By Pythagoras theorem...\" before using\n4. **Check angle sum**: Verify angles add to 180°\n5. **Similar triangles**: Establish correspondence clearly\n6. **Units matter**: Include m, cm, degrees in answer\n\n## Practice Problems\n\n**Problem 1**: Pentagon (5 sides) interior angle sum = ?\n\n**Problem 2**: Right triangle has sides 3 cm and 4 cm. Hypotenuse = ?\n\n**Problem 3**: Two similar triangles have corresponding sides 4 cm and 6 cm. If first triangle's perimeter is 12 cm, find second triangle's perimeter.\n\n**Problem 4**: Triangle angles are x, 2x, and 3x. Find x.\n\n## Key Formulas\n\n- **Polygon angle sum**: (n-2) × 180°\n- **Exterior angle sum**: 360°\n- **Triangle angle sum**: 180°\n- **Pythagoras**: a² + b² = c²\n\n## Nigerian Context Importance\n\nTriangle geometry applies to:\n- **Construction**: Building design, roof truss angles\n- **Surveying**: Property boundary measurement\n- **Engineering**: Bridge support structures\n- **Land measurement**: Triangulation for area calculation\n- **Architecture**: Traditional pattern design\n- **Arts**: Textile and craft geometric designs\n\nThis foundational geometry enables accurate Nigerian construction and measurement!\n",
+      "summary": "Geometry lesson covering polygon interior angles ((n-2)×180°), triangle properties (angle sum 180°), similar and congruent triangles, and Pythagoras theorem (a²+b²=c²). Nigerian applications: Abuja hexagonal buildings (120° angles), Aso Rock shadow measurement, Lagos land plot diagonal (80×60=100m), Niger Bridge supports (50×120=130m), roof trusses with 30-60-90 triangles. Includes 4 worked examples with Nigerian construction and surveying scenarios.",
+      "learning_objectives": [
+        "Calculate angles in polygons",
+        "Identify similar and congruent triangles",
+        "Apply Pythagoras theorem to Nigerian construction",
+        "Solve geometric problems involving triangles",
+        "Use triangle properties in land measurements"
+      ],
+      "prerequisites": [
+        "Basic geometry",
+        "Angle properties",
+        "Measurement"
+      ],
+      "diagrams": [],
+      "tags": [
+        "angles",
+        "triangles",
+        "Pythagoras",
+        "similar",
+        "congruent",
+        "WAEC",
+        "high priority",
+        "construction",
+        "surveying",
+        "Abuja"
+      ],
+      "nigerian_context": "Abuja hexagonal building design (120° interior angles), Aso Rock height measurement by shadows (400m calculation), triangular Lagos land plots (80m × 60m = 100m diagonal), Niger Bridge support calculations (50m × 120m = 130m), roof truss designs (30-60-90 triangles), Yoruba geometric patterns, property surveying by triangulation",
+      "views": 0,
+      "likes": 0,
+      "ratings": 0,
+      "created_at": "2026-01-03T07:42:01.174833",
+      "status": "published",
+      "content_type": "study_guide",
+      "exam_board": "WAEC"
     }
   ],
   "subjects": [

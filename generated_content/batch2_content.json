@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "batch": 2,
+    "total_items": 2,
+    "generator": "Batch2ContentGenerator",
+    "last_updated": "2026-01-03T06:46:38.398912",
+    "nigerian_context_version": "1.0"
+  },
+  "content": [
+    {
+      "id": "math_trigonometry_enhanced",
+      "title": "Trigonometry: Solving Real Problems in Nigeria",
+      "subject": "Mathematics",
+      "topic": "Trigonometry",
+      "difficulty": "advanced",
+      "estimated_read_time": 30,
+      "content": "\n# Trigonometry: Solving Real Problems in Nigeria\n\n## Introduction\n\nTrigonometry, from the Greek words 'trigonon' (triangle) and 'metron' (measure), is the branch of mathematics dealing with relationships between angles and sides of triangles. In Nigeria, trigonometry has practical applications in surveying (Abuja city planning), telecommunications (MTN cell tower positioning), civil engineering (Niger Bridge construction), and navigation (River Niger shipping routes).\n\n## Part 1: Trigonometric Ratios (SOHCAHTOA)\n\n### The Foundation\n\nFor a right-angled triangle with angle θ:\n\n**SOH**: sin θ = Opposite/Hypotenuse\n**CAH**: cos θ = Adjacent/Hypotenuse  \n**TOA**: tan θ = Opposite/Adjacent\n\n### Nigerian Example: MTN Cell Tower Height\n\n**Problem**: An MTN engineer in Lagos stands 50 meters from the base of a cell tower. The angle of elevation to the top is 67°. Find the tower's height.\n\n**Solution**:\n```\ntan 67° = height/50\nheight = 50 × tan 67°\nheight = 50 × 2.356\nheight ≈ 117.8 meters\n```\n\n**Answer**: The MTN tower is approximately 118 meters tall.\n\n**WAEC Tip**: Always draw a diagram first! Label the known values and the unknown you're solving for.\n\n## Part 2: Angles of Elevation and Depression\n\n### Nigerian Example: Aso Rock Measurement\n\n**Problem**: From a point 200 meters from the base of Aso Rock in Abuja, the angle of elevation to the peak is 52°. Calculate the height of the rock formation.\n\n**Solution**:\n```\ntan 52° = height/200\nheight = 200 × tan 52°\nheight = 200 × 1.280\nheight ≈ 256 meters\n```\n\n**Answer**: Aso Rock is approximately 256 meters high.\n\n### Angle of Depression Example: Kainji Dam Observation\n\n**Problem**: An engineer at the top of Kainji Dam (80 meters high) observes a boat on the Niger River. The angle of depression is 35°. How far is the boat from the base of the dam?\n\n**Solution**:\n```\nAngle of depression = Angle of elevation (alternate angles)\ntan 35° = 80/distance\ndistance = 80/tan 35°\ndistance = 80/0.700\ndistance ≈ 114.3 meters\n```\n\n**Answer**: The boat is approximately 114 meters from the dam.\n\n## Part 3: Bearings and Navigation\n\n### Understanding Bearings\n\n- Bearings are measured clockwise from North (000°)\n- Written as three-figure bearings: 045°, 120°, 270°\n- Back bearings differ by 180°\n\n### Nigerian Example: Navigation on River Niger\n\n**Problem**: A cargo ship travels from Lokoja to Baro on the Niger River. It sails 80 km on a bearing of 055°, then 60 km on a bearing of 125°. Find the direct distance and bearing from Lokoja to its final position.\n\n**Solution** (Using Cosine Rule):\n```\nAngle between paths = 125° - 055° = 70°\nc² = a² + b² - 2ab cos C\nc² = 80² + 60² - 2(80)(60) cos 70°\nc² = 6400 + 3600 - 9600(0.342)\nc² = 10000 - 3283\nc² = 6717\nc ≈ 82 km\n\nUsing Sine Rule for bearing:\nsin A/60 = sin 70°/82\nsin A = (60 × 0.940)/82\nsin A = 0.688\nA ≈ 43.4°\n\nFinal bearing = 55° + 43.4° ≈ 098°\n```\n\n**Answer**: The ship is 82 km from Lokoja on a bearing of 098°.\n\n## Part 4: Sine Rule\n\n**Formula**: a/sin A = b/sin B = c/sin C\n\n### Nigerian Example: Surveying Obudu Cattle Ranch\n\n**Problem**: A surveyor at Obudu Cattle Ranch needs to measure the distance across a valley. From point A, the distance to point B is 250 meters. The angle at A is 75° and the angle at B is 60°. Find the distance BC.\n\n**Solution**:\n```\nAngle C = 180° - 75° - 60° = 45°\n\nUsing Sine Rule:\nBC/sin 75° = 250/sin 45°\nBC = (250 × sin 75°)/sin 45°\nBC = (250 × 0.966)/0.707\nBC ≈ 341 meters\n```\n\n**Answer**: The distance across the valley is approximately 341 meters.\n\n## Part 5: Cosine Rule\n\n**Formula**: \n- c² = a² + b² - 2ab cos C\n- cos C = (a² + b² - c²)/(2ab)\n\n### Nigerian Example: Abuja City Planning\n\n**Problem**: In Abuja's new city development, three landmarks form a triangle. The distance between Landmark A and B is 5 km, between B and C is 7 km, and between A and C is 9 km. Find the angle at Landmark B.\n\n**Solution**:\n```\nUsing Cosine Rule:\ncos B = (a² + c² - b²)/(2ac)\ncos B = (5² + 7² - 9²)/(2 × 5 × 7)\ncos B = (25 + 49 - 81)/70\ncos B = -7/70\ncos B = -0.1\nB ≈ 95.7°\n```\n\n**Answer**: The angle at Landmark B is approximately 96°.\n\n## Part 6: Area of Triangle\n\n**Formula**: Area = ½ ab sin C\n\n### Nigerian Example: Triangular Land Plot in Lagos\n\n**Problem**: A triangular plot of land in Lekki has two sides measuring 80 meters and 100 meters, with an included angle of 110°. Calculate the area and value at ₦200,000 per square meter.\n\n**Solution**:\n```\nArea = ½ × 80 × 100 × sin 110°\nArea = 4000 × sin 110°\nArea = 4000 × 0.940\nArea ≈ 3,758 square meters\n\nValue = 3,758 × ₦200,000\nValue ≈ ₦751,600,000\n```\n\n**Answer**: The plot is approximately 3,758 m² and worth about ₦752 million.\n\n## Worked Examples\n\n### Example 1: Telecommunications Tower Positioning\n\n**Problem**: Two Glo network towers are 5 km apart. From the first tower, the bearing to a fault location is 075°. From the second tower, the bearing to the same fault is 345°. Find the distance from each tower to the fault.\n\n**Solution**:\n```\n[Detailed solution using angles and Sine Rule]\n```\n\n### Example 2: Solar Panel Angle Optimization\n\n**Problem**: In Kaduna (latitude 10.5°N), what angle should solar panels be tilted for maximum efficiency during dry season?\n\n**Solution**:\n```\nOptimal tilt = Latitude + 15° (for winter/dry season)\nOptimal tilt = 10.5° + 15° = 25.5°\n\nUse trigonometry to calculate support structure dimensions:\nIf panel length = 2 meters\nHeight = 2 × sin 25.5° ≈ 0.86 meters\nBase = 2 × cos 25.5° ≈ 1.80 meters\n```\n\n**Answer**: Tilt panels at 25.5° with 0.86m height and 1.80m base.\n\n## Practice Problems\n\n### Problem 1: BRT Bus Route\nA BRT bus in Lagos travels 8 km on a bearing of 040°, then 6 km on a bearing of 130°. Find the direct distance from start to finish.\n\n**Hint**: Use Cosine Rule after finding the angle between the two paths.\n\n### Problem 2: Bridge Cable Tension\nOn the Lekki-Ikoyi Link Bridge, a cable makes an angle of 65° with the horizontal and is 50 meters long. Find the vertical height it supports.\n\n**Hint**: Use sin 65° = height/50\n\n### Problem 3: Lighthouse Visibility\nFrom a lighthouse in Lagos Harbor (30 meters high), a ship is spotted at an angle of depression of 15°. How far is the ship from the lighthouse base?\n\n**Hint**: Use tan 15° = 30/distance\n\n### Problem 4: Airport Landing Approach\nAn Air Peace aircraft approaching Nnamdi Azikiwe Airport is at an altitude of 800 meters and is 5 km horizontally from the runway. Calculate the angle of depression and glide path distance.\n\n**Hint**: Find angle using tan⁻¹, then use Pythagoras or sin/cos for distance.\n\n## WAEC Exam Strategies\n\n1. **Always Draw Diagrams**: Sketch the scenario, even for bearing problems\n2. **Label Everything**: Mark known angles, sides, and what you're finding\n3. **Check Calculator Mode**: Ensure you're in DEGREE mode, not radians\n4. **Use 3-Figure Bearings**: Write bearings as 045°, not 45°\n5. **Show All Steps**: WAEC awards method marks even if final answer is wrong\n6. **Round Appropriately**: Usually 3 significant figures or 1 decimal place\n7. **Verify Answers**: Use alternative method or estimation to check\n\n## Common Mistakes to Avoid\n\n1. **Confusing elevation and depression**: Remember they're equal (alternate angles)\n2. **Wrong calculator mode**: Double-check DEGREE vs RADIAN\n3. **Incorrect bearing calculations**: Always measure clockwise from North\n4. **Mixing up sin/cos/tan**: Remember SOHCAHTOA\n5. **Forgetting angle sum**: Triangle angles always sum to 180°\n\n## Nigerian Context Summary\n\n**Real-World Applications**:\n- **Telecommunications**: MTN, Glo, Airtel tower positioning (₦5M per tower)\n- **Surveying**: Abuja city planning, land measurement (₦200,000/m²)\n- **Civil Engineering**: Bridge design (Niger Bridge, Lekki-Ikoyi Link)\n- **Navigation**: River Niger shipping routes, airport approaches\n- **Energy**: Solar panel optimization in northern Nigeria (25.5° tilt)\n- **Natural Features**: Aso Rock height (256m), Obudu terrain surveying\n\n## Learning Outcomes\n\nAfter studying this lesson, you should be able to:\n1. ✓ Apply SOHCAHTOA to solve right-angled triangle problems\n2. ✓ Calculate heights and distances using angles of elevation/depression\n3. ✓ Navigate using bearings and solve bearing problems\n4. ✓ Use Sine Rule for non-right triangles\n5. ✓ Apply Cosine Rule to find sides and angles\n6. ✓ Calculate areas of triangles using trigonometry\n7. ✓ Solve real Nigerian problems involving trigonometry\n\n## Prerequisites\n\n- Basic angle properties\n- Pythagoras' theorem\n- Calculator proficiency (sin, cos, tan functions)\n- Understanding of bearing notation\n\n## Next Topics\n\n- Graphs of trigonometric functions\n- Trigonometric identities\n- 3D trigonometry\n- Radians and circular measure\n",
+      "diagrams": [
+        "math_trigonometry_enhanced_applications.png"
+      ],
+      "worked_examples": [
+        {
+          "title": "MTN Cell Tower Height Calculation",
+          "problem": "From 50m away, angle of elevation is 67°. Find tower height.",
+          "solution": "tan 67° = h/50, h = 50 × 2.356 = 117.8m",
+          "answer": "118 meters",
+          "nigerian_context": "MTN Lagos network infrastructure"
+        },
+        {
+          "title": "Kainji Dam Observation",
+          "problem": "From 80m high dam, angle of depression 35° to boat. Find boat distance.",
+          "solution": "tan 35° = 80/d, d = 80/0.700 = 114.3m",
+          "answer": "114 meters",
+          "nigerian_context": "Kainji Hydroelectric Dam, Niger State"
+        }
+      ],
+      "practice_problems": [
+        {
+          "problem": "BRT bus travels 8km bearing 040°, then 6km bearing 130°. Find direct distance.",
+          "difficulty": "medium",
+          "hint": "Use Cosine Rule after finding angle between paths"
+        },
+        {
+          "problem": "Bridge cable 50m long at 65° angle. Find vertical height supported.",
+          "difficulty": "easy",
+          "hint": "sin 65° = height/50"
+        },
+        {
+          "problem": "From 30m lighthouse, ship at 15° depression. Distance from base?",
+          "difficulty": "easy",
+          "hint": "tan 15° = 30/distance"
+        },
+        {
+          "problem": "Aircraft 800m altitude, 5km horizontally from runway. Angle and distance?",
+          "difficulty": "medium",
+          "hint": "tan⁻¹ for angle, Pythagoras for distance"
+        }
+      ],
+      "learning_objectives": [
+        "Apply trigonometric ratios to solve real problems",
+        "Calculate using angles of elevation and depression",
+        "Navigate using three-figure bearings",
+        "Use Sine and Cosine rules for any triangle",
+        "Calculate triangle areas using trigonometry"
+      ],
+      "prerequisites": [
+        "Pythagoras' theorem",
+        "Basic angle properties",
+        "Calculator skills",
+        "Understanding of bearings"
+      ],
+      "nigerian_contexts": [
+        "Height of Aso Rock measurement",
+        "Cell tower positioning (MTN, Glo towers)",
+        "Angle of elevation for Kainji Dam observations",
+        "Navigation bearings on River Niger",
+        "Surveying Obudu Cattle Ranch terrain"
+      ],
+      "nigerian_locations": [
+        "Aso Rock Abuja",
+        "Kainji Dam Niger State",
+        "Obudu Plateau Cross River"
+      ],
+      "currency_examples": "₦5M telecom tower installation project"
+    },
+    {
+      "id": "physics_work_energy_power_enhanced",
+      "title": "Work, Energy and Power: From Kainji Dam to Lagos Markets",
+      "subject": "Physics",
+      "topic": "Work, Energy and Power",
+      "difficulty": "intermediate",
+      "estimated_read_time": 28,
+      "content": "\n# Work, Energy and Power: From Kainji Dam to Lagos Markets\n\n## Introduction\n\nEnergy is the capacity to do work. In Nigeria, we see energy transformations everywhere: the 960 MW Kainji Dam converts water's potential energy to electricity, solar panels in Kaduna convert light energy, and generators in Lagos convert chemical energy from petrol into electrical energy. Understanding work, energy, and power is essential for WAEC success and real-world applications.\n\n## Part 1: Work Done\n\n### Definition\n\n**Work is done when a force moves an object through a distance in the direction of the force.**\n\n**Formula**: W = F × d × cos θ\n\nWhere:\n- W = Work done (Joules, J)\n- F = Force applied (Newtons, N)\n- d = Distance moved (meters, m)\n- θ = Angle between force and direction of motion\n\n### Nigerian Example: Alaba International Market\n\n**Problem**: A trader at Alaba Market pushes a cart loaded with electronics 20 meters across the floor with a force of 150 N. Calculate the work done.\n\n**Solution**:\n```\nW = F × d\nW = 150 N × 20 m\nW = 3,000 J = 3 kJ\n```\n\n**Answer**: The trader does 3,000 Joules (3 kJ) of work.\n\n**WAEC Tip**: If the force and motion are in the same direction, θ = 0° and cos 0° = 1, so W = F × d.\n\n### Example with Angle: Carrying Water Up Slope\n\n**Problem**: In a rural Nigerian village, a woman carries a 20 kg bucket of water (weight = 200 N) up a 10-meter slope inclined at 30° to the horizontal. Find the work done against gravity.\n\n**Solution**:\n```\nVertical height = 10 × sin 30° = 10 × 0.5 = 5 m\nW = F × h\nW = 200 N × 5 m\nW = 1,000 J = 1 kJ\n```\n\n**Answer**: Work done against gravity is 1,000 J.\n\n## Part 2: Forms of Energy\n\n### 1. Kinetic Energy (KE)\n\n**Energy of motion**\n\n**Formula**: KE = ½mv²\n\nWhere:\n- m = mass (kg)\n- v = velocity (m/s)\n\n### Nigerian Example: BRT Bus in Lagos\n\n**Problem**: A BRT bus with mass 8,000 kg travels at 20 m/s on Ikorodu Road. Calculate its kinetic energy.\n\n**Solution**:\n```\nKE = ½mv²\nKE = ½ × 8,000 × (20)²\nKE = 4,000 × 400\nKE = 1,600,000 J = 1.6 MJ\n```\n\n**Answer**: The bus has 1.6 megajoules of kinetic energy.\n\n### 2. Potential Energy (PE)\n\n**Energy due to position**\n\n**Formula**: PE = mgh\n\nWhere:\n- m = mass (kg)\n- g = 10 m/s² (gravitational field strength)\n- h = height (m)\n\n### Nigerian Example: Elevated Water Tank in Lagos\n\n**Problem**: A water tank in Victoria Island is 15 meters above ground and holds 2,000 kg of water. Calculate the potential energy of the water.\n\n**Solution**:\n```\nPE = mgh\nPE = 2,000 × 10 × 15\nPE = 300,000 J = 300 kJ\n```\n\n**Answer**: The water has 300 kilojoules of potential energy.\n\n## Part 3: Conservation of Energy\n\n**Principle**: Energy cannot be created or destroyed, only converted from one form to another.\n\n**Total Energy**: KE + PE = constant (in the absence of friction)\n\n### Nigerian Example: Kainji Dam Hydroelectric Power\n\n**Problem**: Water at the top of Kainji Dam (80 m high) has mass 10,000 kg. Calculate:\na) Potential energy at the top\nb) Kinetic energy just before hitting turbines (bottom)\nc) Velocity at the bottom\n\n**Solution**:\n```\na) PE at top = mgh = 10,000 × 10 × 80 = 8,000,000 J = 8 MJ\n\nb) By conservation: PE(top) = KE(bottom)\n   KE = 8,000,000 J = 8 MJ\n\nc) KE = ½mv²\n   8,000,000 = ½ × 10,000 × v²\n   v² = 1,600\n   v = 40 m/s\n```\n\n**Answer**: \na) PE = 8 MJ\nb) KE = 8 MJ  \nc) v = 40 m/s\n\n**Real Context**: Kainji Dam generates 960 MW, supplying electricity to northern and western Nigeria.\n\n## Part 4: Power\n\n### Definition\n\n**Power is the rate of doing work or rate of energy transfer.**\n\n**Formula**: P = W/t = E/t\n\nWhere:\n- P = Power (Watts, W)\n- W = Work done (J)\n- t = Time taken (s)\n- E = Energy transferred (J)\n\n**Also**: P = Fv (Power = Force × velocity)\n\n### Nigerian Example: NEPA/PHCN Electricity Bill\n\n**Problem**: A Nigerian household in Lagos uses 300 kWh of electrical energy in a month (30 days). Calculate:\na) Average power consumption\nb) Monthly cost at ₦68/kWh\n\n**Solution**:\n```\na) Energy = 300 kWh = 300,000 Wh = 300 × 3,600,000 J\n   Time = 30 days = 30 × 24 × 3600 s = 2,592,000 s\n   P = E/t = 300 kWh / (30 × 24) h\n   P = 300/720 kW = 0.417 kW ≈ 417 W\n\nb) Cost = 300 kWh × ₦68/kWh = ₦20,400\n```\n\n**Answer**: \na) Average power = 417 W\nb) Monthly cost = ₦20,400\n\n### Generator Fuel Consumption\n\n**Problem**: A 5 kW generator in Lagos runs for 8 hours daily. If fuel costs ₦617/litre and consumption is 0.5 litres/hour, find monthly fuel cost (30 days).\n\n**Solution**:\n```\nDaily consumption = 8 hours × 0.5 litres/hour = 4 litres\nMonthly consumption = 30 × 4 = 120 litres\nMonthly cost = 120 × ₦617 = ₦74,040\n```\n\n**Answer**: Monthly fuel cost = ₦74,040\n\n## Part 5: Efficiency\n\n### Definition\n\n**Efficiency = (Useful output energy/Total input energy) × 100%**\n\n**Also**: Efficiency = (Output power/Input power) × 100%\n\n### Nigerian Example: Solar Panels in Kaduna\n\n**Problem**: A solar panel system in Kaduna receives 10,000 J of light energy per second and produces 1,800 J of electrical energy per second. Calculate:\na) Efficiency\nb) Output power\nc) Wasted power\n\n**Solution**:\n```\na) Efficiency = (1,800/10,000) × 100% = 18%\n\nb) Output power = 1,800 J/s = 1,800 W = 1.8 kW\n\nc) Wasted power = Input - Output = 10,000 - 1,800 = 8,200 W = 8.2 kW\n```\n\n**Answer**: \na) Efficiency = 18%\nb) Output power = 1.8 kW\nc) Wasted power = 8.2 kW\n\n**Real Context**: Solar panel efficiency in Nigeria typically ranges from 15-22%, with northern regions like Kaduna, Sokoto, and Kano having excellent solar potential.\n\n## Worked Examples\n\n### Example 1: Lifting Dangote Cement Bags\n\n**Problem**: A worker lifts a 50 kg bag of Dangote cement vertically through 2 meters in 3 seconds. Calculate:\na) Work done\nb) Power developed\n\n**Solution**:\n```\na) Weight = mg = 50 × 10 = 500 N\n   W = F × d = 500 × 2 = 1,000 J\n\nb) P = W/t = 1,000/3 = 333.3 W\n```\n\n**Answer**: a) 1,000 J, b) 333 W\n\n### Example 2: Okada Motorcycle in Lagos Traffic\n\n**Problem**: An Okada (motorcycle taxi) with total mass 200 kg (bike + rider) accelerates from rest to 15 m/s. Calculate the kinetic energy gained.\n\n**Solution**:\n```\nInitial KE = 0 (at rest)\nFinal KE = ½mv² = ½ × 200 × (15)² = 100 × 225 = 22,500 J = 22.5 kJ\n```\n\n**Answer**: Kinetic energy gained = 22.5 kJ\n\n## Practice Problems\n\n### Problem 1: Eko Bridge Traffic\nA car of mass 1,200 kg travels at 25 m/s on Eko Bridge, Lagos. Calculate its kinetic energy.\n\n**Hint**: Use KE = ½mv²\n\n### Problem 2: Water Tower\nA 500 kg water tank is mounted 20 m above ground in Kano. Find its potential energy.\n\n**Hint**: Use PE = mgh (g = 10 m/s²)\n\n### Problem 3: Inverter Battery\nAn inverter battery stores 2.4 kWh of energy and powers a house for 8 hours. Calculate the average power consumption.\n\n**Hint**: Convert kWh to Wh, then use P = E/t\n\n### Problem 4: Pump Efficiency\nA water pump uses 5,000 J of electrical energy to lift 40 kg of water through 10 m. Calculate its efficiency.\n\n**Hint**: Useful output = mgh, then find (output/input) × 100%\n\n## WAEC Exam Strategies\n\n1. **Unit Conversions**: Be careful with kW ↔ W, kJ ↔ J, kWh ↔ J\n2. **Show All Working**: Method marks are awarded even if final answer is wrong\n3. **State Formulas**: Always write the formula before substituting values\n4. **Use g = 10 m/s²**: Unless stated otherwise in the question\n5. **Check Direction**: Work is only done when force and motion are in same direction\n6. **Conservation of Energy**: Remember PE at top = KE at bottom (no friction)\n7. **Efficiency**: Always less than 100% due to wasted energy\n\n## Common Mistakes to Avoid\n\n1. Confusing work (Joules) with power (Watts)\n2. Forgetting to square velocity in KE = ½mv²\n3. Using wrong units (must convert to SI units)\n4. Not considering direction of force in work calculations\n5. Assuming 100% efficiency (there's always energy loss)\n\n## Nigerian Context Summary\n\n**Real-World Applications**:\n- **Energy Generation**: Kainji Dam (960 MW hydroelectric)\n- **Solar Power**: Kaduna, Sokoto solar farms (15-22% efficiency)\n- **Domestic**: NEPA/PHCN bills (₦68/kWh), generator fuel costs (₦617/L)\n- **Transport**: BRT buses, Okada motorcycles, Air Peace aircraft\n- **Industry**: Dangote factories, Alaba Market logistics\n- **Water Supply**: Elevated tanks in Lagos, Victoria Island\n\n**Typical Costs**:\n- Electricity: ₦68/kWh (Lagos tariff)\n- Generator fuel: ₦617/litre petrol\n- Diesel generators: 0.3-0.5 litres/kWh\n- Monthly household bill: ₦15,000-50,000\n- Solar panel installation: ₦500,000-2M (5-10 kW system)\n\n## Learning Outcomes\n\nAfter studying this lesson, you should be able to:\n1. ✓ Calculate work done by a force\n2. ✓ Determine kinetic and potential energy\n3. ✓ Apply conservation of energy principle\n4. ✓ Calculate power and understand its units\n5. ✓ Determine efficiency of energy conversions\n6. ✓ Solve Nigerian real-world energy problems\n\n## Prerequisites\n\n- Force and motion concepts\n- Basic algebra\n- Unit conversions\n- Understanding of energy concept\n\n## Next Topics\n\n- Simple machines\n- Heat and temperature\n- Electrical energy\n- Renewable energy sources\n",
+      "diagrams": [
+        "physics_work_energy_power_enhanced_systems.png"
+      ],
+      "worked_examples": [
+        {
+          "title": "Kainji Dam Energy Conversion",
+          "problem": "10,000 kg water falls 80m. Find PE at top, KE at bottom, velocity.",
+          "solution": "PE = mgh = 10,000×10×80 = 8 MJ; KE = PE = 8 MJ; v = 40 m/s from ½mv²",
+          "answer": "PE = 8 MJ, KE = 8 MJ, v = 40 m/s",
+          "nigerian_context": "Kainji Hydroelectric Dam, Niger State (960 MW capacity)"
+        },
+        {
+          "title": "Lagos Electricity Bill",
+          "problem": "300 kWh used in 30 days at ₦68/kWh. Find average power and cost.",
+          "solution": "P = 300 kWh/(30×24h) = 417 W; Cost = 300×₦68 = ₦20,400",
+          "answer": "417 W average power, ₦20,400 cost",
+          "nigerian_context": "Typical Lagos household NEPA/PHCN bill"
+        }
+      ],
+      "practice_problems": [
+        {
+          "problem": "Car (1200 kg) at 25 m/s on Eko Bridge. Find KE.",
+          "difficulty": "easy",
+          "hint": "KE = ½mv²"
+        },
+        {
+          "problem": "500 kg water tank 20m above ground. Find PE.",
+          "difficulty": "easy",
+          "hint": "PE = mgh, g = 10 m/s²"
+        },
+        {
+          "problem": "Inverter stores 2.4 kWh, powers house for 8 hours. Average power?",
+          "difficulty": "medium",
+          "hint": "Convert kWh to Wh, divide by hours"
+        },
+        {
+          "problem": "Pump uses 5000 J to lift 40 kg water 10m. Efficiency?",
+          "difficulty": "medium",
+          "hint": "Output = mgh, then (output/input) × 100%"
+        }
+      ],
+      "learning_objectives": [
+        "Calculate work done by forces",
+        "Determine kinetic and potential energy",
+        "Apply conservation of energy",
+        "Calculate power and efficiency",
+        "Solve Nigerian energy problems"
+      ],
+      "prerequisites": [
+        "Force and motion",
+        "Basic algebra",
+        "Unit conversions"
+      ],
+      "nigerian_contexts": [
+        "Hydroelectric power at Kainji Dam (960 MW)",
+        "Solar panel efficiency in northern Nigeria",
+        "Generator fuel consumption (NEPA alternative)",
+        "Potential energy of water in elevated tanks",
+        "Work done lifting bags at Alaba Market"
+      ],
+      "nigerian_locations": [
+        "Kainji Dam",
+        "Alaba International Market",
+        "Kaduna solar farms"
+      ],
+      "currency_examples": "₦25,000 monthly generator fuel costs"
+    }
+  ]
+}

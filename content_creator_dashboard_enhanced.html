@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creator Dashboard - Akulearn (Live Data)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome {
+            font-size: 32px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #6b7280;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            padding: 16px;
+            background: #f9fafb;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .content-item:hover {
+            background: #f3f4f6;
+            transform: translateX(4px);
+        }
+
+        .content-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+
+        .content-info p {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .content-stats {
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .content-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-end;
+        }
+
+        .badge {
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-published {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .badge-draft {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-basic {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-intermediate {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-advanced {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .chart-container {
+            height: 300px;
+            position: relative;
+        }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            color: #6b7280;
+        }
+
+        .spinner {
+            border: 3px solid #f3f4f6;
+            border-top: 3px solid #ef4444;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-right: 12px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .action-link {
+            color: #ef4444;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .action-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <div class="header">
+            <div class="welcome">Content Creator Dashboard ✍️</div>
+            <div class="subtitle">Manage and track your educational content</div>
+        </div>
+
+        <!-- Stats Overview -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="totalContent">-</div>
+                <div class="stat-label">Total Content</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalViews">-</div>
+                <div class="stat-label">Total Views</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalLikes">-</div>
+                <div class="stat-label">Total Likes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="avgEngagement">-</div>
+                <div class="stat-label">Avg Engagement</div>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+            <!-- My Content -->
+            <div class="card" style="grid-column: span 2;">
+                <div class="card-header">
+                    <div class="card-title">📚 My Published Content</div>
+                    <button class="btn" onclick="alert('Content upload UI coming soon!')">+ New Content</button>
+                </div>
+                <div id="myContent">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        Loading your content...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Charts -->
+        <div class="content-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">📊 Views by Subject</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="viewsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">💚 Engagement Over Time</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="engagementChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Performing Content -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">🔥 Top Performing Content</div>
+            </div>
+            <div id="topContent">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    Loading performance data...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // API Configuration
+        const API_BASE_URL = 'http://localhost:8000/api/v3';
+        
+        let allContent = [];
+        let viewsChart = null;
+        let engagementChart = null;
+
+        // Initialize Dashboard
+        async function initDashboard() {
+            try {
+                await loadAllContent();
+                calculateStats();
+                renderMyContent();
+                renderTopPerformers();
+                createCharts();
+            } catch (error) {
+                console.error('Dashboard initialization error:', error);
+            }
+        }
+
+        // Load All Content
+        async function loadAllContent() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/content?limit=100`);
+                const data = await response.json();
+                allContent = data.content;
+            } catch (error) {
+                console.error('Error loading content:', error);
+            }
+        }
+
+        // Calculate Statistics
+        function calculateStats() {
+            const totalViews = allContent.reduce((sum, c) => sum + (c.views || 0), 0);
+            const totalLikes = allContent.reduce((sum, c) => sum + (c.likes || 0), 0);
+            const avgEngagement = allContent.length > 0 
+                ? Math.round(((totalLikes / totalViews) * 100) || 0)
+                : 0;
+
+            document.getElementById('totalContent').textContent = allContent.length;
+            document.getElementById('totalViews').textContent = totalViews.toLocaleString();
+            document.getElementById('totalLikes').textContent = totalLikes.toLocaleString();
+            document.getElementById('avgEngagement').textContent = `${avgEngagement}%`;
+        }
+
+        // Render My Content
+        function renderMyContent() {
+            const container = document.getElementById('myContent');
+            
+            if (allContent.length === 0) {
+                container.innerHTML = '<p style="color: #6b7280; text-align: center;">No content published yet. Create your first lesson!</p>';
+                return;
+            }
+
+            // Sort by views (most viewed first)
+            const sortedContent = [...allContent].sort((a, b) => (b.views || 0) - (a.views || 0));
+
+            container.innerHTML = sortedContent.map(content => `
+                <div class="content-item">
+                    <div class="content-info">
+                        <h4>${content.title}</h4>
+                        <p>${content.subject} • ${content.topic}</p>
+                        <div class="content-stats">
+                            <span>👁️ ${content.views} views</span>
+                            <span>❤️ ${content.likes} likes</span>
+                            <span>⏱️ ${content.estimated_read_time} min</span>
+                        </div>
+                    </div>
+                    <div class="content-actions">
+                        <span class="badge badge-published">Published</span>
+                        <span class="badge badge-${content.difficulty}">${content.difficulty}</span>
+                        <a href="#" class="action-link" onclick="editContent('${content.id}'); return false;">Edit</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render Top Performers
+        function renderTopPerformers() {
+            const container = document.getElementById('topContent');
+            
+            // Get top 5 by views
+            const topContent = [...allContent]
+                .sort((a, b) => (b.views || 0) - (a.views || 0))
+                .slice(0, 5);
+
+            if (topContent.length === 0) {
+                container.innerHTML = '<p style="color: #6b7280; text-align: center;">No content available</p>';
+                return;
+            }
+
+            container.innerHTML = topContent.map((content, index) => {
+                const engagementRate = content.views > 0 
+                    ? Math.round((content.likes / content.views) * 100)
+                    : 0;
+
+                return `
+                    <div class="content-item">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="font-size: 24px; font-weight: 700; color: #f59e0b;">
+                                #${index + 1}
+                            </div>
+                            <div class="content-info">
+                                <h4>${content.title}</h4>
+                                <p>${content.subject} • ${content.topic}</p>
+                                <div class="content-stats">
+                                    <span>👁️ ${content.views} views</span>
+                                    <span>❤️ ${content.likes} likes</span>
+                                    <span>📈 ${engagementRate}% engagement</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-actions">
+                            <span class="badge badge-${content.difficulty}">${content.difficulty}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Create Charts
+        function createCharts() {
+            createViewsChart();
+            createEngagementChart();
+        }
+
+        // Create Views by Subject Chart
+        function createViewsChart() {
+            const ctx = document.getElementById('viewsChart').getContext('2d');
+            
+            // Group by subject
+            const subjectViews = {};
+            allContent.forEach(content => {
+                if (!subjectViews[content.subject]) {
+                    subjectViews[content.subject] = 0;
+                }
+                subjectViews[content.subject] += content.views || 0;
+            });
+
+            const subjects = Object.keys(subjectViews);
+            const views = Object.values(subjectViews);
+
+            if (viewsChart) {
+                viewsChart.destroy();
+            }
+
+            viewsChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: subjects,
+                    datasets: [{
+                        data: views,
+                        backgroundColor: [
+                            'rgba(245, 158, 11, 0.8)',
+                            'rgba(239, 68, 68, 0.8)',
+                            'rgba(59, 130, 246, 0.8)',
+                            'rgba(16, 185, 129, 0.8)',
+                            'rgba(139, 92, 246, 0.8)',
+                            'rgba(236, 72, 153, 0.8)',
+                            'rgba(20, 184, 166, 0.8)'
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Create Engagement Chart
+        function createEngagementChart() {
+            const ctx = document.getElementById('engagementChart').getContext('2d');
+            
+            // Group by difficulty level for engagement
+            const engagementByDifficulty = {
+                basic: { views: 0, likes: 0 },
+                intermediate: { views: 0, likes: 0 },
+                advanced: { views: 0, likes: 0 }
+            };
+
+            allContent.forEach(content => {
+                const diff = content.difficulty;
+                if (engagementByDifficulty[diff]) {
+                    engagementByDifficulty[diff].views += content.views || 0;
+                    engagementByDifficulty[diff].likes += content.likes || 0;
+                }
+            });
+
+            const difficulties = Object.keys(engagementByDifficulty);
+            const engagementRates = difficulties.map(diff => {
+                const data = engagementByDifficulty[diff];
+                return data.views > 0 ? (data.likes / data.views * 100) : 0;
+            });
+
+            if (engagementChart) {
+                engagementChart.destroy();
+            }
+
+            engagementChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: difficulties.map(d => d.charAt(0).toUpperCase() + d.slice(1)),
+                    datasets: [{
+                        label: 'Engagement Rate (%)',
+                        data: engagementRates,
+                        backgroundColor: 'rgba(239, 68, 68, 0.8)',
+                        borderColor: 'rgba(239, 68, 68, 1)',
+                        borderWidth: 2,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        // Edit Content (placeholder)
+        function editContent(contentId) {
+            alert(`Edit functionality coming soon!\n\nContent ID: ${contentId}\n\nThis would open an editor to modify the content.`);
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initDashboard);
+    </script>
+</body>
+</html>

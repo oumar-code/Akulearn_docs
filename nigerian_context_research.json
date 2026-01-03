@@ -1,0 +1,538 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created": "2026-01-02",
+    "purpose": "Nigerian context examples for WAEC curriculum content generation",
+    "sources": [
+      "WAEC official website",
+      "Nigerian educational context",
+      "Local industries and applications"
+    ]
+  },
+  "subjects": {
+    "Mathematics": {
+      "remaining_topics": 14,
+      "nigerian_examples": {
+        "Number Bases": {
+          "real_world": [
+            "Computer Science programs at UNILAG, OAU, FUTA",
+            "Binary systems in Nigerian banks (GTBank, First Bank)",
+            "Base-16 (hexadecimal) in Nigerian telecommunications",
+            "MTN network systems using binary operations"
+          ],
+          "locations": ["Lagos Tech Hub", "Abuja ICT Center", "Port Harcourt IT Park"],
+          "currency": "Digital payment systems (₦ conversion)"
+        },
+        "Modular Arithmetic": {
+          "real_world": [
+            "Nigerian calendar systems (7-day week cycles)",
+            "Clock reading for prayer times (Islamic traditions)",
+            "Market days in Igbo culture (Eke, Orie, Afor, Nkwo)",
+            "Shift schedules at Dangote factories"
+          ],
+          "locations": ["Onitsha Market", "Kano textile mills", "Lagos shipping ports"],
+          "currency": "Profit calculations in ₦ for rotating credit (Ajo/Esusu)"
+        },
+        "Sequence and Series": {
+          "real_world": [
+            "Loan repayment schedules (Microfinance banks)",
+            "Salary increments in Nigerian civil service",
+            "Population growth of Nigerian cities",
+            "Rice farm yield progression in Kebbi State",
+            "Compound interest at Nigerian banks (10-15% annually)"
+          ],
+          "locations": ["Abuja Federal Civil Service", "Kebbi rice farms", "Lagos Island banks"],
+          "currency": "₦500,000 loan with ₦50,000 monthly increments"
+        },
+        "Binary Operations": {
+          "real_world": [
+            "Voting systems (INEC electoral calculations)",
+            "Average grade calculations (JAMB UTME scoring)",
+            "Mixing ratios for Nigerian food (Jollof rice ingredients)",
+            "Chemical mixing at Indorama fertilizer plant"
+          ],
+          "locations": ["INEC headquarters Abuja", "JAMB offices", "Indorama Eleme"],
+          "currency": "Cost averaging for bulk purchases in ₦"
+        },
+        "Matrices and Determinants": {
+          "real_world": [
+            "Traffic flow modeling (Lagos 3rd Mainland Bridge)",
+            "Crop rotation planning (Kaduna farms)",
+            "Nigerian airline route optimization (Air Peace, Arik)",
+            "Inventory management at Shoprite Nigeria"
+          ],
+          "locations": ["Lagos traffic control", "Murtala Muhammed Airport", "Shoprite Victoria Island"],
+          "currency": "Revenue matrices for ₦ sales across branches"
+        },
+        "Variation": {
+          "real_world": [
+            "Fuel consumption vs distance (Nigerian highways)",
+            "Cost of cement vs quantity (Dangote Cement)",
+            "Voltage drop vs wire length (PHCN distribution)",
+            "Workers vs construction time (Lekki-Epe Expressway)",
+            "Pressure vs depth in Lagos Lagoon"
+          ],
+          "locations": ["Lagos-Ibadan Expressway", "Lekki construction sites", "Port Harcourt refineries"],
+          "currency": "₦25,000 per bag of cement for 10 bags"
+        },
+        "Angles and Triangles": {
+          "real_world": [
+            "Roof construction angles (Nigerian bungalows)",
+            "Bridge design (Niger Bridge, Lekki-Ikoyi Link)",
+            "Surveying for land plots in Abuja",
+            "Satellite dish installation angles",
+            "Solar panel positioning in northern Nigeria"
+          ],
+          "locations": ["Niger Bridge", "Abuja city planning", "Sokoto solar farms"],
+          "currency": "₦1.5M for triangular land plot calculations"
+        },
+        "Circle Theorems": {
+          "real_world": [
+            "Circular roundabouts in Abuja city planning",
+            "Oil tank designs (Shell, Chevron depots)",
+            "Circular farm irrigation (pivot systems in Kano)",
+            "Stadium designs (National Stadium Lagos)",
+            "Water tower constructions"
+          ],
+          "locations": ["Abuja roundabouts", "Port Harcourt oil depots", "National Stadium Lagos"],
+          "currency": "₦50M circular water tank project"
+        },
+        "Trigonometry": {
+          "real_world": [
+            "Height of Aso Rock measurement",
+            "Cell tower positioning (MTN, Glo towers)",
+            "Angle of elevation for Kainji Dam observations",
+            "Navigation bearings on River Niger",
+            "Surveying Obudu Cattle Ranch terrain"
+          ],
+          "locations": ["Aso Rock Abuja", "Kainji Dam Niger State", "Obudu Plateau Cross River"],
+          "currency": "₦5M telecom tower installation project"
+        },
+        "Coordinate Geometry": {
+          "real_world": [
+            "GPS navigation in Lagos (Google Maps, Gokada)",
+            "City planning grid system in Abuja",
+            "Farm plot mapping in Kaduna",
+            "Pipeline routing (Nigerian Gas Company)",
+            "Railway line planning (Lagos-Ibadan rail)"
+          ],
+          "locations": ["Abuja city grid", "Lagos-Ibadan railway", "Kaduna agricultural zones"],
+          "currency": "₦200 per square meter land valuation"
+        },
+        "Differentiation": {
+          "real_world": [
+            "Maximizing profit for Nigerian businesses (Jumia, Konga)",
+            "Optimizing oil production rates (NNPC)",
+            "Minimizing cost of manufacturing (Indomie production)",
+            "Growth rate of Nigeria's GDP",
+            "Velocity analysis of vehicles on Lekki Expressway"
+          ],
+          "locations": ["NNPC Towers", "Indomie factory Lagos", "Jumia warehouses"],
+          "currency": "Maximizing ₦ revenue function: R(x) = -5x² + 100x + 500"
+        },
+        "Integration": {
+          "real_world": [
+            "Total distance traveled by BRT buses Lagos",
+            "Total oil extracted from Niger Delta wells over time",
+            "Area under rainfall curve (Nigerian Meteorological Agency)",
+            "Water volume collected in Lagos dam",
+            "Total electricity generated by Kainji Dam"
+          ],
+          "locations": ["BRT Lagos routes", "Niger Delta oil fields", "Kainji Hydroelectric Dam"],
+          "currency": "Total revenue over time (₦) from ticket sales"
+        },
+        "Statistics": {
+          "real_world": [
+            "Analysis of JAMB scores across states",
+            "Nigerian inflation rate data (NBS statistics)",
+            "Rainfall patterns in different regions",
+            "Student enrollment in Lagos schools",
+            "COVID-19 case distribution (NCDC data)"
+          ],
+          "locations": ["National Bureau of Statistics Abuja", "JAMB offices", "NCDC headquarters"],
+          "currency": "Average income distribution in ₦ across Nigerian states"
+        },
+        "Probability": {
+          "real_world": [
+            "Betting odds at Nigerian sports betting (Bet9ja, NairaBet)",
+            "Weather forecasting (Nigerian Met Agency)",
+            "Lottery chances (Premier Lotto, Baba Ijebu)",
+            "Defect rates in Dangote factory production",
+            "Election outcome predictions (INEC)"
+          ],
+          "locations": ["Bet9ja offices Lagos", "Nigerian Met Agency Abuja", "INEC headquarters"],
+          "currency": "₦1000 bet with various winning probabilities"
+        }
+      }
+    },
+    "Physics": {
+      "remaining_topics": 10,
+      "nigerian_examples": {
+        "Motion": {
+          "real_world": [
+            "BRT bus acceleration on Lagos highways",
+            "Free fall from Zuma Rock Abuja",
+            "Speed calculations on Lagos-Ibadan Expressway",
+            "Motorcycle taxi (Okada) velocity in traffic",
+            "Train motion on Abuja-Kaduna railway"
+          ],
+          "locations": ["Lagos BRT corridors", "Zuma Rock", "Abuja-Kaduna rail"],
+          "currency": "Speed camera fines in ₦ for overspeeding"
+        },
+        "Force, Mass and Acceleration": {
+          "real_world": [
+            "Truck loads on Niger Bridge",
+            "Aircraft thrust (Air Peace Boeing 737)",
+            "Pushing Okada through Lagos traffic",
+            "Force needed to move Dangote cement bags",
+            "Momentum of vehicles in Lagos accidents"
+          ],
+          "locations": ["Niger Bridge", "Murtala Muhammed Airport", "Dangote factories"],
+          "currency": "₦20M accident compensation calculations"
+        },
+        "Work, Energy and Power": {
+          "real_world": [
+            "Hydroelectric power at Kainji Dam (960 MW)",
+            "Solar panel efficiency in northern Nigeria",
+            "Generator fuel consumption (NEPA alternative)",
+            "Potential energy of water in elevated tanks",
+            "Work done lifting bags at Alaba Market"
+          ],
+          "locations": ["Kainji Dam", "Alaba International Market", "Kaduna solar farms"],
+          "currency": "₦25,000 monthly generator fuel costs"
+        },
+        "Simple Machines": {
+          "real_world": [
+            "Water wells with pulleys (Northern Nigeria villages)",
+            "Crowbars for opening containers at Apapa Port",
+            "Inclined planes for loading Dangote trucks",
+            "Wheelbarrows at construction sites",
+            "Levers in traditional Nigerian farming tools"
+          ],
+          "locations": ["Apapa Port Lagos", "Sokoto rural wells", "Construction sites nationwide"],
+          "currency": "₦5000 for pulley system installation"
+        },
+        "Temperature and Heat": {
+          "real_world": [
+            "Lagos temperature variations (25-35°C year-round)",
+            "Harmattan cold in northern Nigeria",
+            "Heat capacity of Nigerian pot cooking",
+            "Specific heat of palm oil vs groundnut oil",
+            "Latent heat in ice block production (pure water sellers)"
+          ],
+          "locations": ["Lagos Island", "Kano Harmattan season", "Pure water factories"],
+          "currency": "₦10 per pure water sachet, ₦50 per ice block"
+        },
+        "Gas Laws": {
+          "real_world": [
+            "Cooking gas cylinders (12.5kg typical Nigerian size)",
+            "Tire pressure for Nigerian vehicles",
+            "Air conditioning in Lagos buildings",
+            "Pressure cookers in Nigerian kitchens",
+            "Compressed Natural Gas (CNG) vehicles in Lagos"
+          ],
+          "locations": ["Lagos CNG conversion centers", "Gas filling stations nationwide"],
+          "currency": "₦15,000 for 12.5kg cooking gas cylinder"
+        },
+        "Static Electricity": {
+          "real_world": [
+            "Lightning during Nigerian rainy season",
+            "Static shock from car doors (harmattan season)",
+            "Photocopiers at Nigerian offices",
+            "Dust attraction to TV screens",
+            "Van de Graaff generator demonstrations at universities"
+          ],
+          "locations": ["University of Lagos labs", "Nigerian offices", "Weather patterns nationwide"],
+          "currency": "₦500,000 lightning protection for buildings"
+        },
+        "Electrical Energy and Power": {
+          "real_world": [
+            "NEPA/PHCN monthly bills (₦5000-50,000)",
+            "Inverter battery capacity calculations",
+            "Solar panel installations in Abuja",
+            "Prepaid meter readings",
+            "Power consumption of Nigerian appliances"
+          ],
+          "locations": ["PHCN offices nationwide", "Solar companies in Abuja"],
+          "currency": "₦68/kWh electricity tariff in Lagos"
+        },
+        "Waves": {
+          "real_world": [
+            "Radio waves (Wazobia FM, Cool FM)",
+            "Ocean waves at Bar Beach Lagos",
+            "Sound waves from Nigerian talking drums",
+            "Seismic waves (earthquake monitoring NEMA)",
+            "Mobile phone signals (4G/5G networks)"
+          ],
+          "locations": ["Bar Beach Lagos", "Radio stations Lagos", "MTN 5G towers"],
+          "currency": "₦1000 data bundle for mobile waves"
+        },
+        "Light and Optics": {
+          "real_world": [
+            "Traffic light systems in Lagos",
+            "Mirrors in Nigerian salons and barber shops",
+            "Eyeglasses from Nigerian opticians",
+            "Camera lenses (Nollywood film production)",
+            "Fiber optic cables (MainOne undersea cable)",
+            "Mirage on hot Nigerian roads"
+          ],
+          "locations": ["Nollywood Lagos", "MainOne landing station", "Yaba optician shops"],
+          "currency": "₦25,000 for prescription eyeglasses"
+        }
+      }
+    },
+    "Chemistry": {
+      "remaining_topics": 4,
+      "nigerian_examples": {
+        "Rates of Chemical Reactions": {
+          "real_world": [
+            "Fermentation in palm wine production",
+            "Rusting of vehicles in coastal Lagos",
+            "Food preservation methods (refrigeration vs room temp)",
+            "Enzymatic reactions in Nigerian breweries (Guinness, Star)",
+            "Catalytic converters in imported vehicles"
+          ],
+          "locations": ["Nigerian breweries Lagos", "Palm wine tappers in Southeast", "Guinness factory"],
+          "currency": "₦500 palm wine, ₦300 for refrigerated storage"
+        },
+        "Acids, Bases and Salts": {
+          "real_world": [
+            "Car battery acid (lead-acid batteries)",
+            "Lime (calcium hydroxide) for building in Nigeria",
+            "Vinegar (acetic acid) in Nigerian cooking",
+            "Soap making in Nigerian communities",
+            "Salt production in Lagos coastal areas",
+            "Antacids for treating ulcers"
+          ],
+          "locations": ["Badagry salt flats", "Lagos battery markets", "Soap factories Kano"],
+          "currency": "₦5000 car battery, ₦50 table salt per kg"
+        },
+        "Organic Chemistry - Hydrocarbons": {
+          "real_world": [
+            "Crude oil from Niger Delta (main alkanes)",
+            "Petroleum refining at Port Harcourt, Warri, Kaduna",
+            "Kerosene for Nigerian stoves and lamps",
+            "Petrol/diesel for vehicles",
+            "Natural gas (methane) in Nigerian homes",
+            "LPG (butane, propane) cooking gas",
+            "Petrochemical industries (Indorama)"
+          ],
+          "locations": ["Niger Delta oil fields", "Warri Refinery", "Indorama Eleme"],
+          "currency": "₦617/litre petrol, ₦15,000 per 12.5kg cooking gas"
+        },
+        "Electrochemistry": {
+          "real_world": [
+            "Electroplating jewelry in Lagos markets",
+            "Car battery charging (12V lead-acid)",
+            "Electrolysis of brine (salt production)",
+            "Corrosion protection of Nigerian pipelines",
+            "Electroplating of metal gates and burglary proofs",
+            "Inverter battery systems"
+          ],
+          "locations": ["Alaba electronics market", "Apapa industrial area", "Jewelry shops Lagos"],
+          "currency": "₦80,000 for 200Ah inverter battery"
+        }
+      }
+    },
+    "Biology": {
+      "remaining_topics": 6,
+      "nigerian_examples": {
+        "Nutrition in Plants": {
+          "real_world": [
+            "Photosynthesis in Nigerian farms (cassava, yam, maize)",
+            "NPK fertilizer application (20-10-10 ratio)",
+            "Mangrove forests in Niger Delta",
+            "Cocoa plantations in Ondo, Cross River",
+            "Palm oil trees in Southeast Nigeria",
+            "Mineral deficiency in Nigerian soils"
+          ],
+          "locations": ["Ondo cocoa farms", "Niger Delta mangroves", "Kaduna maize farms"],
+          "currency": "₦15,000 per 50kg bag of NPK fertilizer"
+        },
+        "Nutrition in Animals": {
+          "real_world": [
+            "Nigerian food nutrients (Jollof rice, Egusi soup, Pounded yam)",
+            "Balanced diet in Nigerian context (6-3-1 food groups)",
+            "Digestive system of ruminants (Nigerian cattle)",
+            "Food tests in Nigerian labs (iodine for starch, Benedict's for sugar)",
+            "Malnutrition cases (kwashiorkor, marasmus in rural areas)"
+          ],
+          "locations": ["Fulani cattle herding", "Nigerian teaching hospitals", "School nutrition programs"],
+          "currency": "₦1500 daily balanced diet cost in Lagos"
+        },
+        "Circulatory System": {
+          "real_world": [
+            "Blood donation at Nigerian blood banks",
+            "Hypertension (high blood pressure) prevalence in Nigeria",
+            "Sickle cell disease (genotype AS, SS)",
+            "Heart disease treatments at Nigerian hospitals",
+            "Traditional healers vs modern cardiology"
+          ],
+          "locations": ["Lagos University Teaching Hospital", "National Hospital Abuja", "Blood banks nationwide"],
+          "currency": "₦25,000 for comprehensive heart checkup"
+        },
+        "Respiratory System": {
+          "real_world": [
+            "Air pollution in Lagos (vehicle emissions)",
+            "Tuberculosis (TB) cases in Nigeria",
+            "Asthma triggered by Harmattan dust",
+            "COVID-19 respiratory complications",
+            "Traditional remedies (bitter kola, ginger) for cough"
+          ],
+          "locations": ["Lagos pollution zones", "TB treatment centers", "Northern Harmattan regions"],
+          "currency": "₦5000 asthma inhaler"
+        },
+        "Excretory System": {
+          "real_world": [
+            "Kidney disease and dialysis in Nigerian hospitals",
+            "Drinking water quality (boreholes vs wells)",
+            "Urinary infections common in Nigeria",
+            "Skin as excretory organ (sweating in hot climate)",
+            "Herbal treatments for kidney issues"
+          ],
+          "locations": ["Dialysis centers Lagos", "Borehole water sources", "Lagos humid climate"],
+          "currency": "₦25,000 per dialysis session"
+        },
+        "Genetics": {
+          "real_world": [
+            "Sickle cell screening (AA, AS, SS genotypes)",
+            "Albinism in Nigerian populations",
+            "Skin color inheritance patterns",
+            "Blood group inheritance (A, B, AB, O)",
+            "Genetic testing before marriage",
+            "Twins prevalence (especially in Igbo-Ora, Oyo State)"
+          ],
+          "locations": ["Igbo-Ora 'Twin Capital'", "Genetic counseling centers", "Pre-marital testing clinics"],
+          "currency": "₦15,000 for genotype/blood group testing"
+        }
+      }
+    },
+    "English Language": {
+      "total_topics": 5,
+      "nigerian_examples": {
+        "Comprehension and Summary": {
+          "real_world": [
+            "Nigerian newspaper articles (Punch, Vanguard, Guardian)",
+            "WAEC comprehension passages on Nigerian culture",
+            "News summaries on NTA, Channels TV",
+            "Social media literacy (Nigerian context)",
+            "Academic journals from Nigerian universities"
+          ],
+          "locations": ["Punch Newspapers Lagos", "NTA Abuja", "University libraries"],
+          "currency": "₦400 daily newspaper cost"
+        },
+        "Grammar and Usage": {
+          "real_world": [
+            "Nigerian Pidgin vs Standard English",
+            "Common errors by Nigerian speakers",
+            "Tense usage in Nigerian storytelling",
+            "Letter writing (formal applications for Nigerian jobs)",
+            "Email etiquette in Nigerian corporate world"
+          ],
+          "locations": ["Corporate offices Lagos", "Government ministries Abuja", "Nigerian schools"],
+          "currency": "Grammar textbooks ₦2500-5000"
+        },
+        "Essay Writing": {
+          "real_world": [
+            "WAEC essay topics on Nigerian issues",
+            "JAMB essay requirements",
+            "Letter to Nigerian officials (state governors, local government)",
+            "Application letters for Nigerian companies",
+            "Narrative essays on Nigerian festivals (Durbar, Calabar Carnival)"
+          ],
+          "locations": ["WAEC/JAMB exam centers", "Nigerian festivals nationwide"],
+          "currency": "₦5000 WAEC registration fee"
+        },
+        "Oral English": {
+          "real_world": [
+            "Nigerian accent patterns",
+            "Pronunciation differences (NEPA not 'Nepa')",
+            "Stress in Nigerian place names (Abuja, Lagos, Calabar)",
+            "Yoruba, Igbo, Hausa influences on English",
+            "BBC vs Nigerian Broadcasting pronunciation"
+          ],
+          "locations": ["Broadcasting schools Lagos", "Drama schools", "University English departments"],
+          "currency": "₦50,000 diction training courses"
+        },
+        "Literature": {
+          "real_world": [
+            "Chinua Achebe - Things Fall Apart (set text)",
+            "Wole Soyinka - The Lion and the Jewel",
+            "Nigerian Nollywood movie scripts",
+            "Oral traditions (Yoruba Ifa, Igbo folklore)",
+            "Contemporary Nigerian poetry (Chimamanda Adichie)"
+          ],
+          "locations": ["National Theatre Lagos", "Book shops nationwide", "Nollywood studios"],
+          "currency": "₦2000 for Things Fall Apart textbook"
+        }
+      }
+    }
+  },
+  "priority_next_batch": [
+    {
+      "id": "math_010",
+      "subject": "Mathematics",
+      "topic": "Trigonometry",
+      "exam_weight": "very_high",
+      "nigerian_contexts": [
+        "Height of Aso Rock measurement using angle of elevation",
+        "MTN cell tower positioning calculations",
+        "Kainji Dam height determination",
+        "Navigation bearings on River Niger",
+        "Surveying terrain at Obudu Cattle Ranch"
+      ]
+    },
+    {
+      "id": "phy_003",
+      "subject": "Physics",
+      "topic": "Work, Energy and Power",
+      "exam_weight": "very_high",
+      "nigerian_contexts": [
+        "Kainji Dam hydroelectric power generation (960 MW)",
+        "Solar panel efficiency in Kaduna",
+        "Generator fuel consumption calculations",
+        "Potential energy of elevated water tanks in Lagos",
+        "Work done lifting bags at Alaba Market"
+      ]
+    },
+    {
+      "id": "chem_003",
+      "subject": "Chemistry",
+      "topic": "Acids, Bases and Salts",
+      "exam_weight": "very_high",
+      "nigerian_contexts": [
+        "Car battery acid maintenance",
+        "Lime for building construction",
+        "Salt production at Badagry flats",
+        "Soap making in Nigerian communities",
+        "Antacids for treating ulcers"
+      ]
+    },
+    {
+      "id": "bio_002",
+      "subject": "Biology",
+      "topic": "Nutrition in Plants",
+      "exam_weight": "very_high",
+      "nigerian_contexts": [
+        "Photosynthesis in cassava, yam, maize farms",
+        "NPK fertilizer application (20-10-10)",
+        "Cocoa plantations in Ondo State",
+        "Palm oil production in Southeast",
+        "Mineral deficiency in Nigerian soils"
+      ]
+    },
+    {
+      "id": "bio_003",
+      "subject": "Biology",
+      "topic": "Nutrition in Animals",
+      "exam_weight": "very_high",
+      "nigerian_contexts": [
+        "Nigerian foods (Jollof rice, Egusi soup, Pounded yam)",
+        "Balanced diet in Nigerian context",
+        "Ruminant digestion (Fulani cattle)",
+        "Food tests in Nigerian school labs",
+        "Malnutrition (kwashiorkor, marasmus)"
+      ]
+    }
+  ]
+}
