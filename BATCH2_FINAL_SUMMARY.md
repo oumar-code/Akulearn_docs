@@ -3,6 +3,13 @@
 **Status**: ✅ COMPLETE  
 **Commit**: 9faac7a
 
+## Update (Batch 3 Deployment – Jan 3, 2026)
+- ✅ Batch 3 generated and deployed (5 lessons) → database now **42 items**.
+- 📈 WAEC coverage: **16/44 topics (36%)**; total read time ~783 minutes.
+- 🆕 New lessons: Sequence and Series; Temperature and Heat; Matrices and Determinants; Variation; Angles and Triangles.
+- 📚 Subject distribution: Mathematics 12, Physics 10, Chemistry 4, Biology 4, English 2, Economics 1, Geography 1.
+- 🔗 Files: batch3_content_generator.py, merge_batch3.py, batch3_content_deployer.py, generated_content/batch3_content.json, batch3_content_complete.json, wave3_content_database.json.
+
 ---
 
 ## Executive Summary
