@@ -15,7 +15,7 @@ def deploy_batch2():
     
     # Load batch 2 content
     print("\n📥 Loading batch 2 content...")
-    with open("generated_content/batch2_content.json") as f:
+    with open("batch2_content_complete.json", encoding='utf-8') as f:
         batch2 = json.load(f)
     
     batch2_items = batch2.get("content", [])
@@ -23,7 +23,7 @@ def deploy_batch2():
     
     # Load existing database
     print("\n📂 Loading existing Wave 3 database...")
-    with open("wave3_content_database.json") as f:
+    with open("wave3_content_database.json", encoding='utf-8') as f:
         database = json.load(f)
     
     existing_count = database["metadata"]["total_items"]
@@ -60,7 +60,7 @@ def deploy_batch2():
         }
         
         # Add to database
-        database["content_items"].append(wave3_item)
+        database["content"].append(wave3_item)
         added_items += 1
         
         subject = item.get("subject")
