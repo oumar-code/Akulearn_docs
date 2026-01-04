@@ -6,7 +6,7 @@ Expands content generation to remaining uncovered WAEC topics
 
 import json
 import logging
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Any
 from datetime import datetime
 from enhanced_content_generator import EnhancedContentGenerator
 
@@ -133,8 +133,15 @@ class CurriculumExpander:
     
     def _get_remaining_topics_after_phase1(self) -> List[Tuple]:
         """Get remaining topics after Phase 1"""
-        covered = set(self.COVERED_TOPICS.items())
-        covered.update(self.HIGH_PRIORITY_REMAINING)
+        # Convert covered topics dictionary to set of tuples
+        covered = set()
+        for subject, topics_list in self.COVERED_TOPICS.items():
+            for topic in topics_list:
+                covered.add((subject, topic))
+        
+        # Add HIGH_PRIORITY_REMAINING to covered
+        for subject, topic, _ in self.HIGH_PRIORITY_REMAINING:
+            covered.add((subject, topic))
         
         remaining = []
         for subject, topics in self.generator.WAEC_TOPICS.items():
