@@ -2,17 +2,17 @@
   "metadata": {
     "version": "3.0.0",
     "generated_at": "2026-01-01T06:40:02.984645",
-    "total_items": 73,
+    "total_items": 83,
     "statistics": {
       "total_imported": 63,
       "by_subject": {
         "Biology": 8,
-        "Chemistry": 10,
+        "Chemistry": 12,
         "Economics": 3,
         "English": 2,
         "Geography": 3,
-        "Mathematics": 28,
-        "Physics": 19
+        "Mathematics": 34,
+        "Physics": 21
       },
       "by_type": {
         "study_guide": 45,
@@ -25,9 +25,9 @@
       },
       "errors": []
     },
-    "last_updated": "2026-01-05T18:56:36.721071",
+    "last_updated": "2026-01-06T00:04:53.322975",
     "batch4_added": "2026-01-05T18:05:02.707737",
-    "batch5_added": "2026-01-05T18:56:36.721071"
+    "batch5_added": "2026-01-06T00:04:53.323007"
   },
   "content": [
     {
@@ -3783,6 +3783,316 @@
         "WAEC"
       ],
       "created_at": "2026-01-05T18:56:36.721071",
+      "mcp_research_enabled": true,
+      "research_sources": [
+        "Brave Search",
+        "Wikipedia"
+      ]
+    },
+    {
+      "id": "mathematics_calculus___differentiation_20260106000444",
+      "title": "Calculus - Differentiation",
+      "subject": "Mathematics",
+      "topic": "Calculus - Differentiation",
+      "subtopic": "Calculus - Differentiation",
+      "content_type": "study_guide",
+      "difficulty": "Intermediate",
+      "exam_board": "WAEC",
+      "content": "# Calculus - Differentiation\n\n## Introduction\nDifferentiation is a fundamental concept in calculus that measures the rate of change of a function.\n\n## Basic Concepts\n- Derivative as rate of change\n- Limits and continuity\n- Tangent lines and slopes\n\n## Rules of Differentiation\n1. Power Rule: d/dx(x^n) = nx^(n-1)\n2. Product Rule: (uv)' = u'v + uv'\n3. Quotient Rule: (u/v)' = (u'v - uv')/v²\n4. Chain Rule: d/dx(f(g(x))) = f'(g(x))·g'(x)\n\n## Higher Order Derivatives\n- Second derivative: d²y/dx²\n- Third derivative and beyond\n- Taylor series expansion\n\n## Applications\n- Finding maximum and minimum values\n- Optimization problems\n- Velocity and acceleration analysis\n- Rate of change in real-world contexts\n\n## Nigerian Context\n- Applications in engineering projects in Lagos\n- Physics applications in medical diagnostics\n- Economic analysis of business growth rates\n\n## Practice Problems\n1. Find dy/dx for y = 3x⁴ - 2x² + 5\n2. Use chain rule to differentiate y = sin(3x)\n3. Find critical points of f(x) = x³ - 3x\n4. Optimization: Minimize surface area of a box with fixed volume",
+      "summary": "Comprehensive guide to differentiation covering rules, applications, and Nigerian context",
+      "learning_objectives": [
+        "Understand core concepts of Calculus - Differentiation",
+        "Apply Calculus - Differentiation principles to real-world problems",
+        "Solve complex Calculus - Differentiation problems",
+        "Understand Calculus - Differentiation in Nigerian context"
+      ],
+      "key_concepts": [
+        "Calculus - Differentiation",
+        "WAEC Curriculum",
+        "Intermediate Level",
+        "Mathematics Subject"
+      ],
+      "estimated_reading_time_minutes": 30,
+      "created_at": "2026-01-06T00:04:44.327940",
+      "mcp_research_enabled": true,
+      "research_sources": [
+        "Brave Search",
+        "Wikipedia"
+      ]
+    },
+    {
+      "id": "mathematics_calculus___integration_20260106000444",
+      "title": "Calculus - Integration",
+      "subject": "Mathematics",
+      "topic": "Calculus - Integration",
+      "subtopic": "Calculus - Integration",
+      "content_type": "study_guide",
+      "difficulty": "Intermediate",
+      "exam_board": "WAEC",
+      "content": "# Calculus - Integration\n\n## Introduction\nIntegration is the reverse process of differentiation, used to find areas and accumulations.\n\n## Fundamental Theorem of Calculus\n- Relationship between differentiation and integration\n- Area under curves\n- Antiderivatives\n\n## Integration Rules\n1. Power Rule: ∫x^n dx = x^(n+1)/(n+1) + C\n2. Substitution Rule (u-substitution)\n3. Integration by Parts: ∫u dv = uv - ∫v du\n4. Partial Fractions\n\n## Definite and Indefinite Integrals\n- Indefinite integral (antiderivatives)\n- Definite integral (area calculation)\n- Limits of integration\n\n## Applications\n- Area between curves\n- Volume of solids of revolution\n- Work and energy calculations\n- Probability distributions\n\n## Nigerian Context\n- Land area calculations in surveying\n- Water volume in dams and reservoirs\n- Economic applications (consumer surplus)\n\n## Practice Problems\n1. Find ∫(6x² - 4x + 1) dx\n2. Calculate ∫₀² (x² + 2x) dx\n3. Use integration by parts for ∫xe^x dx\n4. Find area between y = x² and y = 2x",
+      "summary": "Complete integration guide with rules, applications, and practical problems",
+      "learning_objectives": [
+        "Understand core concepts of Calculus - Integration",
+        "Apply Calculus - Integration principles to real-world problems",
+        "Solve complex Calculus - Integration problems",
+        "Understand Calculus - Integration in Nigerian context"
+      ],
+      "key_concepts": [
+        "Calculus - Integration",
+        "WAEC Curriculum",
+        "Intermediate Level",
+        "Mathematics Subject"
+      ],
+      "estimated_reading_time_minutes": 30,
+      "created_at": "2026-01-06T00:04:44.328737",
+      "mcp_research_enabled": true,
+      "research_sources": [
+        "Brave Search",
+        "Wikipedia"
+      ]
+    },
+    {
+      "id": "mathematics_complex_numbers_20260106000444",
+      "title": "Complex Numbers",
+      "subject": "Mathematics",
+      "topic": "Complex Numbers",
+      "subtopic": "Complex Numbers",
+      "content_type": "study_guide",
+      "difficulty": "Intermediate",
+      "exam_board": "WAEC",
+      "content": "# Complex Numbers\n\n## Introduction\nComplex numbers extend the real number system to include imaginary components.\n\n## Definition and Notation\n- Complex number: z = a + bi where i² = -1\n- Real part (a) and imaginary part (b)\n- Conjugate: z* = a - bi\n- Modulus: |z| = √(a² + b²)\n\n## Operations on Complex Numbers\n- Addition: (a + bi) + (c + di) = (a+c) + (b+d)i\n- Subtraction\n- Multiplication\n- Division (using conjugate)\n\n## Polar Form\n- z = r(cos θ + i sin θ) = r·e^(iθ)\n- r = modulus, θ = argument\n- De Moivre's Theorem: z^n = r^n(cos nθ + i sin nθ)\n\n## Roots of Complex Numbers\n- nth roots calculation\n- Solutions to polynomial equations\n\n## Applications\n- Electrical engineering (AC circuits)\n- Wave mechanics\n- Signal processing\n\n## Nigerian Context\n- Power system analysis in grid networks\n- Telecommunications signal processing\n- Structural vibration analysis\n\n## Practice Problems\n1. Find (3 + 4i) + (1 - 2i)\n2. Calculate (2 + i)³\n3. Convert 3 + 3i to polar form\n4. Find all cube roots of 8",
+      "summary": "Guide to complex numbers covering operations, polar form, and applications",
+      "learning_objectives": [
+        "Understand core concepts of Complex Numbers",
+        "Apply Complex Numbers principles to real-world problems",
+        "Solve complex Complex Numbers problems",
+        "Understand Complex Numbers in Nigerian context"
+      ],
+      "key_concepts": [
+        "Complex Numbers",
+        "WAEC Curriculum",
+        "Intermediate Level",
+        "Mathematics Subject"
+      ],
+      "estimated_reading_time_minutes": 30,
+      "created_at": "2026-01-06T00:04:44.329704",
+      "mcp_research_enabled": true,
+      "research_sources": [
+        "Brave Search",
+        "Wikipedia"
+      ]
+    },
+    {
+      "id": "mathematics_trigonometric_functions_20260106000444",
+      "title": "Trigonometric Functions",
+      "subject": "Mathematics",
+      "topic": "Trigonometric Functions",
+      "subtopic": "Trigonometric Functions",
+      "content_type": "study_guide",
+      "difficulty": "Intermediate",
+      "exam_board": "WAEC",
+      "content": "# Trigonometric Functions\n\n## Basic Trigonometric Ratios\n- Sine, Cosine, Tangent\n- Reciprocal ratios (Cosecant, Secant, Cotangent)\n- Right triangle applications\n\n## Unit Circle\n- Angles in radians and degrees\n- Coordinates on unit circle\n- Periodic nature of trig functions\n\n## Key Angles\n- Special angles (0°, 30°, 45°, 60°, 90°)\n- Values and relationships\n\n## Trigonometric Identities\n- Pythagorean identities\n- Sum and difference formulas\n- Double angle formulas\n- Product-to-sum formulas\n\n## Graphs of Trigonometric Functions\n- Amplitude, period, phase shift\n- Sine and cosine curves\n- Tangent and cotangent asymptotes\n\n## Inverse Trigonometric Functions\n- arcsin, arccos, arctan\n- Domain and range restrictions\n- Applications in angle finding\n\n## Nigerian Context\n- Surveying and land measurement\n- Architecture and building design\n- Navigation systems\n\n## Practice Problems\n1. Find sin(30°), cos(45°), tan(60°)\n2. Solve sin x = 1/2 for 0° ≤ x ≤ 360°\n3. Prove sin²x + cos²x = 1\n4. Graph y = 2sin(2x) + 1",
+      "summary": "Complete trigonometry coverage with functions, identities, and applications",
+      "learning_objectives": [
+        "Understand core concepts of Trigonometric Functions",
+        "Apply Trigonometric Functions principles to real-world problems",
+        "Solve complex Trigonometric Functions problems",
+        "Understand Trigonometric Functions in Nigerian context"
+      ],
+      "key_concepts": [
+        "Trigonometric Functions",
+        "WAEC Curriculum",
+        "Intermediate Level",
+        "Mathematics Subject"
+      ],
+      "estimated_reading_time_minutes": 30,
+      "created_at": "2026-01-06T00:04:44.330398",
+      "mcp_research_enabled": true,
+      "research_sources": [
+        "Brave Search",
+        "Wikipedia"
+      ]
+    },
+    {
+      "id": "mathematics_permutation_and_combination_20260106000444",
+      "title": "Permutation and Combination",
+      "subject": "Mathematics",
+      "topic": "Permutation and Combination",
+      "subtopic": "Permutation and Combination",
+      "content_type": "study_guide",
+      "difficulty": "Intermediate",
+      "exam_board": "WAEC",
+      "content": "# Permutation and Combination\n\n## Fundamental Counting Principle\n- Multiplication rule for counting\n- Sequential event combinations\n\n## Permutations\n- Definition: Arrangements where order matters\n- Formula: P(n,r) = n!/(n-r)!\n- Permutations with repetition\n- Circular permutations\n\n## Combinations\n- Definition: Selections where order doesn't matter\n- Formula: C(n,r) = n!/(r!(n-r)!)\n- Properties and relationships\n- Pascal's Triangle\n\n## Applications\n- Selection of teams and groups\n- Arrangement of objects\n- Probability calculations\n- Distribution of items\n\n## Conditional Arrangements\n- Permutations with identical objects\n- Combinations with constraints\n- Restricted selections\n\n## Nigerian Context\n- Lottery system calculations\n- Committee selection in organizations\n- Sports tournament scheduling\n- Election voting scenarios\n\n## Practice Problems\n1. Find P(8,3) and C(8,3)\n2. How many ways to arrange BANANA?\n3. Select 5 people from 10 for a committee\n4. Probability of getting 3 heads in 5 coin flips",
+      "summary": "Permutation and combination guide with formulas and real-world applications",
+      "learning_objectives": [
+        "Understand core concepts of Permutation and Combination",
+        "Apply Permutation and Combination principles to real-world problems",
+        "Solve complex Permutation and Combination problems",
+        "Understand Permutation and Combination in Nigerian context"
+      ],
+      "key_concepts": [
+        "Permutation and Combination",
+        "WAEC Curriculum",
+        "Intermediate Level",
+        "Mathematics Subject"
+      ],
+      "estimated_reading_time_minutes": 30,
+      "created_at": "2026-01-06T00:04:44.331101",
+      "mcp_research_enabled": true,
+      "research_sources": [
+        "Brave Search",
+        "Wikipedia"
+      ]
+    },
+    {
+      "id": "mathematics_probability_and_statistics_20260106000444",
+      "title": "Probability and Statistics",
+      "subject": "Mathematics",
+      "topic": "Probability and Statistics",
+      "subtopic": "Probability and Statistics",
+      "content_type": "study_guide",
+      "difficulty": "Intermediate",
+      "exam_board": "WAEC",
+      "content": "# Probability and Statistics\n\n## Probability Fundamentals\n- Sample space and events\n- Classical probability definition\n- Empirical probability\n- Theoretical probability\n\n## Probability Rules\n- Addition rule: P(A ∪ B) = P(A) + P(B) - P(A ∩ B)\n- Multiplication rule: P(A ∩ B) = P(A) × P(B|A)\n- Conditional probability\n- Bayes' Theorem\n\n## Distributions\n- Normal distribution (bell curve)\n- Binomial distribution\n- Poisson distribution\n- Mean and standard deviation\n\n## Sampling and Estimation\n- Sample mean and variance\n- Confidence intervals\n- Hypothesis testing\n- Chi-square tests\n\n## Statistical Analysis\n- Correlation and regression\n- Scatter plots\n- Trend analysis\n\n## Nigerian Context\n- Market research surveys\n- Disease prevalence studies\n- Educational assessment analysis\n- Election polling\n\n## Practice Problems\n1. P(rolling 6 on dice) = ?\n2. Mean and variance of dataset: 2,4,6,8,10\n3. 68-95-99.7 rule application\n4. Linear regression with real data",
+      "summary": "Probability and statistics fundamentals with Nigerian applications",
+      "learning_objectives": [
+        "Understand core concepts of Probability and Statistics",
+        "Apply Probability and Statistics principles to real-world problems",
+        "Solve complex Probability and Statistics problems",
+        "Understand Probability and Statistics in Nigerian context"
+      ],
+      "key_concepts": [
+        "Probability and Statistics",
+        "WAEC Curriculum",
+        "Intermediate Level",
+        "Mathematics Subject"
+      ],
+      "estimated_reading_time_minutes": 30,
+      "created_at": "2026-01-06T00:04:44.332064",
+      "mcp_research_enabled": true,
+      "research_sources": [
+        "Brave Search",
+        "Wikipedia"
+      ]
+    },
+    {
+      "id": "physics_mechanics___forces_and_motion_20260106000444",
+      "title": "Mechanics - Forces and Motion",
+      "subject": "Physics",
+      "topic": "Mechanics - Forces and Motion",
+      "subtopic": "Mechanics - Forces and Motion",
+      "content_type": "study_guide",
+      "difficulty": "Intermediate",
+      "exam_board": "WAEC",
+      "content": "# Mechanics - Forces and Motion\n\n## Newton's Laws of Motion\n1. First Law: Object at rest stays at rest unless acted upon\n2. Second Law: F = ma\n3. Third Law: Action-reaction pairs\n\n## Types of Forces\n- Gravitational force\n- Friction (static and kinetic)\n- Normal force\n- Tension\n- Applied forces\n\n## Motion Analysis\n- Displacement, velocity, acceleration\n- Kinematics equations\n- Graphical analysis (v-t and s-t graphs)\n- Relative motion\n\n## Work and Power\n- Work: W = F·d·cos(θ)\n- Power: P = W/t\n- Energy transformation\n\n## Circular Motion\n- Angular velocity and acceleration\n- Centripetal force\n- Banked curves\n\n## Momentum and Impulse\n- Momentum conservation\n- Collisions (elastic and inelastic)\n- Impulse: J = F·Δt\n\n## Nigerian Context\n- Road safety and vehicle dynamics\n- Construction site mechanics\n- Sports performance analysis\n- Transportation engineering\n\n## Practice Problems\n1. Car accelerates at 2 m/s². Find distance in 5 seconds\n2. Calculate work done by 50 N force over 10 m\n3. Two objects collide: find velocities after collision\n4. Find centripetal acceleration for circular motion",
+      "summary": "Comprehensive mechanics coverage with forces, motion, and Nigerian applications",
+      "learning_objectives": [
+        "Understand core concepts of Mechanics - Forces and Motion",
+        "Apply Mechanics - Forces and Motion principles to real-world problems",
+        "Solve complex Mechanics - Forces and Motion problems",
+        "Understand Mechanics - Forces and Motion in Nigerian context"
+      ],
+      "key_concepts": [
+        "Mechanics - Forces and Motion",
+        "WAEC Curriculum",
+        "Intermediate Level",
+        "Physics Subject"
+      ],
+      "estimated_reading_time_minutes": 30,
+      "created_at": "2026-01-06T00:04:44.332930",
+      "mcp_research_enabled": true,
+      "research_sources": [
+        "Brave Search",
+        "Wikipedia"
+      ]
+    },
+    {
+      "id": "physics_work,_energy_and_power_20260106000444",
+      "title": "Work, Energy and Power",
+      "subject": "Physics",
+      "topic": "Work, Energy and Power",
+      "subtopic": "Work, Energy and Power",
+      "content_type": "study_guide",
+      "difficulty": "Intermediate",
+      "exam_board": "WAEC",
+      "content": "# Work, Energy and Power\n\n## Work Definition\n- Work = Force × Displacement × cos(angle)\n- Units: Joules (J)\n- Positive and negative work\n- Work-energy theorem\n\n## Forms of Energy\n- Kinetic energy: KE = ½mv²\n- Potential energy: PE = mgh\n- Elastic potential energy: PE = ½kx²\n- Total mechanical energy\n\n## Conservation of Energy\n- Energy conservation principle\n- Closed vs open systems\n- Energy transformation\n- Energy dissipation\n\n## Power\n- Definition: Rate of energy transfer\n- Power = Work/Time = Force × Velocity\n- Average and instantaneous power\n- Efficiency calculations\n\n## Applications\n- Machine efficiency\n- Motor and generator power ratings\n- Energy consumption analysis\n- Renewable energy systems\n\n## Energy Sources\n- Fossil fuels\n- Solar energy\n- Hydroelectric power\n- Wind energy\n\n## Nigerian Context\n- Power generation at dams\n- Solar panel efficiency studies\n- Vehicle fuel consumption\n- Industrial power systems\n- Energy pricing and economics\n\n## Practice Problems\n1. Calculate KE of 1500 kg car at 20 m/s\n2. Work done lifting 50 kg object 5 meters\n3. Power of machine doing 1000 J in 10 seconds\n4. Efficiency: Input 1000 J, Output 800 J",
+      "summary": "Work, energy, and power with conservation principles and Nigerian context",
+      "learning_objectives": [
+        "Understand core concepts of Work, Energy and Power",
+        "Apply Work, Energy and Power principles to real-world problems",
+        "Solve complex Work, Energy and Power problems",
+        "Understand Work, Energy and Power in Nigerian context"
+      ],
+      "key_concepts": [
+        "Work, Energy and Power",
+        "WAEC Curriculum",
+        "Intermediate Level",
+        "Physics Subject"
+      ],
+      "estimated_reading_time_minutes": 30,
+      "created_at": "2026-01-06T00:04:44.334160",
+      "mcp_research_enabled": true,
+      "research_sources": [
+        "Brave Search",
+        "Wikipedia"
+      ]
+    },
+    {
+      "id": "chemistry_periodic_table_20260106000444",
+      "title": "Periodic Table",
+      "subject": "Chemistry",
+      "topic": "Periodic Table",
+      "subtopic": "Periodic Table",
+      "content_type": "study_guide",
+      "difficulty": "Intermediate",
+      "exam_board": "WAEC",
+      "content": "# The Periodic Table\n\n## Organization\n- Periods (horizontal rows)\n- Groups (vertical columns)\n- Blocks: s, p, d, f blocks\n- Organization by atomic number\n\n## Periodic Trends\n- Atomic radius (decreases across period)\n- Ionization energy (increases across period)\n- Electronegativity (increases across period)\n- Electron affinity\n\n## Element Classification\n- Metals (transition, main group)\n- Nonmetals\n- Metalloids\n- Noble gases\n\n## Key Elements in Batch\n- Hydrogen (H, element 1)\n- Carbon (C, element 6)\n- Nitrogen (N, element 7)\n- Oxygen (O, element 8)\n- Iron (Fe, element 26)\n- Copper (Cu, element 29)\n\n## Chemical Properties\n- Valence electrons\n- Oxidation states\n- Reactivity patterns\n- Group similarities\n\n## Nigerian Minerals\n- Gold deposits in regions\n- Tin mining areas\n- Rare earth elements\n- Petroleum composition\n\n## Practical Applications\n- Industrial chemistry\n- Medicine and pharmaceuticals\n- Environmental science\n- Materials science\n\n## Practice Problems\n1. Find atomic radius trend for Li, Na, K\n2. Write electron configuration for Fe\n3. Identify element from atomic number 17\n4. Predict properties based on group",
+      "summary": "Periodic table organization, trends, and Nigerian mineral resources",
+      "learning_objectives": [
+        "Understand core concepts of Periodic Table",
+        "Apply Periodic Table principles to real-world problems",
+        "Solve complex Periodic Table problems",
+        "Understand Periodic Table in Nigerian context"
+      ],
+      "key_concepts": [
+        "Periodic Table",
+        "WAEC Curriculum",
+        "Intermediate Level",
+        "Chemistry Subject"
+      ],
+      "estimated_reading_time_minutes": 30,
+      "created_at": "2026-01-06T00:04:44.335377",
+      "mcp_research_enabled": true,
+      "research_sources": [
+        "Brave Search",
+        "Wikipedia"
+      ]
+    },
+    {
+      "id": "chemistry_states_of_matter_20260106000444",
+      "title": "States of Matter",
+      "subject": "Chemistry",
+      "topic": "States of Matter",
+      "subtopic": "States of Matter",
+      "content_type": "study_guide",
+      "difficulty": "Intermediate",
+      "exam_board": "WAEC",
+      "content": "# States of Matter\n\n## Solid State\n- Crystalline solids (ordered structure)\n- Amorphous solids (disordered)\n- Properties: fixed shape, fixed volume\n- Melting point and crystalline structure\n\n## Liquid State\n- Properties: fixed volume, variable shape\n- Surface tension\n- Viscosity\n- Boiling point and vapor pressure\n\n## Gaseous State\n- Properties: variable volume and shape\n- Molecular motion and pressure\n- Ideal vs real gases\n- Gas laws\n\n## Phase Transitions\n- Melting: solid → liquid\n- Vaporization: liquid → gas\n- Sublimation: solid → gas\n- Condensation and freezing\n\n## Kinetic Molecular Theory\n- Molecular motion explanation\n- Particle interactions\n- Temperature relationship\n- Pressure explanation\n\n## Gas Laws\n- Boyle's Law: PV = constant\n- Charles's Law: V/T = constant\n- Gay-Lussac's Law: P/T = constant\n- Combined Gas Law\n- Ideal Gas Law: PV = nRT\n\n## Nigerian Context\n- Liquefied natural gas (LNG) production\n- Industrial gas processes\n- Water treatment and phase changes\n- Agricultural water storage\n\n## Practice Problems\n1. Calculate pressure using ideal gas law\n2. Convert between Celsius and Kelvin\n3. Solve combined gas law problems\n4. Explain water phase diagram",
+      "summary": "States of matter, phase transitions, and gas laws with Nigerian applications",
+      "learning_objectives": [
+        "Understand core concepts of States of Matter",
+        "Apply States of Matter principles to real-world problems",
+        "Solve complex States of Matter problems",
+        "Understand States of Matter in Nigerian context"
+      ],
+      "key_concepts": [
+        "States of Matter",
+        "WAEC Curriculum",
+        "Intermediate Level",
+        "Chemistry Subject"
+      ],
+      "estimated_reading_time_minutes": 30,
+      "created_at": "2026-01-06T00:04:44.336744",
       "mcp_research_enabled": true,
       "research_sources": [
         "Brave Search",
