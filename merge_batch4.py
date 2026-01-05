@@ -32,17 +32,18 @@ for lesson in batch4_lessons:
 
 # Merge
 print(f"\n🔄 Merging...")
-main_db["lessons"].extend(batch4_lessons)
+main_db["content"].extend(batch4_lessons)
 
 # Update metadata
-main_db["metadata"]["total_items"] = len(main_db["lessons"])
+main_db["metadata"]["total_items"] = len(main_db["content"])
 main_db["metadata"]["last_updated"] = datetime.now().isoformat()
 main_db["metadata"]["batch4_added"] = datetime.now().isoformat()
 
 # Count by subject
 from collections import Counter
-subjects = Counter(lesson.get("subject") for lesson in main_db["lessons"])
+subjects = Counter(lesson.get("subject") for lesson in main_db["content"])
 main_db["metadata"]["statistics"]["by_subject"] = dict(subjects)
+main_db["metadata"]["statistics"]["total_imported"] = len(main_db["content"])
 
 print(f"   New total: {main_db['metadata']['total_items']} lessons")
 

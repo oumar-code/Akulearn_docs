@@ -45,6 +45,15 @@
         "PYTHON_PATH": "${PYTHON_EXECUTABLE}",
         "PYTHONPATH": "${HOME}/Documents/Akulearn_docs/src"
       }
+    },
+    "wikipedia": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-wikipedia"],
+      "enabled": true,
+      "description": "Wikipedia search and article retrieval",
+      "env": {
+        "WIKIPEDIA_LANG": "en"
+      }
     }
   },
   "globalSettings": {
@@ -56,8 +65,8 @@
   },
   "integrations": {
     "contentGeneration": {
-      "mcpServers": ["brave_search", "python", "filesystem"],
-      "description": "Content research and generation pipeline"
+      "mcpServers": ["brave_search", "wikipedia", "python", "filesystem"],
+      "description": "Content research and generation pipeline with web search and Wikipedia"
     },
     "dataValidation": {
       "mcpServers": ["python", "git"],

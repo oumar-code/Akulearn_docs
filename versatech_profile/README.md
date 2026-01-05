@@ -20,7 +20,8 @@ Transform your organization with expert AI & technology guidance. We fuse strate
 3) **Intelligent Process Automation**: Workflow/RPA audits, content/data pipelines.  
 4) **Multilingual NLP & Voice**: ASR/TTS/chat for Hausa/Fulfulde/Arabic/English.  
 5) **EdTech Solutions**: Adaptive learning, analytics, offline-first delivery (solar kits/projectors).  
-6) **Geospatial & Insights**: Mapping for education/health/logistics; BI dashboards.
+6) **Geospatial & Insights**: Mapping for education/health/logistics; 
+BI dashboards.
 
 ## Sectors & Partner Hooks
 - **Businesses**: AI roadmaps, automation, customer support chat/voice, L&D content engines.
