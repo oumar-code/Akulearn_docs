@@ -112,6 +112,18 @@ class EnhancedContentGenerator:
         self.generated_count = 0
         self.total_duration = 0
         
+        # Initialize MCP servers if enabled
+        if self.use_mcp:
+            try:
+                from mcp_server import MCPServerWrapper
+                self.mcp_wrapper = MCPServerWrapper()
+                logger.info("✅ MCP servers initialized (Brave Search + Wikipedia)")
+            except ImportError:
+                logger.warning("⚠️  MCP not available, will generate without research")
+                self.mcp_wrapper = None
+        else:
+            self.mcp_wrapper = None
+        
         # Create output directories
         os.makedirs(self.output_dir, exist_ok=True)
         logger.info(f"✅ Output directory: {self.output_dir}")

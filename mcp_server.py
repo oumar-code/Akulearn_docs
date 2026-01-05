@@ -21,6 +21,7 @@ logger = logging.getLogger(__name__)
 class ServerType(Enum):
     """Enumeration of MCP server types"""
     BRAVE_SEARCH = "brave_search"
+    WIKIPEDIA = "wikipedia"
     FILESYSTEM = "filesystem"
     GIT = "git"
     PYTHON = "python"
@@ -155,7 +156,54 @@ class MCPServerWrapper:
             "status": "Would be fetched from Brave Search MCP server"
         }
     
-    def execute_python_code(self, code: str) -> Optional[str]:
+    def search_wikipedia(self, query: str, limit: int = 3) -> Dict[str, Any]:
+        """Search Wikipedia via MCP Wikipedia server"""
+        logger.info(f"📚 Searching Wikipedia for: {query}")
+        
+        try:
+            import requests
+            
+            # Direct Wikipedia API call (fallback if MCP not available)
+            params = {
+                "action": "query",
+                "format": "json",
+                "list": "search",
+                "srsearch": query,
+                "srlimit": limit
+            }
+            
+            response = requests.get("https://en.wikipedia.org/w/api.php", params=params, timeout=10)
+            
+            if response.status_code == 200:
+                data = response.json()
+                search_results = data.get("query", {}).get("search", [])
+                
+                logger.info(f"✅ Found {len(search_results)} Wikipedia results")
+                
+                return {
+                    "query": query,
+                    "results": [
+                        {
+                            "title": result.get("title"),
+                            "snippet": result.get("snippet"),
+                            "url": f"https://en.wikipedia.org/wiki/{result.get('title', '').replace(' ', '_')}"
+                        }
+                        for result in search_results
+                    ],
+                    "status": "success"
+                }
+        
+        except Exception as e:
+            logger.error(f"❌ Wikipedia search error: {e}")
+        
+        # Fallback response
+        return {
+            "query": query,
+            "results": [],
+            "status": "Would be fetched from Wikipedia MCP server"
+        }
+    
+    def python_code(self, code: str) -> Optional[str]:
         """Execute Python code via MCP Python server"""
         logger.info("🐍 Executing Python code via MCP...")
         
