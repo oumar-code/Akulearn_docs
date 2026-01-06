@@ -4,7 +4,7 @@
     "generated_at": "2026-01-01T06:40:02.984645",
     "total_items": 83,
     "statistics": {
-      "total_imported": 63,
+      "total_imported": 83,
       "by_subject": {
         "Biology": 8,
         "Chemistry": 12,
@@ -15,11 +15,11 @@
         "Physics": 21
       },
       "by_type": {
-        "study_guide": 45,
+        "study_guide": 55,
         "reference": 2
       },
       "by_difficulty": {
-        "intermediate": 34,
+        "intermediate": 44,
         "advanced": 10,
         "basic": 3
       },
