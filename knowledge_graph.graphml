@@ -297,11 +297,27 @@
       <data key="node_type">level</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss1_subj_further_mathematics" labels=":(subject)">
+    <node id="nerdc_ss1_subj_agricultural_science" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
     <node id="nerdc_ss1_subj_mathematics" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_subj_english_language" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_subj_chemistry" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_subj_government" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_subj_literature_in_english" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
@@ -313,11 +329,15 @@
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss1_subj_physics" labels=":(subject)">
+    <node id="nerdc_ss1_subj_computer_science" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss1_subj_chemistry" labels=":(subject)">
+    <node id="nerdc_ss1_subj_further_mathematics" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_subj_commerce" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
@@ -325,19 +345,35 @@
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss1_subj_english_language" labels=":(subject)">
+    <node id="nerdc_ss1_subj_accounting" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss1_subj_computer_science" labels=":(subject)">
+    <node id="nerdc_ss1_subj_physics" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss2_subj_further_mathematics" labels=":(subject)">
+    <node id="nerdc_ss2_subj_agricultural_science" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
     <node id="nerdc_ss2_subj_mathematics" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_subj_english_language" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_subj_chemistry" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_subj_government" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_subj_literature_in_english" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
@@ -349,11 +385,15 @@
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss2_subj_physics" labels=":(subject)">
+    <node id="nerdc_ss2_subj_computer_science" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss2_subj_chemistry" labels=":(subject)">
+    <node id="nerdc_ss2_subj_further_mathematics" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_subj_commerce" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
@@ -361,11 +401,11 @@
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss2_subj_english_language" labels=":(subject)">
+    <node id="nerdc_ss2_subj_accounting" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss2_subj_computer_science" labels=":(subject)">
+    <node id="nerdc_ss2_subj_physics" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
@@ -1405,6 +1445,466 @@
       <data key="node_type">lesson</data>
       <data key="node_curriculum">NERDC</data>
     </node>
+    <node id="nerdc_ss1_topic_government_ss1_-_citizenship_and_rights" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_government_citizenship_and_rights_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_government_citizenship_and_rights_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_government_ss1_-_constitution_and_rule_of_law" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_government_constitution_and_rule_of_law_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_government_constitution_and_rule_of_law_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_government_ss1_-_forms_of_government" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_government_forms_of_government_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_government_forms_of_government_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_government_ss1_-_meaning_and_scope_of_government" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_government_meaning_and_scope_of_government_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_government_meaning_and_scope_of_government_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_government_ss1_-_organs_of_government" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_government_organs_of_government_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_government_organs_of_government_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_government_ss2_-_delegated_legislation" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_government_delegated_legislation_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_government_delegated_legislation_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_government_ss2_-_electoral_systems_and_processes" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_government_electoral_systems_and_processes_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_government_electoral_systems_and_processes_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_government_ss2_-_local_government" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_government_local_government_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_commerce_ss1_-_business_organizations" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_commerce_business_organizations_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_commerce_business_organizations_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_commerce_ss1_-_consumer_protection" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_commerce_consumer_protection_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_commerce_consumer_protection_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_commerce_ss1_-_introduction_to_commerce" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_commerce_introduction_to_commerce_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_commerce_introduction_to_commerce_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_commerce_trade_and_aids_to_trade_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_commerce_trade_and_aids_to_trade_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_commerce_ss1_-_wholesale_and_retail" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_commerce_wholesale_and_retail_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_commerce_wholesale_and_retail_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_commerce_ss2_-_banking_and_finance" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_commerce_banking_and_finance_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_commerce_banking_and_finance_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_commerce_ss2_-_business_capital_and_credit" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_commerce_business_capital_and_credit_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_commerce_business_capital_and_credit_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_commerce_ss2_-_insurance" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_commerce_insurance_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_accounting_ss1_-_books_of_original_entry" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_accounting_books_of_original_entry_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_accounting_books_of_original_entry_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_accounting_ss1_-_double_entry_principles" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_accounting_double_entry_principles_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_accounting_double_entry_principles_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_accounting_ss1_-_introduction_to_accounting" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_accounting_introduction_to_accounting_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_accounting_introduction_to_accounting_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_accounting_ss1_-_ledger_accounts" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_accounting_ledger_accounts_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_accounting_ledger_accounts_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_accounting_ss1_-_trial_balance" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_accounting_trial_balance_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_accounting_trial_balance_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_accounting_ss2_-_cash_book_and_bank_reconciliation" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_accounting_cash_book_and_bank_reconciliation_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_accounting_cash_book_and_bank_reconciliation_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_accounting_ss2_-_control_accounts" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_accounting_control_accounts_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_accounting_control_accounts_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_accounting_ss2_-_depreciation" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_accounting_depreciation_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_agricultural_science_ss1_-_crop_production" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_agricultural_science_crop_production_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_agricultural_science_crop_production_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_agricultural_science_livestock_management_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_agricultural_science_livestock_management_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_agricultural_science_ss1_-_meaning_and_importance_of_agriculture" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_agricultural_science_meaning_and_importance_of_agriculture_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_agricultural_science_meaning_and_importance_of_agriculture_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_agricultural_science_plant_nutrition_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_agricultural_science_plant_nutrition_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_agricultural_science_ss1_-_soil_science" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_agricultural_science_soil_science_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_agricultural_science_soil_science_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_ecology" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_agricultural_science_agricultural_ecology_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_agricultural_science_agricultural_ecology_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_economics" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_agricultural_science_agricultural_economics_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_agricultural_science_agricultural_economics_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_agricultural_science_ss2_-_farm_tools_and_machinery" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_agricultural_science_farm_tools_and_machinery_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_literature_in_english_ss1_-_elements_of_drama" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_literature_in_english_elements_of_drama_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_literature_in_english_elements_of_drama_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_literature_in_english_ss1_-_introduction_to_literature" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_literature_in_english_introduction_to_literature_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_literature_in_english_introduction_to_literature_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_literature_in_english_ss1_-_literary_appreciation" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_literature_in_english_literary_appreciation_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_literature_in_english_literary_appreciation_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_literature_in_english_ss1_-_poetry:_forms_and_devices" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_literature_in_english_poetry:_forms_and_devices_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_literature_in_english_poetry:_forms_and_devices_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_topic_literature_in_english_ss1_-_prose:_narrative_techniques" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_literature_in_english_prose:_narrative_techniques_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_literature_in_english_prose:_narrative_techniques_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_literature_in_english_ss2_-_african_literature" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_literature_in_english_african_literature_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_literature_in_english_african_literature_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_literature_in_english_ss2_-_drama_analysis" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_literature_in_english_drama_analysis_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_literature_in_english_drama_analysis_20260108003035" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_topic_literature_in_english_ss2_-_non-african_literature" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_literature_in_english_non-african_literature_20260108003017" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
     <edge source="waec_subj_biology" target="waec_topic_biology_nutrition_in_animals">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
@@ -1701,11 +2201,27 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_further_mathematics">
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_agricultural_science">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
     <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_mathematics">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_english_language">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_chemistry">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_government">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_literature_in_english">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
@@ -1717,11 +2233,15 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_physics">
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_computer_science">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_chemistry">
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_further_mathematics">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_commerce">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
@@ -1729,19 +2249,35 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_english_language">
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_accounting">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_computer_science">
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_physics">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_further_mathematics">
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_agricultural_science">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
     <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_mathematics">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_english_language">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_chemistry">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_government">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_literature_in_english">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
@@ -1753,11 +2289,15 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_physics">
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_computer_science">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_chemistry">
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_further_mathematics">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_commerce">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
@@ -1765,11 +2305,11 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_english_language">
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_accounting">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_computer_science">
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_physics">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
@@ -2809,6 +3349,466 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
+    <edge source="nerdc_ss1_subj_government" target="nerdc_ss1_topic_government_ss1_-_citizenship_and_rights">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_citizenship_and_rights" target="nerdc_ss1_government_citizenship_and_rights_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_citizenship_and_rights" target="nerdc_ss1_government_citizenship_and_rights_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_government" target="nerdc_ss1_topic_government_ss1_-_constitution_and_rule_of_law">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_constitution_and_rule_of_law" target="nerdc_ss1_government_constitution_and_rule_of_law_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_constitution_and_rule_of_law" target="nerdc_ss1_government_constitution_and_rule_of_law_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_government" target="nerdc_ss1_topic_government_ss1_-_forms_of_government">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_forms_of_government" target="nerdc_ss1_government_forms_of_government_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_forms_of_government" target="nerdc_ss1_government_forms_of_government_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_government" target="nerdc_ss1_topic_government_ss1_-_meaning_and_scope_of_government">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_meaning_and_scope_of_government" target="nerdc_ss1_government_meaning_and_scope_of_government_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_meaning_and_scope_of_government" target="nerdc_ss1_government_meaning_and_scope_of_government_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_government" target="nerdc_ss1_topic_government_ss1_-_organs_of_government">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_organs_of_government" target="nerdc_ss1_government_organs_of_government_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_organs_of_government" target="nerdc_ss1_government_organs_of_government_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_government" target="nerdc_ss2_topic_government_ss2_-_delegated_legislation">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_government_ss2_-_delegated_legislation" target="nerdc_ss2_government_delegated_legislation_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_government_ss2_-_delegated_legislation" target="nerdc_ss2_government_delegated_legislation_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_government" target="nerdc_ss2_topic_government_ss2_-_electoral_systems_and_processes">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_government_ss2_-_electoral_systems_and_processes" target="nerdc_ss2_government_electoral_systems_and_processes_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_government_ss2_-_electoral_systems_and_processes" target="nerdc_ss2_government_electoral_systems_and_processes_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_government" target="nerdc_ss2_topic_government_ss2_-_local_government">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_government_ss2_-_local_government" target="nerdc_ss2_government_local_government_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_commerce" target="nerdc_ss1_topic_commerce_ss1_-_business_organizations">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_business_organizations" target="nerdc_ss1_commerce_business_organizations_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_business_organizations" target="nerdc_ss1_commerce_business_organizations_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_commerce" target="nerdc_ss1_topic_commerce_ss1_-_consumer_protection">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_consumer_protection" target="nerdc_ss1_commerce_consumer_protection_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_consumer_protection" target="nerdc_ss1_commerce_consumer_protection_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_commerce" target="nerdc_ss1_topic_commerce_ss1_-_introduction_to_commerce">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_introduction_to_commerce" target="nerdc_ss1_commerce_introduction_to_commerce_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_introduction_to_commerce" target="nerdc_ss1_commerce_introduction_to_commerce_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_commerce" target="nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade" target="nerdc_ss1_commerce_trade_and_aids_to_trade_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade" target="nerdc_ss1_commerce_trade_and_aids_to_trade_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_commerce" target="nerdc_ss1_topic_commerce_ss1_-_wholesale_and_retail">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_wholesale_and_retail" target="nerdc_ss1_commerce_wholesale_and_retail_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_wholesale_and_retail" target="nerdc_ss1_commerce_wholesale_and_retail_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_commerce" target="nerdc_ss2_topic_commerce_ss2_-_banking_and_finance">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_commerce_ss2_-_banking_and_finance" target="nerdc_ss2_commerce_banking_and_finance_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_commerce_ss2_-_banking_and_finance" target="nerdc_ss2_commerce_banking_and_finance_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_commerce" target="nerdc_ss2_topic_commerce_ss2_-_business_capital_and_credit">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_commerce_ss2_-_business_capital_and_credit" target="nerdc_ss2_commerce_business_capital_and_credit_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_commerce_ss2_-_business_capital_and_credit" target="nerdc_ss2_commerce_business_capital_and_credit_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_commerce" target="nerdc_ss2_topic_commerce_ss2_-_insurance">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_commerce_ss2_-_insurance" target="nerdc_ss2_commerce_insurance_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_accounting" target="nerdc_ss1_topic_accounting_ss1_-_books_of_original_entry">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_books_of_original_entry" target="nerdc_ss1_accounting_books_of_original_entry_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_books_of_original_entry" target="nerdc_ss1_accounting_books_of_original_entry_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_accounting" target="nerdc_ss1_topic_accounting_ss1_-_double_entry_principles">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_double_entry_principles" target="nerdc_ss1_accounting_double_entry_principles_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_double_entry_principles" target="nerdc_ss1_accounting_double_entry_principles_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_accounting" target="nerdc_ss1_topic_accounting_ss1_-_introduction_to_accounting">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_introduction_to_accounting" target="nerdc_ss1_accounting_introduction_to_accounting_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_introduction_to_accounting" target="nerdc_ss1_accounting_introduction_to_accounting_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_accounting" target="nerdc_ss1_topic_accounting_ss1_-_ledger_accounts">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_ledger_accounts" target="nerdc_ss1_accounting_ledger_accounts_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_ledger_accounts" target="nerdc_ss1_accounting_ledger_accounts_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_accounting" target="nerdc_ss1_topic_accounting_ss1_-_trial_balance">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_trial_balance" target="nerdc_ss1_accounting_trial_balance_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_trial_balance" target="nerdc_ss1_accounting_trial_balance_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_accounting" target="nerdc_ss2_topic_accounting_ss2_-_cash_book_and_bank_reconciliation">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_accounting_ss2_-_cash_book_and_bank_reconciliation" target="nerdc_ss2_accounting_cash_book_and_bank_reconciliation_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_accounting_ss2_-_cash_book_and_bank_reconciliation" target="nerdc_ss2_accounting_cash_book_and_bank_reconciliation_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_accounting" target="nerdc_ss2_topic_accounting_ss2_-_control_accounts">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_accounting_ss2_-_control_accounts" target="nerdc_ss2_accounting_control_accounts_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_accounting_ss2_-_control_accounts" target="nerdc_ss2_accounting_control_accounts_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_accounting" target="nerdc_ss2_topic_accounting_ss2_-_depreciation">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_accounting_ss2_-_depreciation" target="nerdc_ss2_accounting_depreciation_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_agricultural_science" target="nerdc_ss1_topic_agricultural_science_ss1_-_crop_production">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_crop_production" target="nerdc_ss1_agricultural_science_crop_production_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_crop_production" target="nerdc_ss1_agricultural_science_crop_production_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_agricultural_science" target="nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management" target="nerdc_ss1_agricultural_science_livestock_management_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management" target="nerdc_ss1_agricultural_science_livestock_management_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_agricultural_science" target="nerdc_ss1_topic_agricultural_science_ss1_-_meaning_and_importance_of_agriculture">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_meaning_and_importance_of_agriculture" target="nerdc_ss1_agricultural_science_meaning_and_importance_of_agriculture_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_meaning_and_importance_of_agriculture" target="nerdc_ss1_agricultural_science_meaning_and_importance_of_agriculture_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_agricultural_science" target="nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition" target="nerdc_ss1_agricultural_science_plant_nutrition_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition" target="nerdc_ss1_agricultural_science_plant_nutrition_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_agricultural_science" target="nerdc_ss1_topic_agricultural_science_ss1_-_soil_science">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_soil_science" target="nerdc_ss1_agricultural_science_soil_science_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_soil_science" target="nerdc_ss1_agricultural_science_soil_science_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_agricultural_science" target="nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_ecology">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_ecology" target="nerdc_ss2_agricultural_science_agricultural_ecology_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_ecology" target="nerdc_ss2_agricultural_science_agricultural_ecology_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_agricultural_science" target="nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_economics">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_economics" target="nerdc_ss2_agricultural_science_agricultural_economics_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_economics" target="nerdc_ss2_agricultural_science_agricultural_economics_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_agricultural_science" target="nerdc_ss2_topic_agricultural_science_ss2_-_farm_tools_and_machinery">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_agricultural_science_ss2_-_farm_tools_and_machinery" target="nerdc_ss2_agricultural_science_farm_tools_and_machinery_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_literature_in_english" target="nerdc_ss1_topic_literature_in_english_ss1_-_elements_of_drama">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_elements_of_drama" target="nerdc_ss1_literature_in_english_elements_of_drama_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_elements_of_drama" target="nerdc_ss1_literature_in_english_elements_of_drama_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_literature_in_english" target="nerdc_ss1_topic_literature_in_english_ss1_-_introduction_to_literature">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_introduction_to_literature" target="nerdc_ss1_literature_in_english_introduction_to_literature_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_introduction_to_literature" target="nerdc_ss1_literature_in_english_introduction_to_literature_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_literature_in_english" target="nerdc_ss1_topic_literature_in_english_ss1_-_literary_appreciation">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_literary_appreciation" target="nerdc_ss1_literature_in_english_literary_appreciation_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_literary_appreciation" target="nerdc_ss1_literature_in_english_literary_appreciation_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_literature_in_english" target="nerdc_ss1_topic_literature_in_english_ss1_-_poetry:_forms_and_devices">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_poetry:_forms_and_devices" target="nerdc_ss1_literature_in_english_poetry:_forms_and_devices_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_poetry:_forms_and_devices" target="nerdc_ss1_literature_in_english_poetry:_forms_and_devices_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_subj_literature_in_english" target="nerdc_ss1_topic_literature_in_english_ss1_-_prose:_narrative_techniques">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_prose:_narrative_techniques" target="nerdc_ss1_literature_in_english_prose:_narrative_techniques_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_prose:_narrative_techniques" target="nerdc_ss1_literature_in_english_prose:_narrative_techniques_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_literature_in_english" target="nerdc_ss2_topic_literature_in_english_ss2_-_african_literature">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_literature_in_english_ss2_-_african_literature" target="nerdc_ss2_literature_in_english_african_literature_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_literature_in_english_ss2_-_african_literature" target="nerdc_ss2_literature_in_english_african_literature_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_literature_in_english" target="nerdc_ss2_topic_literature_in_english_ss2_-_drama_analysis">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_literature_in_english_ss2_-_drama_analysis" target="nerdc_ss2_literature_in_english_drama_analysis_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_literature_in_english_ss2_-_drama_analysis" target="nerdc_ss2_literature_in_english_drama_analysis_20260108003035">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_subj_literature_in_english" target="nerdc_ss2_topic_literature_in_english_ss2_-_non-african_literature">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_literature_in_english_ss2_-_non-african_literature" target="nerdc_ss2_literature_in_english_non-african_literature_20260108003017">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
     <edge source="waec_topic_biology_cell_biology" target="nerdc_ss1_topic_biology_cell_biology">
       <data key="edge_type">related_to</data>
       <data key="edge_weight">1.0</data>
@@ -2852,6 +3852,14 @@
     <edge source="nerdc_ss1_topic_mathematics_ss1_-_number_systems" target="nerdc_ss1_topic_computer_science_ss1_-_number_systems">
       <data key="edge_type">related_to</data>
       <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_biology_ss1_-_nutrition" target="nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition">
+      <data key="edge_type">related_to</data>
+      <data key="edge_weight">0.6666666666666666</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_biology_ss2_-_ecology" target="nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_ecology">
+      <data key="edge_type">related_to</data>
+      <data key="edge_weight">0.6666666666666666</data>
     </edge>
     <edge source="waec_topic_biology_cell_biology" target="waec_topic_biology_cell_structure_and_function">
       <data key="edge_type">prerequisite</data>
@@ -3234,6 +4242,126 @@
       <data key="edge_weight">0.5</data>
     </edge>
     <edge source="nerdc_ss2_topic_computer_science_ss2_-_data_structures" target="nerdc_ss2_topic_computer_science_ss2_-_database_systems">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_citizenship_and_rights" target="nerdc_ss1_topic_government_ss1_-_constitution_and_rule_of_law">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_constitution_and_rule_of_law" target="nerdc_ss1_topic_government_ss1_-_forms_of_government">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_forms_of_government" target="nerdc_ss1_topic_government_ss1_-_meaning_and_scope_of_government">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_government_ss1_-_meaning_and_scope_of_government" target="nerdc_ss1_topic_government_ss1_-_organs_of_government">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_government_ss2_-_delegated_legislation" target="nerdc_ss2_topic_government_ss2_-_electoral_systems_and_processes">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_government_ss2_-_electoral_systems_and_processes" target="nerdc_ss2_topic_government_ss2_-_local_government">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_business_organizations" target="nerdc_ss1_topic_commerce_ss1_-_consumer_protection">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_consumer_protection" target="nerdc_ss1_topic_commerce_ss1_-_introduction_to_commerce">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_introduction_to_commerce" target="nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade" target="nerdc_ss1_topic_commerce_ss1_-_wholesale_and_retail">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_commerce_ss2_-_banking_and_finance" target="nerdc_ss2_topic_commerce_ss2_-_business_capital_and_credit">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_commerce_ss2_-_business_capital_and_credit" target="nerdc_ss2_topic_commerce_ss2_-_insurance">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_books_of_original_entry" target="nerdc_ss1_topic_accounting_ss1_-_double_entry_principles">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_double_entry_principles" target="nerdc_ss1_topic_accounting_ss1_-_introduction_to_accounting">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_introduction_to_accounting" target="nerdc_ss1_topic_accounting_ss1_-_ledger_accounts">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_accounting_ss1_-_ledger_accounts" target="nerdc_ss1_topic_accounting_ss1_-_trial_balance">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_accounting_ss2_-_cash_book_and_bank_reconciliation" target="nerdc_ss2_topic_accounting_ss2_-_control_accounts">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_accounting_ss2_-_control_accounts" target="nerdc_ss2_topic_accounting_ss2_-_depreciation">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_crop_production" target="nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management" target="nerdc_ss1_topic_agricultural_science_ss1_-_meaning_and_importance_of_agriculture">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_meaning_and_importance_of_agriculture" target="nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition" target="nerdc_ss1_topic_agricultural_science_ss1_-_soil_science">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_ecology" target="nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_economics">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_economics" target="nerdc_ss2_topic_agricultural_science_ss2_-_farm_tools_and_machinery">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_elements_of_drama" target="nerdc_ss1_topic_literature_in_english_ss1_-_introduction_to_literature">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_introduction_to_literature" target="nerdc_ss1_topic_literature_in_english_ss1_-_literary_appreciation">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_literary_appreciation" target="nerdc_ss1_topic_literature_in_english_ss1_-_poetry:_forms_and_devices">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss1_topic_literature_in_english_ss1_-_poetry:_forms_and_devices" target="nerdc_ss1_topic_literature_in_english_ss1_-_prose:_narrative_techniques">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_literature_in_english_ss2_-_african_literature" target="nerdc_ss2_topic_literature_in_english_ss2_-_drama_analysis">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="nerdc_ss2_topic_literature_in_english_ss2_-_drama_analysis" target="nerdc_ss2_topic_literature_in_english_ss2_-_non-african_literature">
       <data key="edge_type">prerequisite</data>
       <data key="edge_weight">0.5</data>
     </edge>

@@ -858,45 +858,9 @@
       "metadata": {}
     },
     {
-      "id": "nerdc_ss1_subj_biology",
-      "type": "subject",
-      "name": "Biology",
-      "description": "",
-      "level": "SS1",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
       "id": "nerdc_ss1_subj_geography",
       "type": "subject",
       "name": "Geography",
-      "description": "",
-      "level": "SS1",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss1_subj_mathematics",
-      "type": "subject",
-      "name": "Mathematics",
-      "description": "",
-      "level": "SS1",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss1_subj_economics",
-      "type": "subject",
-      "name": "Economics",
-      "description": "",
-      "level": "SS1",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss1_subj_physics",
-      "type": "subject",
-      "name": "Physics",
       "description": "",
       "level": "SS1",
       "curriculum": "NERDC",
@@ -912,18 +876,36 @@
       "metadata": {}
     },
     {
-      "id": "nerdc_ss1_subj_chemistry",
+      "id": "nerdc_ss1_subj_government",
       "type": "subject",
-      "name": "Chemistry",
+      "name": "Government",
       "description": "",
       "level": "SS1",
       "curriculum": "NERDC",
       "metadata": {}
     },
     {
-      "id": "nerdc_ss1_subj_english_language",
+      "id": "nerdc_ss1_subj_literature_in_english",
       "type": "subject",
-      "name": "English Language",
+      "name": "Literature in English",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss1_subj_commerce",
+      "type": "subject",
+      "name": "Commerce",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss1_subj_economics",
+      "type": "subject",
+      "name": "Economics",
       "description": "",
       "level": "SS1",
       "curriculum": "NERDC",
@@ -939,11 +921,65 @@
       "metadata": {}
     },
     {
-      "id": "nerdc_ss2_subj_biology",
+      "id": "nerdc_ss1_subj_accounting",
+      "type": "subject",
+      "name": "Accounting",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss1_subj_biology",
       "type": "subject",
       "name": "Biology",
       "description": "",
-      "level": "SS2",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss1_subj_mathematics",
+      "type": "subject",
+      "name": "Mathematics",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss1_subj_agricultural_science",
+      "type": "subject",
+      "name": "Agricultural Science",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss1_subj_english_language",
+      "type": "subject",
+      "name": "English Language",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss1_subj_chemistry",
+      "type": "subject",
+      "name": "Chemistry",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss1_subj_physics",
+      "type": "subject",
+      "name": "Physics",
+      "description": "",
+      "level": "SS1",
       "curriculum": "NERDC",
       "metadata": {}
     },
@@ -951,33 +987,6 @@
       "id": "nerdc_ss2_subj_geography",
       "type": "subject",
       "name": "Geography",
-      "description": "",
-      "level": "SS2",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss2_subj_mathematics",
-      "type": "subject",
-      "name": "Mathematics",
-      "description": "",
-      "level": "SS2",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss2_subj_economics",
-      "type": "subject",
-      "name": "Economics",
-      "description": "",
-      "level": "SS2",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss2_subj_physics",
-      "type": "subject",
-      "name": "Physics",
       "description": "",
       "level": "SS2",
       "curriculum": "NERDC",
@@ -993,9 +1002,81 @@
       "metadata": {}
     },
     {
-      "id": "nerdc_ss2_subj_chemistry",
+      "id": "nerdc_ss2_subj_government",
       "type": "subject",
-      "name": "Chemistry",
+      "name": "Government",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_literature_in_english",
+      "type": "subject",
+      "name": "Literature in English",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_commerce",
+      "type": "subject",
+      "name": "Commerce",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_economics",
+      "type": "subject",
+      "name": "Economics",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_further_mathematics",
+      "type": "subject",
+      "name": "Further Mathematics",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_accounting",
+      "type": "subject",
+      "name": "Accounting",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_biology",
+      "type": "subject",
+      "name": "Biology",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_mathematics",
+      "type": "subject",
+      "name": "Mathematics",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_agricultural_science",
+      "type": "subject",
+      "name": "Agricultural Science",
       "description": "",
       "level": "SS2",
       "curriculum": "NERDC",
@@ -1011,9 +1092,18 @@
       "metadata": {}
     },
     {
-      "id": "nerdc_ss2_subj_further_mathematics",
+      "id": "nerdc_ss2_subj_chemistry",
       "type": "subject",
-      "name": "Further Mathematics",
+      "name": "Chemistry",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_physics",
+      "type": "subject",
+      "name": "Physics",
       "description": "",
       "level": "SS2",
       "curriculum": "NERDC",
@@ -4201,6 +4291,1421 @@
         "topic": "SS2 - Database Systems",
         "difficulty": "intermediate"
       }
+    },
+    {
+      "id": "nerdc_ss1_topic_government_ss1_-_citizenship_and_rights",
+      "type": "topic",
+      "name": "SS1 - Citizenship and Rights",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "nerdc_ss1_government_citizenship_and_rights_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Citizenship and Rights",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS1 - Citizenship and Rights",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_government_citizenship_and_rights_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Citizenship and Rights",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS1 - Citizenship and Rights",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_government_ss1_-_constitution_and_rule_of_law",
+      "type": "topic",
+      "name": "SS1 - Constitution and Rule of Law",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "nerdc_ss1_government_constitution_and_rule_of_law_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Constitution and Rule of Law",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS1 - Constitution and Rule of Law",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_government_constitution_and_rule_of_law_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Constitution and Rule of Law",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS1 - Constitution and Rule of Law",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_government_ss1_-_forms_of_government",
+      "type": "topic",
+      "name": "SS1 - Forms of Government",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "nerdc_ss1_government_forms_of_government_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Forms of Government",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS1 - Forms of Government",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_government_forms_of_government_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Forms of Government",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS1 - Forms of Government",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_government_ss1_-_meaning_and_scope_of_government",
+      "type": "topic",
+      "name": "SS1 - Meaning and Scope of Government",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "nerdc_ss1_government_meaning_and_scope_of_government_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Meaning and Scope of Government",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS1 - Meaning and Scope of Government",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_government_meaning_and_scope_of_government_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Meaning and Scope of Government",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS1 - Meaning and Scope of Government",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_government_ss1_-_organs_of_government",
+      "type": "topic",
+      "name": "SS1 - Organs of Government",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "nerdc_ss1_government_organs_of_government_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Organs of Government",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS1 - Organs of Government",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_government_organs_of_government_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Organs of Government",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS1 - Organs of Government",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_government_ss2_-_delegated_legislation",
+      "type": "topic",
+      "name": "SS2 - Delegated Legislation",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "nerdc_ss2_government_delegated_legislation_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Delegated Legislation",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS2 - Delegated Legislation",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_government_delegated_legislation_20260108003035",
+      "type": "lesson",
+      "name": "SS2 - Delegated Legislation",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS2 - Delegated Legislation",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_government_ss2_-_electoral_systems_and_processes",
+      "type": "topic",
+      "name": "SS2 - Electoral Systems and Processes",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "nerdc_ss2_government_electoral_systems_and_processes_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Electoral Systems and Processes",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS2 - Electoral Systems and Processes",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_government_electoral_systems_and_processes_20260108003035",
+      "type": "lesson",
+      "name": "SS2 - Electoral Systems and Processes",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS2 - Electoral Systems and Processes",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_government_ss2_-_local_government",
+      "type": "topic",
+      "name": "SS2 - Local Government",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "nerdc_ss2_government_local_government_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Local Government",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "SS2 - Local Government",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_commerce_ss1_-_business_organizations",
+      "type": "topic",
+      "name": "SS1 - Business Organizations",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "nerdc_ss1_commerce_business_organizations_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Business Organizations",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS1 - Business Organizations",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_commerce_business_organizations_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Business Organizations",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS1 - Business Organizations",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_commerce_ss1_-_consumer_protection",
+      "type": "topic",
+      "name": "SS1 - Consumer Protection",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "nerdc_ss1_commerce_consumer_protection_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Consumer Protection",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS1 - Consumer Protection",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_commerce_consumer_protection_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Consumer Protection",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS1 - Consumer Protection",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_commerce_ss1_-_introduction_to_commerce",
+      "type": "topic",
+      "name": "SS1 - Introduction to Commerce",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "nerdc_ss1_commerce_introduction_to_commerce_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Introduction to Commerce",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS1 - Introduction to Commerce",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_commerce_introduction_to_commerce_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Introduction to Commerce",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS1 - Introduction to Commerce",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade",
+      "type": "topic",
+      "name": "SS1 - Trade and Aids to Trade",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "nerdc_ss1_commerce_trade_and_aids_to_trade_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Trade and Aids to Trade",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS1 - Trade and Aids to Trade",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_commerce_trade_and_aids_to_trade_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Trade and Aids to Trade",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS1 - Trade and Aids to Trade",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_commerce_ss1_-_wholesale_and_retail",
+      "type": "topic",
+      "name": "SS1 - Wholesale and Retail",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "nerdc_ss1_commerce_wholesale_and_retail_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Wholesale and Retail",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS1 - Wholesale and Retail",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_commerce_wholesale_and_retail_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Wholesale and Retail",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS1 - Wholesale and Retail",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_commerce_ss2_-_banking_and_finance",
+      "type": "topic",
+      "name": "SS2 - Banking and Finance",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "nerdc_ss2_commerce_banking_and_finance_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Banking and Finance",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS2 - Banking and Finance",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_commerce_banking_and_finance_20260108003035",
+      "type": "lesson",
+      "name": "SS2 - Banking and Finance",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS2 - Banking and Finance",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_commerce_ss2_-_business_capital_and_credit",
+      "type": "topic",
+      "name": "SS2 - Business Capital and Credit",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "nerdc_ss2_commerce_business_capital_and_credit_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Business Capital and Credit",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS2 - Business Capital and Credit",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_commerce_business_capital_and_credit_20260108003035",
+      "type": "lesson",
+      "name": "SS2 - Business Capital and Credit",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS2 - Business Capital and Credit",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_commerce_ss2_-_insurance",
+      "type": "topic",
+      "name": "SS2 - Insurance",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "nerdc_ss2_commerce_insurance_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Insurance",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "SS2 - Insurance",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_accounting_ss1_-_books_of_original_entry",
+      "type": "topic",
+      "name": "SS1 - Books of Original Entry",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "nerdc_ss1_accounting_books_of_original_entry_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Books of Original Entry",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS1 - Books of Original Entry",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_accounting_books_of_original_entry_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Books of Original Entry",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS1 - Books of Original Entry",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_accounting_ss1_-_double_entry_principles",
+      "type": "topic",
+      "name": "SS1 - Double Entry Principles",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "nerdc_ss1_accounting_double_entry_principles_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Double Entry Principles",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS1 - Double Entry Principles",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_accounting_double_entry_principles_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Double Entry Principles",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS1 - Double Entry Principles",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_accounting_ss1_-_introduction_to_accounting",
+      "type": "topic",
+      "name": "SS1 - Introduction to Accounting",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "nerdc_ss1_accounting_introduction_to_accounting_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Introduction to Accounting",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS1 - Introduction to Accounting",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_accounting_introduction_to_accounting_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Introduction to Accounting",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS1 - Introduction to Accounting",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_accounting_ss1_-_ledger_accounts",
+      "type": "topic",
+      "name": "SS1 - Ledger Accounts",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "nerdc_ss1_accounting_ledger_accounts_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Ledger Accounts",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS1 - Ledger Accounts",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_accounting_ledger_accounts_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Ledger Accounts",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS1 - Ledger Accounts",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_accounting_ss1_-_trial_balance",
+      "type": "topic",
+      "name": "SS1 - Trial Balance",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "nerdc_ss1_accounting_trial_balance_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Trial Balance",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS1 - Trial Balance",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_accounting_trial_balance_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Trial Balance",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS1 - Trial Balance",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_accounting_ss2_-_cash_book_and_bank_reconciliation",
+      "type": "topic",
+      "name": "SS2 - Cash Book and Bank Reconciliation",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "nerdc_ss2_accounting_cash_book_and_bank_reconciliation_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Cash Book and Bank Reconciliation",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS2 - Cash Book and Bank Reconciliation",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_accounting_cash_book_and_bank_reconciliation_20260108003035",
+      "type": "lesson",
+      "name": "SS2 - Cash Book and Bank Reconciliation",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS2 - Cash Book and Bank Reconciliation",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_accounting_ss2_-_control_accounts",
+      "type": "topic",
+      "name": "SS2 - Control Accounts",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "nerdc_ss2_accounting_control_accounts_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Control Accounts",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS2 - Control Accounts",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_accounting_control_accounts_20260108003035",
+      "type": "lesson",
+      "name": "SS2 - Control Accounts",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS2 - Control Accounts",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_accounting_ss2_-_depreciation",
+      "type": "topic",
+      "name": "SS2 - Depreciation",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "nerdc_ss2_accounting_depreciation_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Depreciation",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "SS2 - Depreciation",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_agricultural_science_ss1_-_crop_production",
+      "type": "topic",
+      "name": "SS1 - Crop Production",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "nerdc_ss1_agricultural_science_crop_production_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Crop Production",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS1 - Crop Production",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_agricultural_science_crop_production_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Crop Production",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS1 - Crop Production",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management",
+      "type": "topic",
+      "name": "SS1 - Livestock Management",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "nerdc_ss1_agricultural_science_livestock_management_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Livestock Management",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS1 - Livestock Management",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_agricultural_science_livestock_management_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Livestock Management",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS1 - Livestock Management",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_agricultural_science_ss1_-_meaning_and_importance_of_agriculture",
+      "type": "topic",
+      "name": "SS1 - Meaning and Importance of Agriculture",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "nerdc_ss1_agricultural_science_meaning_and_importance_of_agriculture_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Meaning and Importance of Agriculture",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS1 - Meaning and Importance of Agriculture",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_agricultural_science_meaning_and_importance_of_agriculture_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Meaning and Importance of Agriculture",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS1 - Meaning and Importance of Agriculture",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition",
+      "type": "topic",
+      "name": "SS1 - Plant Nutrition",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "nerdc_ss1_agricultural_science_plant_nutrition_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Plant Nutrition",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS1 - Plant Nutrition",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_agricultural_science_plant_nutrition_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Plant Nutrition",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS1 - Plant Nutrition",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_agricultural_science_ss1_-_soil_science",
+      "type": "topic",
+      "name": "SS1 - Soil Science",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "nerdc_ss1_agricultural_science_soil_science_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Soil Science",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS1 - Soil Science",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_agricultural_science_soil_science_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Soil Science",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS1 - Soil Science",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_ecology",
+      "type": "topic",
+      "name": "SS2 - Agricultural Ecology",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "nerdc_ss2_agricultural_science_agricultural_ecology_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Agricultural Ecology",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS2 - Agricultural Ecology",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_agricultural_science_agricultural_ecology_20260108003035",
+      "type": "lesson",
+      "name": "SS2 - Agricultural Ecology",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS2 - Agricultural Ecology",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_economics",
+      "type": "topic",
+      "name": "SS2 - Agricultural Economics",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "nerdc_ss2_agricultural_science_agricultural_economics_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Agricultural Economics",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS2 - Agricultural Economics",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_agricultural_science_agricultural_economics_20260108003035",
+      "type": "lesson",
+      "name": "SS2 - Agricultural Economics",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS2 - Agricultural Economics",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_agricultural_science_ss2_-_farm_tools_and_machinery",
+      "type": "topic",
+      "name": "SS2 - Farm Tools and Machinery",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "nerdc_ss2_agricultural_science_farm_tools_and_machinery_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Farm Tools and Machinery",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "SS2 - Farm Tools and Machinery",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_literature_in_english_ss1_-_elements_of_drama",
+      "type": "topic",
+      "name": "SS1 - Elements of Drama",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "nerdc_ss1_literature_in_english_elements_of_drama_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Elements of Drama",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS1 - Elements of Drama",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_literature_in_english_elements_of_drama_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Elements of Drama",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS1 - Elements of Drama",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_literature_in_english_ss1_-_introduction_to_literature",
+      "type": "topic",
+      "name": "SS1 - Introduction to Literature",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "nerdc_ss1_literature_in_english_introduction_to_literature_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Introduction to Literature",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS1 - Introduction to Literature",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_literature_in_english_introduction_to_literature_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Introduction to Literature",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS1 - Introduction to Literature",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_literature_in_english_ss1_-_literary_appreciation",
+      "type": "topic",
+      "name": "SS1 - Literary Appreciation",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "nerdc_ss1_literature_in_english_literary_appreciation_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Literary Appreciation",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS1 - Literary Appreciation",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_literature_in_english_literary_appreciation_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Literary Appreciation",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS1 - Literary Appreciation",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_literature_in_english_ss1_-_poetry:_forms_and_devices",
+      "type": "topic",
+      "name": "SS1 - Poetry: Forms and Devices",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "nerdc_ss1_literature_in_english_poetry:_forms_and_devices_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Poetry: Forms and Devices",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS1 - Poetry: Forms and Devices",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_literature_in_english_poetry:_forms_and_devices_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Poetry: Forms and Devices",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS1 - Poetry: Forms and Devices",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_topic_literature_in_english_ss1_-_prose:_narrative_techniques",
+      "type": "topic",
+      "name": "SS1 - Prose: Narrative Techniques",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "nerdc_ss1_literature_in_english_prose:_narrative_techniques_20260108003017",
+      "type": "lesson",
+      "name": "SS1 - Prose: Narrative Techniques",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS1 - Prose: Narrative Techniques",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss1_literature_in_english_prose:_narrative_techniques_20260108003035",
+      "type": "lesson",
+      "name": "SS1 - Prose: Narrative Techniques",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS1 - Prose: Narrative Techniques",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_literature_in_english_ss2_-_african_literature",
+      "type": "topic",
+      "name": "SS2 - African Literature",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "nerdc_ss2_literature_in_english_african_literature_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - African Literature",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS2 - African Literature",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_literature_in_english_african_literature_20260108003035",
+      "type": "lesson",
+      "name": "SS2 - African Literature",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS2 - African Literature",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_literature_in_english_ss2_-_drama_analysis",
+      "type": "topic",
+      "name": "SS2 - Drama Analysis",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "nerdc_ss2_literature_in_english_drama_analysis_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Drama Analysis",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS2 - Drama Analysis",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_literature_in_english_drama_analysis_20260108003035",
+      "type": "lesson",
+      "name": "SS2 - Drama Analysis",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS2 - Drama Analysis",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "nerdc_ss2_topic_literature_in_english_ss2_-_non-african_literature",
+      "type": "topic",
+      "name": "SS2 - Non-African Literature",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "nerdc_ss2_literature_in_english_non-african_literature_20260108003017",
+      "type": "lesson",
+      "name": "SS2 - Non-African Literature",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "SS2 - Non-African Literature",
+        "difficulty": "intermediate"
+      }
     }
   ],
   "edges": [
@@ -4724,35 +6229,7 @@
     },
     {
       "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_biology",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss1",
       "target_id": "nerdc_ss1_subj_geography",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_mathematics",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_economics",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_physics",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -4766,7 +6243,63 @@
     },
     {
       "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_chemistry",
+      "target_id": "nerdc_ss1_subj_government",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_literature_in_english",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_commerce",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_economics",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_further_mathematics",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_accounting",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_biology",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_mathematics",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_agricultural_science",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -4780,14 +6313,14 @@
     },
     {
       "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_further_mathematics",
+      "target_id": "nerdc_ss1_subj_chemistry",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
     },
     {
-      "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_biology",
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_physics",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -4801,7 +6334,28 @@
     },
     {
       "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_mathematics",
+      "target_id": "nerdc_ss2_subj_computer_science",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss2",
+      "target_id": "nerdc_ss2_subj_government",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss2",
+      "target_id": "nerdc_ss2_subj_literature_in_english",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss2",
+      "target_id": "nerdc_ss2_subj_commerce",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -4815,21 +6369,35 @@
     },
     {
       "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_physics",
+      "target_id": "nerdc_ss2_subj_further_mathematics",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
     },
     {
       "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_computer_science",
+      "target_id": "nerdc_ss2_subj_accounting",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
     },
     {
       "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_chemistry",
+      "target_id": "nerdc_ss2_subj_biology",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss2",
+      "target_id": "nerdc_ss2_subj_mathematics",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss2",
+      "target_id": "nerdc_ss2_subj_agricultural_science",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -4843,7 +6411,14 @@
     },
     {
       "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_further_mathematics",
+      "target_id": "nerdc_ss2_subj_chemistry",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss2",
+      "target_id": "nerdc_ss2_subj_physics",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -6662,6 +8237,811 @@
       "metadata": {}
     },
     {
+      "source_id": "nerdc_ss1_subj_government",
+      "target_id": "nerdc_ss1_topic_government_ss1_-_citizenship_and_rights",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_citizenship_and_rights",
+      "target_id": "nerdc_ss1_government_citizenship_and_rights_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_citizenship_and_rights",
+      "target_id": "nerdc_ss1_government_citizenship_and_rights_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_government",
+      "target_id": "nerdc_ss1_topic_government_ss1_-_constitution_and_rule_of_law",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_constitution_and_rule_of_law",
+      "target_id": "nerdc_ss1_government_constitution_and_rule_of_law_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_constitution_and_rule_of_law",
+      "target_id": "nerdc_ss1_government_constitution_and_rule_of_law_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_government",
+      "target_id": "nerdc_ss1_topic_government_ss1_-_forms_of_government",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_forms_of_government",
+      "target_id": "nerdc_ss1_government_forms_of_government_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_forms_of_government",
+      "target_id": "nerdc_ss1_government_forms_of_government_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_government",
+      "target_id": "nerdc_ss1_topic_government_ss1_-_meaning_and_scope_of_government",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_meaning_and_scope_of_government",
+      "target_id": "nerdc_ss1_government_meaning_and_scope_of_government_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_meaning_and_scope_of_government",
+      "target_id": "nerdc_ss1_government_meaning_and_scope_of_government_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_government",
+      "target_id": "nerdc_ss1_topic_government_ss1_-_organs_of_government",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_organs_of_government",
+      "target_id": "nerdc_ss1_government_organs_of_government_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_organs_of_government",
+      "target_id": "nerdc_ss1_government_organs_of_government_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_government",
+      "target_id": "nerdc_ss2_topic_government_ss2_-_delegated_legislation",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_government_ss2_-_delegated_legislation",
+      "target_id": "nerdc_ss2_government_delegated_legislation_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_government_ss2_-_delegated_legislation",
+      "target_id": "nerdc_ss2_government_delegated_legislation_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_government",
+      "target_id": "nerdc_ss2_topic_government_ss2_-_electoral_systems_and_processes",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_government_ss2_-_electoral_systems_and_processes",
+      "target_id": "nerdc_ss2_government_electoral_systems_and_processes_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_government_ss2_-_electoral_systems_and_processes",
+      "target_id": "nerdc_ss2_government_electoral_systems_and_processes_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_government",
+      "target_id": "nerdc_ss2_topic_government_ss2_-_local_government",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_government_ss2_-_local_government",
+      "target_id": "nerdc_ss2_government_local_government_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_commerce",
+      "target_id": "nerdc_ss1_topic_commerce_ss1_-_business_organizations",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_business_organizations",
+      "target_id": "nerdc_ss1_commerce_business_organizations_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_business_organizations",
+      "target_id": "nerdc_ss1_commerce_business_organizations_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_commerce",
+      "target_id": "nerdc_ss1_topic_commerce_ss1_-_consumer_protection",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_consumer_protection",
+      "target_id": "nerdc_ss1_commerce_consumer_protection_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_consumer_protection",
+      "target_id": "nerdc_ss1_commerce_consumer_protection_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_commerce",
+      "target_id": "nerdc_ss1_topic_commerce_ss1_-_introduction_to_commerce",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_introduction_to_commerce",
+      "target_id": "nerdc_ss1_commerce_introduction_to_commerce_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_introduction_to_commerce",
+      "target_id": "nerdc_ss1_commerce_introduction_to_commerce_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_commerce",
+      "target_id": "nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade",
+      "target_id": "nerdc_ss1_commerce_trade_and_aids_to_trade_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade",
+      "target_id": "nerdc_ss1_commerce_trade_and_aids_to_trade_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_commerce",
+      "target_id": "nerdc_ss1_topic_commerce_ss1_-_wholesale_and_retail",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_wholesale_and_retail",
+      "target_id": "nerdc_ss1_commerce_wholesale_and_retail_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_wholesale_and_retail",
+      "target_id": "nerdc_ss1_commerce_wholesale_and_retail_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_commerce",
+      "target_id": "nerdc_ss2_topic_commerce_ss2_-_banking_and_finance",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_commerce_ss2_-_banking_and_finance",
+      "target_id": "nerdc_ss2_commerce_banking_and_finance_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_commerce_ss2_-_banking_and_finance",
+      "target_id": "nerdc_ss2_commerce_banking_and_finance_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_commerce",
+      "target_id": "nerdc_ss2_topic_commerce_ss2_-_business_capital_and_credit",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_commerce_ss2_-_business_capital_and_credit",
+      "target_id": "nerdc_ss2_commerce_business_capital_and_credit_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_commerce_ss2_-_business_capital_and_credit",
+      "target_id": "nerdc_ss2_commerce_business_capital_and_credit_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_commerce",
+      "target_id": "nerdc_ss2_topic_commerce_ss2_-_insurance",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_commerce_ss2_-_insurance",
+      "target_id": "nerdc_ss2_commerce_insurance_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_accounting",
+      "target_id": "nerdc_ss1_topic_accounting_ss1_-_books_of_original_entry",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_books_of_original_entry",
+      "target_id": "nerdc_ss1_accounting_books_of_original_entry_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_books_of_original_entry",
+      "target_id": "nerdc_ss1_accounting_books_of_original_entry_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_accounting",
+      "target_id": "nerdc_ss1_topic_accounting_ss1_-_double_entry_principles",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_double_entry_principles",
+      "target_id": "nerdc_ss1_accounting_double_entry_principles_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_double_entry_principles",
+      "target_id": "nerdc_ss1_accounting_double_entry_principles_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_accounting",
+      "target_id": "nerdc_ss1_topic_accounting_ss1_-_introduction_to_accounting",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_introduction_to_accounting",
+      "target_id": "nerdc_ss1_accounting_introduction_to_accounting_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_introduction_to_accounting",
+      "target_id": "nerdc_ss1_accounting_introduction_to_accounting_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_accounting",
+      "target_id": "nerdc_ss1_topic_accounting_ss1_-_ledger_accounts",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_ledger_accounts",
+      "target_id": "nerdc_ss1_accounting_ledger_accounts_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_ledger_accounts",
+      "target_id": "nerdc_ss1_accounting_ledger_accounts_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_accounting",
+      "target_id": "nerdc_ss1_topic_accounting_ss1_-_trial_balance",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_trial_balance",
+      "target_id": "nerdc_ss1_accounting_trial_balance_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_trial_balance",
+      "target_id": "nerdc_ss1_accounting_trial_balance_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_accounting",
+      "target_id": "nerdc_ss2_topic_accounting_ss2_-_cash_book_and_bank_reconciliation",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_accounting_ss2_-_cash_book_and_bank_reconciliation",
+      "target_id": "nerdc_ss2_accounting_cash_book_and_bank_reconciliation_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_accounting_ss2_-_cash_book_and_bank_reconciliation",
+      "target_id": "nerdc_ss2_accounting_cash_book_and_bank_reconciliation_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_accounting",
+      "target_id": "nerdc_ss2_topic_accounting_ss2_-_control_accounts",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_accounting_ss2_-_control_accounts",
+      "target_id": "nerdc_ss2_accounting_control_accounts_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_accounting_ss2_-_control_accounts",
+      "target_id": "nerdc_ss2_accounting_control_accounts_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_accounting",
+      "target_id": "nerdc_ss2_topic_accounting_ss2_-_depreciation",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_accounting_ss2_-_depreciation",
+      "target_id": "nerdc_ss2_accounting_depreciation_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_agricultural_science",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_crop_production",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_crop_production",
+      "target_id": "nerdc_ss1_agricultural_science_crop_production_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_crop_production",
+      "target_id": "nerdc_ss1_agricultural_science_crop_production_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_agricultural_science",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management",
+      "target_id": "nerdc_ss1_agricultural_science_livestock_management_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management",
+      "target_id": "nerdc_ss1_agricultural_science_livestock_management_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_agricultural_science",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_meaning_and_importance_of_agriculture",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_meaning_and_importance_of_agriculture",
+      "target_id": "nerdc_ss1_agricultural_science_meaning_and_importance_of_agriculture_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_meaning_and_importance_of_agriculture",
+      "target_id": "nerdc_ss1_agricultural_science_meaning_and_importance_of_agriculture_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_agricultural_science",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition",
+      "target_id": "nerdc_ss1_agricultural_science_plant_nutrition_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition",
+      "target_id": "nerdc_ss1_agricultural_science_plant_nutrition_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_agricultural_science",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_soil_science",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_soil_science",
+      "target_id": "nerdc_ss1_agricultural_science_soil_science_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_soil_science",
+      "target_id": "nerdc_ss1_agricultural_science_soil_science_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_agricultural_science",
+      "target_id": "nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_ecology",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_ecology",
+      "target_id": "nerdc_ss2_agricultural_science_agricultural_ecology_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_ecology",
+      "target_id": "nerdc_ss2_agricultural_science_agricultural_ecology_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_agricultural_science",
+      "target_id": "nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_economics",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_economics",
+      "target_id": "nerdc_ss2_agricultural_science_agricultural_economics_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_economics",
+      "target_id": "nerdc_ss2_agricultural_science_agricultural_economics_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_agricultural_science",
+      "target_id": "nerdc_ss2_topic_agricultural_science_ss2_-_farm_tools_and_machinery",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_agricultural_science_ss2_-_farm_tools_and_machinery",
+      "target_id": "nerdc_ss2_agricultural_science_farm_tools_and_machinery_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_literature_in_english",
+      "target_id": "nerdc_ss1_topic_literature_in_english_ss1_-_elements_of_drama",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_elements_of_drama",
+      "target_id": "nerdc_ss1_literature_in_english_elements_of_drama_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_elements_of_drama",
+      "target_id": "nerdc_ss1_literature_in_english_elements_of_drama_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_literature_in_english",
+      "target_id": "nerdc_ss1_topic_literature_in_english_ss1_-_introduction_to_literature",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_introduction_to_literature",
+      "target_id": "nerdc_ss1_literature_in_english_introduction_to_literature_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_introduction_to_literature",
+      "target_id": "nerdc_ss1_literature_in_english_introduction_to_literature_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_literature_in_english",
+      "target_id": "nerdc_ss1_topic_literature_in_english_ss1_-_literary_appreciation",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_literary_appreciation",
+      "target_id": "nerdc_ss1_literature_in_english_literary_appreciation_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_literary_appreciation",
+      "target_id": "nerdc_ss1_literature_in_english_literary_appreciation_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_literature_in_english",
+      "target_id": "nerdc_ss1_topic_literature_in_english_ss1_-_poetry:_forms_and_devices",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_poetry:_forms_and_devices",
+      "target_id": "nerdc_ss1_literature_in_english_poetry:_forms_and_devices_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_poetry:_forms_and_devices",
+      "target_id": "nerdc_ss1_literature_in_english_poetry:_forms_and_devices_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_subj_literature_in_english",
+      "target_id": "nerdc_ss1_topic_literature_in_english_ss1_-_prose:_narrative_techniques",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_prose:_narrative_techniques",
+      "target_id": "nerdc_ss1_literature_in_english_prose:_narrative_techniques_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_prose:_narrative_techniques",
+      "target_id": "nerdc_ss1_literature_in_english_prose:_narrative_techniques_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_literature_in_english",
+      "target_id": "nerdc_ss2_topic_literature_in_english_ss2_-_african_literature",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_literature_in_english_ss2_-_african_literature",
+      "target_id": "nerdc_ss2_literature_in_english_african_literature_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_literature_in_english_ss2_-_african_literature",
+      "target_id": "nerdc_ss2_literature_in_english_african_literature_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_literature_in_english",
+      "target_id": "nerdc_ss2_topic_literature_in_english_ss2_-_drama_analysis",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_literature_in_english_ss2_-_drama_analysis",
+      "target_id": "nerdc_ss2_literature_in_english_drama_analysis_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_literature_in_english_ss2_-_drama_analysis",
+      "target_id": "nerdc_ss2_literature_in_english_drama_analysis_20260108003035",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_subj_literature_in_english",
+      "target_id": "nerdc_ss2_topic_literature_in_english_ss2_-_non-african_literature",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_literature_in_english_ss2_-_non-african_literature",
+      "target_id": "nerdc_ss2_literature_in_english_non-african_literature_20260108003017",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
       "source_id": "waec_topic_biology_cell_biology",
       "target_id": "nerdc_ss1_topic_biology_cell_biology",
       "relationship_type": "related_to",
@@ -6736,6 +9116,20 @@
       "target_id": "nerdc_ss1_topic_computer_science_ss1_-_number_systems",
       "relationship_type": "related_to",
       "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_biology_ss1_-_nutrition",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition",
+      "relationship_type": "related_to",
+      "weight": 0.6666666666666666,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_biology_ss2_-_ecology",
+      "target_id": "nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_ecology",
+      "relationship_type": "related_to",
+      "weight": 0.6666666666666666,
       "metadata": {}
     },
     {
@@ -7409,15 +9803,225 @@
       "relationship_type": "prerequisite",
       "weight": 0.5,
       "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_citizenship_and_rights",
+      "target_id": "nerdc_ss1_topic_government_ss1_-_constitution_and_rule_of_law",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_constitution_and_rule_of_law",
+      "target_id": "nerdc_ss1_topic_government_ss1_-_forms_of_government",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_forms_of_government",
+      "target_id": "nerdc_ss1_topic_government_ss1_-_meaning_and_scope_of_government",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_government_ss1_-_meaning_and_scope_of_government",
+      "target_id": "nerdc_ss1_topic_government_ss1_-_organs_of_government",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_government_ss2_-_delegated_legislation",
+      "target_id": "nerdc_ss2_topic_government_ss2_-_electoral_systems_and_processes",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_government_ss2_-_electoral_systems_and_processes",
+      "target_id": "nerdc_ss2_topic_government_ss2_-_local_government",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_business_organizations",
+      "target_id": "nerdc_ss1_topic_commerce_ss1_-_consumer_protection",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_consumer_protection",
+      "target_id": "nerdc_ss1_topic_commerce_ss1_-_introduction_to_commerce",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_introduction_to_commerce",
+      "target_id": "nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade",
+      "target_id": "nerdc_ss1_topic_commerce_ss1_-_wholesale_and_retail",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_commerce_ss2_-_banking_and_finance",
+      "target_id": "nerdc_ss2_topic_commerce_ss2_-_business_capital_and_credit",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_commerce_ss2_-_business_capital_and_credit",
+      "target_id": "nerdc_ss2_topic_commerce_ss2_-_insurance",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_books_of_original_entry",
+      "target_id": "nerdc_ss1_topic_accounting_ss1_-_double_entry_principles",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_double_entry_principles",
+      "target_id": "nerdc_ss1_topic_accounting_ss1_-_introduction_to_accounting",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_introduction_to_accounting",
+      "target_id": "nerdc_ss1_topic_accounting_ss1_-_ledger_accounts",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_accounting_ss1_-_ledger_accounts",
+      "target_id": "nerdc_ss1_topic_accounting_ss1_-_trial_balance",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_accounting_ss2_-_cash_book_and_bank_reconciliation",
+      "target_id": "nerdc_ss2_topic_accounting_ss2_-_control_accounts",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_accounting_ss2_-_control_accounts",
+      "target_id": "nerdc_ss2_topic_accounting_ss2_-_depreciation",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_crop_production",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_meaning_and_importance_of_agriculture",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_meaning_and_importance_of_agriculture",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_agricultural_science_ss1_-_plant_nutrition",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_soil_science",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_ecology",
+      "target_id": "nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_economics",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_agricultural_science_ss2_-_agricultural_economics",
+      "target_id": "nerdc_ss2_topic_agricultural_science_ss2_-_farm_tools_and_machinery",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_elements_of_drama",
+      "target_id": "nerdc_ss1_topic_literature_in_english_ss1_-_introduction_to_literature",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_introduction_to_literature",
+      "target_id": "nerdc_ss1_topic_literature_in_english_ss1_-_literary_appreciation",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_literary_appreciation",
+      "target_id": "nerdc_ss1_topic_literature_in_english_ss1_-_poetry:_forms_and_devices",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss1_topic_literature_in_english_ss1_-_poetry:_forms_and_devices",
+      "target_id": "nerdc_ss1_topic_literature_in_english_ss1_-_prose:_narrative_techniques",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_literature_in_english_ss2_-_african_literature",
+      "target_id": "nerdc_ss2_topic_literature_in_english_ss2_-_drama_analysis",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_ss2_topic_literature_in_english_ss2_-_drama_analysis",
+      "target_id": "nerdc_ss2_topic_literature_in_english_ss2_-_non-african_literature",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
     }
   ],
   "stats": {
-    "total_nodes": 350,
-    "total_edges": 458,
+    "total_nodes": 475,
+    "total_edges": 615,
     "node_types": {
-      "subject": 24,
-      "topic": 120,
-      "lesson": 203,
+      "subject": 34,
+      "topic": 160,
+      "lesson": 278,
       "level": 3
     }
   }
