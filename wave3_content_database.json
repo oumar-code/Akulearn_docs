@@ -2,7 +2,7 @@
   "metadata": {
     "version": "3.0.0",
     "generated_at": "2026-01-01T06:40:02.984645",
-    "total_items": 83,
+    "total_items": 88,
     "statistics": {
       "total_imported": 83,
       "by_subject": {
@@ -25,7 +25,7 @@
       },
       "errors": []
     },
-    "last_updated": "2026-01-06T00:04:53.322975",
+    "last_updated": "2026-01-07T15:10:45.077075",
     "batch4_added": "2026-01-05T18:05:02.707737",
     "batch5_added": "2026-01-06T00:04:53.323007"
   },
@@ -4243,6 +4243,396 @@
         "prompt": "Educational diagram showing States of Matter for WAEC Chemistry, clear science illustrations, classroom, readable labels, high contrast, professional quality",
         "generated_at": "2026-01-07T08:27:11.309909"
       }
+    },
+    {
+      "id": "waec_english_comprehension_and_summary_20260107151044",
+      "title": "Comprehension and Summary",
+      "subject": "English Language",
+      "topic": "Comprehension and Summary",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of comprehension and summary",
+        "Apply comprehension and summary to real-world scenarios",
+        "Analyze and solve problems related to comprehension and summary"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_comprehension_and_summary",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Comprehension and Summary and their importance in English Language."
+        },
+        {
+          "id": "main_comprehension_and_summary",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Comprehension and Summary. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_comprehension_and_summary",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Comprehension and Summary. Understanding how Comprehension and Summary applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_comprehension_and_summary",
+            "type": "multiple_choice",
+            "question": "What is the definition of Comprehension and Summary?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Comprehension and Summary."
+          },
+          {
+            "id": "q2_comprehension_and_summary",
+            "type": "short_answer",
+            "question": "Explain how Comprehension and Summary is used in practical situations.",
+            "answer": "Comprehension and Summary is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Comprehension and Summary"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Comprehension and Summary applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:10:44.289160",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_english_grammar_and_usage_20260107151044",
+      "title": "Grammar and Usage",
+      "subject": "English Language",
+      "topic": "Grammar and Usage",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of grammar and usage",
+        "Apply grammar and usage to real-world scenarios",
+        "Analyze and solve problems related to grammar and usage"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_grammar_and_usage",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Grammar and Usage and their importance in English Language."
+        },
+        {
+          "id": "main_grammar_and_usage",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Grammar and Usage. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_grammar_and_usage",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Grammar and Usage. Understanding how Grammar and Usage applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_grammar_and_usage",
+            "type": "multiple_choice",
+            "question": "What is the definition of Grammar and Usage?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Grammar and Usage."
+          },
+          {
+            "id": "q2_grammar_and_usage",
+            "type": "short_answer",
+            "question": "Explain how Grammar and Usage is used in practical situations.",
+            "answer": "Grammar and Usage is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Grammar and Usage"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Grammar and Usage applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:10:44.825989",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_english_essay_writing_20260107151045",
+      "title": "Essay Writing",
+      "subject": "English Language",
+      "topic": "Essay Writing",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of essay writing",
+        "Apply essay writing to real-world scenarios",
+        "Analyze and solve problems related to essay writing"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_essay_writing",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Essay Writing and their importance in English Language."
+        },
+        {
+          "id": "main_essay_writing",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Essay Writing. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_essay_writing",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Essay Writing. Understanding how Essay Writing applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_essay_writing",
+            "type": "multiple_choice",
+            "question": "What is the definition of Essay Writing?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Essay Writing."
+          },
+          {
+            "id": "q2_essay_writing",
+            "type": "short_answer",
+            "question": "Explain how Essay Writing is used in practical situations.",
+            "answer": "Essay Writing is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Essay Writing"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Essay Writing applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:10:45.035939",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_english_oral_english_20260107151045",
+      "title": "Oral English",
+      "subject": "English Language",
+      "topic": "Oral English",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of oral english",
+        "Apply oral english to real-world scenarios",
+        "Analyze and solve problems related to oral english"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_oral_english",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Oral English and their importance in English Language."
+        },
+        {
+          "id": "main_oral_english",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Oral English. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_oral_english",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Oral English. Understanding how Oral English applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_oral_english",
+            "type": "multiple_choice",
+            "question": "What is the definition of Oral English?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Oral English."
+          },
+          {
+            "id": "q2_oral_english",
+            "type": "short_answer",
+            "question": "Explain how Oral English is used in practical situations.",
+            "answer": "Oral English is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Oral English"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Oral English applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:10:45.063714",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_english_literature_20260107151045",
+      "title": "Literature",
+      "subject": "English Language",
+      "topic": "Literature",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of literature",
+        "Apply literature to real-world scenarios",
+        "Analyze and solve problems related to literature"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_literature",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Literature and their importance in English Language."
+        },
+        {
+          "id": "main_literature",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Literature. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_literature",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Literature. Understanding how Literature applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_literature",
+            "type": "multiple_choice",
+            "question": "What is the definition of Literature?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Literature."
+          },
+          {
+            "id": "q2_literature",
+            "type": "short_answer",
+            "question": "Explain how Literature is used in practical situations.",
+            "answer": "Literature is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Literature"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Literature applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:10:45.068363",
+      "status": "draft",
+      "content_type": "study_guide"
     }
   ],
   "subjects": [

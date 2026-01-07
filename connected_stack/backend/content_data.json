@@ -254,7 +254,4011 @@
       "updated_at": "2026-01-07T08:48:27.023146",
       "author": "English Language Curriculum Expert",
       "version": 1
+    },
+    {
+      "id": "nerdc_ss1_mathematics_indices_and_logarithms_20260107151531",
+      "title": "SS1 - Indices and Logarithms",
+      "subject": "Mathematics",
+      "topic": "SS1 - Indices and Logarithms",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - indices and logarithms",
+        "Apply ss1 - indices and logarithms to real-world scenarios",
+        "Analyze and solve problems related to ss1 - indices and logarithms"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_indices_and_logarithms",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Indices and Logarithms and their importance in Mathematics."
+        },
+        {
+          "id": "main_ss1_-_indices_and_logarithms",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Indices and Logarithms. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_indices_and_logarithms",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Indices and Logarithms. Understanding how SS1 - Indices and Logarithms applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_indices_and_logarithms",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Indices and Logarithms?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Indices and Logarithms."
+          },
+          {
+            "id": "q2_ss1_-_indices_and_logarithms",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Indices and Logarithms is used in practical situations.",
+            "answer": "SS1 - Indices and Logarithms is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Indices and Logarithms"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Indices and Logarithms applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:31.749151",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_mathematics_quadratic_equations_20260107151531",
+      "title": "SS2 - Quadratic Equations",
+      "subject": "Mathematics",
+      "topic": "SS2 - Quadratic Equations",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - quadratic equations",
+        "Apply ss2 - quadratic equations to real-world scenarios",
+        "Analyze and solve problems related to ss2 - quadratic equations"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_quadratic_equations",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Quadratic Equations and their importance in Mathematics."
+        },
+        {
+          "id": "main_ss2_-_quadratic_equations",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Quadratic Equations. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_quadratic_equations",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Quadratic Equations. Understanding how SS2 - Quadratic Equations applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_quadratic_equations",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Quadratic Equations?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Quadratic Equations."
+          },
+          {
+            "id": "q2_ss2_-_quadratic_equations",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Quadratic Equations is used in practical situations.",
+            "answer": "SS2 - Quadratic Equations is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Quadratic Equations"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Quadratic Equations applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:31.822808",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss3_mathematics_calculus_basics_20260107151531",
+      "title": "SS3 - Calculus Basics",
+      "subject": "Mathematics",
+      "topic": "SS3 - Calculus Basics",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss3 - calculus basics",
+        "Apply ss3 - calculus basics to real-world scenarios",
+        "Analyze and solve problems related to ss3 - calculus basics"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss3_-_calculus_basics",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS3 - Calculus Basics and their importance in Mathematics."
+        },
+        {
+          "id": "main_ss3_-_calculus_basics",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS3 - Calculus Basics. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss3_-_calculus_basics",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS3 - Calculus Basics. Understanding how SS3 - Calculus Basics applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss3_-_calculus_basics",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS3 - Calculus Basics?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS3 - Calculus Basics."
+          },
+          {
+            "id": "q2_ss3_-_calculus_basics",
+            "type": "short_answer",
+            "question": "Explain how SS3 - Calculus Basics is used in practical situations.",
+            "answer": "SS3 - Calculus Basics is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS3 - Calculus Basics"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS3 - Calculus Basics applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:31.843067",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS3",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_mathematics_basic_statistics_20260107151531",
+      "title": "SS1 - Basic Statistics",
+      "subject": "Mathematics",
+      "topic": "SS1 - Basic Statistics",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - basic statistics",
+        "Apply ss1 - basic statistics to real-world scenarios",
+        "Analyze and solve problems related to ss1 - basic statistics"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_basic_statistics",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Basic Statistics and their importance in Mathematics."
+        },
+        {
+          "id": "main_ss1_-_basic_statistics",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Basic Statistics. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_basic_statistics",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Basic Statistics. Understanding how SS1 - Basic Statistics applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_basic_statistics",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Basic Statistics?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Basic Statistics."
+          },
+          {
+            "id": "q2_ss1_-_basic_statistics",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Basic Statistics is used in practical situations.",
+            "answer": "SS1 - Basic Statistics is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Basic Statistics"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Basic Statistics applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:31.877119",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_mathematics_trigonometry_20260107151532",
+      "title": "SS2 - Trigonometry",
+      "subject": "Mathematics",
+      "topic": "SS2 - Trigonometry",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - trigonometry",
+        "Apply ss2 - trigonometry to real-world scenarios",
+        "Analyze and solve problems related to ss2 - trigonometry"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_trigonometry",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Trigonometry and their importance in Mathematics."
+        },
+        {
+          "id": "main_ss2_-_trigonometry",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Trigonometry. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_trigonometry",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Trigonometry. Understanding how SS2 - Trigonometry applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_trigonometry",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Trigonometry?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Trigonometry."
+          },
+          {
+            "id": "q2_ss2_-_trigonometry",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Trigonometry is used in practical situations.",
+            "answer": "SS2 - Trigonometry is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Trigonometry"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Trigonometry applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:32.027846",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_physics_motion_in_a_straight_line_20260107151532",
+      "title": "SS1 - Motion in a Straight Line",
+      "subject": "Physics",
+      "topic": "SS1 - Motion in a Straight Line",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - motion in a straight line",
+        "Apply ss1 - motion in a straight line to real-world scenarios",
+        "Analyze and solve problems related to ss1 - motion in a straight line"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_motion_in_a_straight_line",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Motion in a Straight Line and their importance in Physics."
+        },
+        {
+          "id": "main_ss1_-_motion_in_a_straight_line",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Motion in a Straight Line. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_motion_in_a_straight_line",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Motion in a Straight Line. Understanding how SS1 - Motion in a Straight Line applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_motion_in_a_straight_line",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Motion in a Straight Line?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Motion in a Straight Line."
+          },
+          {
+            "id": "q2_ss1_-_motion_in_a_straight_line",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Motion in a Straight Line is used in practical situations.",
+            "answer": "SS1 - Motion in a Straight Line is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Motion in a Straight Line"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Motion in a Straight Line applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:32.150224",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_physics_electricity_and_magnetism_20260107151532",
+      "title": "SS2 - Electricity and Magnetism",
+      "subject": "Physics",
+      "topic": "SS2 - Electricity and Magnetism",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - electricity and magnetism",
+        "Apply ss2 - electricity and magnetism to real-world scenarios",
+        "Analyze and solve problems related to ss2 - electricity and magnetism"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_electricity_and_magnetism",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Electricity and Magnetism and their importance in Physics."
+        },
+        {
+          "id": "main_ss2_-_electricity_and_magnetism",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Electricity and Magnetism. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_electricity_and_magnetism",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Electricity and Magnetism. Understanding how SS2 - Electricity and Magnetism applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_electricity_and_magnetism",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Electricity and Magnetism?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Electricity and Magnetism."
+          },
+          {
+            "id": "q2_ss2_-_electricity_and_magnetism",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Electricity and Magnetism is used in practical situations.",
+            "answer": "SS2 - Electricity and Magnetism is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Electricity and Magnetism"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Electricity and Magnetism applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:32.314666",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss3_physics_wave_motion_20260107151532",
+      "title": "SS3 - Wave Motion",
+      "subject": "Physics",
+      "topic": "SS3 - Wave Motion",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss3 - wave motion",
+        "Apply ss3 - wave motion to real-world scenarios",
+        "Analyze and solve problems related to ss3 - wave motion"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss3_-_wave_motion",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS3 - Wave Motion and their importance in Physics."
+        },
+        {
+          "id": "main_ss3_-_wave_motion",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS3 - Wave Motion. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss3_-_wave_motion",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS3 - Wave Motion. Understanding how SS3 - Wave Motion applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss3_-_wave_motion",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS3 - Wave Motion?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS3 - Wave Motion."
+          },
+          {
+            "id": "q2_ss3_-_wave_motion",
+            "type": "short_answer",
+            "question": "Explain how SS3 - Wave Motion is used in practical situations.",
+            "answer": "SS3 - Wave Motion is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS3 - Wave Motion"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS3 - Wave Motion applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:32.593221",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS3",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_physics_force_and_pressure_20260107151532",
+      "title": "SS1 - Force and Pressure",
+      "subject": "Physics",
+      "topic": "SS1 - Force and Pressure",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - force and pressure",
+        "Apply ss1 - force and pressure to real-world scenarios",
+        "Analyze and solve problems related to ss1 - force and pressure"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_force_and_pressure",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Force and Pressure and their importance in Physics."
+        },
+        {
+          "id": "main_ss1_-_force_and_pressure",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Force and Pressure. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_force_and_pressure",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Force and Pressure. Understanding how SS1 - Force and Pressure applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_force_and_pressure",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Force and Pressure?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Force and Pressure."
+          },
+          {
+            "id": "q2_ss1_-_force_and_pressure",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Force and Pressure is used in practical situations.",
+            "answer": "SS1 - Force and Pressure is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Force and Pressure"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Force and Pressure applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:32.761153",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_physics_energy_and_work_20260107151532",
+      "title": "SS2 - Energy and Work",
+      "subject": "Physics",
+      "topic": "SS2 - Energy and Work",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - energy and work",
+        "Apply ss2 - energy and work to real-world scenarios",
+        "Analyze and solve problems related to ss2 - energy and work"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_energy_and_work",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Energy and Work and their importance in Physics."
+        },
+        {
+          "id": "main_ss2_-_energy_and_work",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Energy and Work. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_energy_and_work",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Energy and Work. Understanding how SS2 - Energy and Work applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_energy_and_work",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Energy and Work?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Energy and Work."
+          },
+          {
+            "id": "q2_ss2_-_energy_and_work",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Energy and Work is used in practical situations.",
+            "answer": "SS2 - Energy and Work is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Energy and Work"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Energy and Work applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:32.831734",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_chemistry_atomic_structure_20260107151532",
+      "title": "SS1 - Atomic Structure",
+      "subject": "Chemistry",
+      "topic": "SS1 - Atomic Structure",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - atomic structure",
+        "Apply ss1 - atomic structure to real-world scenarios",
+        "Analyze and solve problems related to ss1 - atomic structure"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_atomic_structure",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Atomic Structure and their importance in Chemistry."
+        },
+        {
+          "id": "main_ss1_-_atomic_structure",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Atomic Structure. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_atomic_structure",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Atomic Structure. Understanding how SS1 - Atomic Structure applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_atomic_structure",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Atomic Structure?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Atomic Structure."
+          },
+          {
+            "id": "q2_ss1_-_atomic_structure",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Atomic Structure is used in practical situations.",
+            "answer": "SS1 - Atomic Structure is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Atomic Structure"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Atomic Structure applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:32.933770",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_chemistry_chemical_bonding_20260107151533",
+      "title": "SS2 - Chemical Bonding",
+      "subject": "Chemistry",
+      "topic": "SS2 - Chemical Bonding",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - chemical bonding",
+        "Apply ss2 - chemical bonding to real-world scenarios",
+        "Analyze and solve problems related to ss2 - chemical bonding"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_chemical_bonding",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Chemical Bonding and their importance in Chemistry."
+        },
+        {
+          "id": "main_ss2_-_chemical_bonding",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Chemical Bonding. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_chemical_bonding",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Chemical Bonding. Understanding how SS2 - Chemical Bonding applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_chemical_bonding",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Chemical Bonding?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Chemical Bonding."
+          },
+          {
+            "id": "q2_ss2_-_chemical_bonding",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Chemical Bonding is used in practical situations.",
+            "answer": "SS2 - Chemical Bonding is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Chemical Bonding"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Chemical Bonding applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.018645",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss3_chemistry_organic_chemistry_20260107151533",
+      "title": "SS3 - Organic Chemistry",
+      "subject": "Chemistry",
+      "topic": "SS3 - Organic Chemistry",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss3 - organic chemistry",
+        "Apply ss3 - organic chemistry to real-world scenarios",
+        "Analyze and solve problems related to ss3 - organic chemistry"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss3_-_organic_chemistry",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS3 - Organic Chemistry and their importance in Chemistry."
+        },
+        {
+          "id": "main_ss3_-_organic_chemistry",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS3 - Organic Chemistry. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss3_-_organic_chemistry",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS3 - Organic Chemistry. Understanding how SS3 - Organic Chemistry applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss3_-_organic_chemistry",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS3 - Organic Chemistry?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS3 - Organic Chemistry."
+          },
+          {
+            "id": "q2_ss3_-_organic_chemistry",
+            "type": "short_answer",
+            "question": "Explain how SS3 - Organic Chemistry is used in practical situations.",
+            "answer": "SS3 - Organic Chemistry is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS3 - Organic Chemistry"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS3 - Organic Chemistry applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.148623",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS3",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_chemistry_acids_and_bases_20260107151533",
+      "title": "SS1 - Acids and Bases",
+      "subject": "Chemistry",
+      "topic": "SS1 - Acids and Bases",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - acids and bases",
+        "Apply ss1 - acids and bases to real-world scenarios",
+        "Analyze and solve problems related to ss1 - acids and bases"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_acids_and_bases",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Acids and Bases and their importance in Chemistry."
+        },
+        {
+          "id": "main_ss1_-_acids_and_bases",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Acids and Bases. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_acids_and_bases",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Acids and Bases. Understanding how SS1 - Acids and Bases applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_acids_and_bases",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Acids and Bases?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Acids and Bases."
+          },
+          {
+            "id": "q2_ss1_-_acids_and_bases",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Acids and Bases is used in practical situations.",
+            "answer": "SS1 - Acids and Bases is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Acids and Bases"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Acids and Bases applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.165277",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_chemistry_redox_reactions_20260107151533",
+      "title": "SS2 - Redox Reactions",
+      "subject": "Chemistry",
+      "topic": "SS2 - Redox Reactions",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - redox reactions",
+        "Apply ss2 - redox reactions to real-world scenarios",
+        "Analyze and solve problems related to ss2 - redox reactions"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_redox_reactions",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Redox Reactions and their importance in Chemistry."
+        },
+        {
+          "id": "main_ss2_-_redox_reactions",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Redox Reactions. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_redox_reactions",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Redox Reactions. Understanding how SS2 - Redox Reactions applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_redox_reactions",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Redox Reactions?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Redox Reactions."
+          },
+          {
+            "id": "q2_ss2_-_redox_reactions",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Redox Reactions is used in practical situations.",
+            "answer": "SS2 - Redox Reactions is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Redox Reactions"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Redox Reactions applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.172457",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_biology_cell_biology_20260107151533",
+      "title": "SS1 - Cell Biology",
+      "subject": "Biology",
+      "topic": "SS1 - Cell Biology",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - cell biology",
+        "Apply ss1 - cell biology to real-world scenarios",
+        "Analyze and solve problems related to ss1 - cell biology"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_cell_biology",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Cell Biology and their importance in Biology."
+        },
+        {
+          "id": "main_ss1_-_cell_biology",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Cell Biology. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_cell_biology",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Cell Biology. Understanding how SS1 - Cell Biology applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_cell_biology",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Cell Biology?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Cell Biology."
+          },
+          {
+            "id": "q2_ss1_-_cell_biology",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Cell Biology is used in practical situations.",
+            "answer": "SS1 - Cell Biology is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Cell Biology"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Cell Biology applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.329198",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_biology_genetics_20260107151533",
+      "title": "SS2 - Genetics",
+      "subject": "Biology",
+      "topic": "SS2 - Genetics",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - genetics",
+        "Apply ss2 - genetics to real-world scenarios",
+        "Analyze and solve problems related to ss2 - genetics"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_genetics",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Genetics and their importance in Biology."
+        },
+        {
+          "id": "main_ss2_-_genetics",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Genetics. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_genetics",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Genetics. Understanding how SS2 - Genetics applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_genetics",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Genetics?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Genetics."
+          },
+          {
+            "id": "q2_ss2_-_genetics",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Genetics is used in practical situations.",
+            "answer": "SS2 - Genetics is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Genetics"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Genetics applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.362939",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss3_biology_evolution_20260107151533",
+      "title": "SS3 - Evolution",
+      "subject": "Biology",
+      "topic": "SS3 - Evolution",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss3 - evolution",
+        "Apply ss3 - evolution to real-world scenarios",
+        "Analyze and solve problems related to ss3 - evolution"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss3_-_evolution",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS3 - Evolution and their importance in Biology."
+        },
+        {
+          "id": "main_ss3_-_evolution",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS3 - Evolution. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss3_-_evolution",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS3 - Evolution. Understanding how SS3 - Evolution applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss3_-_evolution",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS3 - Evolution?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS3 - Evolution."
+          },
+          {
+            "id": "q2_ss3_-_evolution",
+            "type": "short_answer",
+            "question": "Explain how SS3 - Evolution is used in practical situations.",
+            "answer": "SS3 - Evolution is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS3 - Evolution"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS3 - Evolution applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.372036",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS3",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_biology_human_anatomy_20260107151533",
+      "title": "SS1 - Human Anatomy",
+      "subject": "Biology",
+      "topic": "SS1 - Human Anatomy",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - human anatomy",
+        "Apply ss1 - human anatomy to real-world scenarios",
+        "Analyze and solve problems related to ss1 - human anatomy"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_human_anatomy",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Human Anatomy and their importance in Biology."
+        },
+        {
+          "id": "main_ss1_-_human_anatomy",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Human Anatomy. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_human_anatomy",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Human Anatomy. Understanding how SS1 - Human Anatomy applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_human_anatomy",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Human Anatomy?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Human Anatomy."
+          },
+          {
+            "id": "q2_ss1_-_human_anatomy",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Human Anatomy is used in practical situations.",
+            "answer": "SS1 - Human Anatomy is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Human Anatomy"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Human Anatomy applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.466119",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_biology_ecology_20260107151533",
+      "title": "SS2 - Ecology",
+      "subject": "Biology",
+      "topic": "SS2 - Ecology",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - ecology",
+        "Apply ss2 - ecology to real-world scenarios",
+        "Analyze and solve problems related to ss2 - ecology"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_ecology",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Ecology and their importance in Biology."
+        },
+        {
+          "id": "main_ss2_-_ecology",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Ecology. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_ecology",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Ecology. Understanding how SS2 - Ecology applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_ecology",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Ecology?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Ecology."
+          },
+          {
+            "id": "q2_ss2_-_ecology",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Ecology is used in practical situations.",
+            "answer": "SS2 - Ecology is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Ecology"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Ecology applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.616881",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_english_language_reading_comprehension_20260107151533",
+      "title": "SS1 - Reading Comprehension",
+      "subject": "English Language",
+      "topic": "SS1 - Reading Comprehension",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - reading comprehension",
+        "Apply ss1 - reading comprehension to real-world scenarios",
+        "Analyze and solve problems related to ss1 - reading comprehension"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_reading_comprehension",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Reading Comprehension and their importance in English Language."
+        },
+        {
+          "id": "main_ss1_-_reading_comprehension",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Reading Comprehension. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_reading_comprehension",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Reading Comprehension. Understanding how SS1 - Reading Comprehension applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_reading_comprehension",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Reading Comprehension?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Reading Comprehension."
+          },
+          {
+            "id": "q2_ss1_-_reading_comprehension",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Reading Comprehension is used in practical situations.",
+            "answer": "SS1 - Reading Comprehension is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Reading Comprehension"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Reading Comprehension applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.622262",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_english_language_writing_skills_20260107151533",
+      "title": "SS2 - Writing Skills",
+      "subject": "English Language",
+      "topic": "SS2 - Writing Skills",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - writing skills",
+        "Apply ss2 - writing skills to real-world scenarios",
+        "Analyze and solve problems related to ss2 - writing skills"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_writing_skills",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Writing Skills and their importance in English Language."
+        },
+        {
+          "id": "main_ss2_-_writing_skills",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Writing Skills. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_writing_skills",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Writing Skills. Understanding how SS2 - Writing Skills applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_writing_skills",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Writing Skills?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Writing Skills."
+          },
+          {
+            "id": "q2_ss2_-_writing_skills",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Writing Skills is used in practical situations.",
+            "answer": "SS2 - Writing Skills is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Writing Skills"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Writing Skills applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.635011",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss3_english_language_literature_analysis_20260107151533",
+      "title": "SS3 - Literature Analysis",
+      "subject": "English Language",
+      "topic": "SS3 - Literature Analysis",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss3 - literature analysis",
+        "Apply ss3 - literature analysis to real-world scenarios",
+        "Analyze and solve problems related to ss3 - literature analysis"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss3_-_literature_analysis",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS3 - Literature Analysis and their importance in English Language."
+        },
+        {
+          "id": "main_ss3_-_literature_analysis",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS3 - Literature Analysis. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss3_-_literature_analysis",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS3 - Literature Analysis. Understanding how SS3 - Literature Analysis applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss3_-_literature_analysis",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS3 - Literature Analysis?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS3 - Literature Analysis."
+          },
+          {
+            "id": "q2_ss3_-_literature_analysis",
+            "type": "short_answer",
+            "question": "Explain how SS3 - Literature Analysis is used in practical situations.",
+            "answer": "SS3 - Literature Analysis is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS3 - Literature Analysis"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS3 - Literature Analysis applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.768540",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS3",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_english_language_grammar_fundamentals_20260107151533",
+      "title": "SS1 - Grammar Fundamentals",
+      "subject": "English Language",
+      "topic": "SS1 - Grammar Fundamentals",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - grammar fundamentals",
+        "Apply ss1 - grammar fundamentals to real-world scenarios",
+        "Analyze and solve problems related to ss1 - grammar fundamentals"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_grammar_fundamentals",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Grammar Fundamentals and their importance in English Language."
+        },
+        {
+          "id": "main_ss1_-_grammar_fundamentals",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Grammar Fundamentals. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_grammar_fundamentals",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Grammar Fundamentals. Understanding how SS1 - Grammar Fundamentals applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_grammar_fundamentals",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Grammar Fundamentals?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Grammar Fundamentals."
+          },
+          {
+            "id": "q2_ss1_-_grammar_fundamentals",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Grammar Fundamentals is used in practical situations.",
+            "answer": "SS1 - Grammar Fundamentals is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Grammar Fundamentals"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Grammar Fundamentals applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:33.799468",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_english_language_oral_communication_20260107151534",
+      "title": "SS2 - Oral Communication",
+      "subject": "English Language",
+      "topic": "SS2 - Oral Communication",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - oral communication",
+        "Apply ss2 - oral communication to real-world scenarios",
+        "Analyze and solve problems related to ss2 - oral communication"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_oral_communication",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Oral Communication and their importance in English Language."
+        },
+        {
+          "id": "main_ss2_-_oral_communication",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Oral Communication. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_oral_communication",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Oral Communication. Understanding how SS2 - Oral Communication applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_oral_communication",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Oral Communication?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Oral Communication."
+          },
+          {
+            "id": "q2_ss2_-_oral_communication",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Oral Communication is used in practical situations.",
+            "answer": "SS2 - Oral Communication is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Oral Communication"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Oral Communication applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:15:34.074225",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_mathematics_indices_and_logarithms_20260107151711",
+      "title": "SS1 - Indices and Logarithms",
+      "subject": "Mathematics",
+      "topic": "SS1 - Indices and Logarithms",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - indices and logarithms",
+        "Apply ss1 - indices and logarithms to real-world scenarios",
+        "Analyze and solve problems related to ss1 - indices and logarithms"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_indices_and_logarithms",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Indices and Logarithms and their importance in Mathematics."
+        },
+        {
+          "id": "main_ss1_-_indices_and_logarithms",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Indices and Logarithms. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_indices_and_logarithms",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Indices and Logarithms. Understanding how SS1 - Indices and Logarithms applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_indices_and_logarithms",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Indices and Logarithms?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Indices and Logarithms."
+          },
+          {
+            "id": "q2_ss1_-_indices_and_logarithms",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Indices and Logarithms is used in practical situations.",
+            "answer": "SS1 - Indices and Logarithms is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Indices and Logarithms"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Indices and Logarithms applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.721000",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_mathematics_quadratic_equations_20260107151711",
+      "title": "SS2 - Quadratic Equations",
+      "subject": "Mathematics",
+      "topic": "SS2 - Quadratic Equations",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - quadratic equations",
+        "Apply ss2 - quadratic equations to real-world scenarios",
+        "Analyze and solve problems related to ss2 - quadratic equations"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_quadratic_equations",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Quadratic Equations and their importance in Mathematics."
+        },
+        {
+          "id": "main_ss2_-_quadratic_equations",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Quadratic Equations. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_quadratic_equations",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Quadratic Equations. Understanding how SS2 - Quadratic Equations applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_quadratic_equations",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Quadratic Equations?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Quadratic Equations."
+          },
+          {
+            "id": "q2_ss2_-_quadratic_equations",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Quadratic Equations is used in practical situations.",
+            "answer": "SS2 - Quadratic Equations is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Quadratic Equations"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Quadratic Equations applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.721392",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss3_mathematics_calculus_basics_20260107151711",
+      "title": "SS3 - Calculus Basics",
+      "subject": "Mathematics",
+      "topic": "SS3 - Calculus Basics",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss3 - calculus basics",
+        "Apply ss3 - calculus basics to real-world scenarios",
+        "Analyze and solve problems related to ss3 - calculus basics"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss3_-_calculus_basics",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS3 - Calculus Basics and their importance in Mathematics."
+        },
+        {
+          "id": "main_ss3_-_calculus_basics",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS3 - Calculus Basics. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss3_-_calculus_basics",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS3 - Calculus Basics. Understanding how SS3 - Calculus Basics applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss3_-_calculus_basics",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS3 - Calculus Basics?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS3 - Calculus Basics."
+          },
+          {
+            "id": "q2_ss3_-_calculus_basics",
+            "type": "short_answer",
+            "question": "Explain how SS3 - Calculus Basics is used in practical situations.",
+            "answer": "SS3 - Calculus Basics is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS3 - Calculus Basics"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS3 - Calculus Basics applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.721602",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS3",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_mathematics_basic_statistics_20260107151711",
+      "title": "SS1 - Basic Statistics",
+      "subject": "Mathematics",
+      "topic": "SS1 - Basic Statistics",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - basic statistics",
+        "Apply ss1 - basic statistics to real-world scenarios",
+        "Analyze and solve problems related to ss1 - basic statistics"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_basic_statistics",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Basic Statistics and their importance in Mathematics."
+        },
+        {
+          "id": "main_ss1_-_basic_statistics",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Basic Statistics. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_basic_statistics",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Basic Statistics. Understanding how SS1 - Basic Statistics applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_basic_statistics",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Basic Statistics?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Basic Statistics."
+          },
+          {
+            "id": "q2_ss1_-_basic_statistics",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Basic Statistics is used in practical situations.",
+            "answer": "SS1 - Basic Statistics is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Basic Statistics"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Basic Statistics applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.721792",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_mathematics_trigonometry_20260107151711",
+      "title": "SS2 - Trigonometry",
+      "subject": "Mathematics",
+      "topic": "SS2 - Trigonometry",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - trigonometry",
+        "Apply ss2 - trigonometry to real-world scenarios",
+        "Analyze and solve problems related to ss2 - trigonometry"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_trigonometry",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Trigonometry and their importance in Mathematics."
+        },
+        {
+          "id": "main_ss2_-_trigonometry",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Trigonometry. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_trigonometry",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Trigonometry. Understanding how SS2 - Trigonometry applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_trigonometry",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Trigonometry?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Trigonometry."
+          },
+          {
+            "id": "q2_ss2_-_trigonometry",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Trigonometry is used in practical situations.",
+            "answer": "SS2 - Trigonometry is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Trigonometry"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Trigonometry applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.721958",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_physics_motion_in_a_straight_line_20260107151711",
+      "title": "SS1 - Motion in a Straight Line",
+      "subject": "Physics",
+      "topic": "SS1 - Motion in a Straight Line",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - motion in a straight line",
+        "Apply ss1 - motion in a straight line to real-world scenarios",
+        "Analyze and solve problems related to ss1 - motion in a straight line"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_motion_in_a_straight_line",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Motion in a Straight Line and their importance in Physics."
+        },
+        {
+          "id": "main_ss1_-_motion_in_a_straight_line",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Motion in a Straight Line. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_motion_in_a_straight_line",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Motion in a Straight Line. Understanding how SS1 - Motion in a Straight Line applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_motion_in_a_straight_line",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Motion in a Straight Line?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Motion in a Straight Line."
+          },
+          {
+            "id": "q2_ss1_-_motion_in_a_straight_line",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Motion in a Straight Line is used in practical situations.",
+            "answer": "SS1 - Motion in a Straight Line is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Motion in a Straight Line"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Motion in a Straight Line applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.722138",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_physics_electricity_and_magnetism_20260107151711",
+      "title": "SS2 - Electricity and Magnetism",
+      "subject": "Physics",
+      "topic": "SS2 - Electricity and Magnetism",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - electricity and magnetism",
+        "Apply ss2 - electricity and magnetism to real-world scenarios",
+        "Analyze and solve problems related to ss2 - electricity and magnetism"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_electricity_and_magnetism",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Electricity and Magnetism and their importance in Physics."
+        },
+        {
+          "id": "main_ss2_-_electricity_and_magnetism",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Electricity and Magnetism. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_electricity_and_magnetism",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Electricity and Magnetism. Understanding how SS2 - Electricity and Magnetism applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_electricity_and_magnetism",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Electricity and Magnetism?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Electricity and Magnetism."
+          },
+          {
+            "id": "q2_ss2_-_electricity_and_magnetism",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Electricity and Magnetism is used in practical situations.",
+            "answer": "SS2 - Electricity and Magnetism is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Electricity and Magnetism"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Electricity and Magnetism applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.723096",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss3_physics_wave_motion_20260107151711",
+      "title": "SS3 - Wave Motion",
+      "subject": "Physics",
+      "topic": "SS3 - Wave Motion",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss3 - wave motion",
+        "Apply ss3 - wave motion to real-world scenarios",
+        "Analyze and solve problems related to ss3 - wave motion"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss3_-_wave_motion",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS3 - Wave Motion and their importance in Physics."
+        },
+        {
+          "id": "main_ss3_-_wave_motion",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS3 - Wave Motion. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss3_-_wave_motion",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS3 - Wave Motion. Understanding how SS3 - Wave Motion applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss3_-_wave_motion",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS3 - Wave Motion?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS3 - Wave Motion."
+          },
+          {
+            "id": "q2_ss3_-_wave_motion",
+            "type": "short_answer",
+            "question": "Explain how SS3 - Wave Motion is used in practical situations.",
+            "answer": "SS3 - Wave Motion is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS3 - Wave Motion"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS3 - Wave Motion applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.723320",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS3",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_physics_force_and_pressure_20260107151711",
+      "title": "SS1 - Force and Pressure",
+      "subject": "Physics",
+      "topic": "SS1 - Force and Pressure",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - force and pressure",
+        "Apply ss1 - force and pressure to real-world scenarios",
+        "Analyze and solve problems related to ss1 - force and pressure"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_force_and_pressure",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Force and Pressure and their importance in Physics."
+        },
+        {
+          "id": "main_ss1_-_force_and_pressure",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Force and Pressure. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_force_and_pressure",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Force and Pressure. Understanding how SS1 - Force and Pressure applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_force_and_pressure",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Force and Pressure?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Force and Pressure."
+          },
+          {
+            "id": "q2_ss1_-_force_and_pressure",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Force and Pressure is used in practical situations.",
+            "answer": "SS1 - Force and Pressure is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Force and Pressure"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Force and Pressure applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.723497",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_physics_energy_and_work_20260107151711",
+      "title": "SS2 - Energy and Work",
+      "subject": "Physics",
+      "topic": "SS2 - Energy and Work",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - energy and work",
+        "Apply ss2 - energy and work to real-world scenarios",
+        "Analyze and solve problems related to ss2 - energy and work"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_energy_and_work",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Energy and Work and their importance in Physics."
+        },
+        {
+          "id": "main_ss2_-_energy_and_work",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Energy and Work. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_energy_and_work",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Energy and Work. Understanding how SS2 - Energy and Work applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_energy_and_work",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Energy and Work?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Energy and Work."
+          },
+          {
+            "id": "q2_ss2_-_energy_and_work",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Energy and Work is used in practical situations.",
+            "answer": "SS2 - Energy and Work is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Energy and Work"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Energy and Work applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.723684",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_chemistry_atomic_structure_20260107151711",
+      "title": "SS1 - Atomic Structure",
+      "subject": "Chemistry",
+      "topic": "SS1 - Atomic Structure",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - atomic structure",
+        "Apply ss1 - atomic structure to real-world scenarios",
+        "Analyze and solve problems related to ss1 - atomic structure"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_atomic_structure",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Atomic Structure and their importance in Chemistry."
+        },
+        {
+          "id": "main_ss1_-_atomic_structure",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Atomic Structure. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_atomic_structure",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Atomic Structure. Understanding how SS1 - Atomic Structure applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_atomic_structure",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Atomic Structure?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Atomic Structure."
+          },
+          {
+            "id": "q2_ss1_-_atomic_structure",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Atomic Structure is used in practical situations.",
+            "answer": "SS1 - Atomic Structure is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Atomic Structure"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Atomic Structure applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.723851",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_chemistry_chemical_bonding_20260107151711",
+      "title": "SS2 - Chemical Bonding",
+      "subject": "Chemistry",
+      "topic": "SS2 - Chemical Bonding",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - chemical bonding",
+        "Apply ss2 - chemical bonding to real-world scenarios",
+        "Analyze and solve problems related to ss2 - chemical bonding"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_chemical_bonding",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Chemical Bonding and their importance in Chemistry."
+        },
+        {
+          "id": "main_ss2_-_chemical_bonding",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Chemical Bonding. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_chemical_bonding",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Chemical Bonding. Understanding how SS2 - Chemical Bonding applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_chemical_bonding",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Chemical Bonding?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Chemical Bonding."
+          },
+          {
+            "id": "q2_ss2_-_chemical_bonding",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Chemical Bonding is used in practical situations.",
+            "answer": "SS2 - Chemical Bonding is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Chemical Bonding"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Chemical Bonding applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.724018",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss3_chemistry_organic_chemistry_20260107151711",
+      "title": "SS3 - Organic Chemistry",
+      "subject": "Chemistry",
+      "topic": "SS3 - Organic Chemistry",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss3 - organic chemistry",
+        "Apply ss3 - organic chemistry to real-world scenarios",
+        "Analyze and solve problems related to ss3 - organic chemistry"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss3_-_organic_chemistry",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS3 - Organic Chemistry and their importance in Chemistry."
+        },
+        {
+          "id": "main_ss3_-_organic_chemistry",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS3 - Organic Chemistry. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss3_-_organic_chemistry",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS3 - Organic Chemistry. Understanding how SS3 - Organic Chemistry applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss3_-_organic_chemistry",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS3 - Organic Chemistry?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS3 - Organic Chemistry."
+          },
+          {
+            "id": "q2_ss3_-_organic_chemistry",
+            "type": "short_answer",
+            "question": "Explain how SS3 - Organic Chemistry is used in practical situations.",
+            "answer": "SS3 - Organic Chemistry is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS3 - Organic Chemistry"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS3 - Organic Chemistry applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.724179",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS3",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_chemistry_acids_and_bases_20260107151711",
+      "title": "SS1 - Acids and Bases",
+      "subject": "Chemistry",
+      "topic": "SS1 - Acids and Bases",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - acids and bases",
+        "Apply ss1 - acids and bases to real-world scenarios",
+        "Analyze and solve problems related to ss1 - acids and bases"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_acids_and_bases",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Acids and Bases and their importance in Chemistry."
+        },
+        {
+          "id": "main_ss1_-_acids_and_bases",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Acids and Bases. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_acids_and_bases",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Acids and Bases. Understanding how SS1 - Acids and Bases applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_acids_and_bases",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Acids and Bases?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Acids and Bases."
+          },
+          {
+            "id": "q2_ss1_-_acids_and_bases",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Acids and Bases is used in practical situations.",
+            "answer": "SS1 - Acids and Bases is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Acids and Bases"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Acids and Bases applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.724328",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_chemistry_redox_reactions_20260107151711",
+      "title": "SS2 - Redox Reactions",
+      "subject": "Chemistry",
+      "topic": "SS2 - Redox Reactions",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - redox reactions",
+        "Apply ss2 - redox reactions to real-world scenarios",
+        "Analyze and solve problems related to ss2 - redox reactions"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_redox_reactions",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Redox Reactions and their importance in Chemistry."
+        },
+        {
+          "id": "main_ss2_-_redox_reactions",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Redox Reactions. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_redox_reactions",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Redox Reactions. Understanding how SS2 - Redox Reactions applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_redox_reactions",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Redox Reactions?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Redox Reactions."
+          },
+          {
+            "id": "q2_ss2_-_redox_reactions",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Redox Reactions is used in practical situations.",
+            "answer": "SS2 - Redox Reactions is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Redox Reactions"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Redox Reactions applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.724486",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_biology_cell_biology_20260107151711",
+      "title": "SS1 - Cell Biology",
+      "subject": "Biology",
+      "topic": "SS1 - Cell Biology",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - cell biology",
+        "Apply ss1 - cell biology to real-world scenarios",
+        "Analyze and solve problems related to ss1 - cell biology"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_cell_biology",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Cell Biology and their importance in Biology."
+        },
+        {
+          "id": "main_ss1_-_cell_biology",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Cell Biology. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_cell_biology",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Cell Biology. Understanding how SS1 - Cell Biology applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_cell_biology",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Cell Biology?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Cell Biology."
+          },
+          {
+            "id": "q2_ss1_-_cell_biology",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Cell Biology is used in practical situations.",
+            "answer": "SS1 - Cell Biology is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Cell Biology"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Cell Biology applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.724641",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_biology_genetics_20260107151711",
+      "title": "SS2 - Genetics",
+      "subject": "Biology",
+      "topic": "SS2 - Genetics",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - genetics",
+        "Apply ss2 - genetics to real-world scenarios",
+        "Analyze and solve problems related to ss2 - genetics"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_genetics",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Genetics and their importance in Biology."
+        },
+        {
+          "id": "main_ss2_-_genetics",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Genetics. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_genetics",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Genetics. Understanding how SS2 - Genetics applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_genetics",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Genetics?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Genetics."
+          },
+          {
+            "id": "q2_ss2_-_genetics",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Genetics is used in practical situations.",
+            "answer": "SS2 - Genetics is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Genetics"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Genetics applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.724791",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss3_biology_evolution_20260107151711",
+      "title": "SS3 - Evolution",
+      "subject": "Biology",
+      "topic": "SS3 - Evolution",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss3 - evolution",
+        "Apply ss3 - evolution to real-world scenarios",
+        "Analyze and solve problems related to ss3 - evolution"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss3_-_evolution",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS3 - Evolution and their importance in Biology."
+        },
+        {
+          "id": "main_ss3_-_evolution",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS3 - Evolution. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss3_-_evolution",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS3 - Evolution. Understanding how SS3 - Evolution applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss3_-_evolution",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS3 - Evolution?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS3 - Evolution."
+          },
+          {
+            "id": "q2_ss3_-_evolution",
+            "type": "short_answer",
+            "question": "Explain how SS3 - Evolution is used in practical situations.",
+            "answer": "SS3 - Evolution is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS3 - Evolution"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS3 - Evolution applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.724945",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS3",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_biology_human_anatomy_20260107151711",
+      "title": "SS1 - Human Anatomy",
+      "subject": "Biology",
+      "topic": "SS1 - Human Anatomy",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - human anatomy",
+        "Apply ss1 - human anatomy to real-world scenarios",
+        "Analyze and solve problems related to ss1 - human anatomy"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_human_anatomy",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Human Anatomy and their importance in Biology."
+        },
+        {
+          "id": "main_ss1_-_human_anatomy",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Human Anatomy. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_human_anatomy",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Human Anatomy. Understanding how SS1 - Human Anatomy applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_human_anatomy",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Human Anatomy?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Human Anatomy."
+          },
+          {
+            "id": "q2_ss1_-_human_anatomy",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Human Anatomy is used in practical situations.",
+            "answer": "SS1 - Human Anatomy is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Human Anatomy"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Human Anatomy applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.725121",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_biology_ecology_20260107151711",
+      "title": "SS2 - Ecology",
+      "subject": "Biology",
+      "topic": "SS2 - Ecology",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - ecology",
+        "Apply ss2 - ecology to real-world scenarios",
+        "Analyze and solve problems related to ss2 - ecology"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_ecology",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Ecology and their importance in Biology."
+        },
+        {
+          "id": "main_ss2_-_ecology",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Ecology. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_ecology",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Ecology. Understanding how SS2 - Ecology applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_ecology",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Ecology?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Ecology."
+          },
+          {
+            "id": "q2_ss2_-_ecology",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Ecology is used in practical situations.",
+            "answer": "SS2 - Ecology is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Ecology"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Ecology applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.725270",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_english_language_reading_comprehension_20260107151711",
+      "title": "SS1 - Reading Comprehension",
+      "subject": "English Language",
+      "topic": "SS1 - Reading Comprehension",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - reading comprehension",
+        "Apply ss1 - reading comprehension to real-world scenarios",
+        "Analyze and solve problems related to ss1 - reading comprehension"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_reading_comprehension",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Reading Comprehension and their importance in English Language."
+        },
+        {
+          "id": "main_ss1_-_reading_comprehension",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Reading Comprehension. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_reading_comprehension",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Reading Comprehension. Understanding how SS1 - Reading Comprehension applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_reading_comprehension",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Reading Comprehension?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Reading Comprehension."
+          },
+          {
+            "id": "q2_ss1_-_reading_comprehension",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Reading Comprehension is used in practical situations.",
+            "answer": "SS1 - Reading Comprehension is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Reading Comprehension"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Reading Comprehension applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.725456",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_english_language_writing_skills_20260107151711",
+      "title": "SS2 - Writing Skills",
+      "subject": "English Language",
+      "topic": "SS2 - Writing Skills",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - writing skills",
+        "Apply ss2 - writing skills to real-world scenarios",
+        "Analyze and solve problems related to ss2 - writing skills"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_writing_skills",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Writing Skills and their importance in English Language."
+        },
+        {
+          "id": "main_ss2_-_writing_skills",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Writing Skills. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_writing_skills",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Writing Skills. Understanding how SS2 - Writing Skills applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_writing_skills",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Writing Skills?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Writing Skills."
+          },
+          {
+            "id": "q2_ss2_-_writing_skills",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Writing Skills is used in practical situations.",
+            "answer": "SS2 - Writing Skills is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Writing Skills"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Writing Skills applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.725622",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss3_english_language_literature_analysis_20260107151711",
+      "title": "SS3 - Literature Analysis",
+      "subject": "English Language",
+      "topic": "SS3 - Literature Analysis",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss3 - literature analysis",
+        "Apply ss3 - literature analysis to real-world scenarios",
+        "Analyze and solve problems related to ss3 - literature analysis"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss3_-_literature_analysis",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS3 - Literature Analysis and their importance in English Language."
+        },
+        {
+          "id": "main_ss3_-_literature_analysis",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS3 - Literature Analysis. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss3_-_literature_analysis",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS3 - Literature Analysis. Understanding how SS3 - Literature Analysis applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss3_-_literature_analysis",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS3 - Literature Analysis?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS3 - Literature Analysis."
+          },
+          {
+            "id": "q2_ss3_-_literature_analysis",
+            "type": "short_answer",
+            "question": "Explain how SS3 - Literature Analysis is used in practical situations.",
+            "answer": "SS3 - Literature Analysis is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS3 - Literature Analysis"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS3 - Literature Analysis applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.725785",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS3",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss1_english_language_grammar_fundamentals_20260107151711",
+      "title": "SS1 - Grammar Fundamentals",
+      "subject": "English Language",
+      "topic": "SS1 - Grammar Fundamentals",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss1 - grammar fundamentals",
+        "Apply ss1 - grammar fundamentals to real-world scenarios",
+        "Analyze and solve problems related to ss1 - grammar fundamentals"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss1_-_grammar_fundamentals",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS1 - Grammar Fundamentals and their importance in English Language."
+        },
+        {
+          "id": "main_ss1_-_grammar_fundamentals",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS1 - Grammar Fundamentals. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss1_-_grammar_fundamentals",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS1 - Grammar Fundamentals. Understanding how SS1 - Grammar Fundamentals applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss1_-_grammar_fundamentals",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS1 - Grammar Fundamentals?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS1 - Grammar Fundamentals."
+          },
+          {
+            "id": "q2_ss1_-_grammar_fundamentals",
+            "type": "short_answer",
+            "question": "Explain how SS1 - Grammar Fundamentals is used in practical situations.",
+            "answer": "SS1 - Grammar Fundamentals is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS1 - Grammar Fundamentals"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS1 - Grammar Fundamentals applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.725955",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS1",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "nerdc_ss2_english_language_oral_communication_20260107151711",
+      "title": "SS2 - Oral Communication",
+      "subject": "English Language",
+      "topic": "SS2 - Oral Communication",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of ss2 - oral communication",
+        "Apply ss2 - oral communication to real-world scenarios",
+        "Analyze and solve problems related to ss2 - oral communication"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_ss2_-_oral_communication",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of SS2 - Oral Communication and their importance in English Language."
+        },
+        {
+          "id": "main_ss2_-_oral_communication",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of SS2 - Oral Communication. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_ss2_-_oral_communication",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of SS2 - Oral Communication. Understanding how SS2 - Oral Communication applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_ss2_-_oral_communication",
+            "type": "multiple_choice",
+            "question": "What is the definition of SS2 - Oral Communication?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of SS2 - Oral Communication."
+          },
+          {
+            "id": "q2_ss2_-_oral_communication",
+            "type": "short_answer",
+            "question": "Explain how SS2 - Oral Communication is used in practical situations.",
+            "answer": "SS2 - Oral Communication is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "SS2 - Oral Communication"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How SS2 - Oral Communication applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-07T15:17:11.726211",
+      "status": "draft",
+      "curriculum": "NERDC",
+      "level": "SS2",
+      "content_type": "study_guide"
     }
   ],
-  "progress": {}
+  "progress": {},
+  "metadata": {
+    "total_items": 59,
+    "last_updated": "2026-01-07T15:17:11.726307"
+  }
 }
