@@ -46,6 +46,51 @@
       "metadata": {}
     },
     {
+      "id": "waec_subj_government",
+      "type": "subject",
+      "name": "Government",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {}
+    },
+    {
+      "id": "waec_subj_commerce",
+      "type": "subject",
+      "name": "Commerce",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {}
+    },
+    {
+      "id": "waec_subj_accounting",
+      "type": "subject",
+      "name": "Accounting",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {}
+    },
+    {
+      "id": "waec_subj_agricultural_science",
+      "type": "subject",
+      "name": "Agricultural Science",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {}
+    },
+    {
+      "id": "waec_subj_literature_in_english",
+      "type": "subject",
+      "name": "Literature in English",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {}
+    },
+    {
       "id": "waec_topic_biology_nutrition_in_animals",
       "type": "topic",
       "name": "Nutrition in Animals",
@@ -831,6 +876,606 @@
       }
     },
     {
+      "id": "waec_topic_government_forms_and_systems_of_government",
+      "type": "topic",
+      "name": "Forms and Systems of Government",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "waec_government_forms_and_systems_of_government_20260108004800",
+      "type": "lesson",
+      "name": "Forms and Systems of Government",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "Forms and Systems of Government",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_government_the_constitution",
+      "type": "topic",
+      "name": "The Constitution",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "waec_government_the_constitution_20260108004800",
+      "type": "lesson",
+      "name": "The Constitution",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "The Constitution",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_government_rights_and_duties_of_citizens",
+      "type": "topic",
+      "name": "Rights and Duties of Citizens",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "waec_government_rights_and_duties_of_citizens_20260108004800",
+      "type": "lesson",
+      "name": "Rights and Duties of Citizens",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "Rights and Duties of Citizens",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_government_political_participation",
+      "type": "topic",
+      "name": "Political Participation",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "waec_government_political_participation_20260108004800",
+      "type": "lesson",
+      "name": "Political Participation",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "Political Participation",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_government_international_relations",
+      "type": "topic",
+      "name": "International Relations",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Government"
+      }
+    },
+    {
+      "id": "waec_government_international_relations_20260108004800",
+      "type": "lesson",
+      "name": "International Relations",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Government",
+        "topic": "International Relations",
+        "difficulty": "advanced"
+      }
+    },
+    {
+      "id": "waec_topic_commerce_nature_and_scope_of_commerce",
+      "type": "topic",
+      "name": "Nature and Scope of Commerce",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "waec_commerce_nature_and_scope_of_commerce_20260108004800",
+      "type": "lesson",
+      "name": "Nature and Scope of Commerce",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "Nature and Scope of Commerce",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_commerce_wholesale_and_retail_trade",
+      "type": "topic",
+      "name": "Wholesale and Retail Trade",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "waec_commerce_wholesale_and_retail_trade_20260108004800",
+      "type": "lesson",
+      "name": "Wholesale and Retail Trade",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "Wholesale and Retail Trade",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_commerce_services_and_aids_to_trade",
+      "type": "topic",
+      "name": "Services and Aids to Trade",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "waec_commerce_services_and_aids_to_trade_20260108004800",
+      "type": "lesson",
+      "name": "Services and Aids to Trade",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "Services and Aids to Trade",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_commerce_business_organizations",
+      "type": "topic",
+      "name": "Business Organizations",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "waec_commerce_business_organizations_20260108004800",
+      "type": "lesson",
+      "name": "Business Organizations",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "Business Organizations",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_commerce_consumer_protection",
+      "type": "topic",
+      "name": "Consumer Protection",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Commerce"
+      }
+    },
+    {
+      "id": "waec_commerce_consumer_protection_20260108004800",
+      "type": "lesson",
+      "name": "Consumer Protection",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Commerce",
+        "topic": "Consumer Protection",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_accounting_principles_and_concepts_of_accounting",
+      "type": "topic",
+      "name": "Principles and Concepts of Accounting",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "waec_accounting_principles_and_concepts_of_accounting_20260108004800",
+      "type": "lesson",
+      "name": "Principles and Concepts of Accounting",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "Principles and Concepts of Accounting",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_accounting_double_entry_bookkeeping",
+      "type": "topic",
+      "name": "Double Entry Bookkeeping",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "waec_accounting_double_entry_bookkeeping_20260108004800",
+      "type": "lesson",
+      "name": "Double Entry Bookkeeping",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "Double Entry Bookkeeping",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_accounting_books_of_accounts",
+      "type": "topic",
+      "name": "Books of Accounts",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "waec_accounting_books_of_accounts_20260108004800",
+      "type": "lesson",
+      "name": "Books of Accounts",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "Books of Accounts",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_accounting_final_accounts_and_balance_sheet",
+      "type": "topic",
+      "name": "Final Accounts and Balance Sheet",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "waec_accounting_final_accounts_and_balance_sheet_20260108004800",
+      "type": "lesson",
+      "name": "Final Accounts and Balance Sheet",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "Final Accounts and Balance Sheet",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_accounting_accounting_for_different_business_types",
+      "type": "topic",
+      "name": "Accounting for Different Business Types",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Accounting"
+      }
+    },
+    {
+      "id": "waec_accounting_accounting_for_different_business_types_20260108004800",
+      "type": "lesson",
+      "name": "Accounting for Different Business Types",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Accounting",
+        "topic": "Accounting for Different Business Types",
+        "difficulty": "advanced"
+      }
+    },
+    {
+      "id": "waec_topic_agricultural_science_principles_and_practices_of_agriculture",
+      "type": "topic",
+      "name": "Principles and Practices of Agriculture",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "waec_agricultural_science_principles_and_practices_of_agriculture_20260108004800",
+      "type": "lesson",
+      "name": "Principles and Practices of Agriculture",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "Principles and Practices of Agriculture",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_agricultural_science_soil_science",
+      "type": "topic",
+      "name": "Soil Science",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "waec_agricultural_science_soil_science_20260108004800",
+      "type": "lesson",
+      "name": "Soil Science",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "Soil Science",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_agricultural_science_crop_production",
+      "type": "topic",
+      "name": "Crop Production",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "waec_agricultural_science_crop_production_20260108004800",
+      "type": "lesson",
+      "name": "Crop Production",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "Crop Production",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_agricultural_science_livestock_management",
+      "type": "topic",
+      "name": "Livestock Management",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "waec_agricultural_science_livestock_management_20260108004800",
+      "type": "lesson",
+      "name": "Livestock Management",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "Livestock Management",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_agricultural_science_farm_tools_and_equipment",
+      "type": "topic",
+      "name": "Farm Tools and Equipment",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Agricultural Science"
+      }
+    },
+    {
+      "id": "waec_agricultural_science_farm_tools_and_equipment_20260108004800",
+      "type": "lesson",
+      "name": "Farm Tools and Equipment",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Agricultural Science",
+        "topic": "Farm Tools and Equipment",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_literature_in_english_drama_and_theatre_arts",
+      "type": "topic",
+      "name": "Drama and Theatre Arts",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "waec_literature_in_english_drama_and_theatre_arts_20260108004800",
+      "type": "lesson",
+      "name": "Drama and Theatre Arts",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "Drama and Theatre Arts",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_literature_in_english_poetry_analysis",
+      "type": "topic",
+      "name": "Poetry Analysis",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "waec_literature_in_english_poetry_analysis_20260108004800",
+      "type": "lesson",
+      "name": "Poetry Analysis",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "Poetry Analysis",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_literature_in_english_prose_fiction",
+      "type": "topic",
+      "name": "Prose Fiction",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "waec_literature_in_english_prose_fiction_20260108004800",
+      "type": "lesson",
+      "name": "Prose Fiction",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "Prose Fiction",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_literature_in_english_african_literature",
+      "type": "topic",
+      "name": "African Literature",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "waec_literature_in_english_african_literature_20260108004800",
+      "type": "lesson",
+      "name": "African Literature",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "African Literature",
+        "difficulty": "intermediate"
+      }
+    },
+    {
+      "id": "waec_topic_literature_in_english_critical_appreciation",
+      "type": "topic",
+      "name": "Critical Appreciation",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Literature in English"
+      }
+    },
+    {
+      "id": "waec_literature_in_english_critical_appreciation_20260108004800",
+      "type": "lesson",
+      "name": "Critical Appreciation",
+      "description": "",
+      "level": null,
+      "curriculum": "WAEC",
+      "metadata": {
+        "subject": "Literature in English",
+        "topic": "Critical Appreciation",
+        "difficulty": "advanced"
+      }
+    },
+    {
       "id": "nerdc_level_ss1",
       "type": "level",
       "name": "SS1",
@@ -858,36 +1503,9 @@
       "metadata": {}
     },
     {
-      "id": "nerdc_ss1_subj_geography",
+      "id": "nerdc_ss1_subj_chemistry",
       "type": "subject",
-      "name": "Geography",
-      "description": "",
-      "level": "SS1",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss1_subj_computer_science",
-      "type": "subject",
-      "name": "Computer Science",
-      "description": "",
-      "level": "SS1",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss1_subj_government",
-      "type": "subject",
-      "name": "Government",
-      "description": "",
-      "level": "SS1",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss1_subj_literature_in_english",
-      "type": "subject",
-      "name": "Literature in English",
+      "name": "Chemistry",
       "description": "",
       "level": "SS1",
       "curriculum": "NERDC",
@@ -903,6 +1521,15 @@
       "metadata": {}
     },
     {
+      "id": "nerdc_ss1_subj_geography",
+      "type": "subject",
+      "name": "Geography",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
       "id": "nerdc_ss1_subj_economics",
       "type": "subject",
       "name": "Economics",
@@ -912,18 +1539,9 @@
       "metadata": {}
     },
     {
-      "id": "nerdc_ss1_subj_further_mathematics",
+      "id": "nerdc_ss1_subj_government",
       "type": "subject",
-      "name": "Further Mathematics",
-      "description": "",
-      "level": "SS1",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss1_subj_accounting",
-      "type": "subject",
-      "name": "Accounting",
+      "name": "Government",
       "description": "",
       "level": "SS1",
       "curriculum": "NERDC",
@@ -939,9 +1557,54 @@
       "metadata": {}
     },
     {
+      "id": "nerdc_ss1_subj_further_mathematics",
+      "type": "subject",
+      "name": "Further Mathematics",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss1_subj_physics",
+      "type": "subject",
+      "name": "Physics",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss1_subj_accounting",
+      "type": "subject",
+      "name": "Accounting",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
       "id": "nerdc_ss1_subj_mathematics",
       "type": "subject",
       "name": "Mathematics",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss1_subj_computer_science",
+      "type": "subject",
+      "name": "Computer Science",
+      "description": "",
+      "level": "SS1",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss1_subj_literature_in_english",
+      "type": "subject",
+      "name": "Literature in English",
       "description": "",
       "level": "SS1",
       "curriculum": "NERDC",
@@ -966,54 +1629,9 @@
       "metadata": {}
     },
     {
-      "id": "nerdc_ss1_subj_chemistry",
+      "id": "nerdc_ss2_subj_chemistry",
       "type": "subject",
       "name": "Chemistry",
-      "description": "",
-      "level": "SS1",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss1_subj_physics",
-      "type": "subject",
-      "name": "Physics",
-      "description": "",
-      "level": "SS1",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss2_subj_geography",
-      "type": "subject",
-      "name": "Geography",
-      "description": "",
-      "level": "SS2",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss2_subj_computer_science",
-      "type": "subject",
-      "name": "Computer Science",
-      "description": "",
-      "level": "SS2",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss2_subj_government",
-      "type": "subject",
-      "name": "Government",
-      "description": "",
-      "level": "SS2",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss2_subj_literature_in_english",
-      "type": "subject",
-      "name": "Literature in English",
       "description": "",
       "level": "SS2",
       "curriculum": "NERDC",
@@ -1029,6 +1647,15 @@
       "metadata": {}
     },
     {
+      "id": "nerdc_ss2_subj_geography",
+      "type": "subject",
+      "name": "Geography",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
       "id": "nerdc_ss2_subj_economics",
       "type": "subject",
       "name": "Economics",
@@ -1038,18 +1665,9 @@
       "metadata": {}
     },
     {
-      "id": "nerdc_ss2_subj_further_mathematics",
+      "id": "nerdc_ss2_subj_government",
       "type": "subject",
-      "name": "Further Mathematics",
-      "description": "",
-      "level": "SS2",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss2_subj_accounting",
-      "type": "subject",
-      "name": "Accounting",
+      "name": "Government",
       "description": "",
       "level": "SS2",
       "curriculum": "NERDC",
@@ -1065,9 +1683,54 @@
       "metadata": {}
     },
     {
+      "id": "nerdc_ss2_subj_further_mathematics",
+      "type": "subject",
+      "name": "Further Mathematics",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_physics",
+      "type": "subject",
+      "name": "Physics",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_accounting",
+      "type": "subject",
+      "name": "Accounting",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
       "id": "nerdc_ss2_subj_mathematics",
       "type": "subject",
       "name": "Mathematics",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_computer_science",
+      "type": "subject",
+      "name": "Computer Science",
+      "description": "",
+      "level": "SS2",
+      "curriculum": "NERDC",
+      "metadata": {}
+    },
+    {
+      "id": "nerdc_ss2_subj_literature_in_english",
+      "type": "subject",
+      "name": "Literature in English",
       "description": "",
       "level": "SS2",
       "curriculum": "NERDC",
@@ -1086,24 +1749,6 @@
       "id": "nerdc_ss2_subj_english_language",
       "type": "subject",
       "name": "English Language",
-      "description": "",
-      "level": "SS2",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss2_subj_chemistry",
-      "type": "subject",
-      "name": "Chemistry",
-      "description": "",
-      "level": "SS2",
-      "curriculum": "NERDC",
-      "metadata": {}
-    },
-    {
-      "id": "nerdc_ss2_subj_physics",
-      "type": "subject",
-      "name": "Physics",
       "description": "",
       "level": "SS2",
       "curriculum": "NERDC",
@@ -6228,29 +6873,358 @@
       "metadata": {}
     },
     {
-      "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_geography",
+      "source_id": "waec_subj_government",
+      "target_id": "waec_topic_government_forms_and_systems_of_government",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_government_forms_and_systems_of_government",
+      "target_id": "waec_government_forms_and_systems_of_government_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_government",
+      "target_id": "waec_topic_government_the_constitution",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_government_the_constitution",
+      "target_id": "waec_government_the_constitution_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_government",
+      "target_id": "waec_topic_government_rights_and_duties_of_citizens",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_government_rights_and_duties_of_citizens",
+      "target_id": "waec_government_rights_and_duties_of_citizens_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_government",
+      "target_id": "waec_topic_government_political_participation",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_government_political_participation",
+      "target_id": "waec_government_political_participation_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_government",
+      "target_id": "waec_topic_government_international_relations",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_government_international_relations",
+      "target_id": "waec_government_international_relations_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_commerce",
+      "target_id": "waec_topic_commerce_nature_and_scope_of_commerce",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_commerce_nature_and_scope_of_commerce",
+      "target_id": "waec_commerce_nature_and_scope_of_commerce_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_commerce",
+      "target_id": "waec_topic_commerce_wholesale_and_retail_trade",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_commerce_wholesale_and_retail_trade",
+      "target_id": "waec_commerce_wholesale_and_retail_trade_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_commerce",
+      "target_id": "waec_topic_commerce_services_and_aids_to_trade",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_commerce_services_and_aids_to_trade",
+      "target_id": "waec_commerce_services_and_aids_to_trade_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_commerce",
+      "target_id": "waec_topic_commerce_business_organizations",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_commerce_business_organizations",
+      "target_id": "waec_commerce_business_organizations_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_commerce",
+      "target_id": "waec_topic_commerce_consumer_protection",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_commerce_consumer_protection",
+      "target_id": "waec_commerce_consumer_protection_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_accounting",
+      "target_id": "waec_topic_accounting_principles_and_concepts_of_accounting",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_accounting_principles_and_concepts_of_accounting",
+      "target_id": "waec_accounting_principles_and_concepts_of_accounting_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_accounting",
+      "target_id": "waec_topic_accounting_double_entry_bookkeeping",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_accounting_double_entry_bookkeeping",
+      "target_id": "waec_accounting_double_entry_bookkeeping_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_accounting",
+      "target_id": "waec_topic_accounting_books_of_accounts",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_accounting_books_of_accounts",
+      "target_id": "waec_accounting_books_of_accounts_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_accounting",
+      "target_id": "waec_topic_accounting_final_accounts_and_balance_sheet",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_accounting_final_accounts_and_balance_sheet",
+      "target_id": "waec_accounting_final_accounts_and_balance_sheet_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_accounting",
+      "target_id": "waec_topic_accounting_accounting_for_different_business_types",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_accounting_accounting_for_different_business_types",
+      "target_id": "waec_accounting_accounting_for_different_business_types_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_agricultural_science",
+      "target_id": "waec_topic_agricultural_science_principles_and_practices_of_agriculture",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_agricultural_science_principles_and_practices_of_agriculture",
+      "target_id": "waec_agricultural_science_principles_and_practices_of_agriculture_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_agricultural_science",
+      "target_id": "waec_topic_agricultural_science_soil_science",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_agricultural_science_soil_science",
+      "target_id": "waec_agricultural_science_soil_science_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_agricultural_science",
+      "target_id": "waec_topic_agricultural_science_crop_production",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_agricultural_science_crop_production",
+      "target_id": "waec_agricultural_science_crop_production_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_agricultural_science",
+      "target_id": "waec_topic_agricultural_science_livestock_management",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_agricultural_science_livestock_management",
+      "target_id": "waec_agricultural_science_livestock_management_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_agricultural_science",
+      "target_id": "waec_topic_agricultural_science_farm_tools_and_equipment",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_agricultural_science_farm_tools_and_equipment",
+      "target_id": "waec_agricultural_science_farm_tools_and_equipment_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_literature_in_english",
+      "target_id": "waec_topic_literature_in_english_drama_and_theatre_arts",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_literature_in_english_drama_and_theatre_arts",
+      "target_id": "waec_literature_in_english_drama_and_theatre_arts_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_literature_in_english",
+      "target_id": "waec_topic_literature_in_english_poetry_analysis",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_literature_in_english_poetry_analysis",
+      "target_id": "waec_literature_in_english_poetry_analysis_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_literature_in_english",
+      "target_id": "waec_topic_literature_in_english_prose_fiction",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_literature_in_english_prose_fiction",
+      "target_id": "waec_literature_in_english_prose_fiction_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_literature_in_english",
+      "target_id": "waec_topic_literature_in_english_african_literature",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_literature_in_english_african_literature",
+      "target_id": "waec_literature_in_english_african_literature_20260108004800",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_subj_literature_in_english",
+      "target_id": "waec_topic_literature_in_english_critical_appreciation",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_literature_in_english_critical_appreciation",
+      "target_id": "waec_literature_in_english_critical_appreciation_20260108004800",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
     },
     {
       "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_computer_science",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_government",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_literature_in_english",
+      "target_id": "nerdc_ss1_subj_chemistry",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -6264,6 +7238,13 @@
     },
     {
       "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_geography",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
       "target_id": "nerdc_ss1_subj_economics",
       "relationship_type": "contains",
       "weight": 1.0,
@@ -6271,14 +7252,7 @@
     },
     {
       "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_further_mathematics",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_accounting",
+      "target_id": "nerdc_ss1_subj_government",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -6292,7 +7266,42 @@
     },
     {
       "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_further_mathematics",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_physics",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_accounting",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
       "target_id": "nerdc_ss1_subj_mathematics",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_computer_science",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss1",
+      "target_id": "nerdc_ss1_subj_literature_in_english",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -6312,43 +7321,8 @@
       "metadata": {}
     },
     {
-      "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_chemistry",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss1",
-      "target_id": "nerdc_ss1_subj_physics",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
       "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_geography",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_computer_science",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_government",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_literature_in_english",
+      "target_id": "nerdc_ss2_subj_chemistry",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -6362,6 +7336,13 @@
     },
     {
       "source_id": "nerdc_level_ss2",
+      "target_id": "nerdc_ss2_subj_geography",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss2",
       "target_id": "nerdc_ss2_subj_economics",
       "relationship_type": "contains",
       "weight": 1.0,
@@ -6369,14 +7350,7 @@
     },
     {
       "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_further_mathematics",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_accounting",
+      "target_id": "nerdc_ss2_subj_government",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -6390,7 +7364,42 @@
     },
     {
       "source_id": "nerdc_level_ss2",
+      "target_id": "nerdc_ss2_subj_further_mathematics",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss2",
+      "target_id": "nerdc_ss2_subj_physics",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss2",
+      "target_id": "nerdc_ss2_subj_accounting",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss2",
       "target_id": "nerdc_ss2_subj_mathematics",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss2",
+      "target_id": "nerdc_ss2_subj_computer_science",
+      "relationship_type": "contains",
+      "weight": 1.0,
+      "metadata": {}
+    },
+    {
+      "source_id": "nerdc_level_ss2",
+      "target_id": "nerdc_ss2_subj_literature_in_english",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -6405,20 +7414,6 @@
     {
       "source_id": "nerdc_level_ss2",
       "target_id": "nerdc_ss2_subj_english_language",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_chemistry",
-      "relationship_type": "contains",
-      "weight": 1.0,
-      "metadata": {}
-    },
-    {
-      "source_id": "nerdc_level_ss2",
-      "target_id": "nerdc_ss2_subj_physics",
       "relationship_type": "contains",
       "weight": 1.0,
       "metadata": {}
@@ -9112,6 +10107,55 @@
       "metadata": {}
     },
     {
+      "source_id": "waec_topic_commerce_services_and_aids_to_trade",
+      "target_id": "nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade",
+      "relationship_type": "related_to",
+      "weight": 0.6666666666666666,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_commerce_business_organizations",
+      "target_id": "nerdc_ss1_topic_commerce_ss1_-_business_organizations",
+      "relationship_type": "related_to",
+      "weight": 0.6666666666666666,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_commerce_consumer_protection",
+      "target_id": "nerdc_ss1_topic_commerce_ss1_-_consumer_protection",
+      "relationship_type": "related_to",
+      "weight": 0.6666666666666666,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_agricultural_science_soil_science",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_soil_science",
+      "relationship_type": "related_to",
+      "weight": 0.6666666666666666,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_agricultural_science_crop_production",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_crop_production",
+      "relationship_type": "related_to",
+      "weight": 0.6666666666666666,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_agricultural_science_livestock_management",
+      "target_id": "nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management",
+      "relationship_type": "related_to",
+      "weight": 0.6666666666666666,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_literature_in_english_african_literature",
+      "target_id": "nerdc_ss2_topic_literature_in_english_ss2_-_african_literature",
+      "relationship_type": "related_to",
+      "weight": 0.6666666666666666,
+      "metadata": {}
+    },
+    {
       "source_id": "nerdc_ss1_topic_mathematics_ss1_-_number_systems",
       "target_id": "nerdc_ss1_topic_computer_science_ss1_-_number_systems",
       "relationship_type": "related_to",
@@ -9303,6 +10347,146 @@
     {
       "source_id": "waec_topic_physics_mechanics_-_forces_and_motion",
       "target_id": "waec_topic_physics_optics",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_government_forms_and_systems_of_government",
+      "target_id": "waec_topic_government_international_relations",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_government_international_relations",
+      "target_id": "waec_topic_government_political_participation",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_government_political_participation",
+      "target_id": "waec_topic_government_rights_and_duties_of_citizens",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_government_rights_and_duties_of_citizens",
+      "target_id": "waec_topic_government_the_constitution",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_commerce_business_organizations",
+      "target_id": "waec_topic_commerce_consumer_protection",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_commerce_consumer_protection",
+      "target_id": "waec_topic_commerce_nature_and_scope_of_commerce",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_commerce_nature_and_scope_of_commerce",
+      "target_id": "waec_topic_commerce_services_and_aids_to_trade",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_commerce_services_and_aids_to_trade",
+      "target_id": "waec_topic_commerce_wholesale_and_retail_trade",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_accounting_accounting_for_different_business_types",
+      "target_id": "waec_topic_accounting_books_of_accounts",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_accounting_books_of_accounts",
+      "target_id": "waec_topic_accounting_double_entry_bookkeeping",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_accounting_double_entry_bookkeeping",
+      "target_id": "waec_topic_accounting_final_accounts_and_balance_sheet",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_accounting_final_accounts_and_balance_sheet",
+      "target_id": "waec_topic_accounting_principles_and_concepts_of_accounting",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_agricultural_science_crop_production",
+      "target_id": "waec_topic_agricultural_science_farm_tools_and_equipment",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_agricultural_science_farm_tools_and_equipment",
+      "target_id": "waec_topic_agricultural_science_livestock_management",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_agricultural_science_livestock_management",
+      "target_id": "waec_topic_agricultural_science_principles_and_practices_of_agriculture",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_agricultural_science_principles_and_practices_of_agriculture",
+      "target_id": "waec_topic_agricultural_science_soil_science",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_literature_in_english_african_literature",
+      "target_id": "waec_topic_literature_in_english_critical_appreciation",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_literature_in_english_critical_appreciation",
+      "target_id": "waec_topic_literature_in_english_drama_and_theatre_arts",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_literature_in_english_drama_and_theatre_arts",
+      "target_id": "waec_topic_literature_in_english_poetry_analysis",
+      "relationship_type": "prerequisite",
+      "weight": 0.5,
+      "metadata": {}
+    },
+    {
+      "source_id": "waec_topic_literature_in_english_poetry_analysis",
+      "target_id": "waec_topic_literature_in_english_prose_fiction",
       "relationship_type": "prerequisite",
       "weight": 0.5,
       "metadata": {}
@@ -10016,12 +11200,12 @@
     }
   ],
   "stats": {
-    "total_nodes": 475,
-    "total_edges": 615,
+    "total_nodes": 530,
+    "total_edges": 692,
     "node_types": {
-      "subject": 34,
-      "topic": 160,
-      "lesson": 278,
+      "subject": 39,
+      "topic": 185,
+      "lesson": 303,
       "level": 3
     }
   }

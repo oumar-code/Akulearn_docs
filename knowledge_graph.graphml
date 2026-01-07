@@ -25,6 +25,26 @@
       <data key="node_type">subject</data>
       <data key="node_curriculum">WAEC</data>
     </node>
+    <node id="waec_subj_government" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_subj_commerce" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_subj_accounting" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_subj_agricultural_science" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_subj_literature_in_english" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
     <node id="waec_topic_biology_nutrition_in_animals" labels=":(topic)">
       <data key="node_type">topic</data>
       <data key="node_curriculum">WAEC</data>
@@ -285,6 +305,206 @@
       <data key="node_type">lesson</data>
       <data key="node_curriculum">WAEC</data>
     </node>
+    <node id="waec_topic_government_forms_and_systems_of_government" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_government_forms_and_systems_of_government_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_government_the_constitution" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_government_the_constitution_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_government_rights_and_duties_of_citizens" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_government_rights_and_duties_of_citizens_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_government_political_participation" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_government_political_participation_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_government_international_relations" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_government_international_relations_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_commerce_nature_and_scope_of_commerce" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_commerce_nature_and_scope_of_commerce_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_commerce_wholesale_and_retail_trade" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_commerce_wholesale_and_retail_trade_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_commerce_services_and_aids_to_trade" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_commerce_services_and_aids_to_trade_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_commerce_business_organizations" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_commerce_business_organizations_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_commerce_consumer_protection" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_commerce_consumer_protection_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_accounting_principles_and_concepts_of_accounting" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_accounting_principles_and_concepts_of_accounting_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_accounting_double_entry_bookkeeping" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_accounting_double_entry_bookkeeping_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_accounting_books_of_accounts" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_accounting_books_of_accounts_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_accounting_final_accounts_and_balance_sheet" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_accounting_final_accounts_and_balance_sheet_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_accounting_accounting_for_different_business_types" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_accounting_accounting_for_different_business_types_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_agricultural_science_principles_and_practices_of_agriculture" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_agricultural_science_principles_and_practices_of_agriculture_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_agricultural_science_soil_science" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_agricultural_science_soil_science_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_agricultural_science_crop_production" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_agricultural_science_crop_production_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_agricultural_science_livestock_management" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_agricultural_science_livestock_management_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_agricultural_science_farm_tools_and_equipment" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_agricultural_science_farm_tools_and_equipment_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_literature_in_english_drama_and_theatre_arts" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_literature_in_english_drama_and_theatre_arts_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_literature_in_english_poetry_analysis" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_literature_in_english_poetry_analysis_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_literature_in_english_prose_fiction" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_literature_in_english_prose_fiction_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_literature_in_english_african_literature" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_literature_in_english_african_literature_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_topic_literature_in_english_critical_appreciation" labels=":(topic)">
+      <data key="node_type">topic</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
+    <node id="waec_literature_in_english_critical_appreciation_20260108004800" labels=":(lesson)">
+      <data key="node_type">lesson</data>
+      <data key="node_curriculum">WAEC</data>
+    </node>
     <node id="nerdc_level_ss1" labels=":(level)">
       <data key="node_type">level</data>
       <data key="node_curriculum">NERDC</data>
@@ -297,19 +517,7 @@
       <data key="node_type">level</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss1_subj_agricultural_science" labels=":(subject)">
-      <data key="node_type">subject</data>
-      <data key="node_curriculum">NERDC</data>
-    </node>
-    <node id="nerdc_ss1_subj_mathematics" labels=":(subject)">
-      <data key="node_type">subject</data>
-      <data key="node_curriculum">NERDC</data>
-    </node>
-    <node id="nerdc_ss1_subj_english_language" labels=":(subject)">
-      <data key="node_type">subject</data>
-      <data key="node_curriculum">NERDC</data>
-    </node>
-    <node id="nerdc_ss1_subj_chemistry" labels=":(subject)">
+    <node id="nerdc_ss1_subj_further_mathematics" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
@@ -317,15 +525,11 @@
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss1_subj_literature_in_english" labels=":(subject)">
+    <node id="nerdc_ss1_subj_physics" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss1_subj_biology" labels=":(subject)">
-      <data key="node_type">subject</data>
-      <data key="node_curriculum">NERDC</data>
-    </node>
-    <node id="nerdc_ss1_subj_economics" labels=":(subject)">
+    <node id="nerdc_ss1_subj_mathematics" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
@@ -333,7 +537,27 @@
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss1_subj_further_mathematics" labels=":(subject)">
+    <node id="nerdc_ss1_subj_biology" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_subj_literature_in_english" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_subj_economics" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_subj_chemistry" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_subj_english_language" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss1_subj_accounting" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
@@ -345,27 +569,11 @@
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss1_subj_accounting" labels=":(subject)">
+    <node id="nerdc_ss1_subj_agricultural_science" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss1_subj_physics" labels=":(subject)">
-      <data key="node_type">subject</data>
-      <data key="node_curriculum">NERDC</data>
-    </node>
-    <node id="nerdc_ss2_subj_agricultural_science" labels=":(subject)">
-      <data key="node_type">subject</data>
-      <data key="node_curriculum">NERDC</data>
-    </node>
-    <node id="nerdc_ss2_subj_mathematics" labels=":(subject)">
-      <data key="node_type">subject</data>
-      <data key="node_curriculum">NERDC</data>
-    </node>
-    <node id="nerdc_ss2_subj_english_language" labels=":(subject)">
-      <data key="node_type">subject</data>
-      <data key="node_curriculum">NERDC</data>
-    </node>
-    <node id="nerdc_ss2_subj_chemistry" labels=":(subject)">
+    <node id="nerdc_ss2_subj_further_mathematics" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
@@ -373,15 +581,11 @@
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss2_subj_literature_in_english" labels=":(subject)">
+    <node id="nerdc_ss2_subj_physics" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss2_subj_biology" labels=":(subject)">
-      <data key="node_type">subject</data>
-      <data key="node_curriculum">NERDC</data>
-    </node>
-    <node id="nerdc_ss2_subj_economics" labels=":(subject)">
+    <node id="nerdc_ss2_subj_mathematics" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
@@ -389,7 +593,27 @@
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss2_subj_further_mathematics" labels=":(subject)">
+    <node id="nerdc_ss2_subj_biology" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_subj_literature_in_english" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_subj_economics" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_subj_chemistry" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_subj_english_language" labels=":(subject)">
+      <data key="node_type">subject</data>
+      <data key="node_curriculum">NERDC</data>
+    </node>
+    <node id="nerdc_ss2_subj_accounting" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
@@ -401,11 +625,7 @@
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
-    <node id="nerdc_ss2_subj_accounting" labels=":(subject)">
-      <data key="node_type">subject</data>
-      <data key="node_curriculum">NERDC</data>
-    </node>
-    <node id="nerdc_ss2_subj_physics" labels=":(subject)">
+    <node id="nerdc_ss2_subj_agricultural_science" labels=":(subject)">
       <data key="node_type">subject</data>
       <data key="node_curriculum">NERDC</data>
     </node>
@@ -2201,19 +2421,207 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_agricultural_science">
+    <edge source="waec_subj_government" target="waec_topic_government_forms_and_systems_of_government">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_mathematics">
+    <edge source="waec_topic_government_forms_and_systems_of_government" target="waec_government_forms_and_systems_of_government_20260108004800">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_english_language">
+    <edge source="waec_subj_government" target="waec_topic_government_the_constitution">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_chemistry">
+    <edge source="waec_topic_government_the_constitution" target="waec_government_the_constitution_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_government" target="waec_topic_government_rights_and_duties_of_citizens">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_government_rights_and_duties_of_citizens" target="waec_government_rights_and_duties_of_citizens_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_government" target="waec_topic_government_political_participation">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_government_political_participation" target="waec_government_political_participation_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_government" target="waec_topic_government_international_relations">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_government_international_relations" target="waec_government_international_relations_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_commerce" target="waec_topic_commerce_nature_and_scope_of_commerce">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_commerce_nature_and_scope_of_commerce" target="waec_commerce_nature_and_scope_of_commerce_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_commerce" target="waec_topic_commerce_wholesale_and_retail_trade">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_commerce_wholesale_and_retail_trade" target="waec_commerce_wholesale_and_retail_trade_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_commerce" target="waec_topic_commerce_services_and_aids_to_trade">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_commerce_services_and_aids_to_trade" target="waec_commerce_services_and_aids_to_trade_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_commerce" target="waec_topic_commerce_business_organizations">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_commerce_business_organizations" target="waec_commerce_business_organizations_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_commerce" target="waec_topic_commerce_consumer_protection">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_commerce_consumer_protection" target="waec_commerce_consumer_protection_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_accounting" target="waec_topic_accounting_principles_and_concepts_of_accounting">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_accounting_principles_and_concepts_of_accounting" target="waec_accounting_principles_and_concepts_of_accounting_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_accounting" target="waec_topic_accounting_double_entry_bookkeeping">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_accounting_double_entry_bookkeeping" target="waec_accounting_double_entry_bookkeeping_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_accounting" target="waec_topic_accounting_books_of_accounts">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_accounting_books_of_accounts" target="waec_accounting_books_of_accounts_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_accounting" target="waec_topic_accounting_final_accounts_and_balance_sheet">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_accounting_final_accounts_and_balance_sheet" target="waec_accounting_final_accounts_and_balance_sheet_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_accounting" target="waec_topic_accounting_accounting_for_different_business_types">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_accounting_accounting_for_different_business_types" target="waec_accounting_accounting_for_different_business_types_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_agricultural_science" target="waec_topic_agricultural_science_principles_and_practices_of_agriculture">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_agricultural_science_principles_and_practices_of_agriculture" target="waec_agricultural_science_principles_and_practices_of_agriculture_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_agricultural_science" target="waec_topic_agricultural_science_soil_science">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_agricultural_science_soil_science" target="waec_agricultural_science_soil_science_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_agricultural_science" target="waec_topic_agricultural_science_crop_production">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_agricultural_science_crop_production" target="waec_agricultural_science_crop_production_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_agricultural_science" target="waec_topic_agricultural_science_livestock_management">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_agricultural_science_livestock_management" target="waec_agricultural_science_livestock_management_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_agricultural_science" target="waec_topic_agricultural_science_farm_tools_and_equipment">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_agricultural_science_farm_tools_and_equipment" target="waec_agricultural_science_farm_tools_and_equipment_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_literature_in_english" target="waec_topic_literature_in_english_drama_and_theatre_arts">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_literature_in_english_drama_and_theatre_arts" target="waec_literature_in_english_drama_and_theatre_arts_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_literature_in_english" target="waec_topic_literature_in_english_poetry_analysis">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_literature_in_english_poetry_analysis" target="waec_literature_in_english_poetry_analysis_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_literature_in_english" target="waec_topic_literature_in_english_prose_fiction">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_literature_in_english_prose_fiction" target="waec_literature_in_english_prose_fiction_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_literature_in_english" target="waec_topic_literature_in_english_african_literature">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_literature_in_english_african_literature" target="waec_literature_in_english_african_literature_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_subj_literature_in_english" target="waec_topic_literature_in_english_critical_appreciation">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="waec_topic_literature_in_english_critical_appreciation" target="waec_literature_in_english_critical_appreciation_20260108004800">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_further_mathematics">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
@@ -2221,15 +2629,11 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_literature_in_english">
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_physics">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_biology">
-      <data key="edge_type">contains</data>
-      <data key="edge_weight">1.0</data>
-    </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_economics">
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_mathematics">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
@@ -2237,7 +2641,27 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_further_mathematics">
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_biology">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_literature_in_english">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_economics">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_chemistry">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_english_language">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_accounting">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
@@ -2249,27 +2673,11 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_accounting">
+    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_agricultural_science">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss1" target="nerdc_ss1_subj_physics">
-      <data key="edge_type">contains</data>
-      <data key="edge_weight">1.0</data>
-    </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_agricultural_science">
-      <data key="edge_type">contains</data>
-      <data key="edge_weight">1.0</data>
-    </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_mathematics">
-      <data key="edge_type">contains</data>
-      <data key="edge_weight">1.0</data>
-    </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_english_language">
-      <data key="edge_type">contains</data>
-      <data key="edge_weight">1.0</data>
-    </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_chemistry">
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_further_mathematics">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
@@ -2277,15 +2685,11 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_literature_in_english">
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_physics">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_biology">
-      <data key="edge_type">contains</data>
-      <data key="edge_weight">1.0</data>
-    </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_economics">
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_mathematics">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
@@ -2293,7 +2697,27 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_further_mathematics">
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_biology">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_literature_in_english">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_economics">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_chemistry">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_english_language">
+      <data key="edge_type">contains</data>
+      <data key="edge_weight">1.0</data>
+    </edge>
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_accounting">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
@@ -2305,11 +2729,7 @@
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_accounting">
-      <data key="edge_type">contains</data>
-      <data key="edge_weight">1.0</data>
-    </edge>
-    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_physics">
+    <edge source="nerdc_level_ss2" target="nerdc_ss2_subj_agricultural_science">
       <data key="edge_type">contains</data>
       <data key="edge_weight">1.0</data>
     </edge>
@@ -3849,6 +4269,34 @@
       <data key="edge_type">related_to</data>
       <data key="edge_weight">1.0</data>
     </edge>
+    <edge source="waec_topic_commerce_services_and_aids_to_trade" target="nerdc_ss1_topic_commerce_ss1_-_trade_and_aids_to_trade">
+      <data key="edge_type">related_to</data>
+      <data key="edge_weight">0.6666666666666666</data>
+    </edge>
+    <edge source="waec_topic_commerce_business_organizations" target="nerdc_ss1_topic_commerce_ss1_-_business_organizations">
+      <data key="edge_type">related_to</data>
+      <data key="edge_weight">0.6666666666666666</data>
+    </edge>
+    <edge source="waec_topic_commerce_consumer_protection" target="nerdc_ss1_topic_commerce_ss1_-_consumer_protection">
+      <data key="edge_type">related_to</data>
+      <data key="edge_weight">0.6666666666666666</data>
+    </edge>
+    <edge source="waec_topic_agricultural_science_soil_science" target="nerdc_ss1_topic_agricultural_science_ss1_-_soil_science">
+      <data key="edge_type">related_to</data>
+      <data key="edge_weight">0.6666666666666666</data>
+    </edge>
+    <edge source="waec_topic_agricultural_science_crop_production" target="nerdc_ss1_topic_agricultural_science_ss1_-_crop_production">
+      <data key="edge_type">related_to</data>
+      <data key="edge_weight">0.6666666666666666</data>
+    </edge>
+    <edge source="waec_topic_agricultural_science_livestock_management" target="nerdc_ss1_topic_agricultural_science_ss1_-_livestock_management">
+      <data key="edge_type">related_to</data>
+      <data key="edge_weight">0.6666666666666666</data>
+    </edge>
+    <edge source="waec_topic_literature_in_english_african_literature" target="nerdc_ss2_topic_literature_in_english_ss2_-_african_literature">
+      <data key="edge_type">related_to</data>
+      <data key="edge_weight">0.6666666666666666</data>
+    </edge>
     <edge source="nerdc_ss1_topic_mathematics_ss1_-_number_systems" target="nerdc_ss1_topic_computer_science_ss1_-_number_systems">
       <data key="edge_type">related_to</data>
       <data key="edge_weight">1.0</data>
@@ -3958,6 +4406,86 @@
       <data key="edge_weight">0.5</data>
     </edge>
     <edge source="waec_topic_physics_mechanics_-_forces_and_motion" target="waec_topic_physics_optics">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_government_forms_and_systems_of_government" target="waec_topic_government_international_relations">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_government_international_relations" target="waec_topic_government_political_participation">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_government_political_participation" target="waec_topic_government_rights_and_duties_of_citizens">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_government_rights_and_duties_of_citizens" target="waec_topic_government_the_constitution">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_commerce_business_organizations" target="waec_topic_commerce_consumer_protection">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_commerce_consumer_protection" target="waec_topic_commerce_nature_and_scope_of_commerce">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_commerce_nature_and_scope_of_commerce" target="waec_topic_commerce_services_and_aids_to_trade">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_commerce_services_and_aids_to_trade" target="waec_topic_commerce_wholesale_and_retail_trade">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_accounting_accounting_for_different_business_types" target="waec_topic_accounting_books_of_accounts">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_accounting_books_of_accounts" target="waec_topic_accounting_double_entry_bookkeeping">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_accounting_double_entry_bookkeeping" target="waec_topic_accounting_final_accounts_and_balance_sheet">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_accounting_final_accounts_and_balance_sheet" target="waec_topic_accounting_principles_and_concepts_of_accounting">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_agricultural_science_crop_production" target="waec_topic_agricultural_science_farm_tools_and_equipment">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_agricultural_science_farm_tools_and_equipment" target="waec_topic_agricultural_science_livestock_management">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_agricultural_science_livestock_management" target="waec_topic_agricultural_science_principles_and_practices_of_agriculture">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_agricultural_science_principles_and_practices_of_agriculture" target="waec_topic_agricultural_science_soil_science">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_literature_in_english_african_literature" target="waec_topic_literature_in_english_critical_appreciation">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_literature_in_english_critical_appreciation" target="waec_topic_literature_in_english_drama_and_theatre_arts">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_literature_in_english_drama_and_theatre_arts" target="waec_topic_literature_in_english_poetry_analysis">
+      <data key="edge_type">prerequisite</data>
+      <data key="edge_weight">0.5</data>
+    </edge>
+    <edge source="waec_topic_literature_in_english_poetry_analysis" target="waec_topic_literature_in_english_prose_fiction">
       <data key="edge_type">prerequisite</data>
       <data key="edge_weight">0.5</data>
     </edge>
