@@ -7,6 +7,7 @@ import json
 import os
 from datetime import datetime
 from enhanced_content_generator import EnhancedContentGenerator
+from stable_image_client import generate_image, StableImageClientError
 
 # Batch 5 topics from expansion plan (10 topics)
 BATCH_5_TOPICS = [
@@ -41,6 +42,7 @@ def generate_batch5():
     generated_lessons = []
     successful = 0
     failed = 0
+    images_added = 0
     
     # Generate each topic
     for idx, (subject, topic, difficulty) in enumerate(BATCH_5_TOPICS, 1):
@@ -68,6 +70,22 @@ def generate_batch5():
         except Exception as e:
             failed += 1
             print(f"    ❌ Error: {str(e)[:100]}")
+
+    # Image generation pass (optional; skips quietly on errors)
+    for lesson in generated_lessons:
+        prompt = (
+            f"Educational illustration of {lesson['title']} for WAEC {lesson['subject']} students in Nigeria, "
+            "clear diagrams, classroom context, readable labels, 4k, crisp, high contrast"
+        )
+        try:
+            _, path = generate_image(prompt, output_path=None, num_inference_steps=20, guidance_scale=7.0)
+            lesson["image"] = {"path": path, "prompt": prompt}
+            images_added += 1
+            print(f"    🖼️  Image added: {path}")
+        except StableImageClientError as exc:
+            print(f"    ⚠️ Image generation skipped: {exc}")
+        except Exception as exc:  # Defensive catch to keep pipeline running
+            print(f"    ⚠️ Image generation error: {str(exc)[:80]}")
     
     # Save results
     output_file = "generated_content/batch5_content.json"
@@ -82,6 +100,7 @@ def generate_batch5():
             "mcp_enabled": True,
             "research_sources": ["Brave Search", "Wikipedia"],
             "expected_duration_minutes": 250,
+            "images_added": images_added,
         },
         "lessons": generated_lessons
     }
@@ -95,6 +114,7 @@ def generate_batch5():
     print("="*70)
     print(f"Generated: {successful}/{len(BATCH_5_TOPICS)} lessons")
     print(f"Failed: {failed}")
+    print(f"Images added: {images_added}")
     print(f"Output: {output_file}")
     print(f"Size: {os.path.getsize(output_file) / 1024:.1f} KB")
     print("="*70 + "\n")

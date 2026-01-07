@@ -72,7 +72,12 @@
       "status": "published",
       "views": 1,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-081925.png",
+        "prompt": "Educational diagram showing Cell Biology: Structure and Function for WAEC Biology, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:19:25.393841"
+      }
     },
     {
       "id": "biology_ecology_ecosystems_20260101064001",
@@ -116,7 +121,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-081935.png",
+        "prompt": "Educational diagram showing Ecology: Ecosystems and Interactions for WAEC Biology, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:19:36.838830"
+      }
     },
     {
       "id": "chemistry_organic_chemistry_hydrocarbons_20260101064002",
@@ -159,7 +169,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-081946.png",
+        "prompt": "Educational diagram showing Organic Chemistry: Hydrocarbons for WAEC Chemistry, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:19:46.605479"
+      }
     },
     {
       "id": "chemistry_physical_chemistry_chemical_kinetics_20260101064002",
@@ -203,7 +218,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-081956.png",
+        "prompt": "Educational diagram showing Physical Chemistry: Chemical Kinetics for WAEC Chemistry, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:19:56.520706"
+      }
     },
     {
       "id": "chemistry_physical_chemistry_chemical_kinetics_20260101064002",
@@ -247,7 +267,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082005.png",
+        "prompt": "Educational diagram showing Chemistry: Physical Chemistry - Chemical Kinetics for WAEC Chemistry, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:20:05.471451"
+      }
     },
     {
       "id": "chemistry_biochemistry_enzymes_and_metabolism_20260101064002",
@@ -291,7 +316,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082112.png",
+        "prompt": "Educational diagram showing Chemistry: Biochemistry - Enzymes and Metabolism for WAEC Chemistry, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:21:12.459933"
+      }
     },
     {
       "id": "economics_microeconomics_demand_and_supply_20260101064002",
@@ -335,7 +365,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082121.png",
+        "prompt": "Educational diagram showing Microeconomics: Demand and Supply for WAEC Economics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:21:21.520610"
+      }
     },
     {
       "id": "english_comprehension_reading_skills_20260101064002",
@@ -384,7 +419,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082131.png",
+        "prompt": "Educational diagram showing English Language Comprehension Skills for WAEC English, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:21:31.388158"
+      }
     },
     {
       "id": "english_grammar_tenses_20260101064002",
@@ -426,7 +466,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082140.png",
+        "prompt": "Educational diagram showing English Grammar: Tenses and Their Usage for WAEC English, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:21:41.298075"
+      }
     },
     {
       "id": "geography_physical_geography_weather_and_climate_20260101064002",
@@ -470,7 +515,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082150.png",
+        "prompt": "Educational diagram showing Physical Geography: Weather and Climate for WAEC Geography, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:21:50.758815"
+      }
     },
     {
       "id": "mathematics_algebra_quadratic_equations_20260101064002",
@@ -519,7 +569,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082229.png",
+        "prompt": "Educational diagram showing Solving Quadratic Equations by Factorization for WAEC Mathematics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:22:29.949547"
+      }
     },
     {
       "id": "mathematics_trigonometry_basic_ratios_20260101064002",
@@ -568,7 +623,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082239.png",
+        "prompt": "Educational diagram showing Trigonometric Ratios and Identities for WAEC Mathematics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:22:39.553745"
+      }
     },
     {
       "id": "mathematics_geometry_coordinate_geometry_20260101064002",
@@ -613,7 +673,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082248.png",
+        "prompt": "Educational diagram showing Mathematics: Geometry - Coordinate Geometry for WAEC Mathematics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:22:48.515612"
+      }
     },
     {
       "id": "mathematics_calculus_differentiation_20260101064002",
@@ -658,7 +723,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082258.png",
+        "prompt": "Educational diagram showing Mathematics: Calculus - Differentiation for WAEC Mathematics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:22:58.872679"
+      }
     },
     {
       "id": "mathematics_statistics_probability_20260101064002",
@@ -703,7 +773,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082308.png",
+        "prompt": "Educational diagram showing Mathematics: Statistics - Probability for WAEC Mathematics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:23:08.441044"
+      }
     },
     {
       "id": "mathematics_geometry_coordinate_geometry_20260101064002",
@@ -748,7 +823,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082348.png",
+        "prompt": "Educational diagram showing Mathematics: Geometry - Coordinate Geometry for WAEC Mathematics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:23:48.312863"
+      }
     },
     {
       "id": "mathematics_calculus_differentiation_20260101064002",
@@ -793,7 +873,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082357.png",
+        "prompt": "Educational diagram showing Mathematics: Calculus - Differentiation for WAEC Mathematics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:23:57.933105"
+      }
     },
     {
       "id": "mathematics_statistics_probability_20260101064002",
@@ -838,7 +923,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082406.png",
+        "prompt": "Educational diagram showing Mathematics: Statistics - Probability for WAEC Mathematics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:24:06.895298"
+      }
     },
     {
       "id": "physics_mechanics_laws_of_motion_20260101064002",
@@ -891,7 +981,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082416.png",
+        "prompt": "Educational diagram showing Newton's Laws of Motion for WAEC Physics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:24:16.820588"
+      }
     },
     {
       "id": "physics_mechanics_energy_and_power_20260101064002",
@@ -937,7 +1032,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082426.png",
+        "prompt": "Educational diagram showing Physics: Mechanics - Energy and Power for WAEC Physics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:24:26.277959"
+      }
     },
     {
       "id": "physics_electricity_circuits_and_components_20260101064002",
@@ -982,7 +1082,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082505.png",
+        "prompt": "Educational diagram showing Physics: Electricity - Circuits and Components for WAEC Physics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:25:08.239768"
+      }
     },
     {
       "id": "physics_optics_light_and_lenses_20260101064002",
@@ -1027,7 +1132,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082517.png",
+        "prompt": "Educational diagram showing Physics: Optics - Light and Lenses for WAEC Physics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:25:17.441226"
+      }
     },
     {
       "id": "physics_thermodynamics_heat_and_temperature_20260101064002",
@@ -1072,7 +1182,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082527.png",
+        "prompt": "Educational diagram showing Physics: Thermodynamics - Heat and Temperature for WAEC Physics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:25:27.301045"
+      }
     },
     {
       "id": "physics_mechanics_energy_and_power_20260101064002",
@@ -1118,7 +1233,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082536.png",
+        "prompt": "Educational diagram showing Physics: Mechanics - Energy and Power for WAEC Physics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:25:37.047931"
+      }
     },
     {
       "id": "physics_electricity_circuits_and_components_20260101064002",
@@ -1163,7 +1283,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082546.png",
+        "prompt": "Educational diagram showing Physics: Electricity - Circuits and Components for WAEC Physics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:25:47.192808"
+      }
     },
     {
       "id": "physics_optics_light_and_lenses_20260101064002",
@@ -1208,7 +1333,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082625.png",
+        "prompt": "Educational diagram showing Physics: Optics - Light and Lenses for WAEC Physics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:26:25.986994"
+      }
     },
     {
       "id": "physics_thermodynamics_heat_and_temperature_20260101064002",
@@ -1253,7 +1383,12 @@
       "status": "published",
       "views": 0,
       "likes": 0,
-      "completion_rate": 0.0
+      "completion_rate": 0.0,
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082634.png",
+        "prompt": "Educational diagram showing Physics: Thermodynamics - Heat and Temperature for WAEC Physics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:26:35.815293"
+      }
     },
     {
       "id": "math_quadratic_equations_enhanced",
@@ -1345,7 +1480,12 @@
         "practice_problems"
       ],
       "source": "pilot_content_generator",
-      "version": "1.0"
+      "version": "1.0",
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082646.png",
+        "prompt": "Educational diagram showing Quadratic Equations: Complete Guide with Solutions for WAEC Mathematics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:26:46.512354"
+      }
     },
     {
       "id": "physics_current_electricity_enhanced",
@@ -4097,7 +4237,12 @@
       "research_sources": [
         "Brave Search",
         "Wikipedia"
-      ]
+      ],
+      "image": {
+        "path": "generated_images\\sdxl_20260107-082711.png",
+        "prompt": "Educational diagram showing States of Matter for WAEC Chemistry, clear science illustrations, classroom, readable labels, high contrast, professional quality",
+        "generated_at": "2026-01-07T08:27:11.309909"
+      }
     }
   ],
   "subjects": [

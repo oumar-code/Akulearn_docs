@@ -108,6 +108,7 @@ class EnhancedContentGenerator:
         self.curriculum_file = curriculum_file
         self.curriculum_data = self.load_curriculum()
         self.output_dir = "generated_content"
+        self.images_dir = "generated_images"
         self.use_mcp = use_mcp
         self.generated_count = 0
         self.total_duration = 0
@@ -126,6 +127,7 @@ class EnhancedContentGenerator:
         
         # Create output directories
         os.makedirs(self.output_dir, exist_ok=True)
+        os.makedirs(self.images_dir, exist_ok=True)
         logger.info(f"✅ Output directory: {self.output_dir}")
     
     def load_curriculum(self) -> Dict[str, Any]:
@@ -818,16 +820,14 @@ Cost = Energy (kWh) × Tariff (₦/kWh)
         print("3. Import into wave3_content_database.json")
         print("4. Deploy to platform")
 
-    def generate_batch(self, topics: List[Tuple[str, str, str]]) -> List[Dict[str, Any]]:
-        """
-        Generate a batch of lessons from a list of topics
-        
-        Args:
-            topics: List of (subject, topic, difficulty) tuples
-        
-        Returns:
-            List of generated lessons
-        """
+    def generate_batch(
+        self,
+        topics: List[Tuple[str, str, str]],
+        *,
+        generate_images: bool = False,
+        image_negative_prompt: Optional[str] = None,
+    ) -> List[Dict[str, Any]]:
+        """Generate a batch of lessons; optionally attach SDXL images."""
         lessons = []
         self.total_duration = 0
         
@@ -856,6 +856,14 @@ Cost = Energy (kWh) × Tariff (₦/kWh)
                     "status": "draft"
                 }
                 
+                if generate_images:
+                    img_path = self._generate_image_asset(subject, topic, image_negative_prompt)
+                    if img_path:
+                        lesson["image"] = {
+                            "path": img_path,
+                            "prompt": self._build_image_prompt(subject, topic)
+                        }
+                
                 lessons.append(lesson)
                 self.total_duration += lesson["duration_minutes"]
                 self.generated_count += 1
@@ -865,6 +873,100 @@ Cost = Energy (kWh) × Tariff (₦/kWh)
                 continue
         
         return lessons
+
+    def generate(
+        self,
+        *,
+        subject: str,
+        topic: str,
+        difficulty: str = "Intermediate",
+        use_mcp: bool = False,
+        include_nigerian_context: bool = True,
+        exam_board: str = "WAEC",
+        generate_image: bool = False,
+        image_negative_prompt: Optional[str] = None,
+    ) -> Dict[str, Any]:
+        """Generate a single lesson (lightweight path used by batch scripts)."""
+
+        lesson = {
+            "id": f"{subject.lower()}_{topic.replace(' ', '_').lower()}",
+            "title": topic,
+            "subject": subject,
+            "topic": topic,
+            "difficulty": difficulty,
+            "duration_minutes": 25 + (5 if difficulty == "Intermediate" else 0),
+            "learningObjectives": self._generate_objectives(topic, difficulty),
+            "keyConceptsList": self._generate_concepts(topic),
+            "sections": self._generate_sections(topic, subject),
+            "assessment": self._generate_assessment(topic),
+            "waecCoverage": {
+                "percentCovered": 85,
+                "alignedTopics": [topic],
+                "examinationWeight": "12-15%"
+            },
+            "nigerianContext": self._generate_nigerian_context(subject, topic) if include_nigerian_context else {},
+            "exam_board": exam_board,
+            "createdAt": datetime.now().isoformat(),
+            "status": "draft",
+        }
+
+        # Optional MCP hook (no-op if wrapper missing)
+        if use_mcp and self.mcp_wrapper:
+            try:
+                research = self.mcp_wrapper.search(query=f"{topic} WAEC {subject}")
+                if research:
+                    lesson["research"] = research
+            except Exception as exc:
+                logger.warning(f"⚠️ MCP search failed for {topic}: {exc}")
+
+        if generate_image:
+            img_path = self._generate_image_asset(subject, topic, image_negative_prompt)
+            if img_path:
+                lesson["image"] = {
+                    "path": img_path,
+                    "prompt": self._build_image_prompt(subject, topic)
+                }
+
+        self.total_duration += lesson["duration_minutes"]
+        self.generated_count += 1
+        return lesson
+
+    def _build_image_prompt(self, subject: str, topic: str) -> str:
+        return (
+            f"Educational illustration of {topic} for WAEC {subject} students in Nigeria, "
+            "clear diagrams, classroom context, readable labels, 4k, crisp, high contrast"
+        )
+
+    def _generate_image_asset(
+        self,
+        subject: str,
+        topic: str,
+        image_negative_prompt: Optional[str] = None,
+    ) -> Optional[str]:
+        try:
+            from stable_image_client import generate_image, StableImageClientError
+        except ImportError:
+            logger.warning("⚠️ stable_image_client not available; skipping image generation")
+            return None
+
+        prompt = self._build_image_prompt(subject, topic)
+        seed = random.randint(1, 1_000_000)
+        output_path = Path(self.images_dir) / f"{subject.lower()}_{topic.replace(' ', '_').lower()}_{seed}.png"
+
+        try:
+            _, saved = generate_image(
+                prompt,
+                negative_prompt=image_negative_prompt,
+                output_path=str(output_path),
+                guidance_scale=7.0,
+                num_inference_steps=20,
+                seed=seed,
+            )
+            logger.info(f"🖼️  Image generated for {topic}: {saved}")
+            return saved
+        except StableImageClientError as exc:
+            logger.warning(f"⚠️ Image generation failed for {topic}: {exc}")
+            return None
     
     def _generate_objectives(self, topic: str, difficulty: str) -> List[str]:
         """Generate learning objectives for a topic"""
