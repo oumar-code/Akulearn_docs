@@ -60,21 +60,26 @@ def get_caps_waec(curr: dict) -> dict:
 def get_caps_nerdc(curr: dict) -> dict:
     """Return subject → total topic_count across levels from NERDC map."""
     caps = {}
-    # Expected structure: { subject: { levels: {SS1:[...], SS2:[...], SS3:[...]}}}
+    # Expect root with key 'subjects' containing subject → {SS1:[], SS2:[], SS3:[]}
     if isinstance(curr, dict):
-        for subj, info in curr.items():
-            total = 0
-            levels = info.get("levels") if isinstance(info, dict) else None
-            if isinstance(levels, dict):
-                for _, topics in levels.items():
-                    if isinstance(topics, list):
-                        total += len(topics)
-            else:
-                # Fallback if structure is different: merge arrays directly
-                for key, val in (info.items() if isinstance(info, dict) else []):
-                    if isinstance(val, list):
-                        total += len(val)
-            caps[subj] = total
+        subjects = curr.get("subjects") if isinstance(curr.get("subjects"), dict) else None
+        if subjects:
+            for subj, info in subjects.items():
+                total = 0
+                if isinstance(info, dict):
+                    for key, val in info.items():
+                        if isinstance(val, list):
+                            total += len(val)
+                caps[subj] = total
+        else:
+            # Fallback: assume curr is already a mapping of subjects
+            for subj, info in curr.items():
+                total = 0
+                if isinstance(info, dict):
+                    for key, val in info.items():
+                        if isinstance(val, list):
+                            total += len(val)
+                caps[subj] = total
     elif isinstance(curr, list):
         for entry in curr:
             subj = entry.get("subject") or entry.get("name")
