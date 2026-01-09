@@ -125,22 +125,50 @@ Generate an illustration that directly supports learning.
         
         # Handle different database formats
         if isinstance(data, dict) and "subjects" in data:
-            # WAEC format
-            for subject_name, lessons in data.get("subjects", {}).items():
-                if items_processed >= max_items:
-                    break
-                if isinstance(lessons, list):
-                    for lesson in lessons[:2]:  # Max 2 lessons per subject
-                        if items_processed >= max_items:
-                            break
-                        file_path = self.generate_lesson_image(subject_name, "General", lesson)
-                        if file_path:
-                            generated_files.append(file_path)
-                        items_processed += 1
-                        time.sleep(0.5)  # Rate limiting
+            # WAEC format: subjects may be dict or list
+            subjects_block = data.get("subjects", {})
+            if isinstance(subjects_block, dict):
+                for subject_name, lessons in subjects_block.items():
+                    if items_processed >= max_items:
+                        break
+                    if isinstance(lessons, list):
+                        for lesson in lessons[:2]:  # Max 2 lessons per subject
+                            if items_processed >= max_items:
+                                break
+                            file_path = self.generate_lesson_image(subject_name, "General", lesson)
+                            if file_path:
+                                generated_files.append(file_path)
+                            items_processed += 1
+                            time.sleep(0.5)  # Rate limiting
+            elif isinstance(subjects_block, list):
+                # Some exports store subjects as a list of lesson dicts
+                for item in subjects_block:
+                    if items_processed >= max_items:
+                        break
+                    subject = item.get("subject", "Unknown")
+                    topic = item.get("topic", "General")
+                    file_path = self.generate_lesson_image(subject, topic, item)
+                    if file_path:
+                        generated_files.append(file_path)
+                    items_processed += 1
+                    time.sleep(0.5)
+        elif isinstance(data, dict) and "content" in data and isinstance(data["content"], list):
+            # WAEC wave3 content format
+            for item in data["content"][:max_items]:
+                if not isinstance(item, dict):
+                    continue
+                subject = item.get("subject", "Unknown")
+                topic = item.get("topic", item.get("exam_topic", "Unknown"))
+                file_path = self.generate_lesson_image(subject, topic, item)
+                if file_path:
+                    generated_files.append(file_path)
+                items_processed += 1
+                time.sleep(0.5)
         elif isinstance(data, list):
-            # NERDC format
+            # NERDC or generic flattened format
             for item in data[:max_items]:
+                if not isinstance(item, dict):
+                    continue
                 subject = item.get("subject", "Unknown")
                 topic = item.get("topic", "Unknown")
                 file_path = self.generate_lesson_image(subject, topic, item)
