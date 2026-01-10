@@ -1,59 +1,84 @@
-from src.backend.database.models import UserProgress
-from datetime import datetime
-# --- Track Topic Completion Endpoint ---
-from fastapi import status
-class TrackTopicCompletionRequest(BaseModel):
-    user_id: str
-    topic_id: str
-    module_id: str = None
+#!/usr/bin/env python3
+"""Main FastAPI Application - Akulearn Learning Platform
 
-@router.post("/track_topic_completion", status_code=status.HTTP_200_OK)
-def track_topic_completion(req: TrackTopicCompletionRequest, db: Session = Depends(get_db)):
+Aggregates all API routers:
+- Assets (Phase 1, Phase 2, Phase 3)
+- User Learning Progress
+- Admin/Super Admin endpoints
+"""
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+import logging
+
+# Import routers
+from src.backend.api.assets import router as assets_v1_router
+from src.backend.api.assets_v2 import router as assets_v2_router
+from src.backend.api.assets_v3 import router as assets_v3_router
+from src.backend.api.learning_endpoints import router as learning_router
+from src.backend.api.super_admin import router as super_admin_router
+from src.backend.api.users import router as users_router
+
+# Import initializers
+from src.backend.phase3_asset_loader import initialize_phase3_loader
+
+logger = logging.getLogger(__name__)
+
+# Initialize FastAPI app
+app = FastAPI(
+    title="Akulearn Learning Platform",
+    description="Comprehensive API for Nigerian education platform with Phase 1 (ASCII diagrams), Phase 2 (Charts), and Phase 3 (Specialized diagrams)",
+    version="3.0.0",
+    docs_url="/api/docs",
+    redoc_url="/api/redoc"
+)
+
+# CORS Configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Initialize asset loaders on startup
+@app.on_event("startup")
+async def startup_event():
+    """Initialize all asset loaders"""
     try:
-        # Check if progress exists
-        progress = db.query(UserProgress).filter_by(user_id=req.user_id, topic_id=req.topic_id).first()
-        if progress:
-            progress.completed = True
-            progress.completed_at = datetime.utcnow()
-            progress.last_accessed_at = datetime.utcnow()
-        else:
-            progress = UserProgress(
-                user_id=req.user_id,
-                topic_id=req.topic_id,
-                module_id=req.module_id,
-                completed=True,
-                completed_at=datetime.utcnow(),
-                last_accessed_at=datetime.utcnow()
-            )
-            db.add(progress)
-        db.commit()
-        return {"success": True, "message": "Topic marked as complete."}
+        logger.info("Initializing Phase 3 asset loader...")
+        initialize_phase3_loader("generated_assets")
+        logger.info("✅ Phase 3 asset loader initialized")
     except Exception as e:
-        db.rollback()
-        raise HTTPException(status_code=500, detail=f"Database error: {str(e)}")
-from fastapi import APIRouter, Depends, HTTPException
-from src.backend.dependencies import get_db, get_current_user
-from sqlalchemy.orm import Session
-from pydantic import BaseModel
+        logger.warning(f"Phase 3 loader initialization warning: {e}")
 
-router = APIRouter(prefix="/user", tags=["Learning"])
+# Health check endpoint
+@app.get("/api/health")
+async def health_check():
+    """Health check endpoint"""
+    return {
+        "status": "healthy",
+        "service": "akulearn-api",
+        "version": "3.0.0"
+    }
 
-class LastAccessedTopicResponse(BaseModel):
-    topic_id: str
-    topic_name: str
-    last_accessed_at: str
+# Include routers
+logger.info("Mounting API routers...")
+app.include_router(assets_v1_router, tags=["Phase 1 Assets"])
+app.include_router(assets_v2_router, tags=["Phase 2 Assets"])
+app.include_router(assets_v3_router, tags=["Phase 3 Assets"])
+app.include_router(learning_router, tags=["Learning"])
+app.include_router(super_admin_router, tags=["Admin"])
+app.include_router(users_router, tags=["Users"])
 
-@router.get("/last_accessed_topic", response_model=LastAccessedTopicResponse)
-def get_last_accessed_topic(user_id: str, db: Session = Depends(get_db)):
-    # Replace with actual ORM query logic
-    try:
-        # Example: Fetch from user_progress table
-        # progress = db.query(UserProgress).filter_by(user_id=user_id).order_by(UserProgress.last_accessed_at.desc()).first()
-        # For demo, return placeholder
-        return LastAccessedTopicResponse(
-            topic_id="topic123",
-            topic_name="Algebra Basics",
-            last_accessed_at="2025-07-21T10:00:00Z"
-        )
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Database error: {str(e)}")
+logger.info("✅ All routers mounted successfully")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "src.backend.api.learning:app",
+        host="0.0.0.0",
+        port=8000,
+        reload=True
+    )
