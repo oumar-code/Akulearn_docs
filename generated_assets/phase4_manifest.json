@@ -1,0 +1,949 @@
+{
+  "metadata": {
+    "phase": 4,
+    "asset_type": "practice_questions",
+    "total_questions": 150,
+    "subjects": 2,
+    "generated_at": "2026-01-10"
+  },
+  "questions_by_subject": {
+    "Mathematics": {
+      "Number Bases": [
+        {
+          "id": "mathematics_number_bases_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_number_bases_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_number_bases_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_number_bases_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_number_bases_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "mathematics_number_bases_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "mathematics_number_bases_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "mathematics_number_bases_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        },
+        {
+          "id": "mathematics_number_bases_matching_1",
+          "question_type": "matching",
+          "difficulty": "easy",
+          "points": 3
+        },
+        {
+          "id": "mathematics_number_bases_matching_2",
+          "question_type": "matching",
+          "difficulty": "medium",
+          "points": 3
+        }
+      ],
+      "Modular Arithmetic": [
+        {
+          "id": "mathematics_modular_arithmetic_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_modular_arithmetic_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_modular_arithmetic_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_modular_arithmetic_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_modular_arithmetic_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "mathematics_modular_arithmetic_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "mathematics_modular_arithmetic_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "mathematics_modular_arithmetic_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        },
+        {
+          "id": "mathematics_modular_arithmetic_matching_1",
+          "question_type": "matching",
+          "difficulty": "easy",
+          "points": 3
+        },
+        {
+          "id": "mathematics_modular_arithmetic_matching_2",
+          "question_type": "matching",
+          "difficulty": "medium",
+          "points": 3
+        }
+      ],
+      "Sequence and Series": [
+        {
+          "id": "mathematics_sequence_and_series_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_sequence_and_series_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_sequence_and_series_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_sequence_and_series_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_sequence_and_series_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "mathematics_sequence_and_series_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "mathematics_sequence_and_series_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "mathematics_sequence_and_series_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        },
+        {
+          "id": "mathematics_sequence_and_series_matching_1",
+          "question_type": "matching",
+          "difficulty": "easy",
+          "points": 3
+        },
+        {
+          "id": "mathematics_sequence_and_series_matching_2",
+          "question_type": "matching",
+          "difficulty": "medium",
+          "points": 3
+        }
+      ],
+      "Binary Operations": [
+        {
+          "id": "mathematics_binary_operations_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_binary_operations_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_binary_operations_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_binary_operations_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_binary_operations_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "mathematics_binary_operations_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "mathematics_binary_operations_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "mathematics_binary_operations_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        },
+        {
+          "id": "mathematics_binary_operations_matching_1",
+          "question_type": "matching",
+          "difficulty": "easy",
+          "points": 3
+        },
+        {
+          "id": "mathematics_binary_operations_matching_2",
+          "question_type": "matching",
+          "difficulty": "medium",
+          "points": 3
+        }
+      ],
+      "Matrices and Determinants": [
+        {
+          "id": "mathematics_matrices_and_determinants_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_matrices_and_determinants_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_matrices_and_determinants_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_matrices_and_determinants_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_matrices_and_determinants_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "mathematics_matrices_and_determinants_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "mathematics_matrices_and_determinants_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "mathematics_matrices_and_determinants_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        },
+        {
+          "id": "mathematics_matrices_and_determinants_matching_1",
+          "question_type": "matching",
+          "difficulty": "easy",
+          "points": 3
+        },
+        {
+          "id": "mathematics_matrices_and_determinants_matching_2",
+          "question_type": "matching",
+          "difficulty": "medium",
+          "points": 3
+        }
+      ],
+      "Quadratic Equations": [
+        {
+          "id": "mathematics_quadratic_equations_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_quadratic_equations_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_quadratic_equations_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_quadratic_equations_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_quadratic_equations_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "mathematics_quadratic_equations_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "mathematics_quadratic_equations_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "mathematics_quadratic_equations_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        },
+        {
+          "id": "mathematics_quadratic_equations_matching_1",
+          "question_type": "matching",
+          "difficulty": "easy",
+          "points": 3
+        },
+        {
+          "id": "mathematics_quadratic_equations_matching_2",
+          "question_type": "matching",
+          "difficulty": "medium",
+          "points": 3
+        }
+      ],
+      "Variation": [
+        {
+          "id": "mathematics_variation_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_variation_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_variation_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_variation_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_variation_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "mathematics_variation_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "mathematics_variation_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "mathematics_variation_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        },
+        {
+          "id": "mathematics_variation_matching_1",
+          "question_type": "matching",
+          "difficulty": "easy",
+          "points": 3
+        },
+        {
+          "id": "mathematics_variation_matching_2",
+          "question_type": "matching",
+          "difficulty": "medium",
+          "points": 3
+        }
+      ],
+      "Angles and Triangles": [
+        {
+          "id": "mathematics_angles_and_triangles_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_angles_and_triangles_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_angles_and_triangles_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_angles_and_triangles_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_angles_and_triangles_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "mathematics_angles_and_triangles_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "mathematics_angles_and_triangles_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "mathematics_angles_and_triangles_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        },
+        {
+          "id": "mathematics_angles_and_triangles_matching_1",
+          "question_type": "matching",
+          "difficulty": "easy",
+          "points": 3
+        },
+        {
+          "id": "mathematics_angles_and_triangles_matching_2",
+          "question_type": "matching",
+          "difficulty": "medium",
+          "points": 3
+        }
+      ],
+      "Circle Theorems": [
+        {
+          "id": "mathematics_circle_theorems_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_circle_theorems_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_circle_theorems_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_circle_theorems_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_circle_theorems_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "mathematics_circle_theorems_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "mathematics_circle_theorems_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "mathematics_circle_theorems_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        },
+        {
+          "id": "mathematics_circle_theorems_matching_1",
+          "question_type": "matching",
+          "difficulty": "easy",
+          "points": 3
+        },
+        {
+          "id": "mathematics_circle_theorems_matching_2",
+          "question_type": "matching",
+          "difficulty": "medium",
+          "points": 3
+        }
+      ],
+      "Trigonometry": [
+        {
+          "id": "mathematics_trigonometry_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_trigonometry_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_trigonometry_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "mathematics_trigonometry_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "mathematics_trigonometry_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "mathematics_trigonometry_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "mathematics_trigonometry_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "mathematics_trigonometry_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        },
+        {
+          "id": "mathematics_trigonometry_matching_1",
+          "question_type": "matching",
+          "difficulty": "easy",
+          "points": 3
+        },
+        {
+          "id": "mathematics_trigonometry_matching_2",
+          "question_type": "matching",
+          "difficulty": "medium",
+          "points": 3
+        }
+      ]
+    },
+    "Physics": {
+      "Motion": [
+        {
+          "id": "physics_motion_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_motion_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "physics_motion_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_motion_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "physics_motion_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "physics_motion_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "physics_motion_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "physics_motion_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        }
+      ],
+      "Force, Mass and Acceleration": [
+        {
+          "id": "physics_force,_mass_and_acceleration_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_force,_mass_and_acceleration_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "physics_force,_mass_and_acceleration_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_force,_mass_and_acceleration_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "physics_force,_mass_and_acceleration_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "physics_force,_mass_and_acceleration_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "physics_force,_mass_and_acceleration_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "physics_force,_mass_and_acceleration_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        }
+      ],
+      "Work, Energy and Power": [
+        {
+          "id": "physics_work,_energy_and_power_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_work,_energy_and_power_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "physics_work,_energy_and_power_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_work,_energy_and_power_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "physics_work,_energy_and_power_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "physics_work,_energy_and_power_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "physics_work,_energy_and_power_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "physics_work,_energy_and_power_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        }
+      ],
+      "Simple Machines": [
+        {
+          "id": "physics_simple_machines_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_simple_machines_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "physics_simple_machines_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_simple_machines_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "physics_simple_machines_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "physics_simple_machines_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "physics_simple_machines_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "physics_simple_machines_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        }
+      ],
+      "Temperature and Heat": [
+        {
+          "id": "physics_temperature_and_heat_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_temperature_and_heat_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "physics_temperature_and_heat_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_temperature_and_heat_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "physics_temperature_and_heat_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "physics_temperature_and_heat_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "physics_temperature_and_heat_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "physics_temperature_and_heat_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        }
+      ],
+      "Gas Laws": [
+        {
+          "id": "physics_gas_laws_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_gas_laws_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "physics_gas_laws_true_false_1",
+          "question_type": "true_false",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_gas_laws_true_false_2",
+          "question_type": "true_false",
+          "difficulty": "medium",
+          "points": 1
+        },
+        {
+          "id": "physics_gas_laws_fill_blank_1",
+          "question_type": "fill_blank",
+          "difficulty": "easy",
+          "points": 2
+        },
+        {
+          "id": "physics_gas_laws_fill_blank_2",
+          "question_type": "fill_blank",
+          "difficulty": "medium",
+          "points": 2
+        },
+        {
+          "id": "physics_gas_laws_short_answer_1",
+          "question_type": "short_answer",
+          "difficulty": "easy",
+          "points": 5
+        },
+        {
+          "id": "physics_gas_laws_short_answer_2",
+          "question_type": "short_answer",
+          "difficulty": "medium",
+          "points": 5
+        }
+      ],
+      "Static Electricity": [
+        {
+          "id": "physics_static_electricity_multiple_choice_1",
+          "question_type": "multiple_choice",
+          "difficulty": "easy",
+          "points": 1
+        },
+        {
+          "id": "physics_static_electricity_multiple_choice_2",
+          "question_type": "multiple_choice",
+          "difficulty": "medium",
+          "points": 1
+        }
+      ]
+    }
+  }
+}
