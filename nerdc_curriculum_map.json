@@ -254,6 +254,126 @@
         "Artificial Intelligence",
         "Web Development"
       ]
+    },
+    "Government": {
+      "name": "Government",
+      "SS1": [
+        "Meaning and Scope of Government",
+        "Forms of Government",
+        "Organs of Government",
+        "Citizenship and Rights",
+        "Constitution and Rule of Law"
+      ],
+      "SS2": [
+        "Public Service",
+        "Electoral Systems and Processes",
+        "Political Parties and Pressure Groups",
+        "Delegated Legislation",
+        "Local Government"
+      ],
+      "SS3": [
+        "International Relations",
+        "Foreign Policy",
+        "Nigerian Political Development",
+        "Military and Civil Rule",
+        "Contemporary Issues in Governance"
+      ]
+    },
+    "Commerce": {
+      "name": "Commerce",
+      "SS1": [
+        "Introduction to Commerce",
+        "Trade and Aids to Trade",
+        "Wholesale and Retail",
+        "Business Organizations",
+        "Consumer Protection"
+      ],
+      "SS2": [
+        "Banking and Finance",
+        "Insurance",
+        "Transportation and Communication",
+        "Warehousing",
+        "Business Capital and Credit"
+      ],
+      "SS3": [
+        "International Trade",
+        "Balance of Payments",
+        "Marketing",
+        "Entrepreneurship",
+        "E-commerce"
+      ]
+    },
+    "Accounting": {
+      "name": "Accounting",
+      "SS1": [
+        "Introduction to Accounting",
+        "Double Entry Principles",
+        "Books of Original Entry",
+        "Ledger Accounts",
+        "Trial Balance"
+      ],
+      "SS2": [
+        "Cash Book and Bank Reconciliation",
+        "Control Accounts",
+        "Incomplete Records",
+        "Depreciation",
+        "Errors and Suspense Accounts"
+      ],
+      "SS3": [
+        "Final Accounts",
+        "Manufacturing Accounts",
+        "Partnership Accounts",
+        "Company Accounts",
+        "Financial Statements Analysis"
+      ]
+    },
+    "Agricultural Science": {
+      "name": "Agricultural Science",
+      "SS1": [
+        "Meaning and Importance of Agriculture",
+        "Soil Science",
+        "Plant Nutrition",
+        "Crop Production",
+        "Livestock Management"
+      ],
+      "SS2": [
+        "Agricultural Ecology",
+        "Farm Tools and Machinery",
+        "Agricultural Economics",
+        "Pest and Disease Control",
+        "Irrigation and Drainage"
+      ],
+      "SS3": [
+        "Agricultural Marketing",
+        "Agro-processing",
+        "Storage and Preservation",
+        "Agricultural Extension",
+        "Sustainable Agriculture"
+      ]
+    },
+    "Literature in English": {
+      "name": "Literature in English",
+      "SS1": [
+        "Introduction to Literature",
+        "Elements of Drama",
+        "Poetry: Forms and Devices",
+        "Prose: Narrative Techniques",
+        "Literary Appreciation"
+      ],
+      "SS2": [
+        "African Literature",
+        "Non-African Literature",
+        "Drama Analysis",
+        "Poetry Analysis",
+        "Prose Analysis"
+      ],
+      "SS3": [
+        "Literary Criticism",
+        "Comparative Literature",
+        "Advanced Literary Theory",
+        "Set-Text Detailed Study",
+        "Literature and Society"
+      ]
     }
   }
 }

@@ -1,0 +1,1177 @@
+{
+  "waec": {
+    "Biology": {
+      "topics": {
+        "Nutrition in Animals": [
+          {
+            "name": "Nutrition in Animals: From Nigerian Foods to Human Digestion",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Nutrition in Plants": [
+          {
+            "name": "Nutrition in Plants: From Photosynthesis to Nigerian Farms",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Cell Biology": [
+          {
+            "name": "Cell Biology: Structure and Function",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "Cell Structure and Functions",
+            "difficulty": "basic"
+          }
+        ],
+        "Cell Structure and Function": [
+          {
+            "name": "Cell Structure and Function",
+            "difficulty": "Beginner"
+          }
+        ],
+        "Ecology": [
+          {
+            "name": "Ecology: Ecosystems and Interactions",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Reproduction": [
+          {
+            "name": "Reproduction in Living Organisms",
+            "difficulty": "intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    },
+    "Chemistry": {
+      "topics": {
+        "Acids, Bases and Salts": [
+          {
+            "name": "Acids, Bases and Salts: From Lagos Battery Market to Badagry Salt",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Atomic Structure and Bonding": [
+          {
+            "name": "Atomic Structure and Bonding",
+            "difficulty": "Beginner"
+          }
+        ],
+        "Biochemistry": [
+          {
+            "name": "Chemistry: Biochemistry - Enzymes and Metabolism",
+            "difficulty": "advanced"
+          }
+        ],
+        "Chemical Bonding": [
+          {
+            "name": "Chemical Bonding: Ionic, Covalent, and Metallic",
+            "difficulty": "intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    },
+    "English Language": {
+      "topics": {
+        "Comprehension": [
+          {
+            "name": "English Language Comprehension Skills",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Grammar": [
+          {
+            "name": "English Grammar: Tenses and Their Usage",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Comprehension and Summary": [
+          {
+            "name": "Comprehension and Summary",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Essay Writing": [
+          {
+            "name": "Essay Writing",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Grammar and Usage": [
+          {
+            "name": "Grammar and Usage",
+            "difficulty": "intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    },
+    "Mathematics": {
+      "topics": {
+        "Angles and Triangles": [
+          {
+            "name": "Angles and Triangles: From Roof Design to Land Surveying",
+            "difficulty": "basic"
+          }
+        ],
+        "Matrices and Determinants": [
+          {
+            "name": "Matrices and Determinants: From MTN Data to Simultaneous Equations",
+            "difficulty": "advanced"
+          }
+        ],
+        "Quadratic Equations": [
+          {
+            "name": "Quadratic Equations: Complete Guide with Solutions",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Sequence and Series": [
+          {
+            "name": "Sequence and Series: From Bank Interest to Lagos Property Prices",
+            "difficulty": "advanced"
+          }
+        ],
+        "Trigonometry": [
+          {
+            "name": "Trigonometry: Solving Real Problems in Nigeria",
+            "difficulty": "advanced"
+          }
+        ],
+        "Variation": [
+          {
+            "name": "Variation: From Taxi Fares to Electricity Bills",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Algebra": [
+          {
+            "name": "Solving Quadratic Equations by Factorization",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Calculus - Differentiation": [
+          {
+            "name": "Calculus - Differentiation",
+            "difficulty": "Intermediate"
+          },
+          {
+            "name": "Calculus - Differentiation",
+            "difficulty": "Intermediate"
+          }
+        ],
+        "Calculus - Integration": [
+          {
+            "name": "Calculus - Integration",
+            "difficulty": "Intermediate"
+          },
+          {
+            "name": "Calculus - Integration",
+            "difficulty": "Intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    },
+    "Physics": {
+      "topics": {
+        "Current Electricity": [
+          {
+            "name": "Current Electricity: Circuits and Ohm's Law",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Electricity and Magnetism": [
+          {
+            "name": "Electricity and Magnetism",
+            "difficulty": "Intermediate"
+          }
+        ],
+        "Electricity": [
+          {
+            "name": "Physics: Electricity - Circuits and Components",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Mechanics - Forces and Motion": [
+          {
+            "name": "Mechanics - Forces and Motion",
+            "difficulty": "Intermediate"
+          },
+          {
+            "name": "Mechanics - Forces and Motion",
+            "difficulty": "Intermediate"
+          }
+        ],
+        "Mechanics": [
+          {
+            "name": "Physics: Mechanics - Energy and Power",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "Newton's Laws of Motion",
+            "difficulty": "intermediate"
+          }
+        ],
+        "Optics": [
+          {
+            "name": "Physics: Optics - Light and Lenses",
+            "difficulty": "intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    }
+  },
+  "nerdc": {
+    "Physics": {
+      "topics": {
+        "Mechanics": [
+          {
+            "name": "Newton's Laws of Motion (SS1)",
+            "difficulty": "basic"
+          }
+        ],
+        "SS1 - Elasticity and Deformation": [
+          {
+            "name": "SS1 - Elasticity and Deformation",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Elasticity and Deformation",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Force and Pressure": [
+          {
+            "name": "SS1 - Force and Pressure",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Force and Pressure",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Heat and Thermodynamics": [
+          {
+            "name": "SS1 - Heat and Thermodynamics",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Heat and Thermodynamics",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Mechanics of Solids": [
+          {
+            "name": "SS1 - Mechanics of Solids",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Mechanics of Solids",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Motion in a Straight Line": [
+          {
+            "name": "SS1 - Motion in a Straight Line",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Motion in a Straight Line",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Simple Harmonic Motion": [
+          {
+            "name": "SS1 - Simple Harmonic Motion",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Simple Harmonic Motion",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Electricity and Magnetism": [
+          {
+            "name": "SS2 - Electricity and Magnetism",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Electricity and Magnetism",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Energy and Work": [
+          {
+            "name": "SS2 - Energy and Work",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Energy and Work",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Modern Physics": [
+          {
+            "name": "SS2 - Modern Physics",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Modern Physics",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Optics": [
+          {
+            "name": "SS2 - Optics",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Optics",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Quantum Mechanics Basics": [
+          {
+            "name": "SS2 - Quantum Mechanics Basics",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Quantum Mechanics Basics",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Semiconductor Physics": [
+          {
+            "name": "SS2 - Semiconductor Physics",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Semiconductor Physics",
+            "difficulty": "intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    },
+    "Economics": {
+      "topics": {
+        "SS1 - Consumer Behavior": [
+          {
+            "name": "SS1 - Consumer Behavior",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Consumer Behavior",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Demand and Supply": [
+          {
+            "name": "SS1 - Demand and Supply",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Demand and Supply",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Market Structures": [
+          {
+            "name": "SS1 - Market Structures",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Market Structures",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Microeconomics Basics": [
+          {
+            "name": "SS1 - Microeconomics Basics",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Microeconomics Basics",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Production and Costs": [
+          {
+            "name": "SS1 - Production and Costs",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Production and Costs",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Economic Growth": [
+          {
+            "name": "SS2 - Economic Growth",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Economic Growth",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Employment and Inflation": [
+          {
+            "name": "SS2 - Employment and Inflation",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Employment and Inflation",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - International Trade": [
+          {
+            "name": "SS2 - International Trade",
+            "difficulty": "intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    },
+    "English Language": {
+      "topics": {
+        "Grammar": [
+          {
+            "name": "Parts of Speech Summary",
+            "difficulty": "basic"
+          },
+          {
+            "name": "Parts of Speech and Sentence Structure (SS1)",
+            "difficulty": "basic"
+          }
+        ],
+        "SS1 - Grammar Fundamentals": [
+          {
+            "name": "SS1 - Grammar Fundamentals",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Grammar Fundamentals",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Language and Society": [
+          {
+            "name": "SS1 - Language and Society",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Language and Society",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Reading Comprehension": [
+          {
+            "name": "SS1 - Reading Comprehension",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Reading Comprehension",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Oral Communication": [
+          {
+            "name": "SS2 - Oral Communication",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Oral Communication",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Phonetics and Phonology": [
+          {
+            "name": "SS2 - Phonetics and Phonology",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Phonetics and Phonology",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Writing Skills": [
+          {
+            "name": "SS2 - Writing Skills",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Writing Skills",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS3 - Literature Analysis": [
+          {
+            "name": "SS3 - Literature Analysis",
+            "difficulty": "advanced"
+          }
+        ]
+      },
+      "lessons": []
+    },
+    "Biology": {
+      "topics": {
+        "Cell Biology": [
+          {
+            "name": "Cell Structure and Function (SS1)",
+            "difficulty": "basic"
+          }
+        ],
+        "SS1 - Cell Biology": [
+          {
+            "name": "SS1 - Cell Biology",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Cell Biology",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Human Anatomy": [
+          {
+            "name": "SS1 - Human Anatomy",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Human Anatomy",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Nutrition": [
+          {
+            "name": "SS1 - Nutrition",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Nutrition",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Photosynthesis": [
+          {
+            "name": "SS1 - Photosynthesis",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Photosynthesis",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Respiration": [
+          {
+            "name": "SS1 - Respiration",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Respiration",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Coordination and Control": [
+          {
+            "name": "SS2 - Coordination and Control",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Coordination and Control",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Ecology": [
+          {
+            "name": "SS2 - Ecology",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Ecology",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Genetics": [
+          {
+            "name": "SS2 - Genetics",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Genetics",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Homeostasis": [
+          {
+            "name": "SS2 - Homeostasis",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Homeostasis",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Reproduction and Development": [
+          {
+            "name": "SS2 - Reproduction and Development",
+            "difficulty": "intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    },
+    "Further Mathematics": {
+      "topics": {
+        "SS1 - Advanced Algebra": [
+          {
+            "name": "SS1 - Advanced Algebra",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Advanced Algebra",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Boolean Algebra": [
+          {
+            "name": "SS1 - Boolean Algebra",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Boolean Algebra",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Complex Numbers": [
+          {
+            "name": "SS1 - Complex Numbers",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Complex Numbers",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Graph Theory": [
+          {
+            "name": "SS1 - Graph Theory",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Graph Theory",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Linear Programming": [
+          {
+            "name": "SS1 - Linear Programming",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Linear Programming",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Advanced Calculus": [
+          {
+            "name": "SS2 - Advanced Calculus",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Advanced Calculus",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Decision Theory": [
+          {
+            "name": "SS2 - Decision Theory",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Decision Theory",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Hypothesis Testing": [
+          {
+            "name": "SS2 - Hypothesis Testing",
+            "difficulty": "intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    },
+    "Computer Science": {
+      "topics": {
+        "SS1 - Boolean Logic": [
+          {
+            "name": "SS1 - Boolean Logic",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Boolean Logic",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Data Representation": [
+          {
+            "name": "SS1 - Data Representation",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Data Representation",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Information Systems": [
+          {
+            "name": "SS1 - Information Systems",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Information Systems",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Introduction to Programming": [
+          {
+            "name": "SS1 - Introduction to Programming",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Introduction to Programming",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Number Systems": [
+          {
+            "name": "SS1 - Number Systems",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Number Systems",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Algorithms": [
+          {
+            "name": "SS2 - Algorithms",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Algorithms",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Data Structures": [
+          {
+            "name": "SS2 - Data Structures",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Data Structures",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Database Systems": [
+          {
+            "name": "SS2 - Database Systems",
+            "difficulty": "intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    },
+    "Mathematics": {
+      "topics": {
+        "Algebra": [
+          {
+            "name": "Introduction to Quadratic Equations",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "Algebraic Expressions and Simplification (SS1)",
+            "difficulty": "basic"
+          }
+        ],
+        "Quadratic Equations": [
+          {
+            "name": "Quadratic Equations and Functions (SS2)",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Basic Statistics": [
+          {
+            "name": "SS1 - Basic Statistics",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Basic Statistics",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Indices and Logarithms": [
+          {
+            "name": "SS1 - Indices and Logarithms",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Indices and Logarithms",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Inequalities": [
+          {
+            "name": "SS1 - Inequalities",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Inequalities",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Number Systems": [
+          {
+            "name": "SS1 - Number Systems",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Number Systems",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Sequences and Series": [
+          {
+            "name": "SS1 - Sequences and Series",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Sequences and Series",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Sets and Operations": [
+          {
+            "name": "SS1 - Sets and Operations",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Sets and Operations",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Surds and Radicals": [
+          {
+            "name": "SS1 - Surds and Radicals",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Surds and Radicals",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Exponential Functions": [
+          {
+            "name": "SS2 - Exponential Functions",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Exponential Functions",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Logarithmic Functions": [
+          {
+            "name": "SS2 - Logarithmic Functions",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Logarithmic Functions",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Matrices and Determinants": [
+          {
+            "name": "SS2 - Matrices and Determinants",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Matrices and Determinants",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Polynomials": [
+          {
+            "name": "SS2 - Polynomials",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Polynomials",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Quadratic Equations": [
+          {
+            "name": "SS2 - Quadratic Equations",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Quadratic Equations",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Rational Expressions": [
+          {
+            "name": "SS2 - Rational Expressions",
+            "difficulty": "intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    },
+    "Chemistry": {
+      "topics": {
+        "Atomic Structure": [
+          {
+            "name": "Atomic Structure and Bonding (SS1)",
+            "difficulty": "basic"
+          }
+        ],
+        "SS1 - Acids and Bases": [
+          {
+            "name": "SS1 - Acids and Bases",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Acids and Bases",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Atomic Structure": [
+          {
+            "name": "SS1 - Atomic Structure",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Atomic Structure",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Chemical Equations": [
+          {
+            "name": "SS1 - Chemical Equations",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Chemical Equations",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Mole Concept": [
+          {
+            "name": "SS1 - Mole Concept",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Mole Concept",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Periodic Table": [
+          {
+            "name": "SS1 - Periodic Table",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Periodic Table",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Chemical Bonding": [
+          {
+            "name": "SS2 - Chemical Bonding",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Chemical Bonding",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Electrochemistry": [
+          {
+            "name": "SS2 - Electrochemistry",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Electrochemistry",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Equilibrium": [
+          {
+            "name": "SS2 - Equilibrium",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Equilibrium",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Kinetics": [
+          {
+            "name": "SS2 - Kinetics",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Kinetics",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Redox Reactions": [
+          {
+            "name": "SS2 - Redox Reactions",
+            "difficulty": "intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    },
+    "Geography": {
+      "topics": {
+        "SS1 - Biogeography": [
+          {
+            "name": "SS1 - Biogeography",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Biogeography",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Earth and Atmosphere": [
+          {
+            "name": "SS1 - Earth and Atmosphere",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Earth and Atmosphere",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Landforms and Processes": [
+          {
+            "name": "SS1 - Landforms and Processes",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Landforms and Processes",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Soil Formation": [
+          {
+            "name": "SS1 - Soil Formation",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Soil Formation",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS1 - Weather and Climate": [
+          {
+            "name": "SS1 - Weather and Climate",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS1 - Weather and Climate",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Economic Geography": [
+          {
+            "name": "SS2 - Economic Geography",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Economic Geography",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Population Geography": [
+          {
+            "name": "SS2 - Population Geography",
+            "difficulty": "intermediate"
+          },
+          {
+            "name": "SS2 - Population Geography",
+            "difficulty": "intermediate"
+          }
+        ],
+        "SS2 - Resource Management": [
+          {
+            "name": "SS2 - Resource Management",
+            "difficulty": "intermediate"
+          }
+        ]
+      },
+      "lessons": []
+    }
+  },
+  "coverage": {
+    "Biology": {
+      "topics": 17,
+      "lessons": 27
+    },
+    "Chemistry": {
+      "topics": 15,
+      "lessons": 24
+    },
+    "English Language": {
+      "topics": 13,
+      "lessons": 20
+    },
+    "Mathematics": {
+      "topics": 24,
+      "lessons": 39
+    },
+    "Physics": {
+      "topics": 19,
+      "lessons": 33
+    },
+    "Further Mathematics": {
+      "topics": 8,
+      "lessons": 15
+    },
+    "Geography": {
+      "topics": 8,
+      "lessons": 15
+    },
+    "Economics": {
+      "topics": 8,
+      "lessons": 15
+    },
+    "Computer Science": {
+      "topics": 8,
+      "lessons": 15
+    }
+  },
+  "graph_stats": {
+    "total_nodes": 350,
+    "total_edges": 458,
+    "node_types": {
+      "subject": 24,
+      "topic": 120,
+      "lesson": 203,
+      "level": 3
+    },
+    "avg_degree": 1.3085714285714285
+  }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300">
+<text x="260.0" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">AND then OR</text>
+<text x="40" y="102" font-size="12" fill="#333">A</text>
+<line x1="60" y1="98" x2="100" y2="98" stroke="#333" stroke-width="2"/>
+<text x="40" y="122" font-size="12" fill="#333">B</text>
+<line x1="60" y1="118" x2="100" y2="118" stroke="#333" stroke-width="2"/>
+<rect x="100" y="90" width="80" height="40" rx="8" fill="none" stroke="#2980b9" stroke-width="2"/>
+<text x="140" y="114" text-anchor="middle" font-size="12" font-weight="bold" fill="#2980b9">AND</text>
+<line x1="180" y1="110" x2="240" y2="110" stroke="#333" stroke-width="2"/>
+<text x="250" y="115" font-size="12" font-weight="bold" fill="#333">X</text>
+<text x="40" y="182" font-size="12" fill="#333">X</text>
+<line x1="60" y1="178" x2="100" y2="178" stroke="#333" stroke-width="2"/>
+<text x="40" y="202" font-size="12" fill="#333">C</text>
+<line x1="60" y1="198" x2="100" y2="198" stroke="#333" stroke-width="2"/>
+<rect x="100" y="170" width="80" height="40" rx="8" fill="none" stroke="#2980b9" stroke-width="2"/>
+<text x="140" y="194" text-anchor="middle" font-size="12" font-weight="bold" fill="#2980b9">OR</text>
+<line x1="180" y1="190" x2="240" y2="190" stroke="#333" stroke-width="2"/>
+<text x="250" y="195" font-size="12" font-weight="bold" fill="#333">Y</text>
+</svg>

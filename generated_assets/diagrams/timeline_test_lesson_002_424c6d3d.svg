@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+<text x="400.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Key Events in Nigerian History</text>
+<line x1="50" y1="100" x2="750" y2="100" stroke="#34495e" stroke-width="3"/>
+<circle cx="50.0" cy="100" r="8" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+<text x="50.0" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">1960</text>
+<text x="50.0" y="125" text-anchor="middle" font-size="10" fill="#555">Nigerian Independence</text>
+<circle cx="283.33333333333337" cy="100" r="8" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+<text x="283.33333333333337" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">1970</text>
+<text x="283.33333333333337" y="125" text-anchor="middle" font-size="10" fill="#555">End of</text>
+<text x="283.33333333333337" y="140" text-anchor="middle" font-size="10" fill="#555">Civil War</text>
+<circle cx="516.6666666666667" cy="100" r="8" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+<text x="516.6666666666667" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">1999</text>
+<text x="516.6666666666667" y="125" text-anchor="middle" font-size="10" fill="#555">Return to Democracy</text>
+<circle cx="750.0" cy="100" r="8" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+<text x="750.0" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">2015</text>
+<text x="750.0" y="125" text-anchor="middle" font-size="10" fill="#555">Democratic Transition</text>
+</svg>

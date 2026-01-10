@@ -2,7 +2,7 @@
   "metadata": {
     "version": "3.0.0",
     "generated_at": "2026-01-01T06:40:02.984645",
-    "total_items": 44,
+    "total_items": 69,
     "statistics": {
       "total_imported": 83,
       "by_subject": {
@@ -25,10 +25,10 @@
       },
       "errors": []
     },
-    "last_updated": "2026-01-07T15:10:45.077075",
+    "last_updated": "2026-01-08T00:48:00.517951",
     "batch4_added": "2026-01-05T18:05:02.707737",
     "batch5_added": "2026-01-06T00:04:53.323007",
-    "last_deduped": "2026-01-07T16:47:31.461582"
+    "last_deduped": "2026-01-08T00:37:12.339116"
   },
   "content": [
     {
@@ -2417,6 +2417,1956 @@
         "prompt": "Educational diagram showing Physics: Optics - Light and Lenses for WAEC Physics, clear science illustrations, classroom, readable labels, high contrast, professional quality",
         "generated_at": "2026-01-07T08:25:17.441226"
       }
+    },
+    {
+      "id": "waec_government_forms_and_systems_of_government_20260108004800",
+      "title": "Forms and Systems of Government",
+      "subject": "Government",
+      "topic": "Forms and Systems of Government",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of forms and systems of government",
+        "Apply forms and systems of government to real-world scenarios",
+        "Analyze and solve problems related to forms and systems of government"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_forms_and_systems_of_government",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Forms and Systems of Government and their importance in Government."
+        },
+        {
+          "id": "main_forms_and_systems_of_government",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Forms and Systems of Government. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_forms_and_systems_of_government",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Forms and Systems of Government. Understanding how Forms and Systems of Government applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_forms_and_systems_of_government",
+            "type": "multiple_choice",
+            "question": "What is the definition of Forms and Systems of Government?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Forms and Systems of Government."
+          },
+          {
+            "id": "q2_forms_and_systems_of_government",
+            "type": "short_answer",
+            "question": "Explain how Forms and Systems of Government is used in practical situations.",
+            "answer": "Forms and Systems of Government is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Forms and Systems of Government"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Forms and Systems of Government applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.492976",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_government_the_constitution_20260108004800",
+      "title": "The Constitution",
+      "subject": "Government",
+      "topic": "The Constitution",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of the constitution",
+        "Apply the constitution to real-world scenarios",
+        "Analyze and solve problems related to the constitution"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_the_constitution",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of The Constitution and their importance in Government."
+        },
+        {
+          "id": "main_the_constitution",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of The Constitution. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_the_constitution",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of The Constitution. Understanding how The Constitution applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_the_constitution",
+            "type": "multiple_choice",
+            "question": "What is the definition of The Constitution?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of The Constitution."
+          },
+          {
+            "id": "q2_the_constitution",
+            "type": "short_answer",
+            "question": "Explain how The Constitution is used in practical situations.",
+            "answer": "The Constitution is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "The Constitution"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How The Constitution applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.516349",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_government_rights_and_duties_of_citizens_20260108004800",
+      "title": "Rights and Duties of Citizens",
+      "subject": "Government",
+      "topic": "Rights and Duties of Citizens",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of rights and duties of citizens",
+        "Apply rights and duties of citizens to real-world scenarios",
+        "Analyze and solve problems related to rights and duties of citizens"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_rights_and_duties_of_citizens",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Rights and Duties of Citizens and their importance in Government."
+        },
+        {
+          "id": "main_rights_and_duties_of_citizens",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Rights and Duties of Citizens. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_rights_and_duties_of_citizens",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Rights and Duties of Citizens. Understanding how Rights and Duties of Citizens applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_rights_and_duties_of_citizens",
+            "type": "multiple_choice",
+            "question": "What is the definition of Rights and Duties of Citizens?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Rights and Duties of Citizens."
+          },
+          {
+            "id": "q2_rights_and_duties_of_citizens",
+            "type": "short_answer",
+            "question": "Explain how Rights and Duties of Citizens is used in practical situations.",
+            "answer": "Rights and Duties of Citizens is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Rights and Duties of Citizens"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Rights and Duties of Citizens applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.516424",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_government_political_participation_20260108004800",
+      "title": "Political Participation",
+      "subject": "Government",
+      "topic": "Political Participation",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of political participation",
+        "Apply political participation to real-world scenarios",
+        "Analyze and solve problems related to political participation"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_political_participation",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Political Participation and their importance in Government."
+        },
+        {
+          "id": "main_political_participation",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Political Participation. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_political_participation",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Political Participation. Understanding how Political Participation applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_political_participation",
+            "type": "multiple_choice",
+            "question": "What is the definition of Political Participation?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Political Participation."
+          },
+          {
+            "id": "q2_political_participation",
+            "type": "short_answer",
+            "question": "Explain how Political Participation is used in practical situations.",
+            "answer": "Political Participation is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Political Participation"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Political Participation applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.516490",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_government_international_relations_20260108004800",
+      "title": "International Relations",
+      "subject": "Government",
+      "topic": "International Relations",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of international relations",
+        "Apply international relations to real-world scenarios",
+        "Analyze and solve problems related to international relations"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_international_relations",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of International Relations and their importance in Government."
+        },
+        {
+          "id": "main_international_relations",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of International Relations. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_international_relations",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of International Relations. Understanding how International Relations applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_international_relations",
+            "type": "multiple_choice",
+            "question": "What is the definition of International Relations?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of International Relations."
+          },
+          {
+            "id": "q2_international_relations",
+            "type": "short_answer",
+            "question": "Explain how International Relations is used in practical situations.",
+            "answer": "International Relations is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "International Relations"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How International Relations applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.516547",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_commerce_nature_and_scope_of_commerce_20260108004800",
+      "title": "Nature and Scope of Commerce",
+      "subject": "Commerce",
+      "topic": "Nature and Scope of Commerce",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of nature and scope of commerce",
+        "Apply nature and scope of commerce to real-world scenarios",
+        "Analyze and solve problems related to nature and scope of commerce"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_nature_and_scope_of_commerce",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Nature and Scope of Commerce and their importance in Commerce."
+        },
+        {
+          "id": "main_nature_and_scope_of_commerce",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Nature and Scope of Commerce. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_nature_and_scope_of_commerce",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Nature and Scope of Commerce. Understanding how Nature and Scope of Commerce applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_nature_and_scope_of_commerce",
+            "type": "multiple_choice",
+            "question": "What is the definition of Nature and Scope of Commerce?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Nature and Scope of Commerce."
+          },
+          {
+            "id": "q2_nature_and_scope_of_commerce",
+            "type": "short_answer",
+            "question": "Explain how Nature and Scope of Commerce is used in practical situations.",
+            "answer": "Nature and Scope of Commerce is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Nature and Scope of Commerce"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Nature and Scope of Commerce applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.516617",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_commerce_wholesale_and_retail_trade_20260108004800",
+      "title": "Wholesale and Retail Trade",
+      "subject": "Commerce",
+      "topic": "Wholesale and Retail Trade",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of wholesale and retail trade",
+        "Apply wholesale and retail trade to real-world scenarios",
+        "Analyze and solve problems related to wholesale and retail trade"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_wholesale_and_retail_trade",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Wholesale and Retail Trade and their importance in Commerce."
+        },
+        {
+          "id": "main_wholesale_and_retail_trade",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Wholesale and Retail Trade. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_wholesale_and_retail_trade",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Wholesale and Retail Trade. Understanding how Wholesale and Retail Trade applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_wholesale_and_retail_trade",
+            "type": "multiple_choice",
+            "question": "What is the definition of Wholesale and Retail Trade?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Wholesale and Retail Trade."
+          },
+          {
+            "id": "q2_wholesale_and_retail_trade",
+            "type": "short_answer",
+            "question": "Explain how Wholesale and Retail Trade is used in practical situations.",
+            "answer": "Wholesale and Retail Trade is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Wholesale and Retail Trade"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Wholesale and Retail Trade applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.516680",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_commerce_services_and_aids_to_trade_20260108004800",
+      "title": "Services and Aids to Trade",
+      "subject": "Commerce",
+      "topic": "Services and Aids to Trade",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of services and aids to trade",
+        "Apply services and aids to trade to real-world scenarios",
+        "Analyze and solve problems related to services and aids to trade"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_services_and_aids_to_trade",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Services and Aids to Trade and their importance in Commerce."
+        },
+        {
+          "id": "main_services_and_aids_to_trade",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Services and Aids to Trade. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_services_and_aids_to_trade",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Services and Aids to Trade. Understanding how Services and Aids to Trade applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_services_and_aids_to_trade",
+            "type": "multiple_choice",
+            "question": "What is the definition of Services and Aids to Trade?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Services and Aids to Trade."
+          },
+          {
+            "id": "q2_services_and_aids_to_trade",
+            "type": "short_answer",
+            "question": "Explain how Services and Aids to Trade is used in practical situations.",
+            "answer": "Services and Aids to Trade is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Services and Aids to Trade"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Services and Aids to Trade applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.516738",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_commerce_business_organizations_20260108004800",
+      "title": "Business Organizations",
+      "subject": "Commerce",
+      "topic": "Business Organizations",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of business organizations",
+        "Apply business organizations to real-world scenarios",
+        "Analyze and solve problems related to business organizations"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_business_organizations",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Business Organizations and their importance in Commerce."
+        },
+        {
+          "id": "main_business_organizations",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Business Organizations. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_business_organizations",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Business Organizations. Understanding how Business Organizations applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_business_organizations",
+            "type": "multiple_choice",
+            "question": "What is the definition of Business Organizations?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Business Organizations."
+          },
+          {
+            "id": "q2_business_organizations",
+            "type": "short_answer",
+            "question": "Explain how Business Organizations is used in practical situations.",
+            "answer": "Business Organizations is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Business Organizations"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Business Organizations applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.516794",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_commerce_consumer_protection_20260108004800",
+      "title": "Consumer Protection",
+      "subject": "Commerce",
+      "topic": "Consumer Protection",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of consumer protection",
+        "Apply consumer protection to real-world scenarios",
+        "Analyze and solve problems related to consumer protection"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_consumer_protection",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Consumer Protection and their importance in Commerce."
+        },
+        {
+          "id": "main_consumer_protection",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Consumer Protection. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_consumer_protection",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Consumer Protection. Understanding how Consumer Protection applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_consumer_protection",
+            "type": "multiple_choice",
+            "question": "What is the definition of Consumer Protection?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Consumer Protection."
+          },
+          {
+            "id": "q2_consumer_protection",
+            "type": "short_answer",
+            "question": "Explain how Consumer Protection is used in practical situations.",
+            "answer": "Consumer Protection is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Consumer Protection"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Consumer Protection applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.516846",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_accounting_principles_and_concepts_of_accounting_20260108004800",
+      "title": "Principles and Concepts of Accounting",
+      "subject": "Accounting",
+      "topic": "Principles and Concepts of Accounting",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of principles and concepts of accounting",
+        "Apply principles and concepts of accounting to real-world scenarios",
+        "Analyze and solve problems related to principles and concepts of accounting"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_principles_and_concepts_of_accounting",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Principles and Concepts of Accounting and their importance in Accounting."
+        },
+        {
+          "id": "main_principles_and_concepts_of_accounting",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Principles and Concepts of Accounting. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_principles_and_concepts_of_accounting",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Principles and Concepts of Accounting. Understanding how Principles and Concepts of Accounting applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_principles_and_concepts_of_accounting",
+            "type": "multiple_choice",
+            "question": "What is the definition of Principles and Concepts of Accounting?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Principles and Concepts of Accounting."
+          },
+          {
+            "id": "q2_principles_and_concepts_of_accounting",
+            "type": "short_answer",
+            "question": "Explain how Principles and Concepts of Accounting is used in practical situations.",
+            "answer": "Principles and Concepts of Accounting is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Principles and Concepts of Accounting"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Principles and Concepts of Accounting applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.516911",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_accounting_double_entry_bookkeeping_20260108004800",
+      "title": "Double Entry Bookkeeping",
+      "subject": "Accounting",
+      "topic": "Double Entry Bookkeeping",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of double entry bookkeeping",
+        "Apply double entry bookkeeping to real-world scenarios",
+        "Analyze and solve problems related to double entry bookkeeping"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_double_entry_bookkeeping",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Double Entry Bookkeeping and their importance in Accounting."
+        },
+        {
+          "id": "main_double_entry_bookkeeping",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Double Entry Bookkeeping. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_double_entry_bookkeeping",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Double Entry Bookkeeping. Understanding how Double Entry Bookkeeping applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_double_entry_bookkeeping",
+            "type": "multiple_choice",
+            "question": "What is the definition of Double Entry Bookkeeping?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Double Entry Bookkeeping."
+          },
+          {
+            "id": "q2_double_entry_bookkeeping",
+            "type": "short_answer",
+            "question": "Explain how Double Entry Bookkeeping is used in practical situations.",
+            "answer": "Double Entry Bookkeeping is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Double Entry Bookkeeping"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Double Entry Bookkeeping applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.516968",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_accounting_books_of_accounts_20260108004800",
+      "title": "Books of Accounts",
+      "subject": "Accounting",
+      "topic": "Books of Accounts",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of books of accounts",
+        "Apply books of accounts to real-world scenarios",
+        "Analyze and solve problems related to books of accounts"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_books_of_accounts",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Books of Accounts and their importance in Accounting."
+        },
+        {
+          "id": "main_books_of_accounts",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Books of Accounts. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_books_of_accounts",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Books of Accounts. Understanding how Books of Accounts applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_books_of_accounts",
+            "type": "multiple_choice",
+            "question": "What is the definition of Books of Accounts?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Books of Accounts."
+          },
+          {
+            "id": "q2_books_of_accounts",
+            "type": "short_answer",
+            "question": "Explain how Books of Accounts is used in practical situations.",
+            "answer": "Books of Accounts is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Books of Accounts"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Books of Accounts applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517024",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_accounting_final_accounts_and_balance_sheet_20260108004800",
+      "title": "Final Accounts and Balance Sheet",
+      "subject": "Accounting",
+      "topic": "Final Accounts and Balance Sheet",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of final accounts and balance sheet",
+        "Apply final accounts and balance sheet to real-world scenarios",
+        "Analyze and solve problems related to final accounts and balance sheet"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_final_accounts_and_balance_sheet",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Final Accounts and Balance Sheet and their importance in Accounting."
+        },
+        {
+          "id": "main_final_accounts_and_balance_sheet",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Final Accounts and Balance Sheet. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_final_accounts_and_balance_sheet",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Final Accounts and Balance Sheet. Understanding how Final Accounts and Balance Sheet applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_final_accounts_and_balance_sheet",
+            "type": "multiple_choice",
+            "question": "What is the definition of Final Accounts and Balance Sheet?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Final Accounts and Balance Sheet."
+          },
+          {
+            "id": "q2_final_accounts_and_balance_sheet",
+            "type": "short_answer",
+            "question": "Explain how Final Accounts and Balance Sheet is used in practical situations.",
+            "answer": "Final Accounts and Balance Sheet is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Final Accounts and Balance Sheet"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Final Accounts and Balance Sheet applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517097",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_accounting_accounting_for_different_business_types_20260108004800",
+      "title": "Accounting for Different Business Types",
+      "subject": "Accounting",
+      "topic": "Accounting for Different Business Types",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of accounting for different business types",
+        "Apply accounting for different business types to real-world scenarios",
+        "Analyze and solve problems related to accounting for different business types"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_accounting_for_different_business_types",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Accounting for Different Business Types and their importance in Accounting."
+        },
+        {
+          "id": "main_accounting_for_different_business_types",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Accounting for Different Business Types. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_accounting_for_different_business_types",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Accounting for Different Business Types. Understanding how Accounting for Different Business Types applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_accounting_for_different_business_types",
+            "type": "multiple_choice",
+            "question": "What is the definition of Accounting for Different Business Types?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Accounting for Different Business Types."
+          },
+          {
+            "id": "q2_accounting_for_different_business_types",
+            "type": "short_answer",
+            "question": "Explain how Accounting for Different Business Types is used in practical situations.",
+            "answer": "Accounting for Different Business Types is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Accounting for Different Business Types"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Accounting for Different Business Types applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517316",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_agricultural_science_principles_and_practices_of_agriculture_20260108004800",
+      "title": "Principles and Practices of Agriculture",
+      "subject": "Agricultural Science",
+      "topic": "Principles and Practices of Agriculture",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of principles and practices of agriculture",
+        "Apply principles and practices of agriculture to real-world scenarios",
+        "Analyze and solve problems related to principles and practices of agriculture"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_principles_and_practices_of_agriculture",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Principles and Practices of Agriculture and their importance in Agricultural Science."
+        },
+        {
+          "id": "main_principles_and_practices_of_agriculture",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Principles and Practices of Agriculture. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_principles_and_practices_of_agriculture",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Principles and Practices of Agriculture. Understanding how Principles and Practices of Agriculture applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_principles_and_practices_of_agriculture",
+            "type": "multiple_choice",
+            "question": "What is the definition of Principles and Practices of Agriculture?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Principles and Practices of Agriculture."
+          },
+          {
+            "id": "q2_principles_and_practices_of_agriculture",
+            "type": "short_answer",
+            "question": "Explain how Principles and Practices of Agriculture is used in practical situations.",
+            "answer": "Principles and Practices of Agriculture is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Principles and Practices of Agriculture"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Principles and Practices of Agriculture applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517387",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_agricultural_science_soil_science_20260108004800",
+      "title": "Soil Science",
+      "subject": "Agricultural Science",
+      "topic": "Soil Science",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of soil science",
+        "Apply soil science to real-world scenarios",
+        "Analyze and solve problems related to soil science"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_soil_science",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Soil Science and their importance in Agricultural Science."
+        },
+        {
+          "id": "main_soil_science",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Soil Science. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_soil_science",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Soil Science. Understanding how Soil Science applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_soil_science",
+            "type": "multiple_choice",
+            "question": "What is the definition of Soil Science?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Soil Science."
+          },
+          {
+            "id": "q2_soil_science",
+            "type": "short_answer",
+            "question": "Explain how Soil Science is used in practical situations.",
+            "answer": "Soil Science is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Soil Science"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Soil Science applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517445",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_agricultural_science_crop_production_20260108004800",
+      "title": "Crop Production",
+      "subject": "Agricultural Science",
+      "topic": "Crop Production",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of crop production",
+        "Apply crop production to real-world scenarios",
+        "Analyze and solve problems related to crop production"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_crop_production",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Crop Production and their importance in Agricultural Science."
+        },
+        {
+          "id": "main_crop_production",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Crop Production. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_crop_production",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Crop Production. Understanding how Crop Production applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_crop_production",
+            "type": "multiple_choice",
+            "question": "What is the definition of Crop Production?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Crop Production."
+          },
+          {
+            "id": "q2_crop_production",
+            "type": "short_answer",
+            "question": "Explain how Crop Production is used in practical situations.",
+            "answer": "Crop Production is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Crop Production"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Crop Production applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517512",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_agricultural_science_livestock_management_20260108004800",
+      "title": "Livestock Management",
+      "subject": "Agricultural Science",
+      "topic": "Livestock Management",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of livestock management",
+        "Apply livestock management to real-world scenarios",
+        "Analyze and solve problems related to livestock management"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_livestock_management",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Livestock Management and their importance in Agricultural Science."
+        },
+        {
+          "id": "main_livestock_management",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Livestock Management. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_livestock_management",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Livestock Management. Understanding how Livestock Management applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_livestock_management",
+            "type": "multiple_choice",
+            "question": "What is the definition of Livestock Management?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Livestock Management."
+          },
+          {
+            "id": "q2_livestock_management",
+            "type": "short_answer",
+            "question": "Explain how Livestock Management is used in practical situations.",
+            "answer": "Livestock Management is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Livestock Management"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Livestock Management applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517564",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_agricultural_science_farm_tools_and_equipment_20260108004800",
+      "title": "Farm Tools and Equipment",
+      "subject": "Agricultural Science",
+      "topic": "Farm Tools and Equipment",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of farm tools and equipment",
+        "Apply farm tools and equipment to real-world scenarios",
+        "Analyze and solve problems related to farm tools and equipment"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_farm_tools_and_equipment",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Farm Tools and Equipment and their importance in Agricultural Science."
+        },
+        {
+          "id": "main_farm_tools_and_equipment",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Farm Tools and Equipment. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_farm_tools_and_equipment",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Farm Tools and Equipment. Understanding how Farm Tools and Equipment applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_farm_tools_and_equipment",
+            "type": "multiple_choice",
+            "question": "What is the definition of Farm Tools and Equipment?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Farm Tools and Equipment."
+          },
+          {
+            "id": "q2_farm_tools_and_equipment",
+            "type": "short_answer",
+            "question": "Explain how Farm Tools and Equipment is used in practical situations.",
+            "answer": "Farm Tools and Equipment is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Farm Tools and Equipment"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Farm Tools and Equipment applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517620",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_literature_in_english_drama_and_theatre_arts_20260108004800",
+      "title": "Drama and Theatre Arts",
+      "subject": "Literature in English",
+      "topic": "Drama and Theatre Arts",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of drama and theatre arts",
+        "Apply drama and theatre arts to real-world scenarios",
+        "Analyze and solve problems related to drama and theatre arts"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_drama_and_theatre_arts",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Drama and Theatre Arts and their importance in Literature in English."
+        },
+        {
+          "id": "main_drama_and_theatre_arts",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Drama and Theatre Arts. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_drama_and_theatre_arts",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Drama and Theatre Arts. Understanding how Drama and Theatre Arts applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_drama_and_theatre_arts",
+            "type": "multiple_choice",
+            "question": "What is the definition of Drama and Theatre Arts?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Drama and Theatre Arts."
+          },
+          {
+            "id": "q2_drama_and_theatre_arts",
+            "type": "short_answer",
+            "question": "Explain how Drama and Theatre Arts is used in practical situations.",
+            "answer": "Drama and Theatre Arts is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Drama and Theatre Arts"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Drama and Theatre Arts applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517683",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_literature_in_english_poetry_analysis_20260108004800",
+      "title": "Poetry Analysis",
+      "subject": "Literature in English",
+      "topic": "Poetry Analysis",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of poetry analysis",
+        "Apply poetry analysis to real-world scenarios",
+        "Analyze and solve problems related to poetry analysis"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_poetry_analysis",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Poetry Analysis and their importance in Literature in English."
+        },
+        {
+          "id": "main_poetry_analysis",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Poetry Analysis. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_poetry_analysis",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Poetry Analysis. Understanding how Poetry Analysis applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_poetry_analysis",
+            "type": "multiple_choice",
+            "question": "What is the definition of Poetry Analysis?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Poetry Analysis."
+          },
+          {
+            "id": "q2_poetry_analysis",
+            "type": "short_answer",
+            "question": "Explain how Poetry Analysis is used in practical situations.",
+            "answer": "Poetry Analysis is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Poetry Analysis"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Poetry Analysis applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517742",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_literature_in_english_prose_fiction_20260108004800",
+      "title": "Prose Fiction",
+      "subject": "Literature in English",
+      "topic": "Prose Fiction",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of prose fiction",
+        "Apply prose fiction to real-world scenarios",
+        "Analyze and solve problems related to prose fiction"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_prose_fiction",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Prose Fiction and their importance in Literature in English."
+        },
+        {
+          "id": "main_prose_fiction",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Prose Fiction. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_prose_fiction",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Prose Fiction. Understanding how Prose Fiction applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_prose_fiction",
+            "type": "multiple_choice",
+            "question": "What is the definition of Prose Fiction?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Prose Fiction."
+          },
+          {
+            "id": "q2_prose_fiction",
+            "type": "short_answer",
+            "question": "Explain how Prose Fiction is used in practical situations.",
+            "answer": "Prose Fiction is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Prose Fiction"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Prose Fiction applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517794",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_literature_in_english_african_literature_20260108004800",
+      "title": "African Literature",
+      "subject": "Literature in English",
+      "topic": "African Literature",
+      "difficulty": "intermediate",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of african literature",
+        "Apply african literature to real-world scenarios",
+        "Analyze and solve problems related to african literature"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_african_literature",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of African Literature and their importance in Literature in English."
+        },
+        {
+          "id": "main_african_literature",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of African Literature. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_african_literature",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of African Literature. Understanding how African Literature applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_african_literature",
+            "type": "multiple_choice",
+            "question": "What is the definition of African Literature?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of African Literature."
+          },
+          {
+            "id": "q2_african_literature",
+            "type": "short_answer",
+            "question": "Explain how African Literature is used in practical situations.",
+            "answer": "African Literature is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "African Literature"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How African Literature applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517862",
+      "status": "draft",
+      "content_type": "study_guide"
+    },
+    {
+      "id": "waec_literature_in_english_critical_appreciation_20260108004800",
+      "title": "Critical Appreciation",
+      "subject": "Literature in English",
+      "topic": "Critical Appreciation",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "learningObjectives": [
+        "Understand the fundamental concepts of critical appreciation",
+        "Apply critical appreciation to real-world scenarios",
+        "Analyze and solve problems related to critical appreciation"
+      ],
+      "keyConceptsList": [
+        "concept 1",
+        "concept 2",
+        "concept 3"
+      ],
+      "sections": [
+        {
+          "id": "intro_critical_appreciation",
+          "title": "Introduction",
+          "content": "This section introduces the key concepts of Critical Appreciation and their importance in Literature in English."
+        },
+        {
+          "id": "main_critical_appreciation",
+          "title": "Core Concepts",
+          "content": "The main theories, principles, and applications of Critical Appreciation. This section covers the fundamental understanding required for WAEC examinations."
+        },
+        {
+          "id": "application_critical_appreciation",
+          "title": "Real-World Applications",
+          "content": "Practical examples and Nigerian context applications of Critical Appreciation. Understanding how Critical Appreciation applies in everyday life and professional contexts."
+        }
+      ],
+      "assessment": {
+        "questions": [
+          {
+            "id": "q1_critical_appreciation",
+            "type": "multiple_choice",
+            "question": "What is the definition of Critical Appreciation?",
+            "options": [
+              "Option A",
+              "Option B",
+              "Option C",
+              "Option D"
+            ],
+            "answer": "Option A",
+            "explanation": "This is the correct definition of Critical Appreciation."
+          },
+          {
+            "id": "q2_critical_appreciation",
+            "type": "short_answer",
+            "question": "Explain how Critical Appreciation is used in practical situations.",
+            "answer": "Critical Appreciation is used in many practical applications...",
+            "marks": 5
+          }
+        ],
+        "totalMarks": 10
+      },
+      "waecCoverage": {
+        "percentCovered": 85,
+        "alignedTopics": [
+          "Critical Appreciation"
+        ],
+        "examinationWeight": "12-15%"
+      },
+      "nigerianContext": {
+        "examples": [
+          "Nigerian context example 1",
+          "Nigerian context example 2"
+        ],
+        "realWorldScenario": "How Critical Appreciation applies in Nigeria"
+      },
+      "exam_board": "WAEC",
+      "createdAt": "2026-01-08T00:48:00.517917",
+      "status": "draft",
+      "content_type": "study_guide"
     }
   ],
   "subjects": [

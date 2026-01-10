@@ -1,0 +1,2434 @@
+[
+  {
+    "lesson_id": "nerdc-further-math-ss1-sets-20251221-195949",
+    "diagram_type": "venn_2",
+    "title": "Further Mathematics: Set Union",
+    "subject": "Further Mathematics",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "only_a": 5,
+      "both": 3,
+      "only_b": 4,
+      "title": "A ∪ B (Union)"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss1-sets-20251221-195949",
+    "diagram_type": "venn_2",
+    "title": "Further Mathematics: Set Intersection",
+    "subject": "Further Mathematics",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "only_a": 4,
+      "both": 6,
+      "only_b": 3,
+      "title": "A ∩ B (Intersection)"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+    "diagram_type": "venn_2",
+    "title": "Geography: Set Intersection",
+    "subject": "Geography",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "only_a": 4,
+      "both": 6,
+      "only_b": 3,
+      "title": "A ∩ B (Intersection)"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+    "diagram_type": "circuit_electrical",
+    "title": "Geography: Electrical Circuit",
+    "subject": "Geography",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss1-basic-20251221-195949",
+    "diagram_type": "circuit_electrical",
+    "title": "Economics: Electrical Circuit",
+    "subject": "Economics",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss1-basic-20251221-195949",
+    "diagram_type": "circuit_logic",
+    "title": "Economics: Logic Circuit",
+    "subject": "Economics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+    "diagram_type": "venn_3",
+    "title": "Computer Science: Three Sets",
+    "subject": "Computer Science",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "set_c_label": "C",
+      "title": "A, B, C Relationships"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+    "diagram_type": "flowchart",
+    "title": "Computer Science: Process Flow",
+    "subject": "Computer Science",
+    "data": {
+      "steps": [
+        {
+          "type": "start",
+          "text": "Start"
+        },
+        {
+          "type": "process",
+          "text": "Input Data"
+        },
+        {
+          "type": "process",
+          "text": "Process"
+        },
+        {
+          "type": "decision",
+          "text": "Valid?"
+        },
+        {
+          "type": "process",
+          "text": "Output"
+        },
+        {
+          "type": "end",
+          "text": "End"
+        }
+      ],
+      "title": "Process Algorithm"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss1-sets-20251221-200005",
+    "diagram_type": "venn_2",
+    "title": "Further Mathematics: Set Union",
+    "subject": "Further Mathematics",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "only_a": 5,
+      "both": 3,
+      "only_b": 4,
+      "title": "A ∪ B (Union)"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss1-sets-20251221-200005",
+    "diagram_type": "venn_2",
+    "title": "Further Mathematics: Set Intersection",
+    "subject": "Further Mathematics",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "only_a": 4,
+      "both": 6,
+      "only_b": 3,
+      "title": "A ∩ B (Intersection)"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+    "diagram_type": "venn_2",
+    "title": "Geography: Set Intersection",
+    "subject": "Geography",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "only_a": 4,
+      "both": 6,
+      "only_b": 3,
+      "title": "A ∩ B (Intersection)"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+    "diagram_type": "circuit_electrical",
+    "title": "Geography: Electrical Circuit",
+    "subject": "Geography",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss1-basic-20251221-200005",
+    "diagram_type": "circuit_electrical",
+    "title": "Economics: Electrical Circuit",
+    "subject": "Economics",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss1-basic-20251221-200005",
+    "diagram_type": "circuit_logic",
+    "title": "Economics: Logic Circuit",
+    "subject": "Economics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+    "diagram_type": "venn_3",
+    "title": "Computer Science: Three Sets",
+    "subject": "Computer Science",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "set_c_label": "C",
+      "title": "A, B, C Relationships"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+    "diagram_type": "flowchart",
+    "title": "Computer Science: Process Flow",
+    "subject": "Computer Science",
+    "data": {
+      "steps": [
+        {
+          "type": "start",
+          "text": "Start"
+        },
+        {
+          "type": "process",
+          "text": "Input Data"
+        },
+        {
+          "type": "process",
+          "text": "Process"
+        },
+        {
+          "type": "decision",
+          "text": "Valid?"
+        },
+        {
+          "type": "process",
+          "text": "Output"
+        },
+        {
+          "type": "end",
+          "text": "End"
+        }
+      ],
+      "title": "Process Algorithm"
+    }
+  },
+  {
+    "lesson_id": "nerdc-math-ss2-quadratic-20260107-084121",
+    "diagram_type": "circuit_logic",
+    "title": "Mathematics: Logic Circuit",
+    "subject": "Mathematics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-math-ss2-quadratic-20260107-084121",
+    "diagram_type": "chemistry_reaction",
+    "title": "Mathematics: Chemical Reaction",
+    "subject": "Mathematics",
+    "data": {
+      "reactants": [
+        "A",
+        "B"
+      ],
+      "products": [
+        "C"
+      ],
+      "title": "Chemical Reaction"
+    }
+  },
+  {
+    "lesson_id": "nerdc-physics-ss2-electricity-20260107-084121",
+    "diagram_type": "circuit_electrical",
+    "title": "Physics: Electrical Circuit",
+    "subject": "Physics",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-physics-ss2-electricity-20260107-084121",
+    "diagram_type": "circuit_logic",
+    "title": "Physics: Logic Circuit",
+    "subject": "Physics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084121",
+    "diagram_type": "circuit_logic",
+    "title": "Chemistry: Logic Circuit",
+    "subject": "Chemistry",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084121",
+    "diagram_type": "chemistry_reaction",
+    "title": "Chemistry: Chemical Reaction",
+    "subject": "Chemistry",
+    "data": {
+      "reactants": [
+        "A",
+        "B"
+      ],
+      "products": [
+        "C"
+      ],
+      "title": "Chemical Reaction"
+    }
+  },
+  {
+    "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+    "diagram_type": "circuit_logic",
+    "title": "Biology: Logic Circuit",
+    "subject": "Biology",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+    "diagram_type": "chemistry_reaction",
+    "title": "Biology: Chemical Reaction",
+    "subject": "Biology",
+    "data": {
+      "reactants": [
+        "A",
+        "B"
+      ],
+      "products": [
+        "C"
+      ],
+      "title": "Chemical Reaction"
+    }
+  },
+  {
+    "lesson_id": "nerdc-english-ss2-literature-20260107-084121",
+    "diagram_type": "circuit_logic",
+    "title": "English Language: Logic Circuit",
+    "subject": "English Language",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-math-ss3-calculus-20260107-084137",
+    "diagram_type": "flowchart",
+    "title": "Mathematics: Process Flow",
+    "subject": "Mathematics",
+    "data": {
+      "steps": [
+        {
+          "type": "start",
+          "text": "Start"
+        },
+        {
+          "type": "process",
+          "text": "Input Data"
+        },
+        {
+          "type": "process",
+          "text": "Process"
+        },
+        {
+          "type": "decision",
+          "text": "Valid?"
+        },
+        {
+          "type": "process",
+          "text": "Output"
+        },
+        {
+          "type": "end",
+          "text": "End"
+        }
+      ],
+      "title": "Process Algorithm"
+    }
+  },
+  {
+    "lesson_id": "nerdc-math-ss3-calculus-20260107-084137",
+    "diagram_type": "circuit_logic",
+    "title": "Mathematics: Logic Circuit",
+    "subject": "Mathematics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+    "diagram_type": "circuit_logic",
+    "title": "Physics: Logic Circuit",
+    "subject": "Physics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+    "diagram_type": "chemistry_reaction",
+    "title": "Physics: Chemical Reaction",
+    "subject": "Physics",
+    "data": {
+      "reactants": [
+        "A",
+        "B"
+      ],
+      "products": [
+        "C"
+      ],
+      "title": "Chemical Reaction"
+    }
+  },
+  {
+    "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+    "diagram_type": "circuit_electrical",
+    "title": "Chemistry: Electrical Circuit",
+    "subject": "Chemistry",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+    "diagram_type": "circuit_logic",
+    "title": "Chemistry: Logic Circuit",
+    "subject": "Chemistry",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+    "diagram_type": "circuit_electrical",
+    "title": "Biology: Electrical Circuit",
+    "subject": "Biology",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+    "diagram_type": "circuit_logic",
+    "title": "Biology: Logic Circuit",
+    "subject": "Biology",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-english-ss3-essay-20260107-084137",
+    "diagram_type": "circuit_logic",
+    "title": "English Language: Logic Circuit",
+    "subject": "English Language",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss1-sets-20260107-084151",
+    "diagram_type": "venn_2",
+    "title": "Further Mathematics: Set Union",
+    "subject": "Further Mathematics",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "only_a": 5,
+      "both": 3,
+      "only_b": 4,
+      "title": "A ∪ B (Union)"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss1-sets-20260107-084151",
+    "diagram_type": "venn_2",
+    "title": "Further Mathematics: Set Intersection",
+    "subject": "Further Mathematics",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "only_a": 4,
+      "both": 6,
+      "only_b": 3,
+      "title": "A ∩ B (Intersection)"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+    "diagram_type": "venn_2",
+    "title": "Geography: Set Intersection",
+    "subject": "Geography",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "only_a": 4,
+      "both": 6,
+      "only_b": 3,
+      "title": "A ∩ B (Intersection)"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+    "diagram_type": "circuit_electrical",
+    "title": "Geography: Electrical Circuit",
+    "subject": "Geography",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss1-basic-20260107-084151",
+    "diagram_type": "circuit_electrical",
+    "title": "Economics: Electrical Circuit",
+    "subject": "Economics",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss1-basic-20260107-084151",
+    "diagram_type": "circuit_logic",
+    "title": "Economics: Logic Circuit",
+    "subject": "Economics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+    "diagram_type": "venn_3",
+    "title": "Computer Science: Three Sets",
+    "subject": "Computer Science",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "set_c_label": "C",
+      "title": "A, B, C Relationships"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+    "diagram_type": "flowchart",
+    "title": "Computer Science: Process Flow",
+    "subject": "Computer Science",
+    "data": {
+      "steps": [
+        {
+          "type": "start",
+          "text": "Start"
+        },
+        {
+          "type": "process",
+          "text": "Input Data"
+        },
+        {
+          "type": "process",
+          "text": "Process"
+        },
+        {
+          "type": "decision",
+          "text": "Valid?"
+        },
+        {
+          "type": "process",
+          "text": "Output"
+        },
+        {
+          "type": "end",
+          "text": "End"
+        }
+      ],
+      "title": "Process Algorithm"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084218",
+    "diagram_type": "circuit_logic",
+    "title": "Further Mathematics: Logic Circuit",
+    "subject": "Further Mathematics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084218",
+    "diagram_type": "chemistry_reaction",
+    "title": "Further Mathematics: Chemical Reaction",
+    "subject": "Further Mathematics",
+    "data": {
+      "reactants": [
+        "A",
+        "B"
+      ],
+      "products": [
+        "C"
+      ],
+      "title": "Chemical Reaction"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+    "diagram_type": "circuit_electrical",
+    "title": "Geography: Electrical Circuit",
+    "subject": "Geography",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+    "diagram_type": "circuit_logic",
+    "title": "Geography: Logic Circuit",
+    "subject": "Geography",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084218",
+    "diagram_type": "circuit_electrical",
+    "title": "Economics: Electrical Circuit",
+    "subject": "Economics",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084218",
+    "diagram_type": "circuit_logic",
+    "title": "Economics: Logic Circuit",
+    "subject": "Economics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+    "diagram_type": "flowchart",
+    "title": "Computer Science: Process Flow",
+    "subject": "Computer Science",
+    "data": {
+      "steps": [
+        {
+          "type": "start",
+          "text": "Start"
+        },
+        {
+          "type": "process",
+          "text": "Input Data"
+        },
+        {
+          "type": "process",
+          "text": "Process"
+        },
+        {
+          "type": "decision",
+          "text": "Valid?"
+        },
+        {
+          "type": "process",
+          "text": "Output"
+        },
+        {
+          "type": "end",
+          "text": "End"
+        }
+      ],
+      "title": "Process Algorithm"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+    "diagram_type": "circuit_logic",
+    "title": "Computer Science: Logic Circuit",
+    "subject": "Computer Science",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084228",
+    "diagram_type": "circuit_logic",
+    "title": "Further Mathematics: Logic Circuit",
+    "subject": "Further Mathematics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084228",
+    "diagram_type": "chemistry_reaction",
+    "title": "Further Mathematics: Chemical Reaction",
+    "subject": "Further Mathematics",
+    "data": {
+      "reactants": [
+        "A",
+        "B"
+      ],
+      "products": [
+        "C"
+      ],
+      "title": "Chemical Reaction"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+    "diagram_type": "circuit_electrical",
+    "title": "Geography: Electrical Circuit",
+    "subject": "Geography",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+    "diagram_type": "circuit_logic",
+    "title": "Geography: Logic Circuit",
+    "subject": "Geography",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss3-national-income-20260107-084228",
+    "diagram_type": "circuit_electrical",
+    "title": "Economics: Electrical Circuit",
+    "subject": "Economics",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss3-national-income-20260107-084228",
+    "diagram_type": "circuit_logic",
+    "title": "Economics: Logic Circuit",
+    "subject": "Economics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+    "diagram_type": "flowchart",
+    "title": "Computer Science: Process Flow",
+    "subject": "Computer Science",
+    "data": {
+      "steps": [
+        {
+          "type": "start",
+          "text": "Start"
+        },
+        {
+          "type": "process",
+          "text": "Input Data"
+        },
+        {
+          "type": "process",
+          "text": "Process"
+        },
+        {
+          "type": "decision",
+          "text": "Valid?"
+        },
+        {
+          "type": "process",
+          "text": "Output"
+        },
+        {
+          "type": "end",
+          "text": "End"
+        }
+      ],
+      "title": "Process Algorithm"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+    "diagram_type": "circuit_logic",
+    "title": "Computer Science: Logic Circuit",
+    "subject": "Computer Science",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-math-ss2-quadratic-20260107-084432",
+    "diagram_type": "circuit_logic",
+    "title": "Mathematics: Logic Circuit",
+    "subject": "Mathematics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-math-ss2-quadratic-20260107-084432",
+    "diagram_type": "chemistry_reaction",
+    "title": "Mathematics: Chemical Reaction",
+    "subject": "Mathematics",
+    "data": {
+      "reactants": [
+        "A",
+        "B"
+      ],
+      "products": [
+        "C"
+      ],
+      "title": "Chemical Reaction"
+    }
+  },
+  {
+    "lesson_id": "nerdc-physics-ss2-electricity-20260107-084432",
+    "diagram_type": "circuit_electrical",
+    "title": "Physics: Electrical Circuit",
+    "subject": "Physics",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-physics-ss2-electricity-20260107-084432",
+    "diagram_type": "circuit_logic",
+    "title": "Physics: Logic Circuit",
+    "subject": "Physics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084432",
+    "diagram_type": "circuit_logic",
+    "title": "Chemistry: Logic Circuit",
+    "subject": "Chemistry",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084432",
+    "diagram_type": "chemistry_reaction",
+    "title": "Chemistry: Chemical Reaction",
+    "subject": "Chemistry",
+    "data": {
+      "reactants": [
+        "A",
+        "B"
+      ],
+      "products": [
+        "C"
+      ],
+      "title": "Chemical Reaction"
+    }
+  },
+  {
+    "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+    "diagram_type": "circuit_logic",
+    "title": "Biology: Logic Circuit",
+    "subject": "Biology",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+    "diagram_type": "chemistry_reaction",
+    "title": "Biology: Chemical Reaction",
+    "subject": "Biology",
+    "data": {
+      "reactants": [
+        "A",
+        "B"
+      ],
+      "products": [
+        "C"
+      ],
+      "title": "Chemical Reaction"
+    }
+  },
+  {
+    "lesson_id": "nerdc-english-ss2-literature-20260107-084432",
+    "diagram_type": "circuit_logic",
+    "title": "English Language: Logic Circuit",
+    "subject": "English Language",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-math-ss3-calculus-20260107-084435",
+    "diagram_type": "flowchart",
+    "title": "Mathematics: Process Flow",
+    "subject": "Mathematics",
+    "data": {
+      "steps": [
+        {
+          "type": "start",
+          "text": "Start"
+        },
+        {
+          "type": "process",
+          "text": "Input Data"
+        },
+        {
+          "type": "process",
+          "text": "Process"
+        },
+        {
+          "type": "decision",
+          "text": "Valid?"
+        },
+        {
+          "type": "process",
+          "text": "Output"
+        },
+        {
+          "type": "end",
+          "text": "End"
+        }
+      ],
+      "title": "Process Algorithm"
+    }
+  },
+  {
+    "lesson_id": "nerdc-math-ss3-calculus-20260107-084435",
+    "diagram_type": "circuit_logic",
+    "title": "Mathematics: Logic Circuit",
+    "subject": "Mathematics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+    "diagram_type": "circuit_logic",
+    "title": "Physics: Logic Circuit",
+    "subject": "Physics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+    "diagram_type": "chemistry_reaction",
+    "title": "Physics: Chemical Reaction",
+    "subject": "Physics",
+    "data": {
+      "reactants": [
+        "A",
+        "B"
+      ],
+      "products": [
+        "C"
+      ],
+      "title": "Chemical Reaction"
+    }
+  },
+  {
+    "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+    "diagram_type": "circuit_electrical",
+    "title": "Chemistry: Electrical Circuit",
+    "subject": "Chemistry",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+    "diagram_type": "circuit_logic",
+    "title": "Chemistry: Logic Circuit",
+    "subject": "Chemistry",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+    "diagram_type": "circuit_electrical",
+    "title": "Biology: Electrical Circuit",
+    "subject": "Biology",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+    "diagram_type": "circuit_logic",
+    "title": "Biology: Logic Circuit",
+    "subject": "Biology",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-english-ss3-essay-20260107-084435",
+    "diagram_type": "circuit_logic",
+    "title": "English Language: Logic Circuit",
+    "subject": "English Language",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss1-sets-20260107-084438",
+    "diagram_type": "venn_2",
+    "title": "Further Mathematics: Set Union",
+    "subject": "Further Mathematics",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "only_a": 5,
+      "both": 3,
+      "only_b": 4,
+      "title": "A ∪ B (Union)"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss1-sets-20260107-084438",
+    "diagram_type": "venn_2",
+    "title": "Further Mathematics: Set Intersection",
+    "subject": "Further Mathematics",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "only_a": 4,
+      "both": 6,
+      "only_b": 3,
+      "title": "A ∩ B (Intersection)"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+    "diagram_type": "venn_2",
+    "title": "Geography: Set Intersection",
+    "subject": "Geography",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "only_a": 4,
+      "both": 6,
+      "only_b": 3,
+      "title": "A ∩ B (Intersection)"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+    "diagram_type": "circuit_electrical",
+    "title": "Geography: Electrical Circuit",
+    "subject": "Geography",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss1-basic-20260107-084438",
+    "diagram_type": "circuit_electrical",
+    "title": "Economics: Electrical Circuit",
+    "subject": "Economics",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss1-basic-20260107-084438",
+    "diagram_type": "circuit_logic",
+    "title": "Economics: Logic Circuit",
+    "subject": "Economics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+    "diagram_type": "venn_3",
+    "title": "Computer Science: Three Sets",
+    "subject": "Computer Science",
+    "data": {
+      "set_a_label": "A",
+      "set_b_label": "B",
+      "set_c_label": "C",
+      "title": "A, B, C Relationships"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+    "diagram_type": "flowchart",
+    "title": "Computer Science: Process Flow",
+    "subject": "Computer Science",
+    "data": {
+      "steps": [
+        {
+          "type": "start",
+          "text": "Start"
+        },
+        {
+          "type": "process",
+          "text": "Input Data"
+        },
+        {
+          "type": "process",
+          "text": "Process"
+        },
+        {
+          "type": "decision",
+          "text": "Valid?"
+        },
+        {
+          "type": "process",
+          "text": "Output"
+        },
+        {
+          "type": "end",
+          "text": "End"
+        }
+      ],
+      "title": "Process Algorithm"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084438",
+    "diagram_type": "circuit_logic",
+    "title": "Further Mathematics: Logic Circuit",
+    "subject": "Further Mathematics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084438",
+    "diagram_type": "chemistry_reaction",
+    "title": "Further Mathematics: Chemical Reaction",
+    "subject": "Further Mathematics",
+    "data": {
+      "reactants": [
+        "A",
+        "B"
+      ],
+      "products": [
+        "C"
+      ],
+      "title": "Chemical Reaction"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+    "diagram_type": "circuit_electrical",
+    "title": "Geography: Electrical Circuit",
+    "subject": "Geography",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+    "diagram_type": "circuit_logic",
+    "title": "Geography: Logic Circuit",
+    "subject": "Geography",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084438",
+    "diagram_type": "circuit_electrical",
+    "title": "Economics: Electrical Circuit",
+    "subject": "Economics",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084438",
+    "diagram_type": "circuit_logic",
+    "title": "Economics: Logic Circuit",
+    "subject": "Economics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+    "diagram_type": "flowchart",
+    "title": "Computer Science: Process Flow",
+    "subject": "Computer Science",
+    "data": {
+      "steps": [
+        {
+          "type": "start",
+          "text": "Start"
+        },
+        {
+          "type": "process",
+          "text": "Input Data"
+        },
+        {
+          "type": "process",
+          "text": "Process"
+        },
+        {
+          "type": "decision",
+          "text": "Valid?"
+        },
+        {
+          "type": "process",
+          "text": "Output"
+        },
+        {
+          "type": "end",
+          "text": "End"
+        }
+      ],
+      "title": "Process Algorithm"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+    "diagram_type": "circuit_logic",
+    "title": "Computer Science: Logic Circuit",
+    "subject": "Computer Science",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084439",
+    "diagram_type": "circuit_logic",
+    "title": "Further Mathematics: Logic Circuit",
+    "subject": "Further Mathematics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084439",
+    "diagram_type": "chemistry_reaction",
+    "title": "Further Mathematics: Chemical Reaction",
+    "subject": "Further Mathematics",
+    "data": {
+      "reactants": [
+        "A",
+        "B"
+      ],
+      "products": [
+        "C"
+      ],
+      "title": "Chemical Reaction"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+    "diagram_type": "circuit_electrical",
+    "title": "Geography: Electrical Circuit",
+    "subject": "Geography",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+    "diagram_type": "circuit_logic",
+    "title": "Geography: Logic Circuit",
+    "subject": "Geography",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss3-national-income-20260107-084439",
+    "diagram_type": "circuit_electrical",
+    "title": "Economics: Electrical Circuit",
+    "subject": "Economics",
+    "data": {
+      "components": [
+        {
+          "type": "battery",
+          "label": "V",
+          "value": "12V"
+        },
+        {
+          "type": "resistor",
+          "label": "R1",
+          "value": "100Ω"
+        },
+        {
+          "type": "resistor",
+          "label": "R2",
+          "value": "200Ω"
+        }
+      ],
+      "connections": "series",
+      "title": "Simple Series Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-economics-ss3-national-income-20260107-084439",
+    "diagram_type": "circuit_logic",
+    "title": "Economics: Logic Circuit",
+    "subject": "Economics",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+    "diagram_type": "flowchart",
+    "title": "Computer Science: Process Flow",
+    "subject": "Computer Science",
+    "data": {
+      "steps": [
+        {
+          "type": "start",
+          "text": "Start"
+        },
+        {
+          "type": "process",
+          "text": "Input Data"
+        },
+        {
+          "type": "process",
+          "text": "Process"
+        },
+        {
+          "type": "decision",
+          "text": "Valid?"
+        },
+        {
+          "type": "process",
+          "text": "Output"
+        },
+        {
+          "type": "end",
+          "text": "End"
+        }
+      ],
+      "title": "Process Algorithm"
+    }
+  },
+  {
+    "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+    "diagram_type": "circuit_logic",
+    "title": "Computer Science: Logic Circuit",
+    "subject": "Computer Science",
+    "data": {
+      "gates": [
+        {
+          "type": "AND",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Q1"
+        },
+        {
+          "type": "OR",
+          "inputs": [
+            "Q1",
+            "C"
+          ],
+          "output": "Y"
+        }
+      ],
+      "title": "Logic Gate Circuit"
+    }
+  }
+]

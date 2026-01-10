@@ -760,6 +760,251 @@
       "total_topics": 5,
       "coverage_status": "not_started",
       "priority": "high"
+    },
+    "Government": {
+      "name": "Government",
+      "exam_boards": ["WAEC", "NECO"],
+      "topics": [
+        {
+          "id": "gov_001",
+          "name": "Forms and Systems of Government",
+          "subtopics": ["Democracy", "Monarchy", "Dictatorship", "Federal and Unitary systems"],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": ["Citizenship basics"]
+        },
+        {
+          "id": "gov_002",
+          "name": "The Constitution",
+          "subtopics": ["Written vs unwritten constitutions", "Constitutional provisions", "Amendment procedures"],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": ["Government systems"]
+        },
+        {
+          "id": "gov_003",
+          "name": "Rights and Duties of Citizens",
+          "subtopics": ["Fundamental rights", "Civic duties", "Rule of law"],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": ["Citizenship"]
+        },
+        {
+          "id": "gov_004",
+          "name": "Political Participation",
+          "subtopics": ["Elections", "Political parties", "Voting systems"],
+          "difficulty": "intermediate",
+          "exam_weight": "medium",
+          "prerequisites": ["Citizenship"]
+        },
+        {
+          "id": "gov_005",
+          "name": "International Relations",
+          "subtopics": ["UN and international organizations", "Diplomacy", "Treaties"],
+          "difficulty": "advanced",
+          "exam_weight": "medium",
+          "prerequisites": ["Government systems"]
+        }
+      ],
+      "total_topics": 5,
+      "coverage_status": "not_started",
+      "priority": "medium"
+    },
+    "Commerce": {
+      "name": "Commerce",
+      "exam_boards": ["WAEC", "NECO"],
+      "topics": [
+        {
+          "id": "com_001",
+          "name": "Nature and Scope of Commerce",
+          "subtopics": ["Definition", "Components of commerce", "Trade"],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": ["Basic economics"]
+        },
+        {
+          "id": "com_002",
+          "name": "Wholesale and Retail Trade",
+          "subtopics": ["Wholesalers", "Retailers", "Middlemen"],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": ["Commerce basics"]
+        },
+        {
+          "id": "com_003",
+          "name": "Services and Aids to Trade",
+          "subtopics": ["Transport", "Communication", "Banking", "Insurance"],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": ["Commerce components"]
+        },
+        {
+          "id": "com_004",
+          "name": "Business Organizations",
+          "subtopics": ["Sole proprietorship", "Partnership", "Companies"],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": ["Commerce nature"]
+        },
+        {
+          "id": "com_005",
+          "name": "Consumer Protection",
+          "subtopics": ["Consumer rights", "Product safety", "Fair trading"],
+          "difficulty": "intermediate",
+          "exam_weight": "medium",
+          "prerequisites": ["Commerce regulation"]
+        }
+      ],
+      "total_topics": 5,
+      "coverage_status": "not_started",
+      "priority": "medium"
+    },
+    "Accounting": {
+      "name": "Accounting",
+      "exam_boards": ["WAEC", "NECO"],
+      "topics": [
+        {
+          "id": "acc_001",
+          "name": "Principles and Concepts of Accounting",
+          "subtopics": ["Definition", "Objectives", "Basic principles"],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": ["Business basics"]
+        },
+        {
+          "id": "acc_002",
+          "name": "Double Entry Bookkeeping",
+          "subtopics": ["Debit and credit", "Journal entries", "Posting"],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": ["Accounting principles"]
+        },
+        {
+          "id": "acc_003",
+          "name": "Books of Accounts",
+          "subtopics": ["Ledger", "Cash book", "Trial balance"],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": ["Double entry bookkeeping"]
+        },
+        {
+          "id": "acc_004",
+          "name": "Final Accounts and Balance Sheet",
+          "subtopics": ["Income statement", "Balance sheet", "Profit calculation"],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": ["Books of accounts"]
+        },
+        {
+          "id": "acc_005",
+          "name": "Accounting for Different Business Types",
+          "subtopics": ["Sole trader", "Partnership", "Club accounting"],
+          "difficulty": "advanced",
+          "exam_weight": "medium",
+          "prerequisites": ["Final accounts"]
+        }
+      ],
+      "total_topics": 5,
+      "coverage_status": "not_started",
+      "priority": "medium"
+    },
+    "Agricultural Science": {
+      "name": "Agricultural Science",
+      "exam_boards": ["WAEC", "NECO"],
+      "topics": [
+        {
+          "id": "agr_001",
+          "name": "Principles and Practices of Agriculture",
+          "subtopics": ["Definition", "Importance", "Types of farming"],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": ["General science"]
+        },
+        {
+          "id": "agr_002",
+          "name": "Soil Science",
+          "subtopics": ["Soil composition", "Soil types", "Soil conservation"],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": ["Agriculture principles"]
+        },
+        {
+          "id": "agr_003",
+          "name": "Crop Production",
+          "subtopics": ["Crop selection", "Planting methods", "Harvesting"],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": ["Soil science"]
+        },
+        {
+          "id": "agr_004",
+          "name": "Livestock Management",
+          "subtopics": ["Animal husbandry", "Breeding", "Health management"],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": ["Agriculture principles"]
+        },
+        {
+          "id": "agr_005",
+          "name": "Farm Tools and Equipment",
+          "subtopics": ["Hand tools", "Machines", "Maintenance"],
+          "difficulty": "intermediate",
+          "exam_weight": "medium",
+          "prerequisites": ["Agriculture practices"]
+        }
+      ],
+      "total_topics": 5,
+      "coverage_status": "not_started",
+      "priority": "medium"
+    },
+    "Literature in English": {
+      "name": "Literature in English",
+      "exam_boards": ["WAEC", "NECO"],
+      "topics": [
+        {
+          "id": "lit_001",
+          "name": "Drama and Theatre Arts",
+          "subtopics": ["Elements of drama", "Playwriting", "Theatre appreciation"],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": ["Literary basics"]
+        },
+        {
+          "id": "lit_002",
+          "name": "Poetry Analysis",
+          "subtopics": ["Poetic devices", "Themes", "Literary analysis"],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": ["Literary basics"]
+        },
+        {
+          "id": "lit_003",
+          "name": "Prose Fiction",
+          "subtopics": ["Narrative techniques", "Character analysis", "Plot structure"],
+          "difficulty": "intermediate",
+          "exam_weight": "very_high",
+          "prerequisites": ["Literary basics"]
+        },
+        {
+          "id": "lit_004",
+          "name": "African Literature",
+          "subtopics": ["African authors", "Cultural themes", "Historical context"],
+          "difficulty": "intermediate",
+          "exam_weight": "high",
+          "prerequisites": ["Literary analysis"]
+        },
+        {
+          "id": "lit_005",
+          "name": "Critical Appreciation",
+          "subtopics": ["Literary criticism", "Evaluation", "Interpretation"],
+          "difficulty": "advanced",
+          "exam_weight": "medium",
+          "prerequisites": ["Literary analysis"]
+        }
+      ],
+      "total_topics": 5,
+      "coverage_status": "not_started",
+      "priority": "medium"
     }
   }
 }

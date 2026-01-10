@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="320" viewBox="0 0 400 320">
+  <text x="200.0" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">A ∪ B (Union)</text>
+
+  <!-- Circles -->
+  <circle cx="150" cy="160" r="90" fill="#3498db" opacity="0.35" stroke="#2980b9" stroke-width="3"/>
+  <circle cx="250" cy="160" r="90" fill="#e74c3c" opacity="0.35" stroke="#c0392b" stroke-width="3"/>
+
+  <!-- Labels -->
+  <text x="105" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c3e50">A</text>
+  <text x="295" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c3e50">B</text>
+
+  <!-- Region Values -->
+  <text x="105" y="165" text-anchor="middle" font-size="13" fill="#1a1a1a">5</text>
+  <text x="200" y="165" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a1a">3</text>
+  <text x="295" y="165" text-anchor="middle" font-size="13" fill="#1a1a1a">4</text>
+
+  <text x="200.0" y="300" text-anchor="middle" font-size="12" fill="#666">Intersection shown in center</text>
+</svg>

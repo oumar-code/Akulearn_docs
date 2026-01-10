@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="360" viewBox="0 0 460 360">
+  <text x="230.0" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Venn Diagram: A, B, C</text>
+
+  <!-- Circles -->
+  <circle cx="170" cy="170" r="90" fill="#3498db" opacity="0.35" stroke="#2980b9" stroke-width="3"/>
+  <circle cx="290" cy="170" r="90" fill="#e74c3c" opacity="0.35" stroke="#c0392b" stroke-width="3"/>
+  <circle cx="230" cy="240" r="90" fill="#2ecc71" opacity="0.35" stroke="#27ae60" stroke-width="3"/>
+
+  <!-- Labels -->
+  <text x="120" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c3e50">A</text>
+  <text x="340" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c3e50">B</text>
+  <text x="230" y="330" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c3e50">C</text>
+
+  <!-- Center intersection marker -->
+  <text x="230" y="205" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">A∩B∩C</text>
+</svg>

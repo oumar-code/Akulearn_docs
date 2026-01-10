@@ -25,7 +25,40 @@
             "Design visual representations of set relationships",
             "Create flow charts for logical reasoning",
             "Make diagrams showing proof structures"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Further_Mathematics_|_Sets,_Lo_1",
+              "title": "Explainer: Further Mathematics | Sets, Logic and Proof (Further Mathematics SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Sets,_Lo_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Sets,_Lo_2",
+              "title": "Explainer: Further Mathematics | Sets, Logic and Proof (Further Mathematics SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Sets,_Lo_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Sets,_Lo_3",
+              "title": "Explainer: Further Mathematics | Sets, Logic and Proof (Further Mathematics SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Sets,_Lo_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -38,7 +71,19 @@
             "Use cards or tokens to represent set elements",
             "Build physical Venn diagrams with hoops",
             "Construct logic circuit models"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -51,7 +96,9 @@
             "Create audio explanations of set operations",
             "Listen to mathematical reasoning lectures",
             "Record step-by-step problem solutions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -64,7 +111,19 @@
             "Write formal mathematical proofs",
             "Document solution strategies",
             "Create comparison charts of logical connectives"
+          ],
+          "summary": "Summarize the key ideas of 'Sets, Logic and Proof (Further Mathematics SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -147,7 +206,40 @@
             "Draw and label geographical features",
             "Create visual timelines of geographical events",
             "Design thematic maps for data presentation"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Geography_|_Introduction_to_Ge_1",
+              "title": "Explainer: Geography | Introduction to Geography and Map Reading (SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Introduction_to_Ge_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Introduction_to_Ge_2",
+              "title": "Explainer: Geography | Introduction to Geography and Map Reading (SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Introduction_to_Ge_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Introduction_to_Ge_3",
+              "title": "Explainer: Geography | Introduction to Geography and Map Reading (SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Introduction_to_Ge_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -160,7 +252,19 @@
             "Build 3D models of mountains and valleys",
             "Use physical maps for navigation exercises",
             "Create geographical scavenger hunts"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -173,7 +277,9 @@
             "Create audio guides for map reading",
             "Listen to geographical case studies",
             "Record oral presentations on geographical topics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -186,7 +292,19 @@
             "Write geographical reports and analyses",
             "Document field observations",
             "Create comparison charts of geographical features"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Geography and Map Reading (SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -269,7 +387,40 @@
             "Design visual aids for economic principles",
             "Create economic concept maps",
             "Make infographics about economic systems"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Economics_|_Basic_Economic_Con_1",
+              "title": "Explainer: Economics | Basic Economic Concepts and Principles (SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Basic_Economic_Con_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_Basic_Economic_Con_2",
+              "title": "Explainer: Economics | Basic Economic Concepts and Principles (SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Basic_Economic_Con_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_Basic_Economic_Con_3",
+              "title": "Explainer: Economics | Basic Economic Concepts and Principles (SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Basic_Economic_Con_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -282,7 +433,19 @@
             "Simulate market transactions with tokens",
             "Create physical production possibility models",
             "Build economic decision-making games"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -295,7 +458,9 @@
             "Create audio explanations of economic theories",
             "Listen to economic news analysis",
             "Record oral presentations on economic topics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -308,7 +473,19 @@
             "Write economic opinion pieces",
             "Document personal financial decisions",
             "Create comparison charts of economic systems"
+          ],
+          "summary": "Summarize the key ideas of 'Basic Economic Concepts and Principles (SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -391,7 +568,40 @@
             "Draw detailed flowcharts for processes",
             "Create visual programming concept maps",
             "Design algorithm visualization diagrams"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Computer_Science_|_Introductio_1",
+              "title": "Explainer: Computer Science | Introduction to Computing and Basic Programming (SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Introductio_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Introductio_2",
+              "title": "Explainer: Computer Science | Introduction to Computing and Basic Programming (SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Introductio_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Introductio_3",
+              "title": "Explainer: Computer Science | Introduction to Computing and Basic Programming (SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Introductio_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -404,7 +614,19 @@
             "Assemble computer hardware components",
             "Create physical flowcharts with sticky notes",
             "Build simple robots or automated systems"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -417,7 +639,9 @@
             "Create audio explanations of programming concepts",
             "Listen to coding interviews and discussions",
             "Record debugging sessions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -430,7 +654,19 @@
             "Write pseudocode for complex problems",
             "Document project development processes",
             "Create comparison charts of programming languages"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Computing and Basic Programming (SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -513,7 +749,40 @@
             "Design visual representations of set relationships",
             "Create flow charts for logical reasoning",
             "Make diagrams showing proof structures"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Further_Mathematics_|_Sets,_Lo_1",
+              "title": "Explainer: Further Mathematics | Sets, Logic and Proof (Further Mathematics SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Sets,_Lo_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Sets,_Lo_2",
+              "title": "Explainer: Further Mathematics | Sets, Logic and Proof (Further Mathematics SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Sets,_Lo_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Sets,_Lo_3",
+              "title": "Explainer: Further Mathematics | Sets, Logic and Proof (Further Mathematics SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Sets,_Lo_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -526,7 +795,19 @@
             "Use cards or tokens to represent set elements",
             "Build physical Venn diagrams with hoops",
             "Construct logic circuit models"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -539,7 +820,9 @@
             "Create audio explanations of set operations",
             "Listen to mathematical reasoning lectures",
             "Record step-by-step problem solutions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -552,7 +835,19 @@
             "Write formal mathematical proofs",
             "Document solution strategies",
             "Create comparison charts of logical connectives"
+          ],
+          "summary": "Summarize the key ideas of 'Sets, Logic and Proof (Further Mathematics SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -635,7 +930,40 @@
             "Draw and label geographical features",
             "Create visual timelines of geographical events",
             "Design thematic maps for data presentation"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Geography_|_Introduction_to_Ge_1",
+              "title": "Explainer: Geography | Introduction to Geography and Map Reading (SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Introduction_to_Ge_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Introduction_to_Ge_2",
+              "title": "Explainer: Geography | Introduction to Geography and Map Reading (SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Introduction_to_Ge_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Introduction_to_Ge_3",
+              "title": "Explainer: Geography | Introduction to Geography and Map Reading (SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Introduction_to_Ge_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -648,7 +976,19 @@
             "Build 3D models of mountains and valleys",
             "Use physical maps for navigation exercises",
             "Create geographical scavenger hunts"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -661,7 +1001,9 @@
             "Create audio guides for map reading",
             "Listen to geographical case studies",
             "Record oral presentations on geographical topics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -674,7 +1016,19 @@
             "Write geographical reports and analyses",
             "Document field observations",
             "Create comparison charts of geographical features"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Geography and Map Reading (SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -757,7 +1111,40 @@
             "Design visual aids for economic principles",
             "Create economic concept maps",
             "Make infographics about economic systems"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Economics_|_Basic_Economic_Con_1",
+              "title": "Explainer: Economics | Basic Economic Concepts and Principles (SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Basic_Economic_Con_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_Basic_Economic_Con_2",
+              "title": "Explainer: Economics | Basic Economic Concepts and Principles (SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Basic_Economic_Con_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_Basic_Economic_Con_3",
+              "title": "Explainer: Economics | Basic Economic Concepts and Principles (SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Basic_Economic_Con_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -770,7 +1157,19 @@
             "Simulate market transactions with tokens",
             "Create physical production possibility models",
             "Build economic decision-making games"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -783,7 +1182,9 @@
             "Create audio explanations of economic theories",
             "Listen to economic news analysis",
             "Record oral presentations on economic topics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -796,7 +1197,19 @@
             "Write economic opinion pieces",
             "Document personal financial decisions",
             "Create comparison charts of economic systems"
+          ],
+          "summary": "Summarize the key ideas of 'Basic Economic Concepts and Principles (SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -879,7 +1292,40 @@
             "Draw detailed flowcharts for processes",
             "Create visual programming concept maps",
             "Design algorithm visualization diagrams"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Computer_Science_|_Introductio_1",
+              "title": "Explainer: Computer Science | Introduction to Computing and Basic Programming (SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Introductio_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Introductio_2",
+              "title": "Explainer: Computer Science | Introduction to Computing and Basic Programming (SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Introductio_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Introductio_3",
+              "title": "Explainer: Computer Science | Introduction to Computing and Basic Programming (SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Introductio_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -892,7 +1338,19 @@
             "Assemble computer hardware components",
             "Create physical flowcharts with sticky notes",
             "Build simple robots or automated systems"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -905,7 +1363,9 @@
             "Create audio explanations of programming concepts",
             "Listen to coding interviews and discussions",
             "Record debugging sessions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -918,7 +1378,19 @@
             "Write pseudocode for complex problems",
             "Document project development processes",
             "Create comparison charts of programming languages"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Computing and Basic Programming (SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -1001,7 +1473,40 @@
             "Graph quadratic functions and identify vertex, axis of symmetry",
             "Create visual representations of word problems",
             "Use GeoGebra for interactive quadratic explorations"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Mathematics_|_Quadratic_Equati_1",
+              "title": "Explainer: Mathematics | Quadratic Equations and Their Applications (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Mathematics_|_Quadratic_Equati_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Mathematics_|_Quadratic_Equati_2",
+              "title": "Explainer: Mathematics | Quadratic Equations and Their Applications (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Mathematics_|_Quadratic_Equati_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Mathematics_|_Quadratic_Equati_3",
+              "title": "Explainer: Mathematics | Quadratic Equations and Their Applications (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Mathematics_|_Quadratic_Equati_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -1014,7 +1519,19 @@
             "Conduct projectile motion experiments with balls",
             "Build quadratic function sculptures using clay",
             "Create movement sequences representing equation solving"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -1027,7 +1544,9 @@
             "Teach quadratic concepts to classmates",
             "Create audio explanations of worked examples",
             "Listen to math songs and mnemonics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -1040,7 +1559,19 @@
             "Write quadratic word problems and solutions",
             "Create cheat sheets for exam preparation",
             "Write explanations of common mistakes and how to avoid them"
+          ],
+          "summary": "Summarize the key ideas of 'Quadratic Equations and Their Applications (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -1122,7 +1653,40 @@
             "Design and draw complex circuit schematics",
             "Create visual guides for series vs parallel circuits",
             "Use diagramming tools to map electrical systems"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Physics_|_Electricity_and_Elec_1",
+              "title": "Explainer: Physics | Electricity and Electrical Circuits (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Physics_|_Electricity_and_Elec_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Physics_|_Electricity_and_Elec_2",
+              "title": "Explainer: Physics | Electricity and Electrical Circuits (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Physics_|_Electricity_and_Elec_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Physics_|_Electricity_and_Elec_3",
+              "title": "Explainer: Physics | Electricity and Electrical Circuits (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Physics_|_Electricity_and_Elec_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -1135,7 +1699,19 @@
             "Assemble series and parallel circuit boards",
             "Measure actual voltages and currents with multimeters",
             "Build simple electrical devices (buzzers, switches)"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -1148,7 +1724,9 @@
             "Explain circuit concepts to peers verbally",
             "Create audio recordings of problem solutions",
             "Listen to physics podcasts and lectures"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -1161,7 +1739,19 @@
             "Write circuit design specifications",
             "Document experimental results and observations",
             "Create study guides for electrical concepts"
+          ],
+          "summary": "Summarize the key ideas of 'Electricity and Electrical Circuits (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -1244,7 +1834,40 @@
             "Build 3D models of organic molecules",
             "Create visual guides for functional groups",
             "Design molecular structure charts"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Chemistry_|_Introduction_to_Or_1",
+              "title": "Explainer: Chemistry | Introduction to Organic Chemistry (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Chemistry_|_Introduction_to_Or_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Chemistry_|_Introduction_to_Or_2",
+              "title": "Explainer: Chemistry | Introduction to Organic Chemistry (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Chemistry_|_Introduction_to_Or_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Chemistry_|_Introduction_to_Or_3",
+              "title": "Explainer: Chemistry | Introduction to Organic Chemistry (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Chemistry_|_Introduction_to_Or_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -1257,7 +1880,19 @@
             "Assemble molecular model kits",
             "Perform distillation or crystallization experiments",
             "Create tactile models of carbon bonding"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -1270,7 +1905,9 @@
             "Teach organic concepts to classmates",
             "Create audio guides for laboratory procedures",
             "Listen to chemistry lectures and explanations"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -1283,7 +1920,19 @@
             "Write systematic names for complex molecules",
             "Document experimental procedures and results",
             "Create comparison charts of organic compound classes"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Organic Chemistry (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -1366,7 +2015,40 @@
             "Label and color reproductive system diagrams",
             "Create visual timelines of menstrual cycle",
             "Design infographics about reproductive health"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Biology_|_Reproduction_in_Livi_1",
+              "title": "Explainer: Biology | Reproduction in Living Organisms (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Biology_|_Reproduction_in_Livi_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Biology_|_Reproduction_in_Livi_2",
+              "title": "Explainer: Biology | Reproduction in Living Organisms (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Biology_|_Reproduction_in_Livi_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Biology_|_Reproduction_in_Livi_3",
+              "title": "Explainer: Biology | Reproduction in Living Organisms (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Biology_|_Reproduction_in_Livi_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -1379,7 +2061,19 @@
             "Assemble anatomical model kits",
             "Grow plants from cuttings or tubers",
             "Demonstrate mitosis/meiosis with objects"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -1392,7 +2086,9 @@
             "Teach reproductive concepts to peers",
             "Create audio guides for laboratory dissections",
             "Listen to expert lectures on reproductive health"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -1405,7 +2101,19 @@
             "Write research papers on reproductive technologies",
             "Document experimental observations",
             "Create comparison charts of reproduction methods"
+          ],
+          "summary": "Summarize the key ideas of 'Reproduction in Living Organisms (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -1488,7 +2196,40 @@
             "Design book covers for studied texts",
             "Create visual timelines of literary periods",
             "Make character relationship diagrams"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_English_Language_|_Introductio_1",
+              "title": "Explainer: English Language | Introduction to Literature (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_English_Language_|_Introductio_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_English_Language_|_Introductio_2",
+              "title": "Explainer: English Language | Introduction to Literature (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_English_Language_|_Introductio_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_English_Language_|_Introductio_3",
+              "title": "Explainer: English Language | Introduction to Literature (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_English_Language_|_Introductio_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -1501,7 +2242,19 @@
             "Perform dramatic readings",
             "Create dance interpretations of poems",
             "Build dioramas of story settings"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -1514,7 +2267,9 @@
             "Create audio recordings of analyses",
             "Listen to literary criticism podcasts",
             "Perform oral interpretations of poems"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -1527,7 +2282,19 @@
             "Compose literary analyses",
             "Write creative responses to texts",
             "Create study guides for literary works"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Literature (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -1611,7 +2378,40 @@
             "Plot derivative graphs alongside original functions",
             "Create visual guides for optimization problems",
             "Design geometric interpretations of calculus concepts"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Mathematics_|_Introduction_to__1",
+              "title": "Explainer: Mathematics | Introduction to Calculus (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Mathematics_|_Introduction_to__1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Mathematics_|_Introduction_to__2",
+              "title": "Explainer: Mathematics | Introduction to Calculus (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Mathematics_|_Introduction_to__2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Mathematics_|_Introduction_to__3",
+              "title": "Explainer: Mathematics | Introduction to Calculus (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Mathematics_|_Introduction_to__3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -1624,7 +2424,19 @@
             "Construct physical models of maximum/minimum scenarios",
             "Demonstrate calculus concepts with moving objects",
             "Build geometric shapes to understand areas and volumes"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -1637,7 +2449,9 @@
             "Teach calculus concepts to classmates",
             "Create audio explanations of complex problems",
             "Listen to calculus lectures and problem solutions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -1650,7 +2464,19 @@
             "Write proofs of basic calculus theorems",
             "Document solution strategies for different problem types",
             "Create comparison charts of differentiation rules"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Calculus (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -1733,7 +2559,40 @@
             "Design diagrams showing photoelectric effect",
             "Create visual guides for nuclear reactions",
             "Make models of atomic energy levels"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Physics_|_Modern_Physics:_Quan_1",
+              "title": "Explainer: Physics | Modern Physics: Quantum Theory and Nuclear Physics (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Physics_|_Modern_Physics:_Quan_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Physics_|_Modern_Physics:_Quan_2",
+              "title": "Explainer: Physics | Modern Physics: Quantum Theory and Nuclear Physics (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Physics_|_Modern_Physics:_Quan_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Physics_|_Modern_Physics:_Quan_3",
+              "title": "Explainer: Physics | Modern Physics: Quantum Theory and Nuclear Physics (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Physics_|_Modern_Physics:_Quan_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -1746,7 +2605,19 @@
             "Assemble atomic structure models",
             "Demonstrate half-life with coin flipping",
             "Build simple cloud chambers for radiation detection"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -1759,7 +2630,9 @@
             "Create audio explanations of modern physics",
             "Listen to lectures on quantum mechanics",
             "Record problem-solving strategies"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -1772,7 +2645,19 @@
             "Write research summaries on nuclear energy",
             "Document experimental procedures",
             "Create comparison charts of radiation types"
+          ],
+          "summary": "Summarize the key ideas of 'Modern Physics: Quantum Theory and Nuclear Physics (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -1855,7 +2740,40 @@
             "Design visual guides for electrochemical series",
             "Create reaction coordinate diagrams",
             "Make models of electrolytic cells"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Chemistry_|_Electrochemistry_a_1",
+              "title": "Explainer: Chemistry | Electrochemistry and Chemical Kinetics (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Chemistry_|_Electrochemistry_a_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Chemistry_|_Electrochemistry_a_2",
+              "title": "Explainer: Chemistry | Electrochemistry and Chemical Kinetics (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Chemistry_|_Electrochemistry_a_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Chemistry_|_Electrochemistry_a_3",
+              "title": "Explainer: Chemistry | Electrochemistry and Chemical Kinetics (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Chemistry_|_Electrochemistry_a_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -1868,7 +2786,19 @@
             "Assemble simple voltaic cells",
             "Perform rate of reaction experiments",
             "Build models showing activation energy"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -1881,7 +2811,9 @@
             "Create audio guides for electrochemical concepts",
             "Listen to lectures on chemical kinetics",
             "Record problem-solving approaches"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -1894,7 +2826,19 @@
             "Write research reports on fuel cells",
             "Document experimental procedures and results",
             "Create comparison charts of reaction rates"
+          ],
+          "summary": "Summarize the key ideas of 'Electrochemistry and Chemical Kinetics (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -1977,7 +2921,40 @@
             "Design visual guides for natural selection",
             "Create ecosystem component diagrams",
             "Make biodiversity comparison charts"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Biology_|_Evolution_and_Ecolog_1",
+              "title": "Explainer: Biology | Evolution and Ecology (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Biology_|_Evolution_and_Ecolog_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Biology_|_Evolution_and_Ecolog_2",
+              "title": "Explainer: Biology | Evolution and Ecology (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Biology_|_Evolution_and_Ecolog_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Biology_|_Evolution_and_Ecolog_3",
+              "title": "Explainer: Biology | Evolution and Ecology (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Biology_|_Evolution_and_Ecolog_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -1990,7 +2967,19 @@
             "Assemble evolutionary timeline models",
             "Demonstrate population growth with objects",
             "Build habitat dioramas"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -2003,7 +2992,9 @@
             "Create audio guides for evolutionary concepts",
             "Listen to ecology lectures",
             "Record field observation notes"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -2016,7 +3007,19 @@
             "Write research reports on endangered species",
             "Document experimental procedures",
             "Create comparison charts of ecosystems"
+          ],
+          "summary": "Summarize the key ideas of 'Evolution and Ecology (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -2100,7 +3103,40 @@
             "Design visual essay outlines",
             "Create character relationship diagrams",
             "Make theme development charts"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_English_Language_|_Essay_Writi_1",
+              "title": "Explainer: English Language | Essay Writing and Advanced Literature (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_English_Language_|_Essay_Writi_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_English_Language_|_Essay_Writi_2",
+              "title": "Explainer: English Language | Essay Writing and Advanced Literature (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_English_Language_|_Essay_Writi_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_English_Language_|_Essay_Writi_3",
+              "title": "Explainer: English Language | Essay Writing and Advanced Literature (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_English_Language_|_Essay_Writi_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -2113,7 +3149,19 @@
             "Perform dramatic readings of essays",
             "Use index cards for essay organization",
             "Create physical representations of literary devices"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -2126,7 +3174,9 @@
             "Create audio recordings of essay analyses",
             "Listen to literary criticism podcasts",
             "Record oral presentations of essay topics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -2139,7 +3189,19 @@
             "Write practice essays on various topics",
             "Create essay planning templates",
             "Document writing process and revisions"
+          ],
+          "summary": "Summarize the key ideas of 'Essay Writing and Advanced Literature (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -2221,7 +3283,40 @@
             "Design visual representations of set relationships",
             "Create flow charts for logical reasoning",
             "Make diagrams showing proof structures"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Further_Mathematics_|_Sets,_Lo_1",
+              "title": "Explainer: Further Mathematics | Sets, Logic and Proof (Further Mathematics SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Sets,_Lo_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Sets,_Lo_2",
+              "title": "Explainer: Further Mathematics | Sets, Logic and Proof (Further Mathematics SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Sets,_Lo_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Sets,_Lo_3",
+              "title": "Explainer: Further Mathematics | Sets, Logic and Proof (Further Mathematics SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Sets,_Lo_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -2234,7 +3329,19 @@
             "Use cards or tokens to represent set elements",
             "Build physical Venn diagrams with hoops",
             "Construct logic circuit models"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -2247,7 +3354,9 @@
             "Create audio explanations of set operations",
             "Listen to mathematical reasoning lectures",
             "Record step-by-step problem solutions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -2260,7 +3369,19 @@
             "Write formal mathematical proofs",
             "Document solution strategies",
             "Create comparison charts of logical connectives"
+          ],
+          "summary": "Summarize the key ideas of 'Sets, Logic and Proof (Further Mathematics SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -2343,7 +3464,40 @@
             "Draw and label geographical features",
             "Create visual timelines of geographical events",
             "Design thematic maps for data presentation"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Geography_|_Introduction_to_Ge_1",
+              "title": "Explainer: Geography | Introduction to Geography and Map Reading (SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Introduction_to_Ge_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Introduction_to_Ge_2",
+              "title": "Explainer: Geography | Introduction to Geography and Map Reading (SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Introduction_to_Ge_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Introduction_to_Ge_3",
+              "title": "Explainer: Geography | Introduction to Geography and Map Reading (SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Introduction_to_Ge_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -2356,7 +3510,19 @@
             "Build 3D models of mountains and valleys",
             "Use physical maps for navigation exercises",
             "Create geographical scavenger hunts"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -2369,7 +3535,9 @@
             "Create audio guides for map reading",
             "Listen to geographical case studies",
             "Record oral presentations on geographical topics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -2382,7 +3550,19 @@
             "Write geographical reports and analyses",
             "Document field observations",
             "Create comparison charts of geographical features"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Geography and Map Reading (SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -2465,7 +3645,40 @@
             "Design visual aids for economic principles",
             "Create economic concept maps",
             "Make infographics about economic systems"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Economics_|_Basic_Economic_Con_1",
+              "title": "Explainer: Economics | Basic Economic Concepts and Principles (SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Basic_Economic_Con_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_Basic_Economic_Con_2",
+              "title": "Explainer: Economics | Basic Economic Concepts and Principles (SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Basic_Economic_Con_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_Basic_Economic_Con_3",
+              "title": "Explainer: Economics | Basic Economic Concepts and Principles (SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Basic_Economic_Con_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -2478,7 +3691,19 @@
             "Simulate market transactions with tokens",
             "Create physical production possibility models",
             "Build economic decision-making games"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -2491,7 +3716,9 @@
             "Create audio explanations of economic theories",
             "Listen to economic news analysis",
             "Record oral presentations on economic topics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -2504,7 +3731,19 @@
             "Write economic opinion pieces",
             "Document personal financial decisions",
             "Create comparison charts of economic systems"
+          ],
+          "summary": "Summarize the key ideas of 'Basic Economic Concepts and Principles (SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -2587,7 +3826,40 @@
             "Draw detailed flowcharts for processes",
             "Create visual programming concept maps",
             "Design algorithm visualization diagrams"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Computer_Science_|_Introductio_1",
+              "title": "Explainer: Computer Science | Introduction to Computing and Basic Programming (SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Introductio_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Introductio_2",
+              "title": "Explainer: Computer Science | Introduction to Computing and Basic Programming (SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Introductio_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Introductio_3",
+              "title": "Explainer: Computer Science | Introduction to Computing and Basic Programming (SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Introductio_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -2600,7 +3872,19 @@
             "Assemble computer hardware components",
             "Create physical flowcharts with sticky notes",
             "Build simple robots or automated systems"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -2613,7 +3897,9 @@
             "Create audio explanations of programming concepts",
             "Listen to coding interviews and discussions",
             "Record debugging sessions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -2626,7 +3912,19 @@
             "Write pseudocode for complex problems",
             "Document project development processes",
             "Create comparison charts of programming languages"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Computing and Basic Programming (SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -2709,7 +4007,40 @@
             "Design visual matrix multiplication diagrams",
             "Create transformation animations",
             "Build 3D matrix visualization models"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Further_Mathematics_|_Matrices_1",
+              "title": "Explainer: Further Mathematics | Matrices and Determinants (Further Mathematics SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Matrices_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Matrices_2",
+              "title": "Explainer: Further Mathematics | Matrices and Determinants (Further Mathematics SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Matrices_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Matrices_3",
+              "title": "Explainer: Further Mathematics | Matrices and Determinants (Further Mathematics SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Matrices_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -2722,7 +4053,19 @@
             "Construct physical matrix boards",
             "Build transformation puzzles",
             "Create matrix operation games"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -2735,7 +4078,9 @@
             "Create audio explanations of matrix concepts",
             "Record step-by-step solution processes",
             "Listen to linear algebra lectures"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -2748,7 +4093,19 @@
             "Write formal matrix proofs",
             "Document solution strategies",
             "Create comparison charts of matrix methods"
+          ],
+          "summary": "Summarize the key ideas of 'Matrices and Determinants (Further Mathematics SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -2831,7 +4188,40 @@
             "Draw climate zone maps",
             "Create weather system diagrams",
             "Design climate change infographics"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Geography_|_Climate_and_Weathe_1",
+              "title": "Explainer: Geography | Climate and Weather Systems (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Climate_and_Weathe_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Climate_and_Weathe_2",
+              "title": "Explainer: Geography | Climate and Weather Systems (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Climate_and_Weathe_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Climate_and_Weathe_3",
+              "title": "Explainer: Geography | Climate and Weather Systems (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Climate_and_Weathe_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -2844,7 +4234,19 @@
             "Build simple weather stations",
             "Create climate zone dioramas",
             "Conduct rainfall measurement activities"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -2857,7 +4259,9 @@
             "Create audio weather reports",
             "Listen to climate change discussions",
             "Record geographical case studies"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -2870,7 +4274,19 @@
             "Write climate impact assessments",
             "Document weather patterns",
             "Create comparison charts of climate types"
+          ],
+          "summary": "Summarize the key ideas of 'Climate and Weather Systems (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -2952,7 +4368,40 @@
             "Design market equilibrium diagrams",
             "Create visual aids for economic concepts",
             "Make infographics about market forces"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Economics_|_Theory_of_Demand_a_1",
+              "title": "Explainer: Economics | Theory of Demand and Supply (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Theory_of_Demand_a_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_Theory_of_Demand_a_2",
+              "title": "Explainer: Economics | Theory of Demand and Supply (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Theory_of_Demand_a_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_Theory_of_Demand_a_3",
+              "title": "Explainer: Economics | Theory of Demand and Supply (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Theory_of_Demand_a_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -2965,7 +4414,19 @@
             "Simulate market transactions with tokens",
             "Build physical demand-supply models",
             "Create market simulation games"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -2978,7 +4439,9 @@
             "Create audio explanations of economic theories",
             "Listen to market analysis discussions",
             "Record oral presentations on economic topics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -2991,7 +4454,19 @@
             "Write market analysis reports",
             "Document price change observations",
             "Create comparison charts of market structures"
+          ],
+          "summary": "Summarize the key ideas of 'Theory of Demand and Supply (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -3074,7 +4549,40 @@
             "Design algorithm flowcharts",
             "Create visual code structure diagrams",
             "Make programming concept infographics"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Computer_Science_|_Programming_1",
+              "title": "Explainer: Computer Science | Programming Fundamentals and Control Structures (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Programming_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Programming_2",
+              "title": "Explainer: Computer Science | Programming Fundamentals and Control Structures (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Programming_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Programming_3",
+              "title": "Explainer: Computer Science | Programming Fundamentals and Control Structures (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Programming_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -3087,7 +4595,19 @@
             "Write and test code interactively",
             "Build algorithm puzzles",
             "Create physical coding challenges"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -3100,7 +4620,9 @@
             "Create audio code explanations",
             "Listen to algorithm analysis",
             "Record debugging sessions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -3113,7 +4635,19 @@
             "Write algorithm pseudocode",
             "Document code solutions",
             "Create programming language comparisons"
+          ],
+          "summary": "Summarize the key ideas of 'Programming Fundamentals and Control Structures (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -3195,7 +4729,40 @@
             "Design vector addition diagrams",
             "Create calculus function graphs",
             "Build 3D vector visualization models"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Further_Mathematics_|_Introduc_1",
+              "title": "Explainer: Further Mathematics | Introduction to Calculus and Vectors (Further Mathematics SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Introduc_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Introduc_2",
+              "title": "Explainer: Further Mathematics | Introduction to Calculus and Vectors (Further Mathematics SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Introduc_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Introduc_3",
+              "title": "Explainer: Further Mathematics | Introduction to Calculus and Vectors (Further Mathematics SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Introduc_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -3208,7 +4775,19 @@
             "Construct physical vector diagrams",
             "Build calculus curve models",
             "Create vector operation puzzles"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -3221,7 +4800,9 @@
             "Create audio calculus tutorials",
             "Record vector problem solutions",
             "Listen to mathematical lectures"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -3234,7 +4815,19 @@
             "Write formal mathematical proofs",
             "Document solution strategies",
             "Create comparison charts of calculus methods"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Calculus and Vectors (Further Mathematics SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -3316,7 +4909,40 @@
             "Design economic activity distribution maps",
             "Create development comparison charts",
             "Make regional development diagrams"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Geography_|_Economic_Geography_1",
+              "title": "Explainer: Geography | Economic Geography and Regional Development (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Economic_Geography_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Economic_Geography_2",
+              "title": "Explainer: Geography | Economic Geography and Regional Development (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Economic_Geography_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Economic_Geography_3",
+              "title": "Explainer: Geography | Economic Geography and Regional Development (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Economic_Geography_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -3329,7 +4955,19 @@
             "Construct economic development models",
             "Build regional planning dioramas",
             "Create economic activity sorting games"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -3342,7 +4980,9 @@
             "Create audio economic analyses",
             "Listen to development case studies",
             "Record regional development discussions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -3355,7 +4995,19 @@
             "Write regional development plans",
             "Document economic activity surveys",
             "Create comparison charts of development models"
+          ],
+          "summary": "Summarize the key ideas of 'Economic Geography and Regional Development (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -3437,7 +5089,40 @@
             "Design national income flow diagrams",
             "Create economic growth trend charts",
             "Make infographics about economic policies"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Economics_|_National_Income_Ac_1",
+              "title": "Explainer: Economics | National Income Accounting and Economic Growth (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_National_Income_Ac_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_National_Income_Ac_2",
+              "title": "Explainer: Economics | National Income Accounting and Economic Growth (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_National_Income_Ac_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_National_Income_Ac_3",
+              "title": "Explainer: Economics | National Income Accounting and Economic Growth (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_National_Income_Ac_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -3450,7 +5135,19 @@
             "Construct economic cycle models",
             "Build national income calculation games",
             "Create economic policy simulation activities"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -3463,7 +5160,9 @@
             "Create audio economic analyses",
             "Listen to GDP calculation methods",
             "Record economic policy discussions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -3476,7 +5175,19 @@
             "Write economic policy recommendations",
             "Document economic indicator analysis",
             "Create comparison charts of economic systems"
+          ],
+          "summary": "Summarize the key ideas of 'National Income Accounting and Economic Growth (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -3558,7 +5269,40 @@
             "Design data structure visualization diagrams",
             "Create algorithm execution flowcharts",
             "Make complexity analysis charts"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Computer_Science_|_Data_Struct_1",
+              "title": "Explainer: Computer Science | Data Structures and Algorithms (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Data_Struct_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Data_Struct_2",
+              "title": "Explainer: Computer Science | Data Structures and Algorithms (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Data_Struct_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Data_Struct_3",
+              "title": "Explainer: Computer Science | Data Structures and Algorithms (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Data_Struct_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -3571,7 +5315,19 @@
             "Build stack/queue models with cards",
             "Create algorithm implementation challenges",
             "Construct data structure sorting games"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -3584,7 +5340,9 @@
             "Create audio algorithm tutorials",
             "Record code debugging sessions",
             "Listen to technical programming lectures"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -3597,7 +5355,19 @@
             "Write pseudocode for algorithms",
             "Document data structure implementations",
             "Create algorithm comparison charts"
+          ],
+          "summary": "Summarize the key ideas of 'Data Structures and Algorithms (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -3679,7 +5449,40 @@
             "Graph quadratic functions and identify vertex, axis of symmetry",
             "Create visual representations of word problems",
             "Use GeoGebra for interactive quadratic explorations"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Mathematics_|_Quadratic_Equati_1",
+              "title": "Explainer: Mathematics | Quadratic Equations and Their Applications (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Mathematics_|_Quadratic_Equati_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Mathematics_|_Quadratic_Equati_2",
+              "title": "Explainer: Mathematics | Quadratic Equations and Their Applications (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Mathematics_|_Quadratic_Equati_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Mathematics_|_Quadratic_Equati_3",
+              "title": "Explainer: Mathematics | Quadratic Equations and Their Applications (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Mathematics_|_Quadratic_Equati_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -3692,7 +5495,19 @@
             "Conduct projectile motion experiments with balls",
             "Build quadratic function sculptures using clay",
             "Create movement sequences representing equation solving"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -3705,7 +5520,9 @@
             "Teach quadratic concepts to classmates",
             "Create audio explanations of worked examples",
             "Listen to math songs and mnemonics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -3718,7 +5535,19 @@
             "Write quadratic word problems and solutions",
             "Create cheat sheets for exam preparation",
             "Write explanations of common mistakes and how to avoid them"
+          ],
+          "summary": "Summarize the key ideas of 'Quadratic Equations and Their Applications (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -3800,7 +5629,40 @@
             "Design and draw complex circuit schematics",
             "Create visual guides for series vs parallel circuits",
             "Use diagramming tools to map electrical systems"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Physics_|_Electricity_and_Elec_1",
+              "title": "Explainer: Physics | Electricity and Electrical Circuits (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Physics_|_Electricity_and_Elec_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Physics_|_Electricity_and_Elec_2",
+              "title": "Explainer: Physics | Electricity and Electrical Circuits (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Physics_|_Electricity_and_Elec_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Physics_|_Electricity_and_Elec_3",
+              "title": "Explainer: Physics | Electricity and Electrical Circuits (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Physics_|_Electricity_and_Elec_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -3813,7 +5675,19 @@
             "Assemble series and parallel circuit boards",
             "Measure actual voltages and currents with multimeters",
             "Build simple electrical devices (buzzers, switches)"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -3826,7 +5700,9 @@
             "Explain circuit concepts to peers verbally",
             "Create audio recordings of problem solutions",
             "Listen to physics podcasts and lectures"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -3839,7 +5715,19 @@
             "Write circuit design specifications",
             "Document experimental results and observations",
             "Create study guides for electrical concepts"
+          ],
+          "summary": "Summarize the key ideas of 'Electricity and Electrical Circuits (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -3922,7 +5810,40 @@
             "Build 3D models of organic molecules",
             "Create visual guides for functional groups",
             "Design molecular structure charts"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Chemistry_|_Introduction_to_Or_1",
+              "title": "Explainer: Chemistry | Introduction to Organic Chemistry (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Chemistry_|_Introduction_to_Or_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Chemistry_|_Introduction_to_Or_2",
+              "title": "Explainer: Chemistry | Introduction to Organic Chemistry (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Chemistry_|_Introduction_to_Or_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Chemistry_|_Introduction_to_Or_3",
+              "title": "Explainer: Chemistry | Introduction to Organic Chemistry (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Chemistry_|_Introduction_to_Or_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -3935,7 +5856,19 @@
             "Assemble molecular model kits",
             "Perform distillation or crystallization experiments",
             "Create tactile models of carbon bonding"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -3948,7 +5881,9 @@
             "Teach organic concepts to classmates",
             "Create audio guides for laboratory procedures",
             "Listen to chemistry lectures and explanations"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -3961,7 +5896,19 @@
             "Write systematic names for complex molecules",
             "Document experimental procedures and results",
             "Create comparison charts of organic compound classes"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Organic Chemistry (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -4044,7 +5991,40 @@
             "Label and color reproductive system diagrams",
             "Create visual timelines of menstrual cycle",
             "Design infographics about reproductive health"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Biology_|_Reproduction_in_Livi_1",
+              "title": "Explainer: Biology | Reproduction in Living Organisms (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Biology_|_Reproduction_in_Livi_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Biology_|_Reproduction_in_Livi_2",
+              "title": "Explainer: Biology | Reproduction in Living Organisms (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Biology_|_Reproduction_in_Livi_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Biology_|_Reproduction_in_Livi_3",
+              "title": "Explainer: Biology | Reproduction in Living Organisms (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Biology_|_Reproduction_in_Livi_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -4057,7 +6037,19 @@
             "Assemble anatomical model kits",
             "Grow plants from cuttings or tubers",
             "Demonstrate mitosis/meiosis with objects"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -4070,7 +6062,9 @@
             "Teach reproductive concepts to peers",
             "Create audio guides for laboratory dissections",
             "Listen to expert lectures on reproductive health"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -4083,7 +6077,19 @@
             "Write research papers on reproductive technologies",
             "Document experimental observations",
             "Create comparison charts of reproduction methods"
+          ],
+          "summary": "Summarize the key ideas of 'Reproduction in Living Organisms (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -4166,7 +6172,40 @@
             "Design book covers for studied texts",
             "Create visual timelines of literary periods",
             "Make character relationship diagrams"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_English_Language_|_Introductio_1",
+              "title": "Explainer: English Language | Introduction to Literature (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_English_Language_|_Introductio_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_English_Language_|_Introductio_2",
+              "title": "Explainer: English Language | Introduction to Literature (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_English_Language_|_Introductio_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_English_Language_|_Introductio_3",
+              "title": "Explainer: English Language | Introduction to Literature (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_English_Language_|_Introductio_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -4179,7 +6218,19 @@
             "Perform dramatic readings",
             "Create dance interpretations of poems",
             "Build dioramas of story settings"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -4192,7 +6243,9 @@
             "Create audio recordings of analyses",
             "Listen to literary criticism podcasts",
             "Perform oral interpretations of poems"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -4205,7 +6258,19 @@
             "Compose literary analyses",
             "Write creative responses to texts",
             "Create study guides for literary works"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Literature (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -4289,7 +6354,40 @@
             "Plot derivative graphs alongside original functions",
             "Create visual guides for optimization problems",
             "Design geometric interpretations of calculus concepts"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Mathematics_|_Introduction_to__1",
+              "title": "Explainer: Mathematics | Introduction to Calculus (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Mathematics_|_Introduction_to__1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Mathematics_|_Introduction_to__2",
+              "title": "Explainer: Mathematics | Introduction to Calculus (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Mathematics_|_Introduction_to__2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Mathematics_|_Introduction_to__3",
+              "title": "Explainer: Mathematics | Introduction to Calculus (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Mathematics_|_Introduction_to__3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -4302,7 +6400,19 @@
             "Construct physical models of maximum/minimum scenarios",
             "Demonstrate calculus concepts with moving objects",
             "Build geometric shapes to understand areas and volumes"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -4315,7 +6425,9 @@
             "Teach calculus concepts to classmates",
             "Create audio explanations of complex problems",
             "Listen to calculus lectures and problem solutions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -4328,7 +6440,19 @@
             "Write proofs of basic calculus theorems",
             "Document solution strategies for different problem types",
             "Create comparison charts of differentiation rules"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Calculus (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -4411,7 +6535,40 @@
             "Design diagrams showing photoelectric effect",
             "Create visual guides for nuclear reactions",
             "Make models of atomic energy levels"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Physics_|_Modern_Physics:_Quan_1",
+              "title": "Explainer: Physics | Modern Physics: Quantum Theory and Nuclear Physics (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Physics_|_Modern_Physics:_Quan_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Physics_|_Modern_Physics:_Quan_2",
+              "title": "Explainer: Physics | Modern Physics: Quantum Theory and Nuclear Physics (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Physics_|_Modern_Physics:_Quan_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Physics_|_Modern_Physics:_Quan_3",
+              "title": "Explainer: Physics | Modern Physics: Quantum Theory and Nuclear Physics (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Physics_|_Modern_Physics:_Quan_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -4424,7 +6581,19 @@
             "Assemble atomic structure models",
             "Demonstrate half-life with coin flipping",
             "Build simple cloud chambers for radiation detection"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -4437,7 +6606,9 @@
             "Create audio explanations of modern physics",
             "Listen to lectures on quantum mechanics",
             "Record problem-solving strategies"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -4450,7 +6621,19 @@
             "Write research summaries on nuclear energy",
             "Document experimental procedures",
             "Create comparison charts of radiation types"
+          ],
+          "summary": "Summarize the key ideas of 'Modern Physics: Quantum Theory and Nuclear Physics (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -4533,7 +6716,40 @@
             "Design visual guides for electrochemical series",
             "Create reaction coordinate diagrams",
             "Make models of electrolytic cells"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Chemistry_|_Electrochemistry_a_1",
+              "title": "Explainer: Chemistry | Electrochemistry and Chemical Kinetics (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Chemistry_|_Electrochemistry_a_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Chemistry_|_Electrochemistry_a_2",
+              "title": "Explainer: Chemistry | Electrochemistry and Chemical Kinetics (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Chemistry_|_Electrochemistry_a_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Chemistry_|_Electrochemistry_a_3",
+              "title": "Explainer: Chemistry | Electrochemistry and Chemical Kinetics (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Chemistry_|_Electrochemistry_a_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -4546,7 +6762,19 @@
             "Assemble simple voltaic cells",
             "Perform rate of reaction experiments",
             "Build models showing activation energy"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -4559,7 +6787,9 @@
             "Create audio guides for electrochemical concepts",
             "Listen to lectures on chemical kinetics",
             "Record problem-solving approaches"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -4572,7 +6802,19 @@
             "Write research reports on fuel cells",
             "Document experimental procedures and results",
             "Create comparison charts of reaction rates"
+          ],
+          "summary": "Summarize the key ideas of 'Electrochemistry and Chemical Kinetics (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -4655,7 +6897,40 @@
             "Design visual guides for natural selection",
             "Create ecosystem component diagrams",
             "Make biodiversity comparison charts"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Biology_|_Evolution_and_Ecolog_1",
+              "title": "Explainer: Biology | Evolution and Ecology (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Biology_|_Evolution_and_Ecolog_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Biology_|_Evolution_and_Ecolog_2",
+              "title": "Explainer: Biology | Evolution and Ecology (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Biology_|_Evolution_and_Ecolog_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Biology_|_Evolution_and_Ecolog_3",
+              "title": "Explainer: Biology | Evolution and Ecology (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Biology_|_Evolution_and_Ecolog_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -4668,7 +6943,19 @@
             "Assemble evolutionary timeline models",
             "Demonstrate population growth with objects",
             "Build habitat dioramas"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -4681,7 +6968,9 @@
             "Create audio guides for evolutionary concepts",
             "Listen to ecology lectures",
             "Record field observation notes"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -4694,7 +6983,19 @@
             "Write research reports on endangered species",
             "Document experimental procedures",
             "Create comparison charts of ecosystems"
+          ],
+          "summary": "Summarize the key ideas of 'Evolution and Ecology (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -4778,7 +7079,40 @@
             "Design visual essay outlines",
             "Create character relationship diagrams",
             "Make theme development charts"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_English_Language_|_Essay_Writi_1",
+              "title": "Explainer: English Language | Essay Writing and Advanced Literature (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_English_Language_|_Essay_Writi_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_English_Language_|_Essay_Writi_2",
+              "title": "Explainer: English Language | Essay Writing and Advanced Literature (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_English_Language_|_Essay_Writi_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_English_Language_|_Essay_Writi_3",
+              "title": "Explainer: English Language | Essay Writing and Advanced Literature (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_English_Language_|_Essay_Writi_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -4791,7 +7125,19 @@
             "Perform dramatic readings of essays",
             "Use index cards for essay organization",
             "Create physical representations of literary devices"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -4804,7 +7150,9 @@
             "Create audio recordings of essay analyses",
             "Listen to literary criticism podcasts",
             "Record oral presentations of essay topics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -4817,7 +7165,19 @@
             "Write practice essays on various topics",
             "Create essay planning templates",
             "Document writing process and revisions"
+          ],
+          "summary": "Summarize the key ideas of 'Essay Writing and Advanced Literature (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -4899,7 +7259,40 @@
             "Design visual representations of set relationships",
             "Create flow charts for logical reasoning",
             "Make diagrams showing proof structures"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Further_Mathematics_|_Sets,_Lo_1",
+              "title": "Explainer: Further Mathematics | Sets, Logic and Proof (Further Mathematics SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Sets,_Lo_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Sets,_Lo_2",
+              "title": "Explainer: Further Mathematics | Sets, Logic and Proof (Further Mathematics SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Sets,_Lo_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Sets,_Lo_3",
+              "title": "Explainer: Further Mathematics | Sets, Logic and Proof (Further Mathematics SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Sets,_Lo_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -4912,7 +7305,19 @@
             "Use cards or tokens to represent set elements",
             "Build physical Venn diagrams with hoops",
             "Construct logic circuit models"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -4925,7 +7330,9 @@
             "Create audio explanations of set operations",
             "Listen to mathematical reasoning lectures",
             "Record step-by-step problem solutions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -4938,7 +7345,19 @@
             "Write formal mathematical proofs",
             "Document solution strategies",
             "Create comparison charts of logical connectives"
+          ],
+          "summary": "Summarize the key ideas of 'Sets, Logic and Proof (Further Mathematics SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -5021,7 +7440,40 @@
             "Draw and label geographical features",
             "Create visual timelines of geographical events",
             "Design thematic maps for data presentation"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Geography_|_Introduction_to_Ge_1",
+              "title": "Explainer: Geography | Introduction to Geography and Map Reading (SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Introduction_to_Ge_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Introduction_to_Ge_2",
+              "title": "Explainer: Geography | Introduction to Geography and Map Reading (SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Introduction_to_Ge_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Introduction_to_Ge_3",
+              "title": "Explainer: Geography | Introduction to Geography and Map Reading (SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Introduction_to_Ge_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -5034,7 +7486,19 @@
             "Build 3D models of mountains and valleys",
             "Use physical maps for navigation exercises",
             "Create geographical scavenger hunts"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -5047,7 +7511,9 @@
             "Create audio guides for map reading",
             "Listen to geographical case studies",
             "Record oral presentations on geographical topics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -5060,7 +7526,19 @@
             "Write geographical reports and analyses",
             "Document field observations",
             "Create comparison charts of geographical features"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Geography and Map Reading (SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -5143,7 +7621,40 @@
             "Design visual aids for economic principles",
             "Create economic concept maps",
             "Make infographics about economic systems"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Economics_|_Basic_Economic_Con_1",
+              "title": "Explainer: Economics | Basic Economic Concepts and Principles (SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Basic_Economic_Con_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_Basic_Economic_Con_2",
+              "title": "Explainer: Economics | Basic Economic Concepts and Principles (SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Basic_Economic_Con_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_Basic_Economic_Con_3",
+              "title": "Explainer: Economics | Basic Economic Concepts and Principles (SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Basic_Economic_Con_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -5156,7 +7667,19 @@
             "Simulate market transactions with tokens",
             "Create physical production possibility models",
             "Build economic decision-making games"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -5169,7 +7692,9 @@
             "Create audio explanations of economic theories",
             "Listen to economic news analysis",
             "Record oral presentations on economic topics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -5182,7 +7707,19 @@
             "Write economic opinion pieces",
             "Document personal financial decisions",
             "Create comparison charts of economic systems"
+          ],
+          "summary": "Summarize the key ideas of 'Basic Economic Concepts and Principles (SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -5265,7 +7802,40 @@
             "Draw detailed flowcharts for processes",
             "Create visual programming concept maps",
             "Design algorithm visualization diagrams"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Computer_Science_|_Introductio_1",
+              "title": "Explainer: Computer Science | Introduction to Computing and Basic Programming (SS1) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Introductio_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Introductio_2",
+              "title": "Explainer: Computer Science | Introduction to Computing and Basic Programming (SS1) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Introductio_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Introductio_3",
+              "title": "Explainer: Computer Science | Introduction to Computing and Basic Programming (SS1) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Introductio_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -5278,7 +7848,19 @@
             "Assemble computer hardware components",
             "Create physical flowcharts with sticky notes",
             "Build simple robots or automated systems"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -5291,7 +7873,9 @@
             "Create audio explanations of programming concepts",
             "Listen to coding interviews and discussions",
             "Record debugging sessions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -5304,7 +7888,19 @@
             "Write pseudocode for complex problems",
             "Document project development processes",
             "Create comparison charts of programming languages"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Computing and Basic Programming (SS1)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -5387,7 +7983,40 @@
             "Design visual matrix multiplication diagrams",
             "Create transformation animations",
             "Build 3D matrix visualization models"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Further_Mathematics_|_Matrices_1",
+              "title": "Explainer: Further Mathematics | Matrices and Determinants (Further Mathematics SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Matrices_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Matrices_2",
+              "title": "Explainer: Further Mathematics | Matrices and Determinants (Further Mathematics SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Matrices_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Matrices_3",
+              "title": "Explainer: Further Mathematics | Matrices and Determinants (Further Mathematics SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Matrices_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -5400,7 +8029,19 @@
             "Construct physical matrix boards",
             "Build transformation puzzles",
             "Create matrix operation games"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -5413,7 +8054,9 @@
             "Create audio explanations of matrix concepts",
             "Record step-by-step solution processes",
             "Listen to linear algebra lectures"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -5426,7 +8069,19 @@
             "Write formal matrix proofs",
             "Document solution strategies",
             "Create comparison charts of matrix methods"
+          ],
+          "summary": "Summarize the key ideas of 'Matrices and Determinants (Further Mathematics SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -5509,7 +8164,40 @@
             "Draw climate zone maps",
             "Create weather system diagrams",
             "Design climate change infographics"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Geography_|_Climate_and_Weathe_1",
+              "title": "Explainer: Geography | Climate and Weather Systems (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Climate_and_Weathe_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Climate_and_Weathe_2",
+              "title": "Explainer: Geography | Climate and Weather Systems (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Climate_and_Weathe_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Climate_and_Weathe_3",
+              "title": "Explainer: Geography | Climate and Weather Systems (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Climate_and_Weathe_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -5522,7 +8210,19 @@
             "Build simple weather stations",
             "Create climate zone dioramas",
             "Conduct rainfall measurement activities"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -5535,7 +8235,9 @@
             "Create audio weather reports",
             "Listen to climate change discussions",
             "Record geographical case studies"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -5548,7 +8250,19 @@
             "Write climate impact assessments",
             "Document weather patterns",
             "Create comparison charts of climate types"
+          ],
+          "summary": "Summarize the key ideas of 'Climate and Weather Systems (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -5630,7 +8344,40 @@
             "Design market equilibrium diagrams",
             "Create visual aids for economic concepts",
             "Make infographics about market forces"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Economics_|_Theory_of_Demand_a_1",
+              "title": "Explainer: Economics | Theory of Demand and Supply (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Theory_of_Demand_a_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_Theory_of_Demand_a_2",
+              "title": "Explainer: Economics | Theory of Demand and Supply (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Theory_of_Demand_a_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_Theory_of_Demand_a_3",
+              "title": "Explainer: Economics | Theory of Demand and Supply (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_Theory_of_Demand_a_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -5643,7 +8390,19 @@
             "Simulate market transactions with tokens",
             "Build physical demand-supply models",
             "Create market simulation games"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -5656,7 +8415,9 @@
             "Create audio explanations of economic theories",
             "Listen to market analysis discussions",
             "Record oral presentations on economic topics"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -5669,7 +8430,19 @@
             "Write market analysis reports",
             "Document price change observations",
             "Create comparison charts of market structures"
+          ],
+          "summary": "Summarize the key ideas of 'Theory of Demand and Supply (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -5752,7 +8525,40 @@
             "Design algorithm flowcharts",
             "Create visual code structure diagrams",
             "Make programming concept infographics"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Computer_Science_|_Programming_1",
+              "title": "Explainer: Computer Science | Programming Fundamentals and Control Structures (SS2) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Programming_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Programming_2",
+              "title": "Explainer: Computer Science | Programming Fundamentals and Control Structures (SS2) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Programming_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Programming_3",
+              "title": "Explainer: Computer Science | Programming Fundamentals and Control Structures (SS2) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Programming_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -5765,7 +8571,19 @@
             "Write and test code interactively",
             "Build algorithm puzzles",
             "Create physical coding challenges"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -5778,7 +8596,9 @@
             "Create audio code explanations",
             "Listen to algorithm analysis",
             "Record debugging sessions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -5791,7 +8611,19 @@
             "Write algorithm pseudocode",
             "Document code solutions",
             "Create programming language comparisons"
+          ],
+          "summary": "Summarize the key ideas of 'Programming Fundamentals and Control Structures (SS2)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -5873,7 +8705,40 @@
             "Design vector addition diagrams",
             "Create calculus function graphs",
             "Build 3D vector visualization models"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Further_Mathematics_|_Introduc_1",
+              "title": "Explainer: Further Mathematics | Introduction to Calculus and Vectors (Further Mathematics SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Introduc_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Introduc_2",
+              "title": "Explainer: Further Mathematics | Introduction to Calculus and Vectors (Further Mathematics SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Introduc_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Further_Mathematics_|_Introduc_3",
+              "title": "Explainer: Further Mathematics | Introduction to Calculus and Vectors (Further Mathematics SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Further_Mathematics_|_Introduc_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -5886,7 +8751,19 @@
             "Construct physical vector diagrams",
             "Build calculus curve models",
             "Create vector operation puzzles"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -5899,7 +8776,9 @@
             "Create audio calculus tutorials",
             "Record vector problem solutions",
             "Listen to mathematical lectures"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -5912,7 +8791,19 @@
             "Write formal mathematical proofs",
             "Document solution strategies",
             "Create comparison charts of calculus methods"
+          ],
+          "summary": "Summarize the key ideas of 'Introduction to Calculus and Vectors (Further Mathematics SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -5994,7 +8885,40 @@
             "Design economic activity distribution maps",
             "Create development comparison charts",
             "Make regional development diagrams"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Geography_|_Economic_Geography_1",
+              "title": "Explainer: Geography | Economic Geography and Regional Development (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Economic_Geography_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Economic_Geography_2",
+              "title": "Explainer: Geography | Economic Geography and Regional Development (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Economic_Geography_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Geography_|_Economic_Geography_3",
+              "title": "Explainer: Geography | Economic Geography and Regional Development (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Geography_|_Economic_Geography_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -6007,7 +8931,19 @@
             "Construct economic development models",
             "Build regional planning dioramas",
             "Create economic activity sorting games"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -6020,7 +8956,9 @@
             "Create audio economic analyses",
             "Listen to development case studies",
             "Record regional development discussions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -6033,7 +8971,19 @@
             "Write regional development plans",
             "Document economic activity surveys",
             "Create comparison charts of development models"
+          ],
+          "summary": "Summarize the key ideas of 'Economic Geography and Regional Development (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -6115,7 +9065,40 @@
             "Design national income flow diagrams",
             "Create economic growth trend charts",
             "Make infographics about economic policies"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Economics_|_National_Income_Ac_1",
+              "title": "Explainer: Economics | National Income Accounting and Economic Growth (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_National_Income_Ac_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_National_Income_Ac_2",
+              "title": "Explainer: Economics | National Income Accounting and Economic Growth (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_National_Income_Ac_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Economics_|_National_Income_Ac_3",
+              "title": "Explainer: Economics | National Income Accounting and Economic Growth (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Economics_|_National_Income_Ac_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -6128,7 +9111,19 @@
             "Construct economic cycle models",
             "Build national income calculation games",
             "Create economic policy simulation activities"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -6141,7 +9136,9 @@
             "Create audio economic analyses",
             "Listen to GDP calculation methods",
             "Record economic policy discussions"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -6154,7 +9151,19 @@
             "Write economic policy recommendations",
             "Document economic indicator analysis",
             "Create comparison charts of economic systems"
+          ],
+          "summary": "Summarize the key ideas of 'National Income Accounting and Economic Growth (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
@@ -6236,7 +9245,40 @@
             "Design data structure visualization diagrams",
             "Create algorithm execution flowcharts",
             "Make complexity analysis charts"
-          ]
+          ],
+          "image": null,
+          "videos": [
+            {
+              "video_id": "vid_Computer_Science_|_Data_Struct_1",
+              "title": "Explainer: Computer Science | Data Structures and Algorithms (SS3) (1)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Data_Struct_1",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Data_Struct_2",
+              "title": "Explainer: Computer Science | Data Structures and Algorithms (SS3) (2)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Data_Struct_2",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            },
+            {
+              "video_id": "vid_Computer_Science_|_Data_Struct_3",
+              "title": "Explainer: Computer Science | Data Structures and Algorithms (SS3) (3)",
+              "channel": "MCP-YouTube-Stub",
+              "duration": "9:30",
+              "url": "https://youtu.be/vid_Computer_Science_|_Data_Struct_3",
+              "reason": "Relevant to lesson topic (stub)",
+              "status": "suggested"
+            }
+          ],
+          "slides": null,
+          "video_status": "suggested_mcp_stub",
+          "image_status": "queued"
         },
         "kinesthetic": {
           "tips": [
@@ -6249,7 +9291,19 @@
             "Build stack/queue models with cards",
             "Create algorithm implementation challenges",
             "Construct data structure sorting games"
-          ]
+          ],
+          "activity": "Hands-on demonstration of the concept using simple materials.",
+          "materials": [
+            "Paper",
+            "Pen",
+            "Household items"
+          ],
+          "steps": [
+            "Set up materials",
+            "Perform the demonstration",
+            "Reflect on the outcome"
+          ],
+          "duration_minutes": 15
         },
         "auditory": {
           "tips": [
@@ -6262,7 +9316,9 @@
             "Create audio algorithm tutorials",
             "Record code debugging sessions",
             "Listen to technical programming lectures"
-          ]
+          ],
+          "audio_summary": null,
+          "podcast": null
         },
         "reading_writing": {
           "tips": [
@@ -6275,7 +9331,19 @@
             "Write pseudocode for algorithms",
             "Document data structure implementations",
             "Create algorithm comparison charts"
+          ],
+          "summary": "Summarize the key ideas of 'Data Structures and Algorithms (SS3)' in simple steps.",
+          "worksheet": [
+            "List three key ideas",
+            "Write two examples from daily life"
           ]
+        },
+        "assessment": {
+          "checks": [
+            "Explain the concept in your own words",
+            "Give one real-world example"
+          ],
+          "exit_ticket": "List one thing you learned and one question you still have."
         }
       },
       "practice_problems": {
