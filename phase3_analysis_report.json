@@ -1,0 +1,5172 @@
+{
+  "summary": {
+    "total_lessons_analyzed": 52,
+    "lessons_with_diagram_opportunities": 52,
+    "coverage_percentage": 100.0,
+    "diagram_types_identified": 12,
+    "total_diagram_opportunities": 492
+  },
+  "by_diagram_type": {
+    "circuit_logic": {
+      "count": 36,
+      "lessons": [
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-195949",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "truth table"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "digital"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "boolean",
+            "binary"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-200005",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "truth table"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "digital"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "boolean",
+            "binary"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "binary"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084151",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "truth table"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "digital"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "boolean",
+            "binary"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "boolean",
+            "binary"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "binary"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "binary"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084438",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "truth table"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "digital"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "boolean",
+            "binary"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "boolean",
+            "binary"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "binary"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-195949",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "truth table"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "digital"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "boolean",
+            "binary"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-200005",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "truth table"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "digital"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "boolean",
+            "binary"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "binary"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084151",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "truth table"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "digital"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "boolean",
+            "binary"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "boolean",
+            "binary"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "binary"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "binary"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084438",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "truth table"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "digital"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "boolean",
+            "binary"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "boolean",
+            "binary"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "binary"
+          ],
+          "keyword_count": 1
+        }
+      ],
+      "subjects": [
+        "Geography",
+        "Biology",
+        "Computer Science",
+        "Further Mathematics"
+      ]
+    },
+    "venn_diagram": {
+      "count": 40,
+      "lessons": [
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-195949",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "set",
+            "union",
+            "intersection",
+            "venn diagram",
+            "element"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "set",
+            "intersection"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "set"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-200005",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "set",
+            "union",
+            "intersection",
+            "venn diagram",
+            "element"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "set",
+            "intersection"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "set"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084121",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "set"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084151",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "set",
+            "union",
+            "intersection",
+            "venn diagram",
+            "element"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "set",
+            "intersection"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "set"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084218",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "element"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "element"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "element"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084432",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "set"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084438",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "set",
+            "union",
+            "intersection",
+            "venn diagram",
+            "element"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "set",
+            "intersection"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "set"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084438",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "element"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "element"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "element"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-195949",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "set",
+            "union",
+            "intersection",
+            "venn diagram",
+            "element"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "set",
+            "intersection"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "set"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-200005",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "set",
+            "union",
+            "intersection",
+            "venn diagram",
+            "element"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "set",
+            "intersection"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "set"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084121",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "set"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084151",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "set",
+            "union",
+            "intersection",
+            "venn diagram",
+            "element"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "set",
+            "intersection"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "set"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084218",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "element"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "element"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "element"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084432",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "set"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084438",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "set",
+            "union",
+            "intersection",
+            "venn diagram",
+            "element"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "set",
+            "intersection"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "set"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084438",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "element"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "element"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "element"
+          ],
+          "keyword_count": 1
+        }
+      ],
+      "subjects": [
+        "Geography",
+        "English Language",
+        "Computer Science",
+        "Further Mathematics"
+      ]
+    },
+    "flowchart": {
+      "count": 76,
+      "lessons": [
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-195949",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "step",
+            "decision",
+            "diagram"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20251221-195949",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "decision"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "process",
+            "algorithm",
+            "flowchart",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-200005",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "step",
+            "decision",
+            "diagram"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20251221-200005",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "decision"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "process",
+            "algorithm",
+            "flowchart",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084121",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "step",
+            "diagram"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "process",
+            "diagram"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084121",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "sequence"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084137",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "algorithm"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084151",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "step",
+            "decision",
+            "diagram"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20260107-084151",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "decision"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "process",
+            "algorithm",
+            "flowchart",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "process"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084218",
+          "title": "Theory of Demand and Supply (SS2)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "process",
+            "algorithm",
+            "flowchart",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 8
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "process",
+            "decision"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-economics-ss3-national-income-20260107-084228",
+          "title": "National Income Accounting and Economic Growth (SS3)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "decision"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "algorithm",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084432",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "step",
+            "diagram"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "process",
+            "diagram"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084432",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "sequence"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084435",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "algorithm"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084438",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "step",
+            "decision",
+            "diagram"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20260107-084438",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "decision"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "process",
+            "algorithm",
+            "flowchart",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "process"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084438",
+          "title": "Theory of Demand and Supply (SS2)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "process",
+            "algorithm",
+            "flowchart",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 8
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "process",
+            "decision"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-economics-ss3-national-income-20260107-084439",
+          "title": "National Income Accounting and Economic Growth (SS3)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "decision"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "algorithm",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-195949",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "step",
+            "decision",
+            "diagram"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20251221-195949",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "decision"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "process",
+            "algorithm",
+            "flowchart",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-200005",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "step",
+            "decision",
+            "diagram"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20251221-200005",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "decision"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "process",
+            "algorithm",
+            "flowchart",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084121",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "step",
+            "diagram"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "process",
+            "diagram"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084121",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "sequence"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084137",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "algorithm"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084151",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "step",
+            "decision",
+            "diagram"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20260107-084151",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "decision"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "process",
+            "algorithm",
+            "flowchart",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "process"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084218",
+          "title": "Theory of Demand and Supply (SS2)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "process",
+            "algorithm",
+            "flowchart",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 8
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "process",
+            "decision"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-economics-ss3-national-income-20260107-084228",
+          "title": "National Income Accounting and Economic Growth (SS3)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "decision"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "algorithm",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084432",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "step",
+            "diagram"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "process",
+            "diagram"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084432",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "sequence"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084435",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "algorithm"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084438",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "step",
+            "decision",
+            "diagram"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20260107-084438",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "decision"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "process",
+            "algorithm",
+            "flowchart",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 7
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "process"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084438",
+          "title": "Theory of Demand and Supply (SS2)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "diagram"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "process",
+            "algorithm",
+            "flowchart",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 8
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "process",
+            "decision"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-economics-ss3-national-income-20260107-084439",
+          "title": "National Income Accounting and Economic Growth (SS3)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "decision"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "algorithm",
+            "step",
+            "procedure"
+          ],
+          "keyword_count": 3
+        }
+      ],
+      "subjects": [
+        "Physics",
+        "Geography",
+        "Mathematics",
+        "Computer Science",
+        "Economics",
+        "Further Mathematics",
+        "English Language",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    "timeline": {
+      "count": 88,
+      "lessons": [
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-195949",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era",
+            "event",
+            "date"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "before",
+            "decade"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-200005",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era",
+            "event",
+            "date"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "before",
+            "decade"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-math-ss2-quadratic-20260107-084121",
+          "title": "Quadratic Equations and Their Applications (SS2)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084121",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084121",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "era",
+            "event"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084121",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "event"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084137",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "era",
+            "before"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "era",
+            "after"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "era",
+            "event"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "timeline",
+            "era",
+            "after"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-english-ss3-essay-20260107-084137",
+          "title": "Essay Writing and Advanced Literature (SS3)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084151",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era",
+            "event",
+            "date"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "before",
+            "decade"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084218",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era",
+            "before"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "before",
+            "decade"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084228",
+          "title": "Introduction to Calculus and Vectors (Further Mathematics SS3)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss2-quadratic-20260107-084432",
+          "title": "Quadratic Equations and Their Applications (SS2)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084432",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084432",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "era",
+            "event"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084432",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "event"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084435",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "era",
+            "before"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "era",
+            "after"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "era",
+            "event"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "timeline",
+            "era",
+            "after"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-english-ss3-essay-20260107-084435",
+          "title": "Essay Writing and Advanced Literature (SS3)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084438",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era",
+            "event",
+            "date"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "before",
+            "decade"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084438",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era",
+            "before"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "before",
+            "decade"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084439",
+          "title": "Introduction to Calculus and Vectors (Further Mathematics SS3)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-195949",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era",
+            "event",
+            "date"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "before",
+            "decade"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20251221-200005",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era",
+            "event",
+            "date"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "before",
+            "decade"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-math-ss2-quadratic-20260107-084121",
+          "title": "Quadratic Equations and Their Applications (SS2)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084121",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084121",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "era",
+            "event"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084121",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "event"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084137",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "era",
+            "before"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "era",
+            "after"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "era",
+            "event"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "timeline",
+            "era",
+            "after"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-english-ss3-essay-20260107-084137",
+          "title": "Essay Writing and Advanced Literature (SS3)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084151",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era",
+            "event",
+            "date"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "before",
+            "decade"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084218",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era",
+            "before"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "before",
+            "decade"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084228",
+          "title": "Introduction to Calculus and Vectors (Further Mathematics SS3)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss2-quadratic-20260107-084432",
+          "title": "Quadratic Equations and Their Applications (SS2)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084432",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084432",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "era",
+            "event"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084432",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "event"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084435",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "era",
+            "before"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "era",
+            "after"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "era",
+            "event"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "timeline",
+            "era",
+            "after"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-english-ss3-essay-20260107-084435",
+          "title": "Essay Writing and Advanced Literature (SS3)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss1-sets-20260107-084438",
+          "title": "Sets, Logic and Proof (Further Mathematics SS1)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era",
+            "event",
+            "date"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "before",
+            "decade"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084438",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era",
+            "before"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "sequence",
+            "era",
+            "before",
+            "decade"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084439",
+          "title": "Introduction to Calculus and Vectors (Further Mathematics SS3)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "era"
+          ],
+          "keyword_count": 1
+        }
+      ],
+      "subjects": [
+        "Physics",
+        "Geography",
+        "Mathematics",
+        "Computer Science",
+        "Further Mathematics",
+        "English Language",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    "circuit_electrical": {
+      "count": 56,
+      "lessons": [
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20251221-195949",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20251221-200005",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084121",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "circuit",
+            "resistor",
+            "current",
+            "voltage",
+            "ohm"
+          ],
+          "keyword_count": 12
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084137",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "power"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "conductor",
+            "power"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "voltage",
+            "electrical"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20260107-084151",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084218",
+          "title": "Theory of Demand and Supply (SS2)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084228",
+          "title": "Introduction to Calculus and Vectors (Further Mathematics SS3)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "power"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss3-national-income-20260107-084228",
+          "title": "National Income Accounting and Economic Growth (SS3)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084432",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "circuit",
+            "resistor",
+            "current",
+            "voltage",
+            "ohm"
+          ],
+          "keyword_count": 12
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084435",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "power"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "conductor",
+            "power"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "voltage",
+            "electrical"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20260107-084438",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084438",
+          "title": "Theory of Demand and Supply (SS2)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084439",
+          "title": "Introduction to Calculus and Vectors (Further Mathematics SS3)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "power"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss3-national-income-20260107-084439",
+          "title": "National Income Accounting and Economic Growth (SS3)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20251221-195949",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20251221-200005",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084121",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "circuit",
+            "resistor",
+            "current",
+            "voltage",
+            "ohm"
+          ],
+          "keyword_count": 12
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084137",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "power"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "conductor",
+            "power"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "voltage",
+            "electrical"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20260107-084151",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084218",
+          "title": "Theory of Demand and Supply (SS2)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084228",
+          "title": "Introduction to Calculus and Vectors (Further Mathematics SS3)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "power"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss3-national-income-20260107-084228",
+          "title": "National Income Accounting and Economic Growth (SS3)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084432",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "circuit",
+            "resistor",
+            "current",
+            "voltage",
+            "ohm"
+          ],
+          "keyword_count": 12
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084435",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "power"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "conductor",
+            "power"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "voltage",
+            "electrical"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20260107-084438",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084438",
+          "title": "Theory of Demand and Supply (SS2)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084439",
+          "title": "Introduction to Calculus and Vectors (Further Mathematics SS3)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "power"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss3-national-income-20260107-084439",
+          "title": "National Income Accounting and Economic Growth (SS3)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "current"
+          ],
+          "keyword_count": 1
+        }
+      ],
+      "subjects": [
+        "Physics",
+        "Geography",
+        "Mathematics",
+        "Economics",
+        "Further Mathematics",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    "geography_map": {
+      "count": 40,
+      "lessons": [
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "map",
+            "scale",
+            "legend"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20251221-195949",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "scale",
+            "location"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "map",
+            "scale",
+            "legend"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20251221-200005",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "scale",
+            "location"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "map",
+            "scale",
+            "legend"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20260107-084151",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "scale",
+            "location"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "map",
+            "scale",
+            "region"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "region",
+            "location"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-economics-ss3-national-income-20260107-084228",
+          "title": "National Income Accounting and Economic Growth (SS3)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "map",
+            "scale",
+            "legend"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20260107-084438",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "scale",
+            "location"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "map",
+            "scale",
+            "region"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "region",
+            "location"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-economics-ss3-national-income-20260107-084439",
+          "title": "National Income Accounting and Economic Growth (SS3)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "map",
+            "scale",
+            "legend"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20251221-195949",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "scale",
+            "location"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "map",
+            "scale",
+            "legend"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20251221-200005",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "scale",
+            "location"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "map",
+            "scale",
+            "legend"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20260107-084151",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "scale",
+            "location"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "map",
+            "scale",
+            "region"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "region",
+            "location"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-economics-ss3-national-income-20260107-084228",
+          "title": "National Income Accounting and Economic Growth (SS3)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+          "title": "Introduction to Geography and Map Reading (SS1)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "map",
+            "scale",
+            "legend"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-economics-ss1-basic-20260107-084438",
+          "title": "Basic Economic Concepts and Principles (SS1)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "scale",
+            "location"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "map",
+            "scale",
+            "region"
+          ],
+          "keyword_count": 3
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "region",
+            "location"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-economics-ss3-national-income-20260107-084439",
+          "title": "National Income Accounting and Economic Growth (SS3)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "location"
+          ],
+          "keyword_count": 1
+        }
+      ],
+      "subjects": [
+        "Geography",
+        "Computer Science",
+        "Economics"
+      ]
+    },
+    "chemistry_molecular": {
+      "count": 48,
+      "lessons": [
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "compound",
+            "structure"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "compound",
+            "structure"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084121",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "molecule",
+            "molecular",
+            "compound",
+            "structure",
+            "hydrocarbon"
+          ],
+          "keyword_count": 11
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084121",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "acid"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss3-essay-20260107-084137",
+          "title": "Essay Writing and Advanced Literature (SS3)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "compound",
+            "structure"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084432",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "molecule",
+            "molecular",
+            "compound",
+            "structure",
+            "hydrocarbon"
+          ],
+          "keyword_count": 11
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084432",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "acid"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss3-essay-20260107-084435",
+          "title": "Essay Writing and Advanced Literature (SS3)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "compound",
+            "structure"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "compound",
+            "structure"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "compound",
+            "structure"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084121",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "molecule",
+            "molecular",
+            "compound",
+            "structure",
+            "hydrocarbon"
+          ],
+          "keyword_count": 11
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084121",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "acid"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss3-essay-20260107-084137",
+          "title": "Essay Writing and Advanced Literature (SS3)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "compound",
+            "structure"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084432",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "molecule",
+            "molecular",
+            "compound",
+            "structure",
+            "hydrocarbon"
+          ],
+          "keyword_count": 11
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084432",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "acid"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss3-essay-20260107-084435",
+          "title": "Essay Writing and Advanced Literature (SS3)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "compound",
+            "structure"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+          "title": "Programming Fundamentals and Control Structures (SS2)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "structure"
+          ],
+          "keyword_count": 1
+        }
+      ],
+      "subjects": [
+        "Physics",
+        "Geography",
+        "Computer Science",
+        "English Language",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    "graph_network": {
+      "count": 40,
+      "lessons": [
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084121",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "connected"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cycle"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084121",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "path"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "node"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cycle",
+            "tree"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084218",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "path"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084432",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "connected"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cycle"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084432",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "path"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "node"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cycle",
+            "tree"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084438",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "path"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084121",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "connected"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cycle"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084121",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "path"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "node"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cycle",
+            "tree"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084218",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "path"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss2-electricity-20260107-084432",
+          "title": "Electricity and Electrical Circuits (SS2)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "connected"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cycle"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-english-ss2-literature-20260107-084432",
+          "title": "Introduction to Literature (SS2)",
+          "subject": "English Language",
+          "matched_keywords": [
+            "path"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "node"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cycle",
+            "tree"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+          "title": "Introduction to Computing and Basic Programming (SS1)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084438",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "path"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "network"
+          ],
+          "keyword_count": 1
+        }
+      ],
+      "subjects": [
+        "Physics",
+        "Geography",
+        "Computer Science",
+        "Further Mathematics",
+        "English Language",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    "chemistry_reaction": {
+      "count": 32,
+      "lessons": [
+        {
+          "lesson_id": "nerdc-math-ss2-quadratic-20260107-084121",
+          "title": "Quadratic Equations and Their Applications (SS2)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "equation"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084121",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "reaction",
+            "equation",
+            "combustion",
+            "catalyst",
+            "products"
+          ],
+          "keyword_count": 5
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "reduction"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084137",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "equation"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "reaction",
+            "equation"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "reaction",
+            "catalyst",
+            "chemical change",
+            "equilibrium"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084218",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "equation"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084218",
+          "title": "Theory of Demand and Supply (SS2)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "equilibrium"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss2-quadratic-20260107-084432",
+          "title": "Quadratic Equations and Their Applications (SS2)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "equation"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084432",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "reaction",
+            "equation",
+            "combustion",
+            "catalyst",
+            "products"
+          ],
+          "keyword_count": 5
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "reduction"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084435",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "equation"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "reaction",
+            "equation"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "reaction",
+            "catalyst",
+            "chemical change",
+            "equilibrium"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084438",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "equation"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084438",
+          "title": "Theory of Demand and Supply (SS2)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "equilibrium"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss2-quadratic-20260107-084121",
+          "title": "Quadratic Equations and Their Applications (SS2)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "equation"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084121",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "reaction",
+            "equation",
+            "combustion",
+            "catalyst",
+            "products"
+          ],
+          "keyword_count": 5
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "reduction"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084137",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "equation"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "reaction",
+            "equation"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "reaction",
+            "catalyst",
+            "chemical change",
+            "equilibrium"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084218",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "equation"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084218",
+          "title": "Theory of Demand and Supply (SS2)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "equilibrium"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss2-quadratic-20260107-084432",
+          "title": "Quadratic Equations and Their Applications (SS2)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "equation"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084432",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "reaction",
+            "equation",
+            "combustion",
+            "catalyst",
+            "products"
+          ],
+          "keyword_count": 5
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "reduction"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-math-ss3-calculus-20260107-084435",
+          "title": "Introduction to Calculus (SS3)",
+          "subject": "Mathematics",
+          "matched_keywords": [
+            "equation"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "reaction",
+            "equation"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "reaction",
+            "catalyst",
+            "chemical change",
+            "equilibrium"
+          ],
+          "keyword_count": 4
+        },
+        {
+          "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084438",
+          "title": "Matrices and Determinants (Further Mathematics SS2)",
+          "subject": "Further Mathematics",
+          "matched_keywords": [
+            "equation"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084438",
+          "title": "Theory of Demand and Supply (SS2)",
+          "subject": "Economics",
+          "matched_keywords": [
+            "equilibrium"
+          ],
+          "keyword_count": 1
+        }
+      ],
+      "subjects": [
+        "Physics",
+        "Mathematics",
+        "Economics",
+        "Further Mathematics",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    "biology_system": {
+      "count": 12,
+      "lessons": [
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084121",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "organ"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "organ",
+            "anatomy"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "organ"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084432",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "organ"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "organ",
+            "anatomy"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "organ"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084121",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "organ"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "organ",
+            "anatomy"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "organ"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084432",
+          "title": "Introduction to Organic Chemistry (SS2)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "organ"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "organ",
+            "anatomy"
+          ],
+          "keyword_count": 2
+        },
+        {
+          "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+          "title": "Data Structures and Algorithms (SS3)",
+          "subject": "Computer Science",
+          "matched_keywords": [
+            "organ"
+          ],
+          "keyword_count": 1
+        }
+      ],
+      "subjects": [
+        "Biology",
+        "Computer Science",
+        "Chemistry"
+      ]
+    },
+    "biology_cell": {
+      "count": 16,
+      "lessons": [
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+          "title": "Reproduction in Living Organisms (SS2)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+          "title": "Modern Physics: Quantum Theory and Nuclear Physics (SS3)",
+          "subject": "Physics",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+          "title": "Electrochemistry and Chemical Kinetics (SS3)",
+          "subject": "Chemistry",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+          "title": "Evolution and Ecology (SS3)",
+          "subject": "Biology",
+          "matched_keywords": [
+            "cell"
+          ],
+          "keyword_count": 1
+        }
+      ],
+      "subjects": [
+        "Physics",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    "tree_diagram": {
+      "count": 8,
+      "lessons": [
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "classification"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "classification"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "classification"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "classification"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "classification"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "classification"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+          "title": "Climate and Weather Systems (SS2)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "classification"
+          ],
+          "keyword_count": 1
+        },
+        {
+          "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+          "title": "Economic Geography and Regional Development (SS3)",
+          "subject": "Geography",
+          "matched_keywords": [
+            "classification"
+          ],
+          "keyword_count": 1
+        }
+      ],
+      "subjects": [
+        "Geography"
+      ]
+    }
+  },
+  "by_subject": {
+    "Further Mathematics": {
+      "circuit_logic": 8,
+      "venn_diagram": 12,
+      "flowchart": 8,
+      "timeline": 16,
+      "circuit_electrical": 4,
+      "graph_network": 4,
+      "chemistry_reaction": 4
+    },
+    "Geography": {
+      "circuit_logic": 8,
+      "venn_diagram": 12,
+      "flowchart": 8,
+      "timeline": 16,
+      "circuit_electrical": 16,
+      "geography_map": 16,
+      "chemistry_molecular": 8,
+      "graph_network": 4,
+      "tree_diagram": 8
+    },
+    "Computer Science": {
+      "circuit_logic": 16,
+      "venn_diagram": 12,
+      "flowchart": 16,
+      "timeline": 16,
+      "geography_map": 12,
+      "chemistry_molecular": 16,
+      "graph_network": 12,
+      "biology_system": 4
+    },
+    "Biology": {
+      "circuit_logic": 4,
+      "flowchart": 8,
+      "timeline": 8,
+      "circuit_electrical": 4,
+      "chemistry_molecular": 4,
+      "graph_network": 8,
+      "chemistry_reaction": 4,
+      "biology_system": 4,
+      "biology_cell": 8
+    },
+    "English Language": {
+      "venn_diagram": 4,
+      "flowchart": 4,
+      "timeline": 8,
+      "chemistry_molecular": 8,
+      "graph_network": 4
+    },
+    "Economics": {
+      "flowchart": 16,
+      "circuit_electrical": 16,
+      "geography_map": 12,
+      "chemistry_reaction": 4
+    },
+    "Physics": {
+      "flowchart": 8,
+      "timeline": 8,
+      "circuit_electrical": 8,
+      "chemistry_molecular": 4,
+      "graph_network": 4,
+      "chemistry_reaction": 4,
+      "biology_cell": 4
+    },
+    "Mathematics": {
+      "flowchart": 4,
+      "timeline": 8,
+      "circuit_electrical": 4,
+      "chemistry_reaction": 8
+    },
+    "Chemistry": {
+      "flowchart": 4,
+      "timeline": 8,
+      "circuit_electrical": 4,
+      "chemistry_molecular": 8,
+      "graph_network": 4,
+      "chemistry_reaction": 8,
+      "biology_system": 4,
+      "biology_cell": 4
+    }
+  },
+  "priority_recommendations": [
+    {
+      "priority": "HIGH",
+      "diagram_type": "timeline",
+      "lesson_count": 88,
+      "reason": "High demand - 88 lessons benefit",
+      "subjects": [
+        "Physics",
+        "Geography",
+        "Mathematics",
+        "Computer Science",
+        "Further Mathematics",
+        "English Language",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "diagram_type": "flowchart",
+      "lesson_count": 76,
+      "reason": "High demand - 76 lessons benefit",
+      "subjects": [
+        "Physics",
+        "Geography",
+        "Mathematics",
+        "Computer Science",
+        "Economics",
+        "Further Mathematics",
+        "English Language",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "diagram_type": "circuit_electrical",
+      "lesson_count": 56,
+      "reason": "High demand - 56 lessons benefit",
+      "subjects": [
+        "Physics",
+        "Geography",
+        "Mathematics",
+        "Economics",
+        "Further Mathematics",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "diagram_type": "chemistry_molecular",
+      "lesson_count": 48,
+      "reason": "High demand - 48 lessons benefit",
+      "subjects": [
+        "Physics",
+        "Geography",
+        "Computer Science",
+        "English Language",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "diagram_type": "venn_diagram",
+      "lesson_count": 40,
+      "reason": "High demand - 40 lessons benefit",
+      "subjects": [
+        "Geography",
+        "English Language",
+        "Computer Science",
+        "Further Mathematics"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "diagram_type": "geography_map",
+      "lesson_count": 40,
+      "reason": "High demand - 40 lessons benefit",
+      "subjects": [
+        "Geography",
+        "Computer Science",
+        "Economics"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "diagram_type": "graph_network",
+      "lesson_count": 40,
+      "reason": "High demand - 40 lessons benefit",
+      "subjects": [
+        "Physics",
+        "Geography",
+        "Computer Science",
+        "Further Mathematics",
+        "English Language",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "diagram_type": "circuit_logic",
+      "lesson_count": 36,
+      "reason": "High demand - 36 lessons benefit",
+      "subjects": [
+        "Geography",
+        "Biology",
+        "Computer Science",
+        "Further Mathematics"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "diagram_type": "chemistry_reaction",
+      "lesson_count": 32,
+      "reason": "High demand - 32 lessons benefit",
+      "subjects": [
+        "Physics",
+        "Mathematics",
+        "Economics",
+        "Further Mathematics",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "diagram_type": "biology_cell",
+      "lesson_count": 16,
+      "reason": "High demand - 16 lessons benefit",
+      "subjects": [
+        "Physics",
+        "Biology",
+        "Chemistry"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "diagram_type": "biology_system",
+      "lesson_count": 12,
+      "reason": "High demand - 12 lessons benefit",
+      "subjects": [
+        "Biology",
+        "Computer Science",
+        "Chemistry"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "diagram_type": "tree_diagram",
+      "lesson_count": 8,
+      "reason": "High demand - 8 lessons benefit",
+      "subjects": [
+        "Geography"
+      ]
+    }
+  ]
+}

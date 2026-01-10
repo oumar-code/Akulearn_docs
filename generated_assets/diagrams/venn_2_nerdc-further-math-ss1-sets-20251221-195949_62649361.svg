@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <!-- Title -->
+  <text x="200.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Union of Sets A and B</text>
+  
+  <!-- Circle A -->
+  <circle cx="150" cy="150" r="80" fill="#3498db" opacity="0.5" stroke="#2980b9" stroke-width="2"/>
+  <text x="110" y="155" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">5</text>
+  <text x="110" y="240" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Set A</text>
+  
+  <!-- Circle B -->
+  <circle cx="250" cy="150" r="80" fill="#e74c3c" opacity="0.5" stroke="#c0392b" stroke-width="2"/>
+  <text x="290" y="155" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">4</text>
+  <text x="290" y="240" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Set B</text>
+  
+  <!-- Intersection -->
+  <text x="200" y="155" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a1a">3</text>
+  <text x="200" y="270" text-anchor="middle" font-size="12" fill="#666">Intersection</text>
+</svg>

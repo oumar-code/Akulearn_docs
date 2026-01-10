@@ -1,0 +1,926 @@
+{
+  "venn_diagrams": [
+    {
+      "id": "venn_2_bc560bf1",
+      "lesson_id": "nerdc-further-math-ss1-sets-20251221-195949",
+      "type": "venn_2",
+      "title": "Further Mathematics: Set Union",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\venn_2_nerdc-further-math-ss1-sets-20251221-195949_bc560bf1.svg",
+      "generated_at": "2026-01-10T10:00:53.375496"
+    },
+    {
+      "id": "venn_2_dd8a4173",
+      "lesson_id": "nerdc-further-math-ss1-sets-20251221-195949",
+      "type": "venn_2",
+      "title": "Further Mathematics: Set Intersection",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\venn_2_nerdc-further-math-ss1-sets-20251221-195949_dd8a4173.svg",
+      "generated_at": "2026-01-10T10:00:53.378117"
+    },
+    {
+      "id": "venn_2_a6e082d9",
+      "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+      "type": "venn_2",
+      "title": "Geography: Set Intersection",
+      "subject": "Geography",
+      "path": "generated_assets\\venn_2_nerdc-geography-ss1-intro-20251221-195949_a6e082d9.svg",
+      "generated_at": "2026-01-10T10:00:53.381953"
+    },
+    {
+      "id": "venn_3_d334d757",
+      "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+      "type": "venn_3",
+      "title": "Computer Science: Three Sets",
+      "subject": "Computer Science",
+      "path": "generated_assets\\venn_3_nerdc-computer-ss1-intro-20251221-195949_d334d757.svg",
+      "generated_at": "2026-01-10T10:00:53.508445"
+    },
+    {
+      "id": "venn_2_63805eb1",
+      "lesson_id": "nerdc-further-math-ss1-sets-20251221-200005",
+      "type": "venn_2",
+      "title": "Further Mathematics: Set Union",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\venn_2_nerdc-further-math-ss1-sets-20251221-200005_63805eb1.svg",
+      "generated_at": "2026-01-10T10:00:53.525423"
+    },
+    {
+      "id": "venn_2_5044939e",
+      "lesson_id": "nerdc-further-math-ss1-sets-20251221-200005",
+      "type": "venn_2",
+      "title": "Further Mathematics: Set Intersection",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\venn_2_nerdc-further-math-ss1-sets-20251221-200005_5044939e.svg",
+      "generated_at": "2026-01-10T10:00:53.530518"
+    },
+    {
+      "id": "venn_2_93f63675",
+      "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+      "type": "venn_2",
+      "title": "Geography: Set Intersection",
+      "subject": "Geography",
+      "path": "generated_assets\\venn_2_nerdc-geography-ss1-intro-20251221-200005_93f63675.svg",
+      "generated_at": "2026-01-10T10:00:53.546742"
+    },
+    {
+      "id": "venn_3_1ba6dc68",
+      "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+      "type": "venn_3",
+      "title": "Computer Science: Three Sets",
+      "subject": "Computer Science",
+      "path": "generated_assets\\venn_3_nerdc-computer-ss1-intro-20251221-200005_1ba6dc68.svg",
+      "generated_at": "2026-01-10T10:00:53.608347"
+    },
+    {
+      "id": "venn_2_f8c4aaac",
+      "lesson_id": "nerdc-further-math-ss1-sets-20260107-084151",
+      "type": "venn_2",
+      "title": "Further Mathematics: Set Union",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\venn_2_nerdc-further-math-ss1-sets-20260107-084151_f8c4aaac.svg",
+      "generated_at": "2026-01-10T10:00:53.984719"
+    },
+    {
+      "id": "venn_2_0d255b46",
+      "lesson_id": "nerdc-further-math-ss1-sets-20260107-084151",
+      "type": "venn_2",
+      "title": "Further Mathematics: Set Intersection",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\venn_2_nerdc-further-math-ss1-sets-20260107-084151_0d255b46.svg",
+      "generated_at": "2026-01-10T10:00:53.991173"
+    },
+    {
+      "id": "venn_2_b49a18c3",
+      "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+      "type": "venn_2",
+      "title": "Geography: Set Intersection",
+      "subject": "Geography",
+      "path": "generated_assets\\venn_2_nerdc-geography-ss1-intro-20260107-084151_b49a18c3.svg",
+      "generated_at": "2026-01-10T10:00:54.013868"
+    },
+    {
+      "id": "venn_3_48574e21",
+      "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+      "type": "venn_3",
+      "title": "Computer Science: Three Sets",
+      "subject": "Computer Science",
+      "path": "generated_assets\\venn_3_nerdc-computer-ss1-intro-20260107-084151_48574e21.svg",
+      "generated_at": "2026-01-10T10:00:54.092853"
+    },
+    {
+      "id": "venn_2_8f5f5351",
+      "lesson_id": "nerdc-further-math-ss1-sets-20260107-084438",
+      "type": "venn_2",
+      "title": "Further Mathematics: Set Union",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\venn_2_nerdc-further-math-ss1-sets-20260107-084438_8f5f5351.svg",
+      "generated_at": "2026-01-10T10:00:54.986381"
+    },
+    {
+      "id": "venn_2_d86c160c",
+      "lesson_id": "nerdc-further-math-ss1-sets-20260107-084438",
+      "type": "venn_2",
+      "title": "Further Mathematics: Set Intersection",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\venn_2_nerdc-further-math-ss1-sets-20260107-084438_d86c160c.svg",
+      "generated_at": "2026-01-10T10:00:54.998499"
+    },
+    {
+      "id": "venn_2_f2d90b68",
+      "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+      "type": "venn_2",
+      "title": "Geography: Set Intersection",
+      "subject": "Geography",
+      "path": "generated_assets\\venn_2_nerdc-geography-ss1-intro-20260107-084438_f2d90b68.svg",
+      "generated_at": "2026-01-10T10:00:55.009654"
+    },
+    {
+      "id": "venn_3_806dafaf",
+      "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+      "type": "venn_3",
+      "title": "Computer Science: Three Sets",
+      "subject": "Computer Science",
+      "path": "generated_assets\\venn_3_nerdc-computer-ss1-intro-20260107-084438_806dafaf.svg",
+      "generated_at": "2026-01-10T10:00:55.173435"
+    }
+  ],
+  "flowcharts": [
+    {
+      "id": "flowchart_616694d1",
+      "lesson_id": "nerdc-computer-ss1-intro-20251221-195949",
+      "type": "flowchart",
+      "title": "Computer Science: Process Flow",
+      "subject": "Computer Science",
+      "path": "generated_assets\\flowchart_nerdc-computer-ss1-intro-20251221-195949_616694d1.svg",
+      "generated_at": "2026-01-10T10:00:53.513976"
+    },
+    {
+      "id": "flowchart_7709b9ea",
+      "lesson_id": "nerdc-computer-ss1-intro-20251221-200005",
+      "type": "flowchart",
+      "title": "Computer Science: Process Flow",
+      "subject": "Computer Science",
+      "path": "generated_assets\\flowchart_nerdc-computer-ss1-intro-20251221-200005_7709b9ea.svg",
+      "generated_at": "2026-01-10T10:00:53.629155"
+    },
+    {
+      "id": "flowchart_7892b0c6",
+      "lesson_id": "nerdc-math-ss3-calculus-20260107-084137",
+      "type": "flowchart",
+      "title": "Mathematics: Process Flow",
+      "subject": "Mathematics",
+      "path": "generated_assets\\flowchart_nerdc-math-ss3-calculus-20260107-084137_7892b0c6.svg",
+      "generated_at": "2026-01-10T10:00:53.900474"
+    },
+    {
+      "id": "flowchart_05a783e5",
+      "lesson_id": "nerdc-computer-ss1-intro-20260107-084151",
+      "type": "flowchart",
+      "title": "Computer Science: Process Flow",
+      "subject": "Computer Science",
+      "path": "generated_assets\\flowchart_nerdc-computer-ss1-intro-20260107-084151_05a783e5.svg",
+      "generated_at": "2026-01-10T10:00:54.098964"
+    },
+    {
+      "id": "flowchart_e896ebc5",
+      "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+      "type": "flowchart",
+      "title": "Computer Science: Process Flow",
+      "subject": "Computer Science",
+      "path": "generated_assets\\flowchart_nerdc-computer-science-ss2-programming-20260107-084218_e896ebc5.svg",
+      "generated_at": "2026-01-10T10:00:54.163900"
+    },
+    {
+      "id": "flowchart_f5deed69",
+      "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+      "type": "flowchart",
+      "title": "Computer Science: Process Flow",
+      "subject": "Computer Science",
+      "path": "generated_assets\\flowchart_nerdc-computer-science-ss3-data-structures-20260107-084228_f5deed69.svg",
+      "generated_at": "2026-01-10T10:00:54.359355"
+    },
+    {
+      "id": "flowchart_4cc0f76c",
+      "lesson_id": "nerdc-math-ss3-calculus-20260107-084435",
+      "type": "flowchart",
+      "title": "Mathematics: Process Flow",
+      "subject": "Mathematics",
+      "path": "generated_assets\\flowchart_nerdc-math-ss3-calculus-20260107-084435_4cc0f76c.svg",
+      "generated_at": "2026-01-10T10:00:54.818630"
+    },
+    {
+      "id": "flowchart_e7c3c0d9",
+      "lesson_id": "nerdc-computer-ss1-intro-20260107-084438",
+      "type": "flowchart",
+      "title": "Computer Science: Process Flow",
+      "subject": "Computer Science",
+      "path": "generated_assets\\flowchart_nerdc-computer-ss1-intro-20260107-084438_e7c3c0d9.svg",
+      "generated_at": "2026-01-10T10:00:55.201250"
+    },
+    {
+      "id": "flowchart_ab0eec25",
+      "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+      "type": "flowchart",
+      "title": "Computer Science: Process Flow",
+      "subject": "Computer Science",
+      "path": "generated_assets\\flowchart_nerdc-computer-science-ss2-programming-20260107-084438_ab0eec25.svg",
+      "generated_at": "2026-01-10T10:00:55.391455"
+    },
+    {
+      "id": "flowchart_538b3921",
+      "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+      "type": "flowchart",
+      "title": "Computer Science: Process Flow",
+      "subject": "Computer Science",
+      "path": "generated_assets\\flowchart_nerdc-computer-science-ss3-data-structures-20260107-084439_538b3921.svg",
+      "generated_at": "2026-01-10T10:00:55.619480"
+    }
+  ],
+  "timelines": [],
+  "electrical_circuits": [
+    {
+      "id": "circuit_electrical_2ad695c8",
+      "lesson_id": "nerdc-geography-ss1-intro-20251221-195949",
+      "type": "circuit_electrical",
+      "title": "Geography: Electrical Circuit",
+      "subject": "Geography",
+      "path": "generated_assets\\circuit_electrical_nerdc-geography-ss1-intro-20251221-195949_2ad695c8.svg",
+      "generated_at": "2026-01-10T10:00:53.442465"
+    },
+    {
+      "id": "circuit_electrical_4f5bf909",
+      "lesson_id": "nerdc-economics-ss1-basic-20251221-195949",
+      "type": "circuit_electrical",
+      "title": "Economics: Electrical Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_electrical_nerdc-economics-ss1-basic-20251221-195949_4f5bf909.svg",
+      "generated_at": "2026-01-10T10:00:53.495644"
+    },
+    {
+      "id": "circuit_electrical_8c393aa3",
+      "lesson_id": "nerdc-geography-ss1-intro-20251221-200005",
+      "type": "circuit_electrical",
+      "title": "Geography: Electrical Circuit",
+      "subject": "Geography",
+      "path": "generated_assets\\circuit_electrical_nerdc-geography-ss1-intro-20251221-200005_8c393aa3.svg",
+      "generated_at": "2026-01-10T10:00:53.549861"
+    },
+    {
+      "id": "circuit_electrical_5fbe6730",
+      "lesson_id": "nerdc-economics-ss1-basic-20251221-200005",
+      "type": "circuit_electrical",
+      "title": "Economics: Electrical Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_electrical_nerdc-economics-ss1-basic-20251221-200005_5fbe6730.svg",
+      "generated_at": "2026-01-10T10:00:53.592441"
+    },
+    {
+      "id": "circuit_electrical_718c8928",
+      "lesson_id": "nerdc-physics-ss2-electricity-20260107-084121",
+      "type": "circuit_electrical",
+      "title": "Physics: Electrical Circuit",
+      "subject": "Physics",
+      "path": "generated_assets\\circuit_electrical_nerdc-physics-ss2-electricity-20260107-084121_718c8928.svg",
+      "generated_at": "2026-01-10T10:00:53.675005"
+    },
+    {
+      "id": "circuit_electrical_88a6b20e",
+      "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+      "type": "circuit_electrical",
+      "title": "Chemistry: Electrical Circuit",
+      "subject": "Chemistry",
+      "path": "generated_assets\\circuit_electrical_nerdc-chemistry-ss3-electrochemistry-20260107-084137_88a6b20e.svg",
+      "generated_at": "2026-01-10T10:00:53.946038"
+    },
+    {
+      "id": "circuit_electrical_31abe098",
+      "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+      "type": "circuit_electrical",
+      "title": "Biology: Electrical Circuit",
+      "subject": "Biology",
+      "path": "generated_assets\\circuit_electrical_nerdc-biology-ss3-evolution-20260107-084137_31abe098.svg",
+      "generated_at": "2026-01-10T10:00:53.967664"
+    },
+    {
+      "id": "circuit_electrical_3df144b4",
+      "lesson_id": "nerdc-geography-ss1-intro-20260107-084151",
+      "type": "circuit_electrical",
+      "title": "Geography: Electrical Circuit",
+      "subject": "Geography",
+      "path": "generated_assets\\circuit_electrical_nerdc-geography-ss1-intro-20260107-084151_3df144b4.svg",
+      "generated_at": "2026-01-10T10:00:54.027335"
+    },
+    {
+      "id": "circuit_electrical_83854a8f",
+      "lesson_id": "nerdc-economics-ss1-basic-20260107-084151",
+      "type": "circuit_electrical",
+      "title": "Economics: Electrical Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_electrical_nerdc-economics-ss1-basic-20260107-084151_83854a8f.svg",
+      "generated_at": "2026-01-10T10:00:54.029653"
+    },
+    {
+      "id": "circuit_electrical_9435e5f9",
+      "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+      "type": "circuit_electrical",
+      "title": "Geography: Electrical Circuit",
+      "subject": "Geography",
+      "path": "generated_assets\\circuit_electrical_nerdc-geography-ss2-climate-20260107-084218_9435e5f9.svg",
+      "generated_at": "2026-01-10T10:00:54.119336"
+    },
+    {
+      "id": "circuit_electrical_2f2cb4a4",
+      "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084218",
+      "type": "circuit_electrical",
+      "title": "Economics: Electrical Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_electrical_nerdc-economics-ss2-demand-supply-20260107-084218_2f2cb4a4.svg",
+      "generated_at": "2026-01-10T10:00:54.147904"
+    },
+    {
+      "id": "circuit_electrical_78d2bb01",
+      "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+      "type": "circuit_electrical",
+      "title": "Geography: Electrical Circuit",
+      "subject": "Geography",
+      "path": "generated_assets\\circuit_electrical_nerdc-geography-ss3-economic-20260107-084228_78d2bb01.svg",
+      "generated_at": "2026-01-10T10:00:54.197332"
+    },
+    {
+      "id": "circuit_electrical_976346ae",
+      "lesson_id": "nerdc-economics-ss3-national-income-20260107-084228",
+      "type": "circuit_electrical",
+      "title": "Economics: Electrical Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_electrical_nerdc-economics-ss3-national-income-20260107-084228_976346ae.svg",
+      "generated_at": "2026-01-10T10:00:54.211976"
+    },
+    {
+      "id": "circuit_electrical_e855359e",
+      "lesson_id": "nerdc-physics-ss2-electricity-20260107-084432",
+      "type": "circuit_electrical",
+      "title": "Physics: Electrical Circuit",
+      "subject": "Physics",
+      "path": "generated_assets\\circuit_electrical_nerdc-physics-ss2-electricity-20260107-084432_e855359e.svg",
+      "generated_at": "2026-01-10T10:00:54.509358"
+    },
+    {
+      "id": "circuit_electrical_4977add7",
+      "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+      "type": "circuit_electrical",
+      "title": "Chemistry: Electrical Circuit",
+      "subject": "Chemistry",
+      "path": "generated_assets\\circuit_electrical_nerdc-chemistry-ss3-electrochemistry-20260107-084435_4977add7.svg",
+      "generated_at": "2026-01-10T10:00:54.933211"
+    },
+    {
+      "id": "circuit_electrical_a8e3c18f",
+      "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+      "type": "circuit_electrical",
+      "title": "Biology: Electrical Circuit",
+      "subject": "Biology",
+      "path": "generated_assets\\circuit_electrical_nerdc-biology-ss3-evolution-20260107-084435_a8e3c18f.svg",
+      "generated_at": "2026-01-10T10:00:54.944605"
+    },
+    {
+      "id": "circuit_electrical_a63d5714",
+      "lesson_id": "nerdc-geography-ss1-intro-20260107-084438",
+      "type": "circuit_electrical",
+      "title": "Geography: Electrical Circuit",
+      "subject": "Geography",
+      "path": "generated_assets\\circuit_electrical_nerdc-geography-ss1-intro-20260107-084438_a63d5714.svg",
+      "generated_at": "2026-01-10T10:00:55.056921"
+    },
+    {
+      "id": "circuit_electrical_1f2e276c",
+      "lesson_id": "nerdc-economics-ss1-basic-20260107-084438",
+      "type": "circuit_electrical",
+      "title": "Economics: Electrical Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_electrical_nerdc-economics-ss1-basic-20260107-084438_1f2e276c.svg",
+      "generated_at": "2026-01-10T10:00:55.121347"
+    },
+    {
+      "id": "circuit_electrical_50c30743",
+      "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+      "type": "circuit_electrical",
+      "title": "Geography: Electrical Circuit",
+      "subject": "Geography",
+      "path": "generated_assets\\circuit_electrical_nerdc-geography-ss2-climate-20260107-084438_50c30743.svg",
+      "generated_at": "2026-01-10T10:00:55.239744"
+    },
+    {
+      "id": "circuit_electrical_a5453d4b",
+      "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084438",
+      "type": "circuit_electrical",
+      "title": "Economics: Electrical Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_electrical_nerdc-economics-ss2-demand-supply-20260107-084438_a5453d4b.svg",
+      "generated_at": "2026-01-10T10:00:55.364760"
+    },
+    {
+      "id": "circuit_electrical_f33fbe9a",
+      "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+      "type": "circuit_electrical",
+      "title": "Geography: Electrical Circuit",
+      "subject": "Geography",
+      "path": "generated_assets\\circuit_electrical_nerdc-geography-ss3-economic-20260107-084439_f33fbe9a.svg",
+      "generated_at": "2026-01-10T10:00:55.553540"
+    },
+    {
+      "id": "circuit_electrical_df3cfccf",
+      "lesson_id": "nerdc-economics-ss3-national-income-20260107-084439",
+      "type": "circuit_electrical",
+      "title": "Economics: Electrical Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_electrical_nerdc-economics-ss3-national-income-20260107-084439_df3cfccf.svg",
+      "generated_at": "2026-01-10T10:00:55.592190"
+    }
+  ],
+  "logic_circuits": [
+    {
+      "id": "circuit_logic_cd0de42b",
+      "lesson_id": "nerdc-economics-ss1-basic-20251221-195949",
+      "type": "circuit_logic",
+      "title": "Economics: Logic Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_logic_nerdc-economics-ss1-basic-20251221-195949_cd0de42b.svg",
+      "generated_at": "2026-01-10T10:00:53.498771"
+    },
+    {
+      "id": "circuit_logic_393a744c",
+      "lesson_id": "nerdc-economics-ss1-basic-20251221-200005",
+      "type": "circuit_logic",
+      "title": "Economics: Logic Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_logic_nerdc-economics-ss1-basic-20251221-200005_393a744c.svg",
+      "generated_at": "2026-01-10T10:00:53.598458"
+    },
+    {
+      "id": "circuit_logic_56093725",
+      "lesson_id": "nerdc-math-ss2-quadratic-20260107-084121",
+      "type": "circuit_logic",
+      "title": "Mathematics: Logic Circuit",
+      "subject": "Mathematics",
+      "path": "generated_assets\\circuit_logic_nerdc-math-ss2-quadratic-20260107-084121_56093725.svg",
+      "generated_at": "2026-01-10T10:00:53.631828"
+    },
+    {
+      "id": "circuit_logic_06754e0a",
+      "lesson_id": "nerdc-physics-ss2-electricity-20260107-084121",
+      "type": "circuit_logic",
+      "title": "Physics: Logic Circuit",
+      "subject": "Physics",
+      "path": "generated_assets\\circuit_logic_nerdc-physics-ss2-electricity-20260107-084121_06754e0a.svg",
+      "generated_at": "2026-01-10T10:00:53.726747"
+    },
+    {
+      "id": "circuit_logic_994b6400",
+      "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084121",
+      "type": "circuit_logic",
+      "title": "Chemistry: Logic Circuit",
+      "subject": "Chemistry",
+      "path": "generated_assets\\circuit_logic_nerdc-chemistry-ss2-organic-20260107-084121_994b6400.svg",
+      "generated_at": "2026-01-10T10:00:53.778032"
+    },
+    {
+      "id": "circuit_logic_a14804ce",
+      "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+      "type": "circuit_logic",
+      "title": "Biology: Logic Circuit",
+      "subject": "Biology",
+      "path": "generated_assets\\circuit_logic_nerdc-biology-ss2-reproduction-20260107-084121_a14804ce.svg",
+      "generated_at": "2026-01-10T10:00:53.817503"
+    },
+    {
+      "id": "circuit_logic_bb569520",
+      "lesson_id": "nerdc-english-ss2-literature-20260107-084121",
+      "type": "circuit_logic",
+      "title": "English Language: Logic Circuit",
+      "subject": "English Language",
+      "path": "generated_assets\\circuit_logic_nerdc-english-ss2-literature-20260107-084121_bb569520.svg",
+      "generated_at": "2026-01-10T10:00:53.894656"
+    },
+    {
+      "id": "circuit_logic_f7251a99",
+      "lesson_id": "nerdc-math-ss3-calculus-20260107-084137",
+      "type": "circuit_logic",
+      "title": "Mathematics: Logic Circuit",
+      "subject": "Mathematics",
+      "path": "generated_assets\\circuit_logic_nerdc-math-ss3-calculus-20260107-084137_f7251a99.svg",
+      "generated_at": "2026-01-10T10:00:53.912725"
+    },
+    {
+      "id": "circuit_logic_c5b9f8dc",
+      "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+      "type": "circuit_logic",
+      "title": "Physics: Logic Circuit",
+      "subject": "Physics",
+      "path": "generated_assets\\circuit_logic_nerdc-physics-ss3-modern-20260107-084137_c5b9f8dc.svg",
+      "generated_at": "2026-01-10T10:00:53.915180"
+    },
+    {
+      "id": "circuit_logic_8c6b2154",
+      "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084137",
+      "type": "circuit_logic",
+      "title": "Chemistry: Logic Circuit",
+      "subject": "Chemistry",
+      "path": "generated_assets\\circuit_logic_nerdc-chemistry-ss3-electrochemistry-20260107-084137_8c6b2154.svg",
+      "generated_at": "2026-01-10T10:00:53.963215"
+    },
+    {
+      "id": "circuit_logic_6bdd8f98",
+      "lesson_id": "nerdc-biology-ss3-evolution-20260107-084137",
+      "type": "circuit_logic",
+      "title": "Biology: Logic Circuit",
+      "subject": "Biology",
+      "path": "generated_assets\\circuit_logic_nerdc-biology-ss3-evolution-20260107-084137_6bdd8f98.svg",
+      "generated_at": "2026-01-10T10:00:53.976850"
+    },
+    {
+      "id": "circuit_logic_20f3975f",
+      "lesson_id": "nerdc-english-ss3-essay-20260107-084137",
+      "type": "circuit_logic",
+      "title": "English Language: Logic Circuit",
+      "subject": "English Language",
+      "path": "generated_assets\\circuit_logic_nerdc-english-ss3-essay-20260107-084137_20f3975f.svg",
+      "generated_at": "2026-01-10T10:00:53.980544"
+    },
+    {
+      "id": "circuit_logic_a1127f10",
+      "lesson_id": "nerdc-economics-ss1-basic-20260107-084151",
+      "type": "circuit_logic",
+      "title": "Economics: Logic Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_logic_nerdc-economics-ss1-basic-20260107-084151_a1127f10.svg",
+      "generated_at": "2026-01-10T10:00:54.037522"
+    },
+    {
+      "id": "circuit_logic_31cf971b",
+      "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084218",
+      "type": "circuit_logic",
+      "title": "Further Mathematics: Logic Circuit",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\circuit_logic_nerdc-further-math-ss2-matrices-20260107-084218_31cf971b.svg",
+      "generated_at": "2026-01-10T10:00:54.102077"
+    },
+    {
+      "id": "circuit_logic_4a9d7a79",
+      "lesson_id": "nerdc-geography-ss2-climate-20260107-084218",
+      "type": "circuit_logic",
+      "title": "Geography: Logic Circuit",
+      "subject": "Geography",
+      "path": "generated_assets\\circuit_logic_nerdc-geography-ss2-climate-20260107-084218_4a9d7a79.svg",
+      "generated_at": "2026-01-10T10:00:54.134615"
+    },
+    {
+      "id": "circuit_logic_7ea694a8",
+      "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084218",
+      "type": "circuit_logic",
+      "title": "Economics: Logic Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_logic_nerdc-economics-ss2-demand-supply-20260107-084218_7ea694a8.svg",
+      "generated_at": "2026-01-10T10:00:54.152811"
+    },
+    {
+      "id": "circuit_logic_bd64eacb",
+      "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084218",
+      "type": "circuit_logic",
+      "title": "Computer Science: Logic Circuit",
+      "subject": "Computer Science",
+      "path": "generated_assets\\circuit_logic_nerdc-computer-science-ss2-programming-20260107-084218_bd64eacb.svg",
+      "generated_at": "2026-01-10T10:00:54.180376"
+    },
+    {
+      "id": "circuit_logic_1ee38a51",
+      "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084228",
+      "type": "circuit_logic",
+      "title": "Further Mathematics: Logic Circuit",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\circuit_logic_nerdc-further-math-ss3-calculus-20260107-084228_1ee38a51.svg",
+      "generated_at": "2026-01-10T10:00:54.185355"
+    },
+    {
+      "id": "circuit_logic_1b447361",
+      "lesson_id": "nerdc-geography-ss3-economic-20260107-084228",
+      "type": "circuit_logic",
+      "title": "Geography: Logic Circuit",
+      "subject": "Geography",
+      "path": "generated_assets\\circuit_logic_nerdc-geography-ss3-economic-20260107-084228_1b447361.svg",
+      "generated_at": "2026-01-10T10:00:54.205676"
+    },
+    {
+      "id": "circuit_logic_bfa47944",
+      "lesson_id": "nerdc-economics-ss3-national-income-20260107-084228",
+      "type": "circuit_logic",
+      "title": "Economics: Logic Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_logic_nerdc-economics-ss3-national-income-20260107-084228_bfa47944.svg",
+      "generated_at": "2026-01-10T10:00:54.219395"
+    },
+    {
+      "id": "circuit_logic_a83163f2",
+      "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084228",
+      "type": "circuit_logic",
+      "title": "Computer Science: Logic Circuit",
+      "subject": "Computer Science",
+      "path": "generated_assets\\circuit_logic_nerdc-computer-science-ss3-data-structures-20260107-084228_a83163f2.svg",
+      "generated_at": "2026-01-10T10:00:54.390685"
+    },
+    {
+      "id": "circuit_logic_2fc974e3",
+      "lesson_id": "nerdc-math-ss2-quadratic-20260107-084432",
+      "type": "circuit_logic",
+      "title": "Mathematics: Logic Circuit",
+      "subject": "Mathematics",
+      "path": "generated_assets\\circuit_logic_nerdc-math-ss2-quadratic-20260107-084432_2fc974e3.svg",
+      "generated_at": "2026-01-10T10:00:54.430414"
+    },
+    {
+      "id": "circuit_logic_82164541",
+      "lesson_id": "nerdc-physics-ss2-electricity-20260107-084432",
+      "type": "circuit_logic",
+      "title": "Physics: Logic Circuit",
+      "subject": "Physics",
+      "path": "generated_assets\\circuit_logic_nerdc-physics-ss2-electricity-20260107-084432_82164541.svg",
+      "generated_at": "2026-01-10T10:00:54.518654"
+    },
+    {
+      "id": "circuit_logic_75df3ece",
+      "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084432",
+      "type": "circuit_logic",
+      "title": "Chemistry: Logic Circuit",
+      "subject": "Chemistry",
+      "path": "generated_assets\\circuit_logic_nerdc-chemistry-ss2-organic-20260107-084432_75df3ece.svg",
+      "generated_at": "2026-01-10T10:00:54.635128"
+    },
+    {
+      "id": "circuit_logic_7a64220e",
+      "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+      "type": "circuit_logic",
+      "title": "Biology: Logic Circuit",
+      "subject": "Biology",
+      "path": "generated_assets\\circuit_logic_nerdc-biology-ss2-reproduction-20260107-084432_7a64220e.svg",
+      "generated_at": "2026-01-10T10:00:54.675683"
+    },
+    {
+      "id": "circuit_logic_2df5f4ec",
+      "lesson_id": "nerdc-english-ss2-literature-20260107-084432",
+      "type": "circuit_logic",
+      "title": "English Language: Logic Circuit",
+      "subject": "English Language",
+      "path": "generated_assets\\circuit_logic_nerdc-english-ss2-literature-20260107-084432_2df5f4ec.svg",
+      "generated_at": "2026-01-10T10:00:54.731727"
+    },
+    {
+      "id": "circuit_logic_0080d830",
+      "lesson_id": "nerdc-math-ss3-calculus-20260107-084435",
+      "type": "circuit_logic",
+      "title": "Mathematics: Logic Circuit",
+      "subject": "Mathematics",
+      "path": "generated_assets\\circuit_logic_nerdc-math-ss3-calculus-20260107-084435_0080d830.svg",
+      "generated_at": "2026-01-10T10:00:54.846814"
+    },
+    {
+      "id": "circuit_logic_151a828c",
+      "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+      "type": "circuit_logic",
+      "title": "Physics: Logic Circuit",
+      "subject": "Physics",
+      "path": "generated_assets\\circuit_logic_nerdc-physics-ss3-modern-20260107-084435_151a828c.svg",
+      "generated_at": "2026-01-10T10:00:54.853221"
+    },
+    {
+      "id": "circuit_logic_de156b4f",
+      "lesson_id": "nerdc-chemistry-ss3-electrochemistry-20260107-084435",
+      "type": "circuit_logic",
+      "title": "Chemistry: Logic Circuit",
+      "subject": "Chemistry",
+      "path": "generated_assets\\circuit_logic_nerdc-chemistry-ss3-electrochemistry-20260107-084435_de156b4f.svg",
+      "generated_at": "2026-01-10T10:00:54.937283"
+    },
+    {
+      "id": "circuit_logic_73c9e667",
+      "lesson_id": "nerdc-biology-ss3-evolution-20260107-084435",
+      "type": "circuit_logic",
+      "title": "Biology: Logic Circuit",
+      "subject": "Biology",
+      "path": "generated_assets\\circuit_logic_nerdc-biology-ss3-evolution-20260107-084435_73c9e667.svg",
+      "generated_at": "2026-01-10T10:00:54.967471"
+    },
+    {
+      "id": "circuit_logic_adf9949c",
+      "lesson_id": "nerdc-english-ss3-essay-20260107-084435",
+      "type": "circuit_logic",
+      "title": "English Language: Logic Circuit",
+      "subject": "English Language",
+      "path": "generated_assets\\circuit_logic_nerdc-english-ss3-essay-20260107-084435_adf9949c.svg",
+      "generated_at": "2026-01-10T10:00:54.983822"
+    },
+    {
+      "id": "circuit_logic_7c26a8ff",
+      "lesson_id": "nerdc-economics-ss1-basic-20260107-084438",
+      "type": "circuit_logic",
+      "title": "Economics: Logic Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_logic_nerdc-economics-ss1-basic-20260107-084438_7c26a8ff.svg",
+      "generated_at": "2026-01-10T10:00:55.137913"
+    },
+    {
+      "id": "circuit_logic_75a27b70",
+      "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084438",
+      "type": "circuit_logic",
+      "title": "Further Mathematics: Logic Circuit",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\circuit_logic_nerdc-further-math-ss2-matrices-20260107-084438_75a27b70.svg",
+      "generated_at": "2026-01-10T10:00:55.219030"
+    },
+    {
+      "id": "circuit_logic_e2a7c0e7",
+      "lesson_id": "nerdc-geography-ss2-climate-20260107-084438",
+      "type": "circuit_logic",
+      "title": "Geography: Logic Circuit",
+      "subject": "Geography",
+      "path": "generated_assets\\circuit_logic_nerdc-geography-ss2-climate-20260107-084438_e2a7c0e7.svg",
+      "generated_at": "2026-01-10T10:00:55.269501"
+    },
+    {
+      "id": "circuit_logic_592ff9de",
+      "lesson_id": "nerdc-economics-ss2-demand-supply-20260107-084438",
+      "type": "circuit_logic",
+      "title": "Economics: Logic Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_logic_nerdc-economics-ss2-demand-supply-20260107-084438_592ff9de.svg",
+      "generated_at": "2026-01-10T10:00:55.366927"
+    },
+    {
+      "id": "circuit_logic_6f06994b",
+      "lesson_id": "nerdc-computer-science-ss2-programming-20260107-084438",
+      "type": "circuit_logic",
+      "title": "Computer Science: Logic Circuit",
+      "subject": "Computer Science",
+      "path": "generated_assets\\circuit_logic_nerdc-computer-science-ss2-programming-20260107-084438_6f06994b.svg",
+      "generated_at": "2026-01-10T10:00:55.441456"
+    },
+    {
+      "id": "circuit_logic_c9081eb1",
+      "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084439",
+      "type": "circuit_logic",
+      "title": "Further Mathematics: Logic Circuit",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\circuit_logic_nerdc-further-math-ss3-calculus-20260107-084439_c9081eb1.svg",
+      "generated_at": "2026-01-10T10:00:55.470566"
+    },
+    {
+      "id": "circuit_logic_fccf1293",
+      "lesson_id": "nerdc-geography-ss3-economic-20260107-084439",
+      "type": "circuit_logic",
+      "title": "Geography: Logic Circuit",
+      "subject": "Geography",
+      "path": "generated_assets\\circuit_logic_nerdc-geography-ss3-economic-20260107-084439_fccf1293.svg",
+      "generated_at": "2026-01-10T10:00:55.572455"
+    },
+    {
+      "id": "circuit_logic_01cb0279",
+      "lesson_id": "nerdc-economics-ss3-national-income-20260107-084439",
+      "type": "circuit_logic",
+      "title": "Economics: Logic Circuit",
+      "subject": "Economics",
+      "path": "generated_assets\\circuit_logic_nerdc-economics-ss3-national-income-20260107-084439_01cb0279.svg",
+      "generated_at": "2026-01-10T10:00:55.605393"
+    },
+    {
+      "id": "circuit_logic_8caa5aba",
+      "lesson_id": "nerdc-computer-science-ss3-data-structures-20260107-084439",
+      "type": "circuit_logic",
+      "title": "Computer Science: Logic Circuit",
+      "subject": "Computer Science",
+      "path": "generated_assets\\circuit_logic_nerdc-computer-science-ss3-data-structures-20260107-084439_8caa5aba.svg",
+      "generated_at": "2026-01-10T10:00:55.623967"
+    }
+  ],
+  "molecular_structures": [],
+  "chemical_reactions": [
+    {
+      "id": "chemistry_reaction_f76d9890",
+      "lesson_id": "nerdc-math-ss2-quadratic-20260107-084121",
+      "type": "chemistry_reaction",
+      "title": "Mathematics: Chemical Reaction",
+      "subject": "Mathematics",
+      "path": "generated_assets\\chemistry_reaction_nerdc-math-ss2-quadratic-20260107-084121_f76d9890.svg",
+      "generated_at": "2026-01-10T10:00:53.645624"
+    },
+    {
+      "id": "chemistry_reaction_caf61e48",
+      "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084121",
+      "type": "chemistry_reaction",
+      "title": "Chemistry: Chemical Reaction",
+      "subject": "Chemistry",
+      "path": "generated_assets\\chemistry_reaction_nerdc-chemistry-ss2-organic-20260107-084121_caf61e48.svg",
+      "generated_at": "2026-01-10T10:00:53.797976"
+    },
+    {
+      "id": "chemistry_reaction_045ae299",
+      "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084121",
+      "type": "chemistry_reaction",
+      "title": "Biology: Chemical Reaction",
+      "subject": "Biology",
+      "path": "generated_assets\\chemistry_reaction_nerdc-biology-ss2-reproduction-20260107-084121_045ae299.svg",
+      "generated_at": "2026-01-10T10:00:53.875007"
+    },
+    {
+      "id": "chemistry_reaction_5268a398",
+      "lesson_id": "nerdc-physics-ss3-modern-20260107-084137",
+      "type": "chemistry_reaction",
+      "title": "Physics: Chemical Reaction",
+      "subject": "Physics",
+      "path": "generated_assets\\chemistry_reaction_nerdc-physics-ss3-modern-20260107-084137_5268a398.svg",
+      "generated_at": "2026-01-10T10:00:53.934246"
+    },
+    {
+      "id": "chemistry_reaction_79761577",
+      "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084218",
+      "type": "chemistry_reaction",
+      "title": "Further Mathematics: Chemical Reaction",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\chemistry_reaction_nerdc-further-math-ss2-matrices-20260107-084218_79761577.svg",
+      "generated_at": "2026-01-10T10:00:54.114698"
+    },
+    {
+      "id": "chemistry_reaction_7717e12f",
+      "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084228",
+      "type": "chemistry_reaction",
+      "title": "Further Mathematics: Chemical Reaction",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\chemistry_reaction_nerdc-further-math-ss3-calculus-20260107-084228_7717e12f.svg",
+      "generated_at": "2026-01-10T10:00:54.192322"
+    },
+    {
+      "id": "chemistry_reaction_10b049a6",
+      "lesson_id": "nerdc-math-ss2-quadratic-20260107-084432",
+      "type": "chemistry_reaction",
+      "title": "Mathematics: Chemical Reaction",
+      "subject": "Mathematics",
+      "path": "generated_assets\\chemistry_reaction_nerdc-math-ss2-quadratic-20260107-084432_10b049a6.svg",
+      "generated_at": "2026-01-10T10:00:54.467782"
+    },
+    {
+      "id": "chemistry_reaction_bcf4a373",
+      "lesson_id": "nerdc-chemistry-ss2-organic-20260107-084432",
+      "type": "chemistry_reaction",
+      "title": "Chemistry: Chemical Reaction",
+      "subject": "Chemistry",
+      "path": "generated_assets\\chemistry_reaction_nerdc-chemistry-ss2-organic-20260107-084432_bcf4a373.svg",
+      "generated_at": "2026-01-10T10:00:54.654893"
+    },
+    {
+      "id": "chemistry_reaction_adbbdef2",
+      "lesson_id": "nerdc-biology-ss2-reproduction-20260107-084432",
+      "type": "chemistry_reaction",
+      "title": "Biology: Chemical Reaction",
+      "subject": "Biology",
+      "path": "generated_assets\\chemistry_reaction_nerdc-biology-ss2-reproduction-20260107-084432_adbbdef2.svg",
+      "generated_at": "2026-01-10T10:00:54.704669"
+    },
+    {
+      "id": "chemistry_reaction_43fdbaee",
+      "lesson_id": "nerdc-physics-ss3-modern-20260107-084435",
+      "type": "chemistry_reaction",
+      "title": "Physics: Chemical Reaction",
+      "subject": "Physics",
+      "path": "generated_assets\\chemistry_reaction_nerdc-physics-ss3-modern-20260107-084435_43fdbaee.svg",
+      "generated_at": "2026-01-10T10:00:54.899821"
+    },
+    {
+      "id": "chemistry_reaction_c6565568",
+      "lesson_id": "nerdc-further-math-ss2-matrices-20260107-084438",
+      "type": "chemistry_reaction",
+      "title": "Further Mathematics: Chemical Reaction",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\chemistry_reaction_nerdc-further-math-ss2-matrices-20260107-084438_c6565568.svg",
+      "generated_at": "2026-01-10T10:00:55.233579"
+    },
+    {
+      "id": "chemistry_reaction_9d379859",
+      "lesson_id": "nerdc-further-math-ss3-calculus-20260107-084439",
+      "type": "chemistry_reaction",
+      "title": "Further Mathematics: Chemical Reaction",
+      "subject": "Further Mathematics",
+      "path": "generated_assets\\chemistry_reaction_nerdc-further-math-ss3-calculus-20260107-084439_9d379859.svg",
+      "generated_at": "2026-01-10T10:00:55.485743"
+    }
+  ],
+  "metadata": {
+    "phase": 3,
+    "generated_at": "2026-01-10T10:00:55.638187",
+    "total_diagrams": 100,
+    "venn_diagrams_count": 16,
+    "flowcharts_count": 10,
+    "timelines_count": 0,
+    "electrical_circuits_count": 22,
+    "logic_circuits_count": 40,
+    "molecular_structures_count": 0,
+    "chemical_reactions_count": 12
+  }
+}

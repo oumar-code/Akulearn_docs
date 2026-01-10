@@ -1,0 +1,6 @@
+Calculate E_cel
+  │
+  ├── Determine order
+  ├── Explain effect 
+  ├── Design a galvan
+  └── Calculate activ
