@@ -1,7 +1,13 @@
 from src.backend.database.models import UserProgress
 from datetime import datetime
+from fastapi import APIRouter, status, Depends
+from pydantic import BaseModel
+from sqlalchemy.orm import Session
+from src.backend.database.db_config import get_db
+
+router = APIRouter()
+
 # --- Track Topic Completion Endpoint ---
-from fastapi import status
 class TrackTopicCompletionRequest(BaseModel):
     user_id: str
     topic_id: str

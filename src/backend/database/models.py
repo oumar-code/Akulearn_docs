@@ -1,4 +1,26 @@
-from sqlalchemy import Integer, DateTime, func
+from sqlalchemy import (
+    Column, Integer, String, Boolean, Enum, ForeignKey, TIMESTAMP, 
+    UniqueConstraint, DateTime, func
+)
+from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.orm import relationship, declarative_base
+import enum
+import uuid
+
+Base = declarative_base()
+
+
+class UserRole(enum.Enum):
+    super_admin = "super_admin"
+    school_admin = "school_admin"
+    it_support = "it_support"
+    teacher = "teacher"
+    student = "student"
+    guardian = "guardian"
+    government = "government"
+    corporation = "corporation"
+    ngo_partner = "ngo_partner"
+
 
 # UserProgress model for tracking topic completion and progress
 class UserProgress(Base):
@@ -14,26 +36,7 @@ class UserProgress(Base):
     __table_args__ = (
         UniqueConstraint('user_id', 'topic_id'),
     )
-from sqlalchemy import (
-    Column, String, Boolean, Enum, ForeignKey, TIMESTAMP, UniqueConstraint
-)
-from sqlalchemy.dialects.postgresql import UUID
-from sqlalchemy.orm import relationship, declarative_base
-import enum
-import uuid
 
-Base = declarative_base()
-
-class UserRole(enum.Enum):
-    super_admin = "super_admin"
-    school_admin = "school_admin"
-    it_support = "it_support"
-    teacher = "teacher"
-    student = "student"
-    guardian = "guardian"
-    government = "government"
-    corporation = "corporation"
-    ngo_partner = "ngo_partner"
 
 class School(Base):
     __tablename__ = "schools"

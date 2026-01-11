@@ -1,0 +1,539 @@
+"""
+Unified Asset Generator Manager
+Central coordinator for all graphics, 3D models, and visualization generation
+Integrates with Akulearn skills system for curriculum-aware generation
+"""
+
+import json
+import logging
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+from datetime import datetime
+
+from .math_diagrams import MathDiagramGenerator
+from .shape_3d_generator import Shape3DGenerator
+from .chemistry_models import ChemistryModelGenerator
+from .physics_simulations import PhysicsSimulationGenerator
+from .biology_models import BiologyModelGenerator
+from .plant_models import PlantModelGenerator
+from .molecular_models import MolecularModelGenerator
+from .circuit_models import CircuitModelGenerator
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+
+class AssetGeneratorManager:
+    """Central manager for all asset generation"""
+    
+    def __init__(self, workspace_root: Optional[str] = None):
+        """
+        Initialize asset generator manager
+        
+        Args:
+            workspace_root: Root workspace directory
+        """
+        self.workspace_root = workspace_root or str(Path.cwd())
+        self.generators = {}
+        self.register_generators()
+        
+        # Assets manifest
+        self.manifest_path = Path(self.workspace_root) / "generated_assets" / "assets_manifest.json"
+        self.manifest = self._load_manifest()
+        
+        logger.info(f"AssetGeneratorManager initialized")
+    
+    def register_generators(self):
+        """Register all available generators"""
+        try:
+            self.generators['math_2d'] = MathDiagramGenerator()
+            logger.info("✅ Math diagram generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register math generator: {e}")
+        
+        try:
+            self.generators['shapes_3d'] = Shape3DGenerator()
+            logger.info("✅ 3D shape generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register 3D shape generator: {e}")
+        
+        try:
+            self.generators['chemistry'] = ChemistryModelGenerator()
+            logger.info("✅ Chemistry model generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register chemistry generator: {e}")
+        
+        try:
+            self.generators['physics'] = PhysicsSimulationGenerator()
+            logger.info("✅ Physics simulation generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register physics generator: {e}")
+        
+        try:
+            self.generators['biology'] = BiologyModelGenerator()
+            logger.info("✅ Biology model generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register biology generator: {e}")
+        
+        try:
+            self.generators['plants'] = PlantModelGenerator()
+            logger.info("✅ Plant model generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register plant generator: {e}")
+        
+        try:
+            self.generators['molecular'] = MolecularModelGenerator()
+            logger.info("✅ Molecular model generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register molecular generator: {e}")
+        
+        try:
+            self.generators['circuits'] = CircuitModelGenerator()
+            logger.info("✅ Circuit model generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register circuit generator: {e}")
+    
+    def _load_manifest(self) -> Dict[str, Any]:
+        """Load existing manifest or create new one"""
+        if self.manifest_path.exists():
+            try:
+                with open(self.manifest_path, 'r') as f:
+                    return json.load(f)
+            except Exception as e:
+                logger.warning(f"⚠️ Failed to load manifest: {e}")
+        
+        return {
+            "version": "1.0.0",
+            "created_at": datetime.now().isoformat(),
+            "updated_at": datetime.now().isoformat(),
+            "total_assets": 0,
+            "categories": {
+                "math_diagrams": [],
+                "3d_shapes": [],
+                "molecules": [],
+                "simulations": []
+            }
+        }
+    
+    def _save_manifest(self):
+        """Save manifest to disk"""
+        try:
+            self.manifest_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(self.manifest_path, 'w') as f:
+                json.dump(self.manifest, f, indent=2)
+            logger.info(f"✅ Manifest saved: {self.manifest_path}")
+        except Exception as e:
+            logger.error(f"❌ Failed to save manifest: {e}")
+    
+    def generate_for_lesson(self, lesson: Dict[str, Any]) -> Dict[str, List[str]]:
+        """
+        Generate appropriate assets for a lesson
+        
+        Args:
+            lesson: Lesson metadata with subject, topic, grade_level, etc.
+            
+        Returns:
+            Dictionary of generated asset paths by category
+        """
+        subject = lesson.get('subject', '').lower()
+        topic = lesson.get('topic', '').lower()
+        grade_level = lesson.get('grade_level', '')
+        
+        generated_assets = {
+            "math_diagrams": [],
+            "3d_shapes": [],
+            "molecules": [],
+            "simulations": [],
+            "biology_models": [],
+            "plant_models": [],
+            "molecular_models": [],
+            "circuit_models": []
+        }
+        
+        logger.info(f"📚 Generating assets for {subject} - {topic} ({grade_level})")
+        
+        # Mathematics diagrams
+        if subject in ['mathematics', 'math']:
+            try:
+                if 'trigonometry' in topic or 'trig' in topic:
+                    path = self.generators['math_2d'].generate_trigonometric_functions()
+                    generated_assets['math_diagrams'].append(path)
+                
+                elif 'quadratic' in topic or 'parabola' in topic:
+                    path = self.generators['math_2d'].generate_quadratic_function()
+                    generated_assets['math_diagrams'].append(path)
+                
+                elif 'circle' in topic or 'geometry' in topic:
+                    path = self.generators['math_2d'].generate_circle_theorem()
+                    generated_assets['math_diagrams'].append(path)
+                
+                elif 'statistics' in topic or 'data' in topic:
+                    path = self.generators['math_2d'].generate_histogram()
+                    generated_assets['math_diagrams'].append(path)
+                    path = self.generators['math_2d'].generate_scatter_plot()
+                    generated_assets['math_diagrams'].append(path)
+            except Exception as e:
+                logger.warning(f"⚠️ Math generation failed: {e}")
+        
+        # 3D Shapes for geometry
+        if 'geometry' in topic or 'solid' in topic or 'shape' in topic:
+            try:
+                shapes = self.generators['shapes_3d'].generate_all_basic_shapes()
+                generated_assets['3d_shapes'] = [s['glb_file'] for s in shapes]
+            except Exception as e:
+                logger.warning(f"⚠️ 3D shape generation failed: {e}")
+        
+        # Biology models for anatomy/physiology
+        if subject in ['biology', 'bio']:
+            try:
+                if 'biology' in self.generators:
+                    if 'digestive' in topic or 'digestion' in topic:
+                        meta = self.generators['biology'].generate_digestive_system()
+                        generated_assets['biology_models'] = [meta['filepath']]
+                    elif 'respiratory' in topic or 'breathing' in topic:
+                        meta = self.generators['biology'].generate_respiratory_system()
+                        generated_assets['biology_models'] = [meta['filepath']]
+                    elif 'circulatory' in topic or 'heart' in topic or 'blood' in topic:
+                        meta = self.generators['biology'].generate_circulatory_system()
+                        generated_assets['biology_models'] = [meta['filepath']]
+                    elif 'excretory' in topic or 'kidney' in topic:
+                        meta = self.generators['biology'].generate_excretory_system()
+                        generated_assets['biology_models'] = [meta['filepath']]
+                    elif 'skeletal' in topic or 'bone' in topic:
+                        meta = self.generators['biology'].generate_skeletal_system()
+                        generated_assets['biology_models'] = [meta['filepath']]
+                    elif 'nervous' in topic or 'brain' in topic:
+                        meta = self.generators['biology'].generate_nervous_system()
+                        generated_assets['biology_models'] = [meta['filepath']]
+                    elif 'muscular' in topic or 'muscle' in topic:
+                        meta = self.generators['biology'].generate_muscular_system()
+                        generated_assets['biology_models'] = [meta['filepath']]
+                    elif 'body' in topic or 'anatomy' in topic and 'plant' not in topic:
+                        # Generate all body systems
+                        systems = self.generators['biology'].generate_all_body_systems()
+                        generated_assets['biology_models'] = [s['filepath'] for s in systems]
+                    
+                    # Plant models for botany
+                    elif 'plant' in topic or 'photosynthesis' in topic or 'leaf' in topic or 'root' in topic:
+                        if 'plants' in self.generators:
+                            if 'cell' in topic:
+                                meta = self.generators['plants'].generate_plant_cell()
+                                generated_assets['plant_models'] = [meta['filepath']]
+                            elif 'leaf' in topic:
+                                meta = self.generators['plants'].generate_leaf_structure()
+                                generated_assets['plant_models'] = [meta['filepath']]
+                            elif 'root' in topic:
+                                meta = self.generators['plants'].generate_root_system()
+                                generated_assets['plant_models'] = [meta['filepath']]
+                            elif 'flower' in topic:
+                                meta = self.generators['plants'].generate_flower_structure()
+                                generated_assets['plant_models'] = [meta['filepath']]
+                            elif 'photosynthesis' in topic:
+                                meta = self.generators['plants'].generate_photosynthesis_process()
+                                generated_assets['plant_models'] = [meta['filepath']]
+                            elif 'plant' in topic:
+                                # Generate all plant models
+                                plants = self.generators['plants'].generate_all_plant_models()
+                                generated_assets['plant_models'] = [p['filepath'] for p in plants]
+            except Exception as e:
+                logger.warning(f"⚠️ Biology/Plant generation failed: {e}")
+        
+        # Chemistry molecules
+        if subject in ['chemistry', 'chem']:
+            try:
+                # Check for molecular structure topics (Priority #3)
+                if 'molecular' in self.generators:
+                    if 'atom' in topic or 'atomic' in topic:
+                        meta = self.generators['molecular'].generate_atom_models()
+                        generated_assets['molecules'].append(meta['filepath'])
+                    elif 'ionic' in topic or 'ion' in topic:
+                        meta = self.generators['molecular'].generate_ionic_bonding()
+                        generated_assets['molecules'].append(meta['filepath'])
+                    elif 'covalent' in topic or 'molecule' in topic:
+                        meta = self.generators['molecular'].generate_covalent_bonding()
+                        generated_assets['molecules'].append(meta['filepath'])
+                    elif 'metallic' in topic or 'metal' in topic:
+                        meta = self.generators['molecular'].generate_metallic_bonding()
+                        generated_assets['molecules'].append(meta['filepath'])
+                    elif 'hydrocarbon' in topic or 'alkane' in topic:
+                        meta = self.generators['molecular'].generate_hydrocarbon_series()
+                        generated_assets['molecules'].append(meta['filepath'])
+                    elif 'benzene' in topic or 'aromatic' in topic:
+                        meta = self.generators['molecular'].generate_benzene_ring()
+                        generated_assets['molecules'].append(meta['filepath'])
+                    elif 'protein' in topic or 'amino' in topic:
+                        meta = self.generators['molecular'].generate_protein_structure()
+                        generated_assets['molecules'].append(meta['filepath'])
+                    elif 'dna' in topic or 'helix' in topic or 'nucleic' in topic:
+                        meta = self.generators['molecular'].generate_dna_helix()
+                        generated_assets['molecules'].append(meta['filepath'])
+                    elif 'bonding' in topic or 'structure' in topic:
+                        # Generate all molecular models
+                        molecules = self.generators['molecular'].generate_all_molecular_models()
+                        generated_assets['molecules'] = [m['filepath'] for m in molecules]
+                
+                # Fallback to chemistry generator for simple molecules
+                if 'organic' in topic or 'hydrocarbon' in topic:
+                    molecules = self.generators['chemistry'].generate_hydrocarbons()
+                    generated_assets['molecules'] = [m['mol_file'] for m in molecules]
+                else:
+                    molecules = self.generators['chemistry'].generate_common_molecules()
+                    generated_assets['molecules'] = [m['mol_file'] for m in molecules]
+            except Exception as e:
+                logger.warning(f"⚠️ Chemistry generation failed: {e}")
+        
+        # Physics simulations
+        if subject in ['physics', 'phys']:
+            try:
+                # Check for circuit topics (Priority #4)
+                if 'circuits' in self.generators:
+                    if 'series' in topic and 'circuit' in topic:
+                        meta = self.generators['circuits'].generate_series_circuit()
+                        generated_assets['simulations'].append(meta['filepath'])
+                    elif 'parallel' in topic and 'circuit' in topic:
+                        meta = self.generators['circuits'].generate_parallel_circuit()
+                        generated_assets['simulations'].append(meta['filepath'])
+                    elif 'component' in topic or 'resistor' in topic or 'capacitor' in topic:
+                        meta = self.generators['circuits'].generate_circuit_components()
+                        generated_assets['simulations'].append(meta['filepath'])
+                    elif 'transformer' in topic:
+                        meta = self.generators['circuits'].generate_transformer()
+                        generated_assets['simulations'].append(meta['filepath'])
+                    elif 'motor' in topic:
+                        meta = self.generators['circuits'].generate_electric_motor()
+                        generated_assets['simulations'].append(meta['filepath'])
+                    elif 'generator' in topic:
+                        meta = self.generators['circuits'].generate_generator()
+                        generated_assets['simulations'].append(meta['filepath'])
+                    elif 'circuit' in topic or 'electric' in topic or 'electrical' in topic:
+                        # Generate all circuit models
+                        circuits = self.generators['circuits'].generate_all_circuit_models()
+                        generated_assets['simulations'] = [c['filepath'] for c in circuits]
+                
+                # Other physics simulations
+                if 'motion' in topic or 'pendulum' in topic:
+                    path = self.generators['physics'].generate_pendulum_simulation()
+                    generated_assets['simulations'].append(path)
+                elif 'projectile' in topic:
+                    path = self.generators['physics'].generate_projectile_motion_simulation()
+                    generated_assets['simulations'].append(path)
+                elif 'wave' in topic:
+                    path = self.generators['physics'].generate_wave_simulation()
+                    generated_assets['simulations'].append(path)
+            except Exception as e:
+                logger.warning(f"⚠️ Physics generation failed: {e}")
+        
+        return generated_assets
+    
+    def generate_all_priority_assets(self) -> Dict[str, List[Dict[str, Any]]]:
+        """Generate all high-priority assets from curriculum"""
+        results = {
+            "math_diagrams": {},
+            "geometric_shapes": [],
+            "chemistry_molecules": {},
+            "physics_simulations": {},
+            "biology_models": [],
+            "plant_models": [],
+            "molecular_models": [],
+            "circuit_models": []
+        }
+        
+        logger.info("🎨 Generating all priority assets...\n")
+        
+        # Generate 2D mathematical diagrams
+        print("\n📊 Generating mathematical diagrams...")
+        try:
+            math_diagrams = self.generators['math_2d'].generate_all_basic_diagrams()
+            results['math_diagrams'] = math_diagrams
+            print(f"✅ Generated {len(math_diagrams)} mathematical diagrams")
+        except Exception as e:
+            logger.warning(f"⚠️ Math generation failed: {e}")
+        
+        # Generate 3D geometric shapes
+        print("\n🎲 Generating 3D geometric shapes...")
+        try:
+            shapes = self.generators['shapes_3d'].generate_all_basic_shapes()
+            results['geometric_shapes'] = shapes
+            print(f"✅ Generated {len(shapes)} 3D shapes")
+        except Exception as e:
+            logger.warning(f"⚠️ 3D shape generation failed: {e}")
+        
+        # Generate chemistry molecules
+        print("\n⚗️ Generating chemistry molecules...")
+        try:
+            molecules = self.generators['chemistry'].generate_all_priority_molecules()
+            results['chemistry_molecules'] = molecules
+            total_mols = sum(len(v) for v in molecules.values())
+            print(f"✅ Generated {total_mols} chemistry molecules")
+        except Exception as e:
+            logger.warning(f"⚠️ Chemistry generation failed: {e}")
+        
+        # Generate physics simulations
+        print("\n🔬 Generating physics simulations...")
+        try:
+            simulations = self.generators['physics'].generate_all_simulations()
+            results['physics_simulations'] = simulations
+            print(f"✅ Generated {len(simulations)} physics simulations")
+        except Exception as e:
+            logger.warning(f"⚠️ Physics generation failed: {e}")
+        
+        # Generate biology body systems
+        print("\n🧬 Generating biology body systems...")
+        try:
+            if 'biology' in self.generators:
+                body_systems = self.generators['biology'].generate_all_body_systems()
+                results['biology_models'] = body_systems
+                print(f"✅ Generated {len(body_systems)} biology models")
+        except Exception as e:
+            logger.warning(f"⚠️ Biology generation failed: {e}")
+        
+        # Generate plant models
+        print("\n🌱 Generating plant anatomy models...")
+        try:
+            if 'plants' in self.generators:
+                plant_models = self.generators['plants'].generate_all_plant_models()
+                results['plant_models'] = plant_models
+                print(f"✅ Generated {len(plant_models)} plant models")
+        except Exception as e:
+            logger.warning(f"⚠️ Plant generation failed: {e}")
+        
+        # Generate molecular models
+        print("\n🧪 Generating molecular structure models...")
+        try:
+            if 'molecular' in self.generators:
+                molecular_models = self.generators['molecular'].generate_all_molecular_models()
+                results['molecular_models'] = molecular_models
+                print(f"✅ Generated {len(molecular_models)} molecular models")
+        except Exception as e:
+            logger.warning(f"⚠️ Molecular generation failed: {e}")
+        
+        # Generate circuit models
+        print("\n⚡ Generating circuit and electrical models...")
+        try:
+            if 'circuits' in self.generators:
+                circuit_models = self.generators['circuits'].generate_all_circuit_models()
+                results['circuit_models'] = circuit_models
+                print(f"✅ Generated {len(circuit_models)} circuit models")
+        except Exception as e:
+            logger.warning(f"⚠️ Circuit generation failed: {e}")
+        
+        # Update manifest
+        self.manifest['updated_at'] = datetime.now().isoformat()
+        self.manifest['total_assets'] = (
+            len(results['math_diagrams']) +
+            len(results['geometric_shapes']) +
+            sum(len(v) for v in results['chemistry_molecules'].values()) +
+            len(results['physics_simulations']) +
+            len(results['biology_models']) +
+            len(results['plant_models']) +
+            len(results['molecular_models']) +
+            len(results['circuit_models'])
+        )
+        self._save_manifest()
+        
+        print("\n" + "="*60)
+        print(f"✅ Total assets generated: {self.manifest['total_assets']}")
+        print(f"📄 Manifest saved: {self.manifest_path}")
+        print("="*60)
+        
+        return results
+    
+    def generate_subject_pack(self, subject: str, grade_level: str = None) -> Dict[str, Any]:
+        """
+        Generate complete asset pack for a subject
+        
+        Args:
+            subject: Subject name (Mathematics, Chemistry, Physics, etc.)
+            grade_level: Optional grade level
+            
+        Returns:
+            Dictionary of generated assets
+        """
+        logger.info(f"📚 Generating asset pack for {subject} ({grade_level or 'all levels'})")
+        
+        pack = {
+            "subject": subject,
+            "grade_level": grade_level,
+            "generated_at": datetime.now().isoformat(),
+            "assets": {}
+        }
+        
+        subject_lower = subject.lower()
+        
+        # Generate subject-specific assets
+        if subject_lower in ['mathematics', 'math']:
+            try:
+                pack['assets']['diagrams'] = self.generators['math_2d'].generate_all_basic_diagrams()
+                pack['assets']['shapes'] = self.generators['shapes_3d'].generate_all_basic_shapes()
+            except Exception as e:
+                logger.warning(f"⚠️ Failed to generate math pack: {e}")
+        
+        elif subject_lower in ['chemistry', 'chem']:
+            try:
+                pack['assets']['molecules'] = self.generators['chemistry'].generate_all_priority_molecules()
+            except Exception as e:
+                logger.warning(f"⚠️ Failed to generate chemistry pack: {e}")
+        
+        elif subject_lower in ['physics', 'phys']:
+            try:
+                pack['assets']['simulations'] = self.generators['physics'].generate_all_simulations()
+            except Exception as e:
+                logger.warning(f"⚠️ Failed to generate physics pack: {e}")
+        
+        return pack
+    
+    def get_statistics(self) -> Dict[str, Any]:
+        """Get generation statistics"""
+        stats = {
+            "total_generators": len(self.generators),
+            "generators": list(self.generators.keys()),
+            "manifest": self.manifest,
+            "timestamp": datetime.now().isoformat()
+        }
+        return stats
+
+
+def main():
+    """Command-line interface for asset generation"""
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Akulearn Graphics and 3D Asset Generator")
+    parser.add_argument('--action', choices=['generate_all', 'generate_pack', 'generate_lesson', 'stats'],
+                       default='generate_all', help='Action to perform')
+    parser.add_argument('--subject', help='Subject for asset pack generation')
+    parser.add_argument('--grade', help='Grade level')
+    parser.add_argument('--lesson', type=json.loads, help='Lesson metadata as JSON')
+    
+    args = parser.parse_args()
+    
+    manager = AssetGeneratorManager()
+    
+    if args.action == 'generate_all':
+        print("\n🎨 Generating all priority assets...\n")
+        results = manager.generate_all_priority_assets()
+        print("\n✅ Generation complete!")
+    
+    elif args.action == 'generate_pack' and args.subject:
+        print(f"\n📚 Generating {args.subject} asset pack...\n")
+        pack = manager.generate_subject_pack(args.subject, args.grade)
+        print(f"\n✅ {args.subject} pack generated!")
+        print(f"Assets: {len(pack['assets'])} categories")
+    
+    elif args.action == 'generate_lesson' and args.lesson:
+        print(f"\n📖 Generating lesson assets...\n")
+        assets = manager.generate_for_lesson(args.lesson)
+        print(f"\n✅ Lesson assets generated!")
+        for category, files in assets.items():
+            if files:
+                print(f"{category}: {len(files)} files")
+    
+    elif args.action == 'stats':
+        stats = manager.get_statistics()
+        print("\n" + "="*60)
+        print("📊 Asset Generation Statistics")
+        print("="*60)
+        print(json.dumps(stats, indent=2))
+
+
+if __name__ == "__main__":
+    main()

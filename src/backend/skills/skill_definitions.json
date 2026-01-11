@@ -377,6 +377,34 @@
       "estimated_duration": "2-8 minutes",
       "dependencies": [],
       "instruction_template": "flashcard_generation_instructions.md"
+    },
+    "graphics_diagram_generator": {
+      "id": "graphics_diagram_generator",
+      "name": "Graphics & Diagrams Generator",
+      "description": "Generate educational graphics, diagrams, and 3D models including mathematical diagrams, geometric shapes, molecular structures, and physics simulations",
+      "category": "content_generation",
+      "complexity": "medium",
+      "required_context": [
+        "subject",
+        "topic"
+      ],
+      "optional_context": [
+        "grade_level",
+        "asset_type",
+        "dimensions",
+        "output_format"
+      ],
+      "tools": [
+        "src/backend/generators/asset_generator_manager.py",
+        "src/backend/generators/math_diagrams.py",
+        "src/backend/generators/shape_3d_generator.py",
+        "src/backend/generators/chemistry_models.py",
+        "src/backend/generators/physics_simulations.py"
+      ],
+      "output_format": "asset_manifest",
+      "estimated_duration": "2-15 minutes",
+      "dependencies": [],
+      "instruction_template": "graphics_generation_instructions.md"
     }
   },
   "skill_categories": {

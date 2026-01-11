@@ -28,6 +28,23 @@
 				],
 				"module": "uvicorn"
 			}
+		},
+		{
+			"label": "Start FastAPI Server",
+			"type": "shell",
+			"command": "${workspaceFolder}/myenv/Scripts/python.exe",
+			"args": [
+				"-m",
+				"uvicorn",
+				"src.backend.api.learning:app",
+				"--reload",
+				"--host",
+				"127.0.0.1",
+				"--port",
+				"8000"
+			],
+			"isBackground": true,
+			"problemMatcher": []
 		}
 	]
 }
