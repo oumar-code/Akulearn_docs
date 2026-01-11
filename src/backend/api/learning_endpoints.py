@@ -1,7 +1,9 @@
 from src.backend.database.models import UserProgress
 from datetime import datetime
-# --- Track Topic Completion Endpoint ---
 from fastapi import status
+from pydantic import BaseModel
+
+# --- Track Topic Completion Endpoint ---
 class TrackTopicCompletionRequest(BaseModel):
     user_id: str
     topic_id: str
