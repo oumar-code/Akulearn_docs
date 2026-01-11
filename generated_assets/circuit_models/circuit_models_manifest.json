@@ -1,0 +1,181 @@
+{
+  "collection": "Circuit and Electrical Components",
+  "priority": 4,
+  "exam_weight": "Very High",
+  "subject": "Physics",
+  "topic_code": "phy_008",
+  "grade_levels": [
+    "SS2",
+    "SS3"
+  ],
+  "curriculum_standards": [
+    "WAEC",
+    "NECO"
+  ],
+  "total_models": 6,
+  "models": [
+    {
+      "filename": "series_circuit.glb",
+      "filepath": "generated_assets\\circuit_models\\series_circuit.glb",
+      "model": "Series Circuit",
+      "components": [
+        "Battery",
+        "3 Light bulbs",
+        "Connecting wires"
+      ],
+      "exam_topics": [
+        "phy_008"
+      ],
+      "grade_levels": [
+        "SS2",
+        "SS3"
+      ],
+      "vertices": 3642,
+      "faces": 7168,
+      "file_size_kb": 141.7890625,
+      "educational_notes": "Shows series circuit where current flows through single path, same current through all components",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    },
+    {
+      "filename": "parallel_circuit.glb",
+      "filepath": "generated_assets\\circuit_models\\parallel_circuit.glb",
+      "model": "Parallel Circuit",
+      "components": [
+        "Battery",
+        "3 Light bulbs (parallel)",
+        "Junction points",
+        "Connecting wires"
+      ],
+      "exam_topics": [
+        "phy_008"
+      ],
+      "grade_levels": [
+        "SS2",
+        "SS3"
+      ],
+      "vertices": 4230,
+      "faces": 8320,
+      "file_size_kb": 164.56640625,
+      "educational_notes": "Shows parallel circuit with multiple paths, same voltage across all branches",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    },
+    {
+      "filename": "circuit_components.glb",
+      "filepath": "generated_assets\\circuit_models\\circuit_components.glb",
+      "model": "Circuit Components Library",
+      "components": [
+        "Battery",
+        "Resistor",
+        "Capacitor",
+        "LED"
+      ],
+      "exam_topics": [
+        "phy_008"
+      ],
+      "grade_levels": [
+        "SS2",
+        "SS3"
+      ],
+      "vertices": 1284,
+      "faces": 2496,
+      "file_size_kb": 50.28125,
+      "educational_notes": "Individual circuit components for identification and circuit building exercises",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    },
+    {
+      "filename": "transformer.glb",
+      "filepath": "generated_assets\\circuit_models\\transformer.glb",
+      "model": "Transformer",
+      "components": [
+        "Iron core",
+        "Primary coil (10 turns)",
+        "Secondary coil (5 turns)",
+        "Terminals"
+      ],
+      "exam_topics": [
+        "phy_008"
+      ],
+      "grade_levels": [
+        "SS2",
+        "SS3"
+      ],
+      "vertices": 15632,
+      "faces": 31244,
+      "file_size_kb": 611.359375,
+      "educational_notes": "Step-down transformer with primary (more turns) and secondary (fewer turns) coils",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    },
+    {
+      "filename": "electric_motor.glb",
+      "filepath": "generated_assets\\circuit_models\\electric_motor.glb",
+      "model": "DC Electric Motor",
+      "components": [
+        "Armature coil",
+        "Permanent magnets",
+        "Commutator",
+        "Brushes",
+        "Shaft"
+      ],
+      "exam_topics": [
+        "phy_008"
+      ],
+      "grade_levels": [
+        "SS2",
+        "SS3"
+      ],
+      "vertices": 390,
+      "faces": 736,
+      "file_size_kb": 15.59375,
+      "educational_notes": "DC motor showing electromagnetic induction principles and torque generation",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    },
+    {
+      "filename": "generator.glb",
+      "filepath": "generated_assets\\circuit_models\\generator.glb",
+      "model": "AC Generator",
+      "components": [
+        "Rotating armature",
+        "Permanent magnets",
+        "Slip rings",
+        "Brushes",
+        "Shaft"
+      ],
+      "exam_topics": [
+        "phy_008"
+      ],
+      "grade_levels": [
+        "SS2",
+        "SS3"
+      ],
+      "vertices": 560,
+      "faces": 1084,
+      "file_size_kb": 22.34375,
+      "educational_notes": "AC generator showing electromagnetic induction and alternating current production",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    }
+  ]
+}

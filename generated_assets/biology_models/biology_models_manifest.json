@@ -1,0 +1,219 @@
+{
+  "collection": "Human Body Systems",
+  "priority": 1,
+  "exam_weight": "Very High",
+  "subjects": [
+    "Biology"
+  ],
+  "grade_levels": [
+    "SS1",
+    "SS2",
+    "SS3"
+  ],
+  "curriculum_standards": [
+    "WAEC",
+    "NECO"
+  ],
+  "total_models": 7,
+  "models": [
+    {
+      "filename": "digestive_system.glb",
+      "filepath": "generated_assets\\biology_models\\digestive_system.glb",
+      "system": "Digestive System",
+      "components": [
+        "Esophagus",
+        "Stomach",
+        "Small Intestine",
+        "Large Intestine",
+        "Liver",
+        "Pancreas"
+      ],
+      "exam_topics": [
+        "bio_003",
+        "bio_004"
+      ],
+      "grade_levels": [
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "vertices": 2124,
+      "faces": 4224,
+      "file_size_kb": 83.59,
+      "educational_notes": "Complete digestive tract showing major organs and their spatial relationships",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    },
+    {
+      "filename": "respiratory_system.glb",
+      "filepath": "generated_assets\\biology_models\\respiratory_system.glb",
+      "system": "Respiratory System",
+      "components": [
+        "Trachea",
+        "Bronchi (L/R)",
+        "Lungs (L/R)"
+      ],
+      "exam_topics": [
+        "bio_004"
+      ],
+      "grade_levels": [
+        "SS1",
+        "SS2"
+      ],
+      "vertices": 1482,
+      "faces": 2944,
+      "file_size_kb": 58.55,
+      "educational_notes": "Respiratory system showing airway passage from trachea to lungs",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    },
+    {
+      "filename": "circulatory_system.glb",
+      "filepath": "generated_assets\\biology_models\\circulatory_system.glb",
+      "system": "Circulatory System",
+      "components": [
+        "Heart",
+        "Aorta",
+        "Vena Cava",
+        "Pulmonary Arteries/Veins"
+      ],
+      "exam_topics": [
+        "bio_003",
+        "bio_004"
+      ],
+      "grade_levels": [
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "vertices": 906,
+      "faces": 1792,
+      "file_size_kb": 36.05,
+      "educational_notes": "Heart with major blood vessels showing circulation pathways",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    },
+    {
+      "filename": "excretory_system.glb",
+      "filepath": "generated_assets\\biology_models\\excretory_system.glb",
+      "system": "Excretory System",
+      "components": [
+        "Kidneys (L/R)",
+        "Ureters (L/R)",
+        "Bladder"
+      ],
+      "exam_topics": [
+        "bio_005"
+      ],
+      "grade_levels": [
+        "SS2",
+        "SS3"
+      ],
+      "vertices": 2058,
+      "faces": 4096,
+      "file_size_kb": 81.1,
+      "educational_notes": "Excretory system showing kidneys, ureters, and bladder with nephron structure",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    },
+    {
+      "filename": "skeletal_system.glb",
+      "filepath": "generated_assets\\biology_models\\skeletal_system.glb",
+      "system": "Skeletal System",
+      "components": [
+        "Skull",
+        "Spine",
+        "Ribcage",
+        "Pelvis",
+        "Major Bones"
+      ],
+      "exam_topics": [
+        "bio_006"
+      ],
+      "grade_levels": [
+        "SS1",
+        "SS2",
+        "SS3"
+      ],
+      "vertices": 2256,
+      "faces": 4480,
+      "file_size_kb": 88.68,
+      "educational_notes": "Complete human skeleton showing major bone structures and articulations",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    },
+    {
+      "filename": "nervous_system.glb",
+      "filepath": "generated_assets\\biology_models\\nervous_system.glb",
+      "system": "Nervous System",
+      "components": [
+        "Brain",
+        "Spinal Cord",
+        "Peripheral Nerves"
+      ],
+      "exam_topics": [
+        "bio_006"
+      ],
+      "grade_levels": [
+        "SS2",
+        "SS3"
+      ],
+      "vertices": 972,
+      "faces": 1920,
+      "file_size_kb": 38.6,
+      "educational_notes": "Central and peripheral nervous system with brain, spinal cord, and major nerves",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    },
+    {
+      "filename": "muscular_system.glb",
+      "filepath": "generated_assets\\biology_models\\muscular_system.glb",
+      "system": "Muscular System",
+      "components": [
+        "Chest",
+        "Back",
+        "Biceps",
+        "Quadriceps",
+        "Calves",
+        "Abdominals"
+      ],
+      "exam_topics": [
+        "bio_006"
+      ],
+      "grade_levels": [
+        "SS1",
+        "SS2"
+      ],
+      "vertices": 5778,
+      "faces": 11520,
+      "file_size_kb": 226.18,
+      "educational_notes": "Major muscle groups showing voluntary muscles and their locations",
+      "ar_ready": true,
+      "curriculum_standard": [
+        "WAEC",
+        "NECO"
+      ]
+    }
+  ],
+  "ar_vr_ready": true,
+  "file_format": "GLB (glTF 2.0 binary)",
+  "generated_date": "2026-01-11"
+}
