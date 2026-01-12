@@ -1,0 +1,64 @@
+{
+  "models": [
+    {
+      "name": "animal_cell",
+      "filepath": "generated_assets\\cell_biology\\animal_cell.glb",
+      "size_kb": 91.55,
+      "description": "Complete animal cell with nucleus, mitochondria, ER, Golgi, ribosomes, lysosomes, centrioles",
+      "curriculum": [
+        "bio_001"
+      ]
+    },
+    {
+      "name": "plant_vs_animal_cell",
+      "filepath": "generated_assets\\cell_biology\\plant_vs_animal_cell.glb",
+      "size_kb": 91.48,
+      "description": "Side-by-side comparison: animal cell (left) vs plant cell (right) with cell wall, chloroplasts, large vacuole",
+      "curriculum": [
+        "bio_001"
+      ]
+    },
+    {
+      "name": "mitochondria",
+      "filepath": "generated_assets\\cell_biology\\mitochondria.glb",
+      "size_kb": 29.63,
+      "description": "Mitochondria cross-section showing outer/inner membranes, cristae, and matrix",
+      "curriculum": [
+        "bio_001"
+      ]
+    },
+    {
+      "name": "cell_membrane",
+      "filepath": "generated_assets\\cell_biology\\cell_membrane.glb",
+      "size_kb": 52.33,
+      "description": "Phospholipid bilayer with heads, tails, and embedded protein molecules",
+      "curriculum": [
+        "bio_001"
+      ]
+    },
+    {
+      "name": "nucleus",
+      "filepath": "generated_assets\\cell_biology\\nucleus.glb",
+      "size_kb": 83.24,
+      "description": "Nucleus showing nuclear envelope with pores, chromatin, and nucleolus",
+      "curriculum": [
+        "bio_001"
+      ]
+    },
+    {
+      "name": "cell_division",
+      "filepath": "generated_assets\\cell_biology\\cell_division.glb",
+      "size_kb": 33.89,
+      "description": "Mitosis stages: Prophase, Metaphase, Anaphase, Telophase showing chromosome movement and cytokinesis",
+      "curriculum": [
+        "bio_001"
+      ]
+    }
+  ],
+  "total_models": 6,
+  "total_size_kb": 382.12,
+  "curriculum_alignment": {
+    "bio_001": "Cell Biology: Structure and Function"
+  },
+  "output_dir": "generated_assets\\cell_biology"
+}
