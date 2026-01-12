@@ -18,6 +18,7 @@ from .wave_optics import WaveOpticsGenerator
 from .cell_biology import CellBiologyGenerator
 from .simple_machines import SimpleMachinesGenerator
 from .earth_space import EarthSpaceGenerator
+from .agriculture import AgricultureModelGenerator
 from .asset_generator_manager import AssetGeneratorManager
 
 __all__ = [

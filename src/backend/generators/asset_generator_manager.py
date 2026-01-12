@@ -23,6 +23,7 @@ from .wave_optics import WaveOpticsGenerator
 from .cell_biology import CellBiologyGenerator
 from .simple_machines import SimpleMachinesGenerator
 from .earth_space import EarthSpaceGenerator
+from .agriculture import AgricultureModelGenerator
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -127,6 +128,12 @@ class AssetGeneratorManager:
             logger.info("✅ Earth & Space generator registered")
         except Exception as e:
             logger.warning(f"⚠️ Failed to register earth/space generator: {e}")
+        
+        try:
+            self.generators['agriculture'] = AgricultureModelGenerator()
+            logger.info("✅ Agriculture generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register agriculture generator: {e}")
     
     def _load_manifest(self) -> Dict[str, Any]:
         """Load existing manifest or create new one"""
@@ -488,6 +495,34 @@ class AssetGeneratorManager:
             except Exception as e:
                 logger.warning(f"⚠️ Physics generation failed: {e}")
         
+        # Agriculture models (Priority #10)
+        if subject in ['agriculture', 'agricultural science', 'agric']:
+            try:
+                if 'agriculture' in self.generators:
+                    if 'soil' in topic or 'layer' in topic:
+                        meta = self.generators['agriculture'].generate_soil_layers()
+                        generated_assets['agriculture_models'].append(meta['filepath'])
+                    elif 'crop' in topic or 'growth' in topic or 'maize' in topic or 'rice' in topic:
+                        meta = self.generators['agriculture'].generate_crop_growth_stages()
+                        generated_assets['agriculture_models'].append(meta['filepath'])
+                    elif 'livestock' in topic or 'animal' in topic or 'cow' in topic or 'goat' in topic or 'chicken' in topic:
+                        meta = self.generators['agriculture'].generate_livestock_anatomy()
+                        generated_assets['agriculture_models'].append(meta['filepath'])
+                    elif 'tool' in topic or 'hoe' in topic or 'cutlass' in topic or 'plough' in topic:
+                        meta = self.generators['agriculture'].generate_farm_tools_3d()
+                        generated_assets['agriculture_models'].append(meta['filepath'])
+                    elif 'irrigation' in topic or 'water' in topic or 'drip' in topic or 'sprinkler' in topic:
+                        meta = self.generators['agriculture'].generate_irrigation_systems()
+                        generated_assets['agriculture_models'].append(meta['filepath'])
+                    elif 'greenhouse' in topic:
+                        meta = self.generators['agriculture'].generate_greenhouse()
+                        generated_assets['agriculture_models'].append(meta['filepath'])
+                    elif 'agr' in topic or 'farm' in topic:
+                        models = self.generators['agriculture'].generate_all_models()
+                        generated_assets['agriculture_models'] = [m['filepath'] for m in models]
+            except Exception as e:
+                logger.warning(f"⚠️ Agriculture generation failed: {e}")
+        
         return generated_assets
     
     def generate_all_priority_assets(self) -> Dict[str, List[Dict[str, Any]]]:
@@ -632,6 +667,16 @@ class AssetGeneratorManager:
         except Exception as e:
             logger.warning(f"⚠️ Earth/space generation failed: {e}")
         
+        # Generate agriculture models
+        print("\n🌾 Generating agriculture models...")
+        try:
+            if 'agriculture' in self.generators:
+                agriculture_models = self.generators['agriculture'].generate_all_models()
+                results['agriculture_models'] = agriculture_models
+                print(f"✅ Generated {len(agriculture_models)} agriculture models")
+        except Exception as e:
+            logger.warning(f"⚠️ Agriculture generation failed: {e}")
+        
         # Update manifest
         self.manifest['updated_at'] = datetime.now().isoformat()
         self.manifest['total_assets'] = (
@@ -647,7 +692,8 @@ class AssetGeneratorManager:
             len(results.get('optics_models', [])) +
             len(results.get('cell_models', [])) +
             len(results.get('machine_models', [])) +
-            len(results.get('space_models', []))
+            len(results.get('space_models', [])) +
+            len(results.get('agriculture_models', []))
         )
         self._save_manifest()
         
