@@ -20,6 +20,8 @@ from .molecular_models import MolecularModelGenerator
 from .circuit_models import CircuitModelGenerator
 from .geometric_shapes import GeometricShapeGenerator
 from .wave_optics import WaveOpticsGenerator
+from .cell_biology import CellBiologyGenerator
+from .simple_machines import SimpleMachinesGenerator
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -106,6 +108,18 @@ class AssetGeneratorManager:
             logger.info("✅ Wave & Optics generator registered")
         except Exception as e:
             logger.warning(f"⚠️ Failed to register wave/optics generator: {e}")
+        
+        try:
+            self.generators['cells'] = CellBiologyGenerator()
+            logger.info("✅ Cell Biology generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register cell biology generator: {e}")
+        
+        try:
+            self.generators['machines'] = SimpleMachinesGenerator()
+            logger.info("✅ Simple Machines generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register simple machines generator: {e}")
     
     def _load_manifest(self) -> Dict[str, Any]:
         """Load existing manifest or create new one"""
@@ -281,6 +295,32 @@ class AssetGeneratorManager:
                                 # Generate all plant models
                                 plants = self.generators['plants'].generate_all_plant_models()
                                 generated_assets['plant_models'] = [p['filepath'] for p in plants]
+                    
+                    # Cell biology models (Priority #7)
+                    elif 'cell' in topic or 'mitochondria' in topic or 'nucleus' in topic or 'membrane' in topic or 'division' in topic or 'bio_001' in topic:
+                        if 'cells' in self.generators:
+                            if 'animal cell' in topic or 'animal_cell' in topic:
+                                meta = self.generators['cells'].generate_animal_cell()
+                                generated_assets['cell_models'] = [meta['filepath']]
+                            elif 'plant cell' in topic or 'plant_vs_animal' in topic or 'comparison' in topic:
+                                meta = self.generators['cells'].generate_plant_vs_animal_cell()
+                                generated_assets['cell_models'] = [meta['filepath']]
+                            elif 'mitochondria' in topic or 'powerhouse' in topic:
+                                meta = self.generators['cells'].generate_mitochondria()
+                                generated_assets['cell_models'] = [meta['filepath']]
+                            elif 'membrane' in topic or 'phospholipid' in topic:
+                                meta = self.generators['cells'].generate_cell_membrane()
+                                generated_assets['cell_models'] = [meta['filepath']]
+                            elif 'nucleus' in topic or 'chromatin' in topic or 'nucleolus' in topic:
+                                meta = self.generators['cells'].generate_nucleus()
+                                generated_assets['cell_models'] = [meta['filepath']]
+                            elif 'division' in topic or 'mitosis' in topic or 'meiosis' in topic:
+                                meta = self.generators['cells'].generate_cell_division()
+                                generated_assets['cell_models'] = [meta['filepath']]
+                            elif 'cell' in topic or 'bio_001' in topic:
+                                # Generate all cell biology models
+                                cells = self.generators['cells'].generate_all_models()
+                                generated_assets['cell_models'] = [c['filepath'] for c in cells]
             except Exception as e:
                 logger.warning(f"⚠️ Biology/Plant generation failed: {e}")
         
@@ -379,6 +419,30 @@ class AssetGeneratorManager:
                     elif 'optics' in topic or 'phy_010' in topic or 'phy_011' in topic:
                         models = self.generators['optics'].generate_all_models()
                         generated_assets['optics_models'] = [m['filepath'] for m in models]
+                
+                # Simple Machines models (Priority #8)
+                if 'machines' in self.generators:
+                    if 'lever' in topic or 'fulcrum' in topic:
+                        meta = self.generators['machines'].generate_lever_types()
+                        generated_assets['machine_models'].append(meta['filepath'])
+                    elif 'pulley' in topic:
+                        meta = self.generators['machines'].generate_pulley_systems()
+                        generated_assets['machine_models'].append(meta['filepath'])
+                    elif 'inclined plane' in topic or 'ramp' in topic:
+                        meta = self.generators['machines'].generate_inclined_plane()
+                        generated_assets['machine_models'].append(meta['filepath'])
+                    elif 'wheel' in topic and 'axle' in topic:
+                        meta = self.generators['machines'].generate_wheel_and_axle()
+                        generated_assets['machine_models'].append(meta['filepath'])
+                    elif 'wedge' in topic or 'screw' in topic:
+                        meta = self.generators['machines'].generate_wedge_screw()
+                        generated_assets['machine_models'].append(meta['filepath'])
+                    elif 'gear' in topic:
+                        meta = self.generators['machines'].generate_gear_systems()
+                        generated_assets['machine_models'].append(meta['filepath'])
+                    elif 'simple machine' in topic or 'phy_004' in topic or 'mechanical advantage' in topic:
+                        models = self.generators['machines'].generate_all_models()
+                        generated_assets['machine_models'] = [m['filepath'] for m in models]
                 
                 # Other physics simulations
                 if 'motion' in topic or 'pendulum' in topic:
@@ -507,6 +571,26 @@ class AssetGeneratorManager:
         except Exception as e:
             logger.warning(f"⚠️ Wave/Optics generation failed: {e}")
         
+        # Generate cell biology models
+        print("\n🧬 Generating cell biology models...")
+        try:
+            if 'cells' in self.generators:
+                cell_models = self.generators['cells'].generate_all_models()
+                results['cell_models'] = cell_models
+                print(f"✅ Generated {len(cell_models)} cell biology models")
+        except Exception as e:
+            logger.warning(f"⚠️ Cell biology generation failed: {e}")
+        
+        # Generate simple machines models
+        print("\n🔧 Generating simple machines models...")
+        try:
+            if 'machines' in self.generators:
+                machine_models = self.generators['machines'].generate_all_models()
+                results['machine_models'] = machine_models
+                print(f"✅ Generated {len(machine_models)} simple machines models")
+        except Exception as e:
+            logger.warning(f"⚠️ Simple machines generation failed: {e}")
+        
         # Update manifest
         self.manifest['updated_at'] = datetime.now().isoformat()
         self.manifest['total_assets'] = (
@@ -519,7 +603,9 @@ class AssetGeneratorManager:
             len(results['molecular_models']) +
             len(results['circuit_models']) +
             len(results.get('geometric_shapes', [])) +
-            len(results.get('optics_models', []))
+            len(results.get('optics_models', [])) +
+            len(results.get('cell_models', [])) +
+            len(results.get('machine_models', []))
         )
         self._save_manifest()
         

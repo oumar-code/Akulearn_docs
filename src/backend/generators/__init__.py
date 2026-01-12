@@ -15,6 +15,8 @@ from .molecular_models import MolecularModelGenerator
 from .circuit_models import CircuitModelGenerator
 from .geometric_shapes import GeometricShapeGenerator
 from .wave_optics import WaveOpticsGenerator
+from .cell_biology import CellBiologyGenerator
+from .simple_machines import SimpleMachinesGenerator
 from .asset_generator_manager import AssetGeneratorManager
 
 __all__ = [
@@ -28,5 +30,7 @@ __all__ = [
     'CircuitModelGenerator',
     'GeometricShapeGenerator',
     'WaveOpticsGenerator',
+    'CellBiologyGenerator',
+    'SimpleMachinesGenerator',
     "AssetGeneratorManager",
 ]

@@ -1,0 +1,64 @@
+{
+  "models": [
+    {
+      "name": "lever_types",
+      "filepath": "generated_assets\\simple_machines\\lever_types.glb",
+      "size_kb": 15.4,
+      "description": "Three classes of levers: first (fulcrum middle), second (load middle), third (effort middle) with force vectors",
+      "curriculum": [
+        "phy_004"
+      ]
+    },
+    {
+      "name": "pulley_systems",
+      "filepath": "generated_assets\\simple_machines\\pulley_systems.glb",
+      "size_kb": 25.96,
+      "description": "Three pulley systems: fixed pulley (left), movable pulley (middle), compound pulley (right) showing mechanical advantage",
+      "curriculum": [
+        "phy_004"
+      ]
+    },
+    {
+      "name": "inclined_plane",
+      "filepath": "generated_assets\\simple_machines\\inclined_plane.glb",
+      "size_kb": 7.79,
+      "description": "Inclined plane with object showing weight, normal force, and parallel force components",
+      "curriculum": [
+        "phy_004"
+      ]
+    },
+    {
+      "name": "wheel_and_axle",
+      "filepath": "generated_assets\\simple_machines\\wheel_and_axle.glb",
+      "size_kb": 41.36,
+      "description": "Wheel and axle mechanism with large wheel, small axle, handle, and load demonstrating mechanical advantage",
+      "curriculum": [
+        "phy_004"
+      ]
+    },
+    {
+      "name": "wedge_screw",
+      "filepath": "generated_assets\\simple_machines\\wedge_screw.glb",
+      "size_kb": 24.27,
+      "description": "Wedge (left) splitting block and screw (right) with helical threads showing inclined plane principle",
+      "curriculum": [
+        "phy_004"
+      ]
+    },
+    {
+      "name": "gear_systems",
+      "filepath": "generated_assets\\simple_machines\\gear_systems.glb",
+      "size_kb": 29.07,
+      "description": "Simple gear train with three gears showing motion transfer, speed ratios, and direction changes",
+      "curriculum": [
+        "phy_004"
+      ]
+    }
+  ],
+  "total_models": 6,
+  "total_size_kb": 143.85,
+  "curriculum_alignment": {
+    "phy_004": "Simple Machines and Mechanical Advantage"
+  },
+  "output_dir": "generated_assets\\simple_machines"
+}
