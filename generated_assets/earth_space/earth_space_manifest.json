@@ -1,0 +1,73 @@
+{
+  "models": [
+    {
+      "name": "earth_layers",
+      "filepath": "generated_assets\\earth_space\\earth_layers.glb",
+      "size_kb": 79.23,
+      "description": "Earth cross-section showing crust, mantle, outer core, and inner core with layer boundaries",
+      "curriculum": [
+        "geol_001",
+        "phys_012"
+      ]
+    },
+    {
+      "name": "tectonic_plates",
+      "filepath": "generated_assets\\earth_space\\tectonic_plates.glb",
+      "size_kb": 29.09,
+      "description": "Tectonic plates showing continental/oceanic boundaries, collision zones, spreading centers, and transform faults",
+      "curriculum": [
+        "geol_002"
+      ]
+    },
+    {
+      "name": "volcano",
+      "filepath": "generated_assets\\earth_space\\volcano.glb",
+      "size_kb": 35.21,
+      "description": "Volcano cross-section showing magma chamber, pipe, eruption cone, lava flows, and ash plume",
+      "curriculum": [
+        "geol_003"
+      ]
+    },
+    {
+      "name": "water_cycle",
+      "filepath": "generated_assets\\earth_space\\water_cycle.glb",
+      "size_kb": 74.63,
+      "description": "Water cycle showing sun, evaporation, condensation in clouds, precipitation, and collection in ocean",
+      "curriculum": [
+        "geog_001",
+        "env_001"
+      ]
+    },
+    {
+      "name": "rock_cycle",
+      "filepath": "generated_assets\\earth_space\\rock_cycle.glb",
+      "size_kb": 23.17,
+      "description": "Rock cycle showing transformations between igneous, sedimentary, and metamorphic rocks with processes",
+      "curriculum": [
+        "geol_004"
+      ]
+    },
+    {
+      "name": "moon_phases",
+      "filepath": "generated_assets\\earth_space\\moon_phases.glb",
+      "size_kb": 412.36,
+      "description": "Eight lunar phases showing illumination from Sun's perspective: new, waxing, full, waning",
+      "curriculum": [
+        "astro_001"
+      ]
+    }
+  ],
+  "total_models": 6,
+  "total_size_kb": 653.69,
+  "curriculum_alignment": {
+    "geol_001": "Earth Structure and Layers",
+    "geol_002": "Plate Tectonics",
+    "geol_003": "Volcanism and Earthquakes",
+    "geol_004": "Rock Cycle",
+    "geog_001": "Water Cycle and Weather",
+    "astro_001": "Lunar Phases",
+    "env_001": "Environmental Processes",
+    "phys_012": "Planetary Science"
+  },
+  "output_dir": "generated_assets\\earth_space"
+}

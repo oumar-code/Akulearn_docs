@@ -17,6 +17,7 @@ from .geometric_shapes import GeometricShapeGenerator
 from .wave_optics import WaveOpticsGenerator
 from .cell_biology import CellBiologyGenerator
 from .simple_machines import SimpleMachinesGenerator
+from .earth_space import EarthSpaceGenerator
 from .asset_generator_manager import AssetGeneratorManager
 
 __all__ = [
@@ -31,6 +32,5 @@ __all__ = [
     'GeometricShapeGenerator',
     'WaveOpticsGenerator',
     'CellBiologyGenerator',
-    'SimpleMachinesGenerator',
-    "AssetGeneratorManager",
+    'SimpleMachinesGenerator',    'EarthSpaceGenerator',    "AssetGeneratorManager",
 ]

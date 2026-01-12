@@ -22,6 +22,7 @@ from .geometric_shapes import GeometricShapeGenerator
 from .wave_optics import WaveOpticsGenerator
 from .cell_biology import CellBiologyGenerator
 from .simple_machines import SimpleMachinesGenerator
+from .earth_space import EarthSpaceGenerator
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -120,6 +121,12 @@ class AssetGeneratorManager:
             logger.info("✅ Simple Machines generator registered")
         except Exception as e:
             logger.warning(f"⚠️ Failed to register simple machines generator: {e}")
+        
+        try:
+            self.generators['space'] = EarthSpaceGenerator()
+            logger.info("✅ Earth & Space generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register earth/space generator: {e}")
     
     def _load_manifest(self) -> Dict[str, Any]:
         """Load existing manifest or create new one"""
@@ -444,6 +451,30 @@ class AssetGeneratorManager:
                         models = self.generators['machines'].generate_all_models()
                         generated_assets['machine_models'] = [m['filepath'] for m in models]
                 
+                # Earth and Space models (Priority #9)
+                if 'space' in self.generators:
+                    if 'earth' in topic and 'layer' in topic:
+                        meta = self.generators['space'].generate_earth_layers()
+                        generated_assets['space_models'].append(meta['filepath'])
+                    elif 'tectonic' in topic or 'plate' in topic:
+                        meta = self.generators['space'].generate_tectonic_plates()
+                        generated_assets['space_models'].append(meta['filepath'])
+                    elif 'volcano' in topic or 'volcanic' in topic:
+                        meta = self.generators['space'].generate_volcano()
+                        generated_assets['space_models'].append(meta['filepath'])
+                    elif 'water cycle' in topic or 'water' in topic:
+                        meta = self.generators['space'].generate_water_cycle()
+                        generated_assets['space_models'].append(meta['filepath'])
+                    elif 'rock cycle' in topic or 'geology' in topic or 'mineral' in topic:
+                        meta = self.generators['space'].generate_rock_cycle()
+                        generated_assets['space_models'].append(meta['filepath'])
+                    elif 'moon' in topic or 'lunar' in topic or 'phase' in topic:
+                        meta = self.generators['space'].generate_moon_phases()
+                        generated_assets['space_models'].append(meta['filepath'])
+                    elif 'earth' in topic or 'geol' in topic or 'astro' in topic or 'geo' in topic or 'space' in topic:
+                        models = self.generators['space'].generate_all_models()
+                        generated_assets['space_models'] = [m['filepath'] for m in models]
+                
                 # Other physics simulations
                 if 'motion' in topic or 'pendulum' in topic:
                     path = self.generators['physics'].generate_pendulum_simulation()
@@ -591,6 +622,16 @@ class AssetGeneratorManager:
         except Exception as e:
             logger.warning(f"⚠️ Simple machines generation failed: {e}")
         
+        # Generate earth and space models
+        print("\n🌍 Generating earth and space models...")
+        try:
+            if 'space' in self.generators:
+                space_models = self.generators['space'].generate_all_models()
+                results['space_models'] = space_models
+                print(f"✅ Generated {len(space_models)} earth and space models")
+        except Exception as e:
+            logger.warning(f"⚠️ Earth/space generation failed: {e}")
+        
         # Update manifest
         self.manifest['updated_at'] = datetime.now().isoformat()
         self.manifest['total_assets'] = (
@@ -605,7 +646,8 @@ class AssetGeneratorManager:
             len(results.get('geometric_shapes', [])) +
             len(results.get('optics_models', [])) +
             len(results.get('cell_models', [])) +
-            len(results.get('machine_models', []))
+            len(results.get('machine_models', [])) +
+            len(results.get('space_models', []))
         )
         self._save_manifest()
         
