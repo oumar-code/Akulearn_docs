@@ -18,6 +18,8 @@ from .biology_models import BiologyModelGenerator
 from .plant_models import PlantModelGenerator
 from .molecular_models import MolecularModelGenerator
 from .circuit_models import CircuitModelGenerator
+from .geometric_shapes import GeometricShapeGenerator
+from .wave_optics import WaveOpticsGenerator
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -92,6 +94,18 @@ class AssetGeneratorManager:
             logger.info("✅ Circuit model generator registered")
         except Exception as e:
             logger.warning(f"⚠️ Failed to register circuit generator: {e}")
+        
+        try:
+            self.generators['geometry'] = GeometricShapeGenerator()
+            logger.info("✅ Geometric shape generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register geometric shape generator: {e}")
+        
+        try:
+            self.generators['optics'] = WaveOpticsGenerator()
+            logger.info("✅ Wave & Optics generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register wave/optics generator: {e}")
     
     def _load_manifest(self) -> Dict[str, Any]:
         """Load existing manifest or create new one"""
@@ -147,7 +161,9 @@ class AssetGeneratorManager:
             "biology_models": [],
             "plant_models": [],
             "molecular_models": [],
-            "circuit_models": []
+            "circuit_models": [],
+            "geometric_shapes": [],
+            "optics_models": []
         }
         
         logger.info(f"📚 Generating assets for {subject} - {topic} ({grade_level})")
@@ -172,6 +188,36 @@ class AssetGeneratorManager:
                     generated_assets['math_diagrams'].append(path)
                     path = self.generators['math_2d'].generate_scatter_plot()
                     generated_assets['math_diagrams'].append(path)
+                
+                # Geometric shapes for mensuration and 3D geometry
+                if 'geometry' in self.generators:
+                    if 'cube' in topic:
+                        meta = self.generators['geometry'].generate_cube()
+                        generated_assets['geometric_shapes'] = [meta['filepath']]
+                    elif 'cuboid' in topic or 'rectangular prism' in topic:
+                        meta = self.generators['geometry'].generate_cuboid()
+                        generated_assets['geometric_shapes'] = [meta['filepath']]
+                    elif 'cylinder' in topic:
+                        meta = self.generators['geometry'].generate_cylinder()
+                        generated_assets['geometric_shapes'] = [meta['filepath']]
+                    elif 'cone' in topic:
+                        meta = self.generators['geometry'].generate_cone()
+                        generated_assets['geometric_shapes'] = [meta['filepath']]
+                    elif 'sphere' in topic:
+                        meta = self.generators['geometry'].generate_sphere()
+                        generated_assets['geometric_shapes'] = [meta['filepath']]
+                    elif 'pyramid' in topic:
+                        meta = self.generators['geometry'].generate_pyramid()
+                        generated_assets['geometric_shapes'] = [meta['filepath']]
+                    elif 'prism' in topic and 'cube' not in topic and 'cuboid' not in topic:
+                        meta = self.generators['geometry'].generate_prisms()
+                        generated_assets['geometric_shapes'] = [meta['filepath']]
+                    elif 'composite' in topic or 'combined shapes' in topic:
+                        meta = self.generators['geometry'].generate_composite_solids()
+                        generated_assets['geometric_shapes'] = [meta['filepath']]
+                    elif 'mensuration' in topic or '3d geometry' in topic or 'geometric shapes' in topic or 'solid shapes' in topic:
+                        shapes = self.generators['geometry'].generate_all_shapes()
+                        generated_assets['geometric_shapes'] = [s['filepath'] for s in shapes]
             except Exception as e:
                 logger.warning(f"⚠️ Math generation failed: {e}")
         
@@ -310,6 +356,30 @@ class AssetGeneratorManager:
                         circuits = self.generators['circuits'].generate_all_circuit_models()
                         generated_assets['simulations'] = [c['filepath'] for c in circuits]
                 
+                # Wave & Optics models (Priority #6)
+                if 'optics' in self.generators:
+                    if 'electromagnetic' in topic or 'spectrum' in topic:
+                        meta = self.generators['optics'].generate_electromagnetic_spectrum()
+                        generated_assets['optics_models'].append(meta['filepath'])
+                    elif 'reflection' in topic or 'mirror' in topic:
+                        meta = self.generators['optics'].generate_reflection_mirrors()
+                        generated_assets['optics_models'].append(meta['filepath'])
+                    elif 'refraction' in topic or 'lens' in topic:
+                        meta = self.generators['optics'].generate_refraction_lenses()
+                        generated_assets['optics_models'].append(meta['filepath'])
+                    elif 'total internal reflection' in topic or 'fiber' in topic:
+                        meta = self.generators['optics'].generate_total_internal_reflection()
+                        generated_assets['optics_models'].append(meta['filepath'])
+                    elif 'prism' in topic and ('dispersion' in topic or 'rainbow' in topic):
+                        meta = self.generators['optics'].generate_prism_dispersion()
+                        generated_assets['optics_models'].append(meta['filepath'])
+                    elif 'wave' in topic and ('transverse' in topic or 'longitudinal' in topic or 'types' in topic):
+                        meta = self.generators['optics'].generate_wave_types()
+                        generated_assets['optics_models'].append(meta['filepath'])
+                    elif 'optics' in topic or 'phy_010' in topic or 'phy_011' in topic:
+                        models = self.generators['optics'].generate_all_models()
+                        generated_assets['optics_models'] = [m['filepath'] for m in models]
+                
                 # Other physics simulations
                 if 'motion' in topic or 'pendulum' in topic:
                     path = self.generators['physics'].generate_pendulum_simulation()
@@ -417,6 +487,26 @@ class AssetGeneratorManager:
         except Exception as e:
             logger.warning(f"⚠️ Circuit generation failed: {e}")
         
+        # Generate geometric shapes for mathematics
+        print("\n📐 Generating geometric shapes for mensuration...")
+        try:
+            if 'geometry' in self.generators:
+                geometric_shapes = self.generators['geometry'].generate_all_shapes()
+                results['geometric_shapes'] = geometric_shapes
+                print(f"✅ Generated {len(geometric_shapes)} geometric shape models")
+        except Exception as e:
+            logger.warning(f"⚠️ Geometric shape generation failed: {e}")
+
+        # Generate wave & optics models
+        print("\n🌈 Generating wave & optics models...")
+        try:
+            if 'optics' in self.generators:
+                optics_models = self.generators['optics'].generate_all_models()
+                results['optics_models'] = optics_models
+                print(f"✅ Generated {len(optics_models)} wave & optics models")
+        except Exception as e:
+            logger.warning(f"⚠️ Wave/Optics generation failed: {e}")
+        
         # Update manifest
         self.manifest['updated_at'] = datetime.now().isoformat()
         self.manifest['total_assets'] = (
@@ -427,7 +517,9 @@ class AssetGeneratorManager:
             len(results['biology_models']) +
             len(results['plant_models']) +
             len(results['molecular_models']) +
-            len(results['circuit_models'])
+            len(results['circuit_models']) +
+            len(results.get('geometric_shapes', [])) +
+            len(results.get('optics_models', []))
         )
         self._save_manifest()
         

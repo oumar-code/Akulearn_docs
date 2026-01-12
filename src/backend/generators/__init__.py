@@ -13,6 +13,8 @@ from .biology_models import BiologyModelGenerator
 from .plant_models import PlantModelGenerator
 from .molecular_models import MolecularModelGenerator
 from .circuit_models import CircuitModelGenerator
+from .geometric_shapes import GeometricShapeGenerator
+from .wave_optics import WaveOpticsGenerator
 from .asset_generator_manager import AssetGeneratorManager
 
 __all__ = [
@@ -24,5 +26,7 @@ __all__ = [
     'PlantModelGenerator',
     'MolecularModelGenerator',
     'CircuitModelGenerator',
+    'GeometricShapeGenerator',
+    'WaveOpticsGenerator',
     "AssetGeneratorManager",
 ]
