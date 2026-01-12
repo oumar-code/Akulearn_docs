@@ -1,0 +1,65 @@
+{
+  "models": [
+    {
+      "name": "wave_types",
+      "filepath": "generated_assets\\wave_optics\\wave_types.glb",
+      "size_kb": 408.73,
+      "description": "Transverse (sine-like) and longitudinal (compressions) wave comparison",
+      "curriculum": [
+        "phy_010"
+      ]
+    },
+    {
+      "name": "electromagnetic_spectrum",
+      "filepath": "generated_assets\\wave_optics\\electromagnetic_spectrum.glb",
+      "size_kb": 2.82,
+      "description": "Electromagnetic spectrum bands (radio \u2192 gamma) as colored bars",
+      "curriculum": [
+        "phy_011"
+      ]
+    },
+    {
+      "name": "reflection_mirrors",
+      "filepath": "generated_assets\\wave_optics\\reflection_mirrors.glb",
+      "size_kb": 26.05,
+      "description": "Plane, concave and convex mirrors with incident/reflected rays",
+      "curriculum": [
+        "phy_011"
+      ]
+    },
+    {
+      "name": "refraction_lenses",
+      "filepath": "generated_assets\\wave_optics\\refraction_lenses.glb",
+      "size_kb": 20.02,
+      "description": "Convex and concave lenses with approximated refracted rays",
+      "curriculum": [
+        "phy_011"
+      ]
+    },
+    {
+      "name": "total_internal_reflection",
+      "filepath": "generated_assets\\wave_optics\\total_internal_reflection.glb",
+      "size_kb": 19.08,
+      "description": "Fiber optic cable demonstrating total internal reflection",
+      "curriculum": [
+        "phy_011"
+      ]
+    },
+    {
+      "name": "prism_dispersion",
+      "filepath": "generated_assets\\wave_optics\\prism_dispersion.glb",
+      "size_kb": 24.2,
+      "description": "Prism dispersion with incident ray and rainbow-colored exit rays",
+      "curriculum": [
+        "phy_011"
+      ]
+    }
+  ],
+  "total_models": 6,
+  "total_size_kb": 500.9,
+  "curriculum_alignment": {
+    "phy_010": "Wave Types and Properties",
+    "phy_011": "Optics: Reflection, Refraction, Spectrum"
+  },
+  "output_dir": "generated_assets\\wave_optics"
+}
