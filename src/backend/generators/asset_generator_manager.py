@@ -26,6 +26,7 @@ from .earth_space import EarthSpaceGenerator
 from .agriculture import AgricultureModelGenerator
 from .reproductive_systems import ReproductiveSystemsModelGenerator
 from .mathematical_functions import MathematicalFunctionsModelGenerator
+from .nigerian_cultural import NigerianCulturalModelsGenerator
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -148,6 +149,12 @@ class AssetGeneratorManager:
             logger.info("✅ Mathematical Functions generator registered")
         except Exception as e:
             logger.warning(f"⚠️ Failed to register mathematical functions generator: {e}")
+        
+        try:
+            self.generators['nigerian_cultural'] = NigerianCulturalModelsGenerator()
+            logger.info("✅ Nigerian Cultural Models generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register nigerian cultural generator: {e}")
     
     def _load_manifest(self) -> Dict[str, Any]:
         """Load existing manifest or create new one"""
@@ -593,6 +600,34 @@ class AssetGeneratorManager:
             except Exception as e:
                 logger.warning(f"⚠️ Mathematical Functions generation failed: {e}")
         
+        # Nigerian Cultural Models (Priority #13)
+        if subject in ['social studies', 'social', 'history', 'government', 'civic'] and any(kw in topic for kw in ['nigeria', 'nigerian', 'culture', 'traditional', 'heritage', 'monument', 'government', 'architecture', 'craft', 'artifact', 'historical', 'soc_001', 'soc_002', 'soc_003', 'hist_001', 'gov_002']):
+            try:
+                if 'nigerian_cultural' in self.generators:
+                    if 'architecture' in topic or 'hut' in topic or 'compound' in topic or 'traditional building' in topic:
+                        models = self.generators['nigerian_cultural'].generate_traditional_architecture()
+                        generated_assets['cultural_models'] = [models]
+                    elif 'monument' in topic or 'flag' in topic or 'eagle' in topic or 'national symbol' in topic:
+                        models = self.generators['nigerian_cultural'].generate_national_monuments()
+                        generated_assets['cultural_models'] = [models]
+                    elif 'government' in topic or 'parliament' in topic or 'assembly' in topic or 'legislature' in topic or 'gov_002' in topic:
+                        models = self.generators['nigerian_cultural'].generate_government_buildings()
+                        generated_assets['cultural_models'] = [models]
+                    elif 'artifact' in topic or 'bronze' in topic or 'drum' in topic or 'mask' in topic or 'calabash' in topic:
+                        models = self.generators['nigerian_cultural'].generate_cultural_artifacts()
+                        generated_assets['cultural_models'] = [models]
+                    elif 'historical site' in topic or 'wall' in topic or 'ancient city' in topic or 'benin' in topic or 'kano' in topic:
+                        models = self.generators['nigerian_cultural'].generate_historical_sites()
+                        generated_assets['cultural_models'] = [models]
+                    elif 'craft' in topic or 'weaving' in topic or 'pottery' in topic or 'blacksmith' in topic or 'leather' in topic or 'dyeing' in topic:
+                        models = self.generators['nigerian_cultural'].generate_traditional_crafts()
+                        generated_assets['cultural_models'] = [models]
+                    elif 'nigerian' in topic or 'soc_001' in topic or 'soc_002' in topic or 'soc_003' in topic or 'hist_001' in topic:
+                        models = self.generators['nigerian_cultural'].generate_all_models()
+                        generated_assets['cultural_models'] = models
+            except Exception as e:
+                logger.warning(f"⚠️ Nigerian Cultural Models generation failed: {e}")
+        
         return generated_assets
     
     def generate_all_priority_assets(self) -> Dict[str, List[Dict[str, Any]]]:
@@ -767,6 +802,16 @@ class AssetGeneratorManager:
         except Exception as e:
             logger.warning(f"⚠️ Mathematical functions generation failed: {e}")
         
+        # Generate Nigerian cultural models
+        print("\n🏛️ Generating Nigerian cultural models...")
+        try:
+            if 'nigerian_cultural' in self.generators:
+                cultural_models = self.generators['nigerian_cultural'].generate_all_models()
+                results['cultural_models'] = cultural_models
+                print(f"✅ Generated {len(cultural_models)} Nigerian cultural models")
+        except Exception as e:
+            logger.warning(f"⚠️ Nigerian cultural generation failed: {e}")
+        
         # Update manifest
         self.manifest['updated_at'] = datetime.now().isoformat()
         self.manifest['total_assets'] = (
@@ -785,7 +830,8 @@ class AssetGeneratorManager:
             len(results.get('space_models', [])) +
             len(results.get('agriculture_models', [])) +
             len(results.get('reproductive_models', [])) +
-            len(results.get('math_function_models', []))
+            len(results.get('math_function_models', [])) +
+            len(results.get('cultural_models', []))
         )
         self._save_manifest()
         
