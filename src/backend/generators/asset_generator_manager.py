@@ -24,6 +24,7 @@ from .cell_biology import CellBiologyGenerator
 from .simple_machines import SimpleMachinesGenerator
 from .earth_space import EarthSpaceGenerator
 from .agriculture import AgricultureModelGenerator
+from .reproductive_systems import ReproductiveSystemsModelGenerator
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -134,6 +135,12 @@ class AssetGeneratorManager:
             logger.info("✅ Agriculture generator registered")
         except Exception as e:
             logger.warning(f"⚠️ Failed to register agriculture generator: {e}")
+        
+        try:
+            self.generators['reproductive_systems'] = ReproductiveSystemsModelGenerator()
+            logger.info("✅ Reproductive Systems generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register reproductive systems generator: {e}")
     
     def _load_manifest(self) -> Dict[str, Any]:
         """Load existing manifest or create new one"""
@@ -523,6 +530,34 @@ class AssetGeneratorManager:
             except Exception as e:
                 logger.warning(f"⚠️ Agriculture generation failed: {e}")
         
+        # Reproductive Systems models (Priority #11)
+        if subject in ['biology', 'bio'] and 'reproduction' in topic or 'reproductive' in topic or 'bio_007' in topic:
+            try:
+                if 'reproductive_systems' in self.generators:
+                    if 'male' in topic or 'male reproductive' in topic or 'testis' in topic or 'spermatogenesis' in topic:
+                        models = self.generators['reproductive_systems'].generate_male_reproductive_system()
+                        generated_assets['reproductive_models'] = [models]
+                    elif 'female' in topic or 'female reproductive' in topic or 'ovary' in topic or 'oogenesis' in topic:
+                        models = self.generators['reproductive_systems'].generate_female_reproductive_system()
+                        generated_assets['reproductive_models'] = [models]
+                    elif 'flower' in topic or 'plant reproduction' in topic or 'pollination' in topic or 'stamen' in topic or 'pistil' in topic:
+                        models = self.generators['reproductive_systems'].generate_flower_reproduction()
+                        generated_assets['reproductive_models'] = [models]
+                    elif 'fetus' in topic or 'development' in topic or 'embryo' in topic or 'pregnancy' in topic or 'trimester' in topic:
+                        models = self.generators['reproductive_systems'].generate_fetus_development()
+                        generated_assets['reproductive_models'] = [models]
+                    elif 'gamete' in topic or 'sperm' in topic or 'egg' in topic or 'meiosis' in topic or 'polar body' in topic:
+                        models = self.generators['reproductive_systems'].generate_gamete_formation()
+                        generated_assets['reproductive_models'] = [models]
+                    elif 'menstrual' in topic or 'cycle' in topic or 'hormone' in topic or 'FSH' in topic or 'LH' in topic:
+                        models = self.generators['reproductive_systems'].generate_menstrual_cycle()
+                        generated_assets['reproductive_models'] = [models]
+                    elif 'reproduction' in topic or 'reproductive' in topic or 'bio_007' in topic:
+                        models = self.generators['reproductive_systems'].generate_all_models()
+                        generated_assets['reproductive_models'] = list(models.values())
+            except Exception as e:
+                logger.warning(f"⚠️ Reproductive Systems generation failed: {e}")
+        
         return generated_assets
     
     def generate_all_priority_assets(self) -> Dict[str, List[Dict[str, Any]]]:
@@ -677,6 +712,16 @@ class AssetGeneratorManager:
         except Exception as e:
             logger.warning(f"⚠️ Agriculture generation failed: {e}")
         
+        # Generate reproductive systems models
+        print("\n🔬 Generating reproductive systems models...")
+        try:
+            if 'reproductive_systems' in self.generators:
+                reproductive_models = self.generators['reproductive_systems'].generate_all_models()
+                results['reproductive_models'] = reproductive_models
+                print(f"✅ Generated {len(reproductive_models)} reproductive systems models")
+        except Exception as e:
+            logger.warning(f"⚠️ Reproductive systems generation failed: {e}")
+        
         # Update manifest
         self.manifest['updated_at'] = datetime.now().isoformat()
         self.manifest['total_assets'] = (
@@ -693,7 +738,8 @@ class AssetGeneratorManager:
             len(results.get('cell_models', [])) +
             len(results.get('machine_models', [])) +
             len(results.get('space_models', [])) +
-            len(results.get('agriculture_models', []))
+            len(results.get('agriculture_models', [])) +
+            len(results.get('reproductive_models', []))
         )
         self._save_manifest()
         
