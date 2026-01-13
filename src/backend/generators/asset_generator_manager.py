@@ -25,6 +25,7 @@ from .simple_machines import SimpleMachinesGenerator
 from .earth_space import EarthSpaceGenerator
 from .agriculture import AgricultureModelGenerator
 from .reproductive_systems import ReproductiveSystemsModelGenerator
+from .mathematical_functions import MathematicalFunctionsModelGenerator
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -141,6 +142,12 @@ class AssetGeneratorManager:
             logger.info("✅ Reproductive Systems generator registered")
         except Exception as e:
             logger.warning(f"⚠️ Failed to register reproductive systems generator: {e}")
+        
+        try:
+            self.generators['mathematical_functions'] = MathematicalFunctionsModelGenerator()
+            logger.info("✅ Mathematical Functions generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register mathematical functions generator: {e}")
     
     def _load_manifest(self) -> Dict[str, Any]:
         """Load existing manifest or create new one"""
@@ -558,6 +565,34 @@ class AssetGeneratorManager:
             except Exception as e:
                 logger.warning(f"⚠️ Reproductive Systems generation failed: {e}")
         
+        # Mathematical Functions models (Priority #12)
+        if subject in ['mathematics', 'math'] and 'function' in topic or 'graph' in topic or 'calculus' in topic or 'integration' in topic or 'derivative' in topic or 'math_012' in topic or 'math_013' in topic:
+            try:
+                if 'mathematical_functions' in self.generators:
+                    if '3d' in topic or 'graph' in topic or 'polynomial' in topic:
+                        models = self.generators['mathematical_functions'].generate_3d_graphs()
+                        generated_assets['math_function_models'] = [models]
+                    elif 'polynomial' in topic or 'root' in topic or 'extrema' in topic:
+                        models = self.generators['mathematical_functions'].generate_polynomial_functions()
+                        generated_assets['math_function_models'] = [models]
+                    elif 'trigonometric' in topic or 'sine' in topic or 'cosine' in topic or 'wave' in topic:
+                        models = self.generators['mathematical_functions'].generate_trigonometric_surfaces()
+                        generated_assets['math_function_models'] = [models]
+                    elif 'revolution' in topic or 'rotate' in topic or 'solid' in topic:
+                        models = self.generators['mathematical_functions'].generate_surface_of_revolution()
+                        generated_assets['math_function_models'] = [models]
+                    elif 'integration' in topic or 'area' in topic or 'volume' in topic or 'accumulation' in topic:
+                        models = self.generators['mathematical_functions'].generate_volume_integration()
+                        generated_assets['math_function_models'] = [models]
+                    elif 'tangent' in topic or 'derivative' in topic or 'partial' in topic or 'gradient' in topic:
+                        models = self.generators['mathematical_functions'].generate_tangent_planes()
+                        generated_assets['math_function_models'] = [models]
+                    elif 'function' in topic or 'math_012' in topic or 'math_013' in topic:
+                        models = self.generators['mathematical_functions'].generate_all_models()
+                        generated_assets['math_function_models'] = list(models.values())
+            except Exception as e:
+                logger.warning(f"⚠️ Mathematical Functions generation failed: {e}")
+        
         return generated_assets
     
     def generate_all_priority_assets(self) -> Dict[str, List[Dict[str, Any]]]:
@@ -722,6 +757,16 @@ class AssetGeneratorManager:
         except Exception as e:
             logger.warning(f"⚠️ Reproductive systems generation failed: {e}")
         
+        # Generate mathematical functions models
+        print("\n📐 Generating mathematical functions models...")
+        try:
+            if 'mathematical_functions' in self.generators:
+                math_function_models = self.generators['mathematical_functions'].generate_all_models()
+                results['math_function_models'] = math_function_models
+                print(f"✅ Generated {len(math_function_models)} mathematical functions models")
+        except Exception as e:
+            logger.warning(f"⚠️ Mathematical functions generation failed: {e}")
+        
         # Update manifest
         self.manifest['updated_at'] = datetime.now().isoformat()
         self.manifest['total_assets'] = (
@@ -739,7 +784,8 @@ class AssetGeneratorManager:
             len(results.get('machine_models', [])) +
             len(results.get('space_models', [])) +
             len(results.get('agriculture_models', [])) +
-            len(results.get('reproductive_models', []))
+            len(results.get('reproductive_models', [])) +
+            len(results.get('math_function_models', []))
         )
         self._save_manifest()
         

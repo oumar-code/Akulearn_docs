@@ -20,6 +20,7 @@ from .simple_machines import SimpleMachinesGenerator
 from .earth_space import EarthSpaceGenerator
 from .agriculture import AgricultureModelGenerator
 from .reproductive_systems import ReproductiveSystemsModelGenerator
+from .mathematical_functions import MathematicalFunctionsModelGenerator
 from .asset_generator_manager import AssetGeneratorManager
 
 __all__ = [
@@ -38,5 +39,6 @@ __all__ = [
     'EarthSpaceGenerator',
     'AgricultureModelGenerator',
     'ReproductiveSystemsModelGenerator',
+    'MathematicalFunctionsModelGenerator',
     'AssetGeneratorManager',
 ]
