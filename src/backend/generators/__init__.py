@@ -18,6 +18,10 @@ from .wave_optics import WaveOpticsGenerator
 from .cell_biology import CellBiologyGenerator
 from .simple_machines import SimpleMachinesGenerator
 from .earth_space import EarthSpaceGenerator
+from .agriculture import AgricultureModelGenerator
+from .reproductive_systems import ReproductiveSystemsModelGenerator
+from .mathematical_functions import MathematicalFunctionsModelGenerator
+from .nigerian_cultural import NigerianCulturalModelsGenerator
 from .asset_generator_manager import AssetGeneratorManager
 
 __all__ = [
@@ -32,5 +36,9 @@ __all__ = [
     'GeometricShapeGenerator',
     'WaveOpticsGenerator',
     'CellBiologyGenerator',
-    'SimpleMachinesGenerator',    'EarthSpaceGenerator',    "AssetGeneratorManager",
+    'SimpleMachinesGenerator',
+    'EarthSpaceGenerator',
+    'AgricultureModelGenerator',
+    'ReproductiveSystemsModelGenerator',
+    'MathematicalFunctionsModelGenerator',    'NigerianCulturalModelsGenerator',    'AssetGeneratorManager',
 ]

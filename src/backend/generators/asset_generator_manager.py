@@ -23,6 +23,10 @@ from .wave_optics import WaveOpticsGenerator
 from .cell_biology import CellBiologyGenerator
 from .simple_machines import SimpleMachinesGenerator
 from .earth_space import EarthSpaceGenerator
+from .agriculture import AgricultureModelGenerator
+from .reproductive_systems import ReproductiveSystemsModelGenerator
+from .mathematical_functions import MathematicalFunctionsModelGenerator
+from .nigerian_cultural import NigerianCulturalModelsGenerator
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -127,6 +131,30 @@ class AssetGeneratorManager:
             logger.info("✅ Earth & Space generator registered")
         except Exception as e:
             logger.warning(f"⚠️ Failed to register earth/space generator: {e}")
+        
+        try:
+            self.generators['agriculture'] = AgricultureModelGenerator()
+            logger.info("✅ Agriculture generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register agriculture generator: {e}")
+        
+        try:
+            self.generators['reproductive_systems'] = ReproductiveSystemsModelGenerator()
+            logger.info("✅ Reproductive Systems generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register reproductive systems generator: {e}")
+        
+        try:
+            self.generators['mathematical_functions'] = MathematicalFunctionsModelGenerator()
+            logger.info("✅ Mathematical Functions generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register mathematical functions generator: {e}")
+        
+        try:
+            self.generators['nigerian_cultural'] = NigerianCulturalModelsGenerator()
+            logger.info("✅ Nigerian Cultural Models generator registered")
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to register nigerian cultural generator: {e}")
     
     def _load_manifest(self) -> Dict[str, Any]:
         """Load existing manifest or create new one"""
@@ -488,6 +516,118 @@ class AssetGeneratorManager:
             except Exception as e:
                 logger.warning(f"⚠️ Physics generation failed: {e}")
         
+        # Agriculture models (Priority #10)
+        if subject in ['agriculture', 'agricultural science', 'agric']:
+            try:
+                if 'agriculture' in self.generators:
+                    if 'soil' in topic or 'layer' in topic:
+                        meta = self.generators['agriculture'].generate_soil_layers()
+                        generated_assets['agriculture_models'].append(meta['filepath'])
+                    elif 'crop' in topic or 'growth' in topic or 'maize' in topic or 'rice' in topic:
+                        meta = self.generators['agriculture'].generate_crop_growth_stages()
+                        generated_assets['agriculture_models'].append(meta['filepath'])
+                    elif 'livestock' in topic or 'animal' in topic or 'cow' in topic or 'goat' in topic or 'chicken' in topic:
+                        meta = self.generators['agriculture'].generate_livestock_anatomy()
+                        generated_assets['agriculture_models'].append(meta['filepath'])
+                    elif 'tool' in topic or 'hoe' in topic or 'cutlass' in topic or 'plough' in topic:
+                        meta = self.generators['agriculture'].generate_farm_tools_3d()
+                        generated_assets['agriculture_models'].append(meta['filepath'])
+                    elif 'irrigation' in topic or 'water' in topic or 'drip' in topic or 'sprinkler' in topic:
+                        meta = self.generators['agriculture'].generate_irrigation_systems()
+                        generated_assets['agriculture_models'].append(meta['filepath'])
+                    elif 'greenhouse' in topic:
+                        meta = self.generators['agriculture'].generate_greenhouse()
+                        generated_assets['agriculture_models'].append(meta['filepath'])
+                    elif 'agr' in topic or 'farm' in topic:
+                        models = self.generators['agriculture'].generate_all_models()
+                        generated_assets['agriculture_models'] = [m['filepath'] for m in models]
+            except Exception as e:
+                logger.warning(f"⚠️ Agriculture generation failed: {e}")
+        
+        # Reproductive Systems models (Priority #11)
+        if subject in ['biology', 'bio'] and 'reproduction' in topic or 'reproductive' in topic or 'bio_007' in topic:
+            try:
+                if 'reproductive_systems' in self.generators:
+                    if 'male' in topic or 'male reproductive' in topic or 'testis' in topic or 'spermatogenesis' in topic:
+                        models = self.generators['reproductive_systems'].generate_male_reproductive_system()
+                        generated_assets['reproductive_models'] = [models]
+                    elif 'female' in topic or 'female reproductive' in topic or 'ovary' in topic or 'oogenesis' in topic:
+                        models = self.generators['reproductive_systems'].generate_female_reproductive_system()
+                        generated_assets['reproductive_models'] = [models]
+                    elif 'flower' in topic or 'plant reproduction' in topic or 'pollination' in topic or 'stamen' in topic or 'pistil' in topic:
+                        models = self.generators['reproductive_systems'].generate_flower_reproduction()
+                        generated_assets['reproductive_models'] = [models]
+                    elif 'fetus' in topic or 'development' in topic or 'embryo' in topic or 'pregnancy' in topic or 'trimester' in topic:
+                        models = self.generators['reproductive_systems'].generate_fetus_development()
+                        generated_assets['reproductive_models'] = [models]
+                    elif 'gamete' in topic or 'sperm' in topic or 'egg' in topic or 'meiosis' in topic or 'polar body' in topic:
+                        models = self.generators['reproductive_systems'].generate_gamete_formation()
+                        generated_assets['reproductive_models'] = [models]
+                    elif 'menstrual' in topic or 'cycle' in topic or 'hormone' in topic or 'FSH' in topic or 'LH' in topic:
+                        models = self.generators['reproductive_systems'].generate_menstrual_cycle()
+                        generated_assets['reproductive_models'] = [models]
+                    elif 'reproduction' in topic or 'reproductive' in topic or 'bio_007' in topic:
+                        models = self.generators['reproductive_systems'].generate_all_models()
+                        generated_assets['reproductive_models'] = list(models.values())
+            except Exception as e:
+                logger.warning(f"⚠️ Reproductive Systems generation failed: {e}")
+        
+        # Mathematical Functions models (Priority #12)
+        if subject in ['mathematics', 'math'] and 'function' in topic or 'graph' in topic or 'calculus' in topic or 'integration' in topic or 'derivative' in topic or 'math_012' in topic or 'math_013' in topic:
+            try:
+                if 'mathematical_functions' in self.generators:
+                    if '3d' in topic or 'graph' in topic or 'polynomial' in topic:
+                        models = self.generators['mathematical_functions'].generate_3d_graphs()
+                        generated_assets['math_function_models'] = [models]
+                    elif 'polynomial' in topic or 'root' in topic or 'extrema' in topic:
+                        models = self.generators['mathematical_functions'].generate_polynomial_functions()
+                        generated_assets['math_function_models'] = [models]
+                    elif 'trigonometric' in topic or 'sine' in topic or 'cosine' in topic or 'wave' in topic:
+                        models = self.generators['mathematical_functions'].generate_trigonometric_surfaces()
+                        generated_assets['math_function_models'] = [models]
+                    elif 'revolution' in topic or 'rotate' in topic or 'solid' in topic:
+                        models = self.generators['mathematical_functions'].generate_surface_of_revolution()
+                        generated_assets['math_function_models'] = [models]
+                    elif 'integration' in topic or 'area' in topic or 'volume' in topic or 'accumulation' in topic:
+                        models = self.generators['mathematical_functions'].generate_volume_integration()
+                        generated_assets['math_function_models'] = [models]
+                    elif 'tangent' in topic or 'derivative' in topic or 'partial' in topic or 'gradient' in topic:
+                        models = self.generators['mathematical_functions'].generate_tangent_planes()
+                        generated_assets['math_function_models'] = [models]
+                    elif 'function' in topic or 'math_012' in topic or 'math_013' in topic:
+                        models = self.generators['mathematical_functions'].generate_all_models()
+                        generated_assets['math_function_models'] = list(models.values())
+            except Exception as e:
+                logger.warning(f"⚠️ Mathematical Functions generation failed: {e}")
+        
+        # Nigerian Cultural Models (Priority #13)
+        if subject in ['social studies', 'social', 'history', 'government', 'civic'] and any(kw in topic for kw in ['nigeria', 'nigerian', 'culture', 'traditional', 'heritage', 'monument', 'government', 'architecture', 'craft', 'artifact', 'historical', 'soc_001', 'soc_002', 'soc_003', 'hist_001', 'gov_002']):
+            try:
+                if 'nigerian_cultural' in self.generators:
+                    if 'architecture' in topic or 'hut' in topic or 'compound' in topic or 'traditional building' in topic:
+                        models = self.generators['nigerian_cultural'].generate_traditional_architecture()
+                        generated_assets['cultural_models'] = [models]
+                    elif 'monument' in topic or 'flag' in topic or 'eagle' in topic or 'national symbol' in topic:
+                        models = self.generators['nigerian_cultural'].generate_national_monuments()
+                        generated_assets['cultural_models'] = [models]
+                    elif 'government' in topic or 'parliament' in topic or 'assembly' in topic or 'legislature' in topic or 'gov_002' in topic:
+                        models = self.generators['nigerian_cultural'].generate_government_buildings()
+                        generated_assets['cultural_models'] = [models]
+                    elif 'artifact' in topic or 'bronze' in topic or 'drum' in topic or 'mask' in topic or 'calabash' in topic:
+                        models = self.generators['nigerian_cultural'].generate_cultural_artifacts()
+                        generated_assets['cultural_models'] = [models]
+                    elif 'historical site' in topic or 'wall' in topic or 'ancient city' in topic or 'benin' in topic or 'kano' in topic:
+                        models = self.generators['nigerian_cultural'].generate_historical_sites()
+                        generated_assets['cultural_models'] = [models]
+                    elif 'craft' in topic or 'weaving' in topic or 'pottery' in topic or 'blacksmith' in topic or 'leather' in topic or 'dyeing' in topic:
+                        models = self.generators['nigerian_cultural'].generate_traditional_crafts()
+                        generated_assets['cultural_models'] = [models]
+                    elif 'nigerian' in topic or 'soc_001' in topic or 'soc_002' in topic or 'soc_003' in topic or 'hist_001' in topic:
+                        models = self.generators['nigerian_cultural'].generate_all_models()
+                        generated_assets['cultural_models'] = models
+            except Exception as e:
+                logger.warning(f"⚠️ Nigerian Cultural Models generation failed: {e}")
+        
         return generated_assets
     
     def generate_all_priority_assets(self) -> Dict[str, List[Dict[str, Any]]]:
@@ -632,6 +772,46 @@ class AssetGeneratorManager:
         except Exception as e:
             logger.warning(f"⚠️ Earth/space generation failed: {e}")
         
+        # Generate agriculture models
+        print("\n🌾 Generating agriculture models...")
+        try:
+            if 'agriculture' in self.generators:
+                agriculture_models = self.generators['agriculture'].generate_all_models()
+                results['agriculture_models'] = agriculture_models
+                print(f"✅ Generated {len(agriculture_models)} agriculture models")
+        except Exception as e:
+            logger.warning(f"⚠️ Agriculture generation failed: {e}")
+        
+        # Generate reproductive systems models
+        print("\n🔬 Generating reproductive systems models...")
+        try:
+            if 'reproductive_systems' in self.generators:
+                reproductive_models = self.generators['reproductive_systems'].generate_all_models()
+                results['reproductive_models'] = reproductive_models
+                print(f"✅ Generated {len(reproductive_models)} reproductive systems models")
+        except Exception as e:
+            logger.warning(f"⚠️ Reproductive systems generation failed: {e}")
+        
+        # Generate mathematical functions models
+        print("\n📐 Generating mathematical functions models...")
+        try:
+            if 'mathematical_functions' in self.generators:
+                math_function_models = self.generators['mathematical_functions'].generate_all_models()
+                results['math_function_models'] = math_function_models
+                print(f"✅ Generated {len(math_function_models)} mathematical functions models")
+        except Exception as e:
+            logger.warning(f"⚠️ Mathematical functions generation failed: {e}")
+        
+        # Generate Nigerian cultural models
+        print("\n🏛️ Generating Nigerian cultural models...")
+        try:
+            if 'nigerian_cultural' in self.generators:
+                cultural_models = self.generators['nigerian_cultural'].generate_all_models()
+                results['cultural_models'] = cultural_models
+                print(f"✅ Generated {len(cultural_models)} Nigerian cultural models")
+        except Exception as e:
+            logger.warning(f"⚠️ Nigerian cultural generation failed: {e}")
+        
         # Update manifest
         self.manifest['updated_at'] = datetime.now().isoformat()
         self.manifest['total_assets'] = (
@@ -647,7 +827,11 @@ class AssetGeneratorManager:
             len(results.get('optics_models', [])) +
             len(results.get('cell_models', [])) +
             len(results.get('machine_models', [])) +
-            len(results.get('space_models', []))
+            len(results.get('space_models', [])) +
+            len(results.get('agriculture_models', [])) +
+            len(results.get('reproductive_models', [])) +
+            len(results.get('math_function_models', [])) +
+            len(results.get('cultural_models', []))
         )
         self._save_manifest()
         

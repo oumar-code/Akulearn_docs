@@ -1,0 +1,168 @@
+{
+  "priority": 11,
+  "category": "Reproductive Biology",
+  "curriculum_topics": [
+    "bio_007"
+  ],
+  "grade_levels": [
+    "SS2",
+    "SS3"
+  ],
+  "total_models": 6,
+  "models": [
+    {
+      "id": "male_reproductive_system",
+      "name": "Male Reproductive System",
+      "filename": "male_reproductive_system.glb",
+      "description": "Complete male reproductive anatomy with testes, epididymis, vas deferens, prostate, seminal vesicles, and external genitalia",
+      "anatomical_focus": [
+        "Spermatogenesis",
+        "Hormone regulation",
+        "Sexual function"
+      ],
+      "curriculum_alignment": "bio_007 - Human Reproductive Systems",
+      "nigerian_context": "Standard medical biology curriculum (SS2/SS3)",
+      "educational_value": "Understand male reproductive anatomy and sperm production"
+    },
+    {
+      "id": "female_reproductive_system",
+      "name": "Female Reproductive System",
+      "filename": "female_reproductive_system.glb",
+      "description": "Complete female reproductive anatomy with ovaries, fallopian tubes, uterus, vagina, and external genitalia",
+      "anatomical_focus": [
+        "Oogenesis",
+        "Menstrual cycle",
+        "Fertility"
+      ],
+      "curriculum_alignment": "bio_007 - Human Reproductive Systems",
+      "nigerian_context": "Standard medical biology curriculum (SS2/SS3)",
+      "educational_value": "Understand female reproductive anatomy and egg production"
+    },
+    {
+      "id": "flower_reproduction",
+      "name": "Flower Reproduction and Pollination",
+      "filename": "flower_reproduction.glb",
+      "description": "Plant reproductive system showing flower structure, stamens, pistil, pollen grains, and pollination process",
+      "anatomical_focus": [
+        "Stamen (male)",
+        "Pistil (female)",
+        "Pollination",
+        "Fertilization"
+      ],
+      "curriculum_alignment": "bio_007 - Reproduction in Plants",
+      "nigerian_context": "Agricultural relevance - Understanding crop reproduction",
+      "educational_value": "Understand plant reproductive strategies and pollination mechanisms"
+    },
+    {
+      "id": "fetus_development",
+      "name": "Fetal Development Stages",
+      "filename": "fetus_development.glb",
+      "description": "Embryonic and fetal development from conception through three trimesters",
+      "anatomical_focus": [
+        "Embryogenesis",
+        "Organ formation",
+        "Fetal growth",
+        "Placental development"
+      ],
+      "curriculum_alignment": "bio_007 - Human Development",
+      "nigerian_context": "Prenatal care understanding for health education",
+      "educational_value": "Understand human development and importance of maternal health"
+    },
+    {
+      "id": "gamete_formation",
+      "name": "Gamete Formation (Spermatogenesis & Oogenesis)",
+      "filename": "gamete_formation.glb",
+      "description": "Comparative study of sperm and egg production showing meiosis processes",
+      "anatomical_focus": [
+        "Meiosis",
+        "Chromosome reduction",
+        "Polar bodies",
+        "Gamete maturation"
+      ],
+      "curriculum_alignment": "bio_007 - Gametogenesis",
+      "nigerian_context": "Foundation for understanding inherited traits",
+      "educational_value": "Understand meiosis and the formation of gametes"
+    },
+    {
+      "id": "menstrual_cycle",
+      "name": "Menstrual Cycle Phases",
+      "filename": "menstrual_cycle.glb",
+      "description": "Complete 28-day menstrual cycle with menstrual, follicular, ovulation, and luteal phases",
+      "anatomical_focus": [
+        "Hormone regulation",
+        "Endometrial changes",
+        "Ovulation",
+        "Hormone cycles"
+      ],
+      "curriculum_alignment": "bio_007 - Female Reproductive Physiology",
+      "nigerian_context": "Health education - Understanding female reproductive health",
+      "educational_value": "Understand hormonal regulation of reproductive cycles"
+    }
+  ],
+  "total_file_size_kb": null,
+  "file_format": "glb",
+  "target_platform": "WebAR, VR headsets, Mobile AR",
+  "cultural_sensitivity_notes": "All models presented with scientific accuracy and cultural appropriateness for Nigerian secondary education. Emphasis on biological processes and health understanding rather than explicit content.",
+  "lesson_routing_keywords": {
+    "male_reproduction": [
+      "male reproductive system",
+      "testis",
+      "testis",
+      "epididymis",
+      "vas deferens",
+      "prostate",
+      "semen",
+      "sperm production",
+      "spermatogenesis"
+    ],
+    "female_reproduction": [
+      "female reproductive system",
+      "ovary",
+      "fallopian tube",
+      "uterus",
+      "vagina",
+      "egg",
+      "oogenesis",
+      "ovulation"
+    ],
+    "plant_reproduction": [
+      "flower reproduction",
+      "pollination",
+      "stamen",
+      "pistil",
+      "anther",
+      "stigma",
+      "ovule",
+      "seed formation"
+    ],
+    "development": [
+      "fetus development",
+      "embryo",
+      "pregnancy",
+      "trimester",
+      "gestation",
+      "placenta",
+      "umbilical cord"
+    ],
+    "meiosis": [
+      "gamete formation",
+      "spermatogenesis",
+      "oogenesis",
+      "meiosis",
+      "polar body",
+      "chromosome reduction",
+      "haploid"
+    ],
+    "hormones": [
+      "menstrual cycle",
+      "hormone",
+      "FSH",
+      "LH",
+      "estrogen",
+      "progesterone",
+      "ovulation",
+      "menstruation",
+      "cycle"
+    ]
+  }
+}
