@@ -1,0 +1,127 @@
+# Version Control
+.git
+.gitignore
+.gitattributes
+.github
+
+# Documentation (keep if needed for reference)
+*.md
+!README.md
+LICENSE
+CONTRIBUTING.md
+
+# Configuration files (keep vercel.json)
+*.json
+!vercel.json
+!package.json
+!tsconfig.json
+!next.config.js
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets/
+keys/
+
+# Local development files
+.dockerignore
+.docker/
+docker-compose*
+Dockerfile*
+docker/
+
+# Build and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+node_modules/.cache
+
+# Virtual environments
+venv/
+env/
+.venv/
+myenv/
+ENV/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test and development files
+test/
+tests/
+*_test.py
+*_tests.py
+test_*.py
+conftest.py
+coverage/
+.tox/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Large media files (if not needed for deployment)
+# generated_assets/
+# generated_images/
+# videos/
+# audio/
+# media/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+.vercel/
+.vercel_build_output/
+.nuxt/
+.cache/
+
+# Frontend specific (if deploying backend only)
+# Uncomment if deploying backend only
+# frontend/
+# src/
+# public/
+
+# Backend development files (keep main.py and required files)
+# These files are not needed for Vercel deployment
+# *.pyc files are auto-generated
+
+# Misc
+__pycache__
+*.egg-info
+*.egg
+*.whl
+*.tar
+*.gz
+*.zip

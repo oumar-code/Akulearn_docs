@@ -1,0 +1,62 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.9",
+        "maxLambdaSize": "15mb",
+        "installCommand": "pip install -r requirements.txt"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/auth/(.*)",
+      "dest": "main.py"
+    },
+    {
+      "src": "/api/questions/(.*)",
+      "dest": "main.py"
+    },
+    {
+      "src": "/api/user/(.*)",
+      "dest": "main.py"
+    },
+    {
+      "src": "/api/content/(.*)",
+      "dest": "main.py"
+    },
+    {
+      "src": "/api/readiness/(.*)",
+      "dest": "main.py"
+    },
+    {
+      "src": "/api/health",
+      "dest": "main.py"
+    },
+    {
+      "src": "/api/metrics",
+      "dest": "main.py"
+    },
+    {
+      "src": "/api/test/(.*)",
+      "dest": "main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "main.py"
+    }
+  ],
+  "env": {
+    "PYTHONPATH": ".",
+    "AKU_TOTAL_SLOTS": "10",
+    "AKU_RESERVED_SLOTS": "4"
+  },
+  "framework": null,
+  "installCommand": "pip install -r requirements.txt",
+  "buildCommand": null,
+  "outputDirectory": null
+}
