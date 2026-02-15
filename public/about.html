@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="About Akudemy - Our mission to make quality education accessible to every Nigerian student." />
+    <title>About Akudemy | Our Mission</title>
+    <style>
+        :root {
+            --blue-primary: #0052CC;
+            --green-accent: #00D084;
+            --orange-accent: #FF6B35;
+            --dark-gray: #2C3E50;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--blue-primary) 0%, #0066FF 100%);
+            color: var(--white);
+            padding: 5rem 0 4rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section.alt {
+            background: var(--light-gray);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(0, 208, 132, 0.12);
+            color: var(--green-accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 4rem 0;
+            background: var(--green-accent);
+            color: var(--white);
+        }
+
+        .cta a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.9rem 1.6rem;
+            background: var(--white);
+            color: var(--blue-primary);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 2rem 0;
+            background: var(--dark-gray);
+            color: var(--white);
+            text-align: center;
+        }
+
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin-right: 1.2rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+
+        nav a:hover { color: var(--blue-primary); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/">Akudemy</a>
+            <a href="/jamb.html" style="color: #00D084; font-weight: 700;">🎓 Free JAMB Prep</a>
+            <a href="/blog.html">Blog</a>
+            <a href="/pricing.html">Pricing</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <span class="tag">Our Mission</span>
+            <h1>Education that works without the internet.</h1>
+            <p>
+                Akudemy exists to give every Nigerian student access to quality, curriculum-aligned learning—
+                no matter where they live or how reliable their connectivity is.
+            </p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container grid">
+            <div class="card">
+                <h3>Why We Built Akudemy</h3>
+                <p>Only 1 in 4 students has reliable internet. Most learning tools assume connectivity. We build for the other 3.</p>
+            </div>
+            <div class="card">
+                <h3>What Makes Us Different</h3>
+                <p>Offline-first, 3D learning models, AI-powered diagnostics, and curriculum alignment for WAEC/JAMB/NECO.</p>
+            </div>
+            <div class="card">
+                <h3>Our Impact Goal</h3>
+                <p>Help 10 million students across Africa access quality learning by 2030.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section alt">
+        <div class="container">
+            <h2>Values We Live By</h2>
+            <div class="grid" style="margin-top: 2rem;">
+                <div class="card"><strong>Accessibility</strong><br/>Learning should work anywhere.</div>
+                <div class="card"><strong>Quality</strong><br/>Curriculum-aligned, exam-focused content.</div>
+                <div class="card"><strong>Innovation</strong><br/>3D models, AI, offline-first by design.</div>
+                <div class="card"><strong>Impact</strong><br/>Measurable student improvement.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Milestones</h2>
+            <div class="grid" style="margin-top: 2rem;">
+                <div class="card"><strong>2025</strong><br/>Platform prototype and initial content pipeline.</div>
+                <div class="card"><strong>2026</strong><br/>Launch with 1,350+ questions and 3D models.</div>
+                <div class="card"><strong>2027</strong><br/>Scale to 100,000+ students across Nigeria.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Join the Akudemy mission</h2>
+            <p>Help us bring quality learning to every student.</p>
+            <a href="/">Start Learning</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">© 2026 Akudemy • Part of the Aku ecosystem</div>
+    </footer>
+</body>
+</html>

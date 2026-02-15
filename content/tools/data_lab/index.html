@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Lab (MVP)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f6f7fb; color: #1f2d3d; }
+    header { background: #0052CC; color: #fff; padding: 16px; }
+    main { padding: 16px; max-width: 960px; margin: 0 auto; }
+    .card { background: #fff; border-radius: 8px; padding: 16px; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    label { display:block; font-weight: 600; margin-top: 12px; }
+    textarea, input { width: 100%; padding: 8px; margin-top: 6px; }
+    button { padding: 10px 14px; margin-right: 8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Data Lab (MVP)</h1>
+    <p>Paste CSV → get summary notes</p>
+  </header>
+  <main>
+    <div class="card">
+      <label>Dataset Name</label>
+      <input id="name" placeholder="e.g., Rainfall data" />
+      <label>CSV Data</label>
+      <textarea id="csv" rows="8" placeholder="year, rainfall\n2020, 120\n2021, 110"></textarea>
+      <label>Summary Notes</label>
+      <textarea id="summary" rows="4" placeholder="Describe trend, outliers, averages"></textarea>
+    </div>
+    <div class="card">
+      <button onclick="saveProject()">Save</button>
+      <button onclick="loadProject()">Load</button>
+      <button onclick="exportProject()">Export JSON</button>
+    </div>
+  </main>
+  <script>
+    const key = 'tool_data_lab_v1';
+    function getData(){
+      return {
+        name: document.getElementById('name').value,
+        csv: document.getElementById('csv').value,
+        summary: document.getElementById('summary').value,
+        savedAt: new Date().toISOString()
+      };
+    }
+    function setData(d){
+      if(!d) return;
+      document.getElementById('name').value = d.name || '';
+      document.getElementById('csv').value = d.csv || '';
+      document.getElementById('summary').value = d.summary || '';
+    }
+    function saveProject(){
+      localStorage.setItem(key, JSON.stringify(getData()));
+      alert('Saved locally');
+    }
+    function loadProject(){
+      const data = JSON.parse(localStorage.getItem(key));
+      setData(data);
+    }
+    function exportProject(){
+      const blob = new Blob([JSON.stringify(getData(), null, 2)], {type:'application/json'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'data_lab_project.json';
+      a.click();
+    }
+  </script>
+</body>
+</html>

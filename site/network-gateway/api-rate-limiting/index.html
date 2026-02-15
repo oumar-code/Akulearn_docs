@@ -1,0 +1,2263 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive documentation for the Akulearn EdTech platform, covering architecture, development standards, and project plans.">
+      
+      
+      
+        <link rel="canonical" href="https://akulearn.com/docs/network-gateway/api-rate-limiting/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Network Gateway API — Rate Limiting & Quotas - Akulearn Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network-gateway-api-rate-limiting-quotas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Akulearn Documentation" class="md-header__button md-logo" aria-label="Akulearn Documentation" data-md-component="logo">
+      
+  <img src="../../images/akulearn-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Akulearn Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Network Gateway API — Rate Limiting &amp; Quotas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/oumar-code/Akulearn_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    oumar-code/Akulearn_docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/00-project-overview/index.md" class="md-tabs__link">
+          
+  
+  
+  Project Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/01-architecture/index.md" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/network-gateway/index.md" class="md-tabs__link">
+          
+  
+  
+  Network Gateway
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/02-backend/index.md" class="md-tabs__link">
+          
+  
+  
+  Backend
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/03-mobile/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mobile App
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/04-iot-projector/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  IoT Projector
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/05-cross-cutting/coding-standards.md" class="md-tabs__link">
+          
+  
+  
+  Cross-Cutting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/06-process-methodology/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Process & Methodology
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/07-glossary/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/demo_scripts/offline_demo_segment.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Demo Scripts
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Akulearn Documentation" class="md-nav__button md-logo" aria-label="Akulearn Documentation" data-md-component="logo">
+      
+  <img src="../../images/akulearn-logo.png" alt="logo">
+
+    </a>
+    Akulearn Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/oumar-code/Akulearn_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    oumar-code/Akulearn_docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/00-project-overview/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/00-project-overview/roadmap-phase-1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/01-architecture/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/01-architecture/hld-lld-content-ingestion.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/01-architecture/adrs/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADRs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Gateway
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network Gateway
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/esim.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eSIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/sim.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physical SIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/validation-test-plan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/field-operations-runbook.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/api-rate-limiting.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limiting & Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/pilot-deployment-plan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pilot Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/02-backend/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/02-backend/api-specs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/02-backend/database-schemas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/03-mobile/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/04-iot-projector/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IoT Projector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Cutting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cross-Cutting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/05-cross-cutting/coding-standards.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/05-cross-cutting/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/06-process-methodology/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process & Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/07-glossary/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/demo_scripts/offline_demo_segment.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rate-limiting-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate Limiting Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rate Limiting Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-based-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier-based limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limit-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate limit headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#429-response-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        429 Response format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limit-bypass-emergency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate limit bypass (emergency)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-size-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch size limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-status-polling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch status polling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-failure-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partial failure handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhook Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webhook-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook registration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-payload-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook payload format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signature-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signature verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delivery-guarantees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delivery guarantees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circuit-breaker-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Circuit Breaker Pattern
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Circuit Breaker Pattern">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gateway-level-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gateway-level protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-responses-during-circuit-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error responses during circuit open
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test environments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-contract-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API contract tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-testing-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Load testing scenarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quota-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quota Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quota Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-quota-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API quota allocation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quota-increase-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quota increase requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="network-gateway-api-rate-limiting-quotas">Network Gateway API — Rate Limiting &amp; Quotas<a class="headerlink" href="#network-gateway-api-rate-limiting-quotas" title="Permanent link">&para;</a></h1>
+<h2 id="rate-limiting-strategy">Rate Limiting Strategy<a class="headerlink" href="#rate-limiting-strategy" title="Permanent link">&para;</a></h2>
+<h3 id="tier-based-limits">Tier-based limits<a class="headerlink" href="#tier-based-limits" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Consumer Tier</th>
+<th>Requests/minute</th>
+<th>Burst Allowance</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Admin Portal</strong></td>
+<td>1000</td>
+<td>1200</td>
+<td>Internal system, high trust</td>
+</tr>
+<tr>
+<td><strong>Field Agents</strong></td>
+<td>300</td>
+<td>350</td>
+<td>Mobile app, moderate volume</td>
+</tr>
+<tr>
+<td><strong>External Integrations</strong></td>
+<td>100</td>
+<td>120</td>
+<td>Third-party systems</td>
+</tr>
+<tr>
+<td><strong>Webhooks (inbound)</strong></td>
+<td>50</td>
+<td>60</td>
+<td>Callback verification endpoints</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rate-limit-headers">Rate limit headers<a class="headerlink" href="#rate-limit-headers" title="Permanent link">&para;</a></h3>
+<p>All API responses include rate limit information:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">X-RateLimit-Limit: 1000</span>
+<span class="err">X-RateLimit-Remaining: 950</span>
+<span class="err">X-RateLimit-Reset: 1737561600</span>
+</code></pre></div>
+
+<ul>
+<li><strong>X-RateLimit-Limit:</strong> Maximum requests allowed in current window</li>
+<li><strong>X-RateLimit-Remaining:</strong> Remaining requests before limit hit</li>
+<li><strong>X-RateLimit-Reset:</strong> Unix timestamp when limit resets</li>
+</ul>
+<h3 id="429-response-format">429 Response format<a class="headerlink" href="#429-response-format" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rate_limit_exceeded&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rate limit of 1000 requests/minute exceeded&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;remaining&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;resetAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-22T11:00:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;retryAfter&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="rate-limit-bypass-emergency">Rate limit bypass (emergency)<a class="headerlink" href="#rate-limit-bypass-emergency" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>X-RateLimit-Bypass:</strong> Include header with signed token for emergency operations</li>
+<li>Requires platform admin approval</li>
+<li>Logged and audited for compliance</li>
+</ul>
+<h2 id="batch-operations">Batch Operations<a class="headerlink" href="#batch-operations" title="Permanent link">&para;</a></h2>
+<h3 id="batch-size-limits">Batch size limits<a class="headerlink" href="#batch-size-limits" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Max Batch Size</th>
+<th>Processing Time (est)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eSIM profile creation</td>
+<td>100</td>
+<td>30-60s</td>
+</tr>
+<tr>
+<td>pSIM ICCID registration</td>
+<td>100</td>
+<td>30-60s</td>
+</tr>
+<tr>
+<td>Policy updates</td>
+<td>500</td>
+<td>60-120s</td>
+</tr>
+<tr>
+<td>Profile suspension/resume</td>
+<td>200</td>
+<td>20-40s</td>
+</tr>
+</tbody>
+</table>
+<h3 id="batch-workflow">Batch workflow<a class="headerlink" href="#batch-workflow" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">sequenceDiagram</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">Client</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">API</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="n">Gateway</span><span class="w"> </span><span class="n">API</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">Queue</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="n">Job</span><span class="w"> </span><span class="n">Queue</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">Worker</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="n">Batch</span><span class="w"> </span><span class="n">Worker</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">DB</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="n">Database</span>
+
+<span class="w">    </span><span class="n">Client</span><span class="o">-&gt;&gt;</span><span class="n">API</span><span class="o">:</span><span class="w"> </span><span class="n">POST</span><span class="w"> </span><span class="o">/</span><span class="n">esim</span><span class="o">/</span><span class="n">profiles</span><span class="o">/</span><span class="n">batch</span>
+<span class="w">    </span><span class="n">API</span><span class="o">-&gt;&gt;</span><span class="n">Queue</span><span class="o">:</span><span class="w"> </span><span class="n">Enqueue</span><span class="w"> </span><span class="n">batch</span><span class="w"> </span><span class="n">job</span>
+<span class="w">    </span><span class="n">API</span><span class="o">-&gt;&gt;</span><span class="n">Client</span><span class="o">:</span><span class="w"> </span><span class="mi">202</span><span class="w"> </span><span class="n">Accepted</span><span class="w"> </span><span class="p">(</span><span class="n">batchId</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Queue</span><span class="o">-&gt;&gt;</span><span class="n">Worker</span><span class="o">:</span><span class="w"> </span><span class="n">Assign</span><span class="w"> </span><span class="n">job</span>
+<span class="w">    </span><span class="nf">loop</span><span class="w"> </span><span class="nf">Process</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">item</span>
+<span class="w">        </span><span class="n">Worker</span><span class="o">-&gt;&gt;</span><span class="n">DB</span><span class="o">:</span><span class="w"> </span><span class="n">Create</span><span class="w"> </span><span class="n">profile</span>
+<span class="w">        </span><span class="n">Worker</span><span class="o">-&gt;&gt;</span><span class="n">Queue</span><span class="o">:</span><span class="w"> </span><span class="n">Update</span><span class="w"> </span><span class="n">progress</span>
+<span class="w">    </span><span class="kd">end</span>
+<span class="w">    </span><span class="n">Worker</span><span class="o">-&gt;&gt;</span><span class="n">Queue</span><span class="o">:</span><span class="w"> </span><span class="n">Mark</span><span class="w"> </span><span class="n">complete</span>
+<span class="w">    </span><span class="n">Client</span><span class="o">-&gt;&gt;</span><span class="n">API</span><span class="o">:</span><span class="w"> </span><span class="n">GET</span><span class="w"> </span><span class="o">/</span><span class="n">batch</span><span class="o">/</span><span class="p">{</span><span class="n">batchId</span><span class="p">}</span>
+<span class="w">    </span><span class="n">API</span><span class="o">-&gt;&gt;</span><span class="n">Client</span><span class="o">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="n">OK</span><span class="w"> </span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="batch-status-polling">Batch status polling<a class="headerlink" href="#batch-status-polling" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Poll <code>/batch/{batchId}</code> for status updates</li>
+<li>Recommended interval: 5 seconds</li>
+<li>Status transitions: <code>queued</code> → <code>processing</code> → <code>completed</code>/<code>failed</code></li>
+<li>Results available for 24 hours after completion</li>
+</ul>
+<h3 id="partial-failure-handling">Partial failure handling<a class="headerlink" href="#partial-failure-handling" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Batch continues even if individual items fail</li>
+<li>Response includes per-item status and error details</li>
+<li>Retry failed items with new batch request or individual API calls</li>
+</ul>
+<h2 id="webhook-integration">Webhook Integration<a class="headerlink" href="#webhook-integration" title="Permanent link">&para;</a></h2>
+<h3 id="webhook-registration">Webhook registration<a class="headerlink" href="#webhook-registration" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="err">POST /webhooks</span>
+<span class="err">{</span>
+<span class="err">  &quot;url&quot;: &quot;https://example.com/webhooks/sim-events&quot;,</span>
+<span class="err">  &quot;events&quot;: [&quot;profile.activated&quot;, &quot;iccid.registered&quot;, &quot;attach.success&quot;],</span>
+<span class="err">  &quot;secret&quot;: &quot;wh_secret_abc123def456&quot;</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<h3 id="supported-events">Supported events<a class="headerlink" href="#supported-events" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Trigger</th>
+<th>Payload Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>profile.created</code></td>
+<td>eSIM profile created</td>
+<td>profileId, deviceId, policyId</td>
+</tr>
+<tr>
+<td><code>profile.activated</code></td>
+<td>Device first attach</td>
+<td>profileId, imsi, cellId</td>
+</tr>
+<tr>
+<td><code>profile.suspended</code></td>
+<td>Admin/system suspend</td>
+<td>profileId, reason</td>
+</tr>
+<tr>
+<td><code>profile.deleted</code></td>
+<td>Profile removed</td>
+<td>profileId, deletedBy</td>
+</tr>
+<tr>
+<td><code>iccid.registered</code></td>
+<td>pSIM registered</td>
+<td>iccid, subscriberId, agent</td>
+</tr>
+<tr>
+<td><code>iccid.activated</code></td>
+<td>Device first attach</td>
+<td>iccid, imsi, deviceType</td>
+</tr>
+<tr>
+<td><code>iccid.suspended</code></td>
+<td>Admin/system suspend</td>
+<td>iccid, reason</td>
+</tr>
+<tr>
+<td><code>attach.success</code></td>
+<td>Successful attach</td>
+<td>imsi, cellId, rat</td>
+</tr>
+<tr>
+<td><code>policy.pushed</code></td>
+<td>Policy update delivered</td>
+<td>profileId/iccid, policyVersion</td>
+</tr>
+<tr>
+<td><code>swap.completed</code></td>
+<td>SIM swap finished</td>
+<td>oldId, newId, subscriberId</td>
+</tr>
+</tbody>
+</table>
+<h3 id="webhook-payload-format">Webhook payload format<a class="headerlink" href="#webhook-payload-format" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;profile.activated&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-22T10:20:45Z&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;profileId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;profile-123&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;deviceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;device-456&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;imsi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;310260123456789&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cellId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;edge-hub-01&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;signature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sha256=a1b2c3d4e5f6789012345678901234567890abcdef...&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="signature-verification">Signature verification<a class="headerlink" href="#signature-verification" title="Permanent link">&para;</a></h3>
+<p><strong>HMAC-SHA256 signature:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">hmac</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">verify_webhook</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">signature</span><span class="p">,</span> <span class="n">secret</span><span class="p">):</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span>
+        <span class="n">secret</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span>
+        <span class="n">payload</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span>
+        <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">hmac</span><span class="o">.</span><span class="n">compare_digest</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sha256=</span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">signature</span><span class="p">)</span>
+</code></pre></div>
+
+<p><strong>Header:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">X-Webhook-Signature: sha256=a1b2c3d4e5f6...</span>
+</code></pre></div>
+
+<h3 id="delivery-guarantees">Delivery guarantees<a class="headerlink" href="#delivery-guarantees" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Retry policy:</strong> Exponential backoff (5s, 15s, 45s, 135s, 405s)</li>
+<li><strong>Max retries:</strong> 5 attempts</li>
+<li><strong>Timeout:</strong> 10 seconds per attempt</li>
+<li><strong>Success criteria:</strong> HTTP 200-299 response</li>
+<li><strong>Failure handling:</strong> Mark webhook inactive after 20 consecutive failures</li>
+</ul>
+<h3 id="webhook-management">Webhook management<a class="headerlink" href="#webhook-management" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="err">GET /webhooks/{webhookId}</span>
+<span class="err">Response:</span>
+<span class="err">{</span>
+<span class="err">  &quot;webhookId&quot;: &quot;wh-001&quot;,</span>
+<span class="err">  &quot;url&quot;: &quot;https://example.com/webhooks/sim-events&quot;,</span>
+<span class="err">  &quot;events&quot;: [&quot;profile.activated&quot;, &quot;iccid.registered&quot;],</span>
+<span class="err">  &quot;status&quot;: &quot;active&quot;,</span>
+<span class="err">  &quot;deliveryStats&quot;: {</span>
+<span class="err">    &quot;totalSent&quot;: 1250,</span>
+<span class="err">    &quot;successCount&quot;: 1240,</span>
+<span class="err">    &quot;failureCount&quot;: 10,</span>
+<span class="err">    &quot;successRate&quot;: 0.992,</span>
+<span class="err">    &quot;lastSuccess&quot;: &quot;2026-01-22T10:45:00Z&quot;,</span>
+<span class="err">    &quot;lastFailure&quot;: &quot;2026-01-22T09:30:00Z&quot;</span>
+<span class="err">  }</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<p><strong>Suspend webhook:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">PATCH /webhooks/{webhookId}</span>
+<span class="err">{</span>
+<span class="err">  &quot;status&quot;: &quot;suspended&quot;</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<h2 id="circuit-breaker-pattern">Circuit Breaker Pattern<a class="headerlink" href="#circuit-breaker-pattern" title="Permanent link">&para;</a></h2>
+<h3 id="gateway-level-protection">Gateway-level protection<a class="headerlink" href="#gateway-level-protection" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+<span class="w">    </span><span class="p">[</span><span class="o">*</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Closed</span><span class="o">:</span><span class="w"> </span><span class="n">Normal</span><span class="w"> </span><span class="n">operation</span>
+<span class="w">    </span><span class="n">Closed</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Open</span><span class="o">:</span><span class="w"> </span><span class="kr">Failure</span><span class="w"> </span><span class="kr">threshold</span><span class="w"> </span><span class="n">exceeded</span>
+<span class="w">    </span><span class="n">Open</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">HalfOpen</span><span class="o">:</span><span class="w"> </span><span class="n">Timeout</span><span class="w"> </span><span class="n">elapsed</span>
+<span class="w">    </span><span class="n">HalfOpen</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Closed</span><span class="o">:</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">requests</span><span class="w"> </span><span class="n">succeed</span>
+<span class="w">    </span><span class="n">HalfOpen</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Open</span><span class="o">:</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">requests</span><span class="w"> </span><span class="kr">fail</span>
+</code></pre></div>
+
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Failure threshold:</strong> 50% error rate over 60s window</li>
+<li><strong>Open duration:</strong> 30 seconds</li>
+<li><strong>Half-open test:</strong> 3 requests</li>
+<li><strong>Recovery:</strong> Return to closed after 10 consecutive successes</li>
+</ul>
+<h3 id="error-responses-during-circuit-open">Error responses during circuit open<a class="headerlink" href="#error-responses-during-circuit-open" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;circuit_breaker_open&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gateway temporarily unavailable due to high error rate&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hlr_gateway&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;reopenAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-22T10:30:00Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;retryAfter&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h2 id="integration-testing">Integration Testing<a class="headerlink" href="#integration-testing" title="Permanent link">&para;</a></h2>
+<h3 id="test-environments">Test environments<a class="headerlink" href="#test-environments" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>Base URL</th>
+<th>Rate Limits</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sandbox</strong></td>
+<td>https://sandbox-api.akulearn.com/network-gateway</td>
+<td>10x production</td>
+<td>Integration testing</td>
+</tr>
+<tr>
+<td><strong>Staging</strong></td>
+<td>https://staging-api.akulearn.com/network-gateway</td>
+<td>1x production</td>
+<td>Pre-production validation</td>
+</tr>
+<tr>
+<td><strong>Production</strong></td>
+<td>https://api.akulearn.com/network-gateway</td>
+<td>Full limits</td>
+<td>Live operations</td>
+</tr>
+</tbody>
+</table>
+<h3 id="test-data">Test data<a class="headerlink" href="#test-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Sandbox:</strong> Auto-resets daily; pre-loaded test devices and policies</li>
+<li><strong>Test ICCIDs:</strong> Range 890123400000000000-890123400009999999 reserved for testing</li>
+<li><strong>Test profiles:</strong> Auto-expire after 24 hours in sandbox</li>
+</ul>
+<h3 id="api-contract-tests">API contract tests<a class="headerlink" href="#api-contract-tests" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Run contract tests against sandbox</span>
+npm<span class="w"> </span>run<span class="w"> </span>test:api:contracts<span class="w"> </span>--<span class="w"> </span>--env<span class="o">=</span>sandbox
+
+<span class="c1"># Validate OpenAPI spec</span>
+swagger-cli<span class="w"> </span>validate<span class="w"> </span>openapi/network-gateway.yaml
+
+<span class="c1"># Generate client from spec</span>
+openapi-generator-cli<span class="w"> </span>generate<span class="w"> </span>-i<span class="w"> </span>openapi/network-gateway.yaml<span class="w"> </span>-g<span class="w"> </span>python<span class="w"> </span>-o<span class="w"> </span>clients/python
+</code></pre></div>
+
+<h3 id="load-testing-scenarios">Load testing scenarios<a class="headerlink" href="#load-testing-scenarios" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>RPS Target</th>
+<th>Duration</th>
+<th>Success Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal load</td>
+<td>100</td>
+<td>10 min</td>
+<td>&lt;1% errors, P95 &lt;500ms</td>
+</tr>
+<tr>
+<td>Peak load</td>
+<td>500</td>
+<td>5 min</td>
+<td>&lt;2% errors, P95 &lt;1s</td>
+</tr>
+<tr>
+<td>Burst</td>
+<td>1000</td>
+<td>30s</td>
+<td>&lt;5% errors, P95 &lt;2s</td>
+</tr>
+<tr>
+<td>Batch operations</td>
+<td>50 batches/min</td>
+<td>10 min</td>
+<td>&lt;1% batch failures</td>
+</tr>
+</tbody>
+</table>
+<h2 id="quota-management">Quota Management<a class="headerlink" href="#quota-management" title="Permanent link">&para;</a></h2>
+<h3 id="api-quota-allocation">API quota allocation<a class="headerlink" href="#api-quota-allocation" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="err">GET /quotas</span>
+<span class="err">Response:</span>
+<span class="err">{</span>
+<span class="err">  &quot;tier&quot;: &quot;field_agent&quot;,</span>
+<span class="err">  &quot;limits&quot;: {</span>
+<span class="err">    &quot;requestsPerMinute&quot;: 300,</span>
+<span class="err">    &quot;batchOperationsPerHour&quot;: 10,</span>
+<span class="err">    &quot;maxBatchSize&quot;: 100,</span>
+<span class="err">    &quot;webhooksMax&quot;: 5</span>
+<span class="err">  },</span>
+<span class="err">  &quot;usage&quot;: {</span>
+<span class="err">    &quot;requestsThisMinute&quot;: 45,</span>
+<span class="err">    &quot;batchOperationsThisHour&quot;: 2,</span>
+<span class="err">    &quot;webhooksRegistered&quot;: 2</span>
+<span class="err">  },</span>
+<span class="err">  &quot;resetAt&quot;: &quot;2026-01-22T11:00:00Z&quot;</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<h3 id="quota-increase-requests">Quota increase requests<a class="headerlink" href="#quota-increase-requests" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Submit via admin portal or support ticket</li>
+<li>Justification required (use case, volume projection)</li>
+<li>Approval within 2 business days</li>
+<li>Temporary increases available for pilot/testing</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

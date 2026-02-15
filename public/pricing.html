@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Akudemy Pricing - Flexible plans for students and schools." />
+    <title>Akudemy Pricing | Plans for Students & Schools</title>
+    <style>
+        :root {
+            --blue-primary: #0052CC;
+            --green-accent: #00D084;
+            --orange-accent: #FF6B35;
+            --dark-gray: #2C3E50;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background: var(--white);
+        }
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        nav a {
+            text-decoration: none;
+            margin-right: 1.2rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+        nav a:hover { color: var(--blue-primary); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        header {
+            background: linear-gradient(135deg, var(--blue-primary) 0%, #0066FF 100%);
+            color: var(--white);
+            padding: 4rem 0;
+        }
+        header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+        .pricing { padding: 4rem 0; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            border: 2px solid var(--light-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            background: var(--white);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+        .card.featured {
+            border-color: var(--blue-primary);
+            transform: scale(1.02);
+        }
+        .price { font-size: 2.5rem; font-weight: 800; color: var(--blue-primary); }
+        .price span { font-size: 1rem; font-weight: 400; }
+        .features { margin-top: 1.5rem; list-style: none; }
+        .features li { padding: 0.4rem 0; }
+        .features li::before { content: "✓"; color: var(--green-accent); margin-right: 0.6rem; }
+        .badge {
+            display: inline-block;
+            background: var(--orange-accent);
+            color: var(--white);
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+        .cta { text-align: center; padding: 3rem 0; background: var(--light-gray); }
+        .cta a {
+            display: inline-block;
+            padding: 0.9rem 1.6rem;
+            background: var(--blue-primary);
+            color: var(--white);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .details { padding: 3rem 0; }
+        footer { text-align: center; padding: 2rem 0; background: var(--dark-gray); color: var(--white); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/">Akudemy</a>
+            <a href="/jamb.html" style="color: #00D084; font-weight: 700;">🎓 Free JAMB Prep</a>
+            <a href="/about.html">About</a>
+            <a href="/blog.html">Blog</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Simple, Flexible Pricing</h1>
+            <p>Choose a plan that fits your goals—students and schools both welcome.</p>
+        </div>
+    </header>
+
+    <section class="pricing">
+        <div class="container grid">
+            <div class="card">
+                <h3>Free</h3>
+                <p>For trying Akudemy</p>
+                <div class="price">₦0<span>/month</span></div>
+                <ul class="features">
+                    <li>100 practice questions</li>
+                    <li>Basic 3D models (5 topics)</li>
+                    <li>Progress tracking</li>
+                    <li>Offline access</li>
+                </ul>
+            </div>
+            <div class="card featured">
+                <span class="badge">Most Popular</span>
+                <h3>Student Premium</h3>
+                <p>Complete exam prep</p>
+                <div class="price">₦1,500<span>/month</span></div>
+                <ul class="features">
+                    <li>1,350+ practice questions</li>
+                    <li>All 3D models (unlimited)</li>
+                    <li>AI weak topic detection</li>
+                    <li>Readiness assessments</li>
+                    <li>Detailed analytics</li>
+                    <li>Priority support</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>School License</h3>
+                <p>For schools & teachers</p>
+                <div class="price">₦500K<span>/year</span></div>
+                <ul class="features">
+                    <li>Up to 500 students</li>
+                    <li>Teacher dashboard</li>
+                    <li>Class management</li>
+                    <li>Bulk device deployment</li>
+                    <li>Dedicated support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="details">
+        <div class="container">
+            <h2>Pricing Details</h2>
+            <p>All plans include offline access, Nigerian curriculum alignment, and continuous content updates.</p>
+            <div class="grid" style="margin-top: 2rem;">
+                <div class="card">
+                    <h4>Discounts & Partnerships</h4>
+                    <p>Special pricing for government programs, NGOs, and large school networks.</p>
+                </div>
+                <div class="card">
+                    <h4>Device Bundles</h4>
+                    <p>Bundle Akudemy with solar-powered tablets and projectors via Aku DaaS.</p>
+                </div>
+                <div class="card">
+                    <h4>Custom Content</h4>
+                    <p>We can add local language content or custom learning paths for schools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to get started?</h2>
+            <p>Start free or contact us for school licensing.</p>
+            <a href="mailto:schools@akudemy.com">Contact Sales</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">© 2026 Akudemy • Pricing built for Nigerian students</div>
+    </footer>
+</body>
+</html>

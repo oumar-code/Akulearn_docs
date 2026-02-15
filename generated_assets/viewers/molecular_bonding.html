@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molecular Bonding - Interactive Chemistry Animations</title>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        header h1 { font-size: 38px; margin-bottom: 10px; }
+        header p { font-size: 16px; opacity: 0.9; }
+        
+        .controls {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .control-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .control-group label {
+            font-weight: 600;
+            color: #333;
+            min-width: 140px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+        
+        button.active {
+            background: #28a745;
+        }
+        
+        .canvas-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .canvas-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        canvas {
+            width: 100%;
+            height: 500px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fafafa;
+            display: block;
+        }
+        
+        .stage-info {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .stage-info strong {
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .info-panel {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .info-panel h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 13px;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f9f9f9;
+        }
+        
+        .slider-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex: 1;
+        }
+        
+        input[type="range"] {
+            flex: 1;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            min-width: 150px;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+        }
+        
+        .progress-display {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .legend {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+        }
+        
+        .legend-item {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #333;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 { font-size: 28px; }
+            .control-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚛️ Molecular Bonding Animations</h1>
+            <p>Interactive Chemistry - NERDC/WAEC (SS1-SS3)</p>
+        </header>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label>Select Animation:</label>
+                <div class="btn-group">
+                    <button class="active" onclick="selectAnimation('ionic')">Ionic Bond (NaCl)</button>
+                    <button onclick="selectAnimation('covalent_h2o')">Covalent (H₂O)</button>
+                    <button onclick="selectAnimation('covalent_co2')">Covalent (CO₂)</button>
+                    <button onclick="selectAnimation('dna')">DNA Replication</button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label>Animation Control:</label>
+                <div class="btn-group">
+                    <button onclick="playAnimation()">▶ Play</button>
+                    <button onclick="pauseAnimation()">⏸ Pause</button>
+                    <button onclick="resetAnimation()">↻ Reset</button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label>Progress:</label>
+                <div class="slider-container">
+                    <input type="range" id="progressSlider" min="0" max="100" value="0" oninput="setProgress(this.value)">
+                    <span class="progress-display" id="progressDisplay">0%</span>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label>Speed:</label>
+                <div class="slider-container" style="max-width: 300px;">
+                    <input type="range" id="speedSlider" min="0.1" max="3" step="0.1" value="1" oninput="setSpeed(this.value)">
+                    <span id="speedDisplay">1.0x</span>
+                </div>
+            </div>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #FF6B6B;"></div>
+                    <span>Sodium (Na⁺)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4ECDC4;"></div>
+                    <span>Chlorine (Cl⁻)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #95E1D3;"></div>
+                    <span>Hydrogen</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #F38181;"></div>
+                    <span>Oxygen</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #FFC947;"></div>
+                    <span>Electrons</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="canvas-container">
+            <div class="canvas-title" id="canvasTitle">Ionic Bond Formation - Sodium Chloride (NaCl)</div>
+            <canvas id="bondingCanvas"></canvas>
+            <div class="stage-info" id="stageInfo">
+                <strong>Initial State:</strong> Sodium atom has 11 electrons (1 in outer shell). Chlorine atom has 17 electrons (7 in outer shell, needs 1 more for stability).
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h3>📚 Bond Type Comparison</h3>
+            <table class="comparison-table">
+                <tr>
+                    <th>Feature</th>
+                    <th>Ionic Bond</th>
+                    <th>Covalent Bond</th>
+                </tr>
+                <tr>
+                    <td><strong>Electron Behavior</strong></td>
+                    <td>Complete transfer from metal to non-metal</td>
+                    <td>Sharing between two non-metals</td>
+                </tr>
+                <tr>
+                    <td><strong>Bond Type</strong></td>
+                    <td>Electrostatic attraction</td>
+                    <td>Orbital overlap</td>
+                </tr>
+                <tr>
+                    <td><strong>Formation</strong></td>
+                    <td>Metal + Non-metal</td>
+                    <td>Non-metal + Non-metal</td>
+                </tr>
+                <tr>
+                    <td><strong>Examples</strong></td>
+                    <td>NaCl, MgO, CaCl₂</td>
+                    <td>H₂O, CO₂, CH₄, O₂</td>
+                </tr>
+                <tr>
+                    <td><strong>Melting Point</strong></td>
+                    <td>High (strong electrostatic forces)</td>
+                    <td>Lower (weaker intermolecular forces)</td>
+                </tr>
+                <tr>
+                    <td><strong>Conductivity</strong></td>
+                    <td>Conducts when dissolved/molten</td>
+                    <td>Does not conduct electricity</td>
+                </tr>
+                <tr>
+                    <td><strong>Structure</strong></td>
+                    <td>Crystal lattice (3D arrangement)</td>
+                    <td>Simple molecules or giant covalent</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        // Molecular Bonding Animation System
+        
+        const canvas = document.getElementById('bondingCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        let currentAnimation = 'ionic';
+        let isPlaying = false;
+        let animationSpeed = 1;
+        let progress = 0;
+        let animationFrame = null;
+        
+        const animations = {
+            ionic: {
+                title: "Ionic Bond Formation - Sodium Chloride (NaCl)",
+                duration: 25,
+                stages: [
+                    {time: 0, desc: "Initial: Na (11e⁻) and Cl (17e⁻) atoms approach each other"},
+                    {time: 5, desc: "Electron Transfer: Na loses 1 electron from outer shell"},
+                    {time: 10, desc: "Ion Formation: Na⁺ (positive) and Cl⁻ (negative) ions formed"},
+                    {time: 15, desc: "Electrostatic Attraction: Opposite charges attract strongly"},
+                    {time: 20, desc: "Crystal Lattice: Multiple Na⁺Cl⁻ pairs form 3D structure"}
+                ]
+            },
+            covalent_h2o: {
+                title: "Covalent Bond Formation - Water (H₂O)",
+                duration: 20,
+                stages: [
+                    {time: 0, desc: "Initial: 1 Oxygen atom (6 outer e⁻) and 2 Hydrogen atoms (1e⁻ each)"},
+                    {time: 5, desc: "Approach: Atoms move closer, electron clouds begin to overlap"},
+                    {time: 10, desc: "Orbital Overlap: Electrons are shared between O and H atoms"},
+                    {time: 15, desc: "Bond Formation: Two O-H covalent bonds formed (shared pairs)"},
+                    {time: 20, desc: "V-shaped Molecule: 104.5° bond angle, polar molecule"}
+                ]
+            },
+            covalent_co2: {
+                title: "Covalent Bond Formation - Carbon Dioxide (CO₂)",
+                duration: 20,
+                stages: [
+                    {time: 0, desc: "Initial: 1 Carbon atom (4 outer e⁻) and 2 Oxygen atoms (6 outer e⁻ each)"},
+                    {time: 5, desc: "Approach: Atoms align in linear arrangement"},
+                    {time: 10, desc: "Double Bond Formation: C shares 4 electrons (2 with each O)"},
+                    {time: 15, desc: "Complete Molecule: O=C=O structure formed"},
+                    {time: 20, desc: "Linear Molecule: 180° bond angle, non-polar molecule"}
+                ]
+            },
+            dna: {
+                title: "DNA Replication - Double Helix Unwinding",
+                duration: 50,
+                stages: [
+                    {time: 0, desc: "Initial: Double helix DNA structure (complementary base pairs)"},
+                    {time: 10, desc: "Helicase Action: Enzyme unwinds and separates DNA strands"},
+                    {time: 20, desc: "Base Pairing: A pairs with T, G pairs with C (complementary)"},
+                    {time: 30, desc: "DNA Polymerase: Adds nucleotides to growing strand"},
+                    {time: 40, desc: "Leading & Lagging Strands: Continuous and Okazaki fragments"},
+                    {time: 50, desc: "Two Identical DNA: Semi-conservative replication complete"}
+                ]
+            }
+        };
+        
+        function selectAnimation(type) {
+            currentAnimation = type;
+            progress = 0;
+            isPlaying = false;
+            updateDisplay();
+            updateButtons();
+        }
+        
+        function updateButtons() {
+            document.querySelectorAll('.control-group:first-child button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            const buttons = document.querySelectorAll('.control-group:first-child button');
+            if (currentAnimation === 'ionic') buttons[0].classList.add('active');
+            if (currentAnimation === 'covalent_h2o') buttons[1].classList.add('active');
+            if (currentAnimation === 'covalent_co2') buttons[2].classList.add('active');
+            if (currentAnimation === 'dna') buttons[3].classList.add('active');
+        }
+        
+        function playAnimation() {
+            isPlaying = true;
+            animate();
+        }
+        
+        function pauseAnimation() {
+            isPlaying = false;
+        }
+        
+        function resetAnimation() {
+            progress = 0;
+            isPlaying = false;
+            updateDisplay();
+        }
+        
+        function setProgress(value) {
+            progress = parseFloat(value) / 100;
+            isPlaying = false;
+            updateDisplay();
+        }
+        
+        function setSpeed(value) {
+            animationSpeed = parseFloat(value);
+            document.getElementById('speedDisplay').textContent = animationSpeed.toFixed(1) + 'x';
+        }
+        
+        function updateDisplay() {
+            const anim = animations[currentAnimation];
+            document.getElementById('canvasTitle').textContent = anim.title;
+            document.getElementById('progressSlider').value = progress * 100;
+            document.getElementById('progressDisplay').textContent = Math.round(progress * 100) + '%';
+            
+            // Find current stage
+            const currentTime = progress * anim.duration;
+            let stageDesc = anim.stages[0].desc;
+            for (let stage of anim.stages) {
+                if (currentTime >= stage.time) {
+                    stageDesc = stage.desc;
+                }
+            }
+            
+            document.getElementById('stageInfo').innerHTML = '<strong>Stage:</strong> ' + stageDesc;
+            
+            drawAnimation();
+        }
+        
+        function drawAnimation() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            if (currentAnimation === 'ionic') {
+                drawIonicBond(progress);
+            } else if (currentAnimation === 'covalent_h2o') {
+                drawCovalentH2O(progress);
+            } else if (currentAnimation === 'covalent_co2') {
+                drawCovalentCO2(progress);
+            } else if (currentAnimation === 'dna') {
+                drawDNA(progress);
+            }
+        }
+        
+        function drawIonicBond(prog) {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            // Phase 1: Approach (0-0.2)
+            if (prog < 0.2) {
+                const t = prog / 0.2;
+                const naX = centerX - 200 + (80 * t);
+                const clX = centerX + 200 - (80 * t);
+                
+                // Draw Na atom
+                ctx.fillStyle = '#FF6B6B';
+                ctx.beginPath();
+                ctx.arc(naX, centerY, 40, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 18px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('Na', naX, centerY + 6);
+                
+                // Draw Na electrons (11)
+                drawElectronShells(naX, centerY, [2, 8, 1], prog);
+                
+                // Draw Cl atom
+                ctx.fillStyle = '#4ECDC4';
+                ctx.beginPath();
+                ctx.arc(clX, centerY, 45, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('Cl', clX, centerY + 6);
+                
+                // Draw Cl electrons (17)
+                drawElectronShells(clX, centerY, [2, 8, 7], prog);
+            }
+            // Phase 2: Electron Transfer (0.2-0.4)
+            else if (prog < 0.4) {
+                const t = (prog - 0.2) / 0.2;
+                const naX = centerX - 120;
+                const clX = centerX + 120;
+                
+                // Electron moving from Na to Cl
+                const electronX = naX + (clX - naX) * t;
+                const electronY = centerY - 60 + (Math.sin(t * Math.PI) * 30);
+                
+                // Draw Na (losing electron)
+                ctx.fillStyle = prog > 0.3 ? '#FFB6B6' : '#FF6B6B';
+                ctx.beginPath();
+                ctx.arc(naX, centerY, 35, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('Na', naX, centerY + 6);
+                if (prog > 0.3) {
+                    ctx.fillText('⁺', naX + 15, centerY - 15);
+                }
+                
+                drawElectronShells(naX, centerY, prog > 0.3 ? [2, 8] : [2, 8, 1], prog);
+                
+                // Draw moving electron
+                ctx.fillStyle = '#FFC947';
+                ctx.beginPath();
+                ctx.arc(electronX, electronY, 5, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Draw Cl (gaining electron)
+                ctx.fillStyle = prog > 0.3 ? '#6EDDD5' : '#4ECDC4';
+                ctx.beginPath();
+                ctx.arc(clX, centerY, prog > 0.3 ? 50 : 45, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('Cl', clX, centerY + 6);
+                if (prog > 0.3) {
+                    ctx.fillText('⁻', clX + 15, centerY - 15);
+                }
+                
+                drawElectronShells(clX, centerY, prog > 0.3 ? [2, 8, 8] : [2, 8, 7], prog);
+            }
+            // Phase 3: Electrostatic Attraction (0.4-0.6)
+            else if (prog < 0.6) {
+                const t = (prog - 0.4) / 0.2;
+                const distance = 240 - (80 * t);
+                const naX = centerX - distance / 2;
+                const clX = centerX + distance / 2;
+                
+                // Draw Na⁺
+                ctx.fillStyle = '#FFB6B6';
+                ctx.beginPath();
+                ctx.arc(naX, centerY, 35, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('Na⁺', naX, centerY + 6);
+                drawElectronShells(naX, centerY, [2, 8], prog);
+                
+                // Draw Cl⁻
+                ctx.fillStyle = '#6EDDD5';
+                ctx.beginPath();
+                ctx.arc(clX, centerY, 50, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('Cl⁻', clX, centerY + 6);
+                drawElectronShells(clX, centerY, [2, 8, 8], prog);
+                
+                // Draw attraction lines
+                ctx.strokeStyle = '#FFD700';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([5, 5]);
+                ctx.beginPath();
+                ctx.moveTo(naX + 35, centerY);
+                ctx.lineTo(clX - 50, centerY);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+            // Phase 4: Crystal Lattice (0.6-1.0)
+            else {
+                const t = (prog - 0.6) / 0.4;
+                
+                // Draw multiple Na⁺Cl⁻ pairs in lattice pattern
+                const spacing = 100;
+                const positions = [
+                    [centerX, centerY],
+                    [centerX - spacing, centerY - spacing * t],
+                    [centerX + spacing, centerY - spacing * t],
+                    [centerX - spacing, centerY + spacing * t],
+                    [centerX + spacing, centerY + spacing * t]
+                ];
+                
+                positions.forEach((pos, i) => {
+                    const opacity = i === 0 ? 1 : t;
+                    
+                    // Na⁺
+                    ctx.globalAlpha = opacity;
+                    ctx.fillStyle = '#FFB6B6';
+                    ctx.beginPath();
+                    ctx.arc(pos[0] - 30, pos[1], 30, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.fillStyle = '#fff';
+                    ctx.font = 'bold 14px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('Na⁺', pos[0] - 30, pos[1] + 5);
+                    
+                    // Cl⁻
+                    ctx.fillStyle = '#6EDDD5';
+                    ctx.beginPath();
+                    ctx.arc(pos[0] + 30, pos[1], 35, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.fillStyle = '#fff';
+                    ctx.fillText('Cl⁻', pos[0] + 30, pos[1] + 5);
+                });
+                
+                ctx.globalAlpha = 1;
+                
+                // Draw lattice lines
+                if (t > 0.5) {
+                    ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+                    ctx.lineWidth = 1;
+                    positions.slice(1).forEach(pos => {
+                        ctx.beginPath();
+                        ctx.moveTo(centerX, centerY);
+                        ctx.lineTo(pos[0], pos[1]);
+                        ctx.stroke();
+                    });
+                }
+            }
+        }
+        
+        function drawElectronShells(x, y, electrons, prog) {
+            const shellRadii = [20, 35, 50];
+            const colors = ['#FFC947', '#FFC947', '#FFC947'];
+            
+            electrons.forEach((count, shell) => {
+                const radius = shellRadii[shell];
+                
+                // Draw shell orbit
+                ctx.strokeStyle = 'rgba(0,0,0,0.1)';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, Math.PI * 2);
+                ctx.stroke();
+                
+                // Draw electrons
+                for (let i = 0; i < count; i++) {
+                    const angle = (i / count) * Math.PI * 2 + (prog * 2);
+                    const ex = x + Math.cos(angle) * radius;
+                    const ey = y + Math.sin(angle) * radius;
+                    
+                    ctx.fillStyle = colors[shell];
+                    ctx.beginPath();
+                    ctx.arc(ex, ey, 4, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            });
+        }
+        
+        function drawCovalentH2O(prog) {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            if (prog < 0.25) {
+                // Initial: Separate atoms
+                const t = prog / 0.25;
+                
+                // Oxygen
+                ctx.fillStyle = '#F38181';
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, 50, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 20px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('O', centerX, centerY + 7);
+                drawElectronShells(centerX, centerY, [2, 6], prog);
+                
+                // Hydrogen 1
+                const h1X = centerX - 150 + (70 * t);
+                const h1Y = centerY - 80 + (40 * t);
+                ctx.fillStyle = '#95E1D3';
+                ctx.beginPath();
+                ctx.arc(h1X, h1Y, 30, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('H', h1X, h1Y + 7);
+                drawElectronShells(h1X, h1Y, [1], prog);
+                
+                // Hydrogen 2
+                const h2X = centerX + 150 - (70 * t);
+                const h2Y = centerY - 80 + (40 * t);
+                ctx.fillStyle = '#95E1D3';
+                ctx.beginPath();
+                ctx.arc(h2X, h2Y, 30, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('H', h2X, h2Y + 7);
+                drawElectronShells(h2X, h2Y, [1], prog);
+            }
+            else if (prog < 0.5) {
+                // Orbital overlap
+                const t = (prog - 0.25) / 0.25;
+                
+                // Oxygen
+                ctx.fillStyle = '#F38181';
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, 50, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 20px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('O', centerX, centerY + 7);
+                
+                // Hydrogen 1
+                const h1X = centerX - 80 + (10 * t);
+                const h1Y = centerY - 40 + (5 * t);
+                ctx.fillStyle = '#95E1D3';
+                ctx.beginPath();
+                ctx.arc(h1X, h1Y, 30, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('H', h1X, h1Y + 7);
+                
+                // Hydrogen 2
+                const h2X = centerX + 80 - (10 * t);
+                const h2Y = centerY - 40 + (5 * t);
+                ctx.fillStyle = '#95E1D3';
+                ctx.beginPath();
+                ctx.arc(h2X, h2Y, 30, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('H', h2X, h2Y + 7);
+                
+                // Draw overlap regions (shared electrons)
+                if (t > 0.5) {
+                    ctx.fillStyle = 'rgba(255, 215, 0, 0.3)';
+                    ctx.beginPath();
+                    ctx.arc(centerX - 35, centerY - 20, 25, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(centerX + 35, centerY - 20, 25, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+            else {
+                // Complete molecule
+                const t = (prog - 0.5) / 0.5;
+                
+                // Oxygen
+                ctx.fillStyle = '#F38181';
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, 50, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 22px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('O', centerX, centerY + 7);
+                
+                // Hydrogen atoms
+                const angle = 104.5 * Math.PI / 180;
+                const bondLength = 70;
+                
+                const h1X = centerX - Math.cos(angle/2) * bondLength;
+                const h1Y = centerY - Math.sin(angle/2) * bondLength;
+                ctx.fillStyle = '#95E1D3';
+                ctx.beginPath();
+                ctx.arc(h1X, h1Y, 30, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 20px Arial';
+                ctx.fillText('H', h1X, h1Y + 7);
+                
+                const h2X = centerX + Math.cos(angle/2) * bondLength;
+                const h2Y = centerY - Math.sin(angle/2) * bondLength;
+                ctx.fillStyle = '#95E1D3';
+                ctx.beginPath();
+                ctx.arc(h2X, h2Y, 30, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('H', h2X, h2Y + 7);
+                
+                // Draw bonds
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(h1X, h1Y);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(h2X, h2Y);
+                ctx.stroke();
+                
+                // Show bond angle
+                if (t > 0.5) {
+                    ctx.strokeStyle = 'rgba(0,0,0,0.3)';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.arc(centerX, centerY, 40, -Math.PI/2 - angle/2, -Math.PI/2 + angle/2);
+                    ctx.stroke();
+                    
+                    ctx.fillStyle = '#333';
+                    ctx.font = '14px Arial';
+                    ctx.fillText('104.5°', centerX, centerY - 50);
+                }
+            }
+        }
+        
+        function drawCovalentCO2(prog) {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            if (prog < 0.3) {
+                // Initial arrangement
+                const t = prog / 0.3;
+                
+                // Carbon (center)
+                ctx.fillStyle = '#666';
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, 45, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 20px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('C', centerX, centerY + 7);
+                
+                // Oxygen 1 (left)
+                const o1X = centerX - 200 + (100 * t);
+                ctx.fillStyle = '#F38181';
+                ctx.beginPath();
+                ctx.arc(o1X, centerY, 50, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('O', o1X, centerY + 7);
+                
+                // Oxygen 2 (right)
+                const o2X = centerX + 200 - (100 * t);
+                ctx.fillStyle = '#F38181';
+                ctx.beginPath();
+                ctx.arc(o2X, centerY, 50, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('O', o2X, centerY + 7);
+            }
+            else if (prog < 0.6) {
+                // Double bond formation
+                const t = (prog - 0.3) / 0.3;
+                
+                // Carbon
+                ctx.fillStyle = '#666';
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, 45, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 20px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('C', centerX, centerY + 7);
+                
+                // Oxygen 1
+                const o1X = centerX - 100;
+                ctx.fillStyle = '#F38181';
+                ctx.beginPath();
+                ctx.arc(o1X, centerY, 50, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('O', o1X, centerY + 7);
+                
+                // Oxygen 2
+                const o2X = centerX + 100;
+                ctx.fillStyle = '#F38181';
+                ctx.beginPath();
+                ctx.arc(o2X, centerY, 50, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('O', o2X, centerY + 7);
+                
+                // Draw forming bonds
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 3;
+                ctx.globalAlpha = t;
+                
+                // Left double bond
+                ctx.beginPath();
+                ctx.moveTo(centerX - 45, centerY - 5);
+                ctx.lineTo(o1X + 50, centerY - 5);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(centerX - 45, centerY + 5);
+                ctx.lineTo(o1X + 50, centerY + 5);
+                ctx.stroke();
+                
+                // Right double bond
+                ctx.beginPath();
+                ctx.moveTo(centerX + 45, centerY - 5);
+                ctx.lineTo(o2X - 50, centerY - 5);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(centerX + 45, centerY + 5);
+                ctx.lineTo(o2X - 50, centerY + 5);
+                ctx.stroke();
+                
+                ctx.globalAlpha = 1;
+            }
+            else {
+                // Complete linear molecule
+                const t = (prog - 0.6) / 0.4;
+                
+                // Oxygen 1
+                const o1X = centerX - 100;
+                ctx.fillStyle = '#F38181';
+                ctx.beginPath();
+                ctx.arc(o1X, centerY, 50, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 22px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('O', o1X, centerY + 7);
+                
+                // Carbon
+                ctx.fillStyle = '#666';
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, 45, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('C', centerX, centerY + 7);
+                
+                // Oxygen 2
+                const o2X = centerX + 100;
+                ctx.fillStyle = '#F38181';
+                ctx.beginPath();
+                ctx.arc(o2X, centerY, 50, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.fillText('O', o2X, centerY + 7);
+                
+                // Draw double bonds
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 4;
+                
+                // Left double bond
+                ctx.beginPath();
+                ctx.moveTo(centerX - 45, centerY - 6);
+                ctx.lineTo(o1X + 50, centerY - 6);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(centerX - 45, centerY + 6);
+                ctx.lineTo(o1X + 50, centerY + 6);
+                ctx.stroke();
+                
+                // Right double bond
+                ctx.beginPath();
+                ctx.moveTo(centerX + 45, centerY - 6);
+                ctx.lineTo(o2X - 50, centerY - 6);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(centerX + 45, centerY + 6);
+                ctx.lineTo(o2X - 50, centerY + 6);
+                ctx.stroke();
+                
+                // Show linearity
+                if (t > 0.5) {
+                    ctx.strokeStyle = 'rgba(0,0,0,0.3)';
+                    ctx.lineWidth = 1;
+                    ctx.setLineDash([5, 5]);
+                    ctx.beginPath();
+                    ctx.moveTo(o1X, centerY);
+                    ctx.lineTo(o2X, centerY);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                    
+                    ctx.fillStyle = '#333';
+                    ctx.font = '14px Arial';
+                    ctx.fillText('180° (Linear)', centerX, centerY + 80);
+                }
+            }
+        }
+        
+        function drawDNA(prog) {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const helixWidth = 150;
+            const turns = 3;
+            
+            if (prog < 0.2) {
+                // Initial double helix
+                drawHelixStructure(centerX, centerY, 0, helixWidth, turns);
+            }
+            else if (prog < 0.4) {
+                // Helicase unwinds
+                const t = (prog - 0.2) / 0.2;
+                const unwindAmount = t * 100;
+                drawHelixStructure(centerX, centerY, unwindAmount, helixWidth, turns);
+                
+                // Draw helicase enzyme
+                ctx.fillStyle = '#FFB347';
+                ctx.beginPath();
+                ctx.arc(centerX, centerY - 150, 30, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 12px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('Helicase', centerX, centerY - 145);
+            }
+            else if (prog < 0.6) {
+                // Base pairing
+                const t = (prog - 0.4) / 0.2;
+                drawSeparatedStrands(centerX, centerY, t);
+            }
+            else if (prog < 0.8) {
+                // DNA polymerase action
+                const t = (prog - 0.6) / 0.2;
+                drawSeparatedStrands(centerX, centerY, 1);
+                drawPolymerase(centerX, centerY, t);
+            }
+            else {
+                // Complete replication
+                const t = (prog - 0.8) / 0.2;
+                drawTwoHelices(centerX, centerY, t);
+            }
+        }
+        
+        function drawHelixStructure(x, y, unwind, width, turns) {
+            const points = 50;
+            const height = 400;
+            
+            ctx.strokeStyle = '#4ECDC4';
+            ctx.lineWidth = 3;
+            
+            // Left strand
+            ctx.beginPath();
+            for (let i = 0; i < points; i++) {
+                const py = y - height/2 + (i / points) * height;
+                const angle = (i / points) * turns * Math.PI * 2;
+                const px = x + Math.cos(angle) * (width/2 + unwind);
+                if (i === 0) ctx.moveTo(px, py);
+                else ctx.lineTo(px, py);
+            }
+            ctx.stroke();
+            
+            // Right strand
+            ctx.strokeStyle = '#F38181';
+            ctx.beginPath();
+            for (let i = 0; i < points; i++) {
+                const py = y - height/2 + (i / points) * height;
+                const angle = (i / points) * turns * Math.PI * 2 + Math.PI;
+                const px = x + Math.cos(angle) * (width/2 + unwind);
+                if (i === 0) ctx.moveTo(px, py);
+                else ctx.lineTo(px, py);
+            }
+            ctx.stroke();
+            
+            // Base pairs
+            if (unwind < 50) {
+                ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+                ctx.lineWidth = 2;
+                for (let i = 0; i < points; i += 5) {
+                    const py = y - height/2 + (i / points) * height;
+                    const angle = (i / points) * turns * Math.PI * 2;
+                    const px1 = x + Math.cos(angle) * (width/2 + unwind);
+                    const px2 = x + Math.cos(angle + Math.PI) * (width/2 + unwind);
+                    ctx.beginPath();
+                    ctx.moveTo(px1, py);
+                    ctx.lineTo(px2, py);
+                    ctx.stroke();
+                }
+            }
+        }
+        
+        function drawSeparatedStrands(x, y, t) {
+            const separation = 100 * t;
+            const height = 300;
+            
+            // Left strand
+            ctx.strokeStyle = '#4ECDC4';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(x - separation, y - height/2);
+            ctx.lineTo(x - separation, y + height/2);
+            ctx.stroke();
+            
+            // Right strand
+            ctx.strokeStyle = '#F38181';
+            ctx.beginPath();
+            ctx.moveTo(x + separation, y - height/2);
+            ctx.lineTo(x + separation, y + height/2);
+            ctx.stroke();
+            
+            // Base pairs
+            const pairs = ['A-T', 'T-A', 'G-C', 'C-G', 'A-T', 'G-C'];
+            ctx.font = '14px Arial';
+            ctx.textAlign = 'center';
+            pairs.forEach((pair, i) => {
+                const py = y - height/2 + (i / pairs.length) * height + 30;
+                const [base1, base2] = pair.split('-');
+                
+                ctx.fillStyle = '#4ECDC4';
+                ctx.fillText(base1, x - separation - 30, py);
+                ctx.fillStyle = '#F38181';
+                ctx.fillText(base2, x + separation + 30, py);
+            });
+        }
+        
+        function drawPolymerase(x, y, t) {
+            // DNA polymerase enzyme
+            const py = y - 100 + (t * 200);
+            ctx.fillStyle = '#9B59B6';
+            ctx.beginPath();
+            ctx.arc(x, py, 35, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 11px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('DNA', x, py - 5);
+            ctx.fillText('Polymerase', x, py + 7);
+        }
+        
+        function drawTwoHelices(x, y, t) {
+            const separation = 150 * t;
+            
+            // Left helix (original + new strand)
+            drawHelixStructure(x - separation, y, 0, 120, 2);
+            
+            // Right helix (original + new strand)
+            drawHelixStructure(x + separation, y, 0, 120, 2);
+            
+            // Label
+            if (t > 0.5) {
+                ctx.fillStyle = '#333';
+                ctx.font = 'bold 16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('Two Identical DNA Molecules', x, y + 230);
+            }
+        }
+        
+        function animate() {
+            if (!isPlaying) return;
+            
+            progress += (0.001 * animationSpeed);
+            if (progress >= 1) {
+                progress = 0;
+            }
+            
+            updateDisplay();
+            animationFrame = requestAnimationFrame(animate);
+        }
+        
+        function resizeCanvas() {
+            const container = document.querySelector('.canvas-container');
+            const rect = container.getBoundingClientRect();
+            canvas.width = rect.width - 40;
+            canvas.height = 500;
+            updateDisplay();
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+    </script>
+</body>
+</html>

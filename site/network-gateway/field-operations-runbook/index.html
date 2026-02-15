@@ -1,0 +1,2914 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive documentation for the Akulearn EdTech platform, covering architecture, development standards, and project plans.">
+      
+      
+      
+        <link rel="canonical" href="https://akulearn.com/docs/network-gateway/field-operations-runbook/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Network Gateway Field Operations Runbook - Akulearn Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network-gateway-field-operations-runbook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Akulearn Documentation" class="md-header__button md-logo" aria-label="Akulearn Documentation" data-md-component="logo">
+      
+  <img src="../../images/akulearn-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Akulearn Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Network Gateway Field Operations Runbook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/oumar-code/Akulearn_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    oumar-code/Akulearn_docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/00-project-overview/index.md" class="md-tabs__link">
+          
+  
+  
+  Project Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/01-architecture/index.md" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/network-gateway/index.md" class="md-tabs__link">
+          
+  
+  
+  Network Gateway
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/02-backend/index.md" class="md-tabs__link">
+          
+  
+  
+  Backend
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/03-mobile/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mobile App
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/04-iot-projector/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  IoT Projector
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/05-cross-cutting/coding-standards.md" class="md-tabs__link">
+          
+  
+  
+  Cross-Cutting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/06-process-methodology/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Process & Methodology
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/07-glossary/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/demo_scripts/offline_demo_segment.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Demo Scripts
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Akulearn Documentation" class="md-nav__button md-logo" aria-label="Akulearn Documentation" data-md-component="logo">
+      
+  <img src="../../images/akulearn-logo.png" alt="logo">
+
+    </a>
+    Akulearn Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/oumar-code/Akulearn_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    oumar-code/Akulearn_docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/00-project-overview/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/00-project-overview/roadmap-phase-1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/01-architecture/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/01-architecture/hld-lld-content-ingestion.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/01-architecture/adrs/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADRs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Gateway
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network Gateway
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/esim.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eSIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/sim.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physical SIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/validation-test-plan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/field-operations-runbook.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/api-rate-limiting.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limiting & Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/pilot-deployment-plan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pilot Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/02-backend/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/02-backend/api-specs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/02-backend/database-schemas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/03-mobile/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/04-iot-projector/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IoT Projector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Cutting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cross-Cutting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/05-cross-cutting/coding-standards.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/05-cross-cutting/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/06-process-methodology/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process & Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/07-glossary/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/demo_scripts/offline_demo_segment.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Cards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Reference Cards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-agent-quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field Agent Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ussd-menu-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USSD Menu Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-field-agent-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: Field Agent Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Field Agent Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-physical-sim-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Physical SIM Registration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Physical SIM Registration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-esim-profile-provisioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 eSIM Profile Provisioning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 eSIM Profile Provisioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-process_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-device-swap-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Device Swap Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Device Swap Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-user-switching-phones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario: User Switching Phones
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-support-team-playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Support Team Playbook
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Support Team Playbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-common-user-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Common User Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Common User Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-my-phone-says-no-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: "My phone says No Service"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-i-cant-download-my-esim-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: "I can't download my eSIM profile"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-my-data-isnt-working-but-calls-are-fine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: "My data isn't working but calls are fine"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-i-lost-my-sim-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: "I lost my SIM card"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-escalation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Escalation Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-technical-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Technical Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Technical Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-api-endpoints-for-supportfield-ops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 API Endpoints for Support/Field Ops
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 API Endpoints for Support/Field Ops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registration-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swap-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Swap Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suspensionreactivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suspension/Reactivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-error-codes-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Error Codes Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-system-status-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 System Status Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-device-compatibility-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Device Compatibility Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Device Compatibility Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esim-capable-devices-tested-verified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eSIM-Capable Devices (Tested &amp; Verified)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-network-coverage-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Network Coverage Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Network Coverage Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aku-edge-network-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aku Edge Network Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-training-certification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Training &amp; Certification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Training &amp; Certification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-field-agent-training-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Field Agent Training Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-support-team-training-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Support Team Training Program
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-incident-response-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Incident Response Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Incident Response Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-high-priority-incidents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 High-Priority Incidents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 High-Priority Incidents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incident-hlrhss-outage-p1-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incident: HLR/HSS Outage (P1 - Critical)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incident-policy-enforcement-failure-p1-critical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incident: Policy Enforcement Failure (P1 - Critical)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-medium-priority-incidents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Medium-Priority Incidents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Medium-Priority Incidents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incident-elevated-activation-failure-rate-p2-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Incident: Elevated Activation Failure Rate (P2 - High)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Document Metadata
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-quick-command-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Quick Command Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix: Quick Command Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#field-agent-app-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Field Agent App Shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-portal-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support Portal Shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-commands-network-ops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Commands (Network Ops)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="network-gateway-field-operations-runbook">Network Gateway Field Operations Runbook<a class="headerlink" href="#network-gateway-field-operations-runbook" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Operational guide for field agents, support teams, and administrators managing eSIM and physical SIM provisioning, activation, and troubleshooting.</p>
+<p><strong>Audience:</strong>
+- Field agents performing SIM registration and activation
+- Support team resolving user issues
+- Network operations monitoring system health
+- Training coordinators onboarding new staff</p>
+<hr />
+<h2 id="quick-reference-cards">Quick Reference Cards<a class="headerlink" href="#quick-reference-cards" title="Permanent link">&para;</a></h2>
+<h3 id="field-agent-quick-start">Field Agent Quick Start<a class="headerlink" href="#field-agent-quick-start" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="err">┌─────────────────────────────────────────┐</span>
+<span class="err">│</span><span class="w"> </span><span class="n">AKULEARN</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="n">ACTIVATION</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">QUICK</span><span class="w"> </span><span class="n">GUIDE</span><span class="w">   </span><span class="err">│</span>
+<span class="err">├─────────────────────────────────────────┤</span>
+<span class="err">│</span><span class="w"> </span><span class="mf">1.</span><span class="w"> </span><span class="k">Open</span><span class="w"> </span><span class="n">Aku</span><span class="w"> </span><span class="n">Field</span><span class="w"> </span><span class="n">Agent</span><span class="w"> </span><span class="n">App</span><span class="w">             </span><span class="err">│</span>
+<span class="err">│</span><span class="w"> </span><span class="mf">2.</span><span class="w"> </span><span class="n">Tap</span><span class="w"> </span><span class="ss">&quot;Register New SIM&quot;</span><span class="w">                </span><span class="err">│</span>
+<span class="err">│</span><span class="w"> </span><span class="mf">3.</span><span class="w"> </span><span class="n">Scan</span><span class="w"> </span><span class="n">ICCID</span><span class="w"> </span><span class="n">barcode</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">enter</span><span class="w"> </span><span class="n">manually</span><span class="w"> </span><span class="err">│</span>
+<span class="err">│</span><span class="w"> </span><span class="mf">4.</span><span class="w"> </span><span class="n">Assign</span><span class="w"> </span><span class="n">phone</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="p">(</span><span class="n">MSISDN</span><span class="p">)</span><span class="w">         </span><span class="err">│</span>
+<span class="err">│</span><span class="w"> </span><span class="mf">5.</span><span class="w"> </span><span class="n">Hand</span><span class="w"> </span><span class="n">SIM</span><span class="o">/</span><span class="n">QR</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">user</span><span class="w">             </span><span class="err">│</span>
+<span class="err">│</span><span class="w"> </span><span class="mf">6.</span><span class="w"> </span><span class="k">User</span><span class="w"> </span><span class="n">inserts</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">scans</span><span class="w"> </span><span class="n">QR</span><span class="w">         </span><span class="err">│</span>
+<span class="err">│</span><span class="w"> </span><span class="mf">7.</span><span class="w"> </span><span class="n">Wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="ss">&quot;Activated&quot;</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="nf">min</span><span class="p">)</span><span class="err">│</span>
+<span class="err">│</span><span class="w"> </span><span class="mf">8.</span><span class="w"> </span><span class="nl">Test</span><span class="p">:</span><span class="w"> </span><span class="n">Dial</span><span class="w"> </span><span class="o">*</span><span class="mi">123</span><span class="err">#</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">USSD</span><span class="w"> </span><span class="n">menu</span><span class="w">       </span><span class="err">│</span>
+<span class="err">│</span><span class="w">                                          </span><span class="err">│</span>
+<span class="err">│</span><span class="w"> </span><span class="nl">HELP</span><span class="p">:</span><span class="w"> </span><span class="n">support</span><span class="nv">@akulearn</span><span class="p">.</span><span class="n">com</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ext</span><span class="w"> </span><span class="mi">4455</span><span class="w">   </span><span class="err">│</span>
+<span class="err">└─────────────────────────────────────────┘</span>
+</code></pre></div>
+
+<h3 id="ussd-menu-reference">USSD Menu Reference<a class="headerlink" href="#ussd-menu-reference" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>┌────────────────────────────────────┐
+│ *123# - Main Menu                  │
+├────────────────────────────────────┤
+│ 1 - Check Balance                  │
+│ 2 - Data Usage                     │
+│ 3 - Buy Data Bundle                │
+│ 4 - Network Status                 │
+│ 5 - Customer Support               │
+│ 0 - Help                           │
+└────────────────────────────────────┘
+
+*123*1# - Quick Balance Check
+*123*2# - Quick Data Usage
+</code></pre></div>
+
+<hr />
+<h2 id="part-1-field-agent-operations">Part 1: Field Agent Operations<a class="headerlink" href="#part-1-field-agent-operations" title="Permanent link">&para;</a></h2>
+<h3 id="11-physical-sim-registration">1.1 Physical SIM Registration<a class="headerlink" href="#11-physical-sim-registration" title="Permanent link">&para;</a></h3>
+<h4 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Field agent app installed and logged in</li>
+<li>SIM card inventory (pre-loaded with blank profiles)</li>
+<li>ICCID barcode scanner (or manual entry)</li>
+</ul>
+<h4 id="step-by-step-process">Step-by-Step Process<a class="headerlink" href="#step-by-step-process" title="Permanent link">&para;</a></h4>
+<p><strong>Step 1: Verify SIM Inventory</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="kr">Open</span><span class="w"> </span><span class="n">Field</span><span class="w"> </span><span class="n">Agent</span><span class="w"> </span><span class="n">App</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Navigate</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="s">&quot;Inventory&quot;</span><span class="w"> </span><span class="nb">tab</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">Confirm</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="n">stock</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">physical</span><span class="w"> </span><span class="n">inventory</span>
+<span class="mf">4.</span><span class="w"> </span><span class="kr">If</span><span class="w"> </span><span class="n">discrepancy</span><span class="p">,</span><span class="w"> </span><span class="n">initiate</span><span class="w"> </span><span class="n">stock</span><span class="w"> </span><span class="n">reconciliation</span>
+</code></pre></div>
+
+<p><strong>Step 2: Register SIM</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Tap</span><span class="w"> </span><span class="s">&quot;Register New SIM&quot;</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Scan</span><span class="w"> </span><span class="n">ICCID</span><span class="w"> </span><span class="n">barcode</span><span class="w"> </span><span class="kr">on</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="n">card</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="kr">For</span><span class="n">mat</span><span class="p">:</span><span class="w"> </span><span class="mf">89</span><span class="w"> </span><span class="p">(</span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">network</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">unique</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="p">(</span><span class="mf">19</span><span class="o">-</span><span class="mf">20</span><span class="w"> </span><span class="n">digits</span><span class="w"> </span><span class="kr">to</span><span class="n">tal</span><span class="p">)</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Example</span><span class="p">:</span><span class="w"> </span><span class="mf">89234123456789012345</span>
+<span class="mf">3.</span><span class="w"> </span><span class="kr">If</span><span class="w"> </span><span class="n">barcode</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">fails</span><span class="p">:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Tap</span><span class="w"> </span><span class="s">&quot;Enter Manually&quot;</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">ICCID</span><span class="w"> </span><span class="n">carefully</span><span class="w"> </span><span class="p">(</span><span class="kr">verify</span><span class="w"> </span><span class="n">twice</span><span class="p">)</span>
+<span class="mf">4.</span><span class="w"> </span><span class="kr">Sys</span><span class="n">tem</span><span class="w"> </span><span class="nb">val</span><span class="n">idates</span><span class="w"> </span><span class="n">ICCID</span><span class="p">:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">✅</span><span class="w"> </span><span class="n">Green</span><span class="w"> </span><span class="n">checkmark</span><span class="p">:</span><span class="w"> </span><span class="n">ICCID</span><span class="w"> </span><span class="nb">val</span><span class="n">id</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">unused</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">❌</span><span class="w"> </span><span class="n">Red</span><span class="w"> </span><span class="n">X</span><span class="p">:</span><span class="w"> </span><span class="n">ICCID</span><span class="w"> </span><span class="n">invalid</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">already</span><span class="w"> </span><span class="n">registered</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">Assign</span><span class="w"> </span><span class="n">MSISDN</span><span class="w"> </span><span class="p">(</span><span class="n">phone</span><span class="w"> </span><span class="n">number</span><span class="p">):</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="kr">Sys</span><span class="n">tem</span><span class="w"> </span><span class="n">suggests</span><span class="w"> </span><span class="kr">next</span><span class="w"> </span><span class="n">available</span><span class="w"> </span><span class="n">number</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="ow">Or</span><span class="w"> </span><span class="n">enter</span><span class="w"> </span><span class="n">specific</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="n">requests</span>
+<span class="mf">6.</span><span class="w"> </span><span class="n">Select</span><span class="w"> </span><span class="n">initial</span><span class="w"> </span><span class="n">plan</span><span class="p">:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="nb">Fre</span><span class="n">e</span><span class="w"> </span><span class="n">Tier</span><span class="w"> </span><span class="p">(</span><span class="kd">def</span><span class="n">ault</span><span class="p">):</span><span class="w"> </span><span class="n">Zero</span><span class="o">-</span><span class="n">rated</span><span class="w"> </span><span class="n">Akulearn</span><span class="w"> </span><span class="kr">cont</span><span class="n">ent</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Starter</span><span class="w"> </span><span class="kd">Data</span><span class="p">:</span><span class="w"> </span><span class="mf">500</span><span class="w"> </span><span class="n">MB</span><span class="o">/</span><span class="n">month</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">zero</span><span class="o">-</span><span class="n">rated</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Premium</span><span class="p">:</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="n">GB</span><span class="o">/</span><span class="n">month</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">zero</span><span class="o">-</span><span class="n">rated</span>
+<span class="mf">7.</span><span class="w"> </span><span class="n">Tap</span><span class="w"> </span><span class="s">&quot;Activate SIM&quot;</span>
+</code></pre></div>
+
+<p><strong>Step 3: Hand to User</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="c1">Remove SIM from card (punch out gently)</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Hand</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">user</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">Instruct</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="kr">to</span><span class="p">:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Power</span><span class="w"> </span><span class="n">off</span><span class="w"> </span><span class="n">phone</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Insert</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="n">tray</span><span class="w"> </span><span class="p">(</span><span class="n">correct</span><span class="w"> </span><span class="ow">or</span><span class="n">ientation</span><span class="p">)</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Power</span><span class="w"> </span><span class="kr">on</span><span class="w"> </span><span class="n">phone</span>
+<span class="mf">4.</span><span class="w"> </span><span class="kr">Wait</span><span class="w"> </span><span class="mf">1</span><span class="o">-</span><span class="mf">2</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="kr">for</span><span class="w"> </span><span class="n">network</span><span class="w"> </span><span class="n">registration</span>
+</code></pre></div>
+
+<p><strong>Step 4: Verify Activation</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">App</span><span class="w"> </span><span class="n">shows</span><span class="w"> </span><span class="s">&quot;Activating...&quot;</span><span class="w"> </span><span class="n">status</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">After</span><span class="w"> </span><span class="mf">1</span><span class="o">-</span><span class="mf">2</span><span class="w"> </span><span class="n">minutes</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="kr">to</span><span class="p">:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">✅</span><span class="w"> </span><span class="s">&quot;Activated&quot;</span><span class="w"> </span><span class="p">(</span><span class="n">success</span><span class="p">)</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">⚠️</span><span class="w"> </span><span class="s">&quot;Pending&quot;</span><span class="w"> </span><span class="p">(</span><span class="n">HLR</span><span class="w"> </span><span class="n">delay</span><span class="p">,</span><span class="w"> </span><span class="kr">wait</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">minutes</span><span class="p">)</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">❌</span><span class="w"> </span><span class="s">&quot;Failed&quot;</span><span class="w"> </span><span class="p">(</span><span class="n">see</span><span class="w"> </span><span class="n">troubleshooting</span><span class="w"> </span><span class="n">below</span><span class="p">)</span>
+<span class="mf">3.</span><span class="w"> </span><span class="kr">If</span><span class="w"> </span><span class="n">activated</span><span class="p">,</span><span class="w"> </span><span class="n">instruct</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">dial</span><span class="w"> </span><span class="o">*</span><span class="mf">123</span><span class="err">#</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">USSD</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">appear</span><span class="w"> </span><span class="n">within</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="n">seconds</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">selects</span><span class="w"> </span><span class="s">&quot;1 - Check Balance&quot;</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="kr">verify</span>
+</code></pre></div>
+
+<p><strong>Common Issues &amp; Fixes</strong>
+| Issue | Cause | Resolution |
+|-------|-------|------------|
+| ICCID already registered | Duplicate entry or recycled SIM | Check if SIM previously issued; if yes, call support to reassign |
+| Invalid ICCID format | Typo or damaged barcode | Re-enter manually; verify with printed ICCID on SIM |
+| Activation timeout (&gt;5 min) | HLR/HSS overload | Wait 10 minutes; if still pending, escalate to support |
+| No USSD menu | Network registration delay | Wait 5 more minutes; verify signal strength (≥2 bars) |</p>
+<hr />
+<h3 id="12-esim-profile-provisioning">1.2 eSIM Profile Provisioning<a class="headerlink" href="#12-esim-profile-provisioning" title="Permanent link">&para;</a></h3>
+<h4 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Field agent app with eSIM module enabled</li>
+<li>User has eSIM-capable device (iPhone XS+, Samsung S20+, Google Pixel 3+)</li>
+<li>Stable internet connection for profile download</li>
+</ul>
+<h4 id="step-by-step-process_1">Step-by-Step Process<a class="headerlink" href="#step-by-step-process_1" title="Permanent link">&para;</a></h4>
+<p><strong>Step 1: Verify Device Compatibility</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Ask</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="kr">for</span><span class="w"> </span><span class="n">device</span><span class="w"> </span><span class="n">model</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Check</span><span class="w"> </span><span class="n">compatibility</span><span class="w"> </span><span class="kr">list</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Device Checker&quot;</span><span class="w"> </span><span class="nb">tab</span><span class="p">)</span>
+<span class="mf">3.</span><span class="w"> </span><span class="kr">If</span><span class="w"> </span><span class="n">device</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="kr">list</span><span class="n">ed</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">older</span><span class="w"> </span><span class="n">than</span><span class="w"> </span><span class="mf">2018</span><span class="p">,</span><span class="w"> </span><span class="n">recommend</span><span class="w"> </span><span class="n">physical</span><span class="w"> </span><span class="n">SIM</span>
+<span class="mf">4.</span><span class="w"> </span><span class="kr">If</span><span class="w"> </span><span class="n">compatible</span><span class="p">,</span><span class="w"> </span><span class="n">proceed</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">profile</span><span class="w"> </span><span class="n">generation</span>
+</code></pre></div>
+
+<p><strong>Step 2: Generate eSIM Profile</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Tap</span><span class="w"> </span><span class="s">&quot;Provision eSIM&quot;</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Select</span><span class="w"> </span><span class="n">plan</span><span class="w"> </span><span class="p">(</span><span class="n">same</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">physical</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="n">options</span><span class="p">)</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">App</span><span class="w"> </span><span class="n">calls</span><span class="w"> </span><span class="n">backend</span><span class="w"> </span><span class="n">API</span><span class="p">:</span><span class="w"> </span><span class="nb">POS</span><span class="n">T</span><span class="w"> </span><span class="o">/</span><span class="n">esim</span><span class="o">/</span><span class="n">profiles</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">Profile</span><span class="w"> </span><span class="n">generated</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="mf">5</span><span class="o">-</span><span class="mf">10</span><span class="w"> </span><span class="n">seconds</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">QR</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">appears</span><span class="w"> </span><span class="kr">on</span><span class="w"> </span><span class="n">screen</span>
+</code></pre></div>
+
+<p><strong>Step 3: Display QR Code</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Show</span><span class="w"> </span><span class="n">QR</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">user</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Instruct</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="n">to</span><span class="p">:</span>
+<span class="w">   </span><span class="n">iOS</span><span class="p">:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Settings</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Cellular</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="n">Cellular</span><span class="w"> </span><span class="n">Plan</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Scan</span><span class="w"> </span><span class="n">QR</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">displayed</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">agent</span><span class="s1">&#39;s device</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Tap</span><span class="w"> </span><span class="s2">&quot;Add Cellular Plan&quot;</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">download</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="o">-</span><span class="mi">30</span><span class="w"> </span><span class="n">seconds</span><span class="p">)</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Tap</span><span class="w"> </span><span class="s2">&quot;Continue&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">activate</span>
+
+<span class="w">   </span><span class="n">Android</span><span class="w"> </span><span class="p">(</span><span class="n">Samsung</span><span class="p">,</span><span class="w"> </span><span class="n">Google</span><span class="p">):</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Settings</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Connections</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="n">Manager</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Add</span><span class="w"> </span><span class="n">Mobile</span><span class="w"> </span><span class="n">Plan</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Scan</span><span class="w"> </span><span class="n">QR</span><span class="w"> </span><span class="n">code</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Download</span><span class="w"> </span><span class="n">profile</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Set</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">default</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">prompted</span>
+</code></pre></div>
+
+<p><strong>Step 4: Verify Activation</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Agent</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="n">shows</span><span class="w"> </span><span class="s2">&quot;Downloading...&quot;</span><span class="w"> </span><span class="n">status</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">After</span><span class="w"> </span><span class="mi">30</span><span class="o">-</span><span class="mi">60</span><span class="w"> </span><span class="n">seconds</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="n">changes</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s2">&quot;Activated&quot;</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">sees</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">device</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Akulearn eSIM&quot;</span><span class="p">)</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">Test</span><span class="w"> </span><span class="n">network</span><span class="p">:</span><span class="w"> </span><span class="n">Open</span><span class="w"> </span><span class="n">web</span><span class="w"> </span><span class="n">browser</span><span class="p">,</span><span class="w"> </span><span class="n">visit</span><span class="w"> </span><span class="n">akulearn</span><span class="o">.</span><span class="n">com</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">If</span><span class="w"> </span><span class="n">loads</span><span class="w"> </span><span class="n">successfully</span><span class="p">,</span><span class="w"> </span><span class="n">activation</span><span class="w"> </span><span class="n">complete</span>
+</code></pre></div>
+
+<p><strong>Alternative: Manual Entry (No QR Scan)</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">If</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="n">prefers</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">QR</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="n">fails</span><span class="p">:</span>
+<span class="mf">1.</span><span class="w"> </span><span class="n">Agent</span><span class="w"> </span><span class="n">taps</span><span class="w"> </span><span class="s2">&quot;Show Manual Entry Details&quot;</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="n">activation</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">screen</span><span class="w"> </span><span class="n">showing</span><span class="p">:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">SM</span><span class="o">-</span><span class="n">DP</span><span class="o">+</span><span class="w"> </span><span class="n">Address</span><span class="p">:</span><span class="w"> </span><span class="n">smdp</span><span class="o">.</span><span class="n">akulearn</span><span class="o">.</span><span class="n">com</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Activation</span><span class="w"> </span><span class="n">Code</span><span class="p">:</span><span class="w"> </span><span class="n">LPA</span><span class="p">:</span><span class="mi">1</span><span class="o">$</span><span class="n">smdp</span><span class="o">.</span><span class="n">akulearn</span><span class="o">.</span><span class="n">com</span><span class="o">$</span><span class="n">ABCD1234</span><span class="o">-</span><span class="mi">5678</span><span class="o">-</span><span class="mi">90</span><span class="n">EF</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">navigates</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">eSIM</span><span class="w"> </span><span class="n">settings</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">Selects</span><span class="w"> </span><span class="s2">&quot;Enter Details Manually&quot;</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">Copies</span><span class="w"> </span><span class="n">SM</span><span class="o">-</span><span class="n">DP</span><span class="o">+</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">activation</span><span class="w"> </span><span class="n">code</span>
+<span class="mf">6.</span><span class="w"> </span><span class="n">Confirms</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">downloads</span><span class="w"> </span><span class="n">profile</span>
+</code></pre></div>
+
+<p><strong>Common Issues &amp; Fixes</strong>
+| Issue | Cause | Resolution |
+|-------|-------|------------|
+| QR scan fails | Poor lighting or damaged screen | Use manual entry method |
+| "Invalid QR Code" error | Expired profile (&gt;24 hrs old) | Generate new profile; old one expired |
+| Download stuck at 50% | Weak internet connection | Switch to WiFi; retry download |
+| "Unable to Activate" | Profile already downloaded once | Cannot reuse; generate new profile |
+| Device shows "No Service" | Profile downloaded but not activated | User must set as active SIM in settings |</p>
+<hr />
+<h3 id="13-device-swap-operations">1.3 Device Swap Operations<a class="headerlink" href="#13-device-swap-operations" title="Permanent link">&para;</a></h3>
+<h4 id="scenario-user-switching-phones">Scenario: User Switching Phones<a class="headerlink" href="#scenario-user-switching-phones" title="Permanent link">&para;</a></h4>
+<p><strong>Physical SIM Swap:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="c1">removes SIM from old phone</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Insert</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="nb">int</span><span class="n">o</span><span class="w"> </span><span class="kr">new</span><span class="w"> </span><span class="n">phone</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">Field</span><span class="w"> </span><span class="n">agent</span><span class="w"> </span><span class="n">updates</span><span class="w"> </span><span class="n">backend</span><span class="p">:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="kr">Open</span><span class="w"> </span><span class="n">Field</span><span class="w"> </span><span class="n">Agent</span><span class="w"> </span><span class="n">App</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Navigate</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="s">&quot;SIM Management&quot;</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Search</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">ICCID</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">phone</span><span class="w"> </span><span class="n">number</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Tap</span><span class="w"> </span><span class="s">&quot;Update Device&quot;</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Enter</span><span class="w"> </span><span class="kr">new</span><span class="w"> </span><span class="n">IMEI</span><span class="w"> </span><span class="p">(</span><span class="n">scan</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">phone</span><span class="w"> </span><span class="n">settings</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">packaging</span><span class="p">)</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Tap</span><span class="w"> </span><span class="s">&quot;Save&quot;</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">Backend</span><span class="w"> </span><span class="n">calls</span><span class="w"> </span><span class="nb">POS</span><span class="n">T</span><span class="w"> </span><span class="o">/</span><span class="n">psim</span><span class="o">/</span><span class="n">iccids</span><span class="o">/</span><span class="err">{</span><span class="n">iccid</span><span class="err">}</span><span class="o">/</span><span class="n">swap</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">HLR</span><span class="w"> </span><span class="n">updated</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="kr">new</span><span class="w"> </span><span class="n">IMEI</span>
+<span class="mf">6.</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">powers</span><span class="w"> </span><span class="kr">on</span><span class="w"> </span><span class="kr">new</span><span class="w"> </span><span class="n">phone</span>
+<span class="mf">7.</span><span class="w"> </span><span class="n">Network</span><span class="w"> </span><span class="n">registration</span><span class="w"> </span><span class="n">completes</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="mf">1</span><span class="o">-</span><span class="mf">2</span><span class="w"> </span><span class="n">minutes</span>
+</code></pre></div>
+
+<p><strong>eSIM Profile Swap:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">User</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="kr">new</span><span class="w"> </span><span class="n">phone</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">eSIM</span><span class="o">-</span><span class="n">capable</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Agent</span><span class="w"> </span><span class="n">initiates</span><span class="w"> </span><span class="n">swap</span><span class="p">:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Search</span><span class="w"> </span><span class="kr">for</span><span class="w"> </span><span class="n">existing</span><span class="w"> </span><span class="n">profile</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">phone</span><span class="w"> </span><span class="n">number</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Tap</span><span class="w"> </span><span class="s">&quot;Transfer to New Device&quot;</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Generate</span><span class="w"> </span><span class="kr">new</span><span class="w"> </span><span class="n">QR</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="kr">for</span><span class="w"> </span><span class="kr">new</span><span class="w"> </span><span class="n">device</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">scans</span><span class="w"> </span><span class="n">QR</span><span class="w"> </span><span class="kr">on</span><span class="w"> </span><span class="kr">new</span><span class="w"> </span><span class="n">device</span><span class="w"> </span><span class="p">(</span><span class="n">follows</span><span class="w"> </span><span class="n">eSIM</span><span class="w"> </span><span class="n">activation</span><span class="w"> </span><span class="kr">step</span><span class="n">s</span><span class="p">)</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">Old</span><span class="w"> </span><span class="n">device</span><span class="w"> </span><span class="n">profile</span><span class="w"> </span><span class="n">automatically</span><span class="w"> </span><span class="n">deactivated</span><span class="w"> </span><span class="n">within</span><span class="w"> </span><span class="mf">90</span><span class="w"> </span><span class="n">seconds</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">Backend</span><span class="w"> </span><span class="n">calls</span><span class="w"> </span><span class="nb">POS</span><span class="n">T</span><span class="w"> </span><span class="o">/</span><span class="n">esim</span><span class="o">/</span><span class="n">profiles</span><span class="o">/</span><span class="err">{</span><span class="n">id</span><span class="err">}</span><span class="o">/</span><span class="n">swap</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="kr">new</span><span class="w"> </span><span class="n">IMEI</span>
+<span class="mf">6.</span><span class="w"> </span><span class="n">swap</span><span class="mf">.</span><span class="n">completed</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="n">fired</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">webhooks</span>
+</code></pre></div>
+
+<p><strong>Important:</strong> Only one device can be active per ICCID/profile at a time. Swapping deactivates the old device.</p>
+<hr />
+<h2 id="part-2-support-team-playbook">Part 2: Support Team Playbook<a class="headerlink" href="#part-2-support-team-playbook" title="Permanent link">&para;</a></h2>
+<h3 id="21-common-user-issues">2.1 Common User Issues<a class="headerlink" href="#21-common-user-issues" title="Permanent link">&para;</a></h3>
+<h4 id="issue-my-phone-says-no-service">Issue: "My phone says No Service"<a class="headerlink" href="#issue-my-phone-says-no-service" title="Permanent link">&para;</a></h4>
+<p><strong>Diagnostics:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nt">Step</span><span class="w"> </span><span class="nt">1</span><span class="o">:</span><span class="w"> </span><span class="nt">Verify</span><span class="w"> </span><span class="nt">SIM</span><span class="w"> </span><span class="nt">Status</span>
+<span class="nt">-</span><span class="w"> </span><span class="nt">Ask</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nt">phone</span><span class="w"> </span><span class="nt">number</span><span class="w"> </span><span class="nt">or</span><span class="w"> </span><span class="nt">ICCID</span>
+<span class="nt">-</span><span class="w"> </span><span class="nt">Search</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nt">support</span><span class="w"> </span><span class="nt">portal</span>
+<span class="nt">-</span><span class="w"> </span><span class="nt">Check</span><span class="w"> </span><span class="nt">status</span><span class="o">:</span>
+<span class="w">  </span><span class="err">✅</span><span class="w"> </span><span class="nt">ACTIVE</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="nt">Proceed</span><span class="w"> </span><span class="nt">to</span><span class="w"> </span><span class="nt">Step</span><span class="w"> </span><span class="nt">2</span>
+<span class="w">  </span><span class="err">⚠️</span><span class="w"> </span><span class="nt">PENDING</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="nt">HLR</span><span class="w"> </span><span class="nt">provisioning</span><span class="w"> </span><span class="nt">delay</span><span class="o">;</span><span class="w"> </span><span class="nt">wait</span><span class="w"> </span><span class="nt">10</span><span class="w"> </span><span class="nt">minutes</span>
+<span class="w">  </span><span class="err">❌</span><span class="w"> </span><span class="nt">SUSPENDED</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="nt">User</span><span class="w"> </span><span class="nt">marked</span><span class="w"> </span><span class="nt">as</span><span class="w"> </span><span class="nt">lost</span><span class="o">/</span><span class="nt">stolen</span><span class="o">;</span><span class="w"> </span><span class="nt">verify</span><span class="w"> </span><span class="nt">identity</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="nt">unsuspend</span>
+<span class="w">  </span><span class="err">❌</span><span class="w"> </span><span class="nt">INACTIVE</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="nt">SIM</span><span class="w"> </span><span class="nt">never</span><span class="w"> </span><span class="nt">activated</span><span class="o">;</span><span class="w"> </span><span class="nt">escalate</span><span class="w"> </span><span class="nt">to</span><span class="w"> </span><span class="nt">field</span><span class="w"> </span><span class="nt">agent</span>
+</code></pre></div>
+
+<p><strong>Step 2: Network Troubleshooting</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">Actions</span><span class="o">:</span>
+<span class="mi">1</span><span class="o">.</span><span class="w"> </span><span class="s2">&quot;Can you see signal bars on your phone?&quot;</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">No</span><span class="w"> </span><span class="n">signal</span><span class="o">:</span><span class="w"> </span><span class="n">Phone</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">airplane</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">inserted</span><span class="w"> </span><span class="n">properly</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Signal</span><span class="w"> </span><span class="n">present</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">service</span><span class="o">:</span><span class="w"> </span><span class="n">Continue</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Step</span><span class="w"> </span><span class="mi">3</span>
+
+<span class="mi">2</span><span class="o">.</span><span class="w"> </span><span class="s2">&quot;Go to Settings &gt; Network &gt; Carrier&quot;</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">iOS</span><span class="o">:</span><span class="w"> </span><span class="n">Should</span><span class="w"> </span><span class="n">show</span><span class="w"> </span><span class="s2">&quot;Akulearn&quot;</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">partner</span><span class="w"> </span><span class="n">MNO</span><span class="w"> </span><span class="n">name</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Android</span><span class="o">:</span><span class="w"> </span><span class="n">Should</span><span class="w"> </span><span class="n">show</span><span class="w"> </span><span class="n">network</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="n">bar</span>
+
+<span class="mi">3</span><span class="o">.</span><span class="w"> </span><span class="n">Try</span><span class="w"> </span><span class="n">manual</span><span class="w"> </span><span class="n">network</span><span class="w"> </span><span class="n">selection</span><span class="o">:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Settings</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Network</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Carrier</span><span class="w"> </span><span class="n">Selection</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Manual</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Select</span><span class="w"> </span><span class="n">Akulearn</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">partner</span><span class="w"> </span><span class="n">MNO</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">list</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">If</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">list</span><span class="o">,</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="n">outside</span><span class="w"> </span><span class="n">coverage</span><span class="w"> </span><span class="n">area</span>
+
+<span class="mi">4</span><span class="o">.</span><span class="w"> </span><span class="n">Restart</span><span class="w"> </span><span class="n">phone</span><span class="o">:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Power</span><span class="w"> </span><span class="n">off</span><span class="w"> </span><span class="n">completely</span><span class="w"> </span><span class="o">(</span><span class="n">hold</span><span class="w"> </span><span class="n">power</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="n">seconds</span><span class="o">)</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Wait</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="n">seconds</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Power</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">registration</span>
+</code></pre></div>
+
+<p><strong>Step 3: Backend Verification</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">Support</span><span class="w"> </span><span class="n">Portal</span><span class="w"> </span><span class="nl">Actions:</span>
+<span class="mf">1.</span><span class="w"> </span><span class="n">Check</span><span class="w"> </span><span class="n">recent</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nl">ICCID:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Look</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s">&quot;attach.success&quot;</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">last</span><span class="w"> </span><span class="mh">24</span><span class="w"> </span><span class="n">hours</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">If</span><span class="w"> </span><span class="n">present</span><span class="p">,</span><span class="w"> </span><span class="n">network</span><span class="w"> </span><span class="n">registration</span><span class="w"> </span><span class="n">working</span><span class="w"> </span><span class="n">recently</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">If</span><span class="w"> </span><span class="n">absent</span><span class="p">,</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">inserted</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">device</span><span class="w"> </span><span class="n">faulty</span>
+
+<span class="mf">2.</span><span class="w"> </span><span class="n">Check</span><span class="w"> </span><span class="n">policy</span><span class="w"> </span><span class="nl">status:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Verify</span><span class="w"> </span><span class="n">policy</span><span class="w"> </span><span class="n">pushed</span><span class="w"> </span><span class="n">successfully</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">If</span><span class="w"> </span><span class="n">policy</span><span class="p">.</span><span class="n">pushed</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">missing</span><span class="p">,</span><span class="w"> </span><span class="n">manually</span><span class="w"> </span><span class="nl">trigger:</span>
+<span class="w">     </span><span class="n">POST</span><span class="w"> </span><span class="o">/</span><span class="n">policies</span><span class="o">/</span><span class="n">push</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">ICCID</span>
+
+<span class="mf">3.</span><span class="w"> </span><span class="n">Check</span><span class="w"> </span><span class="n">HLR</span><span class="o">/</span><span class="n">HSS</span><span class="w"> </span><span class="nl">status:</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Query</span><span class="w"> </span><span class="n">HLR</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">ICCID</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Verify</span><span class="w"> </span><span class="n">MSISDN</span><span class="w"> </span><span class="n">mapped</span><span class="w"> </span><span class="n">correctly</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">If</span><span class="w"> </span><span class="n">missing</span><span class="p">,</span><span class="w"> </span><span class="n">escalate</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">network</span><span class="w"> </span><span class="n">operations</span>
+</code></pre></div>
+
+<p><strong>Resolution:</strong>
+- 70% of cases: Restart phone resolves issue
+- 20% of cases: Manual network selection fixes registration
+- 10% of cases: Backend policy push or HLR re-sync required</p>
+<hr />
+<h4 id="issue-i-cant-download-my-esim-profile">Issue: "I can't download my eSIM profile"<a class="headerlink" href="#issue-i-cant-download-my-esim-profile" title="Permanent link">&para;</a></h4>
+<p><strong>Diagnostics:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nv">Step</span><span class="w"> </span><span class="mi">1</span>:<span class="w"> </span><span class="nv">Check</span><span class="w"> </span><span class="nv">Device</span><span class="w"> </span><span class="nv">Compatibility</span>
+<span class="o">-</span><span class="w"> </span><span class="s2">&quot;What phone model do you have?&quot;</span>
+<span class="o">-</span><span class="w"> </span><span class="nv">Verify</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">compatibility</span><span class="w"> </span><span class="nv">matrix</span><span class="w"> </span><span class="ss">(</span><span class="nv">see</span><span class="w"> </span><span class="nv">Section</span><span class="w"> </span><span class="mi">3</span>.<span class="mi">4</span><span class="ss">)</span>
+<span class="o">-</span><span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="nv">device</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="nv">supported</span>,<span class="w"> </span><span class="nv">offer</span><span class="w"> </span><span class="nv">physical</span><span class="w"> </span><span class="nv">SIM</span><span class="w"> </span><span class="nv">alternative</span>
+
+<span class="nv">Step</span><span class="w"> </span><span class="mi">2</span>:<span class="w"> </span><span class="nv">Check</span><span class="w"> </span><span class="nv">QR</span><span class="w"> </span><span class="nv">Code</span><span class="w"> </span><span class="nv">Validity</span>
+<span class="o">-</span><span class="w"> </span><span class="nv">QR</span><span class="w"> </span><span class="nv">codes</span><span class="w"> </span><span class="nv">expire</span><span class="w"> </span><span class="nv">after</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="nv">hours</span>
+<span class="o">-</span><span class="w"> </span><span class="s2">&quot;When did you receive the QR code?&quot;</span>
+<span class="o">-</span><span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="o">&gt;</span><span class="mi">24</span><span class="w"> </span><span class="nv">hours</span><span class="w"> </span><span class="nv">old</span>,<span class="w"> </span><span class="nv">generate</span><span class="w"> </span><span class="nv">new</span><span class="w"> </span><span class="nv">profile</span>:
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="k">Call</span><span class="w"> </span><span class="nl">POST</span><span class="w"> </span><span class="o">/</span><span class="nv">esim</span><span class="o">/</span><span class="nv">profiles</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">same</span><span class="w"> </span><span class="nv">MSISDN</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="nv">Mark</span><span class="w"> </span><span class="nv">old</span><span class="w"> </span><span class="nv">profile</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">EXPIRED</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="k">Send</span><span class="w"> </span><span class="nv">new</span><span class="w"> </span><span class="nv">QR</span><span class="w"> </span><span class="nv">code</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="nv">via</span><span class="w"> </span><span class="nv">SMS</span><span class="w"> </span><span class="nv">or</span><span class="w"> </span><span class="nv">email</span>
+</code></pre></div>
+
+<p><strong>Step 3: Download Troubleshooting</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">Common</span><span class="w"> </span><span class="n">Causes</span><span class="p">:</span>
+<span class="mf">1.</span><span class="w"> </span><span class="n">Weak</span><span class="w"> </span><span class="n">internet</span><span class="w"> </span><span class="n">connection</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;Are you connected to WiFi or mobile data?&quot;</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Recommend</span><span class="w"> </span><span class="n">WiFi</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">initial</span><span class="w"> </span><span class="n">download</span>
+
+<span class="mf">2.</span><span class="w"> </span><span class="n">Profile</span><span class="w"> </span><span class="n">already</span><span class="w"> </span><span class="n">downloaded</span><span class="w"> </span><span class="n">once</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">eSIM</span><span class="w"> </span><span class="n">profiles</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">one</span><span class="o">-</span><span class="n">time</span><span class="w"> </span><span class="n">use</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Cannot</span><span class="w"> </span><span class="n">redownload</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">profile</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Must</span><span class="w"> </span><span class="n">generate</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">profile</span><span class="w"> </span><span class="p">(</span><span class="n">backend</span><span class="w"> </span><span class="n">handles</span><span class="w"> </span><span class="n">deduplication</span><span class="p">)</span>
+
+<span class="mf">3.</span><span class="w"> </span><span class="n">Device</span><span class="w"> </span><span class="n">storage</span><span class="w"> </span><span class="n">full</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">eSIM</span><span class="w"> </span><span class="n">profiles</span><span class="w"> </span><span class="n">require</span><span class="w"> </span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="n">MB</span><span class="w"> </span><span class="n">storage</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;Check if device has available storage&quot;</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Free</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">space</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">retry</span>
+
+<span class="mf">4.</span><span class="w"> </span><span class="n">Carrier</span><span class="w"> </span><span class="n">restrictions</span><span class="w"> </span><span class="p">(</span><span class="n">rare</span><span class="p">)</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">Some</span><span class="w"> </span><span class="n">devices</span><span class="w"> </span><span class="n">locked</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">specific</span><span class="w"> </span><span class="n">carriers</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;Is your phone carrier-unlocked?&quot;</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">If</span><span class="w"> </span><span class="n">locked</span><span class="p">,</span><span class="w"> </span><span class="n">contact</span><span class="w"> </span><span class="n">original</span><span class="w"> </span><span class="n">carrier</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">unlock</span>
+</code></pre></div>
+
+<p><strong>Resolution:</strong>
+- 60% of cases: WiFi connection fixes download
+- 30% of cases: New profile generation required (expired QR)
+- 10% of cases: Device compatibility or lock issue</p>
+<hr />
+<h4 id="issue-my-data-isnt-working-but-calls-are-fine">Issue: "My data isn't working but calls are fine"<a class="headerlink" href="#issue-my-data-isnt-working-but-calls-are-fine" title="Permanent link">&para;</a></h4>
+<p><strong>Diagnostics:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nx">Step</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="nx">Verify</span><span class="w"> </span><span class="nx">APN</span><span class="w"> </span><span class="nx">Settings</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">APN</span><span class="w"> </span><span class="p">(</span><span class="nx">Access</span><span class="w"> </span><span class="nx">Point</span><span class="w"> </span><span class="nx">Name</span><span class="p">)</span><span class="w"> </span><span class="nx">configures</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">connection</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">Incorrect</span><span class="w"> </span><span class="nx">APN</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">No</span><span class="w"> </span><span class="nx">data</span>
+
+<span class="nx">iOS</span><span class="p">:</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">Settings</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="nx">Cellular</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="nx">Cellular</span><span class="w"> </span><span class="nx">Data</span><span class="w"> </span><span class="nx">Network</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">APN</span><span class="p">:</span><span class="w"> </span><span class="nx">akulearn</span><span class="p">.</span><span class="nx">internet</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">Username</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="nx">leave</span><span class="w"> </span><span class="nx">blank</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">Password</span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="nx">leave</span><span class="w"> </span><span class="nx">blank</span><span class="p">)</span>
+
+<span class="nx">Android</span><span class="p">:</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">Settings</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="nx">Network</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">Internet</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="nx">Mobile</span><span class="w"> </span><span class="nx">Network</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="nx">Access</span><span class="w"> </span><span class="nx">Point</span><span class="w"> </span><span class="nx">Names</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">Tap</span><span class="w"> </span><span class="s">&quot;+&quot;</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nx">new</span><span class="w"> </span><span class="nx">APN</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">Name</span><span class="p">:</span><span class="w"> </span><span class="nx">Akulearn</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">APN</span><span class="p">:</span><span class="w"> </span><span class="nx">akulearn</span><span class="p">.</span><span class="nx">internet</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">APN</span><span class="w"> </span><span class="k">type</span><span class="p">:</span><span class="w"> </span><span class="k">default</span><span class="p">,</span><span class="nx">supl</span>
+<span class="o">-</span><span class="w"> </span><span class="nx">Save</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">select</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nx">active</span><span class="w"> </span><span class="nx">APN</span>
+</code></pre></div>
+
+<p><strong>Step 2: Data Roaming (If Applicable)</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">If</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">partner</span><span class="w"> </span><span class="nv">MNO</span><span class="w"> </span><span class="nv">network</span>:
+<span class="o">-</span><span class="w"> </span><span class="nv">Data</span><span class="w"> </span><span class="nv">roaming</span><span class="w"> </span><span class="nv">must</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">enabled</span>
+<span class="o">-</span><span class="w"> </span><span class="nv">Settings</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">Cellular</span><span class="o">/</span><span class="nv">Mobile</span><span class="w"> </span><span class="nv">Data</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">Data</span><span class="w"> </span><span class="nv">Roaming</span>:<span class="w"> </span><span class="nv">ON</span>
+<span class="o">-</span><span class="w"> </span><span class="nv">Explain</span>:<span class="w"> </span><span class="s2">&quot;You&#39;re using our partner network, so roaming must be on&quot;</span>
+</code></pre></div>
+
+<p><strong>Step 3: Data Usage Check</strong></p>
+<div class="codehilite"><pre><span></span><code>Support Portal:
+1. Check user&#39;s data balance: GET /data-usage/{iccid}
+2. If balance = 0 and plan is not zero-rated:
+   <span class="k">-</span> User exhausted data bundle
+   <span class="k">-</span> Offer bundle purchase via USSD (*123*3#)
+   <span class="k">-</span> Or upgrade plan in support portal
+3. If balance &gt; 0 but data not working:
+   <span class="k">-</span> Check PGW logs for failed sessions
+   <span class="k">-</span> Verify policy enforcement not blocking incorrectly
+</code></pre></div>
+
+<p><strong>Resolution:</strong>
+- 80% of cases: APN configuration fixes data
+- 15% of cases: Data roaming setting resolves issue
+- 5% of cases: Backend policy or PGW issue</p>
+<hr />
+<h4 id="issue-i-lost-my-sim-card">Issue: "I lost my SIM card"<a class="headerlink" href="#issue-i-lost-my-sim-card" title="Permanent link">&para;</a></h4>
+<p><strong>Immediate Actions:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nv">Step</span><span class="w"> </span><span class="mi">1</span>:<span class="w"> </span><span class="nv">Suspend</span><span class="w"> </span><span class="nv">SIM</span><span class="w"> </span><span class="ss">(</span><span class="nv">Security</span><span class="ss">)</span>
+<span class="o">-</span><span class="w"> </span><span class="nv">Verify</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="nv">identity</span>:
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="nv">Ask</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">phone</span><span class="w"> </span><span class="nv">number</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">account</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="nv">Match</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">customer</span><span class="w"> </span><span class="nv">record</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">CRM</span>
+<span class="o">-</span><span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="nv">identity</span><span class="w"> </span><span class="nv">confirmed</span>:
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="nv">Mark</span><span class="w"> </span><span class="nv">SIM</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">LOST</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">support</span><span class="w"> </span><span class="nv">portal</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="nv">PATCH</span><span class="w"> </span><span class="o">/</span><span class="nv">psim</span><span class="o">/</span><span class="nv">iccids</span><span class="o">/</span>{<span class="nv">iccid</span>}<span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">status</span>:<span class="w"> </span><span class="nv">LOST</span>
+<span class="o">-</span><span class="w"> </span><span class="nv">Backend</span><span class="w"> </span><span class="nv">suspends</span><span class="w"> </span><span class="nv">network</span><span class="w"> </span><span class="nv">access</span><span class="w"> </span><span class="nv">within</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">seconds</span>
+<span class="o">-</span><span class="w"> </span><span class="nv">Prevents</span><span class="w"> </span><span class="nv">unauthorized</span><span class="w"> </span><span class="nv">usage</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">billing</span>
+</code></pre></div>
+
+<p><strong>Step 2: Replacement Options</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">Option</span><span class="w"> </span><span class="n">A</span><span class="p">:</span><span class="w"> </span><span class="n">Found</span><span class="w"> </span><span class="n">Original</span><span class="w"> </span><span class="n">SIM</span>
+<span class="o">-</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">finds</span><span class="w"> </span><span class="n">lost</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="n">later</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Reactivate</span><span class="p">:</span><span class="w"> </span><span class="n">PATCH</span><span class="w"> </span><span class="o">/</span><span class="n">psim</span><span class="o">/</span><span class="n">iccids</span><span class="o">/</span><span class="p">{</span><span class="n">iccid</span><span class="p">}</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">status</span><span class="p">:</span><span class="w"> </span><span class="n">ACTIVE</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Network</span><span class="w"> </span><span class="n">access</span><span class="w"> </span><span class="n">restored</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="n">seconds</span>
+
+<span class="n">Option</span><span class="w"> </span><span class="n">B</span><span class="p">:</span><span class="w"> </span><span class="n">Issue</span><span class="w"> </span><span class="n">Replacement</span><span class="w"> </span><span class="n">SIM</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Physical</span><span class="w"> </span><span class="n">SIM</span><span class="p">:</span><span class="w"> </span><span class="n">Issue</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">MSISDN</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Register</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">ICCID</span><span class="w"> </span><span class="n">linked</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">customer</span><span class="w"> </span><span class="n">account</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Old</span><span class="w"> </span><span class="n">ICCID</span><span class="w"> </span><span class="n">permanently</span><span class="w"> </span><span class="n">marked</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">LOST</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">inserts</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">activates</span>
+<span class="o">-</span><span class="w"> </span><span class="n">eSIM</span><span class="p">:</span><span class="w"> </span><span class="n">Generate</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">profile</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Old</span><span class="w"> </span><span class="n">profile</span><span class="w"> </span><span class="n">automatically</span><span class="w"> </span><span class="n">revoked</span>
+<span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="n">downloads</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">profile</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">QR</span><span class="w"> </span><span class="n">code</span>
+</code></pre></div>
+
+<p><strong>Important:</strong> Only one SIM/profile can be active per MSISDN at a time.</p>
+<hr />
+<h3 id="22-escalation-matrix">2.2 Escalation Matrix<a class="headerlink" href="#22-escalation-matrix" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Issue Type</th>
+<th>First Contact Resolution</th>
+<th>Escalation Level 1</th>
+<th>Escalation Level 2</th>
+<th>Escalation Level 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No network service</td>
+<td>Support agent (restart, APN config)</td>
+<td>Network operations (HLR check)</td>
+<td>Engineering (PCEF/PGW logs)</td>
+<td>Vendor (MNO support)</td>
+</tr>
+<tr>
+<td>eSIM download fails</td>
+<td>Support agent (new profile, WiFi)</td>
+<td>Backend team (profile regeneration)</td>
+<td>Engineering (SM-DP+ logs)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Data not working</td>
+<td>Support agent (APN, roaming settings)</td>
+<td>Network operations (policy check)</td>
+<td>Engineering (PGW session logs)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Billing discrepancy</td>
+<td>Support agent (usage query)</td>
+<td>Billing team (reconciliation)</td>
+<td>Finance (adjustment approval)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Lost/stolen SIM</td>
+<td>Support agent (suspend SIM)</td>
+<td>Field ops (replacement SIM)</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Device swap</td>
+<td>Field agent or support (IMEI update)</td>
+<td>Backend team (HLR sync issue)</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Escalation SLA:</strong>
+- Level 1: Within 1 hour
+- Level 2: Within 4 hours
+- Level 3: Within 24 hours</p>
+<hr />
+<h2 id="part-3-technical-reference">Part 3: Technical Reference<a class="headerlink" href="#part-3-technical-reference" title="Permanent link">&para;</a></h2>
+<h3 id="31-api-endpoints-for-supportfield-ops">3.1 API Endpoints for Support/Field Ops<a class="headerlink" href="#31-api-endpoints-for-supportfield-ops" title="Permanent link">&para;</a></h3>
+<h4 id="registration-endpoints">Registration Endpoints<a class="headerlink" href="#registration-endpoints" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>POST /psim/iccids
+Body: {
+  &quot;iccid&quot;: &quot;89234123456789012345&quot;,
+  &quot;msisdn&quot;: &quot;+234700123456&quot;,
+  &quot;plan&quot;: &quot;free-tier&quot;
+}
+Response: 201 Created
+{
+  &quot;iccid&quot;: &quot;89234123456789012345&quot;,
+  &quot;status&quot;: &quot;ACTIVE&quot;,
+  &quot;msisdn&quot;: &quot;+234700123456&quot;,
+  &quot;activatedAt&quot;: &quot;2026-01-22T10:30:00Z&quot;
+}
+
+POST /esim/profiles
+Body: {
+  &quot;msisdn&quot;: &quot;+234700123456&quot;,
+  &quot;plan&quot;: &quot;starter-data&quot;,
+  &quot;deviceType&quot;: &quot;iPhone 13&quot;
+}
+Response: 201 Created
+{
+  &quot;profileId&quot;: &quot;prof_abc123&quot;,
+  &quot;qrCode&quot;: &quot;LPA:1$smdp.akulearn.com$XYZ789&quot;,
+  &quot;smdpAddress&quot;: &quot;smdp.akulearn.com&quot;,
+  &quot;activationCode&quot;: &quot;XYZ789&quot;,
+  &quot;expiresAt&quot;: &quot;2026-01-23T10:30:00Z&quot;
+}
+</code></pre></div>
+
+<h4 id="status-check">Status Check<a class="headerlink" href="#status-check" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>GET /psim/iccids/{iccid}
+Response: 200 OK
+{
+  &quot;iccid&quot;: &quot;89234123456789012345&quot;,
+  &quot;status&quot;: &quot;ACTIVE&quot;,
+  &quot;msisdn&quot;: &quot;+234700123456&quot;,
+  &quot;imei&quot;: &quot;356789012345678&quot;,
+  &quot;network&quot;: &quot;aku-edge&quot;,
+  &quot;lastAttach&quot;: &quot;2026-01-22T14:20:00Z&quot;,
+  &quot;dataUsage&quot;: {
+    &quot;totalMB&quot;: 125.5,
+    &quot;zeroRatedMB&quot;: 100.0,
+    &quot;standardMB&quot;: 25.5
+  }
+}
+</code></pre></div>
+
+<h4 id="swap-operations">Swap Operations<a class="headerlink" href="#swap-operations" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>POST /psim/iccids/{iccid}/swap
+Body: {
+  &quot;newImei&quot;: &quot;356789012345999&quot;
+}
+Response: 200 OK
+{
+  &quot;iccid&quot;: &quot;89234123456789012345&quot;,
+  &quot;oldImei&quot;: &quot;356789012345678&quot;,
+  &quot;newImei&quot;: &quot;356789012345999&quot;,
+  &quot;swapCompletedAt&quot;: &quot;2026-01-22T15:00:00Z&quot;
+}
+
+POST /esim/profiles/{profileId}/swap
+Body: {
+  &quot;newImei&quot;: &quot;356789012345999&quot;,
+  &quot;deviceType&quot;: &quot;Samsung Galaxy S21&quot;
+}
+Response: 200 OK
+{
+  &quot;profileId&quot;: &quot;prof_abc123&quot;,
+  &quot;newProfileId&quot;: &quot;prof_def456&quot;,
+  &quot;qrCode&quot;: &quot;LPA:1$smdp.akulearn.com$NEW123&quot;
+}
+</code></pre></div>
+
+<h4 id="suspensionreactivation">Suspension/Reactivation<a class="headerlink" href="#suspensionreactivation" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>PATCH /psim/iccids/{iccid}
+Body: {
+  &quot;status&quot;: &quot;LOST&quot;
+}
+Response: 200 OK
+{
+  &quot;iccid&quot;: &quot;89234123456789012345&quot;,
+  &quot;status&quot;: &quot;LOST&quot;,
+  &quot;suspendedAt&quot;: &quot;2026-01-22T16:00:00Z&quot;
+}
+
+PATCH /psim/iccids/{iccid}
+Body: {
+  &quot;status&quot;: &quot;ACTIVE&quot;
+}
+Response: 200 OK
+{
+  &quot;iccid&quot;: &quot;89234123456789012345&quot;,
+  &quot;status&quot;: &quot;ACTIVE&quot;,
+  &quot;reactivatedAt&quot;: &quot;2026-01-22T17:00:00Z&quot;
+}
+</code></pre></div>
+
+<hr />
+<h3 id="32-error-codes-reference">3.2 Error Codes Reference<a class="headerlink" href="#32-error-codes-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Message</th>
+<th>Cause</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4001</td>
+<td>Invalid ICCID format</td>
+<td>ICCID not 19-20 digits or wrong format</td>
+<td>Verify ICCID printed on SIM; re-enter carefully</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>ICCID already registered</td>
+<td>Duplicate registration attempt</td>
+<td>Check if SIM previously issued; reassign if needed</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>MSISDN not available</td>
+<td>Phone number already assigned</td>
+<td>Choose different MSISDN or release old assignment</td>
+</tr>
+<tr>
+<td>4004</td>
+<td>Invalid plan selection</td>
+<td>Plan code not recognized</td>
+<td>Use one of: free-tier, starter-data, premium</td>
+</tr>
+<tr>
+<td>4005</td>
+<td>Profile download failed</td>
+<td>SM-DP+ unreachable or timeout</td>
+<td>Retry profile generation; check user's internet</td>
+</tr>
+<tr>
+<td>5001</td>
+<td>HLR provisioning timeout</td>
+<td>HLR/HSS not responding</td>
+<td>Wait 10 minutes; if persists, escalate to network ops</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>Policy push failed</td>
+<td>PCEF not reachable</td>
+<td>Manually retry: POST /policies/push</td>
+</tr>
+<tr>
+<td>5003</td>
+<td>Network attach failed</td>
+<td>Device not registering to network</td>
+<td>Check device signal strength; try manual network selection</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="33-system-status-dashboard">3.3 System Status Dashboard<a class="headerlink" href="#33-system-status-dashboard" title="Permanent link">&para;</a></h3>
+<p><strong>For Network Operations:</strong></p>
+<p>Access: https://ops.akulearn.com/network-gateway</p>
+<p><strong>Key Metrics:</strong>
+- Active SIMs: 10,523 (eSIM: 6,231 | pSIM: 4,292)
+- Activation Success Rate (24h): 97.8%
+- Average Attach Time: P95 = 65 seconds
+- Policy Push Success Rate: 99.2%
+- HLR/HSS Health: ✅ Operational
+- PGW/PCEF Health: ✅ Operational
+- SM-DP+ Health: ⚠️ Elevated Latency (monitoring)</p>
+<p><strong>Alerts:</strong>
+- 🔴 Critical: HLR provisioning failure rate &gt;5% (PagerDuty)
+- 🟠 Warning: Attach success rate &lt;95% (Slack #network-ops)
+- 🟡 Info: Policy push latency &gt;10 seconds (Grafana dashboard)</p>
+<hr />
+<h3 id="34-device-compatibility-matrix">3.4 Device Compatibility Matrix<a class="headerlink" href="#34-device-compatibility-matrix" title="Permanent link">&para;</a></h3>
+<h4 id="esim-capable-devices-tested-verified">eSIM-Capable Devices (Tested &amp; Verified)<a class="headerlink" href="#esim-capable-devices-tested-verified" title="Permanent link">&para;</a></h4>
+<p><strong>Apple:</strong>
+- iPhone 14, 14 Plus, 14 Pro, 14 Pro Max ✅
+- iPhone 13, 13 mini, 13 Pro, 13 Pro Max ✅
+- iPhone 12, 12 mini, 12 Pro, 12 Pro Max ✅
+- iPhone 11, 11 Pro, 11 Pro Max ✅
+- iPhone XS, XS Max, XR ✅
+- iPad Pro (2018+), iPad Air (2019+), iPad Mini (2019+) ✅</p>
+<p><strong>Samsung:</strong>
+- Galaxy S23, S23+, S23 Ultra ✅
+- Galaxy S22, S22+, S22 Ultra ✅
+- Galaxy S21, S21+, S21 Ultra ✅
+- Galaxy S20, S20+, S20 Ultra ✅
+- Galaxy Z Fold 4, Z Fold 3 ✅
+- Galaxy Z Flip 4, Z Flip 3 ✅</p>
+<p><strong>Google:</strong>
+- Pixel 7, Pixel 7 Pro ✅
+- Pixel 6, Pixel 6 Pro ✅
+- Pixel 5, Pixel 5a ✅
+- Pixel 4, Pixel 4 XL ✅
+- Pixel 3, Pixel 3 XL ⚠️ (older software, slower downloads)</p>
+<p><strong>Other:</strong>
+- Motorola Razr (2020+) ✅
+- Oppo Find X3 Pro, X5 Pro ✅
+- Xiaomi 12, 12 Pro ⚠️ (some regions blocked)</p>
+<p><strong>Not Supported:</strong>
+- iPhone 8 and earlier ❌
+- Samsung Galaxy S10 and earlier ❌
+- Budget Android devices (&lt;$200) ❌
+- Feature phones ❌ (use physical SIM)</p>
+<hr />
+<h3 id="35-network-coverage-reference">3.5 Network Coverage Reference<a class="headerlink" href="#35-network-coverage-reference" title="Permanent link">&para;</a></h3>
+<h4 id="aku-edge-network-coverage">Aku Edge Network Coverage<a class="headerlink" href="#aku-edge-network-coverage" title="Permanent link">&para;</a></h4>
+<p><strong>Tier 1 (Full Coverage):</strong>
+- Urban centers: Lagos, Abuja, Port Harcourt, Kano, Ibadan
+- Expected attach: &lt;60 seconds
+- Expected throughput: 10-20 Mbps (premium tier)</p>
+<p><strong>Tier 2 (Partial Coverage):</strong>
+- Semi-urban areas: State capitals, university towns
+- Expected attach: &lt;90 seconds
+- Expected throughput: 5-10 Mbps</p>
+<p><strong>Tier 3 (No Coverage, MNO Fallback):</strong>
+- Rural areas, remote villages
+- Fallback to partner MNO (MTN, Airtel, Glo, 9mobile)
+- Expected attach: &lt;120 seconds
+- Expected throughput: 2-5 Mbps (dependent on MNO coverage)</p>
+<p><strong>Coverage Check:</strong>
+- User can check current network: Dial <em>123</em>4#
+- Response example: "You are on Akulearn Edge Network - Lagos"</p>
+<hr />
+<h2 id="part-4-training-certification">Part 4: Training &amp; Certification<a class="headerlink" href="#part-4-training-certification" title="Permanent link">&para;</a></h2>
+<h3 id="41-field-agent-training-program">4.1 Field Agent Training Program<a class="headerlink" href="#41-field-agent-training-program" title="Permanent link">&para;</a></h3>
+<p><strong>Duration:</strong> 1 day (8 hours)</p>
+<p><strong>Module 1: Product Overview (1 hour)</strong>
+- What is eSIM vs. physical SIM?
+- Akulearn network gateway architecture
+- Plans and pricing</p>
+<p><strong>Module 2: Field Agent App Training (2 hours)</strong>
+- App installation and login
+- Physical SIM registration workflow
+- eSIM profile generation workflow
+- Inventory management</p>
+<p><strong>Module 3: Hands-On Practice (3 hours)</strong>
+- Register 10 physical SIMs (sandbox environment)
+- Generate 10 eSIM profiles
+- Perform 5 device swaps
+- Handle 5 simulated user issues</p>
+<p><strong>Module 4: Troubleshooting &amp; Support (1.5 hours)</strong>
+- Common issues and resolutions
+- Escalation procedures
+- Support portal access</p>
+<p><strong>Module 5: Assessment (0.5 hours)</strong>
+- 20-question quiz (passing score: 80%)
+- 5 practical scenarios (must complete 4/5 correctly)</p>
+<p><strong>Certification:</strong>
+- Upon passing, agent receives digital certificate
+- Certificate valid for 12 months (annual recertification required)</p>
+<hr />
+<h3 id="42-support-team-training-program">4.2 Support Team Training Program<a class="headerlink" href="#42-support-team-training-program" title="Permanent link">&para;</a></h3>
+<p><strong>Duration:</strong> 2 days (16 hours)</p>
+<p><strong>Day 1: Technical Deep Dive</strong>
+- Backend system architecture
+- API endpoints and usage
+- HLR/HSS, PGW/PCEF, SM-DP+ integration
+- Webhook events and monitoring dashboards</p>
+<p><strong>Day 2: Support Skills</strong>
+- Active listening and customer communication
+- Troubleshooting methodology (isolate, diagnose, resolve)
+- 20 common user scenarios with resolutions
+- Escalation matrix and SLA adherence</p>
+<p><strong>Certification:</strong>
+- 30-question technical quiz (passing score: 85%)
+- 10 live-call simulations (must achieve ≥4.0/5.0 customer satisfaction)</p>
+<hr />
+<h2 id="part-5-incident-response-procedures">Part 5: Incident Response Procedures<a class="headerlink" href="#part-5-incident-response-procedures" title="Permanent link">&para;</a></h2>
+<h3 id="51-high-priority-incidents">5.1 High-Priority Incidents<a class="headerlink" href="#51-high-priority-incidents" title="Permanent link">&para;</a></h3>
+<h4 id="incident-hlrhss-outage-p1-critical">Incident: HLR/HSS Outage (P1 - Critical)<a class="headerlink" href="#incident-hlrhss-outage-p1-critical" title="Permanent link">&para;</a></h4>
+<p><strong>Symptoms:</strong>
+- All SIM activations failing
+- Existing SIMs losing network registration
+- attach.failed events flooding logs</p>
+<p><strong>Immediate Actions:</strong>
+1. Network ops paged via PagerDuty
+2. Check HLR/HSS health dashboard
+3. If down, initiate failover to backup HLR (if available)
+4. If no backup, contact MNO partner for emergency HLR access</p>
+<p><strong>Communication:</strong>
+- Post incident notice on status page (status.akulearn.com)
+- Email all field agents: "SIM activations temporarily unavailable"
+- Estimate time to resolution (ETA)</p>
+<p><strong>Resolution:</strong>
+- Primary HLR restored: Resume activations
+- Backlog of pending activations processed (queue-based)
+- Post-mortem within 48 hours</p>
+<hr />
+<h4 id="incident-policy-enforcement-failure-p1-critical">Incident: Policy Enforcement Failure (P1 - Critical)<a class="headerlink" href="#incident-policy-enforcement-failure-p1-critical" title="Permanent link">&para;</a></h4>
+<p><strong>Symptoms:</strong>
+- Zero-rated content being billed
+- Users charged for Akulearn data usage
+- Billing discrepancies reported</p>
+<p><strong>Immediate Actions:</strong>
+1. Suspend all policy pushes to prevent further incorrect billing
+2. Identify affected users: Query billing system for zero-rated charges
+3. Manually correct billing records (refund incorrect charges)
+4. Investigate root cause: PCEF configuration, policy DB corruption, etc.</p>
+<p><strong>Communication:</strong>
+- Urgent notification to billing team
+- Email affected users with apology and refund confirmation
+- Internal incident report to executive team</p>
+<p><strong>Resolution:</strong>
+- Fix policy engine configuration
+- Re-push policies to all affected SIMs
+- Audit billing for 48 hours to ensure no recurrence
+- Implement additional policy validation checks</p>
+<hr />
+<h3 id="52-medium-priority-incidents">5.2 Medium-Priority Incidents<a class="headerlink" href="#52-medium-priority-incidents" title="Permanent link">&para;</a></h3>
+<h4 id="incident-elevated-activation-failure-rate-p2-high">Incident: Elevated Activation Failure Rate (P2 - High)<a class="headerlink" href="#incident-elevated-activation-failure-rate-p2-high" title="Permanent link">&para;</a></h4>
+<p><strong>Symptoms:</strong>
+- Activation success rate drops from 98% to &lt;90%
+- No complete outage, but increased failures</p>
+<p><strong>Investigation:</strong>
+1. Check for patterns: Specific device types? Specific regions?
+2. Review recent deployments: Backend changes? Network config changes?
+3. Check HLR/HSS load: High CPU or memory usage?
+4. Check SM-DP+ latency: Profile download timeouts?</p>
+<p><strong>Mitigation:</strong>
+- If HLR overloaded: Scale horizontally (add HLR instance)
+- If SM-DP+ slow: Switch to backup SM-DP+ endpoint
+- If backend API issue: Roll back recent deployment</p>
+<p><strong>Resolution:</strong>
+- Restore success rate to &gt;95%
+- Root cause analysis and corrective action plan
+- Deploy fixes to prevent recurrence</p>
+<hr />
+<h2 id="document-metadata">Document Metadata<a class="headerlink" href="#document-metadata" title="Permanent link">&para;</a></h2>
+<p><strong>Version:</strong> 1.0<br />
+<strong>Last Updated:</strong> January 22, 2026<br />
+<strong>Owner:</strong> Network Gateway Operations Team<br />
+<strong>Audience:</strong> Field agents, support team, network operations<br />
+<strong>Next Review:</strong> Quarterly (April 2026)</p>
+<hr />
+<h2 id="appendix-quick-command-reference">Appendix: Quick Command Reference<a class="headerlink" href="#appendix-quick-command-reference" title="Permanent link">&para;</a></h2>
+<h3 id="field-agent-app-shortcuts">Field Agent App Shortcuts<a class="headerlink" href="#field-agent-app-shortcuts" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>Ctrl+N - Register New SIM
+Ctrl+E - Provision eSIM
+Ctrl+S - Search SIM by ICCID/MSISDN
+Ctrl+I - View Inventory
+Ctrl+H - Help &amp; Training
+</code></pre></div>
+
+<h3 id="support-portal-shortcuts">Support Portal Shortcuts<a class="headerlink" href="#support-portal-shortcuts" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">Search</span><span class="o">:</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="n">ICCID</span><span class="o">,</span><span class="w"> </span><span class="n">MSISDN</span><span class="o">,</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">profile</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">top</span><span class="w"> </span><span class="n">search</span><span class="w"> </span><span class="n">bar</span>
+<span class="n">Quick</span><span class="w"> </span><span class="n">Suspend</span><span class="o">:</span><span class="w"> </span><span class="n">Click</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="s2">&quot;Mark as Lost&quot;</span><span class="w"> </span><span class="n">button</span>
+<span class="n">Quick</span><span class="w"> </span><span class="n">Reactivate</span><span class="o">:</span><span class="w"> </span><span class="n">Click</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="s2">&quot;Reactivate&quot;</span><span class="w"> </span><span class="n">button</span>
+<span class="n">Usage</span><span class="w"> </span><span class="n">History</span><span class="o">:</span><span class="w"> </span><span class="n">Click</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="s2">&quot;Data Usage&quot;</span><span class="w"> </span><span class="n">tab</span>
+<span class="n">Event</span><span class="w"> </span><span class="n">Log</span><span class="o">:</span><span class="w"> </span><span class="n">Click</span><span class="w"> </span><span class="n">SIM</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="s2">&quot;Events&quot;</span><span class="w"> </span><span class="n">tab</span><span class="w"> </span><span class="o">(</span><span class="n">last</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="n">days</span><span class="o">)</span>
+</code></pre></div>
+
+<h3 id="cli-commands-network-ops">CLI Commands (Network Ops)<a class="headerlink" href="#cli-commands-network-ops" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Check HLR status</span>
+curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span>https://api.akulearn.com/hlr/health
+
+<span class="c1"># Force policy push</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://api.akulearn.com/policies/push<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;iccid&quot;: &quot;89234123456789012345&quot;}&#39;</span>
+
+<span class="c1"># Query attach events</span>
+curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://api.akulearn.com/events?type=attach.success&amp;since=2026-01-22T00:00:00Z&quot;</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

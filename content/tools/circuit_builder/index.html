@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circuit Builder (MVP)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f6f7fb; color: #1f2d3d; }
+    header { background: #0052CC; color: #fff; padding: 16px; }
+    main { padding: 16px; max-width: 960px; margin: 0 auto; }
+    .card { background: #fff; border-radius: 8px; padding: 16px; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    label { display:block; font-weight: 600; margin-top: 12px; }
+    input, textarea { width: 100%; padding: 8px; margin-top: 6px; }
+    button { padding: 10px 14px; margin-right: 8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Circuit Builder (MVP)</h1>
+    <p>Component list + connections (offline)</p>
+  </header>
+  <main>
+    <div class="card">
+      <label>Circuit Name</label>
+      <input id="name" placeholder="e.g., Simple Series Circuit" />
+      <label>Components (one per line)</label>
+      <textarea id="components" rows="6" placeholder="Battery\nResistor\nLED"></textarea>
+      <label>Connections</label>
+      <textarea id="connections" rows="4" placeholder="Battery -> Resistor -> LED"></textarea>
+      <label>Notes</label>
+      <textarea id="notes" rows="3"></textarea>
+    </div>
+    <div class="card">
+      <button onclick="saveProject()">Save</button>
+      <button onclick="loadProject()">Load</button>
+      <button onclick="exportProject()">Export JSON</button>
+    </div>
+  </main>
+  <script>
+    const key = 'tool_circuit_builder_v1';
+    function getData(){
+      return {
+        name: document.getElementById('name').value,
+        components: document.getElementById('components').value,
+        connections: document.getElementById('connections').value,
+        notes: document.getElementById('notes').value,
+        savedAt: new Date().toISOString()
+      };
+    }
+    function setData(d){
+      if(!d) return;
+      document.getElementById('name').value = d.name || '';
+      document.getElementById('components').value = d.components || '';
+      document.getElementById('connections').value = d.connections || '';
+      document.getElementById('notes').value = d.notes || '';
+    }
+    function saveProject(){
+      localStorage.setItem(key, JSON.stringify(getData()));
+      alert('Saved locally');
+    }
+    function loadProject(){
+      const data = JSON.parse(localStorage.getItem(key));
+      setData(data);
+    }
+    function exportProject(){
+      const blob = new Blob([JSON.stringify(getData(), null, 2)], {type:'application/json'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'circuit_project.json';
+      a.click();
+    }
+  </script>
+</body>
+</html>

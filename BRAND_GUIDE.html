@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akulearn Brand Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1B4D8E 0%, #2C3E50 100%);
+            color: white;
+            border-radius: 8px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .mission {
+            background: #D4AF37;
+            color: #1B4D8E;
+            padding: 30px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #1B4D8E;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #D4AF37;
+            padding-bottom: 15px;
+        }
+
+        .logo-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .logo-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .logo-card-image {
+            width: 100%;
+            height: 200px;
+            background: #F5F5F5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            color: #999;
+            border-bottom: 1px solid #EEE;
+        }
+
+        .logo-card-content {
+            padding: 20px;
+        }
+
+        .logo-card h3 {
+            color: #1B4D8E;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .logo-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .philosophy {
+            background: #F9F9F9;
+            padding: 25px;
+            border-left: 5px solid #FF8C42;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+
+        .philosophy strong {
+            color: #1B4D8E;
+        }
+
+        .colors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .color-swatch {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .color-sample {
+            height: 100px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 10px;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .color-info {
+            padding: 15px;
+            background: white;
+        }
+
+        .color-info h4 {
+            color: #1B4D8E;
+            margin-bottom: 5px;
+        }
+
+        .color-info p {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .dos-donts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .dos, .donts {
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .dos {
+            background: #E8F5E9;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .donts {
+            background: #FFEBEE;
+            border-left: 5px solid #F44336;
+        }
+
+        .dos h3, .donts h3 {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .dos h3 {
+            color: #2E7D32;
+        }
+
+        .donts h3 {
+            color: #C62828;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .dos li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .donts li:before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #F44336;
+            font-weight: bold;
+        }
+
+        .checklist {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .checklist h3 {
+            color: #1B4D8E;
+            margin-bottom: 20px;
+        }
+
+        .checklist li {
+            padding: 10px 0;
+            padding-left: 30px;
+            border-bottom: 1px solid #EEE;
+        }
+
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            border-top: 1px solid #DDD;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .dos-donts {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦜 Akulearn Brand Guide</h1>
+            <p>Transforming Education Across Africa</p>
+        </header>
+
+        <div class="mission">
+            <p>"Every student learns. With Akulearn, intelligence meets accessibility."</p>
+        </div>
+
+        <!-- Logo System -->
+        <section class="section">
+            <h2>Our Logo System</h2>
+            
+            <div class="logo-showcase">
+                <!-- Aku Logo -->
+                <div class="logo-card">
+                    <div class="logo-card-image">🦜 Aku Logo</div>
+                    <div class="logo-card-content">
+                        <h3>Aku</h3>
+                        <p><strong>The Learning Transformation</strong></p>
+                        <div class="philosophy">
+                            <p><strong>Surface:</strong> Stylized "A" that's subtly unusual</p>
+                            <p><strong>Hidden Design:</strong> Hausa turban with two upright horns</p>
+                            <p><strong>Meaning:</strong> Royalty crowned by knowledge. Aku (parrot) = intelligence. Transforms on animation to reveal the turban beneath.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Telhone Logo -->
+                <div class="logo-card">
+                    <div class="logo-card-image">📞 Telhone Logo</div>
+                    <div class="logo-card-content">
+                        <h3>Telhone</h3>
+                        <p><strong>Accessible Connection</strong></p>
+                        <div class="philosophy">
+                            <p><strong>Design:</strong> Two tin cans connected by thread</p>
+                            <p><strong>Inspiration:</strong> Childhood DIY communication</p>
+                            <p><strong>Message:</strong> Learning requires dialogue. Innovation matters more than tools. Accessibility over complexity.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Versatech Logo -->
+                <div class="logo-card">
+                    <div class="logo-card-image">⚙️ Versatech</div>
+                    <div class="logo-card-content">
+                        <h3>Versatech Solution Limited</h3>
+                        <p><strong>The Team & Technology</strong></p>
+                        <div class="philosophy">
+                            <p><strong>Heritage:</strong> Hackathon-winning team</p>
+                            <p><strong>Role:</strong> Technical excellence + practical solutions</p>
+                            <p><strong>Trust:</strong> Company credibility and innovation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Color Palette -->
+        <section class="section">
+            <h2>Color Palette</h2>
+            <div class="colors">
+                <div class="color-swatch">
+                    <div class="color-sample" style="background: #1B4D8E;">Deep Blue</div>
+                    <div class="color-info">
+                        <h4>Deep Blue</h4>
+                        <p>#1B4D8E</p>
+                        <p>Trust, intelligence, authority</p>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-sample" style="background: #D4AF37; color: #1B4D8E;">Gold Accent</div>
+                    <div class="color-info">
+                        <h4>Gold Accent</h4>
+                        <p>#D4AF37</p>
+                        <p>Royalty, premium, achievement</p>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-sample" style="background: #FF8C42;">Warm Orange</div>
+                    <div class="color-info">
+                        <h4>Warm Orange</h4>
+                        <p>#FF8C42</p>
+                        <p>Warmth, accessibility, community</p>
+                    </div>
+                </div>
+
+                <div class="color-swatch">
+                    <div class="color-sample" style="background: #2C3E50;">Charcoal</div>
+                    <div class="color-info">
+                        <h4>Charcoal</h4>
+                        <p>#2C3E50</p>
+                        <p>Text, authority, professional</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Guidelines -->
+        <section class="section">
+            <h2>Brand Guidelines</h2>
+            <div class="dos-donts">
+                <div class="dos">
+                    <h3>✓ DO</h3>
+                    <ul>
+                        <li>Use high contrast for accessibility</li>
+                        <li>Animate Aku on key moments (login, level-up)</li>
+                        <li>Maintain 2:1 clear space around logos</li>
+                        <li>Use full color on clean backgrounds</li>
+                        <li>Tell the story behind each logo</li>
+                        <li>Test color contrast (WCAG AAA)</li>
+                    </ul>
+                </div>
+
+                <div class="donts">
+                    <h3>✗ DON'T</h3>
+                    <ul>
+                        <li>Rotate/distort Aku outside animation</li>
+                        <li>Use logos smaller than 100px width</li>
+                        <li>Place on complex/patterned backgrounds</li>
+                        <li>Change colors arbitrarily</li>
+                        <li>Hide the turban story from users</li>
+                        <li>Use low-contrast color combinations</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Checklist -->
+        <section class="section">
+            <h2>Implementation Checklist</h2>
+            <div class="checklist">
+                <h3>Get Akulearn Branded</h3>
+                <ul>
+                    <li>Add Aku logo to homepage header</li>
+                    <li>Add rotation animation on platform load</li>
+                    <li>Add Telhone logo to discussion/chat features</li>
+                    <li>Add Versatech attribution to footer</li>
+                    <li>Add founder bio to About page</li>
+                    <li>Use brand colors in UI components</li>
+                    <li>Test contrast ratios across all pages</li>
+                    <li>Create brand guide for developers</li>
+                    <li>Document logo animation specs</li>
+                    <li>Test on mobile and desktop views</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>Brand Philosophy Last Updated: February 5, 2026</p>
+            <p>For questions about brand usage, contact the Akulearn team.</p>
+        </footer>
+    </div>
+</body>
+</html>

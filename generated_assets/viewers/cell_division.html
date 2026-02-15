@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Division - Mitosis & Meiosis Animation</title>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        header h1 { font-size: 38px; margin-bottom: 10px; }
+        header p { font-size: 16px; opacity: 0.9; }
+        
+        .controls {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .control-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .control-group label {
+            font-weight: 600;
+            color: #333;
+            min-width: 120px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+        
+        button.active {
+            background: #28a745;
+        }
+        
+        .canvas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .canvas-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .canvas-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        canvas {
+            width: 100%;
+            height: 400px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        
+        .stage-info {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .stage-info strong {
+            color: #333;
+        }
+        
+        .info-panel {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-panel h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 13px;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f9f9f9;
+        }
+        
+        .slider-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex: 1;
+        }
+        
+        input[type="range"] {
+            flex: 1;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            min-width: 150px;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+        }
+        
+        .stage-counter {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        .speed-control {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .legend {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+        }
+        
+        .legend-item {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 1200px) {
+            .canvas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header h1 { font-size: 28px; }
+            .control-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧬 Cell Division: Mitosis & Meiosis</h1>
+            <p>Interactive Animation - NERDC Biology (JSS3-SS2)</p>
+        </header>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label>Select Process:</label>
+                <div class="btn-group">
+                    <button class="active" onclick="selectProcess('mitosis')">Mitosis (2n → 2n)</button>
+                    <button onclick="selectProcess('meiosis')">Meiosis (2n → n)</button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label>Animation:</label>
+                <div class="btn-group">
+                    <button onclick="playAnimation()">▶ Play</button>
+                    <button onclick="pauseAnimation()">⏸ Pause</button>
+                    <button onclick="resetAnimation()">↻ Reset</button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label>Stage Progress:</label>
+                <div class="slider-container">
+                    <input type="range" id="stageSlider" min="0" max="100" value="0" oninput="setStage(this.value)">
+                    <span class="stage-counter" id="stageCounter">1/4</span>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label>Speed:</label>
+                <div class="speed-control">
+                    <input type="range" id="speedSlider" min="0.1" max="3" step="0.1" value="1" oninput="setSpeed(this.value)">
+                    <span id="speedDisplay">1x</span>
+                </div>
+            </div>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4472C4;"></div>
+                    <span>Chromosomes</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #70AD47;"></div>
+                    <span>Spindle Fibers</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #FFC000;"></div>
+                    <span>Centrioles</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #C5504D;"></div>
+                    <span>Nuclear Envelope</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="canvas-grid">
+            <div class="canvas-container">
+                <div class="canvas-title">Cell Visualization</div>
+                <canvas id="cellCanvas"></canvas>
+                <div class="stage-info" id="stageInfo">
+                    <strong>Prophase:</strong> Chromatin condenses into chromosomes, nuclear envelope breaks down, spindle fibers form.
+                </div>
+            </div>
+            
+            <div class="canvas-container">
+                <div class="canvas-title">Chromosome Count</div>
+                <canvas id="chromosomeCanvas"></canvas>
+                <div class="stage-info" id="chromosomeInfo">
+                    <strong>Diploid (2n):</strong> Full chromosome number maintained throughout mitosis.
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h3>📚 Mitosis vs Meiosis Comparison</h3>
+            <table class="comparison-table">
+                <tr>
+                    <th>Feature</th>
+                    <th>Mitosis</th>
+                    <th>Meiosis</th>
+                </tr>
+                <tr>
+                    <td><strong>Purpose</strong></td>
+                    <td>Growth, repair, asexual reproduction</td>
+                    <td>Sexual reproduction, gamete formation</td>
+                </tr>
+                <tr>
+                    <td><strong>Number of Divisions</strong></td>
+                    <td>One (1)</td>
+                    <td>Two (II)</td>
+                </tr>
+                <tr>
+                    <td><strong>Daughter Cells</strong></td>
+                    <td>2 identical cells</td>
+                    <td>4 unique cells</td>
+                </tr>
+                <tr>
+                    <td><strong>Chromosome Number</strong></td>
+                    <td>2n → 2n (diploid)</td>
+                    <td>2n → n (haploid)</td>
+                </tr>
+                <tr>
+                    <td><strong>Genetic Variation</strong></td>
+                    <td>None (clones)</td>
+                    <td>Maximum (crossing over)</td>
+                </tr>
+                <tr>
+                    <td><strong>Where It Occurs</strong></td>
+                    <td>Somatic cells (body)</td>
+                    <td>Germ cells (reproductive)</td>
+                </tr>
+                <tr>
+                    <td><strong>Duration</strong></td>
+                    <td>20-40 minutes</td>
+                    <td>Days to weeks</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        // Cell Division Animation System
+        
+        const mitosisStages = [
+            {
+                name: "Prophase",
+                duration: "0-5s",
+                description: "Chromatin condenses into visible chromosomes. Nuclear envelope dissolves. Centrioles move to opposite poles. Spindle fibers form.",
+                chromosomes: 8,
+                details: "Preparation for division"
+            },
+            {
+                name: "Metaphase",
+                duration: "5-10s",
+                description: "Chromosomes (each consisting of 2 sister chromatids) align at the cell's equator (metaphase plate). Spindle fibers attach to centromeres.",
+                chromosomes: 8,
+                details: "Chromosomes positioned"
+            },
+            {
+                name: "Anaphase",
+                duration: "10-15s",
+                description: "Sister chromatids separate and move to opposite poles of the cell. Spindle fibers shorten, pulling chromatids apart.",
+                chromosomes: 16,
+                details: "Chromatids separating"
+            },
+            {
+                name: "Telophase & Cytokinesis",
+                duration: "15-25s",
+                description: "Nuclear envelopes reform around each set of chromosomes. Cell membrane pinches (cleavage furrow). Two identical daughter cells form. Each has 2n chromosomes.",
+                chromosomes: 8,
+                details: "Two daughter cells (2n each)"
+            }
+        ];
+        
+        const meiosisStages = [
+            {
+                name: "Prophase I",
+                duration: "0-5s",
+                description: "Homologous chromosomes pair up (synapsis). Crossing over occurs between homologous pairs. Spindle fibers form.",
+                chromosomes: 8,
+                details: "Genetic recombination"
+            },
+            {
+                name: "Metaphase I",
+                duration: "5-10s",
+                description: "Homologous pairs align at the metaphase plate. Spindle fibers attach to both chromosomes.",
+                chromosomes: 8,
+                details: "Homologous pairs aligned"
+            },
+            {
+                name: "Anaphase I",
+                duration: "10-15s",
+                description: "Homologous chromosomes (each still consisting of 2 sister chromatids) separate and move to opposite poles. Random assortment occurs.",
+                chromosomes: 16,
+                details: "Homologs separating"
+            },
+            {
+                name: "Telophase I & Cytokinesis I",
+                duration: "15-20s",
+                description: "Two cells form, each with half the chromosomes (n). Each chromosome still consists of 2 sister chromatids.",
+                chromosomes: 4,
+                details: "Two haploid cells"
+            },
+            {
+                name: "Prophase II",
+                duration: "20-25s",
+                description: "Chromosomes condense. Spindle fibers form in each daughter cell from Meiosis I.",
+                chromosomes: 4,
+                details: "Second meiosis begins"
+            },
+            {
+                name: "Metaphase II",
+                duration: "25-30s",
+                description: "Chromosomes (still double, 2 chromatids each) align at metaphase plate in each cell.",
+                chromosomes: 4,
+                details: "Chromosomes positioned"
+            },
+            {
+                name: "Anaphase II",
+                duration: "30-35s",
+                description: "Sister chromatids separate and move to opposite poles. Now acting as individual chromosomes.",
+                chromosomes: 8,
+                details: "Chromatids separating"
+            },
+            {
+                name: "Telophase II & Cytokinesis II",
+                duration: "35-40s",
+                description: "Four unique haploid cells form (n). Each cell has single chromatid chromosomes. Ready for fertilization.",
+                chromosomes: 4,
+                details: "Four unique gametes"
+            }
+        ];
+        
+        let currentProcess = 'mitosis';
+        let currentStage = 0;
+        let isPlaying = false;
+        let animationSpeed = 1;
+        let animationFrame = 0;
+        
+        const cellCanvas = document.getElementById('cellCanvas');
+        const chromosomeCanvas = document.getElementById('chromosomeCanvas');
+        const ctx = cellCanvas.getContext('2d');
+        const ctxChrom = chromosomeCanvas.getContext('2d');
+        
+        function selectProcess(process) {
+            currentProcess = process;
+            currentStage = 0;
+            isPlaying = false;
+            updateCanvases();
+            updateInfo();
+            updateButtons();
+        }
+        
+        function updateButtons() {
+            document.querySelectorAll('.control-group:first-child button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (currentProcess === 'mitosis') {
+                document.querySelectorAll('.control-group:first-child button')[0].classList.add('active');
+            } else {
+                document.querySelectorAll('.control-group:first-child button')[1].classList.add('active');
+            }
+        }
+        
+        function playAnimation() {
+            isPlaying = true;
+            animate();
+        }
+        
+        function pauseAnimation() {
+            isPlaying = false;
+        }
+        
+        function resetAnimation() {
+            currentStage = 0;
+            isPlaying = false;
+            animationFrame = 0;
+            updateCanvases();
+            updateInfo();
+        }
+        
+        function setStage(value) {
+            isPlaying = false;
+            const stages = currentProcess === 'mitosis' ? mitosisStages : meiosisStages;
+            currentStage = Math.floor((value / 100) * (stages.length - 1));
+            animationFrame = 0;
+            updateCanvases();
+            updateInfo();
+        }
+        
+        function setSpeed(value) {
+            animationSpeed = parseFloat(value);
+            document.getElementById('speedDisplay').textContent = animationSpeed.toFixed(1) + 'x';
+        }
+        
+        function updateInfo() {
+            const stages = currentProcess === 'mitosis' ? mitosisStages : meiosisStages;
+            const stage = stages[currentStage];
+            
+            document.getElementById('stageInfo').innerHTML = `
+                <strong>${stage.name} (${stage.duration}):</strong> ${stage.description}
+            `;
+            
+            document.getElementById('chromosomeInfo').innerHTML = `
+                <strong>${stage.details}:</strong> 
+                ${currentProcess === 'mitosis' ? 'Maintains 2n chromosomes' : stage.chromosomes === 8 ? 'Haploid (n) formation' : 'Starting division'}
+            `;
+            
+            const stageCount = stages.length;
+            document.getElementById('stageCounter').textContent = (currentStage + 1) + '/' + stageCount;
+            document.getElementById('stageSlider').value = (currentStage / (stageCount - 1)) * 100;
+        }
+        
+        function drawCell(stage, progress) {
+            const centerX = cellCanvas.width / 2;
+            const centerY = cellCanvas.height / 2;
+            const cellRadius = 100;
+            
+            ctx.clearRect(0, 0, cellCanvas.width, cellCanvas.height);
+            
+            // Draw cell membrane
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, cellRadius, 0, Math.PI * 2);
+            ctx.stroke();
+            
+            // Draw based on stage
+            if (currentProcess === 'mitosis') {
+                drawMitosisStage(centerX, centerY, cellRadius, stage, progress);
+            } else {
+                drawMeiosisStage(centerX, centerY, cellRadius, stage, progress);
+            }
+        }
+        
+        function drawMitosisStage(cx, cy, r, stage, progress) {
+            const stageIndex = stage;
+            
+            // Draw centrioles/poles
+            ctx.fillStyle = '#FFC000';
+            ctx.beginPath();
+            ctx.arc(cx - 60, cy - 60, 5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(cx + 60, cy - 60, 5, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Draw spindle fibers
+            ctx.strokeStyle = '#70AD47';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < 8; i++) {
+                ctx.beginPath();
+                ctx.moveTo(cx - 60, cy - 60);
+                const angle = (i / 8) * Math.PI * 2;
+                const x = cx + Math.cos(angle) * 80;
+                const y = cy + Math.sin(angle) * 80;
+                ctx.lineTo(x, y);
+                ctx.stroke();
+            }
+            
+            // Draw chromosomes based on stage
+            drawChromosomes(cx, cy, stageIndex, progress);
+        }
+        
+        function drawMeiosisStage(cx, cy, r, stage, progress) {
+            // Similar to mitosis but with more complex chromosome pairing
+            ctx.fillStyle = '#FFC000';
+            if (stage < 4) {
+                // Meiosis I
+                ctx.beginPath();
+                ctx.arc(cx - 60, cy - 60, 5, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(cx + 60, cy - 60, 5, 0, Math.PI * 2);
+                ctx.fill();
+            } else {
+                // Meiosis II - multiple cells
+                ctx.beginPath();
+                ctx.arc(cx - 40, cy - 40, 4, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(cx + 40, cy - 40, 4, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            
+            // Draw spindle fibers
+            ctx.strokeStyle = '#70AD47';
+            ctx.lineWidth = 1;
+            for (let i = 0; i < 8; i++) {
+                ctx.beginPath();
+                ctx.moveTo(cx - 60, cy - 60);
+                const angle = (i / 8) * Math.PI * 2;
+                const x = cx + Math.cos(angle) * 80;
+                const y = cy + Math.sin(angle) * 80;
+                ctx.lineTo(x, y);
+                ctx.stroke();
+            }
+            
+            drawChromosomes(cx, cy, stage, progress);
+        }
+        
+        function drawChromosomes(cx, cy, stageIndex, progress) {
+            ctx.fillStyle = '#4472C4';
+            
+            const totalStages = currentProcess === 'mitosis' ? 4 : 8;
+            
+            // Draw chromosomes that move based on stage
+            if (stageIndex === 0) {
+                // Prophase/I - condensing
+                for (let i = 0; i < 4; i++) {
+                    const x = cx - 40 + i * 20;
+                    const y = cy - 20;
+                    ctx.fillRect(x - 4, y - 10, 8, 20);
+                }
+            } else if (stageIndex === 1) {
+                // Metaphase - aligned center
+                for (let i = 0; i < 4; i++) {
+                    const x = cx - 40 + i * 20;
+                    ctx.fillRect(x - 4, cy - 8, 8, 16);
+                }
+            } else if (stageIndex === 2) {
+                // Anaphase - separating
+                for (let i = 0; i < 4; i++) {
+                    const x = cx - 40 + i * 20;
+                    const y1 = cy - 40 - (progress * 20);
+                    const y2 = cy + 40 + (progress * 20);
+                    ctx.fillRect(x - 4, y1 - 8, 8, 16);
+                    ctx.fillRect(x - 4, y2 - 8, 8, 16);
+                }
+            } else {
+                // Telophase - two groups
+                for (let i = 0; i < 4; i++) {
+                    const x = cx - 40 + i * 20;
+                    ctx.fillRect(x - 4, cy - 60 - 8, 8, 16);
+                    ctx.fillRect(x - 4, cy + 60 - 8, 8, 16);
+                }
+            }
+        }
+        
+        function drawChromosomeChart(stage) {
+            const width = chromosomeCanvas.width;
+            const height = chromosomeCanvas.height;
+            
+            ctxChrom.clearRect(0, 0, width, height);
+            
+            const stages = currentProcess === 'mitosis' ? mitosisStages : meiosisStages;
+            const stageInfo = stages[stage];
+            
+            // Title
+            ctxChrom.fillStyle = '#333';
+            ctxChrom.font = 'bold 14px Arial';
+            ctxChrom.fillText('Chromosome Count Over Time', 10, 25);
+            
+            // Chart background
+            ctxChrom.fillStyle = '#f0f0f0';
+            ctxChrom.fillRect(50, 40, width - 70, height - 100);
+            
+            // Grid lines
+            ctxChrom.strokeStyle = '#ddd';
+            ctxChrom.lineWidth = 1;
+            for (let i = 0; i <= 4; i++) {
+                const y = 40 + (i * (height - 100) / 4);
+                ctxChrom.beginPath();
+                ctxChrom.moveTo(50, y);
+                ctxChrom.lineTo(width - 20, y);
+                ctxChrom.stroke();
+            }
+            
+            // Y-axis label
+            ctxChrom.fillStyle = '#666';
+            ctxChrom.font = '11px Arial';
+            ctxChrom.fillText('16', 20, 50);
+            ctxChrom.fillText('8', 20, 40 + (height - 100) / 2);
+            ctxChrom.fillText('0', 20, height - 45);
+            
+            // X-axis label
+            ctxChrom.fillText('Stage', width / 2 - 10, height - 15);
+            
+            // Draw current chromosome count as bar
+            const y = 40 + ((16 - stageInfo.chromosomes) / 16) * (height - 100);
+            ctxChrom.fillStyle = '#667eea';
+            ctxChrom.fillRect(width / 2 - 20, y, 40, 40 + (height - 100) - (y - 40));
+            
+            // Label
+            ctxChrom.fillStyle = '#333';
+            ctxChrom.font = 'bold 12px Arial';
+            ctxChrom.fillText(stageInfo.chromosomes.toString(), width / 2 - 5, y - 10);
+        }
+        
+        function updateCanvases() {
+            drawCell(currentStage, 0);
+            drawChromosomeChart(currentStage);
+            updateInfo();
+        }
+        
+        function animate() {
+            if (!isPlaying) return;
+            
+            const stages = currentProcess === 'mitosis' ? mitosisStages : meiosisStages;
+            
+            animationFrame += animationSpeed;
+            
+            // 60 frames per stage
+            if (animationFrame >= 60) {
+                animationFrame = 0;
+                currentStage++;
+                
+                if (currentStage >= stages.length) {
+                    currentStage = 0;
+                }
+            }
+            
+            const progress = animationFrame / 60;
+            drawCell(currentStage, progress);
+            drawChromosomeChart(currentStage);
+            updateInfo();
+            
+            requestAnimationFrame(animate);
+        }
+        
+        // Resize canvases
+        function resizeCanvases() {
+            const container = document.querySelector('.canvas-container');
+            const rect = container.getBoundingClientRect();
+            cellCanvas.width = rect.width - 40;
+            chromosomeCanvas.width = rect.width - 40;
+            cellCanvas.height = 400;
+            chromosomeCanvas.height = 400;
+            updateCanvases();
+        }
+        
+        window.addEventListener('resize', resizeCanvases);
+        
+        // Initialize
+        resizeCanvases();
+    </script>
+</body>
+</html>
