@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "subject": "Geography",
+    "level": "SS1",
+    "unit": "2",
+    "unit_title": "Weather, Climate, and Natural Resources",
+    "lesson": "2",
+    "lesson_title": "Weather, Climate, and Natural Resources",
+    "duration_minutes": 90,
+    "estimated_pages": 13,
+    "curriculum_alignment": {
+      "nerdc_code": "GE.SS1.2.1-2.3",
+      "nerdc_description": "Weather elements, climate zones, climate change, resources, conservation",
+      "waec_topic": "Weather, Climate, and Resources",
+      "waec_weighting": "8%"
+    },
+    "learning_level": "foundational",
+    "nigerian_context": true
+  },
+  "learning_objectives": [
+    "Differentiate weather from climate and list elements of weather",
+    "Describe Nigerian climate zones and key atmospheric patterns",
+    "Explain causes and impacts of climate change",
+    "Identify major natural resources in Nigeria and their uses",
+    "Discuss conservation and sustainable management strategies"
+  ],
+  "prerequisites": [
+    "Basic map reading (Lesson 1)",
+    "Understanding of latitude/longitude",
+    "Simple graph/table reading"
+  ],
+  "content_sections": [
+    {
+      "section_id": "2.1",
+      "title": "Weather Elements and Measurement",
+      "duration_minutes": 22,
+      "content": "**Weather** = short-term atmospheric conditions; **Climate** = long-term average (30+ years). Elements: temperature, precipitation, humidity, pressure, wind, cloud cover, sunshine.\n\n**Instruments**: thermometer (temp), rain gauge (rainfall), hygrometer (humidity), barometer (pressure), anemometer (wind speed), wind vane (direction), sunshine recorder. \n\n**Nigerian context**: Rainfall heavy in coastal south, lower in Sahel north; harmattan (dry, dusty NE trade winds) lowers visibility and temperature."
+    },
+    {
+      "section_id": "2.2",
+      "title": "Climate Zones and Nigeria's Patterns",
+      "duration_minutes": 23,
+      "content": "Nigeria spans several climate zones: \n- **Equatorial/Monsoon (south coastal)**: high rainfall, long wet season. \n- **Tropical Wet-and-Dry (Middle Belt)**: distinct wet/dry seasons. \n- **Semi-arid (far north/Sahel)**: low rainfall, high evaporation. \n\n**Seasonality**: ITCZ (Inter-Tropical Convergence Zone) shifts; rainy season when ITCZ is overhead; dry season with harmattan. \n\n**Rainfall gradient**: >2000 mm south (Port Harcourt) to <500 mm north (Maiduguri)."
+    },
+    {
+      "section_id": "2.3",
+      "title": "Climate Change: Causes and Effects",
+      "duration_minutes": 22,
+      "content": "Causes: greenhouse gas rise (CO2 from fossil fuels, methane), deforestation, industrial emissions. \n\nEffects: rising temperatures, changing rainfall patterns, sea-level rise (threat to Lagos coast), desertification in north, flooding in river basins, impacts on agriculture and health. \n\nMitigation: renewable energy, afforestation, efficient transport. \nAdaptation: flood defenses, drought-resistant crops, early warning systems."
+    },
+    {
+      "section_id": "2.4",
+      "title": "Natural Resources and Conservation in Nigeria",
+      "duration_minutes": 23,
+      "content": "Resources: **Minerals** (oil, gas, coal, tin, limestone, gold), **Agricultural** (cocoa, palm oil, cassava, rice), **Water** (Niger/Benue rivers), **Forest** (timber), **Wildlife**. \n\nUses: energy, industry, export revenue, food security. \n\nChallenges: overexploitation, oil spills, deforestation, illegal mining. \n\nConservation strategies: sustainable logging, reforestation, protected areas, pollution control, community resource management."
+    }
+  ],
+  "worked_examples": [
+    {
+      "example_id": "2.1",
+      "title": "Reading Rainfall Data",
+      "context": "Rainfall (mm): Lagos 2000, Enugu 1700, Abuja 1500, Kano 800, Maiduguri 500.",
+      "problem": "Which city has semi-arid conditions? Rank from wettest to driest.",
+      "solution": "Maiduguri (~500 mm) is semi-arid. Order wet to dry: Lagos > Enugu > Abuja > Kano > Maiduguri.",
+      "skills_tested": ["Data interpretation", "Climate zones"]
+    },
+    {
+      "example_id": "2.2",
+      "title": "Harmattan Impact",
+      "context": "During harmattan, a school in Kaduna experiences cold mornings and dusty air.",
+      "problem": "Explain likely wind origin and effects on visibility/health.",
+      "solution": "Northeast trade winds from Sahara bring dry dust → reduced visibility, respiratory irritation, cooler temperatures.",
+      "skills_tested": ["Weather patterns", "Health/environment reasoning"]
+    },
+    {
+      "example_id": "2.3",
+      "title": "Resource Management Trade-off",
+      "context": "A community near a forest considers logging for income versus conserving for water protection and tourism.",
+      "problem": "State opportunity cost and suggest balanced approach.",
+      "solution": "Opportunity cost of logging: loss of watershed protection/biodiversity/tourism. Balanced approach: controlled logging, replanting, eco-tourism development, community management to share benefits.",
+      "skills_tested": ["Sustainability", "Opportunity cost"]
+    }
+  ],
+  "practice_problems": [
+    {"tier": "basic", "difficulty": 1, "problem_id": "2.1.B", "problem": "Define weather vs climate.", "answer": "Weather = short-term conditions; Climate = long-term average (30+ years).", "explanation": "Time scale difference."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "2.2.B", "problem": "Name two weather elements.", "answer": "Temperature, rainfall, humidity, wind, pressure (any two).", "explanation": "Core elements."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "2.3.B", "problem": "What wind brings harmattan?", "answer": "Dry northeast trade winds from Sahara.", "explanation": "Harmattan source."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.4.C", "problem": "Which Nigerian zone gets highest rainfall?", "answer": "Coastal south (e.g., Port Harcourt).", "explanation": "Equatorial/monsoon zone."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.5.C", "problem": "Give one cause of climate change.", "answer": "Greenhouse gas emissions from fossil fuels (or deforestation).", "explanation": "Anthropogenic drivers."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.6.C", "problem": "Name one major mineral and one agricultural resource in Nigeria.", "answer": "Oil or gas; cocoa/palm oil/cassava/rice (any).", "explanation": "Resource categories."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.7.CH", "problem": "Explain how shifting ITCZ affects Nigeria's rainy season timing.", "answer": "When ITCZ moves north over region, moist SW winds bring rain; southward retreat ends rains. Timing varies north-south causing different wet season lengths.", "explanation": "ITCZ migration controls seasonality."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.8.CH", "problem": "Suggest two adaptation measures for coastal flooding in Lagos.", "answer": "Sea walls/embankments, drainage upgrades, zoning/setbacks, mangrove restoration, early warning systems (any two).", "explanation": "Adaptation tools."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.9.CH", "problem": "Why is deforestation linked to climate change?", "answer": "Trees store carbon; cutting releases CO2 and reduces future absorption, raising greenhouse gas levels.", "explanation": "Carbon cycle role."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.10.CH", "problem": "Evaluate one benefit and one cost of large-scale mining in Nigeria.", "answer": "Benefit: jobs, revenue, infrastructure. Cost: environmental damage (pollution, deforestation), displacement, health risks.", "explanation": "Trade-offs of resource extraction."}
+  ],
+  "glossary": [
+    {"term": "Weather", "definition": "Short-term atmospheric conditions.", "example": "Today's rain in Abuja."},
+    {"term": "Climate", "definition": "Long-term average weather pattern (30+ years).", "example": "Tropical wet-dry climate in Middle Belt."},
+    {"term": "ITCZ", "definition": "Inter-Tropical Convergence Zone where trade winds meet and rise.", "example": "Its north-south shift drives Nigeria's seasons."},
+    {"term": "Harmattan", "definition": "Dry, dusty NE trade wind period in West Africa.", "example": "Dust haze and cool mornings in December-January."},
+    {"term": "Mitigation", "definition": "Actions to reduce greenhouse gas emissions or enhance sinks.", "example": "Renewables, afforestation."},
+    {"term": "Adaptation", "definition": "Adjusting to climate impacts to reduce harm.", "example": "Flood defences, drought-resistant crops."},
+    {"term": "Conservation", "definition": "Sustainable use and protection of natural resources.", "example": "Protected forests, anti-pollution laws."}
+  ],
+  "assessment": {
+    "quick_checks": [
+      "Define weather vs climate.",
+      "Name a weather instrument.",
+      "What wind causes harmattan?",
+      "Which Nigerian zone is wettest?",
+      "Give one mitigation measure."
+    ],
+    "end_of_lesson_quiz": [
+      {"question": "Weather is:", "options": ["30-year average", "Short-term conditions", "Only temperature", "Only rainfall"], "correct": "Short-term conditions"},
+      {"question": "Harmattan comes from:", "options": ["SW monsoon", "NE trade winds", "Sea breeze", "Land breeze"], "correct": "NE trade winds"},
+      {"question": "Coastal Nigeria rainfall is:", "options": ["<500 mm", "500-800 mm", "1000-1500 mm", ">2000 mm"], "correct": ">2000 mm"},
+      {"question": "GHG increase leads to:", "options": ["Lower temperature", "No change", "Global warming", "Ice age"], "correct": "Global warming"},
+      {"question": "Conservation aims to:", "options": ["Use up resources fast", "Sustain resources and environment", "Ignore pollution", "Ban all mining"], "correct": "Sustain resources and environment"}
+    ],
+    "exam_style_questions": [
+      {"question": "Using a climate map of Nigeria, explain how latitude and ITCZ position create the rainfall gradient from south to north.", "answer_guide": "Discuss ITCZ migration, moist SW monsoon vs dry NE winds, longer wet season south, shorter north."},
+      {"question": "Assess two environmental impacts of oil exploitation in the Niger Delta and propose mitigation measures.", "answer_guide": "Impacts: oil spills, gas flaring, loss of fisheries. Mitigation: stricter regulation, spill cleanup, gas capture, community monitoring."}
+    ]
+  },
+  "resources": {
+    "visual_aids": [
+      {"title": "Nigeria Climate Zones Map", "type": "map", "description": "Shows rainfall gradient and main zones."},
+      {"title": "Weather Instruments Chart", "type": "diagram", "description": "Icons of thermometer, rain gauge, anemometer, barometer."},
+      {"title": "Resource Distribution Map", "type": "map", "description": "Locations of major minerals and crops in Nigeria."}
+    ]
+  },
+  "waec_tags": ["weather", "climate", "ITCZ", "harmattan", "climate change", "natural resources", "conservation", "Nigeria"]
+}

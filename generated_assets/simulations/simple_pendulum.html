@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Pendulum - Simple Harmonic Motion</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+        }
+        #canvas-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        .info {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .controls {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        label {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        input[type="range"] {
+            width: 150px;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 0 5px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .data {
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Simple Pendulum - Simple Harmonic Motion</h2>
+    <div id="canvas-container"></div>
+    
+    <div class="controls">
+        <div>
+            <label>Length (px): <input type="range" id="length" min="100" max="300" value="200" /></label>
+            <span id="lengthValue">200</span>
+        </div>
+        <div>
+            <label>Initial Angle (°): <input type="range" id="angle" min="10" max="90" value="45" /></label>
+            <span id="angleValue">45</span>
+        </div>
+        <div>
+            <label>Damping: <input type="range" id="damping" min="0.99" max="1.0" step="0.001" value="0.995" /></label>
+            <span id="dampingValue">0.995</span>
+        </div>
+        <div>
+            <button onclick="reset()">Reset</button>
+            <button onclick="togglePause()">Pause/Resume</button>
+        </div>
+    </div>
+    
+    <div class="info">
+        <div class="data">Angle: <span id="currentAngle">0.0</span>°</div>
+        <div class="data">Period: <span id="period">0.0</span> cycles</div>
+        <div class="data">Energy: <span id="energy">0.0</span> (normalized)</div>
+    </div>
+    
+    <script>
+        let angle = PI / 4;
+        let angleV = 0;
+        let angleA = 0;
+        let length = 200;
+        const gravity = 0.5;
+        let damping = 0.995;
+        let paused = false;
+        let cycleCount = 0;
+        let lastAngle = PI / 4;
+        
+        function setup() {
+            createCanvas(800, 600).parent('canvas-container');
+        }
+        
+        function draw() {
+            background(240);
+            
+            // Update parameters from sliders
+            length = parseInt(document.getElementById('length').value);
+            damping = parseFloat(document.getElementById('damping').value);
+            
+            translate(width / 2, 50);
+            
+            if (!paused) {
+                // Physics
+                angleA = (-gravity / length) * sin(angle);
+                angleV += angleA;
+                angleV *= damping;
+                angle += angleV;
+                
+                // Count cycles
+                if (lastAngle > 0 && angle <= 0) {
+                    cycleCount += 0.5;
+                } else if (lastAngle < 0 && angle >= 0) {
+                    cycleCount += 0.5;
+                }
+                lastAngle = angle;
+            }
+            
+            // Draw rod
+            let bobX = length * sin(angle);
+            let bobY = length * cos(angle);
+            stroke(0);
+            strokeWeight(2);
+            line(0, 0, bobX, bobY);
+            
+            // Draw bob
+            fill(200, 50, 50);
+            ellipse(bobX, bobY, 40, 40);
+            
+            // Draw pivot
+            fill(100);
+            ellipse(0, 0, 10, 10);
+            
+            // Draw path arc
+            strokeWeight(0.5);
+            stroke(150, 150, 200, 100);
+            arc(0, 0, 2*length, 2*length, -PI/4, PI/4, OPEN);
+            
+            // Calculate energy
+            let pe = length * (1 - cos(angle));
+            let ke = 0.5 * angleV * angleV;
+            let energy = (ke + pe) / (length * 2); // normalize
+            
+            // Display info
+            fill(0);
+            noStroke();
+            textSize(12);
+            textAlign(LEFT);
+            document.getElementById('currentAngle').textContent = (angle * 180 / PI).toFixed(1);
+            document.getElementById('period').textContent = cycleCount.toFixed(1);
+            document.getElementById('energy').textContent = energy.toFixed(3);
+            document.getElementById('lengthValue').textContent = length;
+            document.getElementById('angleValue').textContent = 
+                parseInt(document.getElementById('angle').value);
+            document.getElementById('dampingValue').textContent = damping.toFixed(3);
+        }
+        
+        function reset() {
+            angle = radians(parseInt(document.getElementById('angle').value));
+            angleV = 0;
+            cycleCount = 0;
+            lastAngle = angle;
+        }
+        
+        function togglePause() {
+            paused = !paused;
+        }
+    </script>
+</body>
+</html>
+            

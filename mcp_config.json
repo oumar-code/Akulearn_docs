@@ -1,0 +1,83 @@
+{
+  "mcpServers": {
+    "brave_search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "enabled": true,
+      "description": "Web search via Brave Search API",
+      "env": {
+        "BRAVE_SEARCH_API_KEY": "${BRAVE_SEARCH_API_KEY}"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"],
+      "enabled": true,
+      "description": "Local filesystem operations",
+      "env": {
+        "ALLOWED_PATHS": "${HOME}/Documents/Akulearn_docs"
+      }
+    },
+    "git": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-git"],
+      "enabled": true,
+      "description": "Git repository operations",
+      "env": {
+        "GIT_REPO_PATH": "${HOME}/Documents/Akulearn_docs"
+      }
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "enabled": false,
+      "description": "PostgreSQL database access (optional)",
+      "env": {
+        "DATABASE_URL": "${DATABASE_URL}"
+      }
+    },
+    "python": {
+      "command": "python",
+      "args": ["-m", "mcp.server.python"],
+      "enabled": true,
+      "description": "Python code execution server",
+      "env": {
+        "PYTHON_PATH": "${PYTHON_EXECUTABLE}",
+        "PYTHONPATH": "${HOME}/Documents/Akulearn_docs/src"
+      }
+    },
+    "wikipedia": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-wikipedia"],
+      "enabled": true,
+      "description": "Wikipedia search and article retrieval",
+      "env": {
+        "WIKIPEDIA_LANG": "en"
+      }
+    }
+  },
+  "globalSettings": {
+    "timeout": 30000,
+    "maxRetries": 3,
+    "logLevel": "info",
+    "autoStart": true,
+    "workspaceRoot": "${HOME}/Documents/Akulearn_docs"
+  },
+  "integrations": {
+    "contentGeneration": {
+      "mcpServers": ["brave_search", "wikipedia", "python", "filesystem"],
+      "description": "Content research and generation pipeline with web search and Wikipedia"
+    },
+    "dataValidation": {
+      "mcpServers": ["python", "git"],
+      "description": "Data validation and quality checks"
+    },
+    "deployment": {
+      "mcpServers": ["git", "filesystem"],
+      "description": "Content deployment and versioning"
+    }
+  },
+  "version": "1.0.0",
+  "created": "2026-01-04",
+  "documentation": "See MCP_INTEGRATION_PLAN.md for full setup details"
+}

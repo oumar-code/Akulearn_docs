@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Akulearn</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .welcome {
+            font-size: 32px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .user-details h3 {
+            font-size: 18px;
+            color: #111827;
+            margin-bottom: 4px;
+        }
+
+        .user-details p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 20px;
+            color: #111827;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lesson-item {
+            padding: 16px;
+            background: #f9fafb;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .lesson-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .lesson-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .lesson-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .lesson-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .lesson-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 12px;
+        }
+
+        .achievement {
+            padding: 16px;
+            background: #f9fafb;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .achievement:hover {
+            transform: scale(1.05);
+        }
+
+        .achievement.locked {
+            opacity: 0.4;
+        }
+
+        .achievement-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .achievement-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .streak-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 20px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border-radius: 12px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .streak-number {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .streak-label {
+            font-size: 16px;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: #f9fafb;
+            border-radius: 12px;
+            margin-bottom: 8px;
+        }
+
+        .rank {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+
+        .rank.gold { background: linear-gradient(135deg, #fbbf24, #f59e0b); }
+        .rank.silver { background: linear-gradient(135deg, #d1d5db, #9ca3af); }
+        .rank.bronze { background: linear-gradient(135deg, #d97706, #92400e); }
+        .rank.other { background: #6b7280; }
+
+        .leaderboard-name {
+            flex: 1;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .leaderboard-points {
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .action-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 12px;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        .quiz-timer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: #fef3c7;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .timer-icon {
+            font-size: 24px;
+        }
+
+        .timer-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: #92400e;
+        }
+
+        .recommendation-card {
+            display: flex;
+            gap: 16px;
+            padding: 16px;
+            background: #f9fafb;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .recommendation-card:hover {
+            transform: translateX(4px);
+            background: #f3f4f6;
+        }
+
+        .recommendation-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .recommendation-content {
+            flex: 1;
+        }
+
+        .recommendation-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 4px;
+        }
+
+        .recommendation-reason {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome {
+                font-size: 24px;
+            }
+
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <div class="header-top">
+                <div>
+                    <h1 class="welcome">Welcome back, Alex! 👋</h1>
+                    <p style="color: #6b7280; margin-top: 8px;">Ready to continue your learning journey?</p>
+                </div>
+                <div class="user-info">
+                    <div class="avatar">AS</div>
+                    <div class="user-details">
+                        <h3>Alex Student</h3>
+                        <p>Level 12 · 2,450 XP</p>
+                    </div>
+                </div>
+            </div>
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <div class="stat-value">24</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">In Progress</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">92%</div>
+                    <div class="stat-label">Average Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Achievements</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- Continue Learning -->
+            <div class="card">
+                <h2>📚 Continue Learning</h2>
+                <div class="lesson-item" onclick="startLesson('L1')">
+                    <div class="lesson-header">
+                        <div class="lesson-title">Quadratic Equations</div>
+                        <div class="lesson-badge">Mathematics</div>
+                    </div>
+                    <div class="lesson-meta">
+                        <span>⏱️ 45 min</span>
+                        <span>🎯 Intermediate</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%;"></div>
+                    </div>
+                    <small style="color: #6b7280; margin-top: 4px; display: block;">65% completed</small>
+                </div>
+                <div class="lesson-item" onclick="startLesson('L2')">
+                    <div class="lesson-header">
+                        <div class="lesson-title">Newton's Laws of Motion</div>
+                        <div class="lesson-badge" style="background: #dcfce7; color: #166534;">Physics</div>
+                    </div>
+                    <div class="lesson-meta">
+                        <span>⏱️ 60 min</span>
+                        <span>🎯 Intermediate</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 30%;"></div>
+                    </div>
+                    <small style="color: #6b7280; margin-top: 4px; display: block;">30% completed</small>
+                </div>
+                <button class="action-btn" onclick="exploreMore()">🔍 Explore More Lessons</button>
+            </div>
+
+            <!-- Daily Streak -->
+            <div class="card">
+                <h2>🔥 Daily Streak</h2>
+                <div class="streak-container">
+                    <div class="streak-number">7</div>
+                    <div>
+                        <div class="streak-label">Day Streak!</div>
+                        <div style="font-size: 14px; opacity: 0.9;">Keep it going! 🎉</div>
+                    </div>
+                </div>
+                <div style="padding: 16px; background: #f9fafb; border-radius: 12px;">
+                    <canvas id="streakChart" width="300" height="150"></canvas>
+                </div>
+            </div>
+
+            <!-- AI Recommendations -->
+            <div class="card">
+                <h2>🤖 Recommended for You</h2>
+                <div class="recommendation-card" onclick="startLesson('R1')">
+                    <div class="recommendation-icon">📐</div>
+                    <div class="recommendation-content">
+                        <div class="recommendation-title">Trigonometry Basics</div>
+                        <div class="recommendation-reason">Based on your algebra progress</div>
+                    </div>
+                </div>
+                <div class="recommendation-card" onclick="startLesson('R2')">
+                    <div class="recommendation-icon">⚡</div>
+                    <div class="recommendation-content">
+                        <div class="recommendation-title">Electricity & Circuits</div>
+                        <div class="recommendation-reason">Popular with similar students</div>
+                    </div>
+                </div>
+                <div class="recommendation-card" onclick="startLesson('R3')">
+                    <div class="recommendation-icon">🧪</div>
+                    <div class="recommendation-content">
+                        <div class="recommendation-title">Chemical Reactions</div>
+                        <div class="recommendation-reason">Complete your chemistry pathway</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Challenge -->
+            <div class="card">
+                <h2>🎯 Daily Quiz Challenge</h2>
+                <div class="quiz-timer">
+                    <div class="timer-icon">⏰</div>
+                    <div class="timer-text">5 questions · 10 minutes</div>
+                </div>
+                <div style="padding: 16px; background: #f9fafb; border-radius: 12px; margin-bottom: 16px;">
+                    <h3 style="font-size: 16px; margin-bottom: 12px; color: #111827;">Today's Topic: Algebra</h3>
+                    <p style="color: #6b7280; font-size: 14px; line-height: 1.6;">
+                        Test your knowledge and earn bonus XP! Complete today's challenge to maintain your streak.
+                    </p>
+                </div>
+                <button class="action-btn" onclick="startQuiz()">🚀 Start Quiz</button>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- Progress Chart -->
+            <div class="card" style="grid-column: span 2;">
+                <h2>📊 Your Progress This Month</h2>
+                <canvas id="progressChart" width="400" height="200"></canvas>
+            </div>
+
+            <!-- Achievements -->
+            <div class="card">
+                <h2>🏆 Achievements</h2>
+                <div class="achievement-grid">
+                    <div class="achievement" onclick="showAchievement('first_lesson')">
+                        <div class="achievement-icon">🎓</div>
+                        <div class="achievement-title">First Lesson</div>
+                    </div>
+                    <div class="achievement" onclick="showAchievement('streak_7')">
+                        <div class="achievement-icon">🔥</div>
+                        <div class="achievement-title">7-Day Streak</div>
+                    </div>
+                    <div class="achievement" onclick="showAchievement('perfect_score')">
+                        <div class="achievement-icon">💯</div>
+                        <div class="achievement-title">Perfect Score</div>
+                    </div>
+                    <div class="achievement" onclick="showAchievement('math_master')">
+                        <div class="achievement-icon">🧮</div>
+                        <div class="achievement-title">Math Master</div>
+                    </div>
+                    <div class="achievement locked">
+                        <div class="achievement-icon">🌟</div>
+                        <div class="achievement-title">All-Star</div>
+                    </div>
+                    <div class="achievement locked">
+                        <div class="achievement-icon">👑</div>
+                        <div class="achievement-title">Top Scorer</div>
+                    </div>
+                </div>
+                <button class="action-btn" onclick="viewAllAchievements()">View All Achievements</button>
+            </div>
+
+            <!-- Leaderboard -->
+            <div class="card">
+                <h2>🏅 Weekly Leaderboard</h2>
+                <div class="leaderboard-item">
+                    <div class="rank gold">1</div>
+                    <div class="leaderboard-name">Sarah Chen</div>
+                    <div class="leaderboard-points">3,250</div>
+                </div>
+                <div class="leaderboard-item">
+                    <div class="rank silver">2</div>
+                    <div class="leaderboard-name">You</div>
+                    <div class="leaderboard-points">2,450</div>
+                </div>
+                <div class="leaderboard-item">
+                    <div class="rank bronze">3</div>
+                    <div class="leaderboard-name">Mike Johnson</div>
+                    <div class="leaderboard-points">2,100</div>
+                </div>
+                <div class="leaderboard-item">
+                    <div class="rank other">4</div>
+                    <div class="leaderboard-name">Emma Wilson</div>
+                    <div class="leaderboard-points">1,890</div>
+                </div>
+                <div class="leaderboard-item">
+                    <div class="rank other">5</div>
+                    <div class="leaderboard-name">David Lee</div>
+                    <div class="leaderboard-points">1,650</div>
+                </div>
+                <button class="action-btn" onclick="viewFullLeaderboard()">View Full Leaderboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Streak Chart
+        const streakCtx = document.getElementById('streakChart').getContext('2d');
+        new Chart(streakCtx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Minutes Studied',
+                    data: [45, 60, 30, 75, 90, 45, 60],
+                    borderColor: '#667eea',
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Progress Chart
+        const progressCtx = document.getElementById('progressChart').getContext('2d');
+        new Chart(progressCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [
+                    {
+                        label: 'Lessons Completed',
+                        data: [5, 7, 6, 8],
+                        backgroundColor: 'rgba(102, 126, 234, 0.8)'
+                    },
+                    {
+                        label: 'Quizzes Passed',
+                        data: [4, 6, 5, 7],
+                        backgroundColor: 'rgba(118, 75, 162, 0.8)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Interactive functions
+        function startLesson(lessonId) {
+            alert(`Starting lesson: ${lessonId}\nThis would navigate to the lesson viewer!`);
+        }
+
+        function exploreMore() {
+            alert('Opening lesson catalog...\nThis would show all available lessons!');
+        }
+
+        function startQuiz() {
+            alert('Starting daily quiz challenge!\nGet ready to test your knowledge! 🎯');
+        }
+
+        function showAchievement(achievementId) {
+            alert(`Achievement: ${achievementId}\nYou've unlocked this achievement! 🎉`);
+        }
+
+        function viewAllAchievements() {
+            alert('Opening achievements gallery...\nView all 50+ achievements!');
+        }
+
+        function viewFullLeaderboard() {
+            alert('Opening full leaderboard...\nSee where you rank among all students!');
+        }
+    </script>
+</body>
+</html>

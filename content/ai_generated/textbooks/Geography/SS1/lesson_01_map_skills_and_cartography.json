@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "subject": "Geography",
+    "level": "SS1",
+    "unit": "1",
+    "unit_title": "Map Skills and Cartography",
+    "lesson": "1",
+    "lesson_title": "Map Skills and Cartography",
+    "duration_minutes": 90,
+    "estimated_pages": 12,
+    "curriculum_alignment": {
+      "nerdc_code": "GE.SS1.1.1-1.2",
+      "nerdc_description": "Map types, scale, coordinates, projections",
+      "waec_topic": "Map Reading and Interpretation",
+      "waec_weighting": "7%"
+    },
+    "learning_level": "foundational",
+    "nigerian_context": true
+  },
+  "learning_objectives": [
+    "Identify common map types and their uses",
+    "Interpret map scales and calculate real-world distances",
+    "Locate places using latitude and longitude",
+    "Explain map projections and basic distortions",
+    "Apply map skills to Nigerian regional contexts"
+  ],
+  "prerequisites": [
+    "Basic arithmetic (ratios, unit conversion)",
+    "Understanding of directions (N, S, E, W)",
+    "Familiarity with Nigeria's major regions"
+  ],
+  "content_sections": [
+    {
+      "section_id": "1.1",
+      "title": "Map Basics and Types",
+      "duration_minutes": 20,
+      "content": "Maps are scaled representations of Earth's surface. **Map elements**: title, legend/key, scale, north arrow, grid, date, source. \n\n**Common map types**: \n- **Political maps**: boundaries, cities, roads. \n- **Physical maps**: relief, rivers, mountains. \n- **Thematic maps**: show a specific theme (rainfall, population density, land use). \n- **Topographic maps**: detailed physical and man-made features with contours. \n\n**Nigerian context**: Use physical maps to study Niger River, Benue River, Jos Plateau; political maps for states and LGAs; thematic maps for rainfall and population distribution."
+    },
+    {
+      "section_id": "1.2",
+      "title": "Scale, Distance Calculation, and Map Symbols",
+      "duration_minutes": 23,
+      "content": "**Scale** shows ratio of map distance to ground distance. \n- **Representative Fraction (RF)**: e.g., 1:50,000 means 1 unit on map equals 50,000 on ground. \n- **Linear/Bar scale**: graphic representation. \n\n**Distance calculation**: Measure with ruler and apply scale. Example: 4 cm on map at 1:100,000 → 4 cm × 100,000 = 400,000 cm = 4,000 m = 4 km. \n\n**Map symbols**: point (wells, schools), line (roads, rivers), area (forests, lakes). Legends explain symbols. \n\n**Nigerian context**: Estimating distance Lagos–Ibadan on highway using map scale; interpreting symbols for bridges over Niger River."
+    },
+    {
+      "section_id": "1.3",
+      "title": "Latitude, Longitude, and Coordinates",
+      "duration_minutes": 24,
+      "content": "**Latitude**: angular distance north/south of Equator (0° to 90° N/S). Lines run east–west. **Longitude**: angular distance east/west of Prime Meridian (0° to 180° E/W). Lines run north–south. \n\n**Nigeria coordinates**: roughly 4°N–14°N, 3°E–15°E. \n\n**Using coordinates**: Identify location where a parallel and meridian intersect. \n\n**Time zones**: Earth rotates 15° per hour; Nigeria ~GMT+1 (1 hour ahead of Greenwich). \n\n**Navigation**: GPS uses latitude/longitude; pilots and ships rely on coordinates."
+    },
+    {
+      "section_id": "1.4",
+      "title": "Map Projections and Distortions",
+      "duration_minutes": 23,
+      "content": "Projections transform Earth's curved surface to flat maps. All projections distort at least one property: area, shape, distance, or direction. \n\n**Common projections**: \n- **Mercator**: preserves direction/shape locally, distorts area (high latitudes enlarged). \n- **Equal-area (Gall-Peters)**: preserves area, distorts shape. \n- **Conic**: good for mid-latitude regions (e.g., Africa sections). \n\n**Choosing projection** depends on purpose (navigation vs thematic area mapping). \n\n**Nigerian context**: National topographic maps often use UTM (Universal Transverse Mercator) zones covering Nigeria."
+    }
+  ],
+  "worked_examples": [
+    {
+      "example_id": "1.1",
+      "title": "RF Scale Distance",
+      "context": "Map scale 1:100,000. Distance between two towns on map = 5 cm.",
+      "problem": "Find ground distance in km.",
+      "solution": "5 cm × 100,000 = 500,000 cm = 5,000 m = 5 km.",
+      "skills_tested": ["Scale conversion", "Unit conversion"]
+    },
+    {
+      "example_id": "1.2",
+      "title": "Coordinate Identification",
+      "context": "Point at 9°N, 8°E on a Nigeria map.",
+      "problem": "Name a nearby Nigerian city/region.",
+      "solution": "Around Jos Plateau/Central Nigeria. (Approximate for practice.)",
+      "skills_tested": ["Latitude/longitude use", "Nigeria spatial awareness"]
+    },
+    {
+      "example_id": "1.3",
+      "title": "Projection Choice",
+      "context": "A geographer wants to compare land area of Nigerian states accurately.",
+      "problem": "Which projection type is better and why?",
+      "solution": "Use an equal-area projection (e.g., Gall-Peters) to preserve area for fair comparison.",
+      "skills_tested": ["Projection reasoning", "Map purpose alignment"]
+    }
+  ],
+  "practice_problems": [
+    {"tier": "basic", "difficulty": 1, "problem_id": "1.1.B", "problem": "What does map scale show?", "answer": "Ratio of map distance to ground distance.", "explanation": "Scale links map to real world."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "1.2.B", "problem": "Lines running east–west are called?", "answer": "Lines of latitude (parallels).", "explanation": "Latitudes run E–W."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "1.3.B", "problem": "Nigeria lies roughly between which latitudes?", "answer": "About 4°N to 14°N.", "explanation": "Nigeria's north–south span."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.4.C", "problem": "Convert 3 cm at 1:50,000 to km.", "answer": "3 cm × 50,000 = 150,000 cm = 1,500 m = 1.5 km.", "explanation": "Scale and units."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.5.C", "problem": "Name two thematic map examples.", "answer": "Rainfall map, population density map, land use map (any two).", "explanation": "Thematic shows one theme."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.6.C", "problem": "State one property distorted in Mercator projection.", "answer": "Area (high latitudes enlarged).", "explanation": "Mercator preserves direction, distorts area."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.7.CH", "problem": "If Nigeria spans ~10° latitude, estimate solar time difference from south to north (1° ≈ 4 minutes).", "answer": "About 40 minutes difference in solar time.", "explanation": "10° × 4 min/° = 40 min."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.8.CH", "problem": "Why choose UTM for national mapping?", "answer": "UTM minimizes distortion over limited east–west width, gives consistent coordinates in meters for surveying and navigation.", "explanation": "Practical, low-distortion over zones."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.9.CH", "problem": "Explain difference between political and topographic maps.", "answer": "Political: boundaries, cities; Topographic: detailed natural/man-made features with contours and elevations.", "explanation": "Different purposes."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.10.CH", "problem": "A bar scale shows 0–5 km length of 2.5 cm. What is the RF?", "answer": "5 km = 500,000 cm. RF = 2.5 cm : 500,000 cm → 1 : 200,000.", "explanation": "Compute ratio from bar scale."}
+  ],
+  "glossary": [
+    {"term": "Scale", "definition": "Ratio of map distance to real-world distance.", "example": "1:50,000."},
+    {"term": "Latitude", "definition": "Angular distance north/south of Equator.", "example": "8°N."},
+    {"term": "Longitude", "definition": "Angular distance east/west of Prime Meridian.", "example": "4°E."},
+    {"term": "Projection", "definition": "Method of representing Earth on flat map.", "example": "Mercator, Gall-Peters."},
+    {"term": "Legend", "definition": "Key explaining map symbols.", "example": "Symbol for bridge or school."},
+    {"term": "UTM", "definition": "Universal Transverse Mercator coordinate system.", "example": "Nigeria spans UTM zones 31-33N."}
+  ],
+  "assessment": {
+    "quick_checks": [
+      "Define map scale.",
+      "What lines run east–west?",
+      "Give Nigeria's latitude span.",
+      "Name a map projection.",
+      "What does a legend show?"
+    ],
+    "end_of_lesson_quiz": [
+      {"question": "If map scale is 1:100,000, 6 cm equals:", "options": ["0.6 km", "6 km", "60 km", "600 km"], "correct": "6 km"},
+      {"question": "Lines that run north–south are:", "options": ["Latitude", "Longitude", "Contours", "Equator"], "correct": "Longitude"},
+      {"question": "Mercator projection distorts:", "options": ["Direction", "Shape", "Area at high latitudes", "Prime meridian"], "correct": "Area at high latitudes"},
+      {"question": "A thematic map shows:", "options": ["Only boundaries", "Physical relief only", "A specific data theme", "All features equally"], "correct": "A specific data theme"},
+      {"question": "Bar scale purpose:", "options": ["Show map title", "Indicate north", "Graphic distance reference", "List cities"], "correct": "Graphic distance reference"}
+    ],
+    "exam_style_questions": [
+      {"question": "Draw a simple map with title, legend, north arrow, and scale. Explain how to measure distance using RF and bar scale.", "answer_guide": "Sketch map elements; show RF example and bar scale; convert cm to km with example."},
+      {"question": "Using Nigeria as example, describe how latitude/longitude help locate cities and discuss why projection choice matters for area accuracy.", "answer_guide": "Give coordinate examples (Abuja ~9°N, 7°E); note distortion trade-offs; equal-area for area comparison."}
+    ]
+  },
+  "resources": {
+    "visual_aids": [
+      {"title": "Map Elements Diagram", "type": "diagram", "description": "Labels for title, legend, scale, north arrow, grid."},
+      {"title": "Scale Conversion Table", "type": "table", "description": "RF to km conversions for common scales."},
+      {"title": "Projections Comparison", "type": "chart", "description": "Mercator vs equal-area vs conic distortions."}
+    ]
+  },
+  "waec_tags": ["map skills", "scale", "latitude", "longitude", "projection", "UTM", "Nigeria geography", "cartography"]
+}

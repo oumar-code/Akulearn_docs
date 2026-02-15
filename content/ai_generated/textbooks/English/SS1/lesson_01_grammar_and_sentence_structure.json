@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "subject": "English Language",
+    "level": "SS1",
+    "unit": "1",
+    "unit_title": "Grammar and Sentence Structure",
+    "lesson": "1",
+    "lesson_title": "Grammar and Sentence Structure",
+    "duration_minutes": 90,
+    "estimated_pages": 13,
+    "curriculum_alignment": {
+      "nerdc_code": "EN.SS1.1.1-1.3",
+      "nerdc_description": "Parts of speech, sentence types, tenses, concord",
+      "waec_topic": "Grammar and Syntax",
+      "waec_weighting": "12%"
+    },
+    "learning_level": "foundational",
+    "nigerian_context": true
+  },
+  "learning_objectives": [
+    "Identify and use the eight parts of speech correctly",
+    "Construct simple, compound, and complex sentences",
+    "Apply correct verb tenses and aspects",
+    "Ensure subject-verb agreement in sentences",
+    "Distinguish formal from informal English usage",
+    "Apply grammar rules to Nigerian English contexts",
+    "Recognize and correct common grammatical errors"
+  ],
+  "prerequisites": [
+    "Basic reading and writing skills",
+    "Understanding of nouns, verbs, and adjectives from Junior Secondary",
+    "Ability to construct simple sentences"
+  ],
+  "content_sections": [
+    {
+      "section_id": "1.1",
+      "title": "Parts of Speech",
+      "duration_minutes": 23,
+      "content": "**The Eight Parts of Speech**\n\nEvery word in English belongs to one of eight categories called parts of speech.\n\n**1. NOUNS**\n- Definition: Words that name people, places, things, or ideas\n- Types: Proper nouns (capitalize), common nouns, abstract nouns, collective nouns\n- Examples: Lagos, student, happiness, team\n\n**2. PRONOUNS**\n- Definition: Words that replace nouns\n- Types: Personal (I, you, he), possessive (my, your), reflexive (myself), relative (who, which)\n- Examples: She went to Abuja. The book which I read was interesting.\n\n**3. VERBS**\n- Definition: Action or state-of-being words\n- Types: Action verbs (run, write), linking verbs (is, seem), auxiliary verbs (have, will)\n- Examples: The student studies. Lagos is busy.\n\n**4. ADJECTIVES**\n- Definition: Words that describe nouns\n- Examples: beautiful, Nigerian, three, many\n- Position: Usually before noun or after linking verb\n\n**5. ADVERBS**\n- Definition: Words that modify verbs, adjectives, or other adverbs\n- Types: Manner (quickly), time (yesterday), place (here), degree (very)\n- Examples: She speaks fluently. He arrived early.\n\n**6. PREPOSITIONS**\n- Definition: Words showing relationships between nouns/pronouns and other words\n- Common: in, on, at, by, with, from, to, under, between\n- Examples: The book is on the table. She traveled from Lagos to Ibadan.\n\n**7. CONJUNCTIONS**\n- Definition: Words that connect words, phrases, or clauses\n- Coordinating: and, but, or, so, for, yet, nor\n- Subordinating: because, although, when, if, since\n- Examples: He studied hard, so he passed. Although it rained, we went out.\n\n**8. INTERJECTIONS**\n- Definition: Words expressing emotion or exclamation\n- Examples: Oh! Wow! Alas! Hey!\n\n**Nigerian Context**: In Nigerian English, parts of speech function the same way. \"The Lagos traffic is terrible\" uses: The (determiner/adjective), Lagos (proper noun), traffic (noun), is (verb), terrible (adjective)."
+    },
+    {
+      "section_id": "1.2",
+      "title": "Sentence Structure and Types",
+      "duration_minutes": 22,
+      "content": "**What is a Sentence?**\n\nA sentence is a group of words expressing a complete thought. Must have a subject and a predicate.\n\n**Sentence Elements**:\n- **Subject**: Who/what the sentence is about\n- **Predicate**: What the subject does or is (contains verb)\n- **Object**: Receives action of verb (if present)\n- **Complement**: Completes meaning after linking verb\n\n**Example**: The student (subject) wrote (predicate/verb) a letter (object).\n\n**Four Types by Purpose**:\n\n1. **Declarative** (statement): Makes a statement, ends with period\n   - Example: Nigeria gained independence in 1960.\n\n2. **Interrogative** (question): Asks a question, ends with question mark\n   - Example: Where is the University of Lagos?\n\n3. **Imperative** (command): Gives command/request, ends with period or exclamation\n   - Example: Close the door. Study hard!\n\n4. **Exclamatory** (exclamation): Shows strong emotion, ends with exclamation mark\n   - Example: What a beautiful sunset!\n\n**Four Types by Structure**:\n\n**1. SIMPLE SENTENCE**\n- One independent clause (one subject, one verb)\n- Structure: Subject + Verb (+ Object/Complement)\n- Example: The teacher teaches English.\n- Example: Lagos is Nigeria's commercial capital.\n\n**2. COMPOUND SENTENCE**\n- Two or more independent clauses joined by coordinating conjunction\n- Structure: Independent clause + conjunction + Independent clause\n- Example: I studied hard, and I passed the exam.\n- Example: She wanted to go to Abuja, but she had no money.\n\n**3. COMPLEX SENTENCE**\n- One independent clause + one or more dependent clauses\n- Dependent clause begins with subordinating conjunction\n- Example: Although it rained, we went to school.\n- Example: The student who studied hard passed the exam.\n\n**4. COMPOUND-COMPLEX SENTENCE**\n- Two or more independent clauses + one or more dependent clauses\n- Example: When the rain stopped, the students went outside, and they played football.\n\n**Nigerian Context**: In formal Nigerian writing (newspapers, official documents), compound and complex sentences show sophistication. \"Although Nigeria has oil resources, many citizens still face poverty\" is complex."
+    },
+    {
+      "section_id": "1.3",
+      "title": "Verb Tenses and Aspect",
+      "duration_minutes": 23,
+      "content": "**Tense Overview**\n\nTense shows when an action happens (past, present, future).\n\n**Present Tense**:\n- **Simple Present**: Habitual actions, general truths\n  - Form: base verb (add -s for 3rd person singular)\n  - Examples: I study. She studies. Nigeria has 36 states.\n\n- **Present Continuous**: Actions happening now\n  - Form: am/is/are + verb-ing\n  - Examples: I am reading. They are traveling to Lagos.\n\n- **Present Perfect**: Actions completed recently or with present relevance\n  - Form: have/has + past participle\n  - Examples: I have finished. She has visited Abuja three times.\n\n- **Present Perfect Continuous**: Actions started in past, continuing now\n  - Form: have/has been + verb-ing\n  - Examples: I have been studying for two hours.\n\n**Past Tense**:\n- **Simple Past**: Completed actions in past\n  - Form: verb + -ed (regular) or irregular form\n  - Examples: I walked. She went. Nigeria gained independence in 1960.\n\n- **Past Continuous**: Actions in progress in past\n  - Form: was/were + verb-ing\n  - Examples: I was reading when you called.\n\n- **Past Perfect**: Actions completed before another past action\n  - Form: had + past participle\n  - Examples: I had finished before she arrived.\n\n- **Past Perfect Continuous**: Ongoing past action before another past action\n  - Form: had been + verb-ing\n  - Examples: They had been waiting for an hour when the bus came.\n\n**Future Tense**:\n- **Simple Future**: Actions that will happen\n  - Form: will/shall + base verb\n  - Examples: I will study. Nigeria will host the conference.\n\n- **Future Continuous**: Actions in progress at future time\n  - Form: will be + verb-ing\n  - Examples: This time tomorrow, I will be traveling.\n\n- **Future Perfect**: Actions completed before future time\n  - Form: will have + past participle\n  - Examples: By next year, I will have graduated.\n\n**Nigerian Context**: In Nigerian formal English, present perfect is common: \"The government has announced new policies.\" Simple past for specific past events: \"The president visited Lagos yesterday.\""
+    },
+    {
+      "section_id": "1.4",
+      "title": "Subject-Verb Agreement and Concord",
+      "duration_minutes": 22,
+      "content": "**Subject-Verb Agreement**\n\nSubject and verb must agree in number (singular/plural) and person.\n\n**Basic Rules**:\n\n1. **Singular subject → singular verb**\n   - The student is here. (not \"are\")\n   - Lagos has many people. (not \"have\")\n\n2. **Plural subject → plural verb**\n   - The students are here. (not \"is\")\n   - They have arrived. (not \"has\")\n\n3. **Third person singular (he, she, it) adds -s to present tense verb**\n   - He walks. She talks. It works.\n\n**Special Cases**:\n\n**Compound Subjects**:\n- Joined by \"and\" → plural verb\n  - Tom and Jerry are friends.\n- Joined by \"or\"/\"nor\" → verb agrees with nearest subject\n  - Either the teacher or the students are responsible.\n  - Neither the students nor the teacher is responsible.\n\n**Collective Nouns**:\n- Usually singular in British/Nigerian English\n  - The team is winning. (team as unit)\n  - The government has decided.\n- Can be plural if emphasizing individuals\n  - The team are arguing among themselves.\n\n**Indefinite Pronouns**:\n- Singular: each, every, everyone, everybody, anyone, anybody, someone, somebody, no one, nobody, either, neither\n  - Everyone is here. Each student has a book.\n- Plural: both, few, many, several\n  - Both are correct. Many have arrived.\n- Either singular or plural (depends on context): some, all, most, none\n  - Some of the water is clean. (water = uncountable)\n  - Some of the students are absent. (students = countable)\n\n**Common Errors in Nigerian English**:\n- ❌ The government are planning (British influence)\n  ✅ The government is planning (standard Nigerian usage)\n- ❌ Everyone have finished\n  ✅ Everyone has finished\n- ❌ The students has arrived\n  ✅ The students have arrived\n\n**Nigerian Context**: In formal Nigerian writing (newspapers, official reports), strict subject-verb agreement is expected. \"The Nigerian economy is growing\" (singular). \"Nigerian students are excelling\" (plural)."
+    }
+  ],
+  "worked_examples": [
+    {
+      "example_id": "1.1",
+      "title": "Identifying Parts of Speech in a Sentence",
+      "context": "A student analyzes a sentence from a Nigerian newspaper.",
+      "problem": "Identify the part of speech for each underlined word: \"The **dedicated** teacher **quickly** **graded** **all** the **exams** **in** Lagos.\"",
+      "solution": "dedicated = adjective (describes teacher); quickly = adverb (modifies graded); graded = verb (action); all = adjective/determiner (describes exams); exams = noun (thing); in = preposition (shows location relationship); Lagos = proper noun (place).",
+      "skills_tested": ["Parts of speech identification", "Word function in context", "Grammatical analysis"]
+    },
+    {
+      "example_id": "1.2",
+      "title": "Constructing Compound and Complex Sentences",
+      "context": "A student combines simple sentences for an essay.",
+      "problem": "Combine these simple sentences into (a) compound and (b) complex: \"It rained heavily. The match was postponed.\"",
+      "solution": "(a) Compound: It rained heavily, so the match was postponed. (Or: It rained heavily, and the match was postponed.)\n(b) Complex: Because it rained heavily, the match was postponed. (Or: The match was postponed because it rained heavily.)",
+      "skills_tested": ["Sentence combination", "Conjunction usage", "Sentence structure"]
+    },
+    {
+      "example_id": "1.3",
+      "title": "Correcting Subject-Verb Agreement Errors",
+      "context": "A student edits sentences for grammatical accuracy.",
+      "problem": "Correct the errors: (1) \"Everyone have submitted their assignments.\" (2) \"The team are playing well.\" (3) \"Either the teachers or the principal are responsible.\"",
+      "solution": "(1) Everyone has submitted their assignments. (everyone = singular)\n(2) The team is playing well. (collective noun, singular in Nigerian English)\n(3) Either the teachers or the principal is responsible. (verb agrees with nearest subject \"principal\")",
+      "skills_tested": ["Subject-verb agreement", "Error identification", "Concord rules"]
+    }
+  ],
+  "practice_problems": [
+    {"tier": "basic", "difficulty": 1, "problem_id": "1.1.B", "problem": "Name the eight parts of speech.", "answer": "Noun, pronoun, verb, adjective, adverb, preposition, conjunction, interjection.", "explanation": "Every word in English belongs to one of these eight categories."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "1.2.B", "problem": "What is a simple sentence?", "answer": "A sentence with one independent clause (one subject and one verb).", "explanation": "Simplest sentence structure expressing a complete thought."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "1.3.B", "problem": "Give the past tense of 'write'.", "answer": "Wrote.", "explanation": "Irregular verb: write, wrote, written."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.4.C", "problem": "Identify parts of speech: \"The **happy** student **quickly** ran **to** school.\"", "answer": "happy = adjective; quickly = adverb; ran = verb; to = preposition.", "explanation": "Each word serves a specific grammatical function."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.5.C", "problem": "Combine using 'although': \"It was hot. We went to school.\"", "answer": "Although it was hot, we went to school.", "explanation": "Subordinating conjunction creates complex sentence."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.6.C", "problem": "Correct: \"The students has finished their work.\"", "answer": "The students have finished their work.", "explanation": "Plural subject requires plural verb."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.7.C", "problem": "Write present perfect tense of: \"I (complete) the assignment.\"", "answer": "I have completed the assignment.", "explanation": "Present perfect: have/has + past participle."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.8.CH", "problem": "Explain why this is wrong and correct it: \"Neither the teachers nor the students was present.\"", "answer": "Verb should agree with nearest subject (students = plural). Correct: Neither the teachers nor the students were present.", "explanation": "With 'neither...nor', verb matches closest subject."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.9.CH", "problem": "Classify by structure: \"When the rain stopped, the students went outside, and they played football.\"", "answer": "Compound-complex (one dependent clause + two independent clauses).", "explanation": "Contains subordinate clause and multiple independent clauses."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.10.CH", "problem": "Rewrite in past perfect continuous: \"They wait for two hours before the bus arrived.\"", "answer": "They had been waiting for two hours before the bus arrived.", "explanation": "Past perfect continuous shows ongoing action before past event."}
+  ],
+  "glossary": [
+    {"term": "Noun", "definition": "Word naming a person, place, thing, or idea.", "example": "Lagos, student, freedom."},
+    {"term": "Verb", "definition": "Word expressing action or state of being.", "example": "run, is, have."},
+    {"term": "Adjective", "definition": "Word describing or modifying a noun.", "example": "beautiful, Nigerian, three."},
+    {"term": "Adverb", "definition": "Word modifying a verb, adjective, or another adverb.", "example": "quickly, very, yesterday."},
+    {"term": "Preposition", "definition": "Word showing relationship between noun and other words.", "example": "in, on, at, by."},
+    {"term": "Conjunction", "definition": "Word connecting words, phrases, or clauses.", "example": "and, but, because, although."},
+    {"term": "Simple sentence", "definition": "Sentence with one independent clause.", "example": "The student studies."},
+    {"term": "Compound sentence", "definition": "Sentence with two or more independent clauses joined by conjunction.", "example": "I studied, and I passed."},
+    {"term": "Complex sentence", "definition": "Sentence with one independent and one or more dependent clauses.", "example": "Although it rained, we went out."},
+    {"term": "Subject-verb agreement", "definition": "Rule requiring subject and verb to match in number and person.", "example": "She walks (singular); They walk (plural)."}
+  ],
+  "assessment": {
+    "quick_checks": [
+      "List the eight parts of speech.",
+      "What is the difference between a simple and compound sentence?",
+      "Give an example of present perfect tense.",
+      "State the subject-verb agreement rule for 'everyone'.",
+      "What conjunction creates a complex sentence?"
+    ],
+    "end_of_lesson_quiz": [
+      {"question": "Which is a verb in this sentence: 'The quick student ran fast'?", "options": ["quick", "student", "ran", "fast"], "correct": "ran"},
+      {"question": "Identify sentence type: 'I studied hard, and I passed.'", "options": ["Simple", "Compound", "Complex", "Compound-complex"], "correct": "Compound"},
+      {"question": "Correct this: 'Everyone have finished.'", "options": ["Everyone has finished", "Everyone are finished", "Everyone were finished", "Everyone finish"], "correct": "Everyone has finished"},
+      {"question": "Which tense: 'I have lived in Lagos for five years'?", "options": ["Simple present", "Present perfect", "Past perfect", "Simple past"], "correct": "Present perfect"},
+      {"question": "Which creates a complex sentence?", "options": ["and", "but", "or", "because"], "correct": "because"}
+    ],
+    "exam_style_questions": [
+      {"question": "Using examples, explain the difference between simple, compound, and complex sentences. Give one Nigerian context example for each.", "answer_guide": "Simple: one clause (The student studies). Compound: two independent clauses with conjunction (Lagos is busy, and Abuja is the capital). Complex: independent + dependent clause (Although Nigeria is large, traveling is difficult). Explain structure and conjunctions used."},
+      {"question": "Correct these sentences and explain the errors: (a) 'The government have decided.' (b) 'Everyone are present.' (c) 'She go to school yesterday.'", "answer_guide": "(a) The government has decided (collective noun = singular). (b) Everyone is present (indefinite pronoun = singular). (c) She went to school yesterday (past tense). Explain subject-verb agreement and tense rules."}
+    ]
+  },
+  "resources": {
+    "visual_aids": [
+      {"title": "Parts of Speech Chart", "type": "table", "description": "Complete reference of eight parts with definitions, examples, Nigerian contexts."},
+      {"title": "Sentence Structure Diagram", "type": "diagram", "description": "Visual showing simple, compound, complex, compound-complex structures."},
+      {"title": "Tense Timeline", "type": "chart", "description": "Past, present, future tenses with forms and Nigerian usage examples."}
+    ]
+  },
+  "waec_tags": ["grammar", "parts of speech", "sentence structure", "tenses", "subject-verb agreement", "concord", "Nigerian English", "formal writing", "syntax", "verbs"]
+}

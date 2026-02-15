@@ -1,0 +1,21 @@
+{
+  "total_questions": 45,
+  "by_exam_board": {
+    "JAMB": 18,
+    "WAEC": 15,
+    "NECO": 12
+  },
+  "by_subject": {
+    "chemistry": 18,
+    "mathematics": 15,
+    "biology": 12
+  },
+  "by_difficulty": {
+    "hard": 18,
+    "medium": 15,
+    "easy": 12
+  },
+  "avg_quality_score": 0.8543603923117037,
+  "avg_relevance_score": 0.8968601168781806,
+  "avg_overall_score": 0.8756102545949422
+}

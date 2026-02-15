@@ -1,0 +1,6 @@
+Define GDP and 
+  │
+  ├── List components
+  ├── Distinguish bet
+  ├── Calculate GDP u
+  └── Explain factors

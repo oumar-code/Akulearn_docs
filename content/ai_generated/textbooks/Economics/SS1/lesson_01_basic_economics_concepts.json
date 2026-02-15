@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "subject": "Economics",
+    "level": "SS1",
+    "unit": "1",
+    "unit_title": "Basic Economics Concepts",
+    "lesson": "1",
+    "lesson_title": "Basic Economics Concepts",
+    "duration_minutes": 90,
+    "estimated_pages": 13,
+    "curriculum_alignment": {
+      "nerdc_code": "EC.SS1.1.1-1.3",
+      "nerdc_description": "Scarcity, production, opportunity cost, economic systems",
+      "waec_topic": "Basic Economic Principles",
+      "waec_weighting": "8%"
+    },
+    "learning_level": "foundational",
+    "nigerian_context": true
+  },
+  "learning_objectives": [
+    "Define economics, scarcity, wants, and needs",
+    "Identify the four factors of production and their rewards",
+    "Explain opportunity cost and illustrate with production possibility frontier (PPF)",
+    "Differentiate traditional, command, market, and mixed economic systems",
+    "Apply basic concepts to Nigerian resources and development"
+  ],
+  "prerequisites": [
+    "Basic arithmetic (percentages, simple graphs)",
+    "Understanding of goods and services",
+    "Familiarity with Nigerian economic activities (agriculture, oil)"
+  ],
+  "content_sections": [
+    {
+      "section_id": "1.1",
+      "title": "What Is Economics? Scarcity, Wants, and Needs",
+      "duration_minutes": 20,
+      "content": "Economics studies how people and societies allocate scarce resources to satisfy unlimited wants. **Scarcity** means resources are limited relative to wants. **Wants** are desires; **needs** are essential for survival (food, shelter, clothing). Because of scarcity, choices must be made, leading to **opportunity cost** (next best alternative forgone).\n\n**Nigerian context**: Petrol queues show scarcity; power outages reflect limited electricity supply; farmland availability in Benue vs urban land scarcity in Lagos."
+    },
+    {
+      "section_id": "1.2",
+      "title": "Production and Factors of Production",
+      "duration_minutes": 22,
+      "content": "Production combines resources to create goods and services. **Factors of production**: (1) **Land** (all natural resources; reward = rent), (2) **Labour** (human effort; reward = wage), (3) **Capital** (machinery, tools, buildings; reward = interest), (4) **Enterprise/Entrepreneurship** (risk-taking, coordination; reward = profit).\n\n**Nigerian context**: Land (oil in Niger Delta, cocoa in Ondo), Labour (teachers, farmers), Capital (refineries, tractors), Enterprise (tech startups in Lagos, SMEs in Aba)."
+    },
+    {
+      "section_id": "1.3",
+      "title": "Opportunity Cost and Production Possibility Frontier",
+      "duration_minutes": 23,
+      "content": "**Opportunity cost** is the benefit of the next best alternative given up when a choice is made.\n\n**PPF** shows maximum output combinations of two goods with current resources and technology. Points on curve = efficient, inside = inefficient, outside = unattainable (current resources). Opportunity cost rises as more of one good is produced (concave PPF).\n\n**Nigerian example**: Using land for cassava vs maize; using budget for roads vs health. Choosing more refineries may mean fewer funds for education."
+    },
+    {
+      "section_id": "1.4",
+      "title": "Economic Systems and Nigeria's Mixed Economy",
+      "duration_minutes": 25,
+      "content": "**Traditional economy**: customs, subsistence farming; **Command**: government controls resources (planned); **Market**: private ownership, price mechanism allocates resources; **Mixed**: combines market forces with government intervention.\n\nNigeria operates a **mixed economy**: private sector (banks, manufacturing, services) plus government role (CBN regulation, subsidies, infrastructure, SOEs like NNPC Ltd).\n\nAdvantages/Disadvantages: Markets encourage efficiency and innovation; government corrects market failures (public goods, externalities). Too much control can reduce efficiency; too little can create inequality."
+    }
+  ],
+  "worked_examples": [
+    {
+      "example_id": "1.1",
+      "title": "Identifying Opportunity Cost",
+      "context": "A school has funds to buy either 10 computers or 500 textbooks.",
+      "problem": "If the principal chooses computers, what is the opportunity cost?",
+      "solution": "Opportunity cost = the next best alternative forgone: 500 textbooks. The value (benefit) students would have gained from textbooks is sacrificed.",
+      "skills_tested": ["Opportunity cost reasoning", "Decision trade-offs"]
+    },
+    {
+      "example_id": "1.2",
+      "title": "Factor of Production Classification",
+      "context": "A farmer in Kaduna buys a tractor to expand maize production.",
+      "problem": "Classify land, labour, capital, enterprise; identify rewards.",
+      "solution": "Land: farmland (rent). Labour: farmer and hired workers (wages). Capital: tractor (interest/return). Enterprise: farmer's coordination and risk (profit).",
+      "skills_tested": ["Factor identification", "Applying rewards"]
+    },
+    {
+      "example_id": "1.3",
+      "title": "Reading a PPF",
+      "context": "PPF between yam (Y) and rice (R). Point A (10Y, 0R), B (8Y, 4R), C (5Y, 7R), D (0Y, 10R).",
+      "problem": "What is the opportunity cost of moving from B to C?",
+      "solution": "From B (8Y,4R) to C (5Y,7R): gain +3R, give up -3Y. Opportunity cost of 3 additional rice units is 3 yam units.",
+      "skills_tested": ["PPF interpretation", "Opportunity cost"]
+    }
+  ],
+  "practice_problems": [
+    {"tier": "basic", "difficulty": 1, "problem_id": "1.1.B", "problem": "Define scarcity.", "answer": "Limited resources relative to unlimited wants.", "explanation": "Scarcity forces choice and opportunity cost."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "1.2.B", "problem": "List the four factors of production.", "answer": "Land, labour, capital, enterprise (entrepreneurship).", "explanation": "Core resource categories."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "1.3.B", "problem": "What is opportunity cost?", "answer": "The value of the next best alternative forgone.", "explanation": "Cost measured in foregone benefit."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.4.C", "problem": "Give one Nigerian example of land and one of capital.", "answer": "Land: crude oil reserves; Capital: refinery equipment (or tractors, factory machines).", "explanation": "Land = natural; capital = man-made tools."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.5.C", "problem": "State the reward for each factor of production.", "answer": "Land: rent; Labour: wage/salary; Capital: interest; Enterprise: profit.", "explanation": "Standard factor payments."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.6.C", "problem": "Name two features of a mixed economy.", "answer": "Private ownership with government regulation; coexistence of market pricing and public sector provision; government corrects market failures.", "explanation": "Mixed = market + state."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.7.C", "problem": "If Nigeria increases spending on health, what could be an opportunity cost?", "answer": "Reduced funds for roads/education/defence (next best alternative forgone).", "explanation": "Public budget trade-offs."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.8.CH", "problem": "Explain why a point inside the PPF is inefficient.", "answer": "Resources are underutilized (unemployment, idle capital); economy could produce more of both goods without extra resources.", "explanation": "Inside curve means inefficiency."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.9.CH", "problem": "Give one advantage and one disadvantage of command economies.", "answer": "Advantage: can mobilize resources quickly for priorities; Disadvantage: low efficiency, weak innovation due to lack of price signals.", "explanation": "Planning vs incentives trade-off."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.10.CH", "problem": "A state allocates land to build a solar farm instead of more housing. Identify opportunity cost and factor payments involved.", "answer": "Opportunity cost: housing benefits forgone. Factor payments: rent for land, wages for labour, interest/returns on capital equipment, profit for developers/entrepreneurs.", "explanation": "Links choice with factors and rewards."}
+  ],
+  "glossary": [
+    {"term": "Scarcity", "definition": "Limited resources relative to unlimited wants.", "example": "Fuel shortages during supply disruptions."},
+    {"term": "Opportunity cost", "definition": "Value of next best alternative forgone when a choice is made.", "example": "Choosing refineries instead of schools."},
+    {"term": "Factors of production", "definition": "Land, labour, capital, enterprise.", "example": "Oil field, engineer, refinery, investor."},
+    {"term": "PPF", "definition": "Curve showing maximum combinations of two goods with given resources.", "example": "Yam vs rice output combinations."},
+    {"term": "Mixed economy", "definition": "System combining markets and government intervention.", "example": "Nigeria with private firms and public enterprises."},
+    {"term": "Public goods", "definition": "Non-excludable, non-rival goods often provided by government.", "example": "Street lighting, national defence."},
+    {"term": "Externality", "definition": "Cost/benefit on third parties not in transaction.", "example": "Pollution from a factory."}
+  ],
+  "assessment": {
+    "quick_checks": [
+      "Define scarcity.",
+      "Name the four factors of production.",
+      "What is opportunity cost?",
+      "Give one example of capital in Nigeria.",
+      "What type of economy does Nigeria operate?"
+    ],
+    "end_of_lesson_quiz": [
+      {"question": "Scarcity exists because:", "options": ["Resources are unlimited", "Wants are limited", "Resources are limited and wants are unlimited", "There is no money"], "correct": "Resources are limited and wants are unlimited"},
+      {"question": "Reward for labour is:", "options": ["Rent", "Wage", "Interest", "Profit"], "correct": "Wage"},
+      {"question": "Opportunity cost refers to:", "options": ["Total cost", "Next best alternative forgone", "Future cost", " sunk cost"], "correct": "Next best alternative forgone"},
+      {"question": "PPF point inside curve means:", "options": ["Efficient", "Unattainable", "Inefficient", "Constant opportunity cost"], "correct": "Inefficient"},
+      {"question": "Nigeria is best described as:", "options": ["Command economy", "Market economy", "Mixed economy", "Traditional economy"], "correct": "Mixed economy"}
+    ],
+    "exam_style_questions": [
+      {"question": "Using a Nigerian example, explain opportunity cost and illustrate with a simple PPF diagram. Label efficient, inefficient, and unattainable points.", "answer_guide": "Define opportunity cost; draw PPF (concave); mark point on curve (efficient), inside (inefficient), outside (unattainable). Use Nigeria budget or land use example."},
+      {"question": "Discuss four characteristics of a mixed economy and assess how Nigeria exhibits these characteristics.", "answer_guide": "Private ownership + government role; price mechanism with regulation; public goods provision; SOEs; examples: telecom deregulation, CBN policies, subsidies."}
+    ]
+  },
+  "resources": {
+    "visual_aids": [
+      {"title": "PPF Diagram", "type": "graph", "description": "Axes for two goods, efficient vs inefficient points."},
+      {"title": "Factors of Production Table", "type": "table", "description": "Land, labour, capital, enterprise with rewards and Nigerian examples."},
+      {"title": "Economic Systems Spectrum", "type": "chart", "description": "Traditional-command-market-mixed with Nigeria highlighted."}
+    ]
+  },
+  "waec_tags": ["scarcity", "opportunity cost", "factors of production", "PPF", "mixed economy", "economic systems", "resource allocation", "Nigerian economy"]
+}

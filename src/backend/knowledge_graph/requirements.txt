@@ -1,0 +1,90 @@
+# Nigerian Government Transparency Knowledge Graph
+# Requirements for Neo4j integration, NLP, news monitoring, and data ingestion
+
+# Core Dependencies
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Neo4j & Graph Database
+neo4j==5.15.0
+py2neo==2021.2.3
+
+# Data Processing & Analysis
+pandas==2.1.3
+numpy==1.26.2
+scipy==1.11.4
+
+# NLP & Sentiment Analysis
+transformers==4.35.2
+torch==2.1.1
+nltk==3.8.1
+spacy==3.7.2
+textblob==0.17.1
+
+# News Aggregation & Scraping
+newsapi==0.1.2
+feedparser==6.0.10
+requests==2.31.0
+beautifulsoup4==4.12.2
+selenium==4.15.2
+lxml==4.9.3
+scrapy==2.11.0
+newspaper3k==0.2.8
+
+# Social Media Monitoring
+tweepy==4.14.0
+instagrapi==2.0.0
+facebook-sdk==3.0.1
+
+# Fact-Checking & Verification
+requests-cache==1.1.1
+
+# Time Series & Prediction
+statsmodels==0.14.0
+scikit-learn==1.3.2
+
+# Async & Concurrency
+aiohttp==3.9.1
+asyncio-contextmanager==1.0.0
+
+# Task Scheduling
+APScheduler==3.10.4
+celery==5.3.4
+redis==5.0.1
+
+# Database & Caching
+sqlalchemy==2.0.23
+alembic==1.12.1
+
+# Utilities
+python-dotenv==1.0.0
+python-multipart==0.0.6
+pydantic-extra-types==2.3.0
+pytz==2023.3.post1
+dateparser==1.1.8
+
+# API & Web
+httpx==0.25.2
+aiofiles==23.2.1
+
+# Monitoring & Logging
+python-json-logger==2.0.7
+prometheus-client==0.19.0
+
+# Development & Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+black==23.12.0
+flake8==6.1.0
+mypy==1.7.1
+
+# Documentation
+sphinx==7.2.6
+sphinx-rtd-theme==2.0.0
+
+# Production
+gunicorn==21.2.0
+python-multipart==0.0.6

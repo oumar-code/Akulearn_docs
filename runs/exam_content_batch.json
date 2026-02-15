@@ -1,0 +1,362 @@
+[
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.9041363125585786,
+    "relevance_score": 0.8164183117578178
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.9195271716397866,
+    "relevance_score": 0.9514802466651867
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.9502408128596365,
+    "relevance_score": 0.8443663472396759
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.7671052483027643,
+    "relevance_score": 0.824910847193039
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.7783799453818566,
+    "relevance_score": 0.9158623922557649
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.775272776268954,
+    "relevance_score": 0.9028311573891039
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.8922274966304279,
+    "relevance_score": 0.9547928516202087
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.9077322618405477,
+    "relevance_score": 0.8048758561459256
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.8386929306494769,
+    "relevance_score": 0.888141921783503
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.752019262498903,
+    "relevance_score": 0.8753131149695984
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.8990417787773635,
+    "relevance_score": 0.8215671767338577
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.7873969772294253,
+    "relevance_score": 0.9868887298831345
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.7633432522708302,
+    "relevance_score": 0.9589915583686492
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.921926112902149,
+    "relevance_score": 0.8083644445597391
+  },
+  {
+    "exam_board": "WAEC",
+    "subject": "mathematics",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "quality_score": 0.8319681727913166,
+    "relevance_score": 0.9280304082887048
+  },
+  {
+    "exam_board": "NECO",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "difficulty": "easy",
+    "quality_score": 0.9666763764780085,
+    "relevance_score": 0.9600554965768651
+  },
+  {
+    "exam_board": "NECO",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "difficulty": "easy",
+    "quality_score": 0.8020053468352594,
+    "relevance_score": 0.8849147259755363
+  },
+  {
+    "exam_board": "NECO",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "difficulty": "easy",
+    "quality_score": 0.8900155260245644,
+    "relevance_score": 0.9786149104388491
+  },
+  {
+    "exam_board": "NECO",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "difficulty": "easy",
+    "quality_score": 0.9459878765705502,
+    "relevance_score": 0.9543785280650147
+  },
+  {
+    "exam_board": "NECO",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "difficulty": "easy",
+    "quality_score": 0.9110471654425262,
+    "relevance_score": 0.9736058530080213
+  },
+  {
+    "exam_board": "NECO",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "difficulty": "easy",
+    "quality_score": 0.9116233486013912,
+    "relevance_score": 0.849271989838105
+  },
+  {
+    "exam_board": "NECO",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "difficulty": "easy",
+    "quality_score": 0.8266534194486361,
+    "relevance_score": 0.9504173098546258
+  },
+  {
+    "exam_board": "NECO",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "difficulty": "easy",
+    "quality_score": 0.7568328207241359,
+    "relevance_score": 0.9022093275561414
+  },
+  {
+    "exam_board": "NECO",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "difficulty": "easy",
+    "quality_score": 0.9486124734973668,
+    "relevance_score": 0.950009891465265
+  },
+  {
+    "exam_board": "NECO",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "difficulty": "easy",
+    "quality_score": 0.7608770738549976,
+    "relevance_score": 0.9240112086693163
+  },
+  {
+    "exam_board": "NECO",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "difficulty": "easy",
+    "quality_score": 0.7764119277707239,
+    "relevance_score": 0.819527739247896
+  },
+  {
+    "exam_board": "NECO",
+    "subject": "biology",
+    "topic": "photosynthesis",
+    "difficulty": "easy",
+    "quality_score": 0.9310016121219982,
+    "relevance_score": 0.9663481115401129
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.7709777826373468,
+    "relevance_score": 0.897643300996952
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.8808640334050195,
+    "relevance_score": 0.8155250649984549
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.9132714835602174,
+    "relevance_score": 0.949072054708543
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.7819630029944792,
+    "relevance_score": 0.9352329833670582
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.8275154141640634,
+    "relevance_score": 0.8948803869306818
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.8607568427753631,
+    "relevance_score": 0.8110481396748821
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.8029623216512364,
+    "relevance_score": 0.9429121337022119
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.8968535476369408,
+    "relevance_score": 0.8981593873566398
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.8878898481545017,
+    "relevance_score": 0.8637887144864115
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.769291781085505,
+    "relevance_score": 0.9205619829742705
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.8714378408293413,
+    "relevance_score": 0.8935666050641518
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.9202819272084874,
+    "relevance_score": 0.8728584087675378
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.8222661079193723,
+    "relevance_score": 0.8937693613690205
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.9520397037020312,
+    "relevance_score": 0.8070595955047596
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.8230639730768321,
+    "relevance_score": 0.8031946494845572
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.972049287341455,
+    "relevance_score": 0.9830475656750168
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.7884169612937035,
+    "relevance_score": 0.923530154739387
+  },
+  {
+    "exam_board": "JAMB",
+    "subject": "chemistry",
+    "topic": "periodic_table",
+    "difficulty": "hard",
+    "quality_score": 0.787560314618589,
+    "relevance_score": 0.8566543126279333
+  }
+]

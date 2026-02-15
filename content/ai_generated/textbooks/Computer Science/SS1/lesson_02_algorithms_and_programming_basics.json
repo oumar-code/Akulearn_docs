@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "subject": "Computer Science",
+    "level": "SS1",
+    "unit": "1",
+    "unit_title": "Algorithms and Programming Basics",
+    "lesson": "2",
+    "lesson_title": "Algorithms and Programming Basics",
+    "duration_minutes": 90,
+    "estimated_pages": 13,
+    "curriculum_alignment": {
+      "nerdc_code": "CS.SS1.2.1-2.3",
+      "nerdc_description": "Algorithms, flowcharts, pseudocode, introductory programming",
+      "waec_topic": "Algorithms and Problem Solving",
+      "waec_weighting": "10%"
+    },
+    "learning_level": "foundational",
+    "nigerian_context": true
+  },
+  "learning_objectives": [
+    "Define algorithm and outline its properties (finite, effective, ordered)",
+    "Represent simple tasks using step-by-step instructions, flowcharts, and pseudocode",
+    "Identify basic data types and variables",
+    "Use sequence, selection, and iteration constructs in pseudocode",
+    "Trace simple algorithms for correctness and output"
+  ],
+  "prerequisites": [
+    "Basic computer literacy",
+    "Comfort with arithmetic and logical thinking",
+    "Understanding of input/output from prior lesson"
+  ],
+  "content_sections": [
+    {
+      "section_id": "2.1",
+      "title": "What Is an Algorithm?",
+      "duration_minutes": 20,
+      "content": "**Algorithm**: finite, ordered steps to solve a problem. Properties: correctness, efficiency, clarity. Examples: cooking recipe, ATM transaction sequence (insert card → enter PIN → select amount → dispense cash)."
+    },
+    {
+      "section_id": "2.2",
+      "title": "Representing Algorithms: Text and Diagrams",
+      "duration_minutes": 22,
+      "content": "**Natural language**: plain steps. **Pseudocode**: structured, language-agnostic; uses INPUT, OUTPUT, IF, WHILE. **Flowcharts**: start/end, process, decision, input/output symbols; arrows show flow. \n\n**Nigerian context**: Schools use flowcharts on paper when computers are limited; use pseudocode to prepare before coding."
+    },
+    {
+      "section_id": "2.3",
+      "title": "Data Types, Variables, and Expressions",
+      "duration_minutes": 24,
+      "content": "Common types: integer, real/float, string, Boolean. Variables store values with names; assignment uses ← or = depending on notation. Expressions combine operators: arithmetic (+, -, *, /, mod), relational (<, >, =, !=), logical (AND, OR, NOT)."
+    },
+    {
+      "section_id": "2.4",
+      "title": "Control Structures: Sequence, Selection, Iteration",
+      "duration_minutes": 24,
+      "content": "**Sequence**: steps in order. **Selection**: IF/ELSE or CASE for decisions (e.g., PIN correct?). **Iteration**: loops (FOR, WHILE, REPEAT-UNTIL) for repetition (e.g., count students). \nInclude simple input/output statements and counters."
+    }
+  ],
+  "worked_examples": [
+    {
+      "example_id": "2.1",
+      "title": "Pseudocode for Even/Odd",
+      "context": "Determine if a number is even or odd.",
+      "problem": "Write pseudocode using selection.",
+      "solution": "INPUT N; IF N mod 2 = 0 THEN OUTPUT \"Even\" ELSE OUTPUT \"Odd\"; ENDIF",
+      "skills_tested": ["Selection", "Modulo operator", "Input/output"]
+    },
+    {
+      "example_id": "2.2",
+      "title": "Flowchart for Average of 3 Scores",
+      "context": "Compute average of three test scores.",
+      "problem": "Represent with a flowchart.",
+      "solution": "Start → Input S1,S2,S3 → Sum = S1+S2+S3 → Avg = Sum/3 → Output Avg → End.",
+      "skills_tested": ["Sequence", "Arithmetic", "Flowchart mapping"]
+    },
+    {
+      "example_id": "2.3",
+      "title": "Counting Students with For Loop",
+      "context": "Count 1 to 5 students.",
+      "problem": "Use iteration to print numbers 1..5.",
+      "solution": "FOR i ← 1 TO 5 DO OUTPUT i; ENDFOR",
+      "skills_tested": ["Iteration", "Loop bounds"]
+    }
+  ],
+  "practice_problems": [
+    {"tier": "basic", "difficulty": 1, "problem_id": "2.1.B", "problem": "Define algorithm in one sentence.", "answer": "A finite, ordered set of steps to solve a problem.", "explanation": "Core definition."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "2.2.B", "problem": "List three flowchart symbols.", "answer": "Start/End (terminator), Process, Decision, Input/Output.", "explanation": "Common symbols."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "2.3.B", "problem": "Name two primitive data types.", "answer": "Integer, Boolean (others: real, string).", "explanation": "Simple recall."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.4.C", "problem": "Write pseudocode to input two numbers and output their sum.", "answer": "INPUT A,B; SUM ← A+B; OUTPUT SUM", "explanation": "Sequence and arithmetic."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.5.C", "problem": "Convert this to a decision: If temperature > 30, print \"Hot\", else print \"Mild\".", "answer": "IF temp > 30 THEN OUTPUT \"Hot\" ELSE OUTPUT \"Mild\" ENDIF", "explanation": "Selection pattern."},
+    {"tier": "core", "difficulty": 2, "problem_id": "2.6.C", "problem": "Describe difference between WHILE and FOR loops in plain terms.", "answer": "FOR: known iteration count/range; WHILE: repeat while condition true, count may be unknown.", "explanation": "Loop intent."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.7.CH", "problem": "Trace: N=7; IF N mod 2 = 0 THEN print Even ELSE print Odd.", "answer": "Outputs Odd.", "explanation": "Modulo trace."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.8.CH", "problem": "Write a REPEAT-UNTIL loop to keep asking for PIN until correct (1234).", "answer": "REPEAT INPUT pin UNTIL pin = 1234", "explanation": "Post-condition loop."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.9.CH", "problem": "State two reasons pseudocode is useful before coding on limited lab time.", "answer": "Language-agnostic planning; easy to review on paper; reduces coding errors/time when PCs are few.", "explanation": "Planning benefits."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "2.10.CH", "problem": "Given: FOR i=1 TO 3 PRINT i*i. List outputs.", "answer": "1, 4, 9.", "explanation": "Loop/output trace."}
+  ],
+  "glossary": [
+    {"term": "Algorithm", "definition": "Finite, ordered steps to solve a problem.", "example": "Counting students algorithm."},
+    {"term": "Pseudocode", "definition": "Structured, language-neutral way to write algorithms.", "example": "IF score >= 50 THEN PASS"},
+    {"term": "Flowchart", "definition": "Diagram showing algorithm flow with standard symbols.", "example": "Decision diamond for PIN correct?"},
+    {"term": "Variable", "definition": "Named storage for a value that can change.", "example": "count ← 0"},
+    {"term": "Iteration", "definition": "Repeating steps using loops.", "example": "FOR i=1 TO 10"}
+  ],
+  "assessment": {
+    "quick_checks": [
+      "State two properties of an algorithm.",
+      "What symbol denotes decision in a flowchart?",
+      "Give an example of a Boolean expression.",
+      "Name the three basic control structures.",
+      "Why use pseudocode?"
+    ],
+    "end_of_lesson_quiz": [
+      {"question": "An algorithm must be:", "options": ["Infinite", "Random", "Finite", "Hardware"], "correct": "Finite"},
+      {"question": "Flowchart decision symbol shape is:", "options": ["Rectangle", "Oval", "Diamond", "Parallelogram"], "correct": "Diamond"},
+      {"question": "Selection is implemented with:", "options": ["FOR", "IF/ELSE", "PRINT", "INPUT"], "correct": "IF/ELSE"},
+      {"question": "Data type for TRUE/FALSE:", "options": ["String", "Boolean", "Integer", "Float"], "correct": "Boolean"},
+      {"question": "Loop that repeats while condition true:", "options": ["FOR", "WHILE", "PRINT", "CASE"], "correct": "WHILE"}
+    ],
+    "exam_style_questions": [
+      {"question": "Describe with an example how you would obtain the average score of 40 students using iteration.", "answer_guide": "Use loop to sum scores then divide by 40; show FOR or WHILE; include input/output."},
+      {"question": "Explain two advantages of using flowcharts and two of using pseudocode when planning programs in a resource-limited Nigerian school lab.", "answer_guide": "Flowcharts visualize flow; pseudocode quick to write/read; both save PC time and reduce errors."}
+    ]
+  },
+  "resources": {
+    "visual_aids": [
+      {"title": "Flowchart Symbols Reference", "type": "chart", "description": "Common shapes with meanings."},
+      {"title": "Sample Pseudocode Layout", "type": "text", "description": "Indentation, IF, loops examples."},
+      {"title": "Algorithm vs Program Venn", "type": "diagram", "description": "Relationship between algorithm, pseudocode, code."}
+    ]
+  },
+  "waec_tags": ["algorithms", "flowcharts", "pseudocode", "data types", "variables", "control structures", "selection", "iteration"]
+}

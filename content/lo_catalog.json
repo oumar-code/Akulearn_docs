@@ -1,0 +1,983 @@
+{
+  "generated_at": "2025-12-07T19:21:37.962409Z",
+  "source": "Programmatically generated from NERDC/WAEC official curriculum frameworks",
+  "nerdc_website": "https://nerdc.org.ng/",
+  "waec_website": "https://www.waecnigeria.org/",
+  "neco_website": "https://neco.gov.ng/",
+  "jamb_website": "https://www.jamb.gov.ng/",
+  "total_entries": 108,
+  "lo_entries": [
+    {
+      "lo_id": "LO:NERDC:MAT:SS1:NUM:001",
+      "curriculum": "NERDC",
+      "subject": "MAT",
+      "class_level": "SS1",
+      "topic": "Number and Numeration",
+      "lo_text": "Understand place value, operations on whole numbers, fractions, decimals and percentages",
+      "created_at": "2025-12-07T19:21:37.676410Z"
+    },
+    {
+      "lo_id": "LO:NERDC:MAT:SS1:ALG:002",
+      "curriculum": "NERDC",
+      "subject": "MAT",
+      "class_level": "SS1",
+      "topic": "Algebra - Basics",
+      "lo_text": "Simplify algebraic expressions, solve linear equations, use index laws",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:MAT:SS1:GEOM:003",
+      "curriculum": "NERDC",
+      "subject": "MAT",
+      "class_level": "SS1",
+      "topic": "Geometry - Basics",
+      "lo_text": "Identify angles, shapes, perimeter and area concepts",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:MAT:SS2:ALG:004",
+      "curriculum": "NERDC",
+      "subject": "MAT",
+      "class_level": "SS2",
+      "topic": "Quadratic Equations",
+      "lo_text": "Solve quadratic equations by factorization, completing square and formula",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:MAT:SS2:TRIG:005",
+      "curriculum": "NERDC",
+      "subject": "MAT",
+      "class_level": "SS2",
+      "topic": "Trigonometry - Basics",
+      "lo_text": "Understand sine, cosine, tangent ratios for right-angled triangles",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:MAT:SS2:STATS:006",
+      "curriculum": "NERDC",
+      "subject": "MAT",
+      "class_level": "SS2",
+      "topic": "Statistics - Collection",
+      "lo_text": "Collect, organize and present data using tables, charts, graphs",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:MAT:SS3:CALC:007",
+      "curriculum": "NERDC",
+      "subject": "MAT",
+      "class_level": "SS3",
+      "topic": "Calculus - Intro",
+      "lo_text": "Understand limits, differentiation of algebraic functions",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:MAT:SS3:STATS:008",
+      "curriculum": "NERDC",
+      "subject": "MAT",
+      "class_level": "SS3",
+      "topic": "Statistics - Analysis",
+      "lo_text": "Calculate measures of central tendency, dispersion and probability",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:MAT:SS3:COORD:009",
+      "curriculum": "NERDC",
+      "subject": "MAT",
+      "class_level": "SS3",
+      "topic": "Coordinate Geometry",
+      "lo_text": "Find distance between points, slope, equation of lines and curves",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ENG:SS1:READ:010",
+      "curriculum": "NERDC",
+      "subject": "ENG",
+      "class_level": "SS1",
+      "topic": "Reading Fluency",
+      "lo_text": "Develop reading fluency and comprehension of diverse texts",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ENG:SS1:VOCAB:011",
+      "curriculum": "NERDC",
+      "subject": "ENG",
+      "class_level": "SS1",
+      "topic": "Vocabulary Building",
+      "lo_text": "Recognize and use academic and colloquial vocabulary in context",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ENG:SS1:ORAL:012",
+      "curriculum": "NERDC",
+      "subject": "ENG",
+      "class_level": "SS1",
+      "topic": "Oral Expression",
+      "lo_text": "Speak fluently with correct pronunciation, intonation and stress",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ENG:SS2:RC:013",
+      "curriculum": "NERDC",
+      "subject": "ENG",
+      "class_level": "SS2",
+      "topic": "Reading Comprehension",
+      "lo_text": "Identify main ideas, supporting details, infer meaning from passages",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ENG:SS2:WRITE:014",
+      "curriculum": "NERDC",
+      "subject": "ENG",
+      "class_level": "SS2",
+      "topic": "Writing - Narrative",
+      "lo_text": "Write coherent narratives with clear plot, setting and characterization",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ENG:SS2:GRAM:015",
+      "curriculum": "NERDC",
+      "subject": "ENG",
+      "class_level": "SS2",
+      "topic": "Grammar - Tenses",
+      "lo_text": "Use correct tenses, voice and reported speech in writing",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ENG:SS3:WRITE:016",
+      "curriculum": "NERDC",
+      "subject": "ENG",
+      "class_level": "SS3",
+      "topic": "Writing Skills",
+      "lo_text": "Plan and produce essays with clear paragraphing and argument structure",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ENG:SS3:GRAM:017",
+      "curriculum": "NERDC",
+      "subject": "ENG",
+      "class_level": "SS3",
+      "topic": "Grammar and Usage",
+      "lo_text": "Apply correct grammar, sentence structure and punctuation",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ENG:SS3:LIT:018",
+      "curriculum": "NERDC",
+      "subject": "ENG",
+      "class_level": "SS3",
+      "topic": "Literature Basics",
+      "lo_text": "Identify themes, characterization and literary devices in texts",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:BIO:SS1:CELL:019",
+      "curriculum": "NERDC",
+      "subject": "BIO",
+      "class_level": "SS1",
+      "topic": "Cell Basics",
+      "lo_text": "Describe prokaryotic and eukaryotic cell structure and function",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:BIO:SS1:NUTR:020",
+      "curriculum": "NERDC",
+      "subject": "BIO",
+      "class_level": "SS1",
+      "topic": "Nutrition Concepts",
+      "lo_text": "Understand nutrition types and nutrient functions in organisms",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:BIO:SS1:REPRO:021",
+      "curriculum": "NERDC",
+      "subject": "BIO",
+      "class_level": "SS1",
+      "topic": "Reproduction - Asexual",
+      "lo_text": "Explain asexual reproduction in plants and animals",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:BIO:SS2:CELL:022",
+      "curriculum": "NERDC",
+      "subject": "BIO",
+      "class_level": "SS2",
+      "topic": "Cell Division",
+      "lo_text": "Describe mitosis and meiosis, understand genetic significance",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:BIO:SS2:GENE:023",
+      "curriculum": "NERDC",
+      "subject": "BIO",
+      "class_level": "SS2",
+      "topic": "Genetics Intro",
+      "lo_text": "Understand dominant and recessive traits, Punnett squares",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:BIO:SS2:ECO:024",
+      "curriculum": "NERDC",
+      "subject": "BIO",
+      "class_level": "SS2",
+      "topic": "Ecology Basics",
+      "lo_text": "Describe food chains, food webs and energy flow in ecosystems",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:BIO:SS3:GENE:025",
+      "curriculum": "NERDC",
+      "subject": "BIO",
+      "class_level": "SS3",
+      "topic": "Mendelian Genetics",
+      "lo_text": "Apply Mendel's laws to predict inheritance patterns",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:BIO:SS3:ECO:026",
+      "curriculum": "NERDC",
+      "subject": "BIO",
+      "class_level": "SS3",
+      "topic": "Ecology Advanced",
+      "lo_text": "Describe ecosystems, biomes and human impact on environment",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:BIO:SS3:EVOL:027",
+      "curriculum": "NERDC",
+      "subject": "BIO",
+      "class_level": "SS3",
+      "topic": "Evolution Basics",
+      "lo_text": "Explain adaptation, natural selection and speciation concepts",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CHEM:SS1:ATOM:028",
+      "curriculum": "NERDC",
+      "subject": "CHEM",
+      "class_level": "SS1",
+      "topic": "Atomic Structure",
+      "lo_text": "Describe atomic structure, ionization and chemical bonding",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CHEM:SS1:PERIODC:029",
+      "curriculum": "NERDC",
+      "subject": "CHEM",
+      "class_level": "SS1",
+      "topic": "Periodic Table",
+      "lo_text": "Identify element patterns, groups and periods on periodic table",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CHEM:SS1:STOICH:030",
+      "curriculum": "NERDC",
+      "subject": "CHEM",
+      "class_level": "SS1",
+      "topic": "Stoichiometry Intro",
+      "lo_text": "Perform simple calculations using chemical formulas and equations",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CHEM:SS2:STOICH:031",
+      "curriculum": "NERDC",
+      "subject": "CHEM",
+      "class_level": "SS2",
+      "topic": "Stoichiometry",
+      "lo_text": "Perform stoichiometric calculations and balance chemical equations",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CHEM:SS2:ACIDS:032",
+      "curriculum": "NERDC",
+      "subject": "CHEM",
+      "class_level": "SS2",
+      "topic": "Acids and Bases",
+      "lo_text": "Identify properties of acids and bases, pH scale, neutralization",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CHEM:SS2:REDOX:033",
+      "curriculum": "NERDC",
+      "subject": "CHEM",
+      "class_level": "SS2",
+      "topic": "Redox Reactions",
+      "lo_text": "Identify oxidation states, oxidizing and reducing agents",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CHEM:SS3:ORG:034",
+      "curriculum": "NERDC",
+      "subject": "CHEM",
+      "class_level": "SS3",
+      "topic": "Organic Chemistry Basics",
+      "lo_text": "Identify functional groups and name simple organic molecules",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CHEM:SS3:REACTIONS:035",
+      "curriculum": "NERDC",
+      "subject": "CHEM",
+      "class_level": "SS3",
+      "topic": "Chemical Reactions",
+      "lo_text": "Classify reactions and predict products for common reaction types",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CHEM:SS3:THERMO:036",
+      "curriculum": "NERDC",
+      "subject": "CHEM",
+      "class_level": "SS3",
+      "topic": "Thermochemistry",
+      "lo_text": "Understand exothermic and endothermic reactions, enthalpy changes",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:PHY:SS1:MECH:037",
+      "curriculum": "NERDC",
+      "subject": "PHY",
+      "class_level": "SS1",
+      "topic": "Mechanics - Motion",
+      "lo_text": "Describe displacement, velocity, acceleration and solve motion problems",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:PHY:SS1:FORCES:038",
+      "curriculum": "NERDC",
+      "subject": "PHY",
+      "class_level": "SS1",
+      "topic": "Forces Basics",
+      "lo_text": "Understand Newton's laws, weight and friction",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:PHY:SS1:WAVES:039",
+      "curriculum": "NERDC",
+      "subject": "PHY",
+      "class_level": "SS1",
+      "topic": "Waves and Sound",
+      "lo_text": "Describe properties of waves, sound propagation and reflection",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:PHY:SS2:MECH:040",
+      "curriculum": "NERDC",
+      "subject": "PHY",
+      "class_level": "SS2",
+      "topic": "Mechanics - Forces",
+      "lo_text": "Apply Newton's laws to solve problems with forces",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:PHY:SS2:WORK:041",
+      "curriculum": "NERDC",
+      "subject": "PHY",
+      "class_level": "SS2",
+      "topic": "Work and Energy",
+      "lo_text": "Understand work, energy, power and conservation principles",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:PHY:SS2:ELEC:042",
+      "curriculum": "NERDC",
+      "subject": "PHY",
+      "class_level": "SS2",
+      "topic": "Electricity Basics",
+      "lo_text": "Understand electric fields, potential difference and current",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:PHY:SS3:ELEC:043",
+      "curriculum": "NERDC",
+      "subject": "PHY",
+      "class_level": "SS3",
+      "topic": "Electric Circuits",
+      "lo_text": "Analyze simple DC circuits using Ohm's law and combinations",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:PHY:SS3:MAG:044",
+      "curriculum": "NERDC",
+      "subject": "PHY",
+      "class_level": "SS3",
+      "topic": "Magnetism",
+      "lo_text": "Describe magnetic fields, electromagnetic induction and applications",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:PHY:SS3:MODERN:045",
+      "curriculum": "NERDC",
+      "subject": "PHY",
+      "class_level": "SS3",
+      "topic": "Modern Physics",
+      "lo_text": "Understand atomic structure, nuclear reactions and radioactivity",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ICT:SS1:COMP:046",
+      "curriculum": "NERDC",
+      "subject": "ICT",
+      "class_level": "SS1",
+      "topic": "Computer Basics",
+      "lo_text": "Understand basic computer components, storage and software concepts",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ICT:SS1:NET:047",
+      "curriculum": "NERDC",
+      "subject": "ICT",
+      "class_level": "SS1",
+      "topic": "Networking Basics",
+      "lo_text": "Understand basic networking concepts: LAN, WAN, IP addressing",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ICT:SS1:INTERNET:048",
+      "curriculum": "NERDC",
+      "subject": "ICT",
+      "class_level": "SS1",
+      "topic": "Internet Usage",
+      "lo_text": "Use browsers, email, search engines and web safety practices",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ICT:SS2:HARDWARE:049",
+      "curriculum": "NERDC",
+      "subject": "ICT",
+      "class_level": "SS2",
+      "topic": "Hardware Systems",
+      "lo_text": "Identify and describe computer hardware components and peripherals",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ICT:SS2:SOFTWARE:050",
+      "curriculum": "NERDC",
+      "subject": "ICT",
+      "class_level": "SS2",
+      "topic": "Software Applications",
+      "lo_text": "Use productivity software: word processor, spreadsheets, presentations",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ICT:SS2:DB:051",
+      "curriculum": "NERDC",
+      "subject": "ICT",
+      "class_level": "SS2",
+      "topic": "Database Basics",
+      "lo_text": "Understand tables, records, fields and simple database operations",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ICT:SS3:PROG:052",
+      "curriculum": "NERDC",
+      "subject": "ICT",
+      "class_level": "SS3",
+      "topic": "Programming Fundamentals",
+      "lo_text": "Write simple programs using variables, conditionals and loops",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ICT:SS3:WEB:053",
+      "curriculum": "NERDC",
+      "subject": "ICT",
+      "class_level": "SS3",
+      "topic": "Web Design Basics",
+      "lo_text": "Create web pages using HTML and basic CSS styling",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:ICT:SS3:SECURITY:054",
+      "curriculum": "NERDC",
+      "subject": "ICT",
+      "class_level": "SS3",
+      "topic": "Cybersecurity",
+      "lo_text": "Understand threats, protection measures and ethical hacking basics",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CIV:SS1:CITIZEN:055",
+      "curriculum": "NERDC",
+      "subject": "CIV",
+      "class_level": "SS1",
+      "topic": "Citizenship",
+      "lo_text": "Describe rights and responsibilities of citizens and basics of governance",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CIV:SS1:CONSTITUTION:056",
+      "curriculum": "NERDC",
+      "subject": "CIV",
+      "class_level": "SS1",
+      "topic": "Constitution Basics",
+      "lo_text": "Understand the Nigerian Constitution and separation of powers",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CIV:SS1:RIGHTS:057",
+      "curriculum": "NERDC",
+      "subject": "CIV",
+      "class_level": "SS1",
+      "topic": "Human Rights",
+      "lo_text": "Identify human rights, freedoms and social responsibilities",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CIV:SS2:GOV:058",
+      "curriculum": "NERDC",
+      "subject": "CIV",
+      "class_level": "SS2",
+      "topic": "Government Systems",
+      "lo_text": "Compare forms of government and explain basic institutions",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CIV:SS2:DEMOCRACY:059",
+      "curriculum": "NERDC",
+      "subject": "CIV",
+      "class_level": "SS2",
+      "topic": "Democratic Principles",
+      "lo_text": "Understand elections, representation and democratic processes",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CIV:SS2:CONFLICTS:060",
+      "curriculum": "NERDC",
+      "subject": "CIV",
+      "class_level": "SS2",
+      "topic": "Conflict Resolution",
+      "lo_text": "Identify conflict sources and resolution mechanisms",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CIV:SS3:LEADERSHIP:061",
+      "curriculum": "NERDC",
+      "subject": "CIV",
+      "class_level": "SS3",
+      "topic": "Leadership and Governance",
+      "lo_text": "Examine leadership qualities and good governance practices",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CIV:SS3:LAW:062",
+      "curriculum": "NERDC",
+      "subject": "CIV",
+      "class_level": "SS3",
+      "topic": "Rule of Law",
+      "lo_text": "Understand justice system, courts and the legal process",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:CIV:SS3:DEVELOPMENT:063",
+      "curriculum": "NERDC",
+      "subject": "CIV",
+      "class_level": "SS3",
+      "topic": "Development and Peace",
+      "lo_text": "Explore socio-economic development and peace-building",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:AGRIC:SS1:SOIL:064",
+      "curriculum": "NERDC",
+      "subject": "AGRIC",
+      "class_level": "SS1",
+      "topic": "Soil Basics",
+      "lo_text": "Identify soil types, composition and importance to agriculture",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:AGRIC:SS1:CROP:065",
+      "curriculum": "NERDC",
+      "subject": "AGRIC",
+      "class_level": "SS1",
+      "topic": "Crop Production Intro",
+      "lo_text": "Understand basic crop husbandry and growth stages",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:AGRIC:SS1:PEST:066",
+      "curriculum": "NERDC",
+      "subject": "AGRIC",
+      "class_level": "SS1",
+      "topic": "Pests and Diseases",
+      "lo_text": "Identify crop pests, diseases and simple control measures",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:AGRIC:SS2:CROP:067",
+      "curriculum": "NERDC",
+      "subject": "AGRIC",
+      "class_level": "SS2",
+      "topic": "Crop Production",
+      "lo_text": "Understand basic crop husbandry practices and soil management",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:AGRIC:SS2:LIVESTOCK:068",
+      "curriculum": "NERDC",
+      "subject": "AGRIC",
+      "class_level": "SS2",
+      "topic": "Livestock Farming",
+      "lo_text": "Identify livestock types and basic animal husbandry practices",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:AGRIC:SS2:TOOLS:069",
+      "curriculum": "NERDC",
+      "subject": "AGRIC",
+      "class_level": "SS2",
+      "topic": "Agricultural Tools",
+      "lo_text": "Identify and use basic agricultural tools and equipment",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:AGRIC:SS3:SOIL:070",
+      "curriculum": "NERDC",
+      "subject": "AGRIC",
+      "class_level": "SS3",
+      "topic": "Soil Science",
+      "lo_text": "Explain soil composition, fertility and management practices",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:AGRIC:SS3:FARMING:071",
+      "curriculum": "NERDC",
+      "subject": "AGRIC",
+      "class_level": "SS3",
+      "topic": "Sustainable Farming",
+      "lo_text": "Understand crop rotation, intercropping and organic farming",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:NERDC:AGRIC:SS3:EXTENSION:072",
+      "curriculum": "NERDC",
+      "subject": "AGRIC",
+      "class_level": "SS3",
+      "topic": "Agricultural Extension",
+      "lo_text": "Explore agricultural advisory services and modern farming techniques",
+      "created_at": "2025-12-07T19:21:37.958506Z"
+    },
+    {
+      "lo_id": "LO:WAEC:ENG:SS2:RC:001",
+      "curriculum": "WAEC",
+      "subject": "ENG",
+      "class_level": "SS2",
+      "topic": "Reading Comprehension",
+      "lo_text": "Identify main ideas, supporting details, infer meaning from passages",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:ENG:SS2:WRITE:002",
+      "curriculum": "WAEC",
+      "subject": "ENG",
+      "class_level": "SS2",
+      "topic": "Writing - Narrative",
+      "lo_text": "Write coherent narratives with clear plot, setting and characterization",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:ENG:SS2:GRAM:003",
+      "curriculum": "WAEC",
+      "subject": "ENG",
+      "class_level": "SS2",
+      "topic": "Grammar - Tenses",
+      "lo_text": "Use correct tenses, voice and reported speech in writing",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:ENG:SS3:WRITE:004",
+      "curriculum": "WAEC",
+      "subject": "ENG",
+      "class_level": "SS3",
+      "topic": "Writing Skills",
+      "lo_text": "Plan and produce essays with clear paragraphing and argument structure",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:ENG:SS3:GRAM:005",
+      "curriculum": "WAEC",
+      "subject": "ENG",
+      "class_level": "SS3",
+      "topic": "Grammar and Usage",
+      "lo_text": "Apply correct grammar, sentence structure and punctuation",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:ENG:SS3:LIT:006",
+      "curriculum": "WAEC",
+      "subject": "ENG",
+      "class_level": "SS3",
+      "topic": "Literature Basics",
+      "lo_text": "Identify themes, characterization and literary devices in texts",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:MAT:SS2:ALG:007",
+      "curriculum": "WAEC",
+      "subject": "MAT",
+      "class_level": "SS2",
+      "topic": "Quadratic Equations",
+      "lo_text": "Solve quadratic equations by factorization, completing square and formula",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:MAT:SS2:TRIG:008",
+      "curriculum": "WAEC",
+      "subject": "MAT",
+      "class_level": "SS2",
+      "topic": "Trigonometry - Basics",
+      "lo_text": "Understand sine, cosine, tangent ratios for right-angled triangles",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:MAT:SS2:STATS:009",
+      "curriculum": "WAEC",
+      "subject": "MAT",
+      "class_level": "SS2",
+      "topic": "Statistics - Collection",
+      "lo_text": "Collect, organize and present data using tables, charts, graphs",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:MAT:SS3:CALC:010",
+      "curriculum": "WAEC",
+      "subject": "MAT",
+      "class_level": "SS3",
+      "topic": "Calculus - Intro",
+      "lo_text": "Understand limits, differentiation of algebraic functions",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:MAT:SS3:STATS:011",
+      "curriculum": "WAEC",
+      "subject": "MAT",
+      "class_level": "SS3",
+      "topic": "Statistics - Analysis",
+      "lo_text": "Calculate measures of central tendency, dispersion and probability",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:MAT:SS3:COORD:012",
+      "curriculum": "WAEC",
+      "subject": "MAT",
+      "class_level": "SS3",
+      "topic": "Coordinate Geometry",
+      "lo_text": "Find distance between points, slope, equation of lines and curves",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:BIO:SS2:CELL:013",
+      "curriculum": "WAEC",
+      "subject": "BIO",
+      "class_level": "SS2",
+      "topic": "Cell Division",
+      "lo_text": "Describe mitosis and meiosis, understand genetic significance",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:BIO:SS2:GENE:014",
+      "curriculum": "WAEC",
+      "subject": "BIO",
+      "class_level": "SS2",
+      "topic": "Genetics Intro",
+      "lo_text": "Understand dominant and recessive traits, Punnett squares",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:BIO:SS2:ECO:015",
+      "curriculum": "WAEC",
+      "subject": "BIO",
+      "class_level": "SS2",
+      "topic": "Ecology Basics",
+      "lo_text": "Describe food chains, food webs and energy flow in ecosystems",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:BIO:SS3:GENE:016",
+      "curriculum": "WAEC",
+      "subject": "BIO",
+      "class_level": "SS3",
+      "topic": "Mendelian Genetics",
+      "lo_text": "Apply Mendel's laws to predict inheritance patterns",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:BIO:SS3:ECO:017",
+      "curriculum": "WAEC",
+      "subject": "BIO",
+      "class_level": "SS3",
+      "topic": "Ecology Advanced",
+      "lo_text": "Describe ecosystems, biomes and human impact on environment",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:BIO:SS3:EVOL:018",
+      "curriculum": "WAEC",
+      "subject": "BIO",
+      "class_level": "SS3",
+      "topic": "Evolution Basics",
+      "lo_text": "Explain adaptation, natural selection and speciation concepts",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:CHEM:SS2:STOICH:019",
+      "curriculum": "WAEC",
+      "subject": "CHEM",
+      "class_level": "SS2",
+      "topic": "Stoichiometry",
+      "lo_text": "Perform stoichiometric calculations and balance chemical equations",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:CHEM:SS2:ACIDS:020",
+      "curriculum": "WAEC",
+      "subject": "CHEM",
+      "class_level": "SS2",
+      "topic": "Acids and Bases",
+      "lo_text": "Identify properties of acids and bases, pH scale, neutralization",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:CHEM:SS2:REDOX:021",
+      "curriculum": "WAEC",
+      "subject": "CHEM",
+      "class_level": "SS2",
+      "topic": "Redox Reactions",
+      "lo_text": "Identify oxidation states, oxidizing and reducing agents",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:CHEM:SS3:ORG:022",
+      "curriculum": "WAEC",
+      "subject": "CHEM",
+      "class_level": "SS3",
+      "topic": "Organic Chemistry Basics",
+      "lo_text": "Identify functional groups and name simple organic molecules",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:CHEM:SS3:REACTIONS:023",
+      "curriculum": "WAEC",
+      "subject": "CHEM",
+      "class_level": "SS3",
+      "topic": "Chemical Reactions",
+      "lo_text": "Classify reactions and predict products for common reaction types",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:CHEM:SS3:THERMO:024",
+      "curriculum": "WAEC",
+      "subject": "CHEM",
+      "class_level": "SS3",
+      "topic": "Thermochemistry",
+      "lo_text": "Understand exothermic and endothermic reactions, enthalpy changes",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:PHY:SS2:MECH:025",
+      "curriculum": "WAEC",
+      "subject": "PHY",
+      "class_level": "SS2",
+      "topic": "Mechanics - Forces",
+      "lo_text": "Apply Newton's laws to solve problems with forces",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:PHY:SS2:WORK:026",
+      "curriculum": "WAEC",
+      "subject": "PHY",
+      "class_level": "SS2",
+      "topic": "Work and Energy",
+      "lo_text": "Understand work, energy, power and conservation principles",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:PHY:SS2:ELEC:027",
+      "curriculum": "WAEC",
+      "subject": "PHY",
+      "class_level": "SS2",
+      "topic": "Electricity Basics",
+      "lo_text": "Understand electric fields, potential difference and current",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:PHY:SS3:ELEC:028",
+      "curriculum": "WAEC",
+      "subject": "PHY",
+      "class_level": "SS3",
+      "topic": "Electric Circuits",
+      "lo_text": "Analyze simple DC circuits using Ohm's law and combinations",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:PHY:SS3:MAG:029",
+      "curriculum": "WAEC",
+      "subject": "PHY",
+      "class_level": "SS3",
+      "topic": "Magnetism",
+      "lo_text": "Describe magnetic fields, electromagnetic induction and applications",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:PHY:SS3:MODERN:030",
+      "curriculum": "WAEC",
+      "subject": "PHY",
+      "class_level": "SS3",
+      "topic": "Modern Physics",
+      "lo_text": "Understand atomic structure, nuclear reactions and radioactivity",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:ICT:SS2:HARDWARE:031",
+      "curriculum": "WAEC",
+      "subject": "ICT",
+      "class_level": "SS2",
+      "topic": "Hardware Systems",
+      "lo_text": "Identify and describe computer hardware components and peripherals",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:ICT:SS2:SOFTWARE:032",
+      "curriculum": "WAEC",
+      "subject": "ICT",
+      "class_level": "SS2",
+      "topic": "Software Applications",
+      "lo_text": "Use productivity software: word processor, spreadsheets, presentations",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:ICT:SS2:DB:033",
+      "curriculum": "WAEC",
+      "subject": "ICT",
+      "class_level": "SS2",
+      "topic": "Database Basics",
+      "lo_text": "Understand tables, records, fields and simple database operations",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:ICT:SS3:PROG:034",
+      "curriculum": "WAEC",
+      "subject": "ICT",
+      "class_level": "SS3",
+      "topic": "Programming Fundamentals",
+      "lo_text": "Write simple programs using variables, conditionals and loops",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:ICT:SS3:WEB:035",
+      "curriculum": "WAEC",
+      "subject": "ICT",
+      "class_level": "SS3",
+      "topic": "Web Design Basics",
+      "lo_text": "Create web pages using HTML and basic CSS styling",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    },
+    {
+      "lo_id": "LO:WAEC:ICT:SS3:SECURITY:036",
+      "curriculum": "WAEC",
+      "subject": "ICT",
+      "class_level": "SS3",
+      "topic": "Cybersecurity",
+      "lo_text": "Understand threats, protection measures and ethical hacking basics",
+      "created_at": "2025-12-07T19:21:37.962409Z"
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "metadata": {
+    "subject": "Chemistry",
+    "level": "SS1",
+    "unit": "1",
+    "unit_title": "Atomic Structure and Bonding",
+    "lesson": "2",
+    "lesson_title": "States of Matter and Properties",
+    "duration_minutes": 90,
+    "estimated_pages": 11,
+    "curriculum_alignment": {
+      "nerdc_code": "CH.SS1.2.1",
+      "nerdc_description": "States of matter: solids, liquids, gases; kinetic theory; phase changes",
+      "waec_topic": "States of Matter and Kinetic Theory",
+      "waec_weighting": "6%"
+    },
+    "learning_level": "foundational",
+    "nigerian_context": true
+  },
+  "learning_objectives": [
+    "Distinguish between solid, liquid, and gaseous states of matter",
+    "Explain properties of each state using particle arrangement and motion",
+    "Understand kinetic theory of matter",
+    "Describe phase changes and their molecular basis",
+    "Apply gas laws (pressure, volume, temperature relationships)",
+    "Relate states of matter to Nigerian industrial and everyday applications"
+  ],
+  "prerequisites": [
+    "Understanding of atoms and molecules from Lesson 1",
+    "Knowledge of particle behavior and forces",
+    "Ability to apply mathematical relationships"
+  ],
+  "content_sections": [
+    {
+      "section_id": "2.1",
+      "title": "Solids, Liquids, and Gases: Structure and Properties",
+      "duration_minutes": 18,
+      "content": "**Three States of Matter**\n\nMatter exists in three common states based on how particles (atoms/molecules) are arranged and how they move:\n\n---\n\n**1. SOLIDS**\n\n**Particle Arrangement**:\n- Particles are tightly packed in fixed, regular patterns (crystal lattices)\n- Particles held in place by strong intermolecular forces\n- Minimal space between particles\n\n**Particle Motion**:\n- Particles vibrate in fixed positions\n- Cannot move freely from place to place\n\n**Characteristics**:\n- **Fixed shape**: Solid maintains its shape regardless of container\n- **Fixed volume**: Solid has definite volume (cannot be compressed easily)\n- **Incompressible**: Very difficult to compress because particles are already tightly packed\n- **Dense**: Higher density than liquids and gases\n\n**Examples**: Iron (Fe), salt (NaCl), diamond, ice\n\n**Nigerian Context**: Building materials like concrete and steel used in Lagos construction are solids with fixed structure.\n\n---\n\n**2. LIQUIDS**\n\n**Particle Arrangement**:\n- Particles are close together but not in fixed pattern\n- Some intermolecular forces exist, but weaker than in solids\n- Particles in random arrangement\n\n**Particle Motion**:\n- Particles can move and slide past each other\n- Have kinetic energy to move around\n- Can flow from place to place\n\n**Characteristics**:\n- **No fixed shape**: Liquid takes shape of container it occupies\n- **Fixed volume**: Liquid has definite volume\n- **Nearly incompressible**: Slight compression possible (but much less than gases)\n- **Moderate density**: Between solids and gases\n- **Flows**: Liquid can be poured and flows under gravity\n\n**Examples**: Water (H₂O), oil, mercury, petrol\n\n**Nigerian Context**: Nigeria's crude oil and refined petroleum products (petrol, diesel) are liquids transported through pipelines and refineries.\n\n---\n\n**3. GASES**\n\n**Particle Arrangement**:\n- Particles are far apart with large spaces between them\n- Negligible intermolecular forces\n- Random, dispersed distribution\n\n**Particle Motion**:\n- Particles move at high speeds in all directions\n- Constant, random motion\n- Collide with container walls (causing pressure)\n\n**Characteristics**:\n- **No fixed shape**: Gas fills entire container and takes its shape\n- **No fixed volume**: Gas expands to fill any container volume\n- **Highly compressible**: Can be compressed significantly\n- **Low density**: Much less dense than solids and liquids\n- **Exerts pressure**: Gas pressure results from particle collisions with walls\n\n**Examples**: Air (N₂, O₂), hydrogen (H₂), natural gas, oxygen\n\n**Nigerian Context**: Nigeria's natural gas reserves in the Niger Delta are processed at facilities like Bonny LNG, where natural gas is liquefied for export.\n\n---\n\n**Comparison Table**\n\n| Property | Solid | Liquid | Gas |\n|----------|-------|--------|-----|\n| Particle spacing | Close together | Close together | Far apart |\n| Shape | Fixed | Takes container shape | Fills container |\n| Volume | Fixed | Fixed | No fixed volume |\n| Compressibility | Incompressible | Nearly incompressible | Highly compressible |\n| Density | High | Moderate | Low |\n| Particle motion | Vibration only | Free movement | Random, fast |\n| Example | Iron, ice | Water, oil | Air, oxygen |"
+    },
+    {
+      "section_id": "2.2",
+      "title": "Kinetic Theory of Matter",
+      "duration_minutes": 18,
+      "content": "**What is Kinetic Theory?**\n\nKinetic theory is a model that explains the properties of matter by describing the motion of particles (atoms and molecules) and the forces between them.\n\n**Basic Assumptions of Kinetic Theory**:\n\n1. **Matter is composed of particles** (atoms or molecules)\n2. **Particles are in constant random motion**\n3. **The average kinetic energy of particles is proportional to absolute temperature** (E_k ∝ T)\n4. **Particles experience elastic collisions** (no energy loss)\n5. **Intermolecular forces vary** (strong in solids, moderate in liquids, negligible in gases)\n\n**Explaining States Using Kinetic Theory**\n\n---\n\n**In SOLIDS**:\n- Particles vibrate in fixed positions\n- Kinetic energy is LOW (only vibration)\n- Intermolecular forces are STRONG (hold particles in place)\n- Regular arrangement (crystal structure)\n- Result: Fixed shape and volume\n\n---\n\n**In LIQUIDS**:\n- Particles move with moderate kinetic energy\n- Kinetic energy is MODERATE\n- Intermolecular forces are MODERATE (weaker than solids)\n- Particles can slide past each other\n- Result: No fixed shape, but fixed volume\n\n---\n\n**In GASES**:\n- Particles move rapidly and randomly\n- Kinetic energy is HIGH\n- Intermolecular forces are NEGLIGIBLE (very weak)\n- Particles move independently\n- Result: No fixed shape or volume; fills container\n\n**Pressure in Gases (Kinetic Theory)**\n\nGas pressure arises from particle collisions with container walls.\n\n**Pressure = Force / Area**\n\nWhen:\n- Temperature increases → particle speed increases → more collisions → pressure increases\n- Volume decreases → particles closer together → more frequent collisions → pressure increases\n- Number of particles increases → more collisions → pressure increases\n\n**Relationship**: **PV = NkT** (or **PV = nRT** in ideal gas law)\n\nwhere:\n- P = pressure\n- V = volume\n- N (or n) = number of particles (or moles)\n- k (or R) = Boltzmann/gas constant\n- T = absolute temperature (Kelvin)\n\n**Temperature and Kinetic Energy**\n\n**Kinetic Energy (average) = (3/2)kT**\n\nImplications:\n- Temperature is a measure of average kinetic energy\n- Absolute zero (0 K) = no particle motion (theoretical)\n- Higher temperature = faster particles = more vigorous motion\n\n**Nigerian Context**: In Lagos water treatment plants, understanding kinetic theory helps explain why heating increases evaporation rate and why gases dissolve better in cooler water."
+    },
+    {
+      "section_id": "2.3",
+      "title": "Phase Changes",
+      "duration_minutes": 25,
+      "content": "**Phase Changes** (or state changes) occur when matter converts from one state to another.\n\nAll phase changes involve energy transfer:\n- **Endothermic**: Heat absorbed (melting, boiling, sublimation)\n- **Exothermic**: Heat released (condensation, freezing, deposition)\n\n---\n\n**1. MELTING (Solid → Liquid)**\n\n**Definition**: Melting is the phase change from solid to liquid when heat is absorbed.\n\n**What happens**:\n- Heat provides energy to particles\n- Particles vibrate more vigorously\n- Intermolecular bonds break\n- Particles gain freedom to move (but stay close)\n- Result: Liquid state\n\n**Melting Point**: Temperature at which solid becomes liquid\n\n**Examples**:\n- Ice melts at 0°C (273 K)\n- Iron melts at 1538°C\n- Table salt melts at 801°C\n\n**Endothermic process**: Heat is absorbed\n- Q = m × L_f (latent heat of fusion)\n\n---\n\n**2. FREEZING (Liquid → Solid)**\n\n**Definition**: Freezing is the phase change from liquid to solid when heat is removed.\n\n**What happens**:\n- Heat is removed\n- Particle motion decreases\n- Intermolecular forces become dominant\n- Particles settle into fixed crystal structure\n- Result: Solid state\n\n**Freezing Point**: Temperature at which liquid becomes solid\n\n**Examples**:\n- Water freezes at 0°C (273 K)\n- Oil freezes at lower temperature (more flexible)\n\n**Exothermic process**: Heat is released\n\n---\n\n**3. BOILING (Liquid → Gas)**\n\n**Definition**: Boiling is the phase change from liquid to gas when enough heat is absorbed to break all intermolecular bonds.\n\n**What happens**:\n- Heat absorbed provides energy\n- Particles move very fast\n- Intermolecular forces overcome completely\n- Particles escape to gaseous state\n- Result: Gas state\n\n**Boiling Point**: Temperature at which liquid becomes gas\n\n**Examples**:\n- Water boils at 100°C (373 K) at 1 atm pressure\n- Petrol boils at ~70°C (volatile)\n- Different at different atmospheric pressures\n\n**Endothermic process**: Heat absorbed\n- Q = m × L_v (latent heat of vaporization)\n- L_v >> L_f (much more energy needed for boiling than melting)\n\n---\n\n**4. CONDENSATION (Gas → Liquid)**\n\n**Definition**: Condensation is the phase change from gas to liquid when heat is removed.\n\n**What happens**:\n- Heat is removed\n- Particle speed decreases\n- Intermolecular forces recapture particles\n- Particles come together into liquid state\n- Result: Liquid state\n\n**Condensation Temperature**: Same as boiling point (reverse process)\n\n**Examples**:\n- Water vapor condenses to liquid water at 100°C (at 1 atm)\n- Dew formation on cold surfaces\n\n**Exothermic process**: Heat is released\n\n---\n\n**5. SUBLIMATION (Solid → Gas)**\n\n**Definition**: Sublimation is direct phase change from solid to gas without passing through liquid state.\n\n**What happens**:\n- Heat absorbed provides energy\n- Particles break free directly from solid arrangement\n- Particles become gaseous without intermediate liquid state\n- Result: Gas state\n\n**Examples**:\n- Dry ice (solid CO₂) sublimes at -78°C\n- Iodine crystals sublime to purple vapor\n- Mothballs (naphthalene) sublime in air\n\n**Endothermic process**: Heat absorbed\n\n---\n\n**6. DEPOSITION (Gas → Solid)**\n\n**Definition**: Deposition is direct phase change from gas to solid without passing through liquid state.\n\n**What happens**:\n- Heat is removed\n- Gas particles lose energy rapidly\n- Particles settle directly into solid crystal structure\n- Result: Solid state\n\n**Examples**:\n- Frost formation on cold grass (water vapor → ice)\n- Iodine vapor → iodine crystals\n\n**Exothermic process**: Heat is released\n\n---\n\n**Phase Diagram**\n\nA phase diagram shows which state is stable at given pressure and temperature.\n\n**Key Features**:\n- **Triple point**: Temperature/pressure where all three states coexist\n- **Critical point**: Temperature/pressure above which liquid and gas cannot be distinguished\n- **Solid region**: Low temperature, high pressure\n- **Liquid region**: Intermediate temperature and pressure\n- **Gas region**: High temperature, low pressure\n\n**Nigerian Context**: In NNPC refineries in Port Harcourt, understanding phase changes is crucial. Crude oil components have different boiling points, allowing separation through fractional distillation: heavy fractions (fuel oil) boil at high temps, light fractions (petrol) at low temps."
+    },
+    {
+      "section_id": "2.4",
+      "title": "Gas Laws and Pressure-Volume-Temperature Relationships",
+      "duration_minutes": 18,
+      "content": "**Gas Behavior and Laws**\n\nGases behave predictably according to mathematical relationships between pressure (P), volume (V), temperature (T), and amount of gas (n).\n\n---\n\n**1. BOYLE'S LAW (Pressure-Volume Relationship)**\n\n**Statement**: At constant temperature, pressure is inversely proportional to volume.\n\n**Formula**: **P₁V₁ = P₂V₂** (at constant T)\n\nor: **PV = constant**\n\n**Interpretation**:\n- If volume decreases → pressure increases\n- If volume increases → pressure decreases\n\n**Example**: A syringe with gas\n- Push plunger in (decrease volume) → pressure increases\n- Pull plunger out (increase volume) → pressure decreases\n\n**Nigerian Context**: In compressed gas cylinders at hospitals and welding shops, reducing volume increases pressure inside the cylinder.\n\n---\n\n**2. CHARLES'S LAW (Volume-Temperature Relationship)**\n\n**Statement**: At constant pressure, volume is directly proportional to absolute temperature.\n\n**Formula**: **V₁/T₁ = V₂/T₂** (at constant P)\n\nor: **V ∝ T** (absolute temperature in Kelvin)\n\n**Interpretation**:\n- If temperature increases → volume increases\n- If temperature decreases → volume decreases\n\n**Example**: Inflating a balloon\n- Heat balloon (increase T) → volume expands\n- Cool balloon (decrease T) → volume contracts\n\n**Important**: Must use absolute temperature (Kelvin), not Celsius\n- T(K) = T(°C) + 273\n\n**Nigerian Context**: Hot air balloons rise because heated air expands (increases volume/decreases density) allowing lift.\n\n---\n\n**3. GAY-LUSSAC'S LAW (Pressure-Temperature Relationship)**\n\n**Statement**: At constant volume, pressure is directly proportional to absolute temperature.\n\n**Formula**: **P₁/T₁ = P₂/T₂** (at constant V)\n\nor: **P ∝ T** (absolute temperature)\n\n**Interpretation**:\n- If temperature increases → pressure increases\n- If temperature decreases → pressure decreases\n\n**Example**: Sealed container with gas\n- Heat container (increase T) → pressure increases\n- Cool container (decrease T) → pressure decreases\n\n**Nigerian Context**: Tires in parked vehicles in hot Lagos expand as temperature rises due to pressure increase inside the tire.\n\n---\n\n**4. IDEAL GAS LAW**\n\n**Combines all three relationships**:\n\n**PV = nRT**\n\nwhere:\n- P = pressure (Pa or atm)\n- V = volume (m³ or L)\n- n = number of moles\n- R = gas constant (8.314 J/(mol·K) or 0.082 L·atm/(mol·K))\n- T = absolute temperature (Kelvin)\n\n**Using the Ideal Gas Law**:\n\nExample: Calculate pressure of 2 moles of gas at 300 K in 10 L container\n- PV = nRT\n- P(10) = 2(8.314)(300) / 1000 (converting to L·atm)\n- P = 4.988 atm ≈ 5 atm\n\n**Assumptions of Ideal Gas**:\n- Particles have negligible volume\n- Intermolecular forces negligible\n- Collisions are elastic\n- Average kinetic energy ∝ temperature\n\n**Real vs Ideal Gases**:\n- Real gases deviate at high pressures and low temperatures\n- Most gases behave ideally at room conditions\n\n**Nigerian Context**: Natural gas from Niger Delta facilities must be compressed for storage and transport. Gas laws predict how compression affects pressure and volume."
+    }
+  ],
+  "worked_examples": [
+    {
+      "example_id": "2.1",
+      "title": "Applying Boyle's Law to Gas Compression",
+      "context": "A compressor in a Nigerian workshop compresses air from atmospheric conditions. Initial volume is 5 L at 1 atm pressure.",
+      "problem": "If the air is compressed to 1 L, what is the final pressure? (Temperature remains constant)",
+      "solution": "Given:\n- Initial pressure (P₁) = 1 atm\n- Initial volume (V₁) = 5 L\n- Final volume (V₂) = 1 L\n- Temperature constant\n\nUsing Boyle's Law: P₁V₁ = P₂V₂\n\n1 × 5 = P₂ × 1\nP₂ = 5 atm\n\nInterpretation: Compressing air to 1/5 its original volume increases pressure 5 times. This is why compressed air cylinders have high pressure.",
+      "skills_tested": ["Boyle's Law application", "Gas pressure calculation", "Inverse proportionality"]
+    },
+    {
+      "example_id": "2.2",
+      "title": "Applying Charles's Law to Balloon Volume",
+      "context": "A weather balloon contains helium gas. At ground level (27°C), volume is 2 m³.",
+      "problem": "As the balloon rises to altitude where temperature is -23°C, what is the new volume? (Pressure remains approximately constant)",
+      "solution": "Given:\n- Initial temperature (T₁) = 27°C = 27 + 273 = 300 K\n- Final temperature (T₂) = -23°C = -23 + 273 = 250 K\n- Initial volume (V₁) = 2 m³\n- Pressure constant\n\nUsing Charles's Law: V₁/T₁ = V₂/T₂\n\n2/300 = V₂/250\nV₂ = (2 × 250)/300\nV₂ = 1.67 m³\n\nInterpretation: Lower temperature causes volume to decrease. The balloon shrinks as it rises because temperature drops. Must use Kelvin temperatures!",
+      "skills_tested": ["Charles's Law application", "Temperature conversion", "Direct proportionality", "Kelvin scale"]
+    },
+    {
+      "example_id": "2.3",
+      "title": "Using Ideal Gas Law to Calculate Gas Pressure",
+      "context": "A natural gas storage facility in Lagos stores 1000 moles of methane (CH₄) at 25°C in a 100 m³ tank.",
+      "problem": "Calculate the pressure of the gas in the tank (R = 8.314 J/(mol·K))",
+      "solution": "Given:\n- n = 1000 moles\n- T = 25°C = 25 + 273 = 298 K\n- V = 100 m³\n- R = 8.314 J/(mol·K)\n\nUsing Ideal Gas Law: PV = nRT\n\nP = nRT/V\nP = (1000 × 8.314 × 298) / 100\nP = 2,477,572 / 100\nP = 24,775.72 Pa ≈ 24.8 kPa\n\nOr in atmospheres: P ≈ 0.24 atm\n\nInterpretation: Large amount of gas in large volume results in moderate pressure. Storage facilities must be designed to withstand these pressures.",
+      "skills_tested": ["Ideal Gas Law application", "Pressure calculation", "Unit conversion", "Molar concepts"]
+    }
+  ],
+  "practice_problems": [
+    {
+      "tier": "basic",
+      "difficulty": 1,
+      "problem_id": "2.1.B",
+      "problem": "List three properties that distinguish solids from gases",
+      "answer": "Solids have fixed shape and volume; gases have no fixed shape or volume. Solids are incompressible; gases are highly compressible",
+      "explanation": "Particle arrangement and motion differ significantly between solids and gases"
+    },
+    {
+      "tier": "basic",
+      "difficulty": 1,
+      "problem_id": "2.2.B",
+      "problem": "What is the difference between melting and boiling?",
+      "answer": "Melting: solid→liquid; Boiling: liquid→gas. Boiling requires more energy than melting",
+      "explanation": "Both are endothermic, but boiling breaks all intermolecular bonds while melting only loosens particle arrangement"
+    },
+    {
+      "tier": "basic",
+      "difficulty": 1,
+      "problem_id": "2.3.B",
+      "problem": "Define kinetic energy in the context of matter",
+      "answer": "Energy of motion; particles moving faster at higher temperatures have greater kinetic energy",
+      "explanation": "Temperature is directly related to average kinetic energy of particles"
+    },
+    {
+      "tier": "basic",
+      "difficulty": 1,
+      "problem_id": "2.4.B",
+      "problem": "Why does a gas always exert pressure on its container?",
+      "answer": "Gas particles move randomly and collide with container walls; these collisions create pressure",
+      "explanation": "More collisions = higher pressure; more speed = harder collisions = higher pressure"
+    },
+    {
+      "tier": "core",
+      "difficulty": 2,
+      "problem_id": "2.5.C",
+      "problem": "Using Boyle's Law: If 2 L of gas at 3 atm is expanded to 6 L (temp constant), find final pressure",
+      "answer": "1 atm",
+      "explanation": "P₁V₁ = P₂V₂; 3(2) = P₂(6); P₂ = 1 atm"
+    },
+    {
+      "tier": "core",
+      "difficulty": 2,
+      "problem_id": "2.6.C",
+      "problem": "Convert 300 K to Celsius and explain why absolute temperature is used in gas laws",
+      "answer": "300 K = 27°C. Absolute temperature maintains proportional relationship between V and T",
+      "explanation": "0°C ≠ 0 K; using Celsius could give negative results. Kelvin scale is absolute with true zero"
+    },
+    {
+      "tier": "core",
+      "difficulty": 2,
+      "problem_id": "2.7.C",
+      "problem": "Explain phase change at molecular level: melting of ice",
+      "answer": "Heat breaks intermolecular bonds; particles gain energy to overcome forces; transition from fixed to mobile arrangement",
+      "explanation": "Energy needed = latent heat of fusion; particles move from vibration to sliding motion"
+    },
+    {
+      "tier": "core",
+      "difficulty": 2,
+      "problem_id": "2.8.C",
+      "problem": "Pressure of a sealed 10 L container with gas increases from 1 atm to 2 atm. If initial T = 300 K, find final T",
+      "answer": "600 K (or 327°C)",
+      "explanation": "Gay-Lussac's Law: P₁/T₁ = P₂/T₂; 1/300 = 2/T₂; T₂ = 600 K"
+    },
+    {
+      "tier": "challenge",
+      "difficulty": 3,
+      "problem_id": "2.9.CH",
+      "problem": "Compare sublimation of dry ice with melting then boiling of regular ice. Why can CO₂ sublime?",
+      "answer": "Dry ice sublimes because atmospheric pressure < triple point pressure; CO₂ cannot exist as liquid at 1 atm. Ice melts then boils normally",
+      "explanation": "Phase diagram determines which transitions are possible at given conditions"
+    },
+    {
+      "tier": "challenge",
+      "difficulty": 3,
+      "problem_id": "2.10.CH",
+      "problem": "A natural gas storage tank contains 5000 moles at 35°C in 250 m³. Calculate pressure (R = 8.314 J/(mol·K))",
+      "answer": "520,875 Pa or ~5.2 atm",
+      "explanation": "PV = nRT; P = (5000 × 8.314 × 308)/250 = 520,875 Pa"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Melting",
+      "definition": "Phase change from solid to liquid; endothermic process requiring heat absorption",
+      "example": "Ice melting to water at 0°C"
+    },
+    {
+      "term": "Boiling",
+      "definition": "Phase change from liquid to gas; endothermic process at boiling point",
+      "example": "Water boiling to steam at 100°C at 1 atm pressure"
+    },
+    {
+      "term": "Sublimation",
+      "definition": "Direct phase change from solid to gas without passing through liquid state",
+      "example": "Dry ice (CO₂) subliming at -78°C"
+    },
+    {
+      "term": "Condensation",
+      "definition": "Phase change from gas to liquid; exothermic process",
+      "example": "Water vapor condensing to liquid on cold surfaces"
+    },
+    {
+      "term": "Kinetic Theory",
+      "definition": "Model explaining matter properties through particle motion and intermolecular forces",
+      "example": "Pressure explained by gas particle collisions with container walls"
+    },
+    {
+      "term": "Pressure",
+      "definition": "Force per unit area; in gases, result of particle collisions with walls",
+      "example": "Atmospheric pressure at sea level ≈ 101,325 Pa"
+    },
+    {
+      "term": "Latent Heat",
+      "definition": "Energy required for phase change without temperature change",
+      "example": "Latent heat of vaporization for water ≈ 40.7 kJ/mol"
+    },
+    {
+      "term": "Absolute Temperature",
+      "definition": "Temperature measured in Kelvin; 0 K represents theoretical absence of particle motion",
+      "example": "273 K = 0°C; must use Kelvin in gas law equations"
+    }
+  ],
+  "assessment": {
+    "quick_checks": [
+      "Describe how particle arrangement differs in solids, liquids, and gases",
+      "Explain why heating causes both melting and boiling to occur",
+      "Why does gas pressure increase when temperature increases at constant volume?",
+      "What is the relationship between particle kinetic energy and temperature?",
+      "Why must Kelvin (absolute temperature) be used in gas law calculations?"
+    ],
+    "end_of_lesson_quiz": [
+      {
+        "question": "Which statement about gases is true?",
+        "options": ["They have fixed volume", "They have fixed shape", "They are highly compressible", "They are incompressible"],
+        "correct": "They are highly compressible"
+      },
+      {
+        "question": "The melting point of ice is 0°C. This phase change is...",
+        "options": ["Exothermic", "Endothermic", "Isothermal", "Isobaric"],
+        "correct": "Endothermic"
+      },
+      {
+        "question": "According to Boyle's Law, if pressure doubles at constant temperature...",
+        "options": ["Volume doubles", "Volume halves", "Volume stays same", "Temperature doubles"],
+        "correct": "Volume halves"
+      }
+    ],
+    "exam_style_questions": [
+      {
+        "question": "WAEC-style: (a) Explain kinetic theory assumptions. (b) Use kinetic theory to explain why gas pressure increases with temperature at constant volume. (c) Calculate new pressure if 500 mL gas at 2 atm and 300 K is heated to 600 K (V constant)",
+        "answer_guide": "(a) Particles in constant motion; intermolecular forces negligible in gases; elastic collisions\n(b) Higher T → faster particles → more frequent, harder collisions → pressure increases\n(c) P₁/T₁ = P₂/T₂; 2/300 = P₂/600; P₂ = 4 atm"
+      },
+      {
+        "question": "WAEC-style: Compare melting, boiling, and sublimation in terms of intermolecular force changes and energy requirements",
+        "answer_guide": "Melting: break some forces (low energy). Boiling: break all forces (high energy). Sublimation: break all forces directly (high energy), no liquid intermediate"
+      }
+    ]
+  },
+  "resources": {
+    "visual_aids": [
+      {
+        "id": "fig_2.1",
+        "title": "Particle Arrangement in Three States",
+        "type": "diagram_set",
+        "description": "Comparative diagrams showing particle positions and spacing in solid, liquid, gas"
+      },
+      {
+        "id": "fig_2.2",
+        "title": "Phase Diagram",
+        "type": "graph",
+        "description": "Pressure vs temperature showing regions for solid, liquid, gas, and phase boundaries"
+      },
+      {
+        "id": "fig_2.3",
+        "title": "Gas Laws Summary",
+        "type": "infographic",
+        "description": "Visual representation of Boyle's, Charles's, Gay-Lussac's, and ideal gas laws"
+      }
+    ],
+    "interactive_elements": [
+      {
+        "type": "phase_change_simulator",
+        "title": "Interactive Phase Change Simulator",
+        "description": "Add/remove heat and observe phase transitions with particle visualization"
+      },
+      {
+        "type": "gas_law_calculator",
+        "title": "Gas Law Equation Solver",
+        "description": "Input known variables; solver calculates unknowns using appropriate gas law"
+      }
+    ],
+    "supplementary_reading": [
+      "Real vs Ideal Gases: When Do Deviations Matter?",
+      "Industrial Applications: Gas Compression and Storage in Nigeria",
+      "Water Phase Diagram: Understanding Pressure Effects"
+    ]
+  },
+  "waec_tags": [
+    "states_of_matter",
+    "kinetic_theory",
+    "melting",
+    "boiling",
+    "sublimation",
+    "gas_laws",
+    "pressure",
+    "volume",
+    "temperature"
+  ],
+  "nerdc_references": [
+    "CH.SS1.2.1: Solids, liquids, and gases; properties",
+    "CH.SS1.2.2: Kinetic theory and phase changes",
+    "CH.SS1.2.3: Gas laws and relationships"
+  ],
+  "keywords": ["matter", "solid", "liquid", "gas", "phase change", "kinetic theory", "pressure", "boiling", "melting", "gas laws"],
+  "difficulty_distribution": {
+    "basic": 4,
+    "core": 4,
+    "challenge": 2,
+    "total": 10
+  }
+}

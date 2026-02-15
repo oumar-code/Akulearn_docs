@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="640" viewBox="0 0 420 640">
+<text x="210.0" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Data Processing Algorithm</text>
+<defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#555"/>
+    </marker>
+  </defs>
+<rect x="160" y="80" width="100" height="40" rx="20" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+<text x="210" y="105" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Start</text>
+<line x1="210" y1="120" x2="210" y2="140" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+<rect x="160" y="180" width="100" height="40" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+<text x="210" y="205" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Input Data</text>
+<line x1="210" y1="220" x2="210" y2="240" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+<polygon points="210,280 290,310 210,340 130,310" fill="#f39c12" stroke="#d68910" stroke-width="2"/>
+<text x="210" y="315" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">Valid?</text>
+<line x1="210" y1="320" x2="210" y2="340" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+<rect x="160" y="380" width="100" height="40" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+<text x="210" y="405" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Process</text>
+<line x1="210" y1="420" x2="210" y2="440" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+<rect x="160" y="480" width="100" height="40" rx="20" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+<text x="210" y="505" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">End</text>
+</svg>

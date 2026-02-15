@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "subject": "History",
+    "level": "SS1",
+    "unit": "1",
+    "unit_title": "Pre-Colonial Nigeria",
+    "lesson": "1",
+    "lesson_title": "Pre-Colonial Nigeria",
+    "duration_minutes": 90,
+    "estimated_pages": 13,
+    "curriculum_alignment": {
+      "nerdc_code": "HS.SS1.1.1-1.3",
+        "nerdc_description": "Ancient Nigeria, kingdoms, governance, culture",
+        "waec_topic": "Pre-Colonial Nigerian History",
+        "waec_weighting": "8%"
+    },
+    "learning_level": "foundational",
+    "nigerian_context": true
+  },
+  "learning_objectives": [
+    "Describe early settlements and the geographical setting of pre-colonial Nigeria",
+    "Identify major West African empires (Mali, Songhai) and their influence on the region",
+    "Explain the political and economic systems of Kanem-Bornu, Benin, Yoruba, and Hausa states",
+    "Discuss social structures, religion, and cultural practices in pre-colonial societies",
+    "Trace key trade networks (trans-Saharan, coastal) and their impacts"
+  ],
+  "prerequisites": [
+    "Basic map reading (regions of Nigeria)",
+    "General understanding of timelines (century notation)",
+    "Awareness of traditional governance concepts (chief, king, council)"
+  ],
+  "content_sections": [
+    {
+      "section_id": "1.1",
+      "title": "Ancient Nigeria and Early Settlements",
+      "duration_minutes": 20,
+      "content": "Early settlements grew around rivers (Niger, Benue) and fertile lands. Nok culture (c. 1000 BC–300 AD) known for terracotta, early iron smelting. Settlement factors: water, fertile soil, trade routes, security. Archaeological sites: Nok, Igbo-Ukwu, Daura traditions."
+    },
+    {
+      "section_id": "1.2",
+      "title": "Great Empires: Mali and Songhai (West African Context)",
+      "duration_minutes": 22,
+      "content": "Mali Empire (13th–15th c.): Mansa Musa, Timbuktu trade/learning, gold-salt trade. Songhai Empire (15th–16th c.): Askia Mohammed, expansion along Niger River, strong cavalry, centralized administration. Influence on trade networks reaching Hausa states; Islam spread via scholars and merchants."
+    },
+    {
+      "section_id": "1.3",
+      "title": "Nigerian Kingdoms and States",
+      "duration_minutes": 25,
+      "content": "**Kanem-Bornu**: Located in NE; rulers (Mai), trans-Saharan trade (salt, kola, slaves), Islamic scholarship. **Benin Kingdom**: Oba-led, guild system, brass/bronze art, moats, forest trade to coast. **Yoruba states (Oyo, Ife)**: Alaafin (Oyo), Ogboni council; cavalry power; Ife art. **Hausa city-states (Kano, Katsina, Zaria)**: Emir/king, craft production, dye pits, trans-Saharan and trans-Sahel trade."
+    },
+    {
+      "section_id": "1.4",
+      "title": "Social Structures, Culture, and Trade Networks",
+      "duration_minutes": 23,
+      "content": "Social order: royal families, nobles, guilds, commoners, slaves (varied status). Religion: traditional beliefs, Islam in north, mixed practices. Culture: festivals, art (bronzes, textiles), oral traditions. Trade: trans-Saharan (gold, salt, slaves), coastal trade (pepper, ivory, later palm oil). Market systems and craft specialization supported urban centers."
+    }
+  ],
+  "worked_examples": [
+    {
+      "example_id": "1.1",
+      "title": "Ordering Events on a Timeline",
+      "context": "Events: (A) Songhai under Askia Mohammed, (B) Nok culture flourishes, (C) Benin moats expanded under Oba Ewuare.",
+      "problem": "Arrange chronologically.",
+      "solution": "Nok (c. 1000 BC–300 AD) first; Benin moats/Ewuare (15th c.) second; Songhai Askia (late 15th–early 16th c.) third.",
+      "skills_tested": ["Timeline sequencing", "Period awareness"]
+    },
+    {
+      "example_id": "1.2",
+      "title": "Linking Trade to Political Power",
+      "context": "Kanem-Bornu controlled Saharan routes.",
+      "problem": "How did trade strengthen Kanem-Bornu?",
+      "solution": "Trade brought revenue and goods, funding armies and administration; control of salt/slave routes increased regional influence and allowed alliances via diplomacy and religion (Islamic scholars).",
+      "skills_tested": ["Economic reasoning", "Cause-effect in governance"]
+    },
+    {
+      "example_id": "1.3",
+      "title": "Identifying Governance Features",
+      "context": "Oyo Empire structure.",
+      "problem": "Name two governance features that balanced the Alaafin's power.",
+      "solution": "Oyo Mesi council could check the Alaafin; Ogboni council represented earth cult and community; Bashorun could influence succession. These provided checks to prevent tyranny.",
+      "skills_tested": ["Political systems", "Checks and balances"]
+    }
+  ],
+  "practice_problems": [
+    {"tier": "basic", "difficulty": 1, "problem_id": "1.1.B", "problem": "Define trans-Saharan trade.", "answer": "Trade across the Sahara linking West Africa to North Africa/Mediterranean.", "explanation": "Key gold-salt/slave routes."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "1.2.B", "problem": "Name one famous art tradition in pre-colonial Nigeria.", "answer": "Benin bronzes (or Ife bronzes/terracotta).", "explanation": "Renowned metal art."},
+    {"tier": "basic", "difficulty": 1, "problem_id": "1.3.B", "problem": "Who led the Benin Kingdom?", "answer": "The Oba.", "explanation": "Title of Benin king."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.4.C", "problem": "List two factors influencing early settlement locations.", "answer": "Water availability, fertile soil, trade routes, security (any two).", "explanation": "Environmental and economic drivers."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.5.C", "problem": "Give one feature of Hausa city-state economies.", "answer": "Craft production/dye pits; market trade; trans-Saharan commerce (any one).", "explanation": "Urban craft/trade basis."},
+    {"tier": "core", "difficulty": 2, "problem_id": "1.6.C", "problem": "Which empire had Timbuktu as a center of learning?", "answer": "Mali (later under Songhai influence).", "explanation": "Timbuktu famous in Mali era."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.7.CH", "problem": "Explain how Islam spread into northern Nigerian states before colonial rule.", "answer": "Through trans-Saharan trade, scholars, clerics, and merchants; adoption by rulers for legitimacy and links to wider trade networks.", "explanation": "Trade-cultural diffusion."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.8.CH", "problem": "Compare one governance feature of Oyo Empire with one of Benin.", "answer": "Oyo: Alaafin checked by Oyo Mesi/Ogboni; Benin: Oba supported by chiefs/guilds but with strong central authority. Both had councils balancing ruler power.", "explanation": "Similarity/difference in checks."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.9.CH", "problem": "Why were river systems crucial to pre-colonial trade?", "answer": "Rivers enabled transport, irrigation, and connected inland markets to coastal/foreign trade, lowering costs and expanding networks.", "explanation": "Geography shaping trade."},
+    {"tier": "challenge", "difficulty": 3, "problem_id": "1.10.CH", "problem": "Give one reason for the decline of Songhai.", "answer": "Moroccan invasion (1591) with firearms weakened Songhai; internal succession disputes and trade route shifts also contributed.", "explanation": "Military/structural causes."}
+  ],
+  "glossary": [
+    {"term": "Trans-Saharan trade", "definition": "Commerce across Sahara linking West Africa to North Africa.", "example": "Gold, salt, slaves, textiles."},
+    {"term": "Oba", "definition": "King of Benin Kingdom.", "example": "Oba Ewuare."},
+    {"term": "Alaafin", "definition": "Ruler of Oyo Empire.", "example": "Alaafin with Oyo Mesi council."},
+    {"term": "Emir", "definition": "Muslim ruler in Hausa states (later periods).", "example": "Emir of Kano."},
+    {"term": "Guild", "definition": "Organized group of artisans/traders.", "example": "Benin brass-casters guild."},
+    {"term": "Nok culture", "definition": "Early West African culture noted for terracotta and iron working.", "example": "Nok terracotta heads."}
+  ],
+  "assessment": {
+    "quick_checks": [
+      "Name one major Nigerian kingdom before colonization.",
+      "What does trans-Saharan trade mean?",
+      "Who led the Benin Kingdom?",
+      "State one factor influencing early settlements.",
+      "Name one West African empire that influenced the region."
+    ],
+    "end_of_lesson_quiz": [
+      {"question": "Timbuktu was famous for:", "options": ["Oil wells", "Learning and trade", "Iron smelting", "British forts"], "correct": "Learning and trade"},
+      {"question": "Oyo Mesi functioned to:", "options": ["Collect taxes", "Check the Alaafin", "Lead armies alone", "Cast bronze"], "correct": "Check the Alaafin"},
+      {"question": "Main trade across Sahara included:", "options": ["Gold and salt", "Coal and oil", "Tea and silk", "Electronics"], "correct": "Gold and salt"},
+      {"question": "Benin art is renowned for:", "options": ["Clay pots", "Brass/bronze works", "Stone carvings", "Wood only"], "correct": "Brass/bronze works"},
+      {"question": "A reason for Songhai decline:", "options": ["Sea invasion", "Moroccan invasion with firearms", "Earthquake", "Oil shortage"], "correct": "Moroccan invasion with firearms"}
+    ],
+    "exam_style_questions": [
+      {"question": "Compare political organization of two Nigerian states (e.g., Oyo and Benin) highlighting checks on rulers and economic bases.", "answer_guide": "Discuss Alaafin + Oyo Mesi/Ogboni; Oba + chiefs/guilds; cavalry vs craft trade; trade routes influence."},
+      {"question": "Explain how trade networks shaped the growth of Hausa city-states and Kanem-Bornu before 1800.", "answer_guide": "Link trans-Saharan trade, revenue for armies, urban craft centers, Islamic scholarship; geography supporting caravan routes."}
+    ]
+  },
+  "resources": {
+    "visual_aids": [
+      {"title": "Map of Pre-Colonial States", "type": "map", "description": "Locations of Kanem-Bornu, Oyo, Benin, Hausa states."},
+      {"title": "Trade Routes Diagram", "type": "map", "description": "Trans-Saharan and coastal routes affecting Nigeria."},
+      {"title": "Timeline Strip", "type": "chart", "description": "Key dates: Nok, Mali, Songhai, Benin, Oyo peaks."}
+    ]
+  },
+  "waec_tags": ["pre-colonial Nigeria", "Mali Empire", "Songhai", "Benin Kingdom", "Oyo Empire", "Hausa states", "Kanem-Bornu", "trans-Saharan trade"]
+}
