@@ -27,7 +27,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Install mermaid-cli
         run: |
@@ -41,7 +41,8 @@ jobs:
             tmp="/tmp/$(basename "${f%.*}").svg"
             echo "Validating $f"
             # Render to a temp SVG to ensure syntax & rendering succeed
-            mmdc -i "$f" -o "$tmp" || (echo "Mermaid validation failed for $f"; exit 1)
+            # Use --no-sandbox for CI environment compatibility
+            mmdc -i "$f" -o "$tmp" --puppeteerConfig '{"args": ["--no-sandbox", "--disable-setuid-sandbox"]}' || (echo "Mermaid validation failed for $f"; exit 1)
             rm -f "$tmp"
           done
         shell: bash
@@ -55,8 +56,9 @@ jobs:
             out_svg="${f%.*}.svg"
             echo "Rendering $f -> $out_svg and $out_png"
             # Render SVG first (vector), then PNG fallback
-            mmdc -i "$f" -o "$out_svg" || (echo "Failed rendering SVG for $f"; exit 1)
-            mmdc -i "$f" -o "$out_png" || (echo "Failed rendering PNG for $f"; exit 1)
+            # Use --no-sandbox for CI environment compatibility
+            mmdc -i "$f" -o "$out_svg" --puppeteerConfig '{"args": ["--no-sandbox", "--disable-setuid-sandbox"]}' || (echo "Failed rendering SVG for $f"; exit 1)
+            mmdc -i "$f" -o "$out_png" --puppeteerConfig '{"args": ["--no-sandbox", "--disable-setuid-sandbox"]}' || (echo "Failed rendering PNG for $f"; exit 1)
           done
         shell: bash
 
