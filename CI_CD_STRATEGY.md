@@ -66,16 +66,21 @@ Analysis of 1343 workflow runs shows:
 
 ## Recommendations
 
-### Immediate Actions ✅ DONE
+### Immediate Actions ✅ ALL DONE
 1. ✅ Fix Render Mermaid workflow (Node 20 + sandbox flags)
 2. ✅ Fix Demo CI workflow (create runs directory)
 3. ✅ Simplify automation workflow
 4. ✅ MkDocs deployment paths fixed
+5. ✅ Add path filters to key workflows
 
-### Short-term Actions (Recommended)
-1. **Add path filters** to workflows so they only run when relevant files change
-   - Example: docs workflows should only run on `docs/**` or `mkdocs.yml` changes
-   - Application workflows should only run on their specific directories
+### Short-term Actions (Recommended for Future)
+1. **Add path filters to remaining workflows** ✅ PARTIALLY DONE
+   - ✅ docs-deploy.yml - Only on docs/** changes
+   - ✅ projector_hub_ci.yml - Only on unconnected_stack/** changes
+   - ✅ connected_backend_gcp_deploy.yml - Only on connected_stack/** changes
+   - ✅ kotlin_mobile_ci.yml - Only on Kotlin/mobile code changes
+   - ✅ fastapi_microservice.yml - Only on microservices/** changes
+   - ⏳ Remaining workflows can be optimized as needed
    
 2. **Consolidate duplicate workflows**
    - `fullstack_ci_cd.yml` and `akulearn_fullstack_ci_cd.yml` appear to be duplicates
@@ -91,6 +96,67 @@ Analysis of 1343 workflow runs shows:
 3. **Add caching** to speed up workflows (pip cache, npm cache, etc.)
 4. **Implement proper environment segregation** (dev, staging, prod)
 5. **Add workflow status badges** to README.md
+
+## Path Filters - IMPLEMENTED ✅
+
+Path filters have been added to key workflows to prevent unnecessary runs:
+
+### Documentation Workflows
+```yaml
+# docs-deploy.yml
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - '.github/workflows/docs-deploy.yml'
+```
+
+### Backend Workflows
+```yaml
+# connected_backend_gcp_deploy.yml
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'connected_stack/**'
+      - '.github/workflows/connected_backend_gcp_deploy.yml'
+```
+
+### Mobile Workflows
+```yaml
+# kotlin_mobile_ci.yml
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'KOTLIN MULTIPLATFORM/**'
+      - 'src/mobile_app/**'
+      - '.github/workflows/kotlin_mobile_ci.yml'
+```
+
+### Microservices Workflows
+```yaml
+# fastapi_microservice.yml
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'akulearn_microservices/**'
+      - '.github/workflows/fastapi_microservice.yml'
+```
+
+### IoT/Hardware Workflows
+```yaml
+# projector_hub_ci.yml
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'unconnected_stack/**'
+      - '.github/workflows/projector_hub_ci.yml'
+```
 
 ## Path Filters Example
 
@@ -154,5 +220,6 @@ For questions about these workflows, contact the DevOps team or create an issue 
 
 ---
 
-**Last Updated**: February 18, 2026
-**Status**: Active improvements in progress
+**Last Updated**: February 18, 2026  
+**Status**: ✅ Major improvements completed - workflows optimized and documented  
+**Next Steps**: Monitor workflow runs and add filters to remaining workflows as needed
