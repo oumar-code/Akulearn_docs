@@ -2,14 +2,13 @@ name: Akulearn Automation
 on:
   schedule:
     - cron: '0 2 * * *' # Nightly automation
+  workflow_dispatch: # Allow manual trigger
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Pull latest content from Akulearn Hub
-        run: echo "Syncing content from hub..."
-      - name: Run automated tests
-        run: echo "Running tests..."
-      - name: Deploy updates
-        run: echo "Deploying updates..."
+      - name: Check repository health
+        run: |
+          echo "Repository health check - placeholder for future automation"
+          echo "✓ Automation workflow is operational"
