@@ -34,21 +34,21 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Project Overview:
-      - Overview: docs/00-project-overview/index.md
-      - Roadmap: docs/00-project-overview/roadmap-phase-1.md
+      - Overview: 00-project-overview/index.md
+      - Roadmap: 00-project-overview/roadmap-phase-1.md
   - Architecture:
-      - Overview: docs/01-architecture/index.md
-      - Content Ingestion: docs/01-architecture/hld-lld-content-ingestion.md
-      - ADRs: docs/01-architecture/adrs/index.md
+      - Overview: 01-architecture/index.md
+      - Content Ingestion: 01-architecture/hld-lld-content-ingestion.md
+      - ADRs: 01-architecture/adrs/index.md
   - Backend:
-      - Overview: docs/02-backend/index.md
-      - API Specs: docs/02-backend/api-specs.md
-      - Database Schemas: docs/02-backend/database-schemas.md
-  - Mobile App: docs/03-mobile/index.md
-  - IoT Projector: docs/04-iot-projector/index.md
+      - Overview: 02-backend/index.md
+      - API Specs: 02-backend/api-specs.md
+      - Database Schemas: 02-backend/database-schemas.md
+  - Mobile App: 03-mobile/index.md
+  - IoT Projector: 04-iot-projector/index.md
   - Cross-Cutting:
-      - Coding Standards: docs/05-cross-cutting/coding-standards.md
-      - Overview: docs/05-cross-cutting/index.md
-  - Process & Methodology: docs/06-process-methodology/index.md
-  - Glossary: docs/07-glossary/index.md
-  - Demo Scripts: docs/demo_scripts/offline_demo_segment.md
+      - Coding Standards: 05-cross-cutting/coding-standards.md
+      - Overview: 05-cross-cutting/index.md
+  - Process & Methodology: 06-process-methodology/index.md
+  - Glossary: 07-glossary/index.md
+  - Demo Scripts: demo_scripts/offline_demo_segment.md
