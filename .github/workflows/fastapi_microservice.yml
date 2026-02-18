@@ -3,6 +3,9 @@ name: FastAPI Microservice CI/CD (GCP)
 on:
   push:
     branches: [main]
+    paths:
+      - 'akulearn_microservices/**'
+      - '.github/workflows/fastapi_microservice.yml'
 
 jobs:
   build-test-deploy:
