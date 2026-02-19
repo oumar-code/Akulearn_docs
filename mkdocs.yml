@@ -12,8 +12,6 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  logo: images/akulearn-logo.png
-  favicon: images/favicon.ico
   features:
     - navigation.tabs
     - navigation.sections
