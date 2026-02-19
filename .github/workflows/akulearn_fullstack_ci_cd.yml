@@ -7,15 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Install dependencies
         run: pip install fastapi uvicorn pytest
       - name: Run backend tests
-        run: pytest akulearn_microservices/
+        run: pytest tests/
       - name: Build Docker image
         run: docker build -t akulearn-backend:latest akulearn_microservices/
       - name: Push to registry
@@ -26,9 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
       - name: Install dependencies
@@ -43,12 +43,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Archive PCB and CAD files
         run: |
           zip -r hardware_release.zip hardware_integration/*.kicad_pcb hardware_integration/*.sch hardware_integration/*.step hardware_integration/*.pdf
       - name: Upload release artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: hardware_release
           path: hardware_release.zip
