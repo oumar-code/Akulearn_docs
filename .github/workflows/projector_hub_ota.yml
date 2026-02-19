@@ -22,26 +22,26 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd projector_sync_service
+          cd akulearn_microservices/projector_sync_service
           pip install -r requirements.txt
 
       - name: Build Sync Agent
         run: |
-          cd projector_sync_service
+          cd akulearn_microservices/projector_sync_service
           python main.py --check
 
       - name: Build PWA
         run: |
-          cd ../frontend
+          cd unconnected_stack/frontend
           npm install
           npm run build
 
       - name: Package OTA Update
         run: |
           mkdir -p ota_package
-          cp -r projector_sync_service ota_package/
-          cp -r frontend/dist ota_package/pwa
-          cp deployment/nginx.conf ota_package/
+          cp -r akulearn_microservices/projector_sync_service ota_package/
+          cp -r unconnected_stack/frontend/dist ota_package/pwa
+          cp unconnected_stack/deployment/nginx.conf ota_package/
           # Add AI models, scripts, and other mesh device components as needed
 
       - name: Deployment Readiness Check
