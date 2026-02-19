@@ -1,6 +1,0 @@
-**Key Methods o
-  │
-  ├── **Factorization
-  ├── **Completing th
-  ├── **Quadratic For
-  └── Solve x² + 8x +

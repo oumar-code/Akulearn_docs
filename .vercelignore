@@ -1,0 +1,54 @@
+# Vercel only needs mkdocs.yml and docs/ to build the MkDocs documentation site.
+# All other directories and file types are excluded to keep the build fast and clean.
+
+# Source code and application directories (not needed for docs build)
+akulearn_microservices/
+akulearn-linux-app/
+client_examples/
+connected_stack/
+content/
+content_templates/
+data/
+diagrams/
+examples/
+hardware/
+hardware_integration/
+infra/
+infrastructure/
+knowledge_graph/
+kubernetes/
+marketing/
+mlops/
+personal_portfolio/
+scripts/
+src/
+static/
+tests/
+unconnected_stack/
+versatech_profile/
+web/
+KOTLIN MULTIPLATFORM/
+
+# Python scripts (content generation, testing, utilities)
+*.py
+
+# Shell and batch scripts
+*.sh
+*.bat
+*.ps1
+
+# Data and notebook files
+*.ipynb
+*.csv
+# Exclude large JSON data/content files but keep vercel.json and package.json
+*.json
+!vercel.json
+!package.json
+
+# Go source files
+*.go
+go.mod
+
+# Root-level HTML/CSS dashboards (not part of the docs site)
+*.html
+*.css
