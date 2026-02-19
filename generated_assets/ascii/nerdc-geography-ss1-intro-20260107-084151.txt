@@ -1,6 +1,0 @@
-Convert map sca
-  │
-  ├── Identify major 
-  ├── Locate Nigeria 
-  ├── Calculate actua
-  └── Give 6-figure g
