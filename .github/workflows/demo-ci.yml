@@ -51,7 +51,7 @@ jobs:
     
     - name: Upload demo outputs
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: demo-visualizations
         path: runs/
