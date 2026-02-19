@@ -7,9 +7,9 @@ from infra.examples.ig_hub_control_panel import main as ig_main
 client = TestClient(ig_main.app)
 
 
-def test_register_and_status_with_admin_key(monkeypatch):
+def test_register_and_status_with_admin_key(monkeypatch, tmp_path):
     # ensure DB is init'd in a temp location
-    monkeypatch.setenv('IGHUB_DB_PATH', ':memory:')
+    monkeypatch.setenv('IGHUB_DB_PATH', str(tmp_path / 'test.db'))
     monkeypatch.setenv('IGHUB_ADMIN_API_KEY', 'admin-test-key')
     # reinit app DB
     ig_main.init_db()
@@ -42,8 +42,8 @@ def test_publish_metadata_requires_registration():
     assert r.status_code == 403
 
 
-def test_publish_after_registration(monkeypatch):
-    monkeypatch.setenv('IGHUB_DB_PATH', ':memory:')
+def test_publish_after_registration(monkeypatch, tmp_path):
+    monkeypatch.setenv('IGHUB_DB_PATH', str(tmp_path / 'test.db'))
     monkeypatch.setenv('IGHUB_ADMIN_API_KEY', 'admin-test-key')
     ig_main.init_db()
 
