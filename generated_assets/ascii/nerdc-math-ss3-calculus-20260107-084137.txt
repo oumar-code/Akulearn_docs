@@ -1,6 +1,0 @@
-Find derivative
-  │
-  ├── Evaluate limit
-  ├── Determine if f(
-  ├── Differentiate f
-  └── Find equation o
