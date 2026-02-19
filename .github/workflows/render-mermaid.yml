@@ -42,7 +42,7 @@ jobs:
             echo "Validating $f"
             # Render to a temp SVG to ensure syntax & rendering succeed
             # Use --no-sandbox for CI environment compatibility
-            mmdc -i "$f" -o "$tmp" --puppeteerConfig '{"args": ["--no-sandbox", "--disable-setuid-sandbox"]}' || (echo "Mermaid validation failed for $f"; exit 1)
+            mmdc -i "$f" -o "$tmp" --puppeteerConfigFile puppeteer-config.json || (echo "Mermaid validation failed for $f"; exit 1)
             rm -f "$tmp"
           done
         shell: bash
@@ -57,8 +57,8 @@ jobs:
             echo "Rendering $f -> $out_svg and $out_png"
             # Render SVG first (vector), then PNG fallback
             # Use --no-sandbox for CI environment compatibility
-            mmdc -i "$f" -o "$out_svg" --puppeteerConfig '{"args": ["--no-sandbox", "--disable-setuid-sandbox"]}' || (echo "Failed rendering SVG for $f"; exit 1)
-            mmdc -i "$f" -o "$out_png" --puppeteerConfig '{"args": ["--no-sandbox", "--disable-setuid-sandbox"]}' || (echo "Failed rendering PNG for $f"; exit 1)
+            mmdc -i "$f" -o "$out_svg" --puppeteerConfigFile puppeteer-config.json || (echo "Failed rendering SVG for $f"; exit 1)
+            mmdc -i "$f" -o "$out_png" --puppeteerConfigFile puppeteer-config.json || (echo "Failed rendering PNG for $f"; exit 1)
           done
         shell: bash
 
