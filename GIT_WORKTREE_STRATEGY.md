@@ -63,6 +63,25 @@ git worktree prune          # clean up stale references
 
 ---
 
+## Vercel Deployment and the Two Worktree Directories
+
+A common question when working with two VSCode windows (one for `Akulearn_docs`, one for `Akulearn_docs.worktrees`) is: **which directory do I use to deploy to Vercel?**
+
+**Short answer: Neither. Vercel deploys directly from GitHub, not from a local directory.**
+
+When you connect Vercel to your repository, it watches the `main` branch on GitHub. Every push to `main` triggers a new deployment — your local directories are never involved after the initial project setup.
+
+| Local Directory | Purpose | Used by Vercel? |
+|---|---|---|
+| `Akulearn_docs/` | Main worktree — day-to-day development, scripts, tests | No (Vercel reads from GitHub) |
+| `Akulearn_docs.worktrees/` | Linked worktree — clean reference copy for comparison | No (local only) |
+
+**Yes, the two directories are supposed to be separate.** `Akulearn_docs.worktrees` is a git linked worktree created with `git worktree add`. It lets you view a clean branch alongside your messy work-in-progress without cloning again.
+
+**Do not point Vercel to `Akulearn_docs.worktrees`.** Link Vercel to the `oumar-code/Akulearn_docs` GitHub repository and deploy from the `main` branch. The repository contains a `.vercelignore` file that excludes all development scripts, Python files, and data directories so Vercel only processes the `docs/` folder and `mkdocs.yml`.
+
+---
+
 ## CI/CD and the Main Worktree
 
 All GitHub Actions workflows that deploy live services (`docs-deploy.yml`, `connected_backend_gcp_deploy.yml`, `projector_hub_gcp_deploy.yml`, etc.) are scoped to `branches: [main]`. This means:
