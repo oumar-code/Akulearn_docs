@@ -34,3 +34,33 @@ logs-*.txt
 # Misc
 *.zip
 *.egg-info/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated and output directories
+generated_assets/
+generated_images/
+generated_content/
+image_queue/
+graph_exports/
+runs/
+reports/
+
+# Large generated data files
+*.graphml
+knowledge_graph.json
+knowledge_graph_full.json
+content_data.json
+wave3_content_database.json
+phase3_analysis_report.json
+phase3_diagram_specs.json
+phase4_question_specs.json
+graphable_content_report.json
+generatable_content_report.json
+visual_queue.json
+
+# Environment / secrets
+.env
