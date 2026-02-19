@@ -1,6 +1,0 @@
-Calculate energ
-  │
-  ├── Find threshold 
-  ├── What is de Brog
-  ├── In photoelectri
-  └── Calculate half-
