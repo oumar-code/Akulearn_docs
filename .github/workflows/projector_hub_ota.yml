@@ -51,9 +51,10 @@ jobs:
           # Add checks for other mesh device components as needed
 
       - name: Upload OTA Package to GCP Storage
+        if: ${{ env.OTA_BUCKET != '' }}
         uses: google-github-actions/upload-cloud-storage@v1
         with:
           credentials: ${{ secrets.GCP_SA_KEY }}
           bucket: ${{ secrets.GCP_OTA_BUCKET }}
-          source: ota_package/**
+          path: ota_package
           destination: ota_updates/${{ github.sha }}/

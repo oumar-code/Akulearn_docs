@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: pip install fastapi uvicorn pytest
+        run: pip install fastapi uvicorn pytest httpx
       - name: Run backend tests
         run: pytest tests/
       - name: Build Docker image

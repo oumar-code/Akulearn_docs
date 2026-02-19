@@ -48,19 +48,23 @@ jobs:
           export_default_credentials: true
 
       - name: Configure Docker for Artifact Registry
+        if: ${{ env.REGION != '' }}
         run: |
           gcloud auth configure-docker $REGION-docker.pkg.dev
 
       - name: Build Docker image
+        if: ${{ env.REGION != '' }}
         run: |
           cd unconnected_stack/deployment
           docker build -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/aku-mesh-device:${{ github.sha }} .
 
       - name: Push Docker image to Artifact Registry
+        if: ${{ env.REGION != '' }}
         run: |
           docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/aku-mesh-device:${{ github.sha }}
 
       - name: SSH and Deploy on GCP VM
+        if: ${{ env.REGION != '' }}
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{ env.VM_IP }}

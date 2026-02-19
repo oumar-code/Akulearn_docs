@@ -44,7 +44,8 @@ class MetadataPublishRequest(BaseModel):
 
 
 def get_db_conn():
-    conn = sqlite3.connect(DB_PATH, check_same_thread=False)
+    db_path = os.environ.get('IGHUB_DB_PATH', '/tmp/ig_hub.db')
+    conn = sqlite3.connect(db_path, check_same_thread=False)
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -84,7 +85,8 @@ def startup():
 
 
 def require_admin_key(x_api_key: Optional[str]):
-    if x_api_key != ADMIN_API_KEY:
+    admin_key = os.environ.get('IGHUB_ADMIN_API_KEY', 'admin-secret-example')
+    if x_api_key != admin_key:
         raise HTTPException(status_code=401, detail='Invalid admin API key')
 
 
