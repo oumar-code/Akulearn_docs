@@ -1,9 +1,12 @@
 node_modules
+package-lock.json
+
 # MkDocs build output
 site/
 
 # Python
 __pycache__/
+*.py
 *.py[cod]
 *.pyo
 *.pyd
@@ -13,22 +16,31 @@ venv/
 .venv/
 myenv/
 
+# Shell and batch scripts
+*.sh
+*.bat
+*.ps1
+
+# Go source
+*.go
+go.mod
+go.sum
+
+# Docker / container
+Dockerfile
+compose*.yaml
+compose*.yml
+docker-compose*.yaml
+docker-compose*.yml
+
 # Logs and temporary outputs
 *.log
-pyarrow-install.log
-ps-output.txt
-pull-output.txt
-docker-info.txt
-docker-ps-all.txt
-docker-version.txt
-
-# runtime logs and outputs
-logs-*.txt
 *.out
 *.err
+*.txt
+!requirements.txt
 
 # Editor/IDE
-.vscode/
 .idea/
 
 # Misc
@@ -49,18 +61,46 @@ graph_exports/
 runs/
 reports/
 
-# Large generated data files
-*.graphml
-knowledge_graph.json
-knowledge_graph_full.json
-content_data.json
-wave3_content_database.json
-phase3_analysis_report.json
-phase3_diagram_specs.json
-phase4_question_specs.json
-graphable_content_report.json
-generatable_content_report.json
-visual_queue.json
+# Non-docs directories
+akulearn-linux-app/
+akulearn_microservices/
+client_examples/
+connected_stack/
+content/
+content_templates/
+data/
+diagrams/
+examples/
+hardware/
+hardware_integration/
+infra/
+infrastructure/
+knowledge_graph/
+kubernetes/
+marketing/
+mlops/
+personal_portfolio/
+scripts/
+src/
+static/
+tests/
+unconnected_stack/
+versatech_profile/
+web/
+KOTLIN MULTIPLATFORM/
+
+# Root-level HTML/CSS dashboards
+*.html
+*.css
+
+# JSON data files (keep vercel.json and package.json and puppeteer-config.json)
+*.json
+!vercel.json
+!package.json
+!puppeteer-config.json
+
+# CSV data files
+*.csv
 
 # Environment / secrets
 .env
