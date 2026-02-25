@@ -87,7 +87,6 @@ tests/
 unconnected_stack/
 versatech_profile/
 web/
-KOTLIN MULTIPLATFORM/
 
 # Root-level HTML/CSS dashboards
 *.html
