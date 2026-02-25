@@ -5,10 +5,8 @@ on:
     branches:
       - docs-copilot-refactor
       - main
-  pull_request:
-    branches:
-      - docs-copilot-refactor
-      - main
+    paths:
+      - 'docs/diagrams/**'
 
 permissions:
   contents: write
