@@ -1,5 +1,6 @@
 {
   "framework": null,
-  "buildCommand": "pip install mkdocs mkdocs-material && python -m mkdocs build",
-  "outputDirectory": "site"
+  "buildCommand": "python3 -m mkdocs build",
+  "outputDirectory": "site",
+  "installCommand": "python3 -m pip install -r requirements.txt"
 }

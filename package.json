@@ -23,9 +23,5 @@
     "url": "https://github.com/oumar-code/Akulearn_docs/issues"
   },
   "homepage": "https://github.com/oumar-code/Akulearn_docs#readme",
-  "dependencies": {
-    "react-native-chart-kit": "^6.12.0",
-    "react-native-progress": "^5.0.1",
-    "react-native-svg": "^15.12.0"
-  }
+  "dependencies": {}
 }
