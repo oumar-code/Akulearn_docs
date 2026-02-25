@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" width="240" height="200" role="img" aria-label="Akudemy Logo">
+  <title>Akudemy</title>
+  <!-- Background -->
+  <rect width="240" height="200" rx="16" fill="#1a237e" />
+  <!-- Graduation cap -->
+  <!-- Cap board top -->
+  <polygon points="120,48 172,72 120,96 68,72" fill="#ffd600" />
+  <!-- Cap left side shadow -->
+  <polygon points="120,96 68,72 68,90 120,114" fill="#e6c000" />
+  <!-- Cap right side -->
+  <polygon points="120,96 172,72 172,90 120,114" fill="#ffd600" opacity="0.85"/>
+  <!-- Cap tassel string -->
+  <line x1="172" y1="72" x2="172" y2="102" stroke="#ffd600" stroke-width="3"/>
+  <!-- Cap tassel -->
+  <circle cx="172" cy="106" r="5" fill="#ffd600"/>
+  <line x1="172" y1="111" x2="166" y2="122" stroke="#ffd600" stroke-width="2"/>
+  <line x1="172" y1="111" x2="172" y2="124" stroke="#ffd600" stroke-width="2"/>
+  <line x1="172" y1="111" x2="178" y2="122" stroke="#ffd600" stroke-width="2"/>
+  <!-- Open book below cap -->
+  <path d="M85 128 Q120 118 155 128 L155 154 Q120 144 85 154 Z" fill="#ffffff" opacity="0.9"/>
+  <line x1="120" y1="118" x2="120" y2="154" stroke="#cccccc" stroke-width="1.5"/>
+  <!-- Book lines (left page) -->
+  <line x1="93" y1="132" x2="116" y2="129" stroke="#aaaaaa" stroke-width="1"/>
+  <line x1="93" y1="137" x2="116" y2="134" stroke="#aaaaaa" stroke-width="1"/>
+  <line x1="93" y1="142" x2="116" y2="139" stroke="#aaaaaa" stroke-width="1"/>
+  <!-- Book lines (right page) -->
+  <line x1="124" y1="129" x2="147" y2="132" stroke="#aaaaaa" stroke-width="1"/>
+  <line x1="124" y1="134" x2="147" y2="137" stroke="#aaaaaa" stroke-width="1"/>
+  <line x1="124" y1="139" x2="147" y2="142" stroke="#aaaaaa" stroke-width="1"/>
+  <!-- Wordmark -->
+  <text x="120" y="180" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="22" fill="#ffd600" text-anchor="middle" letter-spacing="2">AKUDEMY</text>
+</svg>
