@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" width="240" height="200" role="img" aria-label="Telhone Logo">
+  <title>Telhone</title>
+  <!-- Background -->
+  <rect width="240" height="200" rx="16" fill="#003366" />
+  <!-- Phone handset icon -->
+  <path d="M72 60 C72 60 80 52 95 58 L108 72 C112 76 112 82 108 86 L102 92 C102 92 110 104 116 110 C122 116 134 124 134 124 L140 118 C144 114 150 114 154 118 L168 131 C174 146 166 154 166 154 C166 154 142 172 118 148 C94 124 66 88 66 88 C42 64 60 40 60 40 C60 40 68 60 72 60 Z" fill="#00bfff" />
+  <!-- Signal waves -->
+  <path d="M152 55 Q162 65 162 80 Q162 95 152 105" stroke="#00bfff" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M160 45 Q175 60 175 80 Q175 100 160 115" stroke="#00bfff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M168 35 Q188 55 188 80 Q188 105 168 125" stroke="#00bfff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.4"/>
+  <!-- Wordmark -->
+  <text x="120" y="172" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="22" fill="#ffffff" text-anchor="middle" letter-spacing="2">TELHONE</text>
+</svg>

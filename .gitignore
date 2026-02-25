@@ -21,6 +21,10 @@ myenv/
 *.bat
 *.ps1
 
+# Exceptions: Gradle wrapper scripts (required for Android Studio / KMP)
+!gradlew
+!gradlew.bat
+
 # Go source
 *.go
 go.mod
@@ -61,6 +65,10 @@ graph_exports/
 runs/
 reports/
 
+# Gradle build cache and local config (Android/KMP)
+.gradle/
+local.properties
+
 # Non-docs directories
 akulearn-linux-app/
 akulearn_microservices/
@@ -81,13 +89,12 @@ marketing/
 mlops/
 personal_portfolio/
 scripts/
-src/
+/src/
 static/
 tests/
 unconnected_stack/
 versatech_profile/
 web/
-KOTLIN MULTIPLATFORM/
 
 # Root-level HTML/CSS dashboards
 *.html

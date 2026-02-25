@@ -46,6 +46,7 @@ nav:
   - IoT Projector: 04-iot-projector/index.md
   - Cross-Cutting:
       - Coding Standards: 05-cross-cutting/coding-standards.md
+      - Containerisation: 05-cross-cutting/containerization.md
       - Overview: 05-cross-cutting/index.md
   - Process & Methodology: 06-process-methodology/index.md
   - Glossary: 07-glossary/index.md
