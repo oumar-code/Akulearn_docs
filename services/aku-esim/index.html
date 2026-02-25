@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aku-esim" class="md-skip">
+        <a href="#aku-esim-telhone" class="md-skip">
           Skip to content
         </a>
       
@@ -995,6 +995,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../05-cross-cutting/containerization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../05-cross-cutting/" class="md-nav__link">
         
   
@@ -1142,10 +1170,32 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#brand-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brand Identity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#integration-with-aku-platform" class="md-nav__link">
     <span class="md-ellipsis">
       
         Integration with Aku Platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containerisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containerisation
       
     </span>
   </a>
@@ -1176,17 +1226,33 @@
 COPILOT_PROMPT:
 Generate Aku eSIM doc: provisioning flow, SIM policy, network switching, security model for device auth.
 -->
-<h1 id="aku-esim">Aku eSIM<a class="headerlink" href="#aku-esim" title="Permanent link">&para;</a></h1>
-<!-- Copilot: expand here -->
-
+<h1 id="aku-esim-telhone">Aku eSIM — Telhone<a class="headerlink" href="#aku-esim-telhone" title="Permanent link">&para;</a></h1>
+<p><img alt="Telhone Logo" src="../../images/logos/telhone-logo.svg" /></p>
+<blockquote>
+<p><strong>Aku eSIM</strong> is the embedded SIM provisioning and MVNO connectivity service of the Aku Platform, branded as <strong>Telhone</strong> in device- and user-facing contexts.</p>
+</blockquote>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Aku eSIM provides remote provisioning and lifecycle management for embedded SIMs used by Aku Edge Hubs and connected devices. It integrates with the platform identity system and supports secure OTA provisioning, network selection, and provisioning policies.</p>
+<h2 id="brand-identity">Brand Identity<a class="headerlink" href="#brand-identity" title="Permanent link">&para;</a></h2>
+<p>The <strong>Telhone</strong> brand (logo: <code>docs/images/logos/telhone-logo.svg</code>) is used across:
+- Device onboarding screens and SIM activation flows
+- MVNO/eSIM provisioning portals and QR code packaging
+- Network status and coverage materials
+- Partner MNO-facing documentation</p>
 <h2 id="integration-with-aku-platform">Integration with Aku Platform<a class="headerlink" href="#integration-with-aku-platform" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Identity: integrates with the IG-Hub IdP for device identity and attestation.</li>
 <li>Connectivity: interacts with Aku eSIM management APIs to provision profiles and manage network switching.</li>
 <li>Aku Workspace: workspace workflows may surface eSIM provisioning status or require connectivity checks before performing remote tasks; see <code>docs/services/aku-workspace.md</code> for cross-linking.</li>
 </ul>
+<h2 id="containerisation">Containerisation<a class="headerlink" href="#containerisation" title="Permanent link">&para;</a></h2>
+<p>Aku eSIM (Telhone) is deployed as Docker containers orchestrated by Kubernetes. See <a href="../../05-cross-cutting/containerization/"><code>docs/05-cross-cutting/containerization.md</code></a> for the full containerisation guide.</p>
+<p>Key containers:
+| Container | Image | Purpose |
+|-----------|-------|---------|
+| <code>telhone-provisioning-api</code> | <code>aku/esim-provisioning:latest</code> | eSIM profile provisioning and lifecycle API |
+| <code>telhone-policy-engine</code> | <code>aku/esim-policy:latest</code> | Network selection and switching policy engine |
+| <code>telhone-ota-agent</code> | <code>aku/esim-ota:latest</code> | Over-the-air profile push agent |</p>
 
 
 

@@ -10,9 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://akulearn.com/docs/esim/mvno_esim_integration_plan/">
+        <link rel="canonical" href="https://akulearn.com/docs/05-cross-cutting/containerization/">
       
       
+        <link rel="prev" href="../coding-standards/">
+      
+      
+        <link rel="next" href="../">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>eSIM & MVNO Integration Plan — Zamfara Pilot - Akulearn Documentation</title>
+        <title>Containerisation - Akulearn Documentation</title>
       
     
     
@@ -72,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#esim-mvno-integration-plan-zamfara-pilot" class="md-skip">
+        <a href="#containerisation-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              eSIM &amp; MVNO Integration Plan — Zamfara Pilot
+              Containerisation
             
           </span>
         </div>
@@ -308,11 +312,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../05-cross-cutting/coding-standards/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../coding-standards/" class="md-tabs__link">
           
   
   
@@ -912,26 +918,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -949,7 +960,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -967,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-cross-cutting/coding-standards/" class="md-nav__link">
+      <a href="../coding-standards/" class="md-nav__link">
         
   
   
@@ -992,10 +1003,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../05-cross-cutting/containerization/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerisation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1011,6 +1049,187 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services-requiring-containerisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Services Requiring Containerisation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Services Requiring Containerisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-backend-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Backend Microservices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aku-platform-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aku Platform Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-image-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Image Conventions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker Image Conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-dockerfile-python-fastapi-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Dockerfile (Python / FastAPI service)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-deployment-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes Deployment Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kubernetes Deployment Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Namespace Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-hub-containerisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Hub Containerisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-pipeline-for-container-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD Pipeline for Container Images
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1023,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-cross-cutting/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1159,10 +1378,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objective
+        Overview
       
     </span>
   </a>
@@ -1170,10 +1389,138 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scope-for-pilot" class="md-nav__link">
+  <a href="#services-requiring-containerisation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scope for Pilot
+        Services Requiring Containerisation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Services Requiring Containerisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-backend-microservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Backend Microservices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aku-platform-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aku Platform Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-image-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker Image Conventions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker Image Conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-dockerfile-python-fastapi-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Dockerfile (Python / FastAPI service)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-deployment-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes Deployment Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kubernetes Deployment Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namespace-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Namespace Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edge-hub-containerisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Hub Containerisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-pipeline-for-container-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD Pipeline for Container Images
       
     </span>
   </a>
@@ -1181,54 +1528,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#technical-components" class="md-nav__link">
+  <a href="#related-documents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Technical components
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#commercial-regulatory" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Commercial &amp; Regulatory
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pilot-flows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pilot flows
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kpis-for-esim-pilot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        KPIs for eSIM pilot
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks-mitigations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks &amp; mitigations
+        Related Documents
       
     </span>
   </a>
@@ -1255,45 +1558,305 @@
   
 
 
-<h1 id="esim-mvno-integration-plan-zamfara-pilot">eSIM &amp; MVNO Integration Plan — Zamfara Pilot<a class="headerlink" href="#esim-mvno-integration-plan-zamfara-pilot" title="Permanent link">&para;</a></h1>
-<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h2>
-<p>Define a pragmatic path to enable Aku eSIM provisioning and MVNO-style services that prioritize in-state local offload (calls/data) through Aku Edge and Super Hubs while using partner MNOs for external interconnect.</p>
-<h2 id="scope-for-pilot">Scope for Pilot<a class="headerlink" href="#scope-for-pilot" title="Permanent link">&para;</a></h2>
+<h1 id="containerisation-guide">Containerisation Guide<a class="headerlink" href="#containerisation-guide" title="Permanent link">&para;</a></h1>
+<p>This document identifies all Aku Platform services that require containerisation, specifies their Docker image conventions, and describes the Kubernetes deployment strategy.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>All Aku Platform services are containerised using <strong>Docker</strong> and orchestrated with <strong>Kubernetes</strong> (K8s). This ensures:</p>
 <ul>
-<li>eSIM provisioning for teacher/admin devices (pilot cohort of ~50 devices)</li>
-<li>SIP registration and intra-Aku calling for eSIM-enabled devices</li>
-<li>Billing integration via IG-Hub for trial prepaid bundles</li>
+<li>Independent deployment and scaling of each microservice</li>
+<li>Consistent environments across development, staging, and production</li>
+<li>Automated rollout and rollback via Kubernetes Deployments</li>
+<li>Resource isolation and limit enforcement per service</li>
 </ul>
-<h2 id="technical-components">Technical components<a class="headerlink" href="#technical-components" title="Permanent link">&para;</a></h2>
-<ul>
-<li>eSIM management: IG-Hub API for profile creation, activation, and lifecycle</li>
-<li>Device onboarding: secure QR code or OTA profile push for supported devices</li>
-<li>Local breakout: Edge Hub SIP proxy for local calls; Super Hub softswitch for state routing</li>
-<li>Network switching policy: prefer Aku network when in coverage, fallback to MNO when required</li>
-</ul>
-<h2 id="commercial-regulatory">Commercial &amp; Regulatory<a class="headerlink" href="#commercial-regulatory" title="Permanent link">&para;</a></h2>
-<ul>
-<li>MVNO agreement: identify MNO partner for interconnect and MMS/SMS termination</li>
-<li>Interconnect pricing negotiation to reduce in-state costs</li>
-<li>Regulatory: coordinate NCC notifications and any license needs for local VoIP services</li>
-</ul>
-<h2 id="pilot-flows">Pilot flows<a class="headerlink" href="#pilot-flows" title="Permanent link">&para;</a></h2>
+<h2 id="services-requiring-containerisation">Services Requiring Containerisation<a class="headerlink" href="#services-requiring-containerisation" title="Permanent link">&para;</a></h2>
+<h3 id="core-backend-microservices">Core Backend Microservices<a class="headerlink" href="#core-backend-microservices" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Container Name</th>
+<th>Image Tag Pattern</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API Gateway</td>
+<td><code>aku-api-gateway</code></td>
+<td><code>aku/api-gateway:&lt;version&gt;</code></td>
+<td><strong>Critical</strong></td>
+</tr>
+<tr>
+<td>Authentication Service</td>
+<td><code>aku-auth</code></td>
+<td><code>aku/auth:&lt;version&gt;</code></td>
+<td><strong>Critical</strong></td>
+</tr>
+<tr>
+<td>Content Management Service</td>
+<td><code>aku-cms</code></td>
+<td><code>aku/cms:&lt;version&gt;</code></td>
+<td><strong>Critical</strong></td>
+</tr>
+<tr>
+<td>User Profile Service</td>
+<td><code>aku-user-profile</code></td>
+<td><code>aku/user-profile:&lt;version&gt;</code></td>
+<td><strong>Critical</strong></td>
+</tr>
+<tr>
+<td>AI/ML Service</td>
+<td><code>aku-ai-ml</code></td>
+<td><code>aku/ai-ml:&lt;version&gt;</code></td>
+<td>High</td>
+</tr>
+<tr>
+<td>Projector Sync Service</td>
+<td><code>aku-projector-sync</code></td>
+<td><code>aku/projector-sync:&lt;version&gt;</code></td>
+<td>High</td>
+</tr>
+<tr>
+<td>Blockchain Credentialing Service</td>
+<td><code>aku-blockchain</code></td>
+<td><code>aku/blockchain:&lt;version&gt;</code></td>
+<td>High</td>
+</tr>
+<tr>
+<td>Admin Portal Service</td>
+<td><code>aku-admin</code></td>
+<td><code>aku/admin:&lt;version&gt;</code></td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Telemetry &amp; Analytics Service</td>
+<td><code>aku-telemetry</code></td>
+<td><code>aku/telemetry:&lt;version&gt;</code></td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<h3 id="aku-platform-services">Aku Platform Services<a class="headerlink" href="#aku-platform-services" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Container Name</th>
+<th>Image Tag Pattern</th>
+<th>Brand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aku Learn API</td>
+<td><code>aku-learn-api</code></td>
+<td><code>aku/learn-api:&lt;version&gt;</code></td>
+<td>Akudemy</td>
+</tr>
+<tr>
+<td>Aku Learn Sync Agent</td>
+<td><code>aku-learn-sync</code></td>
+<td><code>aku/learn-sync:&lt;version&gt;</code></td>
+<td>Akudemy</td>
+</tr>
+<tr>
+<td>Aku Learn AI Tutor</td>
+<td><code>aku-ai-tutor</code></td>
+<td><code>aku/ai-tutor:&lt;version&gt;</code></td>
+<td>Akudemy</td>
+</tr>
+<tr>
+<td>Aku eSIM Provisioning API</td>
+<td><code>telhone-provisioning-api</code></td>
+<td><code>aku/esim-provisioning:&lt;version&gt;</code></td>
+<td>Telhone</td>
+</tr>
+<tr>
+<td>Aku eSIM Policy Engine</td>
+<td><code>telhone-policy-engine</code></td>
+<td><code>aku/esim-policy:&lt;version&gt;</code></td>
+<td>Telhone</td>
+</tr>
+<tr>
+<td>Aku eSIM OTA Agent</td>
+<td><code>telhone-ota-agent</code></td>
+<td><code>aku/esim-ota:&lt;version&gt;</code></td>
+<td>Telhone</td>
+</tr>
+<tr>
+<td>Aku DaaS API</td>
+<td><code>aku-daas-api</code></td>
+<td><code>aku/daas-api:&lt;version&gt;</code></td>
+<td>Aku Platform</td>
+</tr>
+<tr>
+<td>Aku DaaS Governance</td>
+<td><code>aku-daas-governance</code></td>
+<td><code>aku/daas-governance:&lt;version&gt;</code></td>
+<td>Aku Platform</td>
+</tr>
+<tr>
+<td>Aku Workspace API</td>
+<td><code>aku-workspace-api</code></td>
+<td><code>aku/workspace-api:&lt;version&gt;</code></td>
+<td>Aku Platform</td>
+</tr>
+<tr>
+<td>Aku Workspace AI Assistant</td>
+<td><code>aku-ai-assistant</code></td>
+<td><code>aku/ai-assistant:&lt;version&gt;</code></td>
+<td>Aku Platform</td>
+</tr>
+</tbody>
+</table>
+<h3 id="infrastructure-services">Infrastructure Services<a class="headerlink" href="#infrastructure-services" title="Permanent link">&para;</a></h3>
+<p>These third-party services are also deployed as containers within the platform cluster:</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Container Name</th>
+<th>Upstream Image</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kafka Broker</td>
+<td><code>aku-kafka</code></td>
+<td><code>confluentinc/cp-kafka:&lt;version&gt;</code></td>
+</tr>
+<tr>
+<td>Zookeeper</td>
+<td><code>aku-zookeeper</code></td>
+<td><code>confluentinc/cp-zookeeper:&lt;version&gt;</code></td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td><code>aku-postgres</code></td>
+<td><code>postgres:&lt;version&gt;-alpine</code></td>
+</tr>
+<tr>
+<td>MongoDB</td>
+<td><code>aku-mongodb</code></td>
+<td><code>mongo:&lt;version&gt;</code></td>
+</tr>
+<tr>
+<td>Redis</td>
+<td><code>aku-redis</code></td>
+<td><code>redis:&lt;version&gt;-alpine</code></td>
+</tr>
+<tr>
+<td>MLflow</td>
+<td><code>aku-mlflow</code></td>
+<td><code>ghcr.io/mlflow/mlflow:&lt;version&gt;</code></td>
+</tr>
+<tr>
+<td>Prometheus</td>
+<td><code>aku-prometheus</code></td>
+<td><code>prom/prometheus:&lt;version&gt;</code></td>
+</tr>
+<tr>
+<td>Grafana</td>
+<td><code>aku-grafana</code></td>
+<td><code>grafana/grafana:&lt;version&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="docker-image-conventions">Docker Image Conventions<a class="headerlink" href="#docker-image-conventions" title="Permanent link">&para;</a></h2>
+<p>All Aku-owned service images must follow these conventions:</p>
 <ol>
-<li>Admin requests eSIM profile via IG-Hub portal</li>
-<li>IG-Hub issues activation code / QR</li>
-<li>Device installs profile and registers with Aku network</li>
-<li>Device receives local policy: preferential local rates and Aku-only bundles</li>
+<li><strong>Base image:</strong> Use official, minimal base images (e.g., <code>python:3.11-slim</code>, <code>node:20-alpine</code>).</li>
+<li><strong>Non-root user:</strong> Run the application as a non-root user inside the container.</li>
+<li><strong>Labels:</strong> Include standard OCI labels (<code>org.opencontainers.image.version</code>, <code>org.opencontainers.image.source</code>, <code>org.opencontainers.image.revision</code>).</li>
+<li><strong>Health checks:</strong> Define a <code>HEALTHCHECK</code> instruction in every <code>Dockerfile</code>.</li>
+<li><strong>Multi-stage builds:</strong> Use multi-stage builds to keep production images small and free of build dependencies.</li>
+<li><strong>Secrets:</strong> Never bake secrets into images. Use Kubernetes Secrets or a secrets manager (HashiCorp Vault / AWS Secrets Manager) mounted at runtime.</li>
 </ol>
-<h2 id="kpis-for-esim-pilot">KPIs for eSIM pilot<a class="headerlink" href="#kpis-for-esim-pilot" title="Permanent link">&para;</a></h2>
+<h3 id="example-dockerfile-python-fastapi-service">Example Dockerfile (Python / FastAPI service)<a class="headerlink" href="#example-dockerfile-python-fastapi-service" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="c"># Build stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11-slim</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>--prefix<span class="o">=</span>/install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c"># Production stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11-slim</span>
+<span class="k">LABEL</span><span class="w"> </span>org.opencontainers.image.source<span class="o">=</span><span class="s2">&quot;https://github.com/oumar-code/Akulearn_docs&quot;</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/install<span class="w"> </span>/usr/local
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>adduser<span class="w"> </span>--disabled-password<span class="w"> </span>--gecos<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>appuser<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>appuser<span class="w"> </span>/app
+<span class="k">USER</span><span class="w"> </span><span class="s">appuser</span>
+<span class="k">HEALTHCHECK</span><span class="w"> </span>--interval<span class="o">=</span>30s<span class="w"> </span>--timeout<span class="o">=</span>5s<span class="w"> </span>--start-period<span class="o">=</span>10s<span class="w"> </span>--retries<span class="o">=</span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>CMD<span class="w"> </span>curl<span class="w"> </span>-f<span class="w"> </span>http://localhost:8000/health<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8000</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;uvicorn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;main:app&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--host&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--port&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8000&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<h2 id="kubernetes-deployment-strategy">Kubernetes Deployment Strategy<a class="headerlink" href="#kubernetes-deployment-strategy" title="Permanent link">&para;</a></h2>
+<h3 id="namespace-layout">Namespace Layout<a class="headerlink" href="#namespace-layout" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>aku-system          — Platform-wide infrastructure (Kafka, Postgres, Redis)
+aku-backend         — Core backend microservices
+aku-learn           — Aku Learn / Akudemy service containers
+aku-esim            — Aku eSIM / Telhone service containers
+aku-daas            — Aku DaaS service containers
+aku-workspace       — Aku Workspace service containers
+aku-monitoring      — Prometheus, Grafana, alerting
+</code></pre></div>
+
+<h3 id="deployment-guidelines">Deployment Guidelines<a class="headerlink" href="#deployment-guidelines" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Successful provisioning %</li>
-<li>% of calls routed locally vs via MNO</li>
-<li>User satisfaction (survey)</li>
+<li><strong>Replicas:</strong> Production deployments use a minimum of 2 replicas for all stateless services.</li>
+<li><strong>Resource Limits:</strong> Every container must declare <code>resources.requests</code> and <code>resources.limits</code>.</li>
+<li><strong>Rolling Updates:</strong> Use <code>RollingUpdate</code> strategy with a <code>maxUnavailable: 1</code> and <code>maxSurge: 1</code>.</li>
+<li><strong>Liveness &amp; Readiness Probes:</strong> Required for every service to enable Kubernetes self-healing.</li>
+<li><strong>Horizontal Pod Autoscaler (HPA):</strong> Configure HPA for all high-traffic services (API Gateway, CMS, AI/ML Service).</li>
+<li><strong>Persistent Volumes:</strong> Use <code>PersistentVolumeClaims</code> for stateful services (PostgreSQL, MongoDB, Redis).</li>
 </ul>
-<h2 id="risks-mitigations">Risks &amp; mitigations<a class="headerlink" href="#risks-mitigations" title="Permanent link">&para;</a></h2>
+<h3 id="edge-hub-containerisation">Edge Hub Containerisation<a class="headerlink" href="#edge-hub-containerisation" title="Permanent link">&para;</a></h3>
+<p>Aku Edge Hubs run a lightweight container runtime (K3s) to host local service containers:</p>
+<table>
+<thead>
+<tr>
+<th>Container</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>aku-learn-sync</code></td>
+<td>Offline content sync</td>
+</tr>
+<tr>
+<td><code>aku-ai-tutor</code></td>
+<td>Local AI inference</td>
+</tr>
+<tr>
+<td><code>telhone-ota-agent</code></td>
+<td>eSIM OTA profile agent</td>
+</tr>
+<tr>
+<td><code>aku-edge-telemetry</code></td>
+<td>Local telemetry collector</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cicd-pipeline-for-container-images">CI/CD Pipeline for Container Images<a class="headerlink" href="#cicd-pipeline-for-container-images" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Build:</strong> GitHub Actions builds Docker images on every push to <code>main</code> or a release tag.</li>
+<li><strong>Test:</strong> Container images are tested with unit and integration tests before push.</li>
+<li><strong>Scan:</strong> Images are scanned for vulnerabilities using Trivy (or equivalent).</li>
+<li><strong>Push:</strong> Verified images are pushed to the container registry (GitHub Container Registry / AWS ECR).</li>
+<li><strong>Deploy:</strong> Kubernetes manifests are updated (GitOps via Argo CD or Flux) to deploy the new image.</li>
+</ol>
+<h2 id="related-documents">Related Documents<a class="headerlink" href="#related-documents" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Device compatibility: limit to known supported devices for pilot; increase device types after validation</li>
-<li>Regulatory: early engagement with NCC and MNOs</li>
+<li><a href="../../01-architecture/"><code>docs/01-architecture/index.md</code></a> — Architecture overview and microservices diagram</li>
+<li><a href="../../02-backend/"><code>docs/02-backend/index.md</code></a> — Backend development handbook</li>
+<li><a href="../../services/aku-learn/"><code>docs/services/aku-learn.md</code></a> — Aku Learn / Akudemy service</li>
+<li><a href="../../services/aku-esim/"><code>docs/services/aku-esim.md</code></a> — Aku eSIM / Telhone service</li>
+<li><a href="../../services/aku-daas/"><code>docs/services/aku-daas.md</code></a> — Aku DaaS service</li>
+<li><a href="../../services/aku-workspace/"><code>docs/services/aku-workspace.md</code></a> — Aku Workspace service</li>
 </ul>
 
 

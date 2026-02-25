@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -995,6 +995,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../05-cross-cutting/containerization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containerisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../05-cross-cutting/" class="md-nav__link">
         
   
@@ -1124,6 +1152,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brand-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brand Identity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containerisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containerisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observability-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability &amp; Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1147,7 +1260,85 @@ COPILOT_PROMPT:
 Generate Aku Learn service doc: local caching on Edge Hubs, offline-first curricula sync, teacher/admin tools, metrics.
 -->
 <h1 id="aku-learn">Aku Learn<a class="headerlink" href="#aku-learn" title="Permanent link">&para;</a></h1>
-<!-- Copilot: expand here -->
+<p><img alt="Akudemy Logo" src="../../images/logos/akudemy-logo.svg" /></p>
+<blockquote>
+<p><strong>Aku Learn</strong> is the education delivery service of the Aku Platform, branded as <strong>Akudemy</strong> in student- and community-facing contexts.</p>
+</blockquote>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Aku Learn delivers curriculum-aligned educational content to learners in both connected and offline environments. It leverages local caching on Aku Edge Hubs for offline-first operation, adaptive AI for personalised learning paths, and the Akudemy brand identity for all student-facing touchpoints.</p>
+<h2 id="brand-identity">Brand Identity<a class="headerlink" href="#brand-identity" title="Permanent link">&para;</a></h2>
+<p>The <strong>Akudemy</strong> brand (logo: <code>docs/images/logos/akudemy-logo.svg</code>) is used across:
+- Student mobile app screens and splash pages
+- School and educator portal headers
+- Community projector-based learning session materials
+- Printed certificates and achievement badges</p>
+<h2 id="core-features">Core Features<a class="headerlink" href="#core-features" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Offline-First Curricula Sync:</strong> Content is pre-cached on Aku Edge Hubs so learners can access lessons without internet connectivity. Sync is triggered whenever the Edge Hub regains connectivity to a Super Hub.</li>
+<li><strong>Adaptive Learning Paths:</strong> The AI/ML Service analyses learner performance and adjusts the sequence and difficulty of content in real time.</li>
+<li><strong>AI Tutor:</strong> An integrated AI tutor (powered by the AI/ML Service) answers questions, provides hints, and gives instant feedback.</li>
+<li><strong>Teacher &amp; Admin Tools:</strong> Dashboard for teachers to track class progress, assign content, and communicate with guardians; admin tools for school-level reporting.</li>
+<li><strong>Blockchain Credentials:</strong> On course completion, verifiable certificates are issued via the Blockchain Credentialing Service.</li>
+</ul>
+<h2 id="architecture-integration">Architecture Integration<a class="headerlink" href="#architecture-integration" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code><span class="n">Learner</span><span class="w"> </span><span class="n">Device</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">Projector</span>
+<span class="w">        </span><span class="o">|</span>
+<span class="w">   </span><span class="n">Aku</span><span class="w"> </span><span class="n">Edge</span><span class="w"> </span><span class="n">Hub</span><span class="w"> </span><span class="p">(</span><span class="n">local</span><span class="w"> </span><span class="n">cache</span><span class="p">,</span><span class="w"> </span><span class="n">AI</span><span class="w"> </span><span class="n">inference</span><span class="p">,</span><span class="w"> </span><span class="n">SIP</span><span class="w"> </span><span class="n">proxy</span><span class="p">)</span>
+<span class="w">        </span><span class="o">|</span>
+<span class="w">   </span><span class="n">Aku</span><span class="w"> </span><span class="n">Super</span><span class="w"> </span><span class="n">Hub</span><span class="w"> </span><span class="p">(</span><span class="n">regional</span><span class="w"> </span><span class="n">analytics</span><span class="p">,</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="n">updates</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="n">fine</span><span class="o">-</span><span class="n">tuning</span><span class="p">)</span>
+<span class="w">        </span><span class="o">|</span>
+<span class="w">   </span><span class="n">Aku</span><span class="w"> </span><span class="n">IG</span><span class="o">-</span><span class="n">Hub</span><span class="w"> </span><span class="p">(</span><span class="n">global</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="n">catalogue</span><span class="p">,</span><span class="w"> </span><span class="n">credential</span><span class="w"> </span><span class="n">registry</span><span class="p">,</span><span class="w"> </span><span class="n">policy</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li>Content is ingested by the <strong>Content Management Service (CMS)</strong> and propagated to Edge Hubs.</li>
+<li>Learner profiles and progress are managed by the <strong>User Profile Service</strong>.</li>
+<li>The <strong>AI/ML Service</strong> provides recommendations and tutoring responses.</li>
+<li>Certificates are issued by the <strong>Blockchain Credentialing Service</strong>.</li>
+</ul>
+<h2 id="containerisation">Containerisation<a class="headerlink" href="#containerisation" title="Permanent link">&para;</a></h2>
+<p>Aku Learn is deployed as a set of Docker containers orchestrated by Kubernetes. See <a href="../../05-cross-cutting/containerization/"><code>docs/05-cross-cutting/containerization.md</code></a> for the full containerisation guide.</p>
+<p>Key containers:
+| Container | Image | Purpose |
+|-----------|-------|---------|
+| <code>aku-learn-api</code> | <code>aku/learn-api:latest</code> | REST/gRPC API for content and learner data |
+| <code>aku-learn-sync</code> | <code>aku/learn-sync:latest</code> | Offline content sync agent for Edge Hubs |
+| <code>aku-learn-ai-tutor</code> | <code>aku/ai-tutor:latest</code> | AI tutor inference service |</p>
+<h2 id="observability-metrics">Observability &amp; Metrics<a class="headerlink" href="#observability-metrics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Learning Engagement:</strong> Daily/weekly active learners, lessons completed, quiz pass rates.</li>
+<li><strong>Sync Health:</strong> Edge Hub sync success rate, content freshness (hours since last sync).</li>
+<li><strong>AI Tutor:</strong> Response latency, user satisfaction scores, fallback rate (when local inference is unavailable).</li>
+<li><strong>Credential Issuance:</strong> Certificates issued per period, blockchain confirmation time.</li>
+</ul>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>Key environment variables (set per-deployment):</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CONTENT_SYNC_INTERVAL_HOURS</code></td>
+<td>How frequently Edge Hub syncs content from Super Hub</td>
+</tr>
+<tr>
+<td><code>AI_TUTOR_MODEL</code></td>
+<td>Model identifier for the local AI tutor</td>
+</tr>
+<tr>
+<td><code>BLOCKCHAIN_NETWORK</code></td>
+<td>Target Polygon network for credential issuance</td>
+</tr>
+<tr>
+<td><code>AKUDEMY_BRAND_LOGO_URL</code></td>
+<td>URL to the Akudemy SVG logo served by the platform CDN</td>
+</tr>
+</tbody>
+</table>
 
 
 

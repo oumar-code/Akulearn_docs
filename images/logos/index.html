@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://akulearn.com/docs/strategy/ultra_affordable_instate_strategy/">
+        <link rel="canonical" href="https://akulearn.com/docs/images/logos/">
       
       
       
@@ -23,7 +23,7 @@
     
     
       
-        <title>Ultra-Affordable In-State Connectivity — Implementation Plan - Akulearn Documentation</title>
+        <title>Brand Logos — Asset Index - Akulearn Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ultra-affordable-in-state-connectivity-implementation-plan" class="md-skip">
+        <a href="#brand-logos-asset-index" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ultra-Affordable In-State Connectivity — Implementation Plan
+              Brand Logos — Asset Index
             
           </span>
         </div>
@@ -1152,6 +1152,108 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logo-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logo Descriptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logo Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aku-brand-horns-up-aku-brand-horns-upsvg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aku Brand — Horns Up (aku-brand-horns-up.svg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aku-brand-horns-down-aku-brand-horns-downsvg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aku Brand — Horns Down (aku-brand-horns-down.svg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telhone-telhone-logosvg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Telhone (telhone-logo.svg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#akudemy-akudemy-logosvg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Akudemy (akudemy-logo.svg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage Guidelines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-naming-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Naming Convention
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1170,109 +1272,74 @@
   
 
 
-<h1 id="ultra-affordable-in-state-connectivity-implementation-plan">Ultra-Affordable In-State Connectivity — Implementation Plan<a class="headerlink" href="#ultra-affordable-in-state-connectivity-implementation-plan" title="Permanent link">&para;</a></h1>
-<p>This document translates the high-level strategy into concrete implementation steps for Aku's ultra-affordable in-state network model (Zamfara pilot → scale). It focuses on maximizing local offload (voice &amp; data), predictive caching, eSIM enablement, and pricing that leverages Aku's tiered architecture.</p>
-<ol>
-<li>Quick summary</li>
-<li>Objective: Keep in-state voice &amp; data traffic on Aku-controlled infrastructure (Edge Hubs + Super Hubs) to minimize MNO interconnect/backhaul costs and offer dramatically lower prices.</li>
-<li>
-<p>Approach: Deploy local SIP/VoIP at Edge, aggregate routing at Super Hubs, apply multi-tier caching and AI-driven prefetching, and provision users with Aku eSIM profiles for smart routing and billing.</p>
-</li>
-<li>
-<p>High-level milestones</p>
-</li>
-<li>M1: VoIP &amp; Local Routing prototype (Edge SIP proxy + Super Hub softswitch)</li>
-<li>M2: Edge caching + predictive prefetch (Aku Learn + top web content)</li>
-<li>M3: eSIM provisioning &amp; onboarding flow (pilot 50 devices)</li>
-<li>M4: Pricing model &amp; billing integration with IG-Hub</li>
-<li>M5: Pilot MVNO/eSIM trial and measurement</li>
-<li>
-<p>M6: Scale automation and operational playbook</p>
-</li>
-<li>
-<p>Milestone Tasks (concrete)</p>
-</li>
-<li>M1 tasks:</li>
-<li>Select SIP stack (Asterisk or Kamailio + FreeSWITCH) for Edge and Super Hub roles</li>
-<li>Build minimal Docker Compose prototype for Edge SIP proxy and softphone client</li>
-<li>Implement local call routing rules (same-edge direct, edge-to-edge via Super Hub)</li>
-<li>
-<p>Test intra-edge call quality and call setup success in lab</p>
-</li>
-<li>
-<p>M2 tasks:</p>
-</li>
-<li>Define cache hierarchy: Edge (per-hub), Super Hub (state), IG-Hub (global)</li>
-<li>Implement Aku Learn caching footprint and content invalidation policy</li>
-<li>Build predictive prefetch service (batch job on Super Hub using transformer analytics)</li>
-<li>
-<p>Measure cache hit rate and backhaul reductions</p>
-</li>
-<li>
-<p>M3 tasks:</p>
-</li>
-<li>Integrate eSIM provisioning APIs with IG-Hub (profile create, activate, revoke)</li>
-<li>Create onboarding UX (QR code / activation code) for supported devices</li>
-<li>
-<p>Enforce network policy on device profile (prefer Aku network, local bundles)</p>
-</li>
-<li>
-<p>M4 tasks:</p>
-</li>
-<li>Design pricing tiers (free education, in-state bundles, national bundles)</li>
-<li>Implement billing events (call start/stop, data session usage, local zero-rating rules)</li>
-<li>
-<p>Integrate billing records with IG-Hub clearing service for revenue accounting</p>
-</li>
-<li>
-<p>M5 tasks:</p>
-</li>
-<li>Run a controlled MVNO pilot with partner MNO for non-Aku interconnect</li>
-<li>Monitor call routing % kept on Aku vs handed to MNO, user satisfaction</li>
-<li>
-<p>Iterate pricing and policies</p>
-</li>
-<li>
-<p>Success metrics</p>
-</li>
-<li>Cache hit ratio &gt;= 60% within 30 days for preloaded Aku Learn content</li>
-<li>In-state call routing &gt;= 80% of calls remain on Aku network (pilot target)</li>
-<li>
-<p>Cost per in-state minute &lt; 10% of typical MNO local call cost (target)</p>
-</li>
-<li>
-<p>Risks &amp; mitigations</p>
-</li>
-<li>Regulatory pushback: early NCC engagement and clear pilot scope</li>
-<li>Voice quality issues: start with local short tests and increase call quality monitoring</li>
-<li>
-<p>Device diversity: restrict initial eSIM pilot to known compatible devices</p>
-</li>
-<li>
-<p>Short-term deliverables (30 days)</p>
-</li>
-<li>Working Docker Compose prototype for Edge SIP proxy + SIP client</li>
-<li>Edge caching prototype and a small predictive prefetch job (PoC)</li>
-<li>eSIM onboarding flow documented and tested with 10 devices</li>
-<li>
-<p>Pricing model draft and CSV template for procurement and billing</p>
-</li>
-<li>
-<p>Who does what</p>
-</li>
-<li>Network Engineering: VoIP stack, routing rules, SIP handling</li>
-<li>Platform/ML: caching, predictive prefetch models, analytics</li>
-<li>Product/Commercial: pricing tiers, MVNO negotiations, billing rules</li>
-<li>
-<p>Compliance: regulatory engagement and approvals</p>
-</li>
-<li>
-<p>Next steps</p>
-</li>
-<li>Approve M1 resources (compute, test devices, engineer time)</li>
-<li>Kick off VoIP prototype and Edge caching PoC in lab</li>
-<li>Schedule regulatory briefing with NCC and state stakeholders</li>
-</ol>
+<h1 id="brand-logos-asset-index">Brand Logos — Asset Index<a class="headerlink" href="#brand-logos-asset-index" title="Permanent link">&para;</a></h1>
+<p>This directory contains all official brand logos for the Aku Platform ecosystem. Each logo is provided as an SVG vector file for maximum scalability and fidelity across all use-cases.</p>
+<h2 id="directory-structure">Directory Structure<a class="headerlink" href="#directory-structure" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>docs/images/logos/
+├── aku-brand-horns-up.svg      — Aku Platform primary brand logo (horns facing up)
+├── aku-brand-horns-down.svg    — Aku Platform alternate brand logo (horns facing down)
+├── telhone-logo.svg            — Telhone telecom brand logo (used by Aku eSIM service)
+└── akudemy-logo.svg            — Akudemy education brand logo (used by Aku Learn service)
+</code></pre></div>
+
+<h2 id="logo-descriptions">Logo Descriptions<a class="headerlink" href="#logo-descriptions" title="Permanent link">&para;</a></h2>
+<h3 id="aku-brand-horns-up-aku-brand-horns-upsvg">Aku Brand — Horns Up (<code>aku-brand-horns-up.svg</code>)<a class="headerlink" href="#aku-brand-horns-up-aku-brand-horns-upsvg" title="Permanent link">&para;</a></h3>
+<p>The <strong>primary</strong> Aku Platform brand mark. Features the Aku mascot with horns pointing upward, conveying growth, ambition, and forward momentum. Used on the main platform homepage, official marketing materials, and the Aku IG-Hub interface.</p>
+<p><strong>Palette:</strong> Deep navy (<code>#0a1628</code>) background, amber/gold (<code>#e8a020</code>) mascot, white wordmark.</p>
+<h3 id="aku-brand-horns-down-aku-brand-horns-downsvg">Aku Brand — Horns Down (<code>aku-brand-horns-down.svg</code>)<a class="headerlink" href="#aku-brand-horns-down-aku-brand-horns-downsvg" title="Permanent link">&para;</a></h3>
+<p>The <strong>alternate</strong> Aku Platform brand mark. Features the Aku mascot with horns pointing downward, representing grounding, stability, and local roots. Used for community-facing materials, the Edge Hub interface, and print collateral where the primary logo is already prominent.</p>
+<p><strong>Palette:</strong> Deep navy (<code>#0a1628</code>) background, amber/gold (<code>#e8a020</code>) mascot, white wordmark.</p>
+<h3 id="telhone-telhone-logosvg">Telhone (<code>telhone-logo.svg</code>)<a class="headerlink" href="#telhone-telhone-logosvg" title="Permanent link">&para;</a></h3>
+<p>The brand identity for <strong>Telhone</strong>, the Aku Platform's embedded telecom and eSIM service. Features a phone handset with radio signal arcs and a modern blue-on-dark palette. Used in:
+- Aku eSIM service documentation and UI
+- MVNO/eSIM provisioning portals
+- Device onboarding materials for eSIM-enabled devices</p>
+<p><strong>Palette:</strong> Navy (<code>#003366</code>) background, bright blue (<code>#00bfff</code>) icon, white wordmark.</p>
+<h3 id="akudemy-akudemy-logosvg">Akudemy (<code>akudemy-logo.svg</code>)<a class="headerlink" href="#akudemy-akudemy-logosvg" title="Permanent link">&para;</a></h3>
+<p>The brand identity for <strong>Akudemy</strong>, the Aku Platform's education delivery brand. Features a graduation cap above an open book. Used in:
+- Aku Learn service documentation and UI
+- Student-facing mobile app screens
+- Educator and school admin portals
+- Community learning programme materials</p>
+<p><strong>Palette:</strong> Deep indigo (<code>#1a237e</code>) background, gold (<code>#ffd600</code>) graduation cap, white book, gold wordmark.</p>
+<h2 id="usage-guidelines">Usage Guidelines<a class="headerlink" href="#usage-guidelines" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Logo</th>
+<th>Primary Service</th>
+<th>Secondary Applications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>aku-brand-horns-up.svg</code></td>
+<td>Aku Platform (IG-Hub, Super Hub)</td>
+<td>Marketing, website hero, official documents</td>
+</tr>
+<tr>
+<td><code>aku-brand-horns-down.svg</code></td>
+<td>Aku Edge Hub community interface</td>
+<td>Print, community materials</td>
+</tr>
+<tr>
+<td><code>telhone-logo.svg</code></td>
+<td>Aku eSIM / Telhone MVNO</td>
+<td>eSIM provisioning UI, device packaging</td>
+</tr>
+<tr>
+<td><code>akudemy-logo.svg</code></td>
+<td>Aku Learn / Akudemy</td>
+<td>Mobile app, school portals, educator toolkits</td>
+</tr>
+</tbody>
+</table>
+<h2 id="file-naming-convention">File Naming Convention<a class="headerlink" href="#file-naming-convention" title="Permanent link">&para;</a></h2>
+<p><code>&lt;brand&gt;-logo[-variant].svg</code></p>
+<ul>
+<li>Replace actual logo files (placeholder SVGs) with production-quality artwork from the design team before any public release.</li>
+<li>Keep source files (<code>.ai</code>, <code>.fig</code>, <code>.sketch</code>) in the design team's asset management system; only export SVGs here.</li>
+</ul>
 
 
 

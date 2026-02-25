@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Aku Brand Logo — Horns Down">
+  <title>Aku Brand — Horns Down</title>
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#0a1628" />
+  <!-- Head/face shape -->
+  <ellipse cx="100" cy="88" rx="48" ry="38" fill="#e8a020" />
+  <!-- Left horn (pointing down) -->
+  <path d="M60 100 Q45 150 55 175 Q65 150 75 120 Z" fill="#e8a020" />
+  <!-- Right horn (pointing down) -->
+  <path d="M140 100 Q155 150 145 175 Q135 150 125 120 Z" fill="#e8a020" />
+  <!-- Eyes -->
+  <circle cx="85" cy="82" r="6" fill="#0a1628" />
+  <circle cx="115" cy="82" r="6" fill="#0a1628" />
+  <!-- Eye highlights -->
+  <circle cx="87" cy="80" r="2" fill="#ffffff" />
+  <circle cx="117" cy="80" r="2" fill="#ffffff" />
+  <!-- Nose -->
+  <ellipse cx="100" cy="97" rx="10" ry="6" fill="#c07010" />
+  <!-- Wordmark -->
+  <text x="100" y="155" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="20" fill="#ffffff" text-anchor="middle" letter-spacing="4">AKU</text>
+</svg>
