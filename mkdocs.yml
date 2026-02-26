@@ -31,23 +31,81 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Core Concepts: core_concepts.md
   - Project Overview:
       - Overview: 00-project-overview/index.md
       - Roadmap: 00-project-overview/roadmap-phase-1.md
   - Architecture:
       - Overview: 01-architecture/index.md
       - Content Ingestion: 01-architecture/hld-lld-content-ingestion.md
-      - ADRs: 01-architecture/adrs/index.md
+      - ADRs:
+          - Overview: 01-architecture/adrs/index.md
+          - All ADRs: adrs.md
+      - Platform Overview: architecture/aku-platform-overview.md
+      - Transformer Integration: architecture/transformer-integration.md
+      - VoIP & Caching: architecture/voip_caching_architecture.md
+      - System Design: system_design.md
+      - Tech Stack: tech_stack.md
+  - Components:
+      - Aku Edge Hub: components/aku-edge-hub.md
+      - Aku Super Hub: components/aku-super-hub.md
+      - Aku IG-Hub: components/aku-ig-hub.md
+      - Edge Hub (Legacy): architecture.md
+  - Hardware:
+      - Clean Energy Power System: hardware/clean_energy_power_system.md
+  - Services:
+      - Aku Learn: services/aku-learn.md
+      - Aku eSIM: services/aku-esim.md
+      - Aku DaaS: services/aku-daas.md
+      - Aku Workspace: services/aku-workspace.md
   - Backend:
       - Overview: 02-backend/index.md
       - API Specs: 02-backend/api-specs.md
+      - API Specs (Full): api_specs.md
       - Database Schemas: 02-backend/database-schemas.md
+      - Dashboards:
+          - Student: 02-backend/student_dashboard.md
+          - Teacher: 02-backend/teacher_dashboard.md
+          - School Admin: 02-backend/school_admin_dashboard.md
+          - Super Admin: 02-backend/super_admin_dashboard.md
+          - Guardian: 02-backend/guardian_dashboard.md
+          - Government: 02-backend/government_dashboard.md
+          - Corporate: 02-backend/corporate_dashboard.md
+          - NGO Partner: 02-backend/ngo_partner_dashboard.md
+          - IT Support: 02-backend/it_support_dashboard.md
   - Mobile App: 03-mobile/index.md
   - IoT Projector: 04-iot-projector/index.md
+  - AI & ML:
+      - AI Tutor: ai_tutor.md
+      - ML Training Pipeline: ml_training_pipeline.md
+      - AIops Strategy: AIOPS_STRATEGY.md
+      - Cyber AIops: CYBER_AIOPS_STRATEGY.md
+      - LO Tagging Schema: LO_TAGGING_SCHEMA.md
+      - News Multimodal Ingestion: news_multimodal_ingestion.md
+  - eSIM & Connectivity:
+      - MVNO/eSIM Integration: esim/mvno_esim_integration_plan.md
+      - Projector Hub Leases: projector_hub_leases.md
+  - Pilot & Deployment:
+      - Zamfara Pilot Plan: rollout/zamfara_pilot_plan.md
+      - Gusau Pilot Schedule: deployment/gusau_pilot_schedule.md
+      - KPI Dashboard: monitoring/kpi_dashboard_spec.md
+      - Go/No-Go Gates: go_no_go/go_no_go_gates.md
+      - Regulatory Compliance: regulatory/regulatory_compliance_checklist.md
+      - Teacher & Technician Training: training/teacher_technician_training.md
+  - Community:
+      - Engagement Plan: community/community_engagement_plan.md
+      - Sustainability Plan: community/community_engagement_sustainability_plan.md
+  - Strategy:
+      - Ultra-Affordable Connectivity: strategy/ultra_affordable_instate_strategy.md
+      - Finance: finance.md
+      - Functional Specification: functional_spec.md
+  - Handbooks:
+      - MLOps & AI Engineering: handbooks/MLOps_AI_Engineering_Handbook.md
+      - eSIM Provisioning: handbooks/eSIM_Provisioning_Handbook.md
   - Cross-Cutting:
+      - Overview: 05-cross-cutting/index.md
       - Coding Standards: 05-cross-cutting/coding-standards.md
       - Containerisation: 05-cross-cutting/containerization.md
-      - Overview: 05-cross-cutting/index.md
   - Process & Methodology: 06-process-methodology/index.md
   - Glossary: 07-glossary/index.md
   - Demo Scripts: demo_scripts/offline_demo_segment.md
