@@ -51,6 +51,8 @@ nav:
       - Aku Super Hub: components/aku-super-hub.md
       - Aku IG-Hub: components/aku-ig-hub.md
       - Edge Hub (Legacy): architecture.md
+  - Hardware:
+      - Clean Energy Power System: hardware/clean_energy_power_system.md
   - Services:
       - Aku Learn: services/aku-learn.md
       - Aku eSIM: services/aku-esim.md
