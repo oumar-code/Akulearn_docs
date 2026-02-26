@@ -80,6 +80,7 @@ data/
 diagrams/
 examples/
 hardware/
+!docs/hardware/
 hardware_integration/
 infra/
 infrastructure/
