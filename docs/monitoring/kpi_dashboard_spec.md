@@ -4,7 +4,7 @@
 - Provide real-time visibility into Edge Hub health, usage, Aku Learn engagement, and network metrics. Enable automated alerts for critical failures.
 
 ## Key Metrics (to collect)
-- Edge Hub health: uptime, CPU temperature, battery voltage, solar input voltage, charge current
+- Edge Hub health: uptime, CPU temperature, battery voltage, battery state-of-charge (SoC), solar input voltage, wind turbine DC voltage, load current, charge current
 - Services: cache hit rate (%), content requests/sec, content sync latency
 - Usage: unique students/day, sessions/day, avg session length, teacher logins
 - Voice: local call setup success rate, average call duration, minutes by origin/destination
@@ -14,7 +14,10 @@
 ## Metric names (Prometheus-friendly examples)
 - edge_uptime_percent{site}
 - edge_batt_voltage_volts{site}
+- edge_battery_soc_percent{site}
 - edge_solar_voltage_volts{site}
+- edge_wind_voltage_volts{site}
+- edge_load_current_amps{site}
 - edge_cpu_temp_celsius{site}
 - aku_cache_hit_ratio{site}
 - aku_content_requests_total{site}
@@ -31,6 +34,9 @@
 ## Alerts & Thresholds
 - Critical: Edge Hub offline > 10 minutes (pager alert)
 - Warning: Battery voltage below safe threshold (email alert)
+- Warning: Battery SoC below 20% — schedule maintenance visit
+- Critical: Battery SoC below 10% — Edge Hub will initiate graceful shutdown
+- Warning: No solar input AND no wind input for > 4 hours during daylight (check panels/turbine)
 - Performance: cache hit ratio drops below 40% (investigate sync)
 
 ## Data retention & privacy
