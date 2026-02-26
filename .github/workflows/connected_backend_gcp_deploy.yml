@@ -3,6 +3,9 @@ name: Akulearn Connected Backend GCP CI/CD
 on:
   push:
     branches: [main]
+    paths:
+      - 'connected_stack/**'
+      - '.github/workflows/connected_backend_gcp_deploy.yml'
 
 jobs:
   build-push-deploy:

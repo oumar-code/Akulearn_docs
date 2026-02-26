@@ -14,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: pip install fastapi uvicorn pytest
       - name: Run backend tests
-        run: pytest
+        run: pytest tests/
       - name: Build Docker images
         run: docker build -t akulearn-backend .
       - name: Push Docker images

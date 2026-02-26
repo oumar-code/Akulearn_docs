@@ -31,6 +31,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install pandas numpy plotly kaleido
         
+    - name: Create runs directory
+      run: mkdir -p runs
+        
     - name: Run import test
       run: |
         python mlops/test_imports.py

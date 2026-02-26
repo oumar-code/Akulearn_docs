@@ -3,6 +3,9 @@ name: Akulearn Projector Hub CI/CD
 on:
   push:
     branches: [main]
+    paths:
+      - 'unconnected_stack/**'
+      - '.github/workflows/projector_hub_ci.yml'
 
 jobs:
   build-package-deploy:

@@ -1,9 +1,6 @@
-# Node.js
-node_modules/
-npm-debug.log
-yarn-error.log
-yarn.lock
-package-lock.json
+node_modules
+# MkDocs build output
+site/
 
 # Python
 __pycache__/
@@ -15,15 +12,6 @@ env/
 venv/
 .venv/
 myenv/
-*.egg-info/
-dist/
-build/
-*.egg
-
-# Virtual Environment
-ENV/
-venv/
-env/
 
 # Logs and temporary outputs
 *.log
@@ -33,69 +21,16 @@ pull-output.txt
 docker-info.txt
 docker-ps-all.txt
 docker-version.txt
+
+# runtime logs and outputs
 logs-*.txt
 *.out
 *.err
 
-# Runtime logs and outputs
-*.log
-logs/
-
 # Editor/IDE
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
-.DS_Store
-
-# Environment variables (keep .env.example but not .env)
-.env
-.env.local
-.env.*.local
-secrets/
-keys/
-
-# Database
-*.db
-*.sqlite
-*.sqlite3
-*.db-journal
-
-# Build artifacts
-*.whl
-*.tar
-*.gz
-dist/
-build/
-
-# Test coverage
-.coverage
-htmlcov/
-.pytest_cache/
-coverage/
-.tox/
-
-# Jupyter Notebook
-.ipynb_checkpoints/
-*.ipynb
 
 # Misc
 *.zip
-*.tar.gz
-*.7z
-__pypackages__/
-
-# Vercel specific
-.vercel/
-.vercel_build_output/
-.next/
-out/
-
-# Cloudflare
-.wrangler/
-
-# Terraform
-.terraform/
-*.tfstate
-*.tfstate.backup
+*.egg-info/

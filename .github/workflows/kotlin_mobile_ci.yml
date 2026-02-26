@@ -3,6 +3,10 @@ name: Kotlin Mobile CI/CD
 on:
   push:
     branches: [main]
+    paths:
+      - 'KOTLIN MULTIPLATFORM/**'
+      - 'src/mobile_app/**'
+      - '.github/workflows/kotlin_mobile_ci.yml'
 
 jobs:
   build-test-apk:
