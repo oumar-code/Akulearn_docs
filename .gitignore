@@ -103,11 +103,16 @@ web/
 *.html
 *.css
 
+# Allow the Akudemy static site in public/
+!public/
+!public/**
+
 # JSON data files (keep vercel.json and package.json and puppeteer-config.json)
 *.json
 !vercel.json
 !package.json
 !puppeteer-config.json
+!public/*.json
 
 # CSV data files
 *.csv

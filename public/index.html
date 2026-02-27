@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akudemy – Ace Your JAMB Exam</title>
+  <meta name="description" content="Akudemy is Nigeria's smartest JAMB exam prep platform. Practice CBT questions, get AI-powered feedback, and pass JAMB with confidence." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #1a56db;
+      --primary-dark: #1340a8;
+      --accent: #f59e0b;
+      --text: #111827;
+      --muted: #6b7280;
+      --bg: #ffffff;
+      --surface: #f3f4f6;
+      --border: #e5e7eb;
+      --radius: 12px;
+    }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; }
+    .nav-logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; font-weight: 500; color: var(--muted); }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta { background: var(--primary); color: #fff; padding: 0.55rem 1.25rem; border-radius: 8px; font-weight: 600; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--primary-dark); }
+
+    /* HERO */
+    .hero { text-align: center; padding: 5rem 1.5rem 4rem; background: linear-gradient(135deg, #eff6ff 0%, #fff7ed 100%); }
+    .hero-badge { display: inline-block; background: #dbeafe; color: var(--primary); font-size: 0.8rem; font-weight: 700; padding: 0.3rem 0.9rem; border-radius: 999px; letter-spacing: 0.05em; margin-bottom: 1.25rem; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.15; max-width: 750px; margin: 0 auto 1.25rem; }
+    .hero h1 .highlight { color: var(--primary); }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 580px; margin: 0 auto 2rem; }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--primary); color: #fff; padding: 0.85rem 2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; transition: background 0.2s, transform 0.15s; }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); padding: 0.85rem 2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; transition: background 0.2s; }
+    .btn-secondary:hover { background: #eff6ff; }
+    .hero-stats { display: flex; gap: 2.5rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-value { font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .stat-label { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+
+    /* SECTION SHARED */
+    section { padding: 5rem 1.5rem; }
+    .section-tag { display: block; text-align: center; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 0.6rem; }
+    .section-title { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; text-align: center; margin-bottom: 1rem; }
+    .section-sub { text-align: center; color: var(--muted); max-width: 540px; margin: 0 auto 3rem; }
+
+    /* FEATURES */
+    .features { background: var(--surface); }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .feature-card { background: var(--bg); border-radius: var(--radius); padding: 1.75rem; border: 1px solid var(--border); }
+    .feature-icon { font-size: 2rem; margin-bottom: 0.9rem; }
+    .feature-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .feature-card p { color: var(--muted); font-size: 0.93rem; }
+
+    /* SUBJECTS */
+    .subjects-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; max-width: 800px; margin: 0 auto; }
+    .subject-pill { background: #dbeafe; color: var(--primary); font-weight: 600; font-size: 0.88rem; padding: 0.45rem 1rem; border-radius: 999px; }
+
+    /* PRICING */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+    .plan-card { border-radius: var(--radius); padding: 2rem; border: 2px solid var(--border); }
+    .plan-card.popular { border-color: var(--primary); position: relative; }
+    .popular-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.9rem; border-radius: 999px; white-space: nowrap; }
+    .plan-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .plan-price { font-size: 2.25rem; font-weight: 900; color: var(--primary); }
+    .plan-price span { font-size: 1rem; font-weight: 500; color: var(--muted); }
+    .plan-desc { color: var(--muted); font-size: 0.88rem; margin: 0.5rem 0 1.25rem; }
+    .plan-features { list-style: none; margin-bottom: 1.5rem; }
+    .plan-features li { padding: 0.35rem 0; font-size: 0.92rem; color: var(--muted); }
+    .plan-features li::before { content: "✓  "; color: #10b981; font-weight: 700; }
+    .plan-btn { display: block; text-align: center; width: 100%; padding: 0.75rem; border-radius: 8px; font-weight: 700; transition: background 0.2s; }
+    .plan-btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+    .plan-btn-outline:hover { background: #eff6ff; }
+    .plan-btn-filled { background: var(--primary); color: #fff; }
+    .plan-btn-filled:hover { background: var(--primary-dark); }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--surface); }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .testi-card { background: var(--bg); border-radius: var(--radius); padding: 1.5rem; border: 1px solid var(--border); }
+    .testi-stars { color: var(--accent); font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .testi-text { font-size: 0.94rem; color: var(--text); margin-bottom: 1rem; font-style: italic; }
+    .testi-author { font-weight: 700; font-size: 0.88rem; }
+    .testi-role { color: var(--muted); font-size: 0.8rem; }
+
+    /* CTA BANNER */
+    .cta-banner { background: var(--primary); color: #fff; text-align: center; padding: 4rem 1.5rem; }
+    .cta-banner h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 1rem; }
+    .cta-banner p { opacity: 0.85; max-width: 520px; margin: 0 auto 2rem; }
+    .btn-white { background: #fff; color: var(--primary); padding: 0.85rem 2rem; border-radius: 10px; font-weight: 700; font-size: 1rem; transition: opacity 0.2s; }
+    .btn-white:hover { opacity: 0.9; }
+
+    /* FOOTER */
+    footer { background: var(--text); color: #d1d5db; padding: 3rem 1.5rem 1.5rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+    .footer-brand p { font-size: 0.88rem; margin-top: 0.5rem; opacity: 0.75; }
+    .footer-logo { font-size: 1.3rem; font-weight: 800; color: #fff; }
+    .footer-logo span { color: var(--accent); }
+    .footer-col h4 { color: #fff; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.4rem; font-size: 0.85rem; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 1.25rem; text-align: center; font-size: 0.8rem; opacity: 0.6; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Aku<span>demy</span></div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#subjects">Subjects</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+    </div>
+    <a href="#pricing" class="nav-cta">Get Started Free</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="hero-badge">🎓 Nigeria's #1 JAMB Prep Platform</span>
+    <h1>Ace Your <span class="highlight">JAMB Exam</span><br/>With Confidence</h1>
+    <p>Practice thousands of past questions, get instant AI feedback, and track your progress—all in one place. Built for Nigerian students.</p>
+    <div class="hero-actions">
+      <a href="#pricing" class="btn-primary">Start Practicing Free</a>
+      <a href="about.html" class="btn-secondary">How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-value">50,000+</div><div class="stat-label">Students Enrolled</div></div>
+      <div class="stat"><div class="stat-value">10,000+</div><div class="stat-label">Past Questions</div></div>
+      <div class="stat"><div class="stat-value">95%</div><div class="stat-label">Pass Rate</div></div>
+      <div class="stat"><div class="stat-value">200+</div><div class="stat-label">Mock Tests</div></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <span class="section-tag">Why Akudemy</span>
+    <h2 class="section-title">Everything You Need to Pass JAMB</h2>
+    <p class="section-sub">We've built every tool a Nigerian student needs to prepare smarter and perform better on exam day.</p>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <h3>CBT Mock Exams</h3>
+        <p>Simulate the real JAMB CBT environment with timed practice tests drawn from 20+ years of past questions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI-Powered Explanations</h3>
+        <p>Get step-by-step explanations for every answer. Understand the "why" behind each solution, not just the result.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Performance Analytics</h3>
+        <p>Track your scores over time, identify weak topics, and see exactly where to focus your study sessions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗓️</div>
+        <h3>Personalised Study Plan</h3>
+        <p>Our smart algorithm builds a custom study schedule based on your exam date, target score, and weak areas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Comprehensive Notes</h3>
+        <p>Access concise, exam-focused revision notes for every JAMB subject—written by top Nigerian educators.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Study Offline</h3>
+        <p>Download questions and notes for offline study. Never let poor internet connection slow your preparation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBJECTS -->
+  <section id="subjects">
+    <span class="section-tag">Coverage</span>
+    <h2 class="section-title">All JAMB Subjects Covered</h2>
+    <p class="section-sub">From English Language to the sciences, we have comprehensive content for every JAMB subject combination.</p>
+    <div class="subjects-grid">
+      <span class="subject-pill">English Language</span>
+      <span class="subject-pill">Mathematics</span>
+      <span class="subject-pill">Physics</span>
+      <span class="subject-pill">Chemistry</span>
+      <span class="subject-pill">Biology</span>
+      <span class="subject-pill">Economics</span>
+      <span class="subject-pill">Government</span>
+      <span class="subject-pill">Literature-in-English</span>
+      <span class="subject-pill">Geography</span>
+      <span class="subject-pill">Accounting</span>
+      <span class="subject-pill">Commerce</span>
+      <span class="subject-pill">Agricultural Science</span>
+      <span class="subject-pill">Christian Religious Studies</span>
+      <span class="subject-pill">Islamic Studies</span>
+      <span class="subject-pill">History</span>
+      <span class="subject-pill">Yoruba</span>
+      <span class="subject-pill">Igbo</span>
+      <span class="subject-pill">Hausa</span>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" style="background: var(--surface);">
+    <span class="section-tag">Pricing</span>
+    <h2 class="section-title">Simple, Affordable Plans</h2>
+    <p class="section-sub">Choose the plan that works for you. All plans include access to past questions and performance tracking.</p>
+    <div class="pricing-grid">
+      <div class="plan-card">
+        <div class="plan-name">Free</div>
+        <div class="plan-price">₦0 <span>/ month</span></div>
+        <p class="plan-desc">Perfect to get started and try out the platform.</p>
+        <ul class="plan-features">
+          <li>100 past questions per month</li>
+          <li>2 mock CBT exams per month</li>
+          <li>Basic performance dashboard</li>
+          <li>Community forum access</li>
+        </ul>
+        <a href="#" class="plan-btn plan-btn-outline">Sign Up Free</a>
+      </div>
+      <div class="plan-card popular" style="position:relative;">
+        <span class="popular-badge">Most Popular</span>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">₦2,500 <span>/ month</span></div>
+        <p class="plan-desc">Full access for serious JAMB candidates.</p>
+        <ul class="plan-features">
+          <li>Unlimited past questions</li>
+          <li>Unlimited mock CBT exams</li>
+          <li>AI-powered explanations</li>
+          <li>Personalised study plan</li>
+          <li>Full performance analytics</li>
+          <li>Offline downloads</li>
+        </ul>
+        <a href="#" class="plan-btn plan-btn-filled">Get Pro</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">School</div>
+        <div class="plan-price">₦15,000 <span>/ school/mo</span></div>
+        <p class="plan-desc">For secondary schools preparing their students for JAMB.</p>
+        <ul class="plan-features">
+          <li>Up to 200 student accounts</li>
+          <li>Teacher dashboard & reports</li>
+          <li>Class-wide performance analytics</li>
+          <li>Dedicated support</li>
+          <li>Custom branding (optional)</li>
+        </ul>
+        <a href="about.html#contact" class="plan-btn plan-btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <span class="section-tag">Success Stories</span>
+    <h2 class="section-title">Students Love Akudemy</h2>
+    <p class="section-sub">Join thousands of Nigerian students who passed JAMB using Akudemy.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I scored 312 in JAMB after using Akudemy for just 6 weeks. The mock CBT exams made me so comfortable on the real exam day."</p>
+        <div class="testi-author">Fatima A.</div>
+        <div class="testi-role">Lagos State — scored 312, admitted to UNILAG</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The AI explanations helped me understand topics I had been struggling with for years. Chemistry finally makes sense to me!"</p>
+        <div class="testi-author">Emeka O.</div>
+        <div class="testi-role">Enugu State — scored 298, admitted to UNN</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I live in a rural area with poor internet. The offline feature was a lifesaver. I downloaded everything at school and studied at home."</p>
+        <div class="testi-author">Aminu S.</div>
+        <div class="testi-role">Zamfara State — scored 287, admitted to BUK</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Our school subscribed to the School plan and our JAMB pass rate went from 60% to 91% in one year. Remarkable results."</p>
+        <div class="testi-author">Mr. Bello I.</div>
+        <div class="testi-role">Vice Principal, Government Secondary School, Kano</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The personalised study plan kept me on track. I knew exactly what to study every day and never felt overwhelmed."</p>
+        <div class="testi-author">Chidinma E.</div>
+        <div class="testi-role">Anambra State — scored 305, admitted to UNIZIK</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Worth every naira. I tried other platforms but Akudemy had the best explanations and the most realistic CBT simulator."</p>
+        <div class="testi-author">Tunde B.</div>
+        <div class="testi-role">Ogun State — scored 320, admitted to OAU</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2>Ready to Pass JAMB?</h2>
+    <p>Join over 50,000 students already preparing on Akudemy. Start for free—no credit card required.</p>
+    <a href="#pricing" class="btn-white">Start Practising Free</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Aku<span>demy</span></div>
+        <p>Nigeria's smartest JAMB<br/>exam preparation platform.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="#subjects">Subjects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#mission">Our Mission</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html#faq">FAQ</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Akudemy · Part of the Akulearn EdTech Platform · Built for Nigerian students.</div>
+  </footer>
+
+</body>
+</html>
