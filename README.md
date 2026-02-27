@@ -43,9 +43,71 @@ To view the documentation locally:
 
 For questions, feedback, or partnership inquiries, please contact the Akulearn team (details coming soon).
 
+
+```mermaid
+graph TD
+    subgraph Edge
+        E1[Edge Hub] -- Mesh Link --> E2[Edge Hub]
+        E1 -- Client Access --> D1[User Device]
+    end
+    subgraph Cluster
+        C1[Super Hub] -- Backhaul --> IG1[IG-Hub]
+        C1 -- OTA Updates --> E1
+    end
+    IG1[Interstate Gateway Hub]
+```
+
+## Repository Structure
+
+| Directory | Purpose |
+|---|---|
+| `KOTLIN MULTIPLATFORM/` | Android + iOS mobile app (KMP) |
+| `docs/` | Platform documentation (MkDocs) |
+| `supabase/` | Auth and database schema |
+| `infra/` / `kubernetes/` | Infrastructure and deployment |
+| `wave3_rest_api.py` and related | Python content and recommendation backend |
+
+Full documentation structure:
+
+- **`docs/00-project-overview/`** — Vision, mission, and Phase 1 roadmap
+- **`docs/01-architecture/`** — System architecture and design documents
+- **`docs/02-backend/`** — Backend handbook, API specs, and database schemas
+- **`docs/03-mobile/`** — Mobile app guidelines
+- **`docs/04-iot-projector/`** — IoT projector guidelines
+- **`docs/05-cross-cutting/`** — Technical specs and coding standards
+- **`docs/06-process-methodology/`** — Agile/DevOps methodology
+- **`docs/07-glossary/`** — Glossary of Aku terms
+- **`docs/images/`** — Diagrams and screenshots
+
+## Getting Started
+
+### Mobile App (Android / iOS)
+See [`KOTLIN MULTIPLATFORM/README.md`](KOTLIN%20MULTIPLATFORM/README.md) for full setup instructions.
+
+### Documentation Site
+```sh
+pip install mkdocs mkdocs-material
+mkdocs serve
+```
+Open [http://localhost:8000](http://localhost:8000) in your browser.
+
+### Python Backend
+```sh
+pip install -r requirements.txt
+python start_wave3_server.py
+```
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting pull requests or opening issues.
+
+## Contact
+
+For questions, feedback, or partnership inquiries, please contact the Aku Platform team (details coming soon).
+
 ---
 
-Thank you for helping us build a brighter future for education!
+Thank you for helping us build a brighter future for education and connectivity!
 
 # Aku Platform Documentation Repository
 
