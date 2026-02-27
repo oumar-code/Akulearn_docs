@@ -21,9 +21,10 @@ myenv/
 *.bat
 *.ps1
 
-# Exceptions: Gradle wrapper scripts (required for Android Studio / KMP)
+# Exceptions: Gradle wrapper scripts and build scripts (required for Android Studio / KMP)
 !gradlew
 !gradlew.bat
+!build-all.sh
 
 # Go source
 *.go
