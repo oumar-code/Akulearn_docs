@@ -88,6 +88,7 @@ nav:
   - Pilot & Deployment:
       - Zamfara Pilot Plan: rollout/zamfara_pilot_plan.md
       - Gusau Pilot Schedule: deployment/gusau_pilot_schedule.md
+      - Deployment Guide: deployment/deployment_guide.md
       - KPI Dashboard: monitoring/kpi_dashboard_spec.md
       - Go/No-Go Gates: go_no_go/go_no_go_gates.md
       - Regulatory Compliance: regulatory/regulatory_compliance_checklist.md
