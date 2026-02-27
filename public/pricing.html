@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akudemy Pricing – Affordable JAMB Prep Plans</title>
+  <meta name="description" content="Simple, affordable pricing for every Nigerian student. Start free, upgrade when you're ready. No hidden fees." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #1a56db;
+      --primary-dark: #1340a8;
+      --accent: #f59e0b;
+      --text: #111827;
+      --muted: #6b7280;
+      --bg: #ffffff;
+      --surface: #f3f4f6;
+      --border: #e5e7eb;
+      --radius: 12px;
+    }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; }
+    .nav-logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; font-weight: 500; color: var(--muted); }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta { background: var(--primary); color: #fff; padding: 0.55rem 1.25rem; border-radius: 8px; font-weight: 600; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--primary-dark); }
+
+    .page-hero { background: linear-gradient(135deg, #eff6ff 0%, #fff7ed 100%); padding: 4rem 1.5rem 3rem; text-align: center; }
+    .page-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 0.75rem; }
+    .page-hero p { font-size: 1.1rem; color: var(--muted); max-width: 540px; margin: 0 auto; }
+
+    /* BILLING TOGGLE */
+    .billing-toggle { display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin: 2.5rem auto 0; }
+    .toggle-label { font-size: 0.95rem; font-weight: 600; color: var(--muted); }
+    .toggle-label.active { color: var(--text); }
+    .toggle-switch { position: relative; width: 48px; height: 26px; }
+    .toggle-switch input { display: none; }
+    .toggle-slider { position: absolute; inset: 0; background: var(--primary); border-radius: 13px; cursor: pointer; transition: background 0.2s; }
+    .toggle-slider::before { content: ''; position: absolute; width: 20px; height: 20px; border-radius: 50%; background: #fff; top: 3px; left: 3px; transition: transform 0.2s; }
+    .save-badge { display: inline-block; background: #dcfce7; color: #16a34a; font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; }
+
+    /* PLANS */
+    .pricing-section { padding: 3rem 1.5rem 5rem; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 980px; margin: 0 auto; }
+    .plan-card { border-radius: var(--radius); padding: 2rem; border: 2px solid var(--border); background: var(--bg); }
+    .plan-card.popular { border-color: var(--primary); position: relative; }
+    .popular-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.9rem; border-radius: 999px; white-space: nowrap; }
+    .plan-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .plan-price { font-size: 2.5rem; font-weight: 900; color: var(--primary); line-height: 1; margin: 0.5rem 0 0.25rem; }
+    .plan-price sub { font-size: 1rem; font-weight: 500; color: var(--muted); vertical-align: middle; }
+    .plan-desc { color: var(--muted); font-size: 0.88rem; margin: 0.5rem 0 1.5rem; }
+    .plan-btn { display: block; text-align: center; width: 100%; padding: 0.8rem; border-radius: 8px; font-weight: 700; font-size: 1rem; margin-bottom: 1.5rem; transition: background 0.2s, border-color 0.2s; }
+    .plan-btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+    .plan-btn-outline:hover { background: #eff6ff; }
+    .plan-btn-filled { background: var(--primary); color: #fff; }
+    .plan-btn-filled:hover { background: var(--primary-dark); }
+    .plan-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 1.25rem; }
+    .plan-features-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.75rem; }
+    .plan-features { list-style: none; }
+    .plan-features li { padding: 0.3rem 0; font-size: 0.9rem; color: var(--muted); display: flex; gap: 0.5rem; align-items: flex-start; }
+    .plan-features li .fi { color: #10b981; font-weight: 700; flex-shrink: 0; }
+    .plan-features li .fx { color: #d1d5db; flex-shrink: 0; }
+
+    /* COMPARISON TABLE */
+    .comparison { padding: 2rem 1.5rem 5rem; }
+    .comparison h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; text-align: center; margin-bottom: 0.5rem; }
+    .comparison p { text-align: center; color: var(--muted); margin-bottom: 2.5rem; }
+    .table-wrap { max-width: 860px; margin: 0 auto; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    thead th { padding: 0.75rem 1rem; text-align: center; font-weight: 700; color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 2px solid var(--border); }
+    thead th:first-child { text-align: left; }
+    tbody td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); text-align: center; color: var(--muted); }
+    tbody td:first-child { text-align: left; font-weight: 500; color: var(--text); }
+    tbody tr:last-child td { border-bottom: none; }
+    .check { color: #10b981; font-size: 1.1rem; }
+    .cross { color: #d1d5db; font-size: 1.1rem; }
+    .highlight-col { background: #eff6ff; }
+
+    /* GUARANTEE -->
+    .guarantee { background: var(--surface); padding: 4rem 1.5rem; text-align: center; }
+    .guarantee-icon { font-size: 4rem; margin-bottom: 1rem; }
+    .guarantee h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; margin-bottom: 0.75rem; }
+    .guarantee p { color: var(--muted); max-width: 520px; margin: 0 auto; }
+
+    /* FAQ */
+    .faq-section { padding: 4rem 1.5rem; max-width: 700px; margin: 0 auto; }
+    .faq-section h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; margin-bottom: 2rem; text-align: center; }
+    .faq-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.75rem; }
+    .faq-question { padding: 1rem 1.25rem; font-weight: 700; font-size: 0.95rem; background: var(--surface); }
+    .faq-answer { padding: 1rem 1.25rem; font-size: 0.9rem; color: var(--muted); }
+
+    footer { background: var(--text); color: #d1d5db; padding: 3rem 1.5rem 1.5rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+    .footer-brand p { font-size: 0.88rem; margin-top: 0.5rem; opacity: 0.75; }
+    .footer-logo { font-size: 1.3rem; font-weight: 800; color: #fff; }
+    .footer-logo span { color: var(--accent); }
+    .footer-col h4 { color: #fff; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.4rem; font-size: 0.85rem; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 1.25rem; text-align: center; font-size: 0.8rem; opacity: 0.6; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Aku<span>demy</span></a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#subjects">Subjects</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+    </div>
+    <a href="#plans" class="nav-cta">Get Started Free</a>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Simple, Affordable Pricing</h1>
+    <p>No tricks, no hidden fees. Pick the plan that works for you and start preparing today.</p>
+    <div class="billing-toggle">
+      <span class="toggle-label active">Monthly</span>
+      <label class="toggle-switch">
+        <input type="checkbox" />
+        <div class="toggle-slider"></div>
+      </label>
+      <span class="toggle-label">Annual <span class="save-badge">Save 30%</span></span>
+    </div>
+  </div>
+
+  <!-- PLANS -->
+  <div class="pricing-section" id="plans">
+    <div class="pricing-grid">
+
+      <!-- FREE -->
+      <div class="plan-card">
+        <div class="plan-name">Free</div>
+        <div class="plan-price">₦0 <sub>/ month</sub></div>
+        <p class="plan-desc">Get started with no commitment. Perfect for trying out the platform.</p>
+        <a href="#" class="plan-btn plan-btn-outline">Sign Up Free</a>
+        <hr class="plan-divider" />
+        <p class="plan-features-title">What's included</p>
+        <ul class="plan-features">
+          <li><span class="fi">✓</span> 100 past questions per month</li>
+          <li><span class="fi">✓</span> 2 mock CBT exams per month</li>
+          <li><span class="fi">✓</span> Basic performance dashboard</li>
+          <li><span class="fi">✓</span> Community forum access</li>
+          <li><span class="fx">✗</span> AI-powered explanations</li>
+          <li><span class="fx">✗</span> Personalised study plan</li>
+          <li><span class="fx">✗</span> Offline downloads</li>
+          <li><span class="fx">✗</span> Full analytics</li>
+        </ul>
+      </div>
+
+      <!-- PRO -->
+      <div class="plan-card popular" style="position: relative;">
+        <span class="popular-badge">⭐ Most Popular</span>
+        <div class="plan-name">Pro</div>
+        <div class="plan-price">₦2,500 <sub>/ month</sub></div>
+        <p class="plan-desc">Everything you need for serious JAMB preparation. Best for individual students.</p>
+        <a href="#" class="plan-btn plan-btn-filled">Get Pro Now</a>
+        <hr class="plan-divider" />
+        <p class="plan-features-title">Everything in Free, plus:</p>
+        <ul class="plan-features">
+          <li><span class="fi">✓</span> Unlimited past questions</li>
+          <li><span class="fi">✓</span> Unlimited mock CBT exams</li>
+          <li><span class="fi">✓</span> AI-powered step-by-step explanations</li>
+          <li><span class="fi">✓</span> Personalised study plan</li>
+          <li><span class="fi">✓</span> Full performance analytics</li>
+          <li><span class="fi">✓</span> Offline question & note downloads</li>
+          <li><span class="fi">✓</span> Revision notes for all subjects</li>
+          <li><span class="fi">✓</span> Priority email support</li>
+        </ul>
+      </div>
+
+      <!-- SCHOOL -->
+      <div class="plan-card">
+        <div class="plan-name">School</div>
+        <div class="plan-price">₦15,000 <sub>/ school/mo</sub></div>
+        <p class="plan-desc">For secondary schools. Manage up to 200 student accounts from one dashboard.</p>
+        <a href="about.html#contact" class="plan-btn plan-btn-outline">Contact Sales</a>
+        <hr class="plan-divider" />
+        <p class="plan-features-title">Everything in Pro, plus:</p>
+        <ul class="plan-features">
+          <li><span class="fi">✓</span> Up to 200 student accounts</li>
+          <li><span class="fi">✓</span> Teacher / admin dashboard</li>
+          <li><span class="fi">✓</span> Class-wide performance reports</li>
+          <li><span class="fi">✓</span> Bulk student onboarding</li>
+          <li><span class="fi">✓</span> Dedicated account manager</li>
+          <li><span class="fi">✓</span> Custom branding (add-on)</li>
+          <li><span class="fi">✓</span> Invoice-based billing available</li>
+          <li><span class="fi">✓</span> Phone & WhatsApp support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="comparison">
+    <h2>Compare Plans Side by Side</h2>
+    <p>See exactly what you get with each plan.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Free</th>
+            <th class="highlight-col">Pro</th>
+            <th>School</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Past questions per month</td>
+            <td>100</td>
+            <td class="highlight-col">Unlimited</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Mock CBT exams</td>
+            <td>2 / month</td>
+            <td class="highlight-col">Unlimited</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>AI explanations</td>
+            <td><span class="cross">✗</span></td>
+            <td class="highlight-col"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Personalised study plan</td>
+            <td><span class="cross">✗</span></td>
+            <td class="highlight-col"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Full performance analytics</td>
+            <td><span class="cross">✗</span></td>
+            <td class="highlight-col"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Offline downloads</td>
+            <td><span class="cross">✗</span></td>
+            <td class="highlight-col"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Revision notes</td>
+            <td><span class="cross">✗</span></td>
+            <td class="highlight-col"><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Teacher dashboard</td>
+            <td><span class="cross">✗</span></td>
+            <td class="highlight-col"><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Student accounts</td>
+            <td>1</td>
+            <td class="highlight-col">1</td>
+            <td>Up to 200</td>
+          </tr>
+          <tr>
+            <td>Support</td>
+            <td>Community</td>
+            <td class="highlight-col">Email</td>
+            <td>Phone + WhatsApp</td>
+          </tr>
+          <tr>
+            <td>Monthly price</td>
+            <td>₦0</td>
+            <td class="highlight-col"><strong style="color:var(--primary)">₦2,500</strong></td>
+            <td>₦15,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- GUARANTEE -->
+  <div class="guarantee">
+    <div class="guarantee-icon">🛡️</div>
+    <h2>14-Day Money-Back Guarantee</h2>
+    <p>Not satisfied after 14 days on a paid plan? Contact us and we'll issue a full refund—no questions asked. We stand behind the quality of Akudemy.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <h2>Pricing FAQs</h2>
+    <div class="faq-item">
+      <div class="faq-question">Can I cancel my subscription at any time?</div>
+      <div class="faq-answer">Yes. You can cancel your Pro or School subscription at any time from your account settings. You'll retain access until the end of your billing period.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How do I pay? Is Paystack/Flutterwave supported?</div>
+      <div class="faq-answer">We support all major Nigerian payment methods including Paystack, Flutterwave, bank transfer, and USSD payments. No foreign card required.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What happens when my free limit runs out?</div>
+      <div class="faq-answer">Your access to past questions is paused until the next month, but you can upgrade to Pro at any time to get unlimited access immediately.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Is the annual plan significantly cheaper?</div>
+      <div class="faq-answer">Yes! The annual Pro plan is billed at ₦21,000 per year (equivalent to ₦1,750/month) — a saving of 30% compared to monthly billing.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can a school pay by invoice?</div>
+      <div class="faq-answer">Absolutely. Schools and institutions can request invoice-based billing. Contact our sales team via the School plan button above and we'll set it up for you.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Aku<span>demy</span></div>
+        <p>Nigeria's smartest JAMB<br/>exam preparation platform.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="index.html#subjects">Subjects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#mission">Our Mission</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html#faq">FAQ</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Akudemy · Part of the Akulearn EdTech Platform · Built for Nigerian students.</div>
+  </footer>
+
+</body>
+</html>

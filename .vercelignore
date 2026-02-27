@@ -1,7 +1,12 @@
-# Vercel only needs mkdocs.yml and docs/ to build the MkDocs documentation site.
-# All other directories and file types are excluded to keep the build fast and clean.
+# Vercel now serves the Akudemy static site from the public/ directory.
+# Everything except public/ is excluded to keep the deployment fast and clean.
 
-# Source code and application directories (not needed for docs build)
+# Documentation build artefacts (no longer built by Vercel)
+docs/
+mkdocs.yml
+requirements.txt
+
+# Source code and application directories
 akulearn_microservices/
 akulearn-linux-app/
 client_examples/
@@ -49,6 +54,10 @@ KOTLIN MULTIPLATFORM/
 *.go
 go.mod
 
-# Root-level HTML/CSS dashboards (not part of the docs site)
+# Root-level HTML/CSS files (not part of the static site)
 *.html
 *.css
+
+# Allow everything inside public/ (the Akudemy static site)
+!public/
+!public/**
