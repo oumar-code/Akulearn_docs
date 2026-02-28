@@ -63,6 +63,7 @@ nav:
       - API Specs: 02-backend/api-specs.md
       - API Specs (Full): api_specs.md
       - Database Schemas: 02-backend/database-schemas.md
+      - Team Provisioning: 02-backend/team_provisioning.md
       - Dashboards:
           - Student: 02-backend/student_dashboard.md
           - Teacher: 02-backend/teacher_dashboard.md

@@ -8,6 +8,7 @@ site/
 __pycache__/
 *.py
 !team.py
+!supabase_provision.py
 *.py[cod]
 *.pyo
 *.pyd

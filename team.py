@@ -9,7 +9,7 @@ respective dashboard access configurations within the platform.
 TEAM = [
     {
         "name": "Umar Abubakar",
-        "role": "Founder & Lead Engineer",
+        "role": "Founder & Technical Lead",
         "dashboard": "super_admin",
         "accesses": [
             "super_admin_dashboard",
@@ -25,7 +25,7 @@ TEAM = [
     },
     {
         "name": "Zakwan Lawali",
-        "role": "Backend Engineer",
+        "role": "Backend & DevOps Engineer",
         "dashboard": "it_support",
         "accesses": [
             "it_support_dashboard",
@@ -53,7 +53,7 @@ TEAM = [
     },
     {
         "name": "Balkisu Sani",
-        "role": "Community & NGO Relations",
+        "role": "Community & NGO Relations Lead",
         "dashboard": "ngo_partner",
         "accesses": [
             "ngo_partner_dashboard",
