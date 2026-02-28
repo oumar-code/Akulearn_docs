@@ -92,9 +92,11 @@ Each team member undergoes a structured 2-week onboarding programme before takin
 ### Sending Credentials
 
 1. Run `python supabase_provision.py` (with env vars set) to create accounts and print credentials.
-2. Send each user their **email**, **temporary password**, and the platform URL via an **encrypted email or secure channel**.
+2. Send each user their **email**, **temporary password**, and the platform URL (`https://app.akulearn.com`) via an **encrypted email or secure channel**.
 3. Instruct each user to change their password immediately on first login.
 4. Confirm all five users can log in and see their custom dashboard before Day 1 of Week 1.
+
+For a step-by-step login guide to share with team members, see [Login & Dashboard Access](platform_login.md).
 
 ## Security Notes
 
