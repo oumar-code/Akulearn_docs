@@ -60,6 +60,7 @@ nav:
       - Aku Workspace: services/aku-workspace.md
   - Backend:
       - Overview: 02-backend/index.md
+      - Login & Dashboard Access: 02-backend/platform_login.md
       - API Specs: 02-backend/api-specs.md
       - API Specs (Full): api_specs.md
       - Database Schemas: 02-backend/database-schemas.md
