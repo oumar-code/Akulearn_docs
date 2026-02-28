@@ -36,47 +36,49 @@ from datetime import datetime, timezone
 TEAM = [
     {
         "name": "Umar Abubakar",
-        "role": "Founder & Technical Lead",
+        "role": "System Designer, Project Manager & Technical Lead",
         "responsibility": (
-            "Overall technical leadership, system architecture and design, "
-            "infrastructure strategy, and engineering team management"
+            "Overall system design, project management, and technical team leadership "
+            "spanning AIOps, MLOps, DevOps, and hardware integrations"
         ),
-        "email": "umar@akulearn.com",
+        "email": "umarabubakarg2018@gmail.com",
         "supabase_role": "super_admin",
         "dashboard": "super_admin",
     },
     {
-        "name": "Zakwan Lawali",
-        "role": "Backend & DevOps Engineer",
-        "responsibility": (
-            "Server management, deployment pipeline, API development, "
-            "system monitoring and operational reliability"
-        ),
-        "email": "zakwan@akulearn.com",
-        "supabase_role": "it_support",
-        "dashboard": "it_support",
-    },
-    {
         "name": "Munira Abubakar",
-        "role": "Brand Ambassador & Platform Spokesperson",
+        "role": "Head of Product & External Engagement",
         "responsibility": (
-            "Investor pitches, partnership presentations, "
-            "media and brand representation, pitch-deck management"
+            "Product management, social media, brand representation, "
+            "investor pitches, partnership presentations, and external engagements. "
+            "Upcoming pitch scheduled for mid-March."
         ),
-        "email": "munira@akulearn.com",
-        "supabase_role": "pitch_prep",
-        "dashboard": "pitch_prep",
+        "email": "muniraabubakar6@gmail.com",
+        "supabase_role": "product_brand_lead",
+        "dashboard": "product_brand_lead",
     },
     {
-        "name": "Balkisu Sani",
-        "role": "Community & NGO Relations Lead",
+        "name": "Zakwan Lawali",
+        "role": "Head of Skill Acquisition & Vocational Training",
         "responsibility": (
-            "Community engagement, NGO partnerships, "
-            "school outreach programmes and partner analytics"
+            "Leading the Aku platform's skill acquisition and vocational skills "
+            "training programme — equivalent to the 3MTT initiative but fully "
+            "integrated within the Aku ecosystem"
         ),
-        "email": "balkisu@akulearn.com",
-        "supabase_role": "ngo_partner",
-        "dashboard": "ngo_partner",
+        "email": "zakawanulawali2017@gmail.com",
+        "supabase_role": "skill_acquisition",
+        "dashboard": "skill_acquisition",
+    },
+    {
+        "name": "Balkisu Sani Kaura",
+        "role": "Head of Finance & Content Management",
+        "responsibility": (
+            "Financial planning and oversight, content strategy, "
+            "content creation pipelines, and budget management across departments"
+        ),
+        "email": "kaurabalkisusani@gmail.com",
+        "supabase_role": "finance_content",
+        "dashboard": "finance_content",
     },
     {
         "name": "Hauwau Abubakar",
@@ -123,6 +125,7 @@ def provision_user(supabase_url: str, service_key: str, member: dict) -> dict:
                 "name": member["name"],
                 "role": member["role"],
                 "dashboard": member["dashboard"],
+                "aku_workspace": True,
             },
             "app_metadata": {
                 "role": member["supabase_role"],

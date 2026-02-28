@@ -1,15 +1,15 @@
-# Team Provisioning — Supabase Setup
+# Team Provisioning — Supabase Setup & Onboarding Strategy
 
-`supabase_provision.py` is the authoritative script for onboarding the Akulearn core team into Supabase. It creates each member's account, assigns their role via `app_metadata`, and generates a secure temporary password that must be changed on first login.
+`supabase_provision.py` is the authoritative script for onboarding the Akulearn core team into Supabase. It creates each member's account, assigns their role via `app_metadata`, grants Aku Workspace access, and generates a secure temporary password that must be changed on first login.
 
 ## Team Roster
 
 | Name | Role | Email | Dashboard |
 |---|---|---|---|
-| Umar Abubakar | Founder & Technical Lead | umar@akulearn.com | `super_admin` |
-| Zakwan Lawali | Backend & DevOps Engineer | zakwan@akulearn.com | `it_support` |
-| Munira Abubakar | Brand Ambassador & Platform Spokesperson | munira@akulearn.com | `pitch_prep` |
-| Balkisu Sani | Community & NGO Relations Lead | balkisu@akulearn.com | `ngo_partner` |
+| Umar Abubakar | System Designer, Project Manager & Technical Lead | umarabubakarg2018@gmail.com | `super_admin` |
+| Munira Abubakar | Head of Product & External Engagement | muniraabubakar6@gmail.com | `product_brand_lead` |
+| Zakwan Lawali | Head of Skill Acquisition & Vocational Training | zakawanulawali2017@gmail.com | `skill_acquisition` |
+| Balkisu Sani Kaura | Head of Finance & Content Management | kaurabalkisusani@gmail.com | `finance_content` |
 | Hauwau Abubakar | Exam Prep & Access Coordinator | hauwau@akulearn.com | `hauwau_special` |
 
 ## Prerequisites
@@ -48,7 +48,7 @@ If the environment variables are not set, the script runs in **dry-run mode**: i
 When both `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are set, the script calls the Supabase Admin API (`/auth/v1/admin/users`) to:
 
 1. Create the user account with `email_confirm: true`.
-2. Set `user_metadata` (display name, role label, dashboard key).
+2. Set `user_metadata` (display name, role label, dashboard key, `aku_workspace: true`).
 3. Set `app_metadata.role` — the field your RLS policies and client-side guards should check.
 4. Generate a cryptographically secure 16-character temporary password.
 
@@ -56,13 +56,45 @@ The console output lists each member's credentials. **Share these via an encrypt
 
 ## Supabase Role Mapping
 
-| `app_metadata.role` | Platform access |
+| `app_metadata.role` | Department head | Platform access |
+|---|---|---|
+| `super_admin` | Umar Abubakar | Full platform — system design, AIOps, MLOps, DevOps, hardware integrations, team management |
+| `product_brand_lead` | Munira Abubakar | Product roadmap, social media hub, pitch decks, investor docs, marketing analytics, media kit |
+| `skill_acquisition` | Zakwan Lawali | Courses, vocational programmes, trainee progress, certifications, partner institutions |
+| `finance_content` | Balkisu Sani Kaura | Budget management, financial reporting, content pipeline, content approval, audit logs |
+| `hauwau_special` | Hauwau Abubakar | JAMB/WAEC/NECO prep, cross-dashboard coordinator access, student and teacher dashboards |
+
+All roles also include **`aku_workspace`** access.
+
+## Onboarding Strategy — 2-Week Training Plan
+
+Each team member undergoes a structured 2-week onboarding programme before taking full ownership of their department. The goal is to ensure every person can navigate their dashboard, simulate real workflows, and understand what is expected of them.
+
+### Week 1 — Platform Orientation
+
+| Day | Activity |
 |---|---|
-| `super_admin` | Full platform access — system design, infra, team management |
-| `it_support` | Server/deployment management, monitoring, logs |
-| `pitch_prep` | Pitch decks, demo materials, investor docs, media kit |
-| `ngo_partner` | Community engagement, partner analytics, school outreach |
-| `hauwau_special` | JAMB/WAEC/NECO prep + cross-dashboard coordinator access |
+| Day 1 | Welcome session: Aku platform overview, mission, and vision briefing |
+| Day 2 | Supabase login setup, first-login password change, dashboard walkthrough |
+| Day 3 | Aku Workspace orientation: documents, projects, communication channels |
+| Day 4 | Role-specific dashboard deep dive (guided tour of each module) |
+| Day 5 | Hands-on simulation: complete a representative task in each dashboard module |
+
+### Week 2 — Role Simulation & Readiness Assessment
+
+| Day | Activity |
+|---|---|
+| Day 6–7 | Simulate a realistic end-to-end workflow in your department (e.g., Munira: draft and present a pitch; Zakwan: enrol a trainee cohort; Balkisu: create a budget report) |
+| Day 8 | Cross-team session: understand how departments interact on the platform |
+| Day 9 | Review onboarding checklist, flag gaps, and raise support tickets for anything not working |
+| Day 10 | Light assessment quiz + sign-off: confirm readiness to operate independently |
+
+### Sending Credentials
+
+1. Run `python supabase_provision.py` (with env vars set) to create accounts and print credentials.
+2. Send each user their **email**, **temporary password**, and the platform URL via an **encrypted email or secure channel**.
+3. Instruct each user to change their password immediately on first login.
+4. Confirm all five users can log in and see their custom dashboard before Day 1 of Week 1.
 
 ## Security Notes
 
@@ -74,3 +106,4 @@ The console output lists each member's credentials. **Share these via an encrypt
 ---
 
 For the full team configuration, see [`team.py`](../../team.py) and [`supabase_provision.py`](../../supabase_provision.py).
+
