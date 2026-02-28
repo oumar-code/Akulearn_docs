@@ -86,7 +86,12 @@ TEAM = [
         "accesses": [
             "hauwau_dashboard",
             "aku_workspace",
-            "jamb",
+            "jamb_english",
+            "jamb_biology",
+            "jamb_physics",
+            "jamb_chemistry",
+            "topic_quiz",
+            "medicine_pathway",
             "waec",
             "neco",
             "student_dashboard",

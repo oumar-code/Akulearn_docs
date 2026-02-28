@@ -84,10 +84,12 @@ TEAM = [
         "name": "Hauwau Abubakar",
         "role": "Exam Prep & Access Coordinator",
         "responsibility": (
-            "JAMB/WAEC/NECO exam preparation coordination, "
-            "cross-dashboard access oversight and student support"
+            "JAMB exam preparation in English, Biology, Physics, and Chemistry "
+            "targeting a Medicine & Surgery admission. Includes post-topic quizzes "
+            "that mimic JAMB exam standard, cross-dashboard access oversight, "
+            "and student support."
         ),
-        "email": "hauwau@akulearn.com",
+        "email": "hauwauabubakargusau2009@gmail.com",
         "supabase_role": "hauwau_special",
         "dashboard": "hauwau_special",
     },
@@ -126,6 +128,16 @@ def provision_user(supabase_url: str, service_key: str, member: dict) -> dict:
                 "role": member["role"],
                 "dashboard": member["dashboard"],
                 "aku_workspace": True,
+                **(
+                    {
+                        "jamb_subjects": ["english", "biology", "physics", "chemistry"],
+                        "study_goal": "medicine",
+                        "topic_quiz_enabled": True,
+                        "quiz_standard": "jamb",
+                    }
+                    if member.get("supabase_role") == "hauwau_special"
+                    else {}
+                ),
             },
             "app_metadata": {
                 "role": member["supabase_role"],
