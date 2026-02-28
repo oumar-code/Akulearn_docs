@@ -3,8 +3,9 @@ Akulearn Supabase User Provisioning Script
 
 This is the canonical file for provisioning Akulearn core team members in
 Supabase. Running it creates each user in your Supabase project, assigns
-their role via app_metadata, and generates a secure temporary password that
-must be changed on first login.
+their role via app_metadata, generates a secure temporary password that
+must be changed on first login, and e-mails the credentials to each user
+via Resend.
 
 Usage:
     python supabase_provision.py
@@ -16,10 +17,16 @@ Required environment variables (add to .env and never commit .env):
                                 (Project Settings > API > service_role).
                                 NEVER use the anon key here.
 
+Optional environment variables:
+    RESEND_API_KEY   - Resend API key for sending credential emails.
+                       If omitted, email delivery is skipped.
+    RESEND_FROM_EMAIL - "From" address used for credential emails.
+                        Defaults to onboarding@akulearn.com.
+
 Dry-run mode:
-    If either environment variable is missing, the script runs in dry-run
-    mode: it prints the full team roster and sample credentials to the
-    console without touching Supabase.
+    If SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is missing, the script
+    runs in dry-run mode: it prints the full team roster and sample
+    credentials to the console without touching Supabase or sending email.
 """
 
 import json
@@ -180,6 +187,73 @@ def provision_user(supabase_url: str, service_key: str, member: dict) -> dict:
         }
 
 
+def send_credentials_email(
+    resend_api_key: str,
+    from_email: str,
+    result: dict,
+) -> str:
+    """
+    Send login credentials to a newly provisioned team member via Resend.
+
+    Returns "email_sent", "email_skipped" (no API key), or an error string.
+    """
+    if not resend_api_key:
+        return "email_skipped (no RESEND_API_KEY)"
+
+    subject = "Welcome to Akulearn — Your Dashboard Access Credentials"
+    html_body = f"""
+<html>
+<body style="font-family: sans-serif; color: #222;">
+  <h2>Welcome to the Akulearn Platform, {result['name']}!</h2>
+  <p>Your account has been created. Please use the credentials below to log in
+  and <strong>change your password immediately</strong> after your first login.</p>
+  <table style="border-collapse: collapse; margin-top: 16px;">
+    <tr><td style="padding: 6px 12px; font-weight: bold;">Email</td>
+        <td style="padding: 6px 12px;">{result['email']}</td></tr>
+    <tr><td style="padding: 6px 12px; font-weight: bold;">Temporary Password</td>
+        <td style="padding: 6px 12px; font-family: monospace;">{result.get('temp_password', '')}</td></tr>
+    <tr><td style="padding: 6px 12px; font-weight: bold;">Role</td>
+        <td style="padding: 6px 12px;">{result['role']}</td></tr>
+    <tr><td style="padding: 6px 12px; font-weight: bold;">Dashboard</td>
+        <td style="padding: 6px 12px;">{result['dashboard']}</td></tr>
+  </table>
+  <p style="margin-top: 20px; color: #c00;">
+    ⚠ Keep this email confidential. Change your password on first login —
+    this temporary password expires after 24 hours.
+  </p>
+  <p>— The Akulearn Team</p>
+</body>
+</html>
+"""
+
+    payload = json.dumps(
+        {
+            "from": from_email,
+            "to": [result["email"]],
+            "subject": subject,
+            "html": html_body,
+        }
+    ).encode()
+
+    req = urllib.request.Request(
+        "https://api.resend.com/emails",
+        data=payload,
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {resend_api_key}",
+        },
+        method="POST",
+    )
+
+    try:
+        with urllib.request.urlopen(req) as response:
+            response.read()  # consume the response body
+            return "email_sent"
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode()
+        return f"email_error ({exc.code}): {body}"
+
+
 def print_credentials(results: list) -> None:
     """Pretty-print provisioned credentials to the console."""
     width = 72
@@ -195,6 +269,8 @@ def print_credentials(results: list) -> None:
         print(f"  Email     : {r['email']}")
         print(f"  Temp Pass : {r.get('temp_password', 'N/A')}")
         print(f"  Status    : {r['status']}")
+        if "email_status" in r:
+            print(f"  Email     : {r['email_status']}")
     print("\n" + "=" * width)
     print("  ⚠  Share credentials via encrypted email or a secure channel.")
     print("  ⚠  Each user must change their password immediately after login.")
@@ -208,6 +284,8 @@ def print_credentials(results: list) -> None:
 if __name__ == "__main__":
     supabase_url = os.environ.get("SUPABASE_URL", "").rstrip("/")
     service_key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
+    resend_api_key = os.environ.get("RESEND_API_KEY", "")
+    from_email = os.environ.get("RESEND_FROM_EMAIL", "onboarding@akulearn.com")
 
     if not supabase_url or not service_key:
         print(
@@ -229,4 +307,13 @@ if __name__ == "__main__":
     else:
         print(f"Provisioning {len(TEAM)} team members in Supabase…")
         results = [provision_user(supabase_url, service_key, m) for m in TEAM]
+
+        if resend_api_key:
+            print(f"Sending credential emails via Resend…")
+            for r in results:
+                if r.get("status") == "created":
+                    r["email_status"] = send_credentials_email(
+                        resend_api_key, from_email, r
+                    )
+
         print_credentials(results)
