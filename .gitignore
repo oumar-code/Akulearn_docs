@@ -7,6 +7,7 @@ site/
 # Python
 __pycache__/
 *.py
+!team.py
 *.py[cod]
 *.pyo
 *.pyd
