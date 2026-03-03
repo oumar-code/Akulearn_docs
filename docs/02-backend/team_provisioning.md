@@ -10,17 +10,18 @@
 | Munira Abubakar | Head of Product & External Engagement | muniraabubakar6@gmail.com | `product_brand_lead` |
 | Zakwan Lawali | Head of Skill Acquisition & Vocational Training | zakawanulawali2017@gmail.com | `skill_acquisition` |
 | Balkisu Sani Kaura | Head of Finance & Content Management | kaurabalkisusani@gmail.com | `finance_content` |
-| Hauwau Abubakar | Exam Prep & Access Coordinator | hauwau@akulearn.com | `hauwau_special` |
+| Hauwau Abubakar | Exam Prep & Access Coordinator | hauwauabubakargusau2009@gmail.com | `hauwau_special` |
 
 ## Prerequisites
 
 1. A Supabase project with Row-Level Security (RLS) configured for role-based access.
 2. The **service-role key** from **Project Settings → API** in the Supabase dashboard. Do **not** use the anon key.
 3. Python 3.10+ (no third-party dependencies — uses only the standard library).
+4. A `.env` file in the project root populated from `.env.example` (see **Setup** below). The script loads it automatically at startup.
 
 ## Setup
 
-Copy `.env.example` to `.env` and fill in your Supabase credentials:
+Copy `.env.example` to `.env` and fill in your Supabase (and optionally Resend) credentials:
 
 ```bash
 cp .env.example .env
@@ -29,7 +30,13 @@ cp .env.example .env
 ```env
 SUPABASE_URL=https://your-project-ref.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
+
+# Optional — required only if you want credential emails sent via Resend
+RESEND_API_KEY=your_resend_api_key_here
+RESEND_FROM_EMAIL=onboarding@akulearn.com
 ```
+
+The script calls `_load_dotenv()` at startup and reads values from `.env` automatically, so you do **not** need to export variables manually before running it.
 
 > **Security**: `.env` is listed in `.gitignore` and must never be committed.
 
