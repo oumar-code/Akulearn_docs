@@ -39,6 +39,44 @@ To view the documentation locally:
 
 3. Open [http://localhost:8000](http://localhost:8000) in your browser to explore the docs.
 
+## Team Setup & Supabase Provisioning
+
+Both `team.py` and `supabase_provision.py` live at the **project root** and must be run from there.
+
+### 1. View team dashboards (`team.py`)
+
+```sh
+# From the project root directory (e.g. Akulearn_docs/)
+python team.py
+```
+
+Prints every team member's name, role, dashboard key, and the full list of platform accesses they have.
+
+### 2. Provision team members in Supabase (`supabase_provision.py`)
+
+**Prerequisites** — copy `.env.example` to `.env` and fill in your values:
+
+```sh
+cp .env.example .env
+# then edit .env and set:
+#   SUPABASE_URL              = https://your-project-ref.supabase.co
+#   SUPABASE_SERVICE_ROLE_KEY = <service_role key from Supabase Dashboard → Project Settings → API>
+#   RESEND_API_KEY            = <optional — only needed to email credentials>
+```
+
+**Run the provisioning script:**
+
+```sh
+# From the project root directory (e.g. Akulearn_docs/)
+python supabase_provision.py
+```
+
+- If `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` are not set, the script runs in **dry-run mode** — it prints the team roster with sample credentials but does **not** create any accounts.
+- When the credentials are present, the script creates each team member's account in Supabase with the correct role and dashboard assigned.
+- If `RESEND_API_KEY` is also set, each newly created user receives a welcome email with their temporary password.
+
+> ⚠ Never commit your `.env` file. It is already listed in `.gitignore`.
+
 ## Contact Information
 
 For questions, feedback, or partnership inquiries, please contact the Akulearn team (details coming soon).
