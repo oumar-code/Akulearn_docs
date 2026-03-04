@@ -27,6 +27,7 @@ myenv/
 !gradlew
 !gradlew.bat
 !build-all.sh
+!setup.sh
 
 # Go source
 *.go
