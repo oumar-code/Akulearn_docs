@@ -1,0 +1,25 @@
+{
+  "id": "mock_001",
+  "name": "Mock Exam #1",
+  "generated_at": "2026-03-02T15:02:36.541398",
+  "totalQuestions": 180,
+  "sections": [
+    {
+      "subject": "English",
+      "questions": 40
+    },
+    {
+      "subject": "Mathematics",
+      "questions": 40
+    },
+    {
+      "subject": "Chemistry",
+      "questions": 50
+    },
+    {
+      "subject": "Biology",
+      "questions": 50
+    }
+  ],
+  "template_status": "Auto-generated structure"
+}

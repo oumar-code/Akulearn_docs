@@ -1,0 +1,84 @@
+{
+  "questions": [
+    {
+      "id": "mathematics_statistics_000",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "question_text": "[Auto-generated Q1 - Needs expert content]",
+      "difficulty": "easy",
+      "generated_at": "2026-03-03T10:07:06.274380"
+    },
+    {
+      "id": "mathematics_statistics_001",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "question_text": "[Auto-generated Q2 - Needs expert content]",
+      "difficulty": "medium",
+      "generated_at": "2026-03-03T10:07:06.274401"
+    },
+    {
+      "id": "mathematics_statistics_002",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "question_text": "[Auto-generated Q3 - Needs expert content]",
+      "difficulty": "hard",
+      "generated_at": "2026-03-03T10:07:06.274410"
+    },
+    {
+      "id": "mathematics_statistics_003",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "question_text": "[Auto-generated Q4 - Needs expert content]",
+      "difficulty": "easy",
+      "generated_at": "2026-03-03T10:07:06.274419"
+    },
+    {
+      "id": "mathematics_statistics_004",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "question_text": "[Auto-generated Q5 - Needs expert content]",
+      "difficulty": "medium",
+      "generated_at": "2026-03-03T10:07:06.274428"
+    },
+    {
+      "id": "mathematics_statistics_005",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "question_text": "[Auto-generated Q6 - Needs expert content]",
+      "difficulty": "hard",
+      "generated_at": "2026-03-03T10:07:06.274437"
+    },
+    {
+      "id": "mathematics_statistics_006",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "question_text": "[Auto-generated Q7 - Needs expert content]",
+      "difficulty": "easy",
+      "generated_at": "2026-03-03T10:07:06.274446"
+    },
+    {
+      "id": "mathematics_statistics_007",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "question_text": "[Auto-generated Q8 - Needs expert content]",
+      "difficulty": "medium",
+      "generated_at": "2026-03-03T10:07:06.274455"
+    },
+    {
+      "id": "mathematics_statistics_008",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "question_text": "[Auto-generated Q9 - Needs expert content]",
+      "difficulty": "hard",
+      "generated_at": "2026-03-03T10:07:06.274464"
+    },
+    {
+      "id": "mathematics_statistics_009",
+      "subject": "Mathematics",
+      "topic": "Statistics",
+      "question_text": "[Auto-generated Q10 - Needs expert content]",
+      "difficulty": "easy",
+      "generated_at": "2026-03-03T10:07:06.274473"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "questions": [
+    {
+      "id": "chemistry_bonding_000",
+      "subject": "Chemistry",
+      "topic": "Bonding",
+      "question_text": "[Auto-generated Q1 - Needs expert content]",
+      "difficulty": "easy",
+      "generated_at": "2026-03-03T10:07:06.257099"
+    },
+    {
+      "id": "chemistry_bonding_001",
+      "subject": "Chemistry",
+      "topic": "Bonding",
+      "question_text": "[Auto-generated Q2 - Needs expert content]",
+      "difficulty": "medium",
+      "generated_at": "2026-03-03T10:07:06.257120"
+    },
+    {
+      "id": "chemistry_bonding_002",
+      "subject": "Chemistry",
+      "topic": "Bonding",
+      "question_text": "[Auto-generated Q3 - Needs expert content]",
+      "difficulty": "hard",
+      "generated_at": "2026-03-03T10:07:06.257130"
+    },
+    {
+      "id": "chemistry_bonding_003",
+      "subject": "Chemistry",
+      "topic": "Bonding",
+      "question_text": "[Auto-generated Q4 - Needs expert content]",
+      "difficulty": "easy",
+      "generated_at": "2026-03-03T10:07:06.257139"
+    },
+    {
+      "id": "chemistry_bonding_004",
+      "subject": "Chemistry",
+      "topic": "Bonding",
+      "question_text": "[Auto-generated Q5 - Needs expert content]",
+      "difficulty": "medium",
+      "generated_at": "2026-03-03T10:07:06.257148"
+    },
+    {
+      "id": "chemistry_bonding_005",
+      "subject": "Chemistry",
+      "topic": "Bonding",
+      "question_text": "[Auto-generated Q6 - Needs expert content]",
+      "difficulty": "hard",
+      "generated_at": "2026-03-03T10:07:06.257157"
+    },
+    {
+      "id": "chemistry_bonding_006",
+      "subject": "Chemistry",
+      "topic": "Bonding",
+      "question_text": "[Auto-generated Q7 - Needs expert content]",
+      "difficulty": "easy",
+      "generated_at": "2026-03-03T10:07:06.257166"
+    },
+    {
+      "id": "chemistry_bonding_007",
+      "subject": "Chemistry",
+      "topic": "Bonding",
+      "question_text": "[Auto-generated Q8 - Needs expert content]",
+      "difficulty": "medium",
+      "generated_at": "2026-03-03T10:07:06.258875"
+    },
+    {
+      "id": "chemistry_bonding_008",
+      "subject": "Chemistry",
+      "topic": "Bonding",
+      "question_text": "[Auto-generated Q9 - Needs expert content]",
+      "difficulty": "hard",
+      "generated_at": "2026-03-03T10:07:06.258909"
+    },
+    {
+      "id": "chemistry_bonding_009",
+      "subject": "Chemistry",
+      "topic": "Bonding",
+      "question_text": "[Auto-generated Q10 - Needs expert content]",
+      "difficulty": "easy",
+      "generated_at": "2026-03-03T10:07:06.258919"
+    }
+  ]
+}
