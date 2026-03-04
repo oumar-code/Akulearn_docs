@@ -1,9 +1,0 @@
-Subject: RFQ — RF front-end components (Wi-Fi / BT / filters / antenna modules)
-
-Hello Murata team,
-
-We need RF front-end modules (Wi‑Fi/Bluetooth modules, ceramic filters, antenna suggestions) for the Aku Platform Edge Alpha. Please provide recommended SKUs, pricing for prototype quantities, and recommended footprints/antenna matching guidance.
-
-Thank you,
-[Your Name]
-procurement@aku-platform.org

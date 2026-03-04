@@ -8,6 +8,11 @@
 ## Safety & Electrical
 - PV installation safety: comply with local electrical codes for PV array and battery installation
 - Fire safety and battery containment requirements (LiFePO4 best practices)
+- Wind turbine mast grounding: connect turbine tower and mast to earth via at least 16 mm² conductor
+- DC surge protection devices (SPD, IEC 61643-31 Type II) on PV string and wind DC bus
+- Dump-load / crowbar circuit required on wind controller — turbine must never run open-circuit
+- All DC circuits ≥ 48 V must be labelled with voltage, polarity, and arc-flash warning
+- Overcurrent protection (fuse or breaker) on every source branch (solar, wind) and load branch
 
 ## Environmental & Site Permissions
 - Obtain written permission from school authorities for rooftop installations and from local community leaders if antennas extend coverage

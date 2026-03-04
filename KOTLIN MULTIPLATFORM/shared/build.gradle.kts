@@ -1,34 +1,34 @@
 plugins {
-    kotlin("multiplatform") version "1.9.10"
-    id("com.android.library")
+    alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.androidLibrary)
 }
 
 kotlin {
-    android()
-    ios()
+    androidTarget {
+        compilations.all {
+            kotlinOptions {
+                jvmTarget = "17"
+            }
+        }
+    }
+
+    listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64()
+    ).forEach { iosTarget ->
+        iosTarget.binaries.framework {
+            baseName = "shared"
+            isStatic = true
+        }
+    }
+
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-                implementation("com.squareup.sqldelight:runtime:2.0.0") // SQLite
-                implementation("io.ktor:ktor-client-core:2.3.4") // Networking
-                implementation("io.ktor:ktor-client-serialization:2.3.4")
-                implementation("io.ktor:ktor-client-logging:2.3.4")
-                implementation("io.ktor:ktor-client-content-negotiation:2.3.4")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-            }
+        commonMain.dependencies {
+            implementation(libs.kotlinx.coroutines.core)
         }
-        val androidMain by getting {
-            dependencies {
-                implementation("com.squareup.sqldelight:android-driver:2.0.0")
-                implementation("io.ktor:ktor-client-okhttp:2.3.4")
-            }
-        }
-        val iosMain by getting {
-            dependencies {
-                implementation("com.squareup.sqldelight:native-driver:2.0.0")
-                implementation("io.ktor:ktor-client-darwin:2.3.4")
-            }
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
         }
     }
 }
@@ -109,9 +109,14 @@ android {
 }
 android {
     namespace = "com.akulearn.shared"
-    compileSdk = 33
+    compileSdk = 34
+
     defaultConfig {
         minSdk = 24
-        targetSdk = 33
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }

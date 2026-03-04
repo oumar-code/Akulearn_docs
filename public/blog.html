@@ -1,150 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Akudemy Blog - Study tips, exam strategies, and learning insights." />
-    <title>Akudemy Blog | Study Tips & Insights</title>
-    <style>
-        :root {
-            --blue-primary: #0052CC;
-            --green-accent: #00D084;
-            --dark-gray: #2C3E50;
-            --light-gray: #F5F5F5;
-            --white: #FFFFFF;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: var(--dark-gray);
-            background: var(--white);
-            line-height: 1.6;
-        }
-        nav {
-            background: var(--white);
-            padding: 1rem 0;
-            border-bottom: 1px solid #eee;
-        }
-        nav a {
-            text-decoration: none;
-            margin-right: 1.2rem;
-            color: var(--dark-gray);
-            font-weight: 600;
-        }
-        nav a:hover { color: var(--blue-primary); }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-        header {
-            padding: 4rem 0 2rem;
-            background: var(--light-gray);
-        }
-        header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
-        .posts { padding: 3rem 0; }
-        .post-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .post {
-            border: 1px solid #eee;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-        }
-        .tag {
-            display: inline-block;
-            background: rgba(0, 82, 204, 0.1);
-            color: var(--blue-primary);
-            padding: 0.25rem 0.7rem;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-        }
-        footer {
-            padding: 2rem 0;
-            text-align: center;
-            background: var(--dark-gray);
-            color: var(--white);
-        }
-        .cta {
-            padding: 3rem 0;
-            text-align: center;
-        }
-        .cta a {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: var(--blue-primary);
-            color: var(--white);
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akudemy Blog – JAMB Study Tips & News</title>
+  <meta name="description" content="Study tips, JAMB updates, student success stories, and advice to help Nigerian students ace their exams." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #1a56db;
+      --primary-dark: #1340a8;
+      --accent: #f59e0b;
+      --text: #111827;
+      --muted: #6b7280;
+      --bg: #ffffff;
+      --surface: #f3f4f6;
+      --border: #e5e7eb;
+      --radius: 12px;
+    }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; }
+    .nav-logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; font-weight: 500; color: var(--muted); }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta { background: var(--primary); color: #fff; padding: 0.55rem 1.25rem; border-radius: 8px; font-weight: 600; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--primary-dark); }
+
+    .page-hero { background: linear-gradient(135deg, #eff6ff 0%, #fff7ed 100%); padding: 4rem 1.5rem 3rem; text-align: center; }
+    .page-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 0.75rem; }
+    .page-hero p { font-size: 1.1rem; color: var(--muted); max-width: 580px; margin: 0 auto; }
+
+    .blog-section { padding: 4rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .blog-filter { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .filter-btn { padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; border: 2px solid var(--border); background: var(--bg); color: var(--muted); cursor: pointer; transition: all 0.15s; }
+    .filter-btn.active, .filter-btn:hover { border-color: var(--primary); background: #eff6ff; color: var(--primary); }
+
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.75rem; }
+    .blog-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s; }
+    .blog-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .blog-card-img { height: 170px; display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+    .blog-card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-tag { display: inline-block; background: #dbeafe; color: var(--primary); font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.7rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.65rem; }
+    .blog-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; line-height: 1.35; }
+    .blog-card p { font-size: 0.88rem; color: var(--muted); flex: 1; margin-bottom: 1rem; }
+    .blog-meta { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 0.75rem; margin-top: auto; }
+    .read-more { color: var(--primary); font-weight: 600; font-size: 0.85rem; }
+    .read-more:hover { text-decoration: underline; }
+
+    .newsletter { background: var(--primary); color: #fff; padding: 4rem 1.5rem; text-align: center; }
+    .newsletter h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 0.75rem; }
+    .newsletter p { opacity: 0.85; max-width: 480px; margin: 0 auto 1.75rem; }
+    .newsletter-form { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .newsletter-form input { padding: 0.75rem 1rem; border-radius: 8px; border: none; font-size: 0.95rem; width: 280px; outline: none; }
+    .newsletter-form button { background: var(--accent); color: var(--text); padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: opacity 0.2s; }
+    .newsletter-form button:hover { opacity: 0.9; }
+
+    footer { background: var(--text); color: #d1d5db; padding: 3rem 1.5rem 1.5rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+    .footer-brand p { font-size: 0.88rem; margin-top: 0.5rem; opacity: 0.75; }
+    .footer-logo { font-size: 1.3rem; font-weight: 800; color: #fff; }
+    .footer-logo span { color: var(--accent); }
+    .footer-col h4 { color: #fff; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.4rem; font-size: 0.85rem; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 1.25rem; text-align: center; font-size: 0.8rem; opacity: 0.6; }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <a href="/">Akudemy</a>
-            <a href="/jamb.html" style="color: #00D084; font-weight: 700;">🎓 Free JAMB Prep</a>
-            <a href="/about.html">About</a>
-            <a href="/pricing.html">Pricing</a>
-        </div>
-    </nav>
 
-    <header>
-        <div class="container">
-            <h1>Akudemy Blog</h1>
-            <p>Study tips, exam strategies, and the science of learning.</p>
-        </div>
-    </header>
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Aku<span>demy</span></a>
+    <div class="nav-links">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#subjects">Subjects</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+    </div>
+    <a href="index.html#pricing" class="nav-cta">Get Started Free</a>
+  </nav>
 
-    <section class="posts">
-        <div class="container">
-            <div class="post-grid">
-                <article class="post">
-                    <span class="tag">Exam Prep</span>
-                    <h3>How to Prepare for WAEC in 30 Days</h3>
-                    <p>Practical strategies to focus on high-impact topics and improve scores fast.</p>
-                </article>
-                <article class="post">
-                    <span class="tag">Science</span>
-                    <h3>Why 3D Models Help You Remember Chemistry</h3>
-                    <p>Visual learning boosts retention. Here's how 3D makes abstract ideas concrete.</p>
-                </article>
-                <article class="post">
-                    <span class="tag">Study Hacks</span>
-                    <h3>7 Proven Study Techniques for JAMB Success</h3>
-                    <p>From spaced repetition to practice tests—these techniques work.</p>
-                </article>
-                <article class="post">
-                    <span class="tag">Offline Learning</span>
-                    <h3>Learning Without Internet: How Akudemy Works</h3>
-                    <p>Offline-first architecture explained in simple terms for students and parents.</p>
-                </article>
-                <article class="post">
-                    <span class="tag">Education</span>
-                    <h3>NECO Prep: The Topics Students Miss Most</h3>
-                    <p>We analyzed common weak areas and how to improve them quickly.</p>
-                </article>
-                <article class="post">
-                    <span class="tag">Product</span>
-                    <h3>Inside Akudemy: Building for Nigeria First</h3>
-                    <p>Why we chose offline-first and how we built the platform.</p>
-                </article>
-            </div>
-        </div>
-    </section>
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Akudemy Blog</h1>
+    <p>Study tips, JAMB updates, subject guides, and success stories from Nigerian students just like you.</p>
+  </div>
 
-    <section class="cta">
-        <div class="container">
-            <h2>Want more study tips?</h2>
-            <p>Follow Akudemy and get weekly learning content.</p>
-            <a href="/">Start Learning</a>
-        </div>
-    </section>
+  <!-- BLOG -->
+  <div class="blog-section">
+    <div class="blog-filter">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Study Tips</button>
+      <button class="filter-btn">Subject Guides</button>
+      <button class="filter-btn">JAMB News</button>
+      <button class="filter-btn">Success Stories</button>
+    </div>
 
-    <footer>
-        <div class="container">© 2026 Akudemy • Learn Anywhere. Achieve Everywhere.</div>
-    </footer>
+    <div class="blog-grid">
+
+      <!-- Article 1 -->
+      <div class="blog-card">
+        <div class="blog-card-img" style="background: #dbeafe;">📝</div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Study Tips</span>
+          <h3>How to Score 300+ in JAMB: A Proven 8-Week Study Plan</h3>
+          <p>Consistent, structured preparation is the single biggest predictor of JAMB success. This step-by-step 8-week plan tells you exactly what to study each week to hit 300+.</p>
+          <div class="blog-meta">
+            <span>Jan 15, 2025 · 8 min read</span>
+            <a href="#" class="read-more">Read →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article 2 -->
+      <div class="blog-card">
+        <div class="blog-card-img" style="background: #d1fae5;">🔬</div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Subject Guides</span>
+          <h3>JAMB Chemistry: 10 High-Frequency Topics You Must Master</h3>
+          <p>Over 60% of JAMB Chemistry marks come from just 10 topic areas. We break down each one with the key formulas, reactions, and common question types you'll face.</p>
+          <div class="blog-meta">
+            <span>Jan 22, 2025 · 10 min read</span>
+            <a href="#" class="read-more">Read →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article 3 -->
+      <div class="blog-card">
+        <div class="blog-card-img" style="background: #fef3c7;">📢</div>
+        <div class="blog-card-body">
+          <span class="blog-tag">JAMB News</span>
+          <h3>JAMB 2025 Registration: Key Dates, Requirements & What's New</h3>
+          <p>JAMB has announced important changes for the 2025 UTME. Here's everything you need to know about registration dates, biometric requirements, and new subject combinations.</p>
+          <div class="blog-meta">
+            <span>Feb 3, 2025 · 6 min read</span>
+            <a href="#" class="read-more">Read →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article 4 -->
+      <div class="blog-card">
+        <div class="blog-card-img" style="background: #ede9fe;">🏆</div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Success Stories</span>
+          <h3>"I Failed JAMB Twice—Then I Used Akudemy and Scored 318"</h3>
+          <p>Kelechi from Imo State shares his honest story of two failed attempts, how he changed his approach, and how targeted CBT practice helped him finally crack JAMB with a 318.</p>
+          <div class="blog-meta">
+            <span>Feb 10, 2025 · 7 min read</span>
+            <a href="#" class="read-more">Read →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article 5 -->
+      <div class="blog-card">
+        <div class="blog-card-img" style="background: #fce7f3;">📐</div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Subject Guides</span>
+          <h3>JAMB Mathematics: Tackling Word Problems Without a Calculator</h3>
+          <p>JAMB Maths questions are designed to be solved without a calculator. Learn the estimation techniques, number tricks, and shortcuts that top scorers use to work quickly and accurately.</p>
+          <div class="blog-meta">
+            <span>Feb 17, 2025 · 9 min read</span>
+            <a href="#" class="read-more">Read →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article 6 -->
+      <div class="blog-card">
+        <div class="blog-card-img" style="background: #ecfdf5;">🧠</div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Study Tips</span>
+          <h3>5 Memory Techniques That Actually Work for JAMB Students</h3>
+          <p>Cramming doesn't work. These five science-backed memory techniques—spaced repetition, active recall, mnemonics, chunking, and the Feynman method—will help you retain more with less stress.</p>
+          <div class="blog-meta">
+            <span>Feb 24, 2025 · 7 min read</span>
+            <a href="#" class="read-more">Read →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter">
+    <h2>Get Weekly Study Tips in Your Inbox</h2>
+    <p>Join 12,000+ students who receive our free JAMB prep newsletter every week.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Enter your email address" />
+      <button type="submit">Subscribe Free</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Aku<span>demy</span></div>
+        <p>Nigeria's smartest JAMB<br/>exam preparation platform.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="index.html#subjects">Subjects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#mission">Our Mission</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html#faq">FAQ</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Akudemy · Part of the Akulearn EdTech Platform · Built for Nigerian students.</div>
+  </footer>
+
 </body>
 </html>

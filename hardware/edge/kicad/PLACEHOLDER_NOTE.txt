@@ -1,6 +1,0 @@
-This folder is a placeholder for the KiCad project files for the Edge Hub alpha.
-
-Recommended project name: edge-alpha
-Recommended first sheets: pmu.sch, compute_carrier.sch, rf_frontend.sch, sensors.sch
-
-Create the KiCad project locally and push the project files to a hardware-specific branch once the schematic is mature.

@@ -44,6 +44,26 @@ Aku Workspace is the AI-first productivity layer built on top of the Aku Platfor
 
 The Aku Platform is evolving beyond infrastructure to deliver an "Intuitive Intelligence" Workspace, redefining productivity through AI-first, natural language interaction. This vision aims to remove technical barriers, making powerful data analysis, document creation, and communication effortless for all users. The Aku AI Assistant, leveraging distributed intelligence from Edge Hubs, Super Hubs, and the IG-Hub, will be the core interaction layer for all Aku Workspace applications.
 
+## Brand Identity
+
+The Aku Platform uses two official brand marks and two service-specific sub-brands.
+
+### Platform Logos
+
+| Logo | File | Usage |
+|------|------|-------|
+| ![Aku — Horns Up](../images/logos/aku-brand-horns-up.svg) | `docs/images/logos/aku-brand-horns-up.svg` | Primary Aku Platform logo — IG-Hub UI, marketing, official documents |
+| ![Aku — Horns Down](../images/logos/aku-brand-horns-down.svg) | `docs/images/logos/aku-brand-horns-down.svg` | Alternate Aku Platform logo — Edge Hub community interface, print collateral |
+
+### Service Sub-Brand Logos
+
+| Brand | Logo File | Service |
+|-------|-----------|---------|
+| Akudemy | `docs/images/logos/akudemy-logo.svg` | Aku Learn — education delivery |
+| Telhone | `docs/images/logos/telhone-logo.svg` | Aku eSIM — telecom & SIM provisioning |
+
+For full logo usage guidelines, see [`docs/images/logos/README.md`](../images/logos/README.md).
+
 ## Diagram Description (for designers)
 
 Create a multi-tier diagram showing:

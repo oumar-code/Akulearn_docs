@@ -1,166 +1,99 @@
-# Akudemy Static Site Deployment Guide
+# Akudemy Static Site – Deployment Guide
 
-## 📁 Project Structure
+## Overview
+
+This directory contains the Akudemy static site — a JAMB exam preparation landing page built with plain HTML and inline CSS. No build step is required; the files are served directly.
+
+## File Structure
 
 ```
 public/
-├── index.html          (landing page)
-├── about.html          (about page)
-├── blog.html           (blog page)
-├── pricing.html        (pricing page)
-└── vercel.json         (deployment config)
+├── index.html          Landing page (hero, features, subjects, pricing, testimonials)
+├── about.html          About & mission page (team, values, FAQ, contact)
+├── blog.html           Blog landing page (6 sample articles + newsletter)
+├── pricing.html        Detailed pricing page (plans, comparison table, FAQ)
+├── vercel.json         Vercel routing & security-header config for this static site
+└── DEPLOYMENT_GUIDE.md This file
 ```
 
-## 🚀 Deployment Instructions
+## Deploy to Vercel (Recommended)
 
-### Option 1: Deploy to Vercel (Recommended)
+### Step 1 – Push to GitHub
 
-**1. Create Vercel Account** (Free)
-- Go to vercel.com
-- Sign up with GitHub, GitLab, or email
-
-**2. Push to GitHub**
 ```bash
-cd /path/to/Akulearn_docs
-git init
-git add .
-git commit -m "Add Akudemy static site"
-git remote add origin https://github.com/yourusername/akudemy-site.git
-git push -u origin main
+git add public/
+git commit -m "Add Akudemy website"
+git push
 ```
 
-**3. Import on Vercel**
-- Go to vercel.com/dashboard
-- Click "Add New..." → "Project"
-- Import your GitHub repository
-- Root Directory: `public`
-- Click Deploy
+### Step 2 – Import on Vercel
 
-**✅ Done!** Your site is live at `akudemy.vercel.app`
+1. Go to [vercel.com/new](https://vercel.com/new)
+2. Click **"Import Git Repository"** and select `oumar-code/Akulearn_docs`
+3. In the **Configure Project** screen set:
+   - **Framework Preset:** `Other`
+   - **Root Directory:** `public`
+   - **Build Command:** *(leave empty)*
+   - **Output Directory:** `.` *(current directory)*
+4. Click **"Deploy"**
 
-### Option 2: Deploy to Netlify
+### Step 3 – Set Custom Domain (Optional)
 
-**1. Create Netlify Account** (Free)
-- Go to netlify.com
-- Sign up
+In the Vercel project dashboard:
+1. Go to **Settings → Domains**
+2. Add `akudemy.ng` (or your preferred domain)
+3. Update your DNS records as instructed by Vercel
 
-**2. Connect Repository**
-- Click "New site from Git"
-- Select GitHub
-- Choose your repository
-- Set Build Command: (leave blank - static site)
-- Set Publish Directory: `public`
-- Deploy
+---
 
-**3. Custom Domain**
-- Go to Domain Settings
-- Add your custom domain (akudemy.com)
-- Update DNS records
+## Root-Level `vercel.json` Update
 
-### Option 3: Manual Deployment
+The root `vercel.json` has been updated to serve the `public/` directory as a static site instead of running the MkDocs build. This means Akudemy will be the deployed output at the repository's Vercel URL.
 
-**Using surge.sh** (Quick & Easy)
+## Local Preview
+
+No build step is needed. Open any HTML file directly in your browser:
+
 ```bash
-npm install -g surge
+# macOS
+open public/index.html
+
+# Linux
+xdg-open public/index.html
+
+# Windows
+start public/index.html
+```
+
+Or use a simple local server:
+
+```bash
 cd public
-surge
+python3 -m http.server 8080
+# then open http://localhost:8080
 ```
 
-**Using GitHub Pages**
-```bash
-# Push to gh-pages branch
-git subtree push --prefix public origin gh-pages
-```
+## Pages
 
-## 🔗 Connect Your Domain
+| File | URL path | Description |
+|---|---|---|
+| `index.html` | `/` | Main landing page |
+| `about.html` | `/about` | About & mission |
+| `blog.html` | `/blog` | Blog articles |
+| `pricing.html` | `/pricing` | Pricing plans |
 
-### If using Vercel
-1. Go to Project Settings → Domains
-2. Add your domain: `akudemy.com`
-3. Follow DNS configuration instructions
-4. Update your domain registrar nameservers
+## Security Headers
 
-### If using Netlify
-1. Go to Domain Settings
-2. Add custom domain
-3. Update DNS records at your registrar
+The `vercel.json` inside `public/` adds the following security headers to all responses:
 
-## 📊 Environment Setup
+- `X-Content-Type-Options: nosniff`
+- `X-Frame-Options: DENY`
+- `X-XSS-Protection: 1; mode=block`
 
-No environment variables needed! This is a static site. All content is hardcoded in HTML.
+## Future Services
 
-## 🔄 Making Updates
+The following services are planned for future deployment phases and are **not** part of this initial release:
 
-**To update content:**
-1. Edit HTML files in `/public/`
-2. Commit and push to GitHub
-3. Vercel/Netlify auto-deploys
-
-**To add new pages:**
-1. Create `new-page.html` in `/public/`
-2. Add navigation links to `index.html`, `about.html`, etc.
-3. Push to GitHub
-4. Auto-deployed
-
-## 📱 SEO & Performance
-
-**Current Status:**
-- ✅ Mobile-responsive
-- ✅ Fast load time (<1s)
-- ✅ SEO meta tags included
-- ✅ Social media open graph tags
-- ✅ Security headers enabled
-
-## 🛡️ Security
-
-Vercel automatically provides:
-- ✅ HTTPS/SSL encryption
-- ✅ DDoS protection
-- ✅ Security headers
-- ✅ 99.99% uptime SLA
-
-## 📈 Analytics
-
-Add Google Analytics (optional):
-1. Create Google Analytics account
-2. Get your tracking ID
-3. Add this to `<head>` of each HTML file:
-```html
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_ID');
-</script>
-```
-
-## 🎯 Next Steps
-
-1. **Verify domain availability** ✓
-2. **Register akudemy.com** (Namecheap, GoDaddy)
-3. **Push to GitHub** 
-4. **Deploy to Vercel**
-5. **Configure custom domain**
-6. **Test site** (all pages load, links work)
-
-## ✅ Pre-Launch Checklist
-
-- [ ] All HTML files created
-- [ ] Navigation links tested
-- [ ] Mobile responsive tested
-- [ ] Domain registered
-- [ ] GitHub repository created
-- [ ] Vercel project deployed
-- [ ] Custom domain configured
-- [ ] SSL certificate active
-- [ ] All pages accessible
-- [ ] Links working (no 404s)
-- [ ] Social media preview tested (OpenGraph)
-
-## 📞 Support
-
-**Vercel Support**: vercel.com/support  
-**Netlify Support**: netlify.com/support
-
+- **Telhone** – Telecom/VoIP service
+- **DaaS** – Device-as-a-Service
+- **Akulearn Workspace** – Collaborative learning workspace

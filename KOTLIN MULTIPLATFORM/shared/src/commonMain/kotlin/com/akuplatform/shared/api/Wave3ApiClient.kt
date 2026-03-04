@@ -1,34 +1,20 @@
 package com.akuplatform.shared.api
 
-import com.akuplatform.shared.auth.SessionManager
-import io.ktor.client.HttpClient
-import io.ktor.client.plugins.auth.Auth
-import io.ktor.client.plugins.auth.providers.BearerTokens
-import io.ktor.client.plugins.auth.providers.bearer
-import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.client.plugins.logging.LogLevel
-import io.ktor.client.plugins.logging.Logging
-import io.ktor.serialization.kotlinx.json.json
-import kotlinx.serialization.json.Json
+import com.akuplatform.shared.auth.model.AuthToken
 
-fun buildWave3Client(sessionManager: SessionManager): HttpClient = HttpClient {
-    install(ContentNegotiation) {
-        json(Json {
-            ignoreUnknownKeys = true
-            isLenient = true
-        })
+class Wave3ApiClient(private val baseUrl: String = BASE_URL) {
+
+    companion object {
+        const val BASE_URL = "https://api.akulearn.com/v3"
     }
 
-    install(Auth) {
-        bearer {
-            loadTokens {
-                val token = sessionManager.getWave3Token() ?: return@loadTokens null
-                BearerTokens(accessToken = token, refreshToken = "")
-            }
-        }
+    suspend fun authenticate(email: String, password: String): Result<AuthToken> {
+        // TODO: implement HTTP authentication call
+        return Result.failure(NotImplementedError("HTTP client not yet configured"))
     }
 
-    install(Logging) {
-        level = LogLevel.HEADERS
+    suspend fun refreshToken(refreshToken: String): Result<AuthToken> {
+        // TODO: implement token refresh call
+        return Result.failure(NotImplementedError("HTTP client not yet configured"))
     }
 }

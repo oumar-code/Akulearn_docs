@@ -1,6 +1,0 @@
-Define demand a
-  │
-  ├── Explain the law
-  ├── Draw a simple d
-  ├── Calculate equil
-  └── Explain how pri

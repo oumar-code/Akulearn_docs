@@ -39,7 +39,8 @@ Learning objectives:
 
 Day 1: Hardware & Power
 - Site survey reading, solar orientation, mounting best-practices
-- Wiring: battery, fuses, PV input, earthing
+- Wind turbine installation: mast erection, turbine mounting, cable routing
+- Wiring: battery, fuses, PV input, wind DC input, dump-load resistor, earthing
 - Safety checklist and checklist sign-off
 
 Day 2: Commissioning & Remote Ops
@@ -48,8 +49,10 @@ Day 2: Commissioning & Remote Ops
 - Firmware update process and rollback
 
 Troubleshooting quick flow (technician):
-1) Edge unresponsive — check battery voltage → check fuse → reboot → check logs → escalate
+1) Edge unresponsive — check battery SoC and voltage → check fuse → reboot → check logs → escalate
 2) Low solar charge — check PV open-circuit voltage, shading, panel mount
+3) Wind turbine not charging — check rectifier output voltage, cable continuity, dump-load resistor temp
+4) Battery SoC critically low — confirm both solar and wind inputs; if neither present, check SPD and fuses
 
 Materials to provide
 - Trainer slides (pptx/markdown)

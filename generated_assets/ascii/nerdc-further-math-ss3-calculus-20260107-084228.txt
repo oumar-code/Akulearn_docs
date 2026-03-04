@@ -1,6 +1,0 @@
-Find derivative
-  │
-  ├── Differentiate 3
-  ├── Add vectors u =
-  ├── Apply product r
-  └── Find dot produc

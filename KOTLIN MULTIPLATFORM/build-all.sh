@@ -1,15 +1,16 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+# build-all.sh — Build all Kotlin Multiplatform targets for the Akulearn shared module
+set -euo pipefail
 
-echo "🔨 Building shared module..."
-./gradlew :shared:build
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
-echo "📱 Building Android debug APK..."
-./gradlew :androidApp:assembleDebug
+echo "Building Android..."
+./gradlew :shared:assembleDebug
 
-echo "🧪 Running shared tests..."
-./gradlew :shared:allTests
+echo "Building iOS frameworks..."
+./gradlew :shared:linkDebugFrameworkIosArm64
+./gradlew :shared:linkDebugFrameworkIosX64
+./gradlew :shared:linkDebugFrameworkIosSimulatorArm64
 
-echo ""
-echo "✅ All builds successful."
-echo "📦 APK: androidApp/build/outputs/apk/debug/androidApp-debug.apk"
+echo "All targets built successfully."

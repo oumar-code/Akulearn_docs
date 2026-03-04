@@ -1,11 +1,16 @@
 # Ignore environment variable files
 .env
 node_modules
+package-lock.json
+
 # MkDocs build output
 site/
 
 # Python
 __pycache__/
+*.py
+!team.py
+!supabase_provision.py
 *.py[cod]
 *.pyo
 *.pyd
@@ -15,24 +20,107 @@ venv/
 .venv/
 myenv/
 
+# Shell and batch scripts
+*.sh
+*.bat
+*.ps1
+
+# Exceptions: Gradle wrapper scripts and build scripts (required for Android Studio / KMP)
+!gradlew
+!gradlew.bat
+!build-all.sh
+!setup.sh
+
+# Go source
+*.go
+go.mod
+go.sum
+
+# Docker / container
+Dockerfile
+compose*.yaml
+compose*.yml
+docker-compose*.yaml
+docker-compose*.yml
+
 # Logs and temporary outputs
 *.log
-pyarrow-install.log
-ps-output.txt
-pull-output.txt
-docker-info.txt
-docker-ps-all.txt
-docker-version.txt
-
-# runtime logs and outputs
-logs-*.txt
 *.out
 *.err
+*.txt
+!requirements.txt
 
 # Editor/IDE
-.vscode/
 .idea/
 
 # Misc
 *.zip
 *.egg-info/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated and output directories
+generated_assets/
+generated_images/
+generated_content/
+image_queue/
+graph_exports/
+runs/
+reports/
+
+# Gradle build cache and local config (Android/KMP)
+.gradle/
+local.properties
+
+# Non-docs directories
+akulearn-linux-app/
+akulearn_microservices/
+client_examples/
+connected_stack/
+content/
+content_templates/
+data/
+!docs/network-map/data/
+diagrams/
+examples/
+hardware/
+!docs/hardware/
+hardware_integration/
+infra/
+infrastructure/
+knowledge_graph/
+kubernetes/
+marketing/
+mlops/
+personal_portfolio/
+scripts/
+/src/
+static/
+tests/
+unconnected_stack/
+versatech_profile/
+web/
+
+# Root-level HTML/CSS dashboards
+*.html
+*.css
+
+# Allow the Akudemy static site in public/
+!public/
+!public/**
+
+# JSON data files (keep vercel.json and package.json and puppeteer-config.json)
+*.json
+!vercel.json
+!package.json
+!puppeteer-config.json
+!public/*.json
+
+# CSV data files
+*.csv
+
+# Environment / secrets
+.env

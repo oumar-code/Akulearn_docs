@@ -1,56 +1,60 @@
-# Contributing to the Aku Platform
+# Contributing to Akulearn Docs
 
-Thank you for your interest in contributing! This guide will help you get started quickly.
-
-## Repository Structure
-
-This is a multi-technology monorepo. The primary areas of active development are:
-
-| Directory | Technology | Notes |
-|---|---|---|
-| KOTLIN MULTIPLATFORM/ | Kotlin, Android, iOS | Mobile apps — main Phase 5 focus |
-| supabase/ | SQL, Edge Functions | Auth and database schema |
-| docs/ | Markdown, MkDocs | Platform documentation |
-| wave3_rest_api.py and related | Python | Content and recommendation backend |
-| infra/ / kubernetes/ | Docker, K8s | Infrastructure |
+Thank you for your interest in contributing! This guide explains how to get started.
 
 ## Getting Started
 
-1. Fork this repository and clone your fork.
-2. For the mobile app, follow the setup guide in KOTLIN MULTIPLATFORM/README.md.
-3. For the docs site: pip install mkdocs mkdocs-material && mkdocs serve
-4. For the Python backend: pip install -r requirements.txt
+1. **Fork** the repository on GitHub.
+2. **Clone** your fork locally:
+   ```bash
+   git clone https://github.com/<your-username>/Akulearn_docs.git
+   cd Akulearn_docs
+   ```
+3. Create a new **feature branch**:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
 
-## Branching Strategy
+## Making Changes
 
-| Branch | Purpose |
+- Keep commits focused and atomic.
+- Write clear commit messages (e.g. `Add Wave3 API client stub`).
+- Follow the existing code style for the area you are editing.
+
+## Pushing and Opening a PR
+
+1. Fetch and merge the latest changes from `main` **before** pushing to avoid a non-fast-forward rejection:
+   ```bash
+   git fetch origin
+   git merge origin/main
+   ```
+2. Push your branch:
+   ```bash
+   git push -u origin feature/your-feature-name
+   ```
+3. Open a **Pull Request** on GitHub against the `main` branch.
+
+## What NOT to Commit
+
+The following are excluded by `.gitignore` and must never be committed:
+
+| Pattern | Reason |
 |---|---|
-| main | Production-ready code only |
-| develop | Integration branch — all PRs target here |
-| feature/<name> | New features |
-| fix/<name> | Bug fixes |
-| docs/<name> | Documentation updates |
+| `.gradle/` | Gradle build cache — regenerated automatically |
+| `local.properties` | Local SDK paths — different on every machine |
+| `*.env` | Secrets and environment variables |
+| `site/` | MkDocs build output |
 
-## Pull Request Process
+If you accidentally staged these files, remove them from tracking:
+```bash
+git rm --cached -r .gradle/ local.properties
+```
+Then commit the removal before pushing.
 
-1. Branch from develop: git checkout -b feature/your-feature develop
-2. Keep PRs focused — one concern per PR.
-3. Write or update tests for any logic changes in shared/.
-4. Ensure the build passes locally before opening a PR:
-   ./gradlew :shared:build :shared:allTests
-5. Fill in the PR template fully.
-6. Request a review from a maintainer.
+## Deploying the Docs Site
 
-## Code Style
+See the deployment instructions in [`README.md`](README.md) for Vercel deployment steps.
 
-- Kotlin: Follow Kotlin Coding Conventions.
-- Python: Follow PEP 8.
-- Commits: Use conventional commits — feat:, fix:, docs:, chore:, test:.
+## Questions
 
-## Reporting Issues
-
-Open a GitHub Issue and include:
-- A clear title and description
-- Steps to reproduce
-- Expected vs actual behaviour
-- Platform and version (e.g. Android API 26, iOS 16)
+Open an issue or start a discussion on GitHub if you have questions.

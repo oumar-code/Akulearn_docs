@@ -12,7 +12,9 @@ Gate 0 — Procurement & Permits (Pre-deploy)
 Gate 1 — Post-Install Validation (After each site install)
 - Criteria to pass (per site):
   - Edge Hub achieves successful boot and content sync
-  - Battery/solar system reports correct voltages and charging behavior
+  - Battery/solar system reports correct voltages, state-of-charge, and charging behavior
+  - Wind turbine DC input is visible in telemetry dashboard within 30 min of install (where installed)
+  - Dump-load controller activates correctly when battery reaches float voltage (bench-tested before install)
   - Wi‑Fi and local services (SIP registration) are functional
   - Local admin/training done and teacher confirms basic access
 - Action if fail: repair/replace hardware, re-train teacher, re-test within 72 hours
