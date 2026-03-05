@@ -1,0 +1,2031 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Comprehensive documentation for the Akulearn EdTech platform, covering architecture, development standards, and project plans.">
+      
+      
+      
+        <link rel="canonical" href="https://akulearn.com/docs/network-gateway/PHASE4_IMPLEMENTATION_COMPLETE/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Phase 4 Implementation — API & Integration - Akulearn Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#phase-4-implementation-api-integration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Akulearn Documentation" class="md-header__button md-logo" aria-label="Akulearn Documentation" data-md-component="logo">
+      
+  <img src="../../images/akulearn-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Akulearn Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Phase 4 Implementation — API &amp; Integration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/oumar-code/Akulearn_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    oumar-code/Akulearn_docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/00-project-overview/index.md" class="md-tabs__link">
+          
+  
+  
+  Project Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/01-architecture/index.md" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/network-gateway/index.md" class="md-tabs__link">
+          
+  
+  
+  Network Gateway
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/02-backend/index.md" class="md-tabs__link">
+          
+  
+  
+  Backend
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/03-mobile/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mobile App
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/04-iot-projector/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  IoT Projector
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../docs/05-cross-cutting/coding-standards.md" class="md-tabs__link">
+          
+  
+  
+  Cross-Cutting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/06-process-methodology/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Process & Methodology
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/07-glossary/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docs/demo_scripts/offline_demo_segment.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Demo Scripts
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Akulearn Documentation" class="md-nav__button md-logo" aria-label="Akulearn Documentation" data-md-component="logo">
+      
+  <img src="../../images/akulearn-logo.png" alt="logo">
+
+    </a>
+    Akulearn Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/oumar-code/Akulearn_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    oumar-code/Akulearn_docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Overview
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Overview
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/00-project-overview/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/00-project-overview/roadmap-phase-1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/01-architecture/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/01-architecture/hld-lld-content-ingestion.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Content Ingestion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/01-architecture/adrs/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADRs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Gateway
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network Gateway
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/esim.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eSIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/sim.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physical SIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/validation-test-plan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation & Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/field-operations-runbook.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/api-rate-limiting.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limiting & Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/network-gateway/pilot-deployment-plan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pilot Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/02-backend/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/02-backend/api-specs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/02-backend/database-schemas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/03-mobile/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/04-iot-projector/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IoT Projector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Cutting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cross-Cutting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/05-cross-cutting/coding-standards.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/05-cross-cutting/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/06-process-methodology/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process & Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/07-glossary/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/demo_scripts/offline_demo_segment.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#completed-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completed Tasks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Completed Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rate-limiting-throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Rate Limiting &amp; Throttling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Batch Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Webhook Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-testing-specs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Integration Testing Specs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ API Enhancements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-status-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4 Status: COMPLETE ✅
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Achievements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Achievements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Reliability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational Efficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-driven-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event-Driven Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer Experience
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-diagrams-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Diagrams Added
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture Diagrams Added">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-processing-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Processing Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circuit-breaker-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Circuit Breaker States
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps-phase-5-validation-pilot-readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps → Phase 5 (Validation &amp; Pilot Readiness)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Date
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documents-createdmodified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documents Created/Modified
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coverage-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoint-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Endpoint Count
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="phase-4-implementation-api-integration">Phase 4 Implementation — API &amp; Integration<a class="headerlink" href="#phase-4-implementation-api-integration" title="Permanent link">&para;</a></h1>
+<h2 id="completed-tasks">Completed Tasks<a class="headerlink" href="#completed-tasks" title="Permanent link">&para;</a></h2>
+<h3 id="rate-limiting-throttling">✅ Rate Limiting &amp; Throttling<a class="headerlink" href="#rate-limiting-throttling" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <a href="../api-rate-limiting/">docs/network-gateway/api-rate-limiting.md</a>, <a href="../../02-backend/api-specs/">docs/02-backend/api-specs.md</a></p>
+<p><strong>Added:</strong>
+- <strong>Tier-based rate limits:</strong> Admin (1000/min), Field Agents (300/min), External (100/min), Webhooks (50/min)
+- <strong>Rate limit headers:</strong> X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset
+- <strong>429 response format</strong> with retry-after guidance
+- <strong>Emergency bypass mechanism</strong> for platform admin operations
+- <strong>Circuit breaker pattern</strong> with state machine (Closed → Open → Half-Open)
+- <strong>Quota management API</strong> for checking limits and requesting increases</p>
+<h3 id="batch-operations">✅ Batch Operations<a class="headerlink" href="#batch-operations" title="Permanent link">&para;</a></h3>
+<p><strong>Locations:</strong> <a href="../../02-backend/api-specs/">docs/02-backend/api-specs.md</a>, <a href="../api-rate-limiting/">docs/network-gateway/api-rate-limiting.md</a></p>
+<p><strong>Added:</strong>
+- <strong>Batch endpoints:</strong>
+  - <code>POST /esim/profiles/batch</code> - Bulk create eSIM profiles (max 100)
+  - <code>GET /esim/profiles/batch/{batchId}</code> - Check batch status
+  - <code>POST /psim/iccids/batch</code> - Bulk register ICCIDs (max 100)
+  - <code>PATCH /policies/batch</code> - Bulk policy updates (max 500)
+- <strong>Batch workflow diagram</strong> showing async processing flow
+- <strong>Status polling guidance</strong> with recommended 5s interval
+- <strong>Partial failure handling</strong> with per-item status and error details
+- <strong>Batch size limits</strong> and processing time estimates</p>
+<h3 id="webhook-integration">✅ Webhook Integration<a class="headerlink" href="#webhook-integration" title="Permanent link">&para;</a></h3>
+<p><strong>Locations:</strong> <a href="../../02-backend/api-specs/">docs/02-backend/api-specs.md</a>, <a href="../api-rate-limiting/">docs/network-gateway/api-rate-limiting.md</a></p>
+<p><strong>Added:</strong>
+- <strong>Webhook registration API:</strong> <code>POST /webhooks</code> with event subscriptions
+- <strong>10 supported events:</strong> profile lifecycle, ICCID lifecycle, attach, policy push, swap
+- <strong>Webhook payload format</strong> with HMAC-SHA256 signature
+- <strong>Signature verification</strong> code examples (Python)
+- <strong>Delivery guarantees:</strong> 5 retries with exponential backoff (5s to 405s)
+- <strong>Webhook management:</strong> GET/DELETE endpoints with delivery stats
+- <strong>Auto-suspension</strong> after 20 consecutive failures</p>
+<h3 id="integration-testing-specs">✅ Integration Testing Specs<a class="headerlink" href="#integration-testing-specs" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <a href="../api-rate-limiting/">docs/network-gateway/api-rate-limiting.md</a></p>
+<p><strong>Added:</strong>
+- <strong>Test environments:</strong> Sandbox (10x limits), Staging (1x limits), Production
+- <strong>Test data:</strong> Pre-loaded devices, reserved ICCID ranges, auto-expiring profiles
+- <strong>API contract tests:</strong> Commands for validation, client generation
+- <strong>Load testing scenarios:</strong> Normal (100 RPS), Peak (500 RPS), Burst (1000 RPS)
+- <strong>Success criteria:</strong> Error rates (&lt;1-5%), latency targets (P95 &lt;500ms-2s)</p>
+<h3 id="api-enhancements">✅ API Enhancements<a class="headerlink" href="#api-enhancements" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <a href="../../02-backend/api-specs/">docs/02-backend/api-specs.md</a></p>
+<p><strong>Added:</strong>
+- <strong>Batch schemas:</strong> BatchProfileRequest, BatchResponse with success/failure counts
+- <strong>Webhook schemas:</strong> WebhookRequest, WebhookPayload with signature
+- <strong>Sample payloads:</strong> Batch creation, status check, webhook registration, delivery
+- <strong>Rate limit headers</strong> documented across all endpoints
+- <strong>Circuit breaker responses</strong> for service unavailability</p>
+<h2 id="phase-4-status-complete">Phase 4 Status: COMPLETE ✅<a class="headerlink" href="#phase-4-status-complete" title="Permanent link">&para;</a></h2>
+<p>All Phase 4 objectives have been implemented:
+- ✅ Rate limiting with tier-based quotas and circuit breaker
+- ✅ Batch operations for bulk provisioning (eSIM, pSIM, policies)
+- ✅ Webhook integration with event subscriptions and delivery guarantees
+- ✅ Integration testing specs with environments and load scenarios</p>
+<h2 id="key-achievements">Key Achievements<a class="headerlink" href="#key-achievements" title="Permanent link">&para;</a></h2>
+<h3 id="api-reliability">API Reliability<a class="headerlink" href="#api-reliability" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>4 consumer tiers</strong> with appropriate rate limits</li>
+<li><strong>Circuit breaker protection</strong> preventing cascade failures</li>
+<li><strong>Retry policies</strong> with exponential backoff across all async operations</li>
+<li><strong>Graceful degradation</strong> with clear error messages and retry guidance</li>
+</ul>
+<h3 id="operational-efficiency">Operational Efficiency<a class="headerlink" href="#operational-efficiency" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Batch operations</strong> reduce API calls by 100x for bulk provisioning</li>
+<li><strong>Async processing</strong> with job queue and status polling</li>
+<li><strong>Partial failure handling</strong> ensures resilient batch operations</li>
+<li><strong>24-hour result retention</strong> for audit and reconciliation</li>
+</ul>
+<h3 id="event-driven-integration">Event-Driven Integration<a class="headerlink" href="#event-driven-integration" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>10 lifecycle events</strong> available for webhook subscription</li>
+<li><strong>HMAC-SHA256 signatures</strong> for payload verification</li>
+<li><strong>5-retry policy</strong> with 10s timeout per attempt</li>
+<li><strong>Delivery stats tracking</strong> for monitoring webhook health</li>
+<li><strong>Auto-suspension</strong> preventing resource waste on dead endpoints</li>
+</ul>
+<h3 id="developer-experience">Developer Experience<a class="headerlink" href="#developer-experience" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>3 test environments</strong> (sandbox, staging, production)</li>
+<li><strong>OpenAPI contract tests</strong> for CI/CD validation</li>
+<li><strong>Client generation</strong> support for multiple languages</li>
+<li><strong>Load testing scenarios</strong> with clear success criteria</li>
+<li><strong>Reserved test data ranges</strong> for safe integration testing</li>
+</ul>
+<h2 id="architecture-diagrams-added">Architecture Diagrams Added<a class="headerlink" href="#architecture-diagrams-added" title="Permanent link">&para;</a></h2>
+<h3 id="batch-processing-flow">Batch Processing Flow<a class="headerlink" href="#batch-processing-flow" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">sequenceDiagram</span>
+<span class="w">    </span><span class="n">Client</span><span class="o">-&gt;&gt;</span><span class="n">API</span><span class="o">:</span><span class="w"> </span><span class="n">POST</span><span class="w"> </span><span class="o">/</span><span class="n">batch</span>
+<span class="w">    </span><span class="n">API</span><span class="o">-&gt;&gt;</span><span class="n">Queue</span><span class="o">:</span><span class="w"> </span><span class="n">Enqueue</span>
+<span class="w">    </span><span class="n">API</span><span class="o">-&gt;&gt;</span><span class="n">Client</span><span class="o">:</span><span class="w"> </span><span class="mi">202</span><span class="w"> </span><span class="n">batchId</span>
+<span class="w">    </span><span class="n">Queue</span><span class="o">-&gt;&gt;</span><span class="n">Worker</span><span class="o">:</span><span class="w"> </span><span class="nf">Process</span>
+<span class="w">    </span><span class="n">Worker</span><span class="o">-&gt;&gt;</span><span class="n">DB</span><span class="o">:</span><span class="w"> </span><span class="n">Bulk</span><span class="w"> </span><span class="n">ops</span>
+<span class="w">    </span><span class="n">Client</span><span class="o">-&gt;&gt;</span><span class="n">API</span><span class="o">:</span><span class="w"> </span><span class="n">GET</span><span class="w"> </span><span class="o">/</span><span class="n">batch</span><span class="o">/</span><span class="p">{</span><span class="n">id</span><span class="p">}</span>
+<span class="w">    </span><span class="n">API</span><span class="o">-&gt;&gt;</span><span class="n">Client</span><span class="o">:</span><span class="w"> </span><span class="n">Results</span>
+</code></pre></div>
+
+<h3 id="circuit-breaker-states">Circuit Breaker States<a class="headerlink" href="#circuit-breaker-states" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+<span class="w">    </span><span class="n">Closed</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Open</span><span class="o">:</span><span class="w"> </span><span class="n">Failures</span>
+<span class="w">    </span><span class="n">Open</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">HalfOpen</span><span class="o">:</span><span class="w"> </span><span class="n">Timeout</span>
+<span class="w">    </span><span class="n">HalfOpen</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Closed</span><span class="o">:</span><span class="w"> </span><span class="kr">Success</span>
+<span class="w">    </span><span class="n">HalfOpen</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Open</span><span class="o">:</span><span class="w"> </span><span class="kr">Failure</span>
+</code></pre></div>
+
+<h2 id="integration-points">Integration Points<a class="headerlink" href="#integration-points" title="Permanent link">&para;</a></h2>
+<h3 id="external-systems">External Systems<a class="headerlink" href="#external-systems" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Integration Type</th>
+<th>Events Consumed</th>
+<th>Rate Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Billing Platform</td>
+<td>Webhook</td>
+<td>profile.activated, iccid.activated, policy.pushed</td>
+<td>100/min</td>
+</tr>
+<tr>
+<td>CRM</td>
+<td>Webhook</td>
+<td>profile.created, iccid.registered, swap.completed</td>
+<td>50/min</td>
+</tr>
+<tr>
+<td>Analytics</td>
+<td>Webhook</td>
+<td>attach.success, policy.pushed</td>
+<td>300/min</td>
+</tr>
+<tr>
+<td>Admin Portal</td>
+<td>Direct API</td>
+<td>All endpoints</td>
+<td>1000/min</td>
+</tr>
+<tr>
+<td>Field Agent App</td>
+<td>Direct API</td>
+<td>Registration, activation, swap</td>
+<td>300/min</td>
+</tr>
+</tbody>
+</table>
+<h3 id="monitoring-integration">Monitoring Integration<a class="headerlink" href="#monitoring-integration" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Prometheus metrics:</strong> Rate limit hits, batch processing times, webhook delivery rates</li>
+<li><strong>Grafana dashboards:</strong> API health, quota usage, webhook delivery stats</li>
+<li><strong>Alerting:</strong> Rate limit approaching, circuit breaker open, webhook failure spike</li>
+</ul>
+<h2 id="next-steps-phase-5-validation-pilot-readiness">Next Steps → Phase 5 (Validation &amp; Pilot Readiness)<a class="headerlink" href="#next-steps-phase-5-validation-pilot-readiness" title="Permanent link">&para;</a></h2>
+<p>Suggested Phase 5 priorities:
+1. <strong>Test Plan Development</strong>
+   - Lab validation scenarios (attach, policy, swap)
+   - Field pilot test cases
+   - Acceptance criteria per feature</p>
+<ol>
+<li><strong>Runbook Creation</strong></li>
+<li>Field agent activation guide</li>
+<li>Support troubleshooting playbook</li>
+<li>
+<p>USSD menu reference card</p>
+</li>
+<li>
+<p><strong>Training Materials</strong></p>
+</li>
+<li>Agent training modules</li>
+<li>Support team onboarding</li>
+<li>
+<p>API integration guides for partners</p>
+</li>
+<li>
+<p><strong>Pilot Deployment Plan</strong></p>
+</li>
+<li>Rollout schedule and phases</li>
+<li>Success metrics and KPIs</li>
+<li>Rollback procedures</li>
+</ol>
+<h2 id="implementation-date">Implementation Date<a class="headerlink" href="#implementation-date" title="Permanent link">&para;</a></h2>
+<p>January 22, 2026</p>
+<h2 id="documents-createdmodified">Documents Created/Modified<a class="headerlink" href="#documents-createdmodified" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="../api-rate-limiting/">docs/network-gateway/api-rate-limiting.md</a> — NEW: Comprehensive rate limiting, batch, webhook, testing guide</li>
+<li><a href="../../02-backend/api-specs/">docs/02-backend/api-specs.md</a> — UPDATED: Batch endpoints, webhook APIs, schemas, samples</li>
+<li><a href="../PHASE3_IMPLEMENTATION_COMPLETE/">docs/network-gateway/PHASE3_IMPLEMENTATION_COMPLETE.md</a> — Referenced for continuity</li>
+<li>This document — Phase 4 completion tracker</li>
+</ol>
+<h2 id="coverage-summary">Coverage Summary<a class="headerlink" href="#coverage-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Specification</th>
+<th>Implementation Guide</th>
+<th>Testing Specs</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rate Limiting</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Batch Operations</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Webhooks</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Circuit Breaker</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Integration Testing</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Load Testing</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Quota Management</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>Complete</td>
+</tr>
+</tbody>
+</table>
+<h2 id="api-endpoint-count">API Endpoint Count<a class="headerlink" href="#api-endpoint-count" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Single operations:</strong> 10 endpoints (profile, ICCID, swap, policy, USSD)</li>
+<li><strong>Batch operations:</strong> 4 endpoints (create batches, check status)</li>
+<li><strong>Webhooks:</strong> 3 endpoints (register, get, delete)</li>
+<li><strong>Utility:</strong> 1 endpoint (quota check)</li>
+<li><strong>Total:</strong> 18 documented API endpoints with full specs</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

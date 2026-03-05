@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akudemy Content Generation Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --blue: #0052CC;
+            --green: #00D084;
+            --orange: #FF6B35;
+            --red: #E74C3C;
+            --dark: #2C3E50;
+            --light: #F5F5F5;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+            background: var(--light);
+            color: var(--dark);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--blue) 0%, #0066FF 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .card h3 {
+            color: var(--blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .metric {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .metric-label {
+            font-weight: 500;
+            opacity: 0.8;
+        }
+        
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--blue);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--green);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
+        .status {
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .status.active {
+            background: rgba(0, 208, 132, 0.1);
+            color: var(--green);
+        }
+        
+        .status.pending {
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--orange);
+        }
+        
+        .status.completed {
+            background: rgba(0, 82, 204, 0.1);
+            color: var(--blue);
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            gap: 1.5rem;
+        }
+        
+        .timeline-marker {
+            width: 40px;
+            height: 40px;
+            background: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        
+        .timeline-item.pending .timeline-marker {
+            background: var(--orange);
+        }
+        
+        .timeline-content h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .timeline-content p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .button:hover {
+            background: #003d99;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,82,204,0.3);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        table th {
+            background: var(--light);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table tr:hover {
+            background: var(--light);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .badge.ready {
+            background: rgba(0, 208, 132, 0.2);
+            color: var(--green);
+        }
+        
+        .badge.pending {
+            background: rgba(255, 107, 53, 0.2);
+            color: var(--orange);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📊 Akudemy Content Generation Dashboard</h1>
+        <p>Real-time tracking of content creation progress</p>
+    </header>
+    
+    <div class="container">
+        <!-- Key Metrics -->
+        <div class="grid">
+            <div class="card">
+                <h3>📚 Study Guides</h3>
+                <div class="metric">
+                    <span class="metric-label">Created</span>
+                    <span class="metric-value">4</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 20%"></div>
+                </div>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.7;">4 / 20 guides (20%)</p>
+                <div class="status pending">In Progress</div>
+            </div>
+            
+            <div class="card">
+                <h3>❓ Practice Questions</h3>
+                <div class="metric">
+                    <span class="metric-label">Generated</span>
+                    <span class="metric-value">500+</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%"></div>
+                </div>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.7;">500 / 2,000 questions (25%)</p>
+                <div class="status active">Ready for Use</div>
+            </div>
+            
+            <div class="card">
+                <h3>📝 Mock Exams</h3>
+                <div class="metric">
+                    <span class="metric-label">Created</span>
+                    <span class="metric-value">3</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 30%"></div>
+                </div>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.7;">3 / 10 mocks (30%)</p>
+                <div class="status active">Ready for Use</div>
+            </div>
+            
+            <div class="card">
+                <h3>⭐ Expert Reviews</h3>
+                <div class="metric">
+                    <span class="metric-label">Completed</span>
+                    <span class="metric-value">0</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.7;">0 / 20 reviews (0%)</p>
+                <div class="status pending">Waiting for Experts</div>
+            </div>
+        </div>
+        
+        <!-- Content Status Table -->
+        <div class="card full-width">
+            <h3>📋 Content Creation Status</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Topic</th>
+                        <th>Subject</th>
+                        <th>Study Guide</th>
+                        <th>Questions</th>
+                        <th>Video</th>
+                        <th>Expert Review</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Organic Nomenclature</strong></td>
+                        <td>Chemistry</td>
+                        <td><span class="badge ready">✓ Ready</span></td>
+                        <td><span class="badge ready">50 Q's</span></td>
+                        <td><span class="badge pending">Pending</span></td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reading Comprehension</strong></td>
+                        <td>English</td>
+                        <td><span class="badge ready">✓ Ready</span></td>
+                        <td><span class="badge ready">100 Q's</span></td>
+                        <td><span class="badge pending">Pending</span></td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Algebra</strong></td>
+                        <td>Mathematics</td>
+                        <td><span class="badge ready">✓ Ready</span></td>
+                        <td><span class="badge ready">120 Q's</span></td>
+                        <td><span class="badge pending">Pending</span></td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Photosynthesis</strong></td>
+                        <td>Biology</td>
+                        <td><span class="badge ready">✓ Ready</span></td>
+                        <td><span class="badge ready">80 Q's</span></td>
+                        <td><span class="badge pending">Pending</span></td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Full Mock Exam #1</strong></td>
+                        <td>Multi-Subject</td>
+                        <td><span class="badge ready">✓ Ready</span></td>
+                        <td><span class="badge ready">180 Q's</span></td>
+                        <td>N/A</td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Full Mock Exam #2</strong></td>
+                        <td>Multi-Subject</td>
+                        <td><span class="badge ready">✓ Ready</span></td>
+                        <td><span class="badge ready">180 Q's</span></td>
+                        <td>N/A</td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Full Mock Exam #3</strong></td>
+                        <td>Multi-Subject</td>
+                        <td><span class="badge ready">✓ Ready</span></td>
+                        <td><span class="badge ready">180 Q's</span></td>
+                        <td>N/A</td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Timeline -->
+        <div class="card full-width">
+            <h3>📅 Content Generation Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">✓</div>
+                    <div class="timeline-content">
+                        <h4>Week 1: MVP Creation (Jan 30 - Feb 5)</h4>
+                        <p>✅ Create 4 starter guides (Chemistry, English, Math, Biology)<br/>✅ Create 3 full mock exams<br/>✅ Organize 500+ existing questions</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">✓</div>
+                    <div class="timeline-content">
+                        <h4>Week 2: Expert Review (Feb 6 - Feb 12)</h4>
+                        <p>✅ Distribute to subject matter experts<br/>✅ Collect feedback & corrections<br/>✅ Make quality improvements</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">✓</div>
+                    <div class="timeline-content">
+                        <h4>Week 3: Beta Launch (Feb 13 - Feb 19)</h4>
+                        <p>✅ Deploy to 100 beta JAMB students<br/>✅ Collect user feedback (feedback form)<br/>✅ Monitor engagement & completion rates</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h4>Week 4: Iteration (Feb 20 - Feb 26)</h4>
+                        <p>⏳ Refine based on feedback<br/>⏳ Create 4 more starter guides (Topics 5-8)<br/>⏳ Expand question banks (2,000 total)</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item pending">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <h4>Week 5-6: Scale Up (Mar 1 - Mar 12)</h4>
+                        <p>⏳ Generate 16 additional starter guides<br/>⏳ Create 5 more full mock exams<br/>⏳ Deploy to 5,000 students</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item pending">
+                    <div class="timeline-marker">7</div>
+                    <div class="timeline-content">
+                        <h4>Full Deployment (Mar 13+)</h4>
+                        <p>⏳ 50,000+ JAMB students with access<br/>⏳ Continuous updates based on feedback<br/>⏳ Monitor score improvements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Action Items -->
+        <div class="card full-width">
+            <h3>✅ Next Action Items</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Owner</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Set up content_generator.py daily automation</td>
+                        <td>Tech Team</td>
+                        <td>Feb 1</td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>Build expert review quality checklist</td>
+                        <td>Content Team</td>
+                        <td>Feb 1</td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>Distribute starter guides to beta users</td>
+                        <td>Product Team</td>
+                        <td>Feb 6</td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>Collect & analyze first week feedback</td>
+                        <td>Analytics Team</td>
+                        <td>Feb 20</td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>Generate 16 additional guides (Phase 2)</td>
+                        <td>Content Team</td>
+                        <td>Mar 1</td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Key Metrics Summary -->
+        <div class="grid">
+            <div class="card">
+                <h3>🎯 Content Goals (6 Months)</h3>
+                <ul style="list-style: none; margin-top: 1rem;">
+                    <li style="margin-bottom: 0.75rem;">✅ 50+ study guides</li>
+                    <li style="margin-bottom: 0.75rem;">✅ 2,000+ practice questions</li>
+                    <li style="margin-bottom: 0.75rem;">✅ 10 full mock exams</li>
+                    <li style="margin-bottom: 0.75rem;">✅ 50+ video explanations</li>
+                    <li style="margin-bottom: 0.75rem;">✅ 4.5+ star average rating</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>📊 Success Metrics</h3>
+                <ul style="list-style: none; margin-top: 1rem;">
+                    <li style="margin-bottom: 0.75rem;">• 50,000+ sign-ups</li>
+                    <li style="margin-bottom: 0.75rem;">• 5,000+ daily active users</li>
+                    <li style="margin-bottom: 0.75rem;">• 200+ avg questions per student</li>
+                    <li style="margin-bottom: 0.75rem;">• 10+ point avg score improvement</li>
+                    <li style="margin-bottom: 0.75rem;">• 10-15% conversion to paid</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>🚀 Resource Allocation</h3>
+                <ul style="list-style: none; margin-top: 1rem;">
+                    <li style="margin-bottom: 0.75rem;">• Content Team: 2-3 people</li>
+                    <li style="margin-bottom: 0.75rem;">• Expert Reviewers: 5-6 people</li>
+                    <li style="margin-bottom: 0.75rem;">• Tech Support: 1-2 people</li>
+                    <li style="margin-bottom: 0.75rem;">• Analytics: 1 person</li>
+                    <li style="margin-bottom: 0.75rem;">• Budget: ₦100-200K/month</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Last Updated: January 30, 2026 | Dashboard Auto-Refreshes Every 1 Hour</p>
+        <p>For questions, contact: content@akudemy.com</p>
+    </footer>
+    
+    <script>
+        // Auto-refresh every 60 minutes
+        setTimeout(function() {
+            location.reload();
+        }, 60 * 60 * 1000);
+    </script>
+</body>
+</html>

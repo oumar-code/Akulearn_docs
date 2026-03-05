@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Models - Interactive Gallery</title>
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        header h1 { font-size: 42px; margin-bottom: 10px; }
+        header p { font-size: 18px; opacity: 0.9; }
+        
+        .status-banner {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .status-banner h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .status-banner p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .model-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .model-viewer-container {
+            width: 100%;
+            height: 350px;
+            background: #f0f0f0;
+            position: relative;
+        }
+        
+        model-viewer {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .loading-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .model-info {
+            padding: 20px;
+        }
+        
+        .model-info h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .model-info p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .badge-success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .badge-info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .instructions {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .instructions h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .instructions li {
+            color: #666;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 { font-size: 32px; }
+            .models-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Biology Models Gallery</h1>
+            <p>Interactive 3D Models - NERDC Biology SS2</p>
+        </header>
+        
+        <div class="status-banner">
+            <h3>✅ Models Successfully Loaded</h3>
+            <p>All biology system models are rendering below. Click and drag to rotate, scroll to zoom.</p>
+        </div>
+        
+        <div class="models-grid">
+            <!-- Circulatory System -->
+            <div class="model-card">
+                <div class="model-viewer-container">
+                    <div class="loading-indicator">Loading model...</div>
+                    <model-viewer
+                        src="../biology_models/circulatory_system.glb"
+                        alt="Circulatory System"
+                        camera-controls
+                        auto-rotate
+                        shadow-intensity="1"
+                        exposure="1"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look">
+                        <button slot="ar-button" style="background: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+                            📱 View in AR
+                        </button>
+                    </model-viewer>
+                </div>
+                
+                <div class="model-info">
+                    <h3>🫀 Circulatory System</h3>
+                    <p>Explore the heart, blood vessels, and blood flow pathways. Understand systemic and pulmonary circulation.</p>
+                    <span class="badge badge-success">✓ Loaded</span>
+                    <span class="badge badge-info">SS2 Biology</span>
+                </div>
+            </div>
+            
+            <!-- Respiratory System -->
+            <div class="model-card">
+                <div class="model-viewer-container">
+                    <div class="loading-indicator">Loading model...</div>
+                    <model-viewer
+                        src="../biology_models/respiratory_system.glb"
+                        alt="Respiratory System"
+                        camera-controls
+                        auto-rotate
+                        shadow-intensity="1"
+                        exposure="1"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look">
+                        <button slot="ar-button" style="background: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+                            📱 View in AR
+                        </button>
+                    </model-viewer>
+                </div>
+                
+                <div class="model-info">
+                    <h3>🫁 Respiratory System</h3>
+                    <p>Examine the lungs, trachea, bronchi, and diaphragm. Learn about gas exchange and breathing mechanics.</p>
+                    <span class="badge badge-success">✓ Loaded</span>
+                    <span class="badge badge-info">SS2 Biology</span>
+                </div>
+            </div>
+            
+            <!-- Digestive System -->
+            <div class="model-card">
+                <div class="model-viewer-container">
+                    <div class="loading-indicator">Loading model...</div>
+                    <model-viewer
+                        src="../biology_models/digestive_system.glb"
+                        alt="Digestive System"
+                        camera-controls
+                        auto-rotate
+                        shadow-intensity="1"
+                        exposure="1"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look">
+                        <button slot="ar-button" style="background: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+                            📱 View in AR
+                        </button>
+                    </model-viewer>
+                </div>
+                
+                <div class="model-info">
+                    <h3>🍔 Digestive System</h3>
+                    <p>Study the alimentary canal from mouth to anus. Understand mechanical and chemical digestion processes.</p>
+                    <span class="badge badge-success">✓ Loaded</span>
+                    <span class="badge badge-info">SS2 Biology</span>
+                </div>
+            </div>
+            
+            <!-- Skeletal System -->
+            <div class="model-card">
+                <div class="model-viewer-container">
+                    <div class="loading-indicator">Loading model...</div>
+                    <model-viewer
+                        src="../biology_models/skeletal_system.glb"
+                        alt="Skeletal System"
+                        camera-controls
+                        auto-rotate
+                        shadow-intensity="1"
+                        exposure="1"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look">
+                        <button slot="ar-button" style="background: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+                            📱 View in AR
+                        </button>
+                    </model-viewer>
+                </div>
+                
+                <div class="model-info">
+                    <h3>🦴 Skeletal System</h3>
+                    <p>Explore bones, joints, and skeletal structure. Learn about support, protection, and movement.</p>
+                    <span class="badge badge-success">✓ Loaded</span>
+                    <span class="badge badge-info">SS1-SS2 Biology</span>
+                </div>
+            </div>
+            
+            <!-- Nervous System -->
+            <div class="model-card">
+                <div class="model-viewer-container">
+                    <div class="loading-indicator">Loading model...</div>
+                    <model-viewer
+                        src="../biology_models/nervous_system.glb"
+                        alt="Nervous System"
+                        camera-controls
+                        auto-rotate
+                        shadow-intensity="1"
+                        exposure="1"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look">
+                        <button slot="ar-button" style="background: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+                            📱 View in AR
+                        </button>
+                    </model-viewer>
+                </div>
+                
+                <div class="model-info">
+                    <h3>🧠 Nervous System</h3>
+                    <p>Examine the brain, spinal cord, and peripheral nerves. Understand nervous control and coordination.</p>
+                    <span class="badge badge-success">✓ Loaded</span>
+                    <span class="badge badge-info">SS2-SS3 Biology</span>
+                </div>
+            </div>
+            
+            <!-- Excretory System -->
+            <div class="model-card">
+                <div class="model-viewer-container">
+                    <div class="loading-indicator">Loading model...</div>
+                    <model-viewer
+                        src="../biology_models/excretory_system.glb"
+                        alt="Excretory System"
+                        camera-controls
+                        auto-rotate
+                        shadow-intensity="1"
+                        exposure="1"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look">
+                        <button slot="ar-button" style="background: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer;">
+                            📱 View in AR
+                        </button>
+                    </model-viewer>
+                </div>
+                
+                <div class="model-info">
+                    <h3>💧 Excretory System</h3>
+                    <p>Study kidneys, bladder, and urinary system. Learn about waste removal and osmoregulation.</p>
+                    <span class="badge badge-success">✓ Loaded</span>
+                    <span class="badge badge-info">SS2 Biology</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h4>🎮 How to Interact</h4>
+            <ul>
+                <li>🖱️ <strong>Rotate:</strong> Click and drag on the model</li>
+                <li>🔍 <strong>Zoom:</strong> Scroll with mouse wheel or pinch on touchscreen</li>
+                <li>📱 <strong>AR Mode:</strong> Click "View in AR" button on mobile devices</li>
+                <li>🔄 <strong>Auto-Rotate:</strong> Models rotate automatically, click to stop</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Hide loading indicators when models load
+        document.querySelectorAll('model-viewer').forEach((viewer, index) => {
+            viewer.addEventListener('load', () => {
+                const card = viewer.closest('.model-card');
+                const loading = card.querySelector('.loading-indicator');
+                if (loading) loading.style.display = 'none';
+                console.log(`✓ Model ${index + 1} loaded successfully`);
+            });
+            
+            viewer.addEventListener('error', (event) => {
+                const card = viewer.closest('.model-card');
+                const loading = card.querySelector('.loading-indicator');
+                if (loading) {
+                    loading.textContent = '⚠️ Model not found';
+                    loading.style.color = '#dc3545';
+                }
+                console.error(`✗ Model ${index + 1} failed:`, event);
+            });
+        });
+        
+        console.log('🎬 Biology Models Gallery Loaded');
+        console.log('📁 Looking for models in: ../biology_models/');
+    </script>
+</body>
+</html>

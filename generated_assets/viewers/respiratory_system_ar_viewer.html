@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respiratory System - AR Viewer</title>
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI'; }
+        model-viewer { width: 100vw; height: 100vh; }
+        
+        .panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .panel h2 { margin: 0; font-size: 18px; color: #333; }
+        .panel p { margin: 5px 0; font-size: 13px; color: #666; }
+    </style>
+</head>
+<body>
+    <model-viewer
+        src="../generated_assets/animated/biology_models/respiratory_system_animated.glb"
+        alt="Respiratory System"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+        auto-rotate
+        autoplay
+        shadow-intensity="1">
+    </model-viewer>
+    
+    <div class="panel">
+        <h2>Respiratory System (AR)</h2>
+        <p>🔄 Drag to rotate</p>
+        <p>🔍 Pinch to zoom</p>
+        <p>📱 Tap AR to place in space</p>
+    </div>
+</body>
+</html>

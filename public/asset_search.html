@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Search - Akulearn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --blue: #0052CC;
+            --green: #00D084;
+            --orange: #FF6B35;
+            --dark: #2C3E50;
+            --light: #F5F5F5;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+            background: var(--light);
+            color: var(--dark);
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            color: var(--blue);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: var(--dark);
+            opacity: 0.7;
+        }
+        
+        .search-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .search-form {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .input-group {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: var(--blue);
+        }
+        
+        .search-button {
+            align-self: flex-end;
+            padding: 0.75rem 2rem;
+            background: var(--blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .search-button:hover {
+            background: #003d99;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,82,204,0.3);
+        }
+        
+        .search-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.2rem;
+            color: var(--blue);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .asset-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .asset-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .asset-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+        
+        .asset-info {
+            padding: 1rem;
+        }
+        
+        .asset-description {
+            font-size: 0.9rem;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        
+        .asset-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .asset-source {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--green);
+            color: white;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+        
+        .asset-photographer {
+            font-style: italic;
+        }
+        
+        .error {
+            background: #fee;
+            border: 2px solid #f88;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            color: #c00;
+            margin: 2rem 0;
+        }
+        
+        .no-results {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            color: var(--dark);
+            opacity: 0.7;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: auto;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--dark);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .modal-image {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-details {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .search-form {
+                flex-direction: column;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖼️ Asset Search</h1>
+            <p class="subtitle">Find high-quality educational images for your content</p>
+        </header>
+        
+        <div class="search-section">
+            <form class="search-form" id="searchForm">
+                <div class="input-group">
+                    <label for="query">Search Query</label>
+                    <input type="text" id="query" placeholder="e.g., photosynthesis, DNA, cell structure" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="source">Image Source</label>
+                    <select id="source">
+                        <option value="all">All Sources</option>
+                        <option value="unsplash">Unsplash</option>
+                        <option value="pexels">Pexels</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="perPage">Results Per Page</label>
+                    <select id="perPage">
+                        <option value="10">10</option>
+                        <option value="20" selected>20</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="search-button" id="searchButton">
+                    🔍 Search
+                </button>
+            </form>
+        </div>
+        
+        <div id="resultsContainer"></div>
+        
+        <!-- Modal for image preview -->
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal()">×</button>
+                <img id="modalImage" class="modal-image" src="" alt="">
+                <div id="modalDetails" class="modal-details"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // API base URL (change this to your FastAPI server URL)
+        const API_BASE_URL = 'http://localhost:8000';
+        
+        const searchForm = document.getElementById('searchForm');
+        const searchButton = document.getElementById('searchButton');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalDetails = document.getElementById('modalDetails');
+        
+        // Handle form submission
+        searchForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const query = document.getElementById('query').value;
+            const source = document.getElementById('source').value;
+            const perPage = document.getElementById('perPage').value;
+            
+            await searchAssets(query, source, perPage);
+        });
+        
+        // Search assets function
+        async function searchAssets(query, source, perPage) {
+            // Show loading
+            searchButton.disabled = true;
+            searchButton.textContent = '🔄 Searching...';
+            resultsContainer.innerHTML = '<div class="loading">Searching for assets...</div>';
+            
+            try {
+                const url = `${API_BASE_URL}/api/assets/search?query=${encodeURIComponent(query)}&source=${source}&per_page=${perPage}`;
+                const response = await fetch(url);
+                
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.detail || 'Search failed');
+                }
+                
+                const results = await response.json();
+                displayResults(results);
+                
+            } catch (error) {
+                console.error('Search error:', error);
+                resultsContainer.innerHTML = `
+                    <div class="error">
+                        <h3>❌ Search Error</h3>
+                        <p>${error.message}</p>
+                        <p>Make sure the FastAPI server is running and API keys are configured.</p>
+                    </div>
+                `;
+            } finally {
+                searchButton.disabled = false;
+                searchButton.textContent = '🔍 Search';
+            }
+        }
+        
+        // Display search results
+        function displayResults(results) {
+            if (!results || results.length === 0) {
+                resultsContainer.innerHTML = `
+                    <div class="no-results">
+                        <h3>No results found</h3>
+                        <p>Try a different search query or check your API keys configuration.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const gridHtml = results.map(asset => `
+                <div class="asset-card" onclick="openModal('${asset.url}', '${escapeHtml(asset.description || 'No description')}', '${asset.source}', '${escapeHtml(asset.photographer || 'Unknown')}', '${asset.photographer_url || '#'}')">
+                    <img src="${asset.thumbnail_url}" alt="${escapeHtml(asset.description || 'Asset')}" class="asset-image" loading="lazy">
+                    <div class="asset-info">
+                        <p class="asset-description">${escapeHtml(asset.description || 'No description available')}</p>
+                        <div class="asset-meta">
+                            <span class="asset-source">${asset.source}</span>
+                            <span class="asset-photographer">by ${escapeHtml(asset.photographer || 'Unknown')}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            resultsContainer.innerHTML = `<div class="results-grid">${gridHtml}</div>`;
+        }
+        
+        // Open modal with asset details
+        function openModal(url, description, source, photographer, photographerUrl) {
+            modalImage.src = url;
+            modalDetails.innerHTML = `
+                <h3>${description}</h3>
+                <p><strong>Source:</strong> ${source.charAt(0).toUpperCase() + source.slice(1)}</p>
+                <p><strong>Photographer:</strong> <a href="${photographerUrl}" target="_blank">${photographer}</a></p>
+                <p><strong>Image URL:</strong> <a href="${url}" target="_blank">Open in new tab</a></p>
+            `;
+            imageModal.classList.add('active');
+        }
+        
+        // Close modal
+        function closeModal() {
+            imageModal.classList.remove('active');
+        }
+        
+        // Close modal when clicking outside
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                closeModal();
+            }
+        });
+        
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+        
+        // Load example search on page load
+        window.addEventListener('load', () => {
+            document.getElementById('query').value = 'photosynthesis';
+        });
+    </script>
+</body>
+</html>

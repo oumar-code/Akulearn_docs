@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Animations - Test Gallery</title>
+    
+    <!-- Model Viewer - Reliable 3D viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        header h1 { font-size: 42px; margin-bottom: 10px; }
+        header p { font-size: 18px; opacity: 0.9; }
+        
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .model-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .model-viewer-container {
+            width: 100%;
+            height: 400px;
+            background: #f0f0f0;
+        }
+        
+        model-viewer {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .model-info {
+            padding: 20px;
+        }
+        
+        .model-info h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .model-info p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+        
+        .stat {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+        
+        .alert {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+        }
+        
+        .alert h4 {
+            color: #856404;
+            margin-bottom: 5px;
+        }
+        
+        .alert p {
+            color: #856404;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 { font-size: 32px; }
+            .models-grid { grid-template-columns: 1fr; }
+            .model-viewer-container { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Biology Animations Gallery</h1>
+            <p>Priority 0 - Interactive 3D Models</p>
+        </header>
+        
+        <div class="alert">
+            <h4>⚠️ Troubleshooting:</h4>
+            <p>If models don't load, check: (1) Files exist in correct location, (2) Browser supports WebGL, (3) Open console (F12) for errors</p>
+        </div>
+        
+        <div class="models-grid">
+            <!-- Circulatory System -->
+            <div class="model-card">
+                <div class="model-viewer-container">
+                    <model-viewer
+                        src="../animated/biology_models/circulatory_system_animated.glb"
+                        alt="Circulatory System"
+                        camera-controls
+                        auto-rotate
+                        autoplay
+                        shadow-intensity="1"
+                        exposure="1">
+                        <div slot="progress-bar" style="display: none;"></div>
+                    </model-viewer>
+                </div>
+                
+                <div class="model-info">
+                    <h3>🫀 Circulatory System</h3>
+                    <p>Heart pulsation and blood flow visualization. Watch how oxygenated and deoxygenated blood circulates through the heart chambers.</p>
+                    
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-label">Duration</div>
+                            <div class="stat-value">30s</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">Keyframes</div>
+                            <div class="stat-value">31</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">FPS</div>
+                            <div class="stat-value">30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="controls">
+                        <button onclick="window.open('circulatory_system_ar_viewer.html', '_blank')">📱 AR View</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Respiratory System -->
+            <div class="model-card">
+                <div class="model-viewer-container">
+                    <model-viewer
+                        src="../animated/biology_models/respiratory_system_animated.glb"
+                        alt="Respiratory System"
+                        camera-controls
+                        auto-rotate
+                        autoplay
+                        shadow-intensity="1"
+                        exposure="1">
+                        <div slot="progress-bar" style="display: none;"></div>
+                    </model-viewer>
+                </div>
+                
+                <div class="model-info">
+                    <h3>🫁 Respiratory System</h3>
+                    <p>Complete breathing cycles showing lung expansion, diaphragm movement, and airflow through the respiratory tract.</p>
+                    
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-label">Duration</div>
+                            <div class="stat-value">40s</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">Keyframes</div>
+                            <div class="stat-value">1,201</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">FPS</div>
+                            <div class="stat-value">30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="controls">
+                        <button onclick="window.open('respiratory_system_ar_viewer.html', '_blank')">📱 AR View</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Digestive System -->
+            <div class="model-card">
+                <div class="model-viewer-container">
+                    <model-viewer
+                        src="../animated/biology_models/digestive_system_animated.glb"
+                        alt="Digestive System"
+                        camera-controls
+                        auto-rotate
+                        autoplay
+                        shadow-intensity="1"
+                        exposure="1">
+                        <div slot="progress-bar" style="display: none;"></div>
+                    </model-viewer>
+                </div>
+                
+                <div class="model-info">
+                    <h3>🍔 Digestive System</h3>
+                    <p>Food bolus journey through the digestive tract with peristalsis, stomach churning, and absorption processes.</p>
+                    
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-label">Duration</div>
+                            <div class="stat-value">75s</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">Keyframes</div>
+                            <div class="stat-value">2,251</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-label">FPS</div>
+                            <div class="stat-value">30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="controls">
+                        <button onclick="window.open('digestive_system_ar_viewer.html', '_blank')">📱 AR View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; color: white; margin-top: 30px;">
+            <p style="font-size: 14px; opacity: 0.8;">
+                💡 Click and drag to rotate • Scroll to zoom • Double-click to reset
+            </p>
+            <p style="font-size: 12px; opacity: 0.6; margin-top: 10px;">
+                Akulearn Educational Platform • NERDC Biology SS2
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Log when models are loaded
+        document.querySelectorAll('model-viewer').forEach((viewer, index) => {
+            viewer.addEventListener('load', () => {
+                console.log(`Model ${index + 1} loaded successfully`);
+            });
+            
+            viewer.addEventListener('error', (event) => {
+                console.error(`Model ${index + 1} failed to load:`, event.detail);
+                viewer.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#999;">⚠️ Model not found. Check file path.</div>';
+            });
+        });
+        
+        // Check if WebGL is supported
+        if (!window.WebGLRenderingContext) {
+            alert('Your browser does not support WebGL. Please use a modern browser like Chrome, Firefox, or Edge.');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{
+  "questions": [
+    {
+      "id": "biology_ecology_000",
+      "subject": "Biology",
+      "topic": "Ecology",
+      "question_text": "[Auto-generated Q1 - Needs expert content]",
+      "difficulty": "easy",
+      "generated_at": "2026-03-03T10:07:06.265050"
+    },
+    {
+      "id": "biology_ecology_001",
+      "subject": "Biology",
+      "topic": "Ecology",
+      "question_text": "[Auto-generated Q2 - Needs expert content]",
+      "difficulty": "medium",
+      "generated_at": "2026-03-03T10:07:06.265071"
+    },
+    {
+      "id": "biology_ecology_002",
+      "subject": "Biology",
+      "topic": "Ecology",
+      "question_text": "[Auto-generated Q3 - Needs expert content]",
+      "difficulty": "hard",
+      "generated_at": "2026-03-03T10:07:06.265080"
+    },
+    {
+      "id": "biology_ecology_003",
+      "subject": "Biology",
+      "topic": "Ecology",
+      "question_text": "[Auto-generated Q4 - Needs expert content]",
+      "difficulty": "easy",
+      "generated_at": "2026-03-03T10:07:06.265089"
+    },
+    {
+      "id": "biology_ecology_004",
+      "subject": "Biology",
+      "topic": "Ecology",
+      "question_text": "[Auto-generated Q5 - Needs expert content]",
+      "difficulty": "medium",
+      "generated_at": "2026-03-03T10:07:06.265098"
+    },
+    {
+      "id": "biology_ecology_005",
+      "subject": "Biology",
+      "topic": "Ecology",
+      "question_text": "[Auto-generated Q6 - Needs expert content]",
+      "difficulty": "hard",
+      "generated_at": "2026-03-03T10:07:06.265107"
+    },
+    {
+      "id": "biology_ecology_006",
+      "subject": "Biology",
+      "topic": "Ecology",
+      "question_text": "[Auto-generated Q7 - Needs expert content]",
+      "difficulty": "easy",
+      "generated_at": "2026-03-03T10:07:06.265116"
+    },
+    {
+      "id": "biology_ecology_007",
+      "subject": "Biology",
+      "topic": "Ecology",
+      "question_text": "[Auto-generated Q8 - Needs expert content]",
+      "difficulty": "medium",
+      "generated_at": "2026-03-03T10:07:06.265126"
+    },
+    {
+      "id": "biology_ecology_008",
+      "subject": "Biology",
+      "topic": "Ecology",
+      "question_text": "[Auto-generated Q9 - Needs expert content]",
+      "difficulty": "hard",
+      "generated_at": "2026-03-03T10:07:06.265135"
+    },
+    {
+      "id": "biology_ecology_009",
+      "subject": "Biology",
+      "topic": "Ecology",
+      "question_text": "[Auto-generated Q10 - Needs expert content]",
+      "difficulty": "easy",
+      "generated_at": "2026-03-03T10:07:06.265144"
+    }
+  ]
+}

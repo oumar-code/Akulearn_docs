@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Akudemy Blog - Study tips, exam strategies, and learning insights." />
+    <title>Akudemy Blog | Study Tips & Insights</title>
+    <style>
+        :root {
+            --blue-primary: #0052CC;
+            --green-accent: #00D084;
+            --dark-gray: #2C3E50;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--dark-gray);
+            background: var(--white);
+            line-height: 1.6;
+        }
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        nav a {
+            text-decoration: none;
+            margin-right: 1.2rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+        nav a:hover { color: var(--blue-primary); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        header {
+            padding: 4rem 0 2rem;
+            background: var(--light-gray);
+        }
+        header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+        .posts { padding: 3rem 0; }
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .post {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+        }
+        .tag {
+            display: inline-block;
+            background: rgba(0, 82, 204, 0.1);
+            color: var(--blue-primary);
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            background: var(--dark-gray);
+            color: var(--white);
+        }
+        .cta {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--blue-primary);
+            color: var(--white);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/">Akudemy</a>
+            <a href="/about">About</a>
+            <a href="/pricing">Pricing</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Akudemy Blog</h1>
+            <p>Study tips, exam strategies, and the science of learning.</p>
+        </div>
+    </header>
+
+    <section class="posts">
+        <div class="container">
+            <div class="post-grid">
+                <article class="post">
+                    <span class="tag">Exam Prep</span>
+                    <h3>How to Prepare for WAEC in 30 Days</h3>
+                    <p>Practical strategies to focus on high-impact topics and improve scores fast.</p>
+                </article>
+                <article class="post">
+                    <span class="tag">Science</span>
+                    <h3>Why 3D Models Help You Remember Chemistry</h3>
+                    <p>Visual learning boosts retention. Here’s how 3D makes abstract ideas concrete.</p>
+                </article>
+                <article class="post">
+                    <span class="tag">Study Hacks</span>
+                    <h3>7 Proven Study Techniques for JAMB Success</h3>
+                    <p>From spaced repetition to practice tests—these techniques work.</p>
+                </article>
+                <article class="post">
+                    <span class="tag">Offline Learning</span>
+                    <h3>Learning Without Internet: How Akudemy Works</h3>
+                    <p>Offline-first architecture explained in simple terms for students and parents.</p>
+                </article>
+                <article class="post">
+                    <span class="tag">Education</span>
+                    <h3>NECO Prep: The Topics Students Miss Most</h3>
+                    <p>We analyzed common weak areas and how to improve them quickly.</p>
+                </article>
+                <article class="post">
+                    <span class="tag">Product</span>
+                    <h3>Inside Akudemy: Building for Nigeria First</h3>
+                    <p>Why we chose offline-first and how we built the platform.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Want more study tips?</h2>
+            <p>Follow Akudemy and get weekly learning content.</p>
+            <a href="/">Start Learning</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">© 2026 Akudemy • Learn Anywhere. Achieve Everywhere.</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference-Based Models Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        #info-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            max-width: 300px;
+            z-index: 100;
+        }
+        #model-selector {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #667eea;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .category {
+            font-weight: bold;
+            color: #667eea;
+            margin-top: 10px;
+        }
+        h2 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 20px;
+        }
+        #current-model {
+            font-size: 18px;
+            font-weight: bold;
+            color: #764ba2;
+            margin: 10px 0;
+        }
+        .stats {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+        .success {
+            color: #10b981;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    <div id="info-panel">
+        <h2>🎨 Reference-Based Models</h2>
+        <div id="current-model">Select a model...</div>
+        
+        <select id="model-selector">
+            <optgroup label="🌍 Earth & Space (7)">
+                <option value="earth_space/earth">Earth</option>
+                <option value="earth_space/moon">Moon</option>
+                <option value="earth_space/sun">Sun</option>
+                <option value="earth_space/mars">Mars</option>
+                <option value="earth_space/jupiter">Jupiter</option>
+                <option value="earth_space/saturn">Saturn</option>
+                <option value="earth_space/asteroid">Asteroid</option>
+            </optgroup>
+            <optgroup label="🌱 Plants (6)">
+                <option value="plants/root">Root System</option>
+                <option value="plants/stem">Stem</option>
+                <option value="plants/leaf">Leaf</option>
+                <option value="plants/flower">Flower</option>
+                <option value="plants/fruit">Fruit</option>
+                <option value="plants/seed">Seed</option>
+            </optgroup>
+            <optgroup label="🧬 Cell Division (6)">
+                <option value="cell_division/interphase">Interphase</option>
+                <option value="cell_division/prophase">Prophase</option>
+                <option value="cell_division/metaphase">Metaphase</option>
+                <option value="cell_division/anaphase">Anaphase</option>
+                <option value="cell_division/telophase">Telophase</option>
+                <option value="cell_division/cytokinesis">Cytokinesis</option>
+            </optgroup>
+            <optgroup label="🧬 Reproductive (7)">
+                <option value="reproductive/sperm">Sperm Cell</option>
+                <option value="reproductive/egg">Egg Cell</option>
+                <option value="reproductive/testis">Testis</option>
+                <option value="reproductive/ovary">Ovary</option>
+                <option value="reproductive/uterus">Uterus</option>
+                <option value="reproductive/male_system">Male System</option>
+                <option value="reproductive/female_system">Female System</option>
+            </optgroup>
+        </select>
+        
+        <div class="stats">
+            <div>Total Models: <span class="success">26</span></div>
+            <div>✓ Accurate proportions</div>
+            <div>✓ Vertex colors</div>
+            <div>✓ Draco compressed</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script>
+        let scene, camera, renderer, controls, currentModel;
+
+        function init() {
+            // Scene
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xf0f0f0);
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(
+                50,
+                window.innerWidth / window.innerHeight,
+                0.1,
+                1000
+            );
+            camera.position.set(3, 2, 5);
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+            // Controls
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+
+            // Lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+            scene.add(ambientLight);
+
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(5, 10, 5);
+            directionalLight.castShadow = true;
+            scene.add(directionalLight);
+
+            const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.3);
+            directionalLight2.position.set(-5, 5, -5);
+            scene.add(directionalLight2);
+
+            // Grid
+            const gridHelper = new THREE.GridHelper(10, 10, 0xcccccc, 0xe0e0e0);
+            scene.add(gridHelper);
+
+            // Load default model
+            loadModel('earth_space/earth');
+
+            // Event listeners
+            document.getElementById('model-selector').addEventListener('change', (e) => {
+                loadModel(e.target.value);
+            });
+
+            window.addEventListener('resize', onWindowResize);
+
+            animate();
+        }
+
+        function loadModel(modelPath) {
+            // Remove current model
+            if (currentModel) {
+                scene.remove(currentModel);
+            }
+
+            // Update UI
+            const modelName = modelPath.split('/')[1];
+            document.getElementById('current-model').textContent = 
+                modelName.charAt(0).toUpperCase() + modelName.slice(1).replace('_', ' ');
+
+            // Load new model
+            const loader = new THREE.GLTFLoader();
+            loader.load(
+                `generated_assets/${modelPath}.glb`,
+                (gltf) => {
+                    currentModel = gltf.scene;
+                    
+                    // Center model
+                    const box = new THREE.Box3().setFromObject(currentModel);
+                    const center = box.getCenter(new THREE.Vector3());
+                    currentModel.position.sub(center);
+                    
+                    scene.add(currentModel);
+                    
+                    // Adjust camera
+                    const size = box.getSize(new THREE.Vector3());
+                    const maxDim = Math.max(size.x, size.y, size.z);
+                    camera.position.set(maxDim * 2, maxDim * 1.5, maxDim * 2.5);
+                    controls.target.set(0, 0, 0);
+                    controls.update();
+                },
+                (progress) => {
+                    console.log(`Loading: ${(progress.loaded / progress.total * 100).toFixed(0)}%`);
+                },
+                (error) => {
+                    console.error('Error loading model:', error);
+                    document.getElementById('current-model').textContent = 'Error loading model';
+                }
+            );
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            
+            // Auto-rotate model
+            if (currentModel) {
+                currentModel.rotation.y += 0.005;
+            }
+            
+            renderer.render(scene, camera);
+        }
+
+        init();
+    </script>
+</body>
+</html>
