@@ -75,22 +75,41 @@ The workflow uses:
 
 ## Vercel Deployment (secondary / preview)
 
-Vercel is configured via `vercel.json` at the repository root:
+Vercel is configured via `vercel.json` at the repository root to serve the Akudemy static site from the `public/` directory:
 
 ```json
 {
-  "framework": null,
-  "buildCommand": "python3 -m mkdocs build",
-  "outputDirectory": "site",
-  "installCommand": "pip install -r requirements.txt"
+  "outputDirectory": "public",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+      ]
+    }
+  ]
 }
 ```
 
-Vercel uses standard `pip` to install dependencies and then runs `mkdocs build`. The generated `site/` directory is served as the output.
+No build step is required — Vercel serves the pre-built static HTML/CSS/JS files from `public/` directly. Security response headers are applied to all routes.
+
+### Deployment trigger
+
+The `.github/workflows/vercel-deploy.yml` workflow deploys to Vercel on every push to `main` that touches `public/**`, `vercel.json`, `.vercelignore`, or the workflow file itself. It can also be triggered manually via **Actions → Deploy Static Site to Vercel → Run workflow**.
+
+### Required secrets
+
+| Secret | Description |
+|--------|-------------|
+| `VERCEL_TOKEN` | Personal access token from the Vercel dashboard |
+| `VERCEL_ORG_ID` | Organisation/team ID from Vercel |
+| `VERCEL_PROJECT_ID` | Project ID from the Vercel dashboard |
 
 ### Excluded files
 
-`.vercelignore` excludes source code, scripts, and data files that are not needed to build the docs, keeping build times fast.
+`.vercelignore` excludes source code, scripts, documentation build artifacts, and data files that are not needed, keeping deployment fast and clean. Only the contents of `public/` are deployed.
 
 ---
 
@@ -131,8 +150,9 @@ To upgrade dependencies:
 
 | Symptom | Likely cause | Fix |
 |---------|-------------|-----|
-| Vercel build fails: `pip: command not found` | Wrong Python version selected | Set Python version in Vercel project settings |
-| Vercel build fails: `uv: not found` | Old `vercel.json` using `uv` | Ensure `installCommand` is `pip install -r requirements.txt` |
+| Vercel build fails: `No Next.js version detected` | `vercel.json` sets `framework: nextjs` but Next.js is not installed at repo root | Remove `framework` from `vercel.json`; the deployment now serves `public/` as a static site |
+| Vercel build fails: `pip: command not found` | Old `vercel.json` using a Python build command | Ensure `vercel.json` only has `outputDirectory: "public"` with no `installCommand` |
+| Vercel build fails: `uv: not found` | Old `vercel.json` using `uv` | Use the current `vercel.json` which has no install command |
 | GitHub Pages deploy fails: `Resource not accessible by integration` | Pages source not set to "GitHub Actions" | Go to Settings → Pages and change Source to "GitHub Actions" |
 | `mkdocs build` exits non-zero | Missing or broken Markdown file referenced in `nav:` | Run `mkdocs build --strict` locally to see the error |
 | Network map shows blank map | GeoJSON data file missing or wrong path | Ensure `docs/network-map/data/zamfara-network-data.geojson` exists |
