@@ -96,6 +96,17 @@ Set the following in the **Vercel project dashboard** (under Settings → Enviro
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL (starts with `https://`) |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous public key |
 
+> **Already have `SUPABASE_URL` and `SUPABASE_ANON_KEY` in Vercel?**
+> You don't need a new Supabase project or different credentials — the **values are identical**.
+> Next.js requires the `NEXT_PUBLIC_` prefix to bundle variables into the browser JavaScript
+> (client components with `"use client"` cannot read plain `SUPABASE_URL` at runtime).
+>
+> **Quickest fix:** In your Vercel project dashboard go to **Settings → Environment Variables** and:
+> 1. Rename `SUPABASE_URL` → `NEXT_PUBLIC_SUPABASE_URL` (same value)
+> 2. Rename `SUPABASE_ANON_KEY` → `NEXT_PUBLIC_SUPABASE_ANON_KEY` (same value)
+>
+> Then redeploy. No new Supabase credentials are needed.
+
 ### Deployment trigger
 
 The `.github/workflows/vercel-deploy.yml` workflow deploys to Vercel on every push to `main` that touches `akulearn-dashboard/**`, `vercel.json`, or the workflow file itself. It can also be triggered manually via **Actions → Deploy Next.js Dashboard to Vercel → Run workflow**.
