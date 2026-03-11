@@ -81,6 +81,8 @@ akulearn_microservices/
 client_examples/
 connected_stack/
 content/
+!akulearn-dashboard/app/content/
+!akulearn-dashboard/app/content/**
 content_templates/
 data/
 !docs/network-map/data/
@@ -108,6 +110,11 @@ web/
 *.html
 *.css
 
+# Allow Next.js dashboard CSS and static files
+!akulearn-dashboard/**/*.css
+!akulearn-dashboard/**/*.tsx
+!akulearn-dashboard/**/*.ts
+
 # Allow the Akudemy static site in public/
 !public/
 !public/**
@@ -118,6 +125,10 @@ web/
 !package.json
 !puppeteer-config.json
 !public/*.json
+
+# Allow Next.js dashboard config files
+!akulearn-dashboard/*.json
+!akulearn-dashboard/**/*.json
 
 # CSV data files
 *.csv

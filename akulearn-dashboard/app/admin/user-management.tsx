@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
 import styles from "./user-management.module.css";
 
+export default function UserManagementPanel() {
   type User = { id: string; email: string; role?: string };
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
@@ -65,5 +66,3 @@ import styles from "./user-management.module.css";
     </div>
   );
 }
-
-export default UserManagementPanel;
