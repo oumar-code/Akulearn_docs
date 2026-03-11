@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akulearn Login</title>
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f3f4f6; }
+    .login-container { max-width: 400px; margin: 80px auto; background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 16px #e5e7eb; }
+    h2 { text-align: center; margin-bottom: 1.5rem; color: #1a56db; }
+    label { display: block; margin-bottom: 0.5rem; color: #111827; }
+    input { width: 100%; padding: 0.7rem; margin-bottom: 1.2rem; border: 1px solid #e5e7eb; border-radius: 8px; }
+    button { width: 100%; background: #1a56db; color: #fff; padding: 0.8rem; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
+    button:hover { background: #1340a8; }
+    .error { color: #e53e3e; text-align: center; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Team Login</h2>
+    <form id="loginForm">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+      <button type="submit">Login</button>
+      <div id="error" class="error"></div>
+    </form>
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const errorDiv = document.getElementById('error');
+      errorDiv.textContent = '';
+      try {
+        const resp = await fetch('http://127.0.0.1:8000/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        if (!resp.ok) {
+          const err = await resp.json();
+          errorDiv.textContent = err.detail || 'Login failed.';
+          return;
+        }
+        const data = await resp.json();
+        // Store token and role (for demo, use localStorage)
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('role', data.role);
+        // Redirect based on role
+        if (data.role === 'System Designer, Project Manager & Technical Lead') {
+          window.location.href = '/dashboard/super_admin.html';
+        } else if (data.role === 'Head of Product & External Engagement') {
+          window.location.href = '/dashboard/product_brand_lead.html';
+        } else if (data.role === 'Head of Skill Acquisition & Vocational Training') {
+          window.location.href = '/dashboard/skill_acquisition.html';
+        } else if (data.role === 'Head of Finance & Content Management') {
+          window.location.href = '/dashboard/finance_content.html';
+        } else if (data.role === 'Exam Prep & Access Coordinator') {
+          window.location.href = '/dashboard/hauwau_special.html';
+        } else {
+          window.location.href = '/dashboard/default.html';
+        }
+      } catch (err) {
+        errorDiv.textContent = 'Network error.';
+      }
+    });
+  </script>
+</body>
+</html>
