@@ -1,6 +1,6 @@
 {
-  "framework": null,
-  "outputDirectory": "public",
-  "buildCommand": null,
-  "installCommand": null
+  "framework": "nextjs",
+  "rootDirectory": "akulearn-dashboard",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install"
 }
