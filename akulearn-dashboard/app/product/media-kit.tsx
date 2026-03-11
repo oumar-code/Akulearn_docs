@@ -1,9 +1,9 @@
-export default MediaKitPanel;
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
 import styles from "./media-kit.module.css";
 
+export default function MediaKitPanel() {
   type Asset = { id: string; url: string; name: string };
   const [assets, setAssets] = useState<Asset[]>([]);
   const [loading, setLoading] = useState(true);

@@ -1,4 +1,3 @@
-export default MarketingAnalytics;
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
@@ -7,6 +6,7 @@ import dynamic from "next/dynamic";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
+export default function MarketingAnalytics() {
   type Campaign = { id: string; name?: string; engagement?: number; reach?: number };
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [loading, setLoading] = useState(true);
