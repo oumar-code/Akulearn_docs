@@ -6,6 +6,9 @@ on:
       - main
     paths:
       - 'akulearn-dashboard/**'
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - 'requirements.txt'
       - 'vercel.json'
       - '.github/workflows/vercel-deploy.yml'
   workflow_dispatch:
@@ -25,6 +28,23 @@ jobs:
           node-version: '20'
           cache: 'npm'
           cache-dependency-path: akulearn-dashboard/package-lock.json
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build MkDocs documentation
+        run: mkdocs build
+
+      - name: Copy MkDocs output into Next.js public directory
+        run: |
+          # Copy all site contents (including any hidden files) into public/docs/
+          mkdir -p akulearn-dashboard/public/docs
+          cp -r site/. akulearn-dashboard/public/docs/
 
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
