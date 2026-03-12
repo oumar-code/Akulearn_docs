@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# MkDocs build output copied into public/ by CI — do not commit
+/public/docs/
