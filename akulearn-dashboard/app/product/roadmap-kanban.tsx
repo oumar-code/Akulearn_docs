@@ -1,4 +1,3 @@
-export default ProductRoadmapKanban;
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
@@ -7,6 +6,7 @@ import styles from "./roadmap-kanban.module.css";
 // Minimal Kanban board for product roadmap
 const columns = ["Backlog", "In Progress", "Review", "Done"];
 
+export default function ProductRoadmapKanban() {
   type Task = { id: string; title: string; description?: string; status: string };
   const [tasks, setTasks] = useState<Task[]>([]);
   const [loading, setLoading] = useState(true);
