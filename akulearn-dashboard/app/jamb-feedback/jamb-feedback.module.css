@@ -1,0 +1,97 @@
+.page {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #F5F5F5;
+  color: #2C3E50;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.header {
+  background: linear-gradient(135deg, #0052CC 0%, #0066FF 100%);
+  color: #fff;
+  padding: 3rem 0;
+  text-align: center;
+}
+.header h1 { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 800; }
+.header p { opacity: 0.9; }
+
+.container { max-width: 700px; margin: 0 auto; padding: 2rem; }
+
+.formContainer {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin-top: -3rem;
+  position: relative;
+  z-index: 10;
+}
+.formGroup { margin-bottom: 2rem; }
+.formGroup label { display: block; font-weight: 600; margin-bottom: 0.75rem; color: #2C3E50; }
+.formGroup input, .formGroup textarea, .formGroup select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  outline: none;
+}
+.formGroup input:focus, .formGroup textarea:focus, .formGroup select:focus {
+  border-color: #0052CC;
+}
+.formGroup textarea { resize: vertical; min-height: 120px; }
+
+.ratingGroup { display: flex; gap: 1rem; margin-top: 0.75rem; }
+.ratingBtn {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ratingBtn:hover { border-color: #0052CC; transform: scale(1.1); }
+.ratingBtn.selected { background: #0052CC; color: #fff; border-color: #0052CC; }
+
+.checkboxGroup { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.75rem; }
+@media (max-width: 480px) { .checkboxGroup { grid-template-columns: 1fr; } }
+.checkboxItem { display: flex; gap: 0.75rem; align-items: center; font-size: 0.9rem; }
+.checkboxItem input[type="checkbox"] { width: auto; }
+
+.radioGroup { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+.radioItem { display: flex; gap: 0.5rem; align-items: center; font-size: 0.9rem; }
+.radioItem input[type="radio"] { width: auto; }
+
+.submitBtn {
+  width: 100%;
+  background: #0052CC;
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.submitBtn:hover { background: #003d99; }
+
+.successMsg {
+  background: #d1fae5;
+  color: #065f46;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.footer { background: #2C3E50; color: #d1d5db; padding: 2rem; text-align: center; margin-top: 3rem; }
+.footer p { margin: 0.25rem 0; font-size: 0.9rem; }
+.footer a { color: #00D084; text-decoration: none; }
