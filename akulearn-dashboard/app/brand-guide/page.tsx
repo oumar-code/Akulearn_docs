@@ -16,7 +16,7 @@ export default function BrandGuidePage() {
             <p>Transforming Education Across Africa</p>
           </header>
           <div className="mission">
-            <p>"Every student learns. With Akulearn, intelligence meets accessibility."</p>
+            <p>&ldquo;Every student learns. With Akulearn, intelligence meets accessibility.&rdquo;</p>
           </div>
           {/* ...rest of the content from BRAND_GUIDE.html... */}
           <footer>

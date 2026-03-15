@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./pricing.module.css";
 
 export default function PricingPage() {
@@ -7,9 +8,9 @@ export default function PricingPage() {
       {/* Converted from pricing.html */}
       <nav>
         <div className="container">
-          <a href="/">Akudemy</a>
-          <a href="/about">About</a>
-          <a href="/blog">Blog</a>
+          <Link href="/">Akudemy</Link>
+          <Link href="/about">About</Link>
+          <Link href="/blog">Blog</Link>
         </div>
       </nav>
       <header>

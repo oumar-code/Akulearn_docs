@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function BlogPage() {
   return (
@@ -6,9 +7,9 @@ export default function BlogPage() {
       {/* Converted from blog.html */}
       <nav>
         <div className="container">
-          <a href="/">Akudemy</a>
-          <a href="/about">About</a>
-          <a href="/pricing">Pricing</a>
+          <Link href="/">Akudemy</Link>
+          <Link href="/about">About</Link>
+          <Link href="/pricing">Pricing</Link>
         </div>
       </nav>
       <header>
@@ -57,7 +58,7 @@ export default function BlogPage() {
         <div className="container">
           <h2>Want more study tips?</h2>
           <p>Follow Akudemy and get weekly learning content.</p>
-          <a href="/">Start Learning</a>
+          <Link href="/">Start Learning</Link>
         </div>
       </section>
       <footer>

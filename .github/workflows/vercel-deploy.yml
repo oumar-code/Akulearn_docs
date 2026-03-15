@@ -22,12 +22,31 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Guard: generate package-lock.json if it was accidentally removed,
+      # so the npm cache step below never fails on a missing lockfile.
+      - name: Ensure package-lock.json exists
+        run: |
+          if [ ! -f akulearn-dashboard/package-lock.json ]; then
+            echo "package-lock.json missing — generating it now"
+            cd akulearn-dashboard && npm install --package-lock-only
+          fi
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
           cache-dependency-path: akulearn-dashboard/package-lock.json
+
+      # Cache the Next.js incremental build cache to speed up subsequent builds.
+      - name: Cache Next.js build output
+        uses: actions/cache@v4
+        with:
+          path: akulearn-dashboard/.next/cache
+          key: nextjs-${{ runner.os }}-${{ hashFiles('akulearn-dashboard/package-lock.json') }}-${{ github.run_id }}
+          restore-keys: |
+            nextjs-${{ runner.os }}-${{ hashFiles('akulearn-dashboard/package-lock.json') }}-
+            nextjs-${{ runner.os }}-
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -45,6 +64,13 @@ jobs:
           # Copy all site contents (including any hidden files) into public/docs/
           mkdir -p akulearn-dashboard/public/docs
           cp -r site/. akulearn-dashboard/public/docs/
+
+      # Explicitly install dashboard dependencies so Vercel CLI always finds
+      # node_modules populated — this prevents "No Next.js version detected"
+      # errors that occur when Vercel's auto-install runs in the wrong context.
+      - name: Install dashboard dependencies
+        run: npm ci
+        working-directory: akulearn-dashboard
 
       - name: Install Vercel CLI
         run: npm install -g vercel@latest

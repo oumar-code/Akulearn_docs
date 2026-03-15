@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./about.module.css";
 
 export default function AboutPage() {
@@ -7,9 +8,9 @@ export default function AboutPage() {
       {/* Converted from about.html */}
       <nav>
         <div className="container">
-          <a href="/">Akudemy</a>
-          <a href="/blog">Blog</a>
-          <a href="/pricing">Pricing</a>
+          <Link href="/">Akudemy</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/pricing">Pricing</Link>
         </div>
       </nav>
       <header>
@@ -63,7 +64,7 @@ export default function AboutPage() {
         <div className="container">
           <h2>Join the Akudemy mission</h2>
           <p>Help us bring quality learning to every student.</p>
-          <a href="/">Start Learning</a>
+          <Link href="/">Start Learning</Link>
         </div>
       </section>
       <footer>
