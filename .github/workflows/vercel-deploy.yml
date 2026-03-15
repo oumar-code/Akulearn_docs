@@ -9,7 +9,7 @@ on:
       - 'docs/**'
       - 'mkdocs.yml'
       - 'requirements.txt'
-      - 'vercel.json'
+      - 'akulearn-dashboard/vercel.json'
       - '.github/workflows/vercel-deploy.yml'
   workflow_dispatch:
 
