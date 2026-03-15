@@ -1,1 +1,12 @@
-{}
+{
+  "framework": "nextjs",
+  "installCommand": "cd akulearn-dashboard && npm install",
+  "buildCommand": "cd akulearn-dashboard && npm run build",
+  "outputDirectory": "akulearn-dashboard/.next",
+  "rewrites": [
+    { "source": "/docs", "destination": "/docs/index.html" },
+    { "source": "/docs/", "destination": "/docs/index.html" },
+    { "source": "/docs/:path+/", "destination": "/docs/:path+/index.html" },
+    { "source": "/docs/:path+", "destination": "/docs/:path+/index.html" }
+  ]
+}
