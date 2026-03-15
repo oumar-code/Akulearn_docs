@@ -89,6 +89,8 @@ connected_stack/
 content/
 !akulearn-dashboard/app/content/
 !akulearn-dashboard/app/content/**
+!akulearn-dashboard/app/(dashboard)/content/
+!akulearn-dashboard/app/(dashboard)/content/**
 content_templates/
 data/
 !docs/network-map/data/
