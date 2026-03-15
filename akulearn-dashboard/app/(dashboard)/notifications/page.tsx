@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "./notifications.module.css";
 
 
-import { supabase } from "../../lib/supabaseClient";
+import { supabase } from "../../../lib/supabaseClient";
 
 
 type Notification = { id: string; message: string; read?: boolean };

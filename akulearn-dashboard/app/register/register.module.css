@@ -1,0 +1,71 @@
+.page {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #f3f4f6;
+  min-height: 100vh;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+.navLogo { font-size: 1.5rem; font-weight: 800; color: #1a56db; text-decoration: none; }
+.navLogo span { color: #f59e0b; }
+.navLink { color: #6b7280; font-size: 0.9rem; text-decoration: none; }
+.navLink:hover { color: #1a56db; }
+
+.container {
+  max-width: 420px;
+  margin: 3rem auto;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #e5e7eb;
+}
+.container h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #1a56db;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 1.75rem;
+}
+.label { display: block; margin-bottom: 0.4rem; color: #111827; font-size: 0.9rem; font-weight: 500; }
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.input:focus { border-color: #1a56db; }
+.button {
+  width: 100%;
+  background: #1a56db;
+  color: #fff;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.button:hover { background: #1340a8; }
+.button:disabled { background: #93c5fd; cursor: not-allowed; }
+.error { color: #dc2626; text-align: center; margin: 0.75rem 0; font-size: 0.88rem; }
+.success { color: #059669; text-align: center; margin: 0.75rem 0; font-size: 0.88rem; }
+.loginLink { text-align: center; margin-top: 1.25rem; font-size: 0.88rem; color: #6b7280; }
+.loginLink a { color: #1a56db; font-weight: 600; text-decoration: none; }
+.loginLink a:hover { text-decoration: underline; }

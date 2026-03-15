@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { supabase } from "../../lib/supabaseClient";
+import { supabase } from "../../../lib/supabaseClient";
 import styles from "./roadmap-kanban.module.css";
 
 // Minimal Kanban board for product roadmap
