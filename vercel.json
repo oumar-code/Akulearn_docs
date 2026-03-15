@@ -1,6 +1,5 @@
 {
   "framework": "nextjs",
-  "rootDirectory": "akulearn-dashboard",
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "rewrites": [
