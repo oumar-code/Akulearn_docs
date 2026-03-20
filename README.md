@@ -20,6 +20,12 @@ This repository is organized for clarity and ease of navigation:
 - **docs/07-glossary/**: Glossary of Akulearn terms
 - **docs/images/**: Diagrams and screenshots
 
+### Strategic Roadmap & Thought Leadership
+- **docs/clean_energy_for_africa.md**: Clean energy research and vision for Africa
+- **docs/clean_energy_whitepaper.md**: Whitepaper on clean energy and digital transformation
+- **docs/ai_automation_industry4.md**: AI, automation, and Industry 4.0 for Africa
+- **docs/aku_change_maker.md**: Aku’s role as a change maker and ecosystem builder
+
 ## How to Contribute
 
 We welcome contributions! Please check back soon for our contribution guidelines and process.
@@ -215,3 +221,4 @@ For questions, feedback, or partnership inquiries, please contact the Aku Platfo
 ---
 
 Thank you for helping us build a brighter future for education and connectivity!
+"# Akudemy" 
