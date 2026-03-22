@@ -2,7 +2,7 @@
   "framework": "nextjs",
   "rootDirectory": "akulearn-dashboard",
   "buildCommand": "npm run build",
-  "installCommand": "npm install",
+  "installCommand": "npm ci",
   "rewrites": [
     { "source": "/docs", "destination": "/docs/index.html" },
     { "source": "/docs/", "destination": "/docs/index.html" },
