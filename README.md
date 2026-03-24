@@ -1,4 +1,7 @@
+
 # Akulearn Documentation Repository
+
+![CI](https://github.com/oumar-code/Akulearn_docs/actions/workflows/automation.yml/badge.svg)
 
 Welcome to the Akulearn documentation repository! This space contains all official documentation for the Akulearn EdTech platform, designed to empower learners and educators across Nigeria and Africa.
 
@@ -29,6 +32,18 @@ This repository is organized for clarity and ease of navigation:
 ## How to Contribute
 
 We welcome contributions! Please check back soon for our contribution guidelines and process.
+
+
+## Deployment & Automation
+
+CI/CD, linting, and documentation builds are automated via [GitHub Actions](.github/workflows/automation.yml) and [docs-deploy.yml](.github/workflows/docs-deploy.yml).
+
+### Automation Steps
+- Linting (ESLint, placeholder for docs)
+- Docs build (MkDocs)
+- Docs deployment (GitHub Pages)
+- Mermaid diagram rendering (render-mermaid.yml)
+- Progress tracked in automation_progress.md
 
 ## How to View Documentation
 

@@ -30,6 +30,11 @@ markdown_extensions:
       permalink: true
 
 nav:
+    - Pilots & Playbooks:
+            - Pilot Projects & Demos: pilot_projects_and_demos.md
+            - Clean Energy + Edge Computing: pilot_playbook_clean_energy_edge.md
+            - AI/MLops in Education: pilot_playbook_ai_mlops_education.md
+            - AIops & Aicyber Ops in Governance: pilot_playbook_aiops_aicyber_governance.md
   - Home: index.md
   - Core Concepts: core_concepts.md
   - Project Overview:
@@ -105,6 +110,10 @@ nav:
       - Sustainability Plan: community/community_engagement_sustainability_plan.md
   - Strategy:
       - Ultra-Affordable Connectivity: strategy/ultra_affordable_instate_strategy.md
+      - Clean Energy for Africa: clean_energy_for_africa.md
+      - Clean Energy Whitepaper: clean_energy_whitepaper.md
+      - AI, Automation & Industry 4.0: ai_automation_industry4.md
+      - Aku as Change Maker: aku_change_maker.md
       - Finance: finance.md
       - Functional Specification: functional_spec.md
   - Handbooks:
