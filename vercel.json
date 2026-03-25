@@ -1,6 +1,12 @@
 {
-  "framework": null,
-  "outputDirectory": "public",
-  "buildCommand": null,
-  "installCommand": null
+  "framework": "nextjs",
+  "buildCommand": "cd akulearn-dashboard && npm run build",
+  "installCommand": "npm install --include=dev && cd akulearn-dashboard && npm ci",
+  "outputDirectory": "akulearn-dashboard/.next",
+  "rewrites": [
+    { "source": "/docs", "destination": "/docs/index.html" },
+    { "source": "/docs/", "destination": "/docs/index.html" },
+    { "source": "/docs/:path+/", "destination": "/docs/:path+/index.html" },
+    { "source": "/docs/:path+", "destination": "/docs/:path+/index.html" }
+  ]
 }
