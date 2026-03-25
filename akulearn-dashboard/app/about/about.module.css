@@ -1,3 +1,188 @@
-.marginTop2rem {
+/* Re-uses the Akudemy design tokens */
+.page {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #111827;
+  background: #ffffff;
+  line-height: 1.6;
+}
+.page a { color: inherit; text-decoration: none; }
+
+/* NAV */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 100;
+}
+.navLogo { font-size: 1.5rem; font-weight: 800; color: #1a56db; }
+.navLogo span { color: #f59e0b; }
+.navLinks { display: flex; gap: 1.5rem; font-weight: 500; color: #6b7280; }
+.navLinks a:hover { color: #1a56db; }
+.navCta {
+  background: #1a56db;
+  color: #fff;
+  padding: 0.55rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.navCta:hover { background: #1340a8; }
+
+/* PAGE HERO */
+.pageHero {
+  background: linear-gradient(135deg, #eff6ff 0%, #fff7ed 100%);
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+}
+.pageHero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 0.75rem; }
+.pageHero p { font-size: 1.1rem; color: #6b7280; max-width: 600px; margin: 0 auto; }
+
+/* SECTIONS */
+.section { padding: 4rem 1.5rem; }
+.inner { max-width: 860px; margin: 0 auto; }
+.sectionTag {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #1a56db;
+  margin-bottom: 0.5rem;
+}
+.section h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 1rem; }
+.section p { color: #6b7280; margin-bottom: 1rem; }
+.section p:last-child { margin-bottom: 0; }
+
+/* MISSION */
+.mission { background: #f3f4f6; }
+.missionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+@media (max-width: 640px) { .missionGrid { grid-template-columns: 1fr; } }
+.missionText h2 { color: #111827; }
+.missionIconWrap {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* VALUES */
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
   margin-top: 2rem;
 }
+.valueCard {
+  background: #f3f4f6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+.valueIcon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.valueCard h3 { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 0.35rem; }
+.valueCard p { font-size: 0.88rem; margin: 0; }
+
+/* TEAM */
+.teamBg { background: #f3f4f6; }
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.teamCard { text-align: center; }
+.teamAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 0.75rem;
+  border: 3px solid #1a56db;
+}
+.teamCard h3 { font-size: 1rem; font-weight: 700; color: #111827; }
+.teamCard p { font-size: 0.82rem; color: #6b7280; margin: 0; }
+
+/* FAQ */
+.faqList { margin-top: 1.5rem; }
+.faqItem {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+.faqQuestion {
+  background: #f3f4f6;
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #111827;
+}
+.faqAnswer { padding: 1rem 1.25rem; font-size: 0.9rem; color: #6b7280; }
+
+/* CONTACT */
+.contact { background: #1a56db; color: #fff; }
+.contact h2 { color: #fff; }
+.contact .sectionTag { color: #fff; }
+.contact p { color: rgba(255,255,255,0.8); }
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.contactItem {
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+.contactIcon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.contactItem h4 { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+.contactItem p { font-size: 0.85rem; color: rgba(255,255,255,0.75); margin: 0; }
+
+/* FOOTER */
+.footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 3rem 1.5rem 1.5rem;
+}
+.footerInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.footerBrand p { font-size: 0.88rem; margin-top: 0.5rem; opacity: 0.75; }
+.footerLogo { font-size: 1.3rem; font-weight: 800; color: #fff; }
+.footerLogo span { color: #f59e0b; }
+.footerCol h4 { color: #fff; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem; }
+.footerCol ul { list-style: none; }
+.footerCol li { margin-bottom: 0.4rem; font-size: 0.85rem; }
+.footerCol a:hover { color: #fff; }
+.footerBottom {
+  border-top: 1px solid #374151;
+  padding-top: 1.25rem;
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
