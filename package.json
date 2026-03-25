@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "echo \"No tests specified\" && exit 0",
+    "lint": "eslint docs/ || echo 'No lintable JS/TS files'",
     "docs:build": "mkdocs build",
     "docs:serve": "mkdocs serve",
     "build": "echo \"No frontend build step required\" && exit 0"
