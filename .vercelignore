@@ -1,38 +1,40 @@
-# Vercel now serves the Akudemy static site from the public/ directory.
-# Everything except public/ is excluded to keep the deployment fast and clean.
+# Vercel deploys the Next.js dashboard from the akulearn-dashboard/ directory.
+# Directory exclusions use a leading / to match only root-level directories,
+# preventing them from accidentally matching sub-directories inside akulearn-dashboard/.
 
 # Documentation build artefacts (no longer built by Vercel)
-docs/
-mkdocs.yml
-requirements.txt
+/docs/
+/mkdocs.yml
+/requirements.txt
 
-# Source code and application directories
-akulearn_microservices/
-akulearn-linux-app/
-client_examples/
-connected_stack/
-content/
-content_templates/
-data/
-diagrams/
-examples/
-hardware/
-hardware_integration/
-infra/
-infrastructure/
-knowledge_graph/
-kubernetes/
-marketing/
-mlops/
-personal_portfolio/
-scripts/
-src/
-static/
-tests/
-unconnected_stack/
-versatech_profile/
-web/
-KOTLIN MULTIPLATFORM/
+# Source code and application directories (not part of the Next.js dashboard)
+/akulearn_microservices/
+/akulearn-linux-app/
+/client_examples/
+/connected_stack/
+/content/
+/content_templates/
+/data/
+/diagrams/
+/examples/
+/hardware/
+/hardware_integration/
+/infra/
+/infrastructure/
+/knowledge_graph/
+/kubernetes/
+/marketing/
+/mlops/
+/personal_portfolio/
+/public/
+/scripts/
+/src/
+/static/
+/tests/
+/unconnected_stack/
+/versatech_profile/
+/web/
+/KOTLIN MULTIPLATFORM/
 
 # Python scripts (content generation, testing, utilities)
 *.py
@@ -45,19 +47,20 @@ KOTLIN MULTIPLATFORM/
 # Data and notebook files
 *.ipynb
 *.csv
-# Exclude large JSON data/content files but keep vercel.json and package.json
-*.json
-!vercel.json
-!package.json
+
+# Exclude root-level JSON data/content files but keep vercel.json
+/puppeteer-config.json
+/package.json
+/package-lock.json
 
 # Go source files
 *.go
-go.mod
+/go.mod
 
-# Root-level HTML/CSS files (not part of the static site)
-*.html
-*.css
+# Root-level IDE and config files
+/.vscode/
+/.idea/
 
-# Allow everything inside public/ (the Akudemy static site)
-!public/
-!public/**
+# Allow everything inside akulearn-dashboard/ (the Next.js app)
+!akulearn-dashboard/
+!akulearn-dashboard/**
