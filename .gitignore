@@ -1,5 +1,11 @@
+# Ignore environment variable files
+.env
+.env.*
+.env.local
+.env.*.local
+!.env.example
 node_modules
-package-lock.json
+/package-lock.json
 
 # MkDocs build output
 site/
@@ -7,6 +13,8 @@ site/
 # Python
 __pycache__/
 *.py
+!team.py
+!supabase_provision.py
 *.py[cod]
 *.pyo
 *.pyd
@@ -25,6 +33,7 @@ myenv/
 !gradlew
 !gradlew.bat
 !build-all.sh
+!setup.sh
 
 # Go source
 *.go
@@ -70,12 +79,22 @@ reports/
 .gradle/
 local.properties
 
+# Vercel local project config (contains sensitive project/org IDs)
+.vercel/project.json
+
+# Supabase CLI temp files (may contain database URLs and project references)
+supabase/.temp/
+
 # Non-docs directories
 akulearn-linux-app/
 akulearn_microservices/
 client_examples/
 connected_stack/
 content/
+!akulearn-dashboard/app/content/
+!akulearn-dashboard/app/content/**
+!akulearn-dashboard/app/(dashboard)/content/
+!akulearn-dashboard/app/(dashboard)/content/**
 content_templates/
 data/
 !docs/network-map/data/
@@ -103,14 +122,35 @@ web/
 *.html
 *.css
 
+# Allow Next.js dashboard CSS and static files
+!akulearn-dashboard/**/*.css
+!akulearn-dashboard/**/*.tsx
+!akulearn-dashboard/**/*.ts
+
+# Allow the Akudemy static site in public/
+!public/
+!public/**
+# Re-ignore generated/script files inside public/ that should not be served
+public/*.py
+public/*.log
+public/generated_content/
+
 # JSON data files (keep vercel.json and package.json and puppeteer-config.json)
 *.json
 !vercel.json
 !package.json
 !puppeteer-config.json
+!public/*.json
+
+# Allow Next.js dashboard config files
+!akulearn-dashboard/*.json
+!akulearn-dashboard/**/*.json
 
 # CSV data files
 *.csv
+
+# Erroneous/duplicate files
+.gitignoregit
 
 # Environment / secrets
 .env
