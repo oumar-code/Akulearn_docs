@@ -27,16 +27,15 @@ markdown_extensions:
   - footnotes
   - meta
   - toc:
-      permalink: true
 
 nav:
-    - Pilots & Playbooks:
-            - Pilot Projects & Demos: pilot_projects_and_demos.md
-            - Clean Energy + Edge Computing: pilot_playbook_clean_energy_edge.md
-            - AI/MLops in Education: pilot_playbook_ai_mlops_education.md
-            - AIops & Aicyber Ops in Governance: pilot_playbook_aiops_aicyber_governance.md
   - Home: index.md
   - Core Concepts: core_concepts.md
+  - Pilots & Playbooks:
+      - Pilot Projects & Demos: pilot_projects_and_demos.md
+      - Clean Energy + Edge Computing: pilot_playbook_clean_energy_edge.md
+      - AI/MLops in Education: pilot_playbook_ai_mlops_education.md
+      - AIops & Aicyber Ops in Governance: pilot_playbook_aiops_aicyber_governance.md
   - Project Overview:
       - Overview: 00-project-overview/index.md
       - Roadmap: 00-project-overview/roadmap-phase-1.md

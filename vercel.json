@@ -1,15 +1,10 @@
 {
-  "projects": [
-    {
-      "src": "akulearn-dashboard/package.json",
-      "use": "@vercel/next"
-    },
+  "version": 2,
+  "builds": [
     {
       "src": "mkdocs.yml",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "site"
-      },
+      "config": { "distDir": "site" },
       "buildCommand": "pip install -r requirements.txt && mkdocs build"
     }
   ]
