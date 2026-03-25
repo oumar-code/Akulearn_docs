@@ -1,0 +1,177 @@
+.page {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #111827;
+  background: #ffffff;
+  line-height: 1.6;
+}
+.page a { color: inherit; text-decoration: none; }
+
+/* NAV */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 100;
+}
+.navLogo { font-size: 1.5rem; font-weight: 800; color: #1a56db; }
+.navLogo span { color: #f59e0b; }
+.navLinks { display: flex; gap: 1.5rem; font-weight: 500; color: #6b7280; }
+.navLinks a:hover { color: #1a56db; }
+.navCta {
+  background: #1a56db;
+  color: #fff;
+  padding: 0.55rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.navCta:hover { background: #1340a8; }
+
+/* PAGE HERO */
+.pageHero {
+  background: linear-gradient(135deg, #eff6ff 0%, #fff7ed 100%);
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+}
+.pageHero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 0.75rem; }
+.pageHero p { font-size: 1.1rem; color: #6b7280; max-width: 580px; margin: 0 auto; }
+
+/* BLOG */
+.blogSection { padding: 4rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+.blogFilter { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.filterBtn {
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 2px solid #e5e7eb;
+  background: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filterBtn.active, .filterBtn:hover {
+  border-color: #1a56db;
+  background: #eff6ff;
+  color: #1a56db;
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+.blogCard {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+.blogCard:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.blogCardImg {
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+.blogCardBody {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.blogTag {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1a56db;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.65rem;
+}
+.blogCard h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+.blogCard p { font-size: 0.88rem; color: #6b7280; flex: 1; margin-bottom: 1rem; }
+.blogMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 0.75rem;
+  margin-top: auto;
+}
+.readMore { color: #1a56db; font-weight: 600; font-size: 0.85rem; }
+.readMore:hover { text-decoration: underline; }
+
+/* NEWSLETTER */
+.newsletter { background: #1a56db; color: #fff; padding: 4rem 1.5rem; text-align: center; }
+.newsletter h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 0.75rem; }
+.newsletter p { opacity: 0.85; max-width: 480px; margin: 0 auto 1.75rem; }
+.newsletterForm { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.newsletterForm input {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+  width: 280px;
+  outline: none;
+}
+.newsletterForm button {
+  background: #f59e0b;
+  color: #111827;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.newsletterForm button:hover { opacity: 0.9; }
+
+/* FOOTER */
+.footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 3rem 1.5rem 1.5rem;
+}
+.footerInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.footerBrand p { font-size: 0.88rem; margin-top: 0.5rem; opacity: 0.75; }
+.footerLogo { font-size: 1.3rem; font-weight: 800; color: #fff; }
+.footerLogo span { color: #f59e0b; }
+.footerCol h4 { color: #fff; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.75rem; }
+.footerCol ul { list-style: none; }
+.footerCol li { margin-bottom: 0.4rem; font-size: 0.85rem; }
+.footerCol a:hover { color: #fff; }
+.footerBottom {
+  border-top: 1px solid #374151;
+  padding-top: 1.25rem;
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
