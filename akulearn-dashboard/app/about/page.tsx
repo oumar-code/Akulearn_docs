@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./about.module.css";
+import TeamSection from "./TeamSection";
 
 export default function AboutPage() {
   return (
@@ -59,6 +60,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <TeamSection />
       <section className="cta">
         <div className="container">
           <h2>Join the Akudemy mission</h2>
