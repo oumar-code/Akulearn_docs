@@ -73,24 +73,51 @@ The workflow uses:
 
 ---
 
-## Vercel Deployment (secondary / preview)
+## Vercel Deployment (Next.js Dashboard)
 
-Vercel is configured via `vercel.json` at the repository root:
+The `akulearn-dashboard/` Next.js app is deployed to Vercel via the `.github/workflows/vercel-deploy.yml` workflow. The root `vercel.json` declares the framework:
 
 ```json
 {
-  "framework": null,
-  "buildCommand": "python3 -m mkdocs build",
-  "outputDirectory": "site",
-  "installCommand": "pip install -r requirements.txt"
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install"
 }
 ```
 
-Vercel uses standard `pip` to install dependencies and then runs `mkdocs build`. The generated `site/` directory is served as the output.
+All Vercel CLI commands run from the `akulearn-dashboard/` working directory, so the Next.js project and its `package.json` are found automatically.
 
-### Excluded files
+### Required environment variables
 
-`.vercelignore` excludes source code, scripts, and data files that are not needed to build the docs, keeping build times fast.
+Set the following in the **Vercel project dashboard** (under Settings → Environment Variables). They are downloaded by `vercel pull` during the CI build:
+
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL (starts with `https://`) |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous public key |
+
+> **Already have `SUPABASE_URL` and `SUPABASE_ANON_KEY` in Vercel?**
+> You don't need a new Supabase project or different credentials — the **values are identical**.
+> Next.js requires the `NEXT_PUBLIC_` prefix to bundle variables into the browser JavaScript
+> (client components with `"use client"` cannot read plain `SUPABASE_URL` at runtime).
+>
+> **Quickest fix:** In your Vercel project dashboard go to **Settings → Environment Variables** and:
+> 1. Rename `SUPABASE_URL` → `NEXT_PUBLIC_SUPABASE_URL` (same value)
+> 2. Rename `SUPABASE_ANON_KEY` → `NEXT_PUBLIC_SUPABASE_ANON_KEY` (same value)
+>
+> Then redeploy. No new Supabase credentials are needed.
+
+### Deployment trigger
+
+The `.github/workflows/vercel-deploy.yml` workflow deploys to Vercel on every push to `main` that touches `akulearn-dashboard/**`, `vercel.json`, or the workflow file itself. It can also be triggered manually via **Actions → Deploy Next.js Dashboard to Vercel → Run workflow**.
+
+### Required secrets
+
+| Secret | Description |
+|--------|-------------|
+| `VERCEL_TOKEN` | Personal access token from the Vercel dashboard |
+| `VERCEL_ORG_ID` | Organisation/team ID from Vercel |
+| `VERCEL_PROJECT_ID` | Project ID from the Vercel dashboard |
 
 ---
 
@@ -131,8 +158,9 @@ To upgrade dependencies:
 
 | Symptom | Likely cause | Fix |
 |---------|-------------|-----|
-| Vercel build fails: `pip: command not found` | Wrong Python version selected | Set Python version in Vercel project settings |
-| Vercel build fails: `uv: not found` | Old `vercel.json` using `uv` | Ensure `installCommand` is `pip install -r requirements.txt` |
+| Vercel build fails: `No Next.js version detected` | `vercel build` runs from the wrong directory | Ensure all Vercel CLI steps use `working-directory: akulearn-dashboard` in the workflow |
+| Vercel build fails: `supabaseUrl is required` | `NEXT_PUBLIC_SUPABASE_URL` not set in Vercel project env vars | Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` to the Vercel project dashboard under Settings → Environment Variables |
+| Vercel build fails: `uv: not found` | Old `vercel.json` using `uv` | Use the current `vercel.json` which uses standard `npm` |
 | GitHub Pages deploy fails: `Resource not accessible by integration` | Pages source not set to "GitHub Actions" | Go to Settings → Pages and change Source to "GitHub Actions" |
 | `mkdocs build` exits non-zero | Missing or broken Markdown file referenced in `nav:` | Run `mkdocs build --strict` locally to see the error |
 | Network map shows blank map | GeoJSON data file missing or wrong path | Ensure `docs/network-map/data/zamfara-network-data.geojson` exists |

@@ -1,11 +1,12 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "mkdocs.yml",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "site" },
-      "buildCommand": "pip install -r requirements.txt && mkdocs build"
-    }
+  "framework": "nextjs",
+  "rootDirectory": "akulearn-dashboard",
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "rewrites": [
+    { "source": "/docs", "destination": "/docs/index.html" },
+    { "source": "/docs/", "destination": "/docs/index.html" },
+    { "source": "/docs/:path+/", "destination": "/docs/:path+/index.html" },
+    { "source": "/docs/:path+", "destination": "/docs/:path+/index.html" }
   ]
 }

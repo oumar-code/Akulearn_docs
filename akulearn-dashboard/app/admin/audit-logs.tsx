@@ -1,9 +1,9 @@
-export default AuditLogsViewer;
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
 import styles from "./audit-logs.module.css";
 
+export default function AuditLogsViewer() {
   type Log = { id: string; user: string; action: string; details?: string; created_at: string };
   const [logs, setLogs] = useState<Log[]>([]);
   const [loading, setLoading] = useState(true);
