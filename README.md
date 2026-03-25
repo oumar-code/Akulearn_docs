@@ -1,4 +1,7 @@
+
 # Akulearn Documentation Repository
+
+![CI](https://github.com/oumar-code/Akulearn_docs/actions/workflows/automation.yml/badge.svg)
 
 Welcome to the Akulearn documentation repository! This space contains all official documentation for the Akulearn EdTech platform, designed to empower learners and educators across Nigeria and Africa.
 
@@ -20,9 +23,27 @@ This repository is organized for clarity and ease of navigation:
 - **docs/07-glossary/**: Glossary of Akulearn terms
 - **docs/images/**: Diagrams and screenshots
 
+### Strategic Roadmap & Thought Leadership
+- **docs/clean_energy_for_africa.md**: Clean energy research and vision for Africa
+- **docs/clean_energy_whitepaper.md**: Whitepaper on clean energy and digital transformation
+- **docs/ai_automation_industry4.md**: AI, automation, and Industry 4.0 for Africa
+- **docs/aku_change_maker.md**: Aku’s role as a change maker and ecosystem builder
+
 ## How to Contribute
 
 We welcome contributions! Please check back soon for our contribution guidelines and process.
+
+
+## Deployment & Automation
+
+CI/CD, linting, and documentation builds are automated via [GitHub Actions](.github/workflows/automation.yml) and [docs-deploy.yml](.github/workflows/docs-deploy.yml).
+
+### Automation Steps
+- Linting (ESLint, placeholder for docs)
+- Docs build (MkDocs)
+- Docs deployment (GitHub Pages)
+- Mermaid diagram rendering (render-mermaid.yml)
+- Progress tracked in automation_progress.md
 
 ## How to View Documentation
 
@@ -215,3 +236,4 @@ For questions, feedback, or partnership inquiries, please contact the Aku Platfo
 ---
 
 Thank you for helping us build a brighter future for education and connectivity!
+"# Akudemy" 

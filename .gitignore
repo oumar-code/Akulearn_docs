@@ -1,7 +1,11 @@
 # Ignore environment variable files
 .env
+.env.*
+.env.local
+.env.*.local
+!.env.example
 node_modules
-package-lock.json
+/package-lock.json
 
 # MkDocs build output
 site/

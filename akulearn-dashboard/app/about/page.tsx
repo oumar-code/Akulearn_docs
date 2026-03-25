@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./about.module.css";
+import TeamSection from "./TeamSection";
 
 export default function AboutPage() {
   return (
@@ -115,27 +116,12 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* CONTACT */}
-      <section className={`${styles.section} ${styles.contact}`} id="contact">
-        <div className={styles.inner}>
-          <span className={styles.sectionTag}>Get In Touch</span>
-          <h2>Contact Us</h2>
-          <p>Have questions? We&apos;d love to hear from you. Reach out through any of the channels below.</p>
-          <div className={styles.contactGrid}>
-            {[
-              { icon: "📧", label: "Email", value: "hello@akudemy.ng" },
-              { icon: "📱", label: "WhatsApp", value: "+234 803 294 2461" },
-              { icon: "🐦", label: "Twitter / X", value: "@AkudemyNG" },
-              { icon: "📘", label: "Facebook", value: "facebook.com/AkudemyNG" },
-            ].map((c) => (
-              <div key={c.label} className={styles.contactItem}>
-                <div className={styles.contactIcon}>{c.icon}</div>
-                <h4>{c.label}</h4>
-                <p>{c.value}</p>
-              </div>
-            ))}
-          </div>
+      <TeamSection />
+      <section className="cta">
+        <div className="container">
+          <h2>Join the Akudemy mission</h2>
+          <p>Help us bring quality learning to every student.</p>
+          <a href="/">Start Learning</a>
         </div>
       </section>
 
