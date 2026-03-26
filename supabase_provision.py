@@ -37,6 +37,33 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 
+
+# ---------------------------------------------------------------------------
+# .env loader — reads key=value pairs from a .env file into os.environ.
+# Only sets variables that are not already present in the environment so that
+# shell-level overrides always take precedence.
+# ---------------------------------------------------------------------------
+
+def _load_dotenv(path: str = ".env") -> None:
+    """Load environment variables from *path* (.env) if it exists."""
+    try:
+        with open(path) as fh:
+            for raw in fh:
+                line = raw.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                key, _, value = line.partition("=")
+                key = key.strip()
+                # Strip matching outer quotes from the value (e.g. KEY="val" or KEY='val').
+                # partition("=") is used so values that contain "=" (e.g. base64) are preserved.
+                value = value.strip()
+                if len(value) >= 2 and value[0] == value[-1] and value[0] in ('"', "'"):
+                    value = value[1:-1]
+                if key and key not in os.environ:
+                    os.environ[key] = value
+    except FileNotFoundError:
+        pass
+
 # ---------------------------------------------------------------------------
 # Team roster — authoritative source of truth for Supabase provisioning
 # ---------------------------------------------------------------------------
@@ -282,6 +309,7 @@ def print_credentials(results: list) -> None:
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
+    _load_dotenv()
     supabase_url = os.environ.get("SUPABASE_URL", "").rstrip("/")
     service_key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
     resend_api_key = os.environ.get("RESEND_API_KEY", "")

@@ -1,4 +1,7 @@
+
 # Akulearn Documentation Repository
+
+![CI](https://github.com/oumar-code/Akulearn_docs/actions/workflows/automation.yml/badge.svg)
 
 Welcome to the Akulearn documentation repository! This space contains all official documentation for the Akulearn EdTech platform, designed to empower learners and educators across Nigeria and Africa.
 
@@ -20,9 +23,27 @@ This repository is organized for clarity and ease of navigation:
 - **docs/07-glossary/**: Glossary of Akulearn terms
 - **docs/images/**: Diagrams and screenshots
 
+### Strategic Roadmap & Thought Leadership
+- **docs/clean_energy_for_africa.md**: Clean energy research and vision for Africa
+- **docs/clean_energy_whitepaper.md**: Whitepaper on clean energy and digital transformation
+- **docs/ai_automation_industry4.md**: AI, automation, and Industry 4.0 for Africa
+- **docs/aku_change_maker.md**: Aku’s role as a change maker and ecosystem builder
+
 ## How to Contribute
 
 We welcome contributions! Please check back soon for our contribution guidelines and process.
+
+
+## Deployment & Automation
+
+CI/CD, linting, and documentation builds are automated via [GitHub Actions](.github/workflows/automation.yml) and [docs-deploy.yml](.github/workflows/docs-deploy.yml).
+
+### Automation Steps
+- Linting (ESLint, placeholder for docs)
+- Docs build (MkDocs)
+- Docs deployment (GitHub Pages)
+- Mermaid diagram rendering (render-mermaid.yml)
+- Progress tracked in automation_progress.md
 
 ## How to View Documentation
 
@@ -39,13 +60,113 @@ To view the documentation locally:
 
 3. Open [http://localhost:8000](http://localhost:8000) in your browser to explore the docs.
 
+## Team Setup & Supabase Provisioning
+
+Both `team.py` and `supabase_provision.py` live at the **project root** and must be run from there.
+
+### 1. View team dashboards (`team.py`)
+
+```sh
+# From the project root directory (e.g. Akulearn_docs/)
+python team.py
+```
+
+Prints every team member's name, role, dashboard key, and the full list of platform accesses they have.
+
+### 2. Provision team members in Supabase (`supabase_provision.py`)
+
+**Prerequisites** — copy `.env.example` to `.env` and fill in your values:
+
+```sh
+cp .env.example .env
+# then edit .env and set:
+#   SUPABASE_URL              = https://your-project-ref.supabase.co
+#   SUPABASE_SERVICE_ROLE_KEY = <service_role key from Supabase Dashboard → Project Settings → API>
+#   RESEND_API_KEY            = <optional — only needed to email credentials>
+```
+
+**Run the provisioning script:**
+
+```sh
+# From the project root directory (e.g. Akulearn_docs/)
+python supabase_provision.py
+```
+
+- If `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` are not set, the script runs in **dry-run mode** — it prints the team roster with sample credentials but does **not** create any accounts.
+- When the credentials are present, the script creates each team member's account in Supabase with the correct role and dashboard assigned.
+- If `RESEND_API_KEY` is also set, each newly created user receives a welcome email with their temporary password.
+
+> ⚠ Never commit your `.env` file. It is already listed in `.gitignore`.
+
 ## Contact Information
 
 For questions, feedback, or partnership inquiries, please contact the Akulearn team (details coming soon).
 
+
+```mermaid
+graph TD
+    subgraph Edge
+        E1[Edge Hub] -- Mesh Link --> E2[Edge Hub]
+        E1 -- Client Access --> D1[User Device]
+    end
+    subgraph Cluster
+        C1[Super Hub] -- Backhaul --> IG1[IG-Hub]
+        C1 -- OTA Updates --> E1
+    end
+    IG1[Interstate Gateway Hub]
+```
+
+## Repository Structure
+
+| Directory | Purpose |
+|---|---|
+| `KOTLIN MULTIPLATFORM/` | Android + iOS mobile app (KMP) |
+| `docs/` | Platform documentation (MkDocs) |
+| `supabase/` | Auth and database schema |
+| `infra/` / `kubernetes/` | Infrastructure and deployment |
+| `wave3_rest_api.py` and related | Python content and recommendation backend |
+
+Full documentation structure:
+
+- **`docs/00-project-overview/`** — Vision, mission, and Phase 1 roadmap
+- **`docs/01-architecture/`** — System architecture and design documents
+- **`docs/02-backend/`** — Backend handbook, API specs, and database schemas
+- **`docs/03-mobile/`** — Mobile app guidelines
+- **`docs/04-iot-projector/`** — IoT projector guidelines
+- **`docs/05-cross-cutting/`** — Technical specs and coding standards
+- **`docs/06-process-methodology/`** — Agile/DevOps methodology
+- **`docs/07-glossary/`** — Glossary of Aku terms
+- **`docs/images/`** — Diagrams and screenshots
+
+## Getting Started
+
+### Mobile App (Android / iOS)
+See [`KOTLIN MULTIPLATFORM/README.md`](KOTLIN%20MULTIPLATFORM/README.md) for full setup instructions.
+
+### Documentation Site
+```sh
+pip install mkdocs mkdocs-material
+mkdocs serve
+```
+Open [http://localhost:8000](http://localhost:8000) in your browser.
+
+### Python Backend
+```sh
+pip install -r requirements.txt
+python start_wave3_server.py
+```
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting pull requests or opening issues.
+
+## Contact
+
+For questions, feedback, or partnership inquiries, please contact the Aku Platform team (details coming soon).
+
 ---
 
-Thank you for helping us build a brighter future for education!
+Thank you for helping us build a brighter future for education and connectivity!
 
 # Aku Platform Documentation Repository
 
@@ -115,3 +236,4 @@ For questions, feedback, or partnership inquiries, please contact the Aku Platfo
 ---
 
 Thank you for helping us build a brighter future for education and connectivity!
+"# Akudemy" 

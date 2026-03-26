@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akulearn Registration</title>
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f3f4f6; }
+    .register-container { max-width: 400px; margin: 80px auto; background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 16px #e5e7eb; }
+    h2 { text-align: center; margin-bottom: 1.5rem; color: #1a56db; }
+    label { display: block; margin-bottom: 0.5rem; color: #111827; }
+    input { width: 100%; padding: 0.7rem; margin-bottom: 1.2rem; border: 1px solid #e5e7eb; border-radius: 8px; }
+    button { width: 100%; background: #1a56db; color: #fff; padding: 0.8rem; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
+    button:hover { background: #1340a8; }
+    .error { color: #e53e3e; text-align: center; margin-bottom: 1rem; }
+    .success { color: #059669; text-align: center; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Sign Up</h2>
+    <form id="registerForm">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+      <button type="submit">Register</button>
+      <div id="error" class="error"></div>
+      <div id="success" class="success"></div>
+    </form>
+  </div>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const errorDiv = document.getElementById('error');
+      const successDiv = document.getElementById('success');
+      errorDiv.textContent = '';
+      successDiv.textContent = '';
+      try {
+        // Call Supabase Auth REST API directly
+        const resp = await fetch('https://rcxiuzzwwwschjcbeenb.supabase.co/auth/v1/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjeGl1enp3d3dzY2hqY2JlZW5iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAzNzA1NTAsImV4cCI6MjA4NTk0NjU1MH0.QdrCEnJ0xM9eXlhSpj1fLS4th83e4TJTYb-3QTrGbC8'
+          },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await resp.json();
+        if (!resp.ok) {
+          errorDiv.textContent = data.error_description || data.msg || 'Registration failed.';
+          return;
+        }
+        successDiv.textContent = 'Registration successful! Please check your email to confirm.';
+      } catch (err) {
+        errorDiv.textContent = 'Network error.';
+      }
+    });
+  </script>
+</body>
+</html>
