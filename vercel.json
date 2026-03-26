@@ -3,6 +3,7 @@
   "buildCommand": "cd akulearn-dashboard && npm run build",
   "installCommand": "npm install --include=dev && cd akulearn-dashboard && npm ci",
   "outputDirectory": "akulearn-dashboard/.next",
+  "ignoreCommand": "exit 0",
   "rewrites": [
     { "source": "/docs", "destination": "/docs/index.html" },
     { "source": "/docs/", "destination": "/docs/index.html" },
