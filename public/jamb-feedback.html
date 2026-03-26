@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JAMB Prep Feedback - Help us improve. Your feedback directly impacts Akudemy." />
+    <title>JAMB Prep Feedback | Akudemy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --blue: #0052CC;
+            --green: #00D084;
+            --orange: #FF6B35;
+            --light: #F5F5F5;
+            --dark: #2C3E50;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        .container { max-width: 700px; margin: 0 auto; padding: 2rem; }
+        header {
+            background: linear-gradient(135deg, var(--blue) 0%, #0066FF 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        header p { opacity: 0.9; }
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+        }
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--blue);
+            background: rgba(0, 82, 204, 0.02);
+        }
+        textarea { resize: vertical; min-height: 120px; }
+        
+        .rating-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+        .rating-btn {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        .rating-btn:hover {
+            border-color: var(--blue);
+            transform: scale(1.1);
+        }
+        .rating-btn.selected {
+            background: var(--blue);
+            color: white;
+            border-color: var(--blue);
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+        .checkbox-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #00b86b;
+        }
+        .success-msg {
+            background: rgba(0, 208, 132, 0.1);
+            color: var(--green);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--dark);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Help Us Improve Akudemy</h1>
+            <p>Your feedback shapes the next version. 2-3 minutes. Really matters.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <form id="feedbackForm" onsubmit="handleSubmit(event)">
+                <!-- Overall Experience -->
+                <div class="form-group">
+                    <label>How would you rate your overall JAMB prep experience with Akudemy?</label>
+                    <div class="rating-group">
+                        <button type="button" class="rating-btn" data-rating="1" title="Poor">😞</button>
+                        <button type="button" class="rating-btn" data-rating="2" title="Below Average">😕</button>
+                        <button type="button" class="rating-btn" data-rating="3" title="Average">😐</button>
+                        <button type="button" class="rating-btn" data-rating="4" title="Good">🙂</button>
+                        <button type="button" class="rating-btn" data-rating="5" title="Excellent">😄</button>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" required>
+                </div>
+
+                <!-- What's Working -->
+                <div class="form-group">
+                    <label for="whatWorks">What's working GREAT? What do you love about Akudemy?</label>
+                    <textarea id="whatWorks" name="whatWorks" placeholder="Be specific. Examples help us improve." required></textarea>
+                </div>
+
+                <!-- What Needs Improvement -->
+                <div class="form-group">
+                    <label for="whatNeeds">What needs improvement? Any bugs or frustrations?</label>
+                    <textarea id="whatNeeds" name="whatNeeds" placeholder="Don't hold back. We need honest feedback." required></textarea>
+                </div>
+
+                <!-- Features Used -->
+                <div class="form-group">
+                    <label>Which features are you using most? (Check all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feat1" name="features" value="practice-questions">
+                            <label for="feat1">Practice Questions</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feat2" name="features" value="3d-models">
+                            <label for="feat2">3D Models</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feat3" name="features" value="offline-learning">
+                            <label for="feat3">Offline Learning</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feat4" name="features" value="progress-tracking">
+                            <label for="feat4">Progress Tracking</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feat5" name="features" value="practice-tests">
+                            <label for="feat5">Practice Tests</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feat6" name="features" value="analytics">
+                            <label for="feat6">Analytics/Weak Topics</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topics Needing Work -->
+                <div class="form-group">
+                    <label for="topics">Which subject/topic needs MORE questions?</label>
+                    <input type="text" id="topics" name="topics" placeholder="e.g., Organic Chemistry, Photosynthesis, Calculus">
+                </div>
+
+                <!-- Score Improvement -->
+                <div class="form-group">
+                    <label for="scoreImprovement">How much has your JAMB score improved since you started?</label>
+                    <select id="scoreImprovement" name="scoreImprovement" required>
+                        <option value="">Select improvement level</option>
+                        <option value="massive-50+">Massive improvement (+50+ points)</option>
+                        <option value="significant-25-50">Significant improvement (+25-50 points)</option>
+                        <option value="moderate-10-25">Moderate improvement (+10-25 points)</option>
+                        <option value="slight-0-10">Slight improvement (+0-10 points)</option>
+                        <option value="no-change">No change yet (still early)</option>
+                    </select>
+                </div>
+
+                <!-- Device/Platform -->
+                <div class="form-group">
+                    <label for="device">What device are you mostly using?</label>
+                    <select id="device" name="device" required>
+                        <option value="">Select device</option>
+                        <option value="android-phone">Android Phone</option>
+                        <option value="iphone">iPhone</option>
+                        <option value="laptop">Laptop/Desktop</option>
+                        <option value="tablet">Tablet</option>
+                    </select>
+                </div>
+
+                <!-- Internet Situation -->
+                <div class="form-group">
+                    <label>How's your internet situation in your area?</label>
+                    <div class="checkbox-group" style="grid-template-columns: 1fr;">
+                        <div class="checkbox-item">
+                            <input type="radio" id="internet1" name="internet" value="excellent" required>
+                            <label for="internet1">Excellent (always connected)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="internet2" name="internet" value="good" required>
+                            <label for="internet2">Good (usually available)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="internet3" name="internet" value="poor" required>
+                            <label for="internet3">Poor (often unavailable)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="internet4" name="internet" value="very-poor" required>
+                            <label for="internet4">Very poor (rarely available)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Request -->
+                <div class="form-group">
+                    <label for="featureRequest">One feature you'd love to see?</label>
+                    <textarea id="featureRequest" name="featureRequest" placeholder="Dream feature. What would make your prep perfect?"></textarea>
+                </div>
+
+                <!-- Email for Follow-up -->
+                <div class="form-group">
+                    <label for="email">Your email (so we can share improvements with you)</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+                <div class="success-msg" id="successMsg">
+                    ✅ Thank you! Your feedback helps us build a better product.
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>Your feedback directly shapes Akudemy's future.</p>
+            <p>Back to: <a href="/" style="color: var(--blue); text-decoration: none;">Akudemy Home</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Rating system
+        document.querySelectorAll('.rating-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                document.getElementById('rating').value = btn.dataset.rating;
+            });
+        });
+
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            const formData = {
+                rating: document.getElementById('rating').value,
+                whatWorks: document.getElementById('whatWorks').value,
+                whatNeeds: document.getElementById('whatNeeds').value,
+                features: Array.from(document.querySelectorAll('input[name="features"]:checked')).map(cb => cb.value),
+                topics: document.getElementById('topics').value,
+                scoreImprovement: document.getElementById('scoreImprovement').value,
+                device: document.getElementById('device').value,
+                internet: document.querySelector('input[name="internet"]:checked').value,
+                featureRequest: document.getElementById('featureRequest').value,
+                email: document.getElementById('email').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Store feedback (integrate with backend later)
+            const feedbacks = JSON.parse(localStorage.getItem('jamb_feedbacks') || '[]');
+            feedbacks.push(formData);
+            localStorage.setItem('jamb_feedbacks', JSON.stringify(feedbacks));
+
+            // Show success message
+            document.getElementById('successMsg').style.display = 'block';
+            document.getElementById('feedbackForm').style.opacity = '0.5';
+            
+            // Reset form after 2 seconds
+            setTimeout(() => {
+                document.getElementById('feedbackForm').reset();
+                document.getElementById('feedbackForm').style.opacity = '1';
+                document.getElementById('successMsg').style.display = 'none';
+                document.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

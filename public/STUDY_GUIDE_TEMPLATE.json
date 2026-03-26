@@ -1,0 +1,251 @@
+{
+  "studyGuideTemplate": {
+    "metadata": {
+      "subject": "Chemistry",
+      "topic": "Organic Chemistry - Nomenclature",
+      "difficulty": "intermediate",
+      "estimatedReadTime": 15,
+      "videoLinkMinutes": 5,
+      "targetExamBoards": ["JAMB", "WAEC", "NECO"],
+      "lastUpdated": "2026-01-30"
+    },
+    "content": {
+      "title": "Organic Chemistry: IUPAC Nomenclature",
+      "objective": "Master IUPAC naming rules for simple organic compounds. Essential for 8-10 JAMB questions.",
+      
+      "keyConceptsSection": {
+        "title": "3 Key Concepts You MUST Know",
+        "concepts": [
+          {
+            "title": "Functional Groups",
+            "explanation": "Groups of atoms that determine compound properties. Each has specific naming suffix.",
+            "examples": [
+              "-OH = Alcohol (hydroxyl)",
+              "-COOH = Carboxylic acid (carbonyl + hydroxyl)",
+              "-C=O = Ketone (carbonyl)",
+              "-C=C = Alkene (double bond)"
+            ],
+            "memorize": "Suffix determines compound class"
+          },
+          {
+            "title": "Carbon Chain Numbering",
+            "explanation": "Always number from the end closest to the principal functional group.",
+            "examples": [
+              "CH3-CH2-CH2-OH = 1-propanol (NOT 3-propanol)",
+              "CH3-CH=CH-CH3 = But-2-ene (NOT but-1-ene)"
+            ],
+            "memorize": "Functional group gets lowest number"
+          },
+          {
+            "title": "Prefixes for Carbon Count",
+            "explanation": "Systematic prefixes for chain length",
+            "examples": [
+              "1 carbon = Meth-",
+              "2 carbons = Eth-",
+              "3 carbons = Prop-",
+              "4 carbons = But-",
+              "5 carbons = Pent-",
+              "6 carbons = Hex-"
+            ],
+            "memorize": "Prefix count matches carbon atoms"
+          }
+        ]
+      },
+
+      "detailedExplanationSection": {
+        "title": "Detailed Explanation: Step-by-Step",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "title": "Identify the Functional Group",
+            "instruction": "Look for: -OH, -COOH, -C=O, -C=C, -NH2, -NO2, etc.",
+            "example": "CH3-CH2-COOH has carboxylic acid group (-COOH)",
+            "result": "This will be a carboxylic acid (suffix: -oic acid)"
+          },
+          {
+            "stepNumber": 2,
+            "title": "Count the Total Carbon Chain",
+            "instruction": "Count ALL carbons in the longest chain containing the functional group",
+            "example": "CH3-CH2-COOH has 2 carbons total",
+            "result": "2 carbons = 'Eth-' prefix"
+          },
+          {
+            "stepNumber": 3,
+            "title": "Number from Functional Group",
+            "instruction": "Start numbering from the end NEAREST to the functional group",
+            "example": "CH3-CH2-COOH: COOH is position 1, CH3 is position 2",
+            "result": "No number needed here (functional group always at position 1)"
+          },
+          {
+            "stepNumber": 4,
+            "title": "Add Substituents (if any)",
+            "instruction": "If there are branches/side chains, give them lowest numbers",
+            "example": "CH3-CH(CH3)-CH2-COOH = 3-methyl propanoic acid",
+            "result": "Position + substituent name + main chain name"
+          },
+          {
+            "stepNumber": 5,
+            "title": "Combine the Name",
+            "instruction": "Prefix + carbon number + substituent + position + suffix",
+            "example": "Eth + anoic + acid = Ethanoic acid",
+            "result": "FINAL NAME: Ethanoic acid (also called acetic acid)"
+          }
+        ]
+      },
+
+      "commonMistakesSection": {
+        "title": "5 Common Mistakes Students Make",
+        "mistakes": [
+          {
+            "mistake": "Numbering from wrong end",
+            "why": "Functional group must get LOWEST number",
+            "correct": "CH3-CH2-OH is 1-ethanol (NOT 2-ethanol)",
+            "examFrequency": "Very High - Asked almost every exam"
+          },
+          {
+            "mistake": "Forgetting to change vowel before consonant",
+            "why": "Remove 'e' at end of prefix when adding 'oic' or other suffixes",
+            "correct": "Prop + ane = Propane (NOT Propene from 'Prop-ene')",
+            "examFrequency": "High"
+          },
+          {
+            "mistake": "Not identifying functional group",
+            "why": "First step is CRITICAL",
+            "correct": "CH3-C(=O)-OH is carboxylic acid, not just ketone",
+            "examFrequency": "Very High"
+          },
+          {
+            "mistake": "Missing substituent numbers",
+            "why": "Each branch needs a position number",
+            "correct": "2-methylpropane (NOT just methylpropane)",
+            "examFrequency": "High"
+          },
+          {
+            "mistake": "Confusing alkene/alkyne positions",
+            "why": "Double/triple bond also gets lowest number",
+            "correct": "But-2-ene (NOT but-1-ene)",
+            "examFrequency": "Medium"
+          }
+        ]
+      },
+
+      "practiceQuestionsSection": {
+        "title": "5 Practice Questions (Difficulty: Easy → Hard)",
+        "instructions": "Try these yourself BEFORE looking at answers",
+        "questions": [
+          {
+            "number": 1,
+            "difficulty": "Easy",
+            "question": "What is the IUPAC name of CH3-CH2-OH?",
+            "options": ["Ethanol", "Methanol", "Propanol", "Ethane"],
+            "correctAnswer": "Ethanol",
+            "explanation": "2 carbons (Eth-) + hydroxyl group (-OH) = Ethanol. Common name: alcohol.",
+            "keyLearning": "Learn the 'Eth-' prefix for 2 carbons"
+          },
+          {
+            "number": 2,
+            "difficulty": "Easy",
+            "question": "What is the name of CH3-CH2-CH2-CH3?",
+            "options": ["Methane", "Ethane", "Butane", "Propane"],
+            "correctAnswer": "Butane",
+            "explanation": "4 carbons with no functional group = But- + -ane = Butane. This is a simple alkane.",
+            "keyLearning": "4 carbons = 'But-' prefix"
+          },
+          {
+            "number": 3,
+            "difficulty": "Medium",
+            "question": "Name this compound: CH3-CH(OH)-CH3",
+            "options": ["1-Propanol", "2-Propanol", "Propanone", "Methylethanol"],
+            "correctAnswer": "2-Propanol",
+            "explanation": "3 carbons (Prop-) with OH group. OH is at carbon 2 (numbering from nearest end). Answer: 2-Propanol (isopropanol).",
+            "keyLearning": "Number from functional group end, not from left"
+          },
+          {
+            "number": 4,
+            "difficulty": "Medium",
+            "question": "What is the name of CH3-COOH?",
+            "options": ["Methanoic acid", "Ethanoic acid", "Propanoic acid", "Methane"],
+            "correctAnswer": "Ethanoic acid",
+            "explanation": "2 carbons with carboxylic acid group (-COOH). Eth- + anoic acid = Ethanoic acid. Common name: acetic acid.",
+            "keyLearning": "COOH = carboxylic acid, suffix = '-oic acid'"
+          },
+          {
+            "number": 5,
+            "difficulty": "Hard",
+            "question": "Name: CH3-CH(CH3)-CH2-COOH",
+            "options": ["2-Methylpropanoic acid", "3-Methylpropanoic acid", "Methylbutanoic acid", "2-Methylbutanoic acid"],
+            "correctAnswer": "2-Methylpropanoic acid",
+            "explanation": "Main chain = 3 carbons (Prop-) with COOH, so 'propanoic acid'. Methyl branch at position 2 (closest to COOH). Full name: 2-Methylpropanoic acid.",
+            "keyLearning": "Always count substituents from functional group"
+          }
+        ]
+      },
+
+      "quickReferenceSection": {
+        "title": "Quick Reference Card (Print This!)",
+        "content": {
+          "prefixes": {
+            "title": "Carbon Chain Prefixes",
+            "data": "1=Meth, 2=Eth, 3=Prop, 4=But, 5=Pent, 6=Hex, 7=Hept, 8=Oct"
+          },
+          "suffixes": {
+            "title": "Functional Group Suffixes",
+            "data": "Alkane=-ane, Alkene=-ene, Alkyne=-yne, Alcohol=-ol, Ketone=-one, Aldehyde=-al, Carboxylic Acid=-oic acid"
+          },
+          "priorities": {
+            "title": "Numbering Priority (1=Highest)",
+            "data": "1. Carboxylic Acid, 2. Aldehyde, 3. Ketone, 4. Alcohol, 5. Alkene, 6. Alkyne"
+          }
+        }
+      },
+
+      "examTipsSection": {
+        "title": "How to Ace JAMB Questions on This Topic",
+        "tips": [
+          {
+            "tip": 1,
+            "strategy": "Draw the structure",
+            "action": "Always draw out the molecule structure when given a name or vice versa",
+            "timeToImplement": "10 seconds per question"
+          },
+          {
+            "tip": 2,
+            "strategy": "Identify functional group FIRST",
+            "action": "Before naming, circle the functional group",
+            "timeToImplement": "2 seconds per question"
+          },
+          {
+            "tip": 3,
+            "strategy": "Check numbering direction",
+            "action": "Ensure functional group gets LOWEST number",
+            "timeToImplement": "3 seconds per question"
+          },
+          {
+            "tip": 4,
+            "strategy": "Count carbons carefully",
+            "action": "Don't make mistakes on basic counting",
+            "timeToImplement": "2 seconds per question"
+          },
+          {
+            "tip": 5,
+            "strategy": "Memorize the 8 prefixes",
+            "action": "Meth, Eth, Prop, But, Pent, Hex, Hept, Oct (1-8 carbons)",
+            "timeToImplement": "5 minutes memorization"
+          }
+        ]
+      },
+
+      "videoSection": {
+        "title": "Video Explanation (Optional)",
+        "description": "5-minute video walking through 5 worked examples",
+        "videoUrl": "https://akudemy.com/videos/organic-nomenclature",
+        "videoTopics": [
+          "How to identify functional groups (2 min)",
+          "Naming simple alcohols (1 min)",
+          "Naming carboxylic acids (1 min)",
+          "Common mistakes to avoid (1 min)"
+        ]
+      }
+    }
+  }
+}
