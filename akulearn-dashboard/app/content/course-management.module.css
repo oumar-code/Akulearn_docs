@@ -1,0 +1,19 @@
+.courseMgmtPanel {
+  margin-top: 24px;
+  background: #f9fbe7;
+  padding: 16px;
+  border-radius: 8px;
+}
+.courseMgmtForm {
+  margin-bottom: 16px;
+}
+.courseMgmtInput {
+  margin-right: 8px;
+}
+.courseMgmtTable {
+  width: 100%;
+  margin-top: 12px;
+}
+.courseMgmtError {
+  color: red;
+}

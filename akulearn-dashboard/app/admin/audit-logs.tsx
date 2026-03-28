@@ -3,9 +3,14 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
 import styles from "./audit-logs.module.css";
 
+<<<<<<< HEAD
 type Log = { id: string; user: string; action: string; details?: string; created_at: string };
 
 export default function AuditLogsViewer() {
+=======
+export default function AuditLogsViewer() {
+  type Log = { id: string; user: string; action: string; details?: string; created_at: string };
+>>>>>>> 0d3c97a10ceeb0fd7075517b47cc37ceedd7918a
   const [logs, setLogs] = useState<Log[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");

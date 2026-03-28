@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0d3c97a10ceeb0fd7075517b47cc37ceedd7918a
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
@@ -6,9 +9,14 @@ import styles from "./roadmap-kanban.module.css";
 
 const columns = ["Backlog", "In Progress", "Review", "Done"];
 
+<<<<<<< HEAD
 type Task = { id: string; title: string; description?: string; status: string };
 
 export default function RoadmapKanban() {
+=======
+export default function ProductRoadmapKanban() {
+  type Task = { id: string; title: string; description?: string; status: string };
+>>>>>>> 0d3c97a10ceeb0fd7075517b47cc37ceedd7918a
   const [tasks, setTasks] = useState<Task[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");

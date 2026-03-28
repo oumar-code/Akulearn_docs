@@ -1,12 +1,20 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0d3c97a10ceeb0fd7075517b47cc37ceedd7918a
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
 import styles from "./media-kit.module.css";
 
+<<<<<<< HEAD
 type Asset = { id: string; url: string; name: string };
 
 export default function MediaKit() {
+=======
+export default function MediaKitPanel() {
+  type Asset = { id: string; url: string; name: string };
+>>>>>>> 0d3c97a10ceeb0fd7075517b47cc37ceedd7918a
   const [assets, setAssets] = useState<Asset[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");

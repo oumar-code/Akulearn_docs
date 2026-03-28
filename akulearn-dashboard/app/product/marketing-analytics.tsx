@@ -6,9 +6,14 @@ import dynamic from "next/dynamic";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
+<<<<<<< HEAD
 type Campaign = { id: string; name?: string; engagement?: number; reach?: number };
 
 export default function MarketingAnalytics() {
+=======
+export default function MarketingAnalytics() {
+  type Campaign = { id: string; name?: string; engagement?: number; reach?: number };
+>>>>>>> 0d3c97a10ceeb0fd7075517b47cc37ceedd7918a
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
