@@ -1,13 +1,14 @@
-export default ProductRoadmapKanban;
+
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
 import styles from "./roadmap-kanban.module.css";
 
-// Minimal Kanban board for product roadmap
 const columns = ["Backlog", "In Progress", "Review", "Done"];
 
-  type Task = { id: string; title: string; description?: string; status: string };
+type Task = { id: string; title: string; description?: string; status: string };
+
+export default function RoadmapKanban() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -21,7 +22,7 @@ const columns = ["Backlog", "In Progress", "Review", "Done"];
         const { data, error } = await supabase.from('product_roadmap').select('*');
         if (error) throw error;
         setTasks(data || []);
-      } catch (err) {
+      } catch {
         setError("Unable to fetch roadmap tasks. Please check your Supabase table and permissions.");
       }
       setLoading(false);
@@ -50,3 +51,4 @@ const columns = ["Backlog", "In Progress", "Review", "Done"];
     </div>
   );
 }
+

@@ -1,10 +1,12 @@
-export default MediaKitPanel;
+
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
 import styles from "./media-kit.module.css";
 
-  type Asset = { id: string; url: string; name: string };
+type Asset = { id: string; url: string; name: string };
+
+export default function MediaKit() {
   const [assets, setAssets] = useState<Asset[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -20,7 +22,7 @@ import styles from "./media-kit.module.css";
         const { data, error } = await supabase.from('media_kit').select('*');
         if (error) throw error;
         setAssets(data || []);
-      } catch (err) {
+      } catch {
         setError("Unable to fetch media kit assets. Please check your Supabase table or storage.");
       }
       setLoading(false);
@@ -33,7 +35,7 @@ import styles from "./media-kit.module.css";
     if (!file) return;
     setUploadMsg('Uploading...');
     // Example: upload to Supabase Storage bucket 'media-kit'
-    const { data, error } = await supabase.storage.from('media-kit').upload(file.name, file);
+    const { error } = await supabase.storage.from('media-kit').upload(file.name, file);
     if (error) setUploadMsg(error.message);
     else setUploadMsg('Upload successful!');
   };
@@ -51,9 +53,10 @@ import styles from "./media-kit.module.css";
         ))}
       </ul>
       <form onSubmit={handleUpload} className={styles.mediaForm}>
-        <input type="file" onChange={e => {
+        <label htmlFor="media-upload" className={styles.mediaLabel}>Upload file:</label>
+        <input id="media-upload" type="file" onChange={e => {
           if (e.target.files && e.target.files[0]) setFile(e.target.files[0]);
-        }} />
+        }} title="Select file to upload" />
         <button type="submit">Upload</button>
       </form>
       <div>{uploadMsg}</div>

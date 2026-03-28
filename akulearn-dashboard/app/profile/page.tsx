@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
 import styles from "./profile.module.css";
 
-  type User = { email: string };
+type User = { email: string };
+
+export default function ProfilePage() {
   const [user, setUser] = useState<User | null>(null);
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState("");

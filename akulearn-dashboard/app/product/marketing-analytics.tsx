@@ -1,4 +1,3 @@
-export default MarketingAnalytics;
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
@@ -7,7 +6,9 @@ import dynamic from "next/dynamic";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-  type Campaign = { id: string; name?: string; engagement?: number; reach?: number };
+type Campaign = { id: string; name?: string; engagement?: number; reach?: number };
+
+export default function MarketingAnalytics() {
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -21,7 +22,7 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
         const { data, error } = await supabase.from('marketing_campaigns').select('*');
         if (error) throw error;
         setCampaigns(data || []);
-      } catch (err) {
+      } catch {
         setError("Unable to fetch marketing analytics. Please check your Supabase table and permissions.");
       }
       setLoading(false);

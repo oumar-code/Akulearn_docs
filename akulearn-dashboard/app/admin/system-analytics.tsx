@@ -1,4 +1,3 @@
-export default SystemAnalyticsDashboard;
 "use client";
 import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabaseClient";
@@ -7,7 +6,9 @@ import dynamic from "next/dynamic";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-  type UserStat = { id: string; date?: string; active_users?: number; new_signups?: number };
+type UserStat = { id: string; date?: string; active_users?: number; new_signups?: number };
+
+export default function SystemAnalyticsDashboard() {
   const [userStats, setUserStats] = useState<UserStat[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
