@@ -1,0 +1,20 @@
+.dashboardBox {
+  margin-top: 24px;
+  background: #fffde7;
+  padding: 16px;
+  border-radius: 8px;
+}
+.errorText {
+  color: red;
+}
+.flexRow {
+  display: flex;
+  gap: 32px;
+}
+.flexCol {
+  flex: 1;
+}
+.tableFull {
+  width: 100%;
+  margin-top: 8px;
+}
