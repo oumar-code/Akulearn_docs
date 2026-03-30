@@ -127,6 +127,11 @@ class ESIMService:
 
         return self._record_to_response(record)
 
+    async def is_deactivated(self, iccid: str) -> bool:
+        """Return True when the profile exists and has DEACTIVATED status."""
+        record = _profile_store.get(iccid)
+        return record is not None and record.get("status") == ESIMStatus.DEACTIVATED
+
     async def deactivate(self, iccid: str) -> ESIMDeactivateResponse:
         """Mark the eSIM profile as DEACTIVATED.
 

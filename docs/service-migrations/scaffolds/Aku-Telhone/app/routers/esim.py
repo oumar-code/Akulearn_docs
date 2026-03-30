@@ -114,10 +114,7 @@ async def switch_network(iccid: str, body: NetworkSwitchRequest) -> NetworkSwitc
             detail=f"eSIM profile '{iccid}' not found",
         )
 
-    from app.services.ota import _profile_store
-
-    profile = _profile_store.get(iccid, {})
-    if profile.get("status") == ESIMStatus.DEACTIVATED:
+    if await esim_service.is_deactivated(iccid):
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail="Cannot switch network on a deactivated eSIM profile",
@@ -198,10 +195,7 @@ async def trigger_ota_push(iccid: str, body: OTAPushRequest) -> OTAPushAccepted:
             detail=f"eSIM profile '{iccid}' not found",
         )
 
-    from app.services.ota import _profile_store
-
-    profile = _profile_store.get(iccid, {})
-    if profile.get("status") == ESIMStatus.DEACTIVATED:
+    if await esim_service.is_deactivated(iccid):
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail="Cannot push OTA to a deactivated eSIM profile",
