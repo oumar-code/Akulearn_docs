@@ -1,0 +1,3 @@
+# Extra dependencies for Aku-EdgeHub (append to base requirements.txt)
+aiosqlite>=0.20.0
+httpx>=0.27.0
