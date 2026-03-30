@@ -1,5 +1,16 @@
 # Akulearn Backend Development Team Handbook
 
+## ✅ Confirmed Tech Stack Decision
+
+> **All Aku Platform backend microservices use Python 3.11 / FastAPI.**
+
+This is the final, confirmed decision. Every service repo (`Aku-EdgeHub`, `Aku-SuperHub`, `Aku-IGHub`, `Akudemy`, `AkuAI`, `AkuTutor`, `AkuWorkspace`, `Aku-DaaS`, `Aku-Telhone`) must be implemented in Python/FastAPI.
+
+Node.js stubs that were scaffolded early in each repo must be replaced. Follow the full migration guide:
+👉 [`docs/service-templates/python-fastapi-bootstrap.md`](../service-templates/python-fastapi-bootstrap.md)
+
+---
+
 ## Onboarding
 
 Welcome to the Akulearn backend team! Our mission is to build scalable, secure, and reliable services that power the Akulearn learning ecosystem. New team members should:
@@ -7,6 +18,7 @@ Welcome to the Akulearn backend team! Our mission is to build scalable, secure, 
 - Review the Akulearn project vision, architecture overview, and ADRs
 - Set up local development environment (see README and onboarding docs)
 - Familiarize yourself with our codebase, microservices, and API contracts
+- Read the [Ecosystem Map](../ecosystem-map.md) for the full picture of all repos and their roles
 - Join team communication channels and introduce yourself
 
 ## Architecture Principles
@@ -14,7 +26,7 @@ Welcome to the Akulearn backend team! Our mission is to build scalable, secure, 
 - **Microservices:** Each service is independently deployable, with clear boundaries and responsibilities
 - **API-First:** All APIs are designed and documented before implementation (OpenAPI/Swagger)
 - **Event-Driven:** Kafka is used for asynchronous communication and decoupling
-- **Polyglot Persistence:** PostgreSQL for transactional data, MongoDB for flexible content, IPFS/Filecoin for large files
+- **Polyglot Persistence:** PostgreSQL for transactional data, Redis for caching, IPFS/Filecoin for large files
 - **Security:** JWT authentication, RBAC, encrypted communication, and secrets management
 - **Containerization:** Docker and Kubernetes for deployment, scaling, and management
 

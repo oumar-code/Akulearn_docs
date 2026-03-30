@@ -65,7 +65,7 @@ git worktree prune          # clean up stale references
 
 ## CI/CD and the Main Worktree
 
-All GitHub Actions workflows that deploy live services (`docs-deploy.yml`, `connected_backend_gcp_deploy.yml`, `projector_hub_gcp_deploy.yml`, etc.) are scoped to `branches: [main]`. This means:
+All GitHub Actions workflows that deploy live services (`docs-deploy.yml`, `vercel-deploy.yml`, etc.) are scoped to `branches: [main]`. This means:
 
 - **The main worktree is the deployment gate.** Only code merged to `main` is deployed.
 - Workflows use `fetch-depth: 0` where full git history is required (e.g. changelog generation, diff-based checks, worktree comparisons).
@@ -78,10 +78,9 @@ Workflows in this repo are path-filtered so that only the jobs relevant to a par
 | Workflow | Trigger path(s) |
 |---|---|
 | `docs-deploy.yml` | `docs/**`, `mkdocs.yml` |
-| `connected_backend_gcp_deploy.yml` | `connected_stack/**` |
-| `projector_hub_ci.yml` | `unconnected_stack/**` |
-| `demo-ci.yml` | `mlops/**`, `requirements.txt` |
-| `ci-data-sanitizer.yml` | `infra/examples/**`, `tests/**` |
+| `vercel-deploy.yml` | `akulearn-dashboard/**` |
+| `render-mermaid.yml` | `docs/**/*.md` |
+| `automation.yml` | Nightly schedule |
 
 ---
 
@@ -95,6 +94,54 @@ main (main worktree — always deployable)
 ```
 
 Feature and docs branches are developed in **linked worktrees** and merged to `main` via Pull Requests. The main worktree never accumulates WIP commits.
+
+---
+
+## Active Service Repositories
+
+This monorepo (`Akulearn_docs`) is the documentation and frontend hub. The following separate repos contain the service implementations. Each must be developed independently and linked back to this repo's specs via `docs/ecosystem-map.md`.
+
+### Backend Services (Python / FastAPI)
+
+| Repo | Tier / Role | GitHub |
+|------|-------------|--------|
+| `Aku-EdgeHub` | Tier 1 — Offline edge server, local AI, device sync | https://github.com/oumar-code/Aku-EdgeHub |
+| `Aku-SuperHub` | Tier 2 — Regional analytics, fleet management | https://github.com/oumar-code/Aku-SuperHub |
+| `Aku-IGHub` | Tier 3 — Global gateway, Aku Coin clearing, credentials | https://github.com/oumar-code/Aku-IGHub |
+| `Akudemy` | Aku Learn service — content delivery, offline sync | https://github.com/oumar-code/Akudemy |
+| `AkuAI` | Shared AI/ML inference layer | https://github.com/oumar-code/AkuAI |
+| `AkuTutor` | AI Tutor — curriculum Q&A, feedback loops | https://github.com/oumar-code/AkuTutor |
+| `AkuWorkspace` | AI-Native Productivity Suite | https://github.com/oumar-code/AkuWorkspace |
+| `Aku-DaaS` | Data governance — anonymised dataset pipelines | https://github.com/oumar-code/Aku-DaaS |
+| `Aku-Telhone` | eSIM provisioning — OTA SIM lifecycle, MVNO | https://github.com/oumar-code/Aku-Telhone |
+
+### Frontend (Next.js — canonical inside this monorepo)
+
+| Location | Role |
+|----------|------|
+| `akulearn-dashboard/` (this repo) | **Source of truth** — all dashboard and marketing pages |
+
+### Mobile (Kotlin Multiplatform)
+
+| Repo | Role |
+|------|------|
+| `KOTLIN MULTIPLATFORM/` (this repo — migrating) | KMP shared library — migrating to `oumar-code/Aku-Mobile` |
+| `Aku-Mobile` (to create) | Standalone KMP repo for Android + iOS |
+
+---
+
+## Working Across Repos with Worktrees
+
+When you need to work on a service repo alongside this docs repo simultaneously:
+
+```bash
+# Clone the service repo as a worktree sibling
+cd ..
+git clone https://github.com/oumar-code/Aku-EdgeHub
+# Then use separate terminals for each repo
+```
+
+Use the service spec from `docs/services/` or `docs/components/` in this monorepo as the contract while implementing in the service repo.
 
 ---
 
@@ -128,3 +175,4 @@ git worktree lock <path> --reason "active sprint"
 - Add worktree paths (e.g. `../akulearn-*/`) to your global `.gitignore_global` so they are never accidentally staged.
 - CI uses `fetch-depth: 0` to allow `git log`, `git diff main...HEAD`, and other history-aware commands to work correctly inside any worktree.
 - For large parallel tasks (e.g. generating content while also working on API changes), separate worktrees prevent merge conflicts and keep each concern isolated.
+- All service contracts (API specs, schemas, architecture decisions) live in **this repo's `docs/`** — always update the docs before or alongside the service implementation.

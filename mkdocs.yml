@@ -30,7 +30,10 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Ecosystem Map: ecosystem-map.md
   - Core Concepts: core_concepts.md
+  - Service Templates:
+      - Python/FastAPI Bootstrap: service-templates/python-fastapi-bootstrap.md
   - Pilots & Playbooks:
       - Pilot Projects & Demos: pilot_projects_and_demos.md
       - Clean Energy + Edge Computing: pilot_playbook_clean_energy_edge.md
@@ -64,6 +67,7 @@ nav:
       - Aku Workspace: services/aku-workspace.md
   - Backend:
       - Overview: 02-backend/index.md
+      - Python/FastAPI Bootstrap: service-templates/python-fastapi-bootstrap.md
       - Login & Dashboard Access: 02-backend/platform_login.md
       - API Specs: 02-backend/api-specs.md
       - API Specs (Full): api_specs.md

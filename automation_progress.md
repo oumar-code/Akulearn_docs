@@ -121,4 +121,107 @@ This markdown file will record the step-by-step progress of implementing automat
 
 ---
 
-_Next steps: Begin with AkuAI. Mark each step as complete as we progress._
+## Migration to Python / FastAPI
+
+**Decision date: 2026-03-30**  
+All Aku Platform backend services are migrating from Node.js stubs to **Python 3.11 / FastAPI**.  
+Migration guide: `docs/service-templates/python-fastapi-bootstrap.md`
+
+### Per-Repo Migration Status
+
+#### Aku-EdgeHub
+- [ ] Remove Node.js files
+- [ ] Scaffold Python/FastAPI project structure
+- [ ] Implement offline-first content cache, sync, device registration endpoints
+- [ ] Add Dockerfile (multi-stage, non-root)
+- [ ] Add `docker-compose.yml`
+- [ ] Add `.github/workflows/ci.yml` (pytest + ruff + docker build)
+- [ ] Update README with Python/FastAPI instructions
+
+#### Aku-SuperHub
+- [ ] Remove Node.js files
+- [ ] Scaffold Python/FastAPI project structure
+- [ ] Implement fleet management, regional analytics, model fine-tuning endpoints
+- [ ] Add Dockerfile, docker-compose, CI workflow
+- [ ] Update README
+
+#### Aku-IGHub
+- [ ] Remove Node.js/TypeScript files
+- [ ] Scaffold Python/FastAPI project structure
+- [ ] Implement credential registry, Aku Coin clearing, anonymised metadata exchange endpoints
+- [ ] Add Dockerfile, docker-compose, CI workflow
+- [ ] Update README
+
+#### Akudemy
+- [ ] Remove Node.js files
+- [ ] Scaffold Python/FastAPI project structure
+- [ ] Implement content sync API, teacher/admin tools, blockchain credential issuance
+- [ ] Add Dockerfile, docker-compose, CI workflow
+- [ ] Update README
+
+#### AkuAI
+- [ ] Remove Node.js files
+- [ ] Scaffold Python/FastAPI project structure
+- [ ] Implement shared inference endpoints (text-gen, classify, summarize, Gemma relay)
+- [ ] Add Dockerfile, docker-compose, CI workflow
+- [ ] Update README
+
+#### AkuTutor
+- [ ] Remove Node.js files
+- [ ] Scaffold Python/FastAPI project structure
+- [ ] Implement AI Tutor session, Q&A, feedback endpoints (calls AkuAI — no local model)
+- [ ] Add Dockerfile, docker-compose, CI workflow
+- [ ] Update README
+
+#### AkuWorkspace
+- [ ] Remove Node.js files
+- [ ] Scaffold Python/FastAPI project structure
+- [ ] Implement NL workflow orchestration, AI Assistant abstraction layer
+- [ ] Add Dockerfile, docker-compose, CI workflow
+- [ ] Update README
+
+#### Aku-DaaS
+- [ ] Remove Node.js files (note: existing stub has wrong domain — "device management", not data governance)
+- [ ] Scaffold Python/FastAPI project structure
+- [ ] Implement dataset ingestion, anonymisation pipeline, IG-Hub metadata publishing
+- [ ] Add Dockerfile, docker-compose, CI workflow
+- [ ] Update README
+
+#### Aku-Telhone
+- [ ] Remove Node.js files (note: existing stub has wrong domain — generic telephony, not eSIM)
+- [ ] Scaffold Python/FastAPI project structure
+- [ ] Implement eSIM provisioning, OTA SIM lifecycle, network switching, device attestation
+- [ ] Add Dockerfile, docker-compose, CI workflow
+- [ ] Update README
+
+---
+
+## Frontend Consolidation
+
+**Decision: `akulearn-dashboard/` (inside Akulearn_docs) is the canonical frontend.**
+
+| Repo | Action |
+|------|--------|
+| `akulearn-dashboard/` (this monorepo) | **Active** — Vercel deployed, all new work goes here |
+| `Akudemy-frontend` | Archive — minimal stub, no active development |
+| `akulearn-dashB` | Archive — bootstrapped Next.js, no active development |
+| `Akulearn-dashboard` | Archive — empty shell |
+
+- [ ] Archive `Akudemy-frontend`
+- [ ] Archive `akulearn-dashB`
+- [ ] Archive `Akulearn-dashboard`
+
+---
+
+## KMP Mobile Migration
+
+**Decision: `KOTLIN MULTIPLATFORM/` will be moved to `oumar-code/Aku-Mobile`.**
+
+- [ ] Create `oumar-code/Aku-Mobile` repository
+- [ ] Move `KOTLIN MULTIPLATFORM/` contents to new repo
+- [ ] Update `docs/03-mobile/index.md` with link to `Aku-Mobile`
+- [ ] Remove `KOTLIN MULTIPLATFORM/` from `Akulearn_docs` after migration confirmed
+
+---
+
+_Last updated: 2026-03-30 — Python/FastAPI migration, frontend consolidation, KMP migration decisions recorded._
