@@ -122,7 +122,8 @@ All OpenAPI specs live in this repo:
 | Database schemas | `docs/02-backend/database-schemas.md` |
 | Containerisation spec | `docs/05-cross-cutting/containerization.md` |
 
-A dedicated `aku-platform-contracts` repo (OpenAPI YAML files, Pydantic models, Kafka schemas) is recommended as the next structural step once all services are on Python/FastAPI.
+A dedicated `aku-platform-contracts` repo (OpenAPI YAML files, Pydantic models, Kafka schemas) is planned to avoid duplication of shared types across 9 service repos.  
+**Proposal & implementation checklist:** [`docs/aku-platform-contracts.md`](aku-platform-contracts.md)
 
 ---
 

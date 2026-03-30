@@ -1,6 +1,12 @@
 # Akulearn Mobile Development Guidelines
 
-This section will contain specific guidelines, architecture patterns (such as MVVM), and best practices for developing the Akulearn mobile application. Topics will include:
+> 📱 **KMP module is migrating to a dedicated repo.**  
+> New mobile work goes to **[`oumar-code/Aku-Mobile`](https://github.com/oumar-code/Aku-Mobile)** (pending creation).  
+> Migration runbook: [`docs/03-mobile/kmp-migration-runbook.md`](kmp-migration-runbook.md)
+
+---
+
+This section contains guidelines, architecture patterns (such as MVVM), and best practices for developing the Akulearn mobile application. Topics will include:
 
 - Recommended architecture and design patterns
 - Offline-first strategies

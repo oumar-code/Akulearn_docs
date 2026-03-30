@@ -225,3 +225,58 @@ Migration guide: `docs/service-templates/python-fastapi-bootstrap.md`
 ---
 
 _Last updated: 2026-03-30 — Python/FastAPI migration, frontend consolidation, KMP migration decisions recorded._
+
+---
+
+## Service Migration Scaffolds
+
+Ready-to-apply migration resources are in `docs/service-migrations/`:
+
+| Resource | Location |
+|----------|----------|
+| Priority-ordered migration tracker | `docs/service-migrations/index.md` |
+| Parameterised bootstrap script | `docs/service-migrations/bootstrap.sh` |
+| Frontend archive notices | `docs/service-migrations/frontend-archive-notices.md` |
+| KMP migration runbook | `docs/03-mobile/kmp-migration-runbook.md` |
+| Contracts repo proposal | `docs/aku-platform-contracts.md` |
+
+### Backend Service Migration Status (Priority Order)
+
+| Priority | Repo | Status |
+|----------|------|--------|
+| 1 | [AkuAI](https://github.com/oumar-code/AkuAI) | ⬜ Pending |
+| 2 | [Akudemy](https://github.com/oumar-code/Akudemy) | ⬜ Pending |
+| 3 | [Aku-EdgeHub](https://github.com/oumar-code/Aku-EdgeHub) | ⬜ Pending |
+| 4a | [Aku-IGHub](https://github.com/oumar-code/Aku-IGHub) | ⬜ Pending |
+| 4b | [Aku-Telhone](https://github.com/oumar-code/Aku-Telhone) | ⬜ Pending |
+| 5a | [Aku-SuperHub](https://github.com/oumar-code/Aku-SuperHub) | ⬜ Pending |
+| 5b | [AkuTutor](https://github.com/oumar-code/AkuTutor) | ⬜ Pending |
+| 5c | [AkuWorkspace](https://github.com/oumar-code/AkuWorkspace) | ⬜ Pending |
+| 5d | [Aku-DaaS](https://github.com/oumar-code/Aku-DaaS) | ⬜ Pending |
+
+### Frontend Consolidation Status
+
+| Action | Status |
+|--------|--------|
+| Archive `Akudemy-frontend` | ⬜ Pending |
+| Archive `akulearn-dashB` | ⬜ Pending |
+| Archive `Akulearn-dashboard` | ⬜ Pending |
+
+### KMP Mobile Migration Status
+
+| Action | Status |
+|--------|--------|
+| Create `oumar-code/Aku-Mobile` repository | ⬜ Pending |
+| Copy `KOTLIN MULTIPLATFORM/` to new repo | ⬜ Pending |
+| Add CI workflow to `Aku-Mobile` | ⬜ Pending |
+| Update `docs/03-mobile/index.md` | ✅ Done |
+| Update `docs/ecosystem-map.md` | ✅ Done |
+| Remove `KOTLIN MULTIPLATFORM/` from `Akulearn_docs` | ⬜ Pending (after confirmation) |
+
+### Contracts Repo Status
+
+| Action | Status |
+|--------|--------|
+| Create `oumar-code/aku-platform-contracts` | ⬜ Pending (after AkuAI migration) |
+| Define initial Pydantic schemas (inference, content, credentials) | ⬜ Pending |
+| Publish to GitHub Packages | ⬜ Pending |
