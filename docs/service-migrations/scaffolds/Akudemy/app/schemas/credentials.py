@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import StrEnum
 from uuid import UUID
 
@@ -41,7 +41,7 @@ class CredentialIssueRequest(BaseModel):
         default_factory=dict,
         description="Arbitrary key-value pairs embedded in the on-chain token URI.",
     )
-    issued_at: datetime = Field(default_factory=datetime.utcnow)
+    issued_at: datetime = Field(default_factory=lambda: datetime.now(tz=timezone.utc))
 
 
 class CredentialIssueResponse(BaseModel):

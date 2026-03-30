@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import os
 from datetime import datetime, timezone
 from uuid import UUID
 
@@ -29,8 +30,6 @@ router = APIRouter(prefix="/api/v1", tags=["content"])
 
 async def get_redis() -> aioredis.Redis | None:  # pragma: no cover
     """Return an async Redis client, or None if REDIS_URL is not configured."""
-    import os
-
     redis_url = os.getenv("REDIS_URL")
     if not redis_url:
         logger.warning("REDIS_URL not set; Redis cache disabled for this request.")
