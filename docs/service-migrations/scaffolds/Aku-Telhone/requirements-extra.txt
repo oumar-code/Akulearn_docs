@@ -1,0 +1,28 @@
+# Aku-Telhone extra dependencies
+# Install alongside the base requirements.txt:
+#   pip install -r requirements.txt -r requirements-extra.txt
+
+# ── HTTP client (IGHub attestation, MVNO SM-DP+, OTA platform) ───────────────
+httpx[http2]>=0.27.0                   # async HTTP/2 client for all outbound service calls
+
+# ── Settings / environment ────────────────────────────────────────────────────
+pydantic-settings>=2.3.0               # reads .env and typed settings via BaseSettings
+
+# ── QR code generation (activation code rendering) ───────────────────────────
+qrcode[pil]>=7.4.2                     # generate QR codes for eSIM LPA activation codes
+Pillow>=10.3.0                         # required image backend for qrcode[pil]
+
+# ── JWT / auth ────────────────────────────────────────────────────────────────
+python-jose[cryptography]>=3.3.0       # JWT decode & verification (RS256 / ES256)
+
+# ── Async task management ─────────────────────────────────────────────────────
+# asyncio is stdlib; no extra dep needed for asyncio.create_task OTA jobs.
+
+# ── MVNO / eSIM platform SDKs ────────────────────────────────────────────────
+# Uncomment and pin when integrating with a real SM-DP+ or MVNO OTA platform:
+# telnyx>=1.0.0                        # Telnyx eSIM SDK (if using Telnyx MVNO)
+# twilio>=9.0.0                        # Twilio Super SIM SDK (if using Twilio MVNO)
+
+# ── Rate limiting ─────────────────────────────────────────────────────────────
+slowapi>=0.1.9                         # FastAPI rate limiting middleware (wraps limits)
+redis[hiredis]>=5.0.0                  # async Redis — OTA task status store in production
