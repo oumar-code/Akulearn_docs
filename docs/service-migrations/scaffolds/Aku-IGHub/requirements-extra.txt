@@ -1,0 +1,24 @@
+# Aku-IGHub extra dependencies
+# Install alongside the base requirements.txt:
+#   pip install -r requirements.txt -r requirements-extra.txt
+
+# ── JWT / auth ────────────────────────────────────────────────────────────────
+python-jose[cryptography]>=3.3.0       # JWT decode & verification (RS256 / ES256)
+passlib[bcrypt]>=1.7.4                 # password hashing (service-to-service API keys)
+
+# ── Verifiable Credentials ────────────────────────────────────────────────────
+PyJWT>=2.8.0                           # lightweight JWT fallback / VC signing stub
+cryptography>=42.0.0                   # Ed25519 / P-256 key operations for DID docs
+
+# ── HTTP client (DaaS forwarding, DID resolution) ────────────────────────────
+httpx[http2]>=0.27.0                   # async HTTP/2 client used in metadata & compliance
+
+# ── Policy engine integration ─────────────────────────────────────────────────
+# Uncomment when connecting to an OPA / Cedar sidecar:
+# opa-python-client>=0.3.0
+
+# ── Financial / decimal precision ────────────────────────────────────────────
+# Decimal is stdlib; no extra dep needed for AKU Coin amounts.
+
+# ── Idempotency / distributed cache (production replacement for in-memory dict)
+redis[hiredis]>=5.0.0                  # async Redis for idempotency store & distributed lock
