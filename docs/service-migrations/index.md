@@ -4,11 +4,30 @@ Priority-ordered tracker for migrating all 9 Aku Platform backend services from 
 
 > **Source of truth:** [`docs/ecosystem-map.md`](../ecosystem-map.md)  
 > **Bootstrap script:** [`docs/service-migrations/bootstrap.sh`](bootstrap.sh)  
-> **Full playbook:** [`docs/service-templates/python-fastapi-bootstrap.md`](../service-templates/python-fastapi-bootstrap.md)
+> **Full playbook:** [`docs/service-templates/python-fastapi-bootstrap.md`](../service-templates/python-fastapi-bootstrap.md)  
+> **Master automation script:** [`docs/service-migrations/apply-migrations.sh`](apply-migrations.sh)
 
 ---
 
 ## How to Apply a Migration
+
+### Option A — Automate all services at once (recommended)
+
+```bash
+# From the Akulearn_docs repo root (requires gh CLI + GitHub auth)
+chmod +x docs/service-migrations/apply-migrations.sh
+
+# Dry-run first to preview all steps
+./docs/service-migrations/apply-migrations.sh --all --dry-run
+
+# Apply for real — clones each repo, runs bootstrap, opens PRs
+./docs/service-migrations/apply-migrations.sh --all
+
+# Or apply a single service
+./docs/service-migrations/apply-migrations.sh AkuAI
+```
+
+### Option B — Manual steps per service
 
 ```bash
 # 1. Clone the target service repo alongside this docs repo
@@ -23,8 +42,11 @@ cp ../Akulearn_docs/docs/service-migrations/bootstrap.sh .
 chmod +x bootstrap.sh
 ./bootstrap.sh <service-name>
 
-# 4. Apply service-specific domain endpoints (see per-service notes below)
-# 5. Commit and open a PR in the service repo
+# 4. Overlay service-specific scaffold files
+cp -r ../Akulearn_docs/docs/service-migrations/scaffolds/<service-name>/. .
+
+# 5. Apply service-specific domain endpoints (see per-service notes below)
+# 6. Commit and open a PR in the service repo
 git checkout -b feat/python-fastapi-migration
 git add .
 git commit -m "feat: migrate to Python 3.11 / FastAPI"
