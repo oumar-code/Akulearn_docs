@@ -236,6 +236,7 @@ Ready-to-apply migration resources are in `docs/service-migrations/`:
 |----------|----------|
 | Priority-ordered migration tracker | `docs/service-migrations/index.md` |
 | Parameterised bootstrap script | `docs/service-migrations/bootstrap.sh` |
+| **Master automation script (apply all 9 services)** | `docs/service-migrations/apply-migrations.sh` |
 | Frontend archive notices | `docs/service-migrations/frontend-archive-notices.md` |
 | KMP migration runbook | `docs/03-mobile/kmp-migration-runbook.md` |
 | Contracts repo proposal | `docs/aku-platform-contracts.md` |
@@ -243,7 +244,8 @@ Ready-to-apply migration resources are in `docs/service-migrations/`:
 ### Backend Service Migration Status (Priority Order)
 
 > **Scaffolds ready** — all 9 service scaffold packages are in `docs/service-migrations/scaffolds/<ServiceName>/`.  
-> Apply to each repo with: `./bootstrap.sh <ServiceName>` then overlay the matching scaffold directory.
+> **One-command apply:** `./docs/service-migrations/apply-migrations.sh --all` (requires `gh` CLI + GitHub auth).  
+> Manual: `./bootstrap.sh <ServiceName>` then overlay the matching scaffold directory.
 
 | Priority | Repo | Scaffold | PR Status |
 |----------|------|----------|-----------|
