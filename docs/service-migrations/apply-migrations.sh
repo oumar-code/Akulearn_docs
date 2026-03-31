@@ -170,9 +170,34 @@ migrate_service() {
     return
   fi
 
-  # 2. Run bootstrap.sh inside the cloned repo
-  echo "│  Step 2: Run bootstrap.sh ${service}"
-  run cp "${BOOTSTRAP_SCRIPT}" "${work_dir}/bootstrap.sh"
+  # 2. Remove legacy Node.js / TypeScript source files that would conflict with the
+  #    Python scaffold (common in repos that previously had a Node.js stub).
+  #    We keep .git/, .github/, and any docs so history is preserved.
+  echo "│  Step 2: Remove legacy Node.js source dirs (if present)"
+  local legacy_dirs=(src routes controllers middleware models views node_modules)
+  local legacy_files=(app.js app.ts index.js index.ts server.js server.ts
+                      package.json package-lock.json yarn.lock tsconfig.json
+                      .eslintrc.js .eslintrc.json .eslintrc.yml jest.config.js
+                      jest.config.ts nodemon.json)
+  if [[ "$DRY_RUN" == false ]]; then
+    pushd "${work_dir}" > /dev/null
+    for d in "${legacy_dirs[@]}"; do
+      [[ -d "$d" ]] && { echo "│    removing dir: $d"; rm -rf "$d"; }
+    done
+    for f in "${legacy_files[@]}"; do
+      [[ -e "$f" ]] && { echo "│    removing file: $f"; rm -f "$f"; }
+    done
+    # Remove read-only flag from any remaining files so cp can overwrite them
+    chmod -R u+w . 2>/dev/null || true
+    popd > /dev/null
+  else
+    echo "  [dry-run] remove legacy Node.js dirs/files inside ${work_dir}"
+    echo "  [dry-run] chmod -R u+w ${work_dir}"
+  fi
+
+  # 3. Run bootstrap.sh inside the cloned repo
+  echo "│  Step 3: Run bootstrap.sh ${service}"
+  run cp -f "${BOOTSTRAP_SCRIPT}" "${work_dir}/bootstrap.sh"
   if [[ "$DRY_RUN" == false ]]; then
     pushd "${work_dir}" > /dev/null
     bash bootstrap.sh "${service}"
@@ -185,17 +210,18 @@ migrate_service() {
     echo "  [dry-run] popd"
   fi
 
-  # 3. Overlay service-specific scaffold files (if available)
+  # 4. Overlay service-specific scaffold files (if available)
+  #    Use -rf to force-overwrite any read-only files left by the clone.
   local scaffold_src="${SCAFFOLDS_DIR}/${service}"
   if [[ -d "$scaffold_src" ]]; then
-    echo "│  Step 3: Overlay scaffold from ${scaffold_src}"
-    run cp -r "${scaffold_src}/." "${work_dir}/"
+    echo "│  Step 4: Overlay scaffold from ${scaffold_src}"
+    run cp -rf "${scaffold_src}/." "${work_dir}/"
   else
-    echo "│  Step 3: No scaffold overlay found for ${service} (skipping overlay)"
+    echo "│  Step 4: No scaffold overlay found for ${service} (skipping overlay)"
   fi
 
-  # 4. Create migration branch
-  echo "│  Step 4: Create branch ${BRANCH_NAME}"
+  # 5. Create migration branch
+  echo "│  Step 5: Create branch ${BRANCH_NAME}"
   if [[ "$DRY_RUN" == false ]]; then
     pushd "${work_dir}" > /dev/null
     git checkout -b "${BRANCH_NAME}"
@@ -204,8 +230,8 @@ migrate_service() {
     echo "  [dry-run] pushd ${work_dir} && git checkout -b ${BRANCH_NAME} && popd"
   fi
 
-  # 5. Stage and commit all generated files
-  echo "│  Step 5: Commit scaffold"
+  # 6. Stage and commit all generated files
+  echo "│  Step 6: Commit scaffold"
   if [[ "$DRY_RUN" == false ]]; then
     pushd "${work_dir}" > /dev/null
     git add .
@@ -215,8 +241,8 @@ migrate_service() {
     echo "  [dry-run] pushd ${work_dir} && git add . && git commit -m '${COMMIT_MSG}' && popd"
   fi
 
-  # 6. Push the branch
-  echo "│  Step 6: Push ${BRANCH_NAME}"
+  # 7. Push the branch
+  echo "│  Step 7: Push ${BRANCH_NAME}"
   if [[ "$DRY_RUN" == false ]]; then
     pushd "${work_dir}" > /dev/null
     git push origin "${BRANCH_NAME}"
@@ -225,8 +251,8 @@ migrate_service() {
     echo "  [dry-run] pushd ${work_dir} && git push origin ${BRANCH_NAME} && popd"
   fi
 
-  # 7. Open a pull request
-  echo "│  Step 7: Open pull request"
+  # 8. Open a pull request
+  echo "│  Step 8: Open pull request"
   if [[ "$DRY_RUN" == false ]]; then
     pushd "${work_dir}" > /dev/null
     gh pr create \
@@ -240,7 +266,7 @@ migrate_service() {
     echo "  [dry-run] gh pr create --repo ${GITHUB_ORG}/${service} --base main --head ${BRANCH_NAME} --title '${PR_TITLE}'"
   fi
 
-  # 8. Clean up temp directory
+  # 9. Clean up temp directory
   if [[ "$DRY_RUN" == false ]]; then
     rm -rf "${work_dir}"
   fi
