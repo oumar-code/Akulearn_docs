@@ -50,7 +50,6 @@
 
 # Exclude root-level JSON data/content files but keep vercel.json
 /puppeteer-config.json
-/package.json
 /package-lock.json
 
 # Go source files
