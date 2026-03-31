@@ -34,6 +34,8 @@ myenv/
 !gradlew
 !gradlew.bat
 !build-all.sh
+# Exceptions: service migration scripts
+!docs/service-migrations/*.sh
 !setup.sh
 !docs/service-migrations/bootstrap.sh
 
