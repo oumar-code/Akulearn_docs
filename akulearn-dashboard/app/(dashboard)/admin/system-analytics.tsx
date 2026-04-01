@@ -6,8 +6,9 @@ import dynamic from "next/dynamic";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
+type UserStat = { id: string; date?: string; active_users?: number; new_signups?: number };
+
 export default function SystemAnalyticsDashboard() {
-  type UserStat = { id: string; date?: string; active_users?: number; new_signups?: number };
   const [userStats, setUserStats] = useState<UserStat[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");

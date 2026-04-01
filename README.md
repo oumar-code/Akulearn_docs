@@ -5,6 +5,39 @@
 
 Welcome to the Akulearn documentation repository! This space contains all official documentation for the Akulearn EdTech platform, designed to empower learners and educators across Nigeria and Africa.
 
+## Key Platform Decisions
+
+| Decision | Choice |
+|----------|--------|
+| **Backend language** | Python 3.11 / FastAPI (all services) |
+| **Frontend / Dashboard** | `akulearn-dashboard/` in this monorepo (Next.js 14) — canonical Vercel deployment |
+| **Mobile** | Kotlin Multiplatform — migrating to `oumar-code/Aku-Mobile` |
+| **Documentation** | This repo (`Akulearn_docs`) — MkDocs site on GitHub Pages |
+
+## Ecosystem Repository Map
+
+> Full details: [`docs/ecosystem-map.md`](docs/ecosystem-map.md)
+
+### Backend Services (Python / FastAPI)
+
+| Repo | Role |
+|------|------|
+| [Aku-EdgeHub](https://github.com/oumar-code/Aku-EdgeHub) | Tier 1 — Offline edge server, local AI inference, device sync |
+| [Aku-SuperHub](https://github.com/oumar-code/Aku-SuperHub) | Tier 2 — Regional analytics, fleet management |
+| [Aku-IGHub](https://github.com/oumar-code/Aku-IGHub) | Tier 3 — Global gateway, Aku Coin clearing, credential registry |
+| [Akudemy](https://github.com/oumar-code/Akudemy) | Aku Learn — content delivery, offline sync, blockchain credentials |
+| [AkuAI](https://github.com/oumar-code/AkuAI) | Shared AI/ML inference layer (text-gen, classify, Gemma) |
+| [AkuTutor](https://github.com/oumar-code/AkuTutor) | AI Tutor — curriculum Q&A, feedback loops |
+| [AkuWorkspace](https://github.com/oumar-code/AkuWorkspace) | AI-Native Productivity Suite |
+| [Aku-DaaS](https://github.com/oumar-code/Aku-DaaS) | Data governance — anonymised datasets, IG-Hub publishing |
+| [Aku-Telhone](https://github.com/oumar-code/Aku-Telhone) | eSIM provisioning — OTA SIM lifecycle, MVNO (Telhone brand) |
+
+### Frontend (canonical: this monorepo)
+
+| Location | Role |
+|----------|------|
+| `akulearn-dashboard/` | Marketing site + all dashboard pages — Vercel deployed |
+
 ## Project Overview
 
 Akulearn is an innovative EdTech initiative with a mission to make quality, personalized, and verifiable education universally accessible. Our hybrid learning ecosystem leverages technology—including AI, blockchain, and solar-powered hardware—to deliver engaging, curriculum-aligned content to both connected and underserved communities.
@@ -13,6 +46,8 @@ Akulearn is an innovative EdTech initiative with a mission to make quality, pers
 
 This repository is organized for clarity and ease of navigation:
 
+- **docs/ecosystem-map.md**: Master map of all repos, roles, and status
+- **docs/service-templates/**: Python/FastAPI bootstrap guide for all service repos
 - **docs/00-project-overview/**: Vision, mission, and Phase 1 roadmap
 - **docs/01-architecture/**: System architecture, ADRs, and design documents
 - **docs/02-backend/**: Backend handbook, API specs, and database schemas
@@ -22,6 +57,8 @@ This repository is organized for clarity and ease of navigation:
 - **docs/06-process-methodology/**: Agile/DevOps methodology
 - **docs/07-glossary/**: Glossary of Akulearn terms
 - **docs/images/**: Diagrams and screenshots
+- **akulearn-dashboard/**: Canonical Next.js frontend (source of truth)
+- **KOTLIN MULTIPLATFORM/**: KMP shared library (migrating to `oumar-code/Aku-Mobile`)
 
 ### Strategic Roadmap & Thought Leadership
 - **docs/clean_energy_for_africa.md**: Clean energy research and vision for Africa

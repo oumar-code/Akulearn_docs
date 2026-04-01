@@ -15,6 +15,7 @@ __pycache__/
 *.py
 !team.py
 !supabase_provision.py
+!docs/service-migrations/scaffolds/**/*.py
 *.py[cod]
 *.pyo
 *.pyd
@@ -33,7 +34,10 @@ myenv/
 !gradlew
 !gradlew.bat
 !build-all.sh
+# Exceptions: service migration scripts
+!docs/service-migrations/*.sh
 !setup.sh
+!docs/service-migrations/bootstrap.sh
 
 # Go source
 *.go
@@ -53,6 +57,7 @@ docker-compose*.yml
 *.err
 *.txt
 !requirements.txt
+!docs/service-migrations/scaffolds/**/requirements*.txt
 
 # Editor/IDE
 .idea/

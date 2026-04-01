@@ -30,7 +30,15 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Ecosystem Map: ecosystem-map.md
   - Core Concepts: core_concepts.md
+  - Service Templates:
+      - Python/FastAPI Bootstrap: service-templates/python-fastapi-bootstrap.md
+  - Service Migrations:
+      - Migration Index: service-migrations/index.md
+      - Bootstrap Script: service-migrations/bootstrap.sh
+      - Frontend Archive Notices: service-migrations/frontend-archive-notices.md
+  - Platform Contracts: aku-platform-contracts.md
   - Pilots & Playbooks:
       - Pilot Projects & Demos: pilot_projects_and_demos.md
       - Clean Energy + Edge Computing: pilot_playbook_clean_energy_edge.md
@@ -64,6 +72,7 @@ nav:
       - Aku Workspace: services/aku-workspace.md
   - Backend:
       - Overview: 02-backend/index.md
+      - Python/FastAPI Bootstrap: service-templates/python-fastapi-bootstrap.md
       - Login & Dashboard Access: 02-backend/platform_login.md
       - API Specs: 02-backend/api-specs.md
       - API Specs (Full): api_specs.md
@@ -84,7 +93,9 @@ nav:
           - Munira: 02-backend/munira_dashboard.md
           - Zakwan: 02-backend/zakwan_dashboard.md
           - Balkisu: 02-backend/balkisu_dashboard.md
-  - Mobile App: 03-mobile/index.md
+  - Mobile App:
+      - Overview: 03-mobile/index.md
+      - KMP Migration Runbook: 03-mobile/kmp-migration-runbook.md
   - IoT Projector: 04-iot-projector/index.md
   - AI & ML:
       - AI Tutor: ai_tutor.md

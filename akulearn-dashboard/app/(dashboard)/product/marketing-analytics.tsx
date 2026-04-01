@@ -6,8 +6,9 @@ import dynamic from "next/dynamic";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
+type Campaign = { id: string; name?: string; engagement?: number; reach?: number };
+
 export default function MarketingAnalytics() {
-  type Campaign = { id: string; name?: string; engagement?: number; reach?: number };
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -21,7 +22,7 @@ export default function MarketingAnalytics() {
         const { data, error } = await supabase.from('marketing_campaigns').select('*');
         if (error) throw error;
         setCampaigns(data || []);
-      } catch (err) {
+      } catch {
         setError("Unable to fetch marketing analytics. Please check your Supabase table and permissions.");
       }
       setLoading(false);
