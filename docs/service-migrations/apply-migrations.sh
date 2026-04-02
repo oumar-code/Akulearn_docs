@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 # apply-migrations.sh — Automate Python/FastAPI migration across all Aku Platform services
 #
