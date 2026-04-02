@@ -27,3 +27,4 @@ redis[hiredis]>=5.0.0                  # async Redis for distributed status stor
 # ── Auth (enable when adding JWT gateway auth) ───────────────────────────────
 # python-jose[cryptography]>=3.3.0
 # passlib[bcrypt]>=1.7.4
+aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts@v0.1.0
