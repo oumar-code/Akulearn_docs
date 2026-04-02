@@ -69,15 +69,15 @@ git push origin feat/python-fastapi-migration
 
 | Priority | Repo | Tier / Role | Domain Realignment Needed | Status |
 |----------|------|-------------|--------------------------|--------|
-| 1 | [AkuAI](https://github.com/oumar-code/AkuAI) | Core — shared inference layer | No | ⬜ Pending |
-| 2 | [Akudemy](https://github.com/oumar-code/Akudemy) | Core — content delivery, offline sync | No | ⬜ Pending |
-| 3 | [Aku-EdgeHub](https://github.com/oumar-code/Aku-EdgeHub) | Tier 1 — offline edge server, local AI | No | ⬜ Pending |
-| 4a | [Aku-IGHub](https://github.com/oumar-code/Aku-IGHub) | Tier 3 — global gateway, Aku Coin | **Yes** — stub has generic gateway routes | ⬜ Pending |
-| 4b | [Aku-Telhone](https://github.com/oumar-code/Aku-Telhone) | Core — eSIM provisioning | **Yes** — stub has generic telephony CRUD | ⬜ Pending |
-| 5a | [Aku-SuperHub](https://github.com/oumar-code/Aku-SuperHub) | Tier 2 — regional analytics | No | ⬜ Pending |
-| 5b | [AkuTutor](https://github.com/oumar-code/AkuTutor) | Core — AI Tutor (calls AkuAI) | No | ⬜ Pending |
-| 5c | [AkuWorkspace](https://github.com/oumar-code/AkuWorkspace) | Core — AI productivity suite | No | ⬜ Pending |
-| 5d | [Aku-DaaS](https://github.com/oumar-code/Aku-DaaS) | Core — data governance pipelines | **Yes** — stub has "device management" routes | ⬜ Pending |
+| 1 | [AkuAI](https://github.com/oumar-code/AkuAI) | Core — shared inference layer | No | ✅ Done |
+| 2 | [Akudemy](https://github.com/oumar-code/Akudemy) | Core — content delivery, offline sync | No | ✅ Done |
+| 3 | [Aku-EdgeHub](https://github.com/oumar-code/Aku-EdgeHub) | Tier 1 — offline edge server, local AI | No | ✅ Done |
+| 4a | [Aku-IGHub](https://github.com/oumar-code/Aku-IGHub) | Tier 3 — global gateway, Aku Coin | **Yes** — stub has generic gateway routes | ✅ Done |
+| 4b | [Aku-Telhone](https://github.com/oumar-code/Aku-Telhone) | Core — eSIM provisioning | **Yes** — stub has generic telephony CRUD | ✅ Done |
+| 5a | [Aku-SuperHub](https://github.com/oumar-code/Aku-SuperHub) | Tier 2 — regional analytics | No | ✅ Done |
+| 5b | [AkuTutor](https://github.com/oumar-code/AkuTutor) | Core — AI Tutor (calls AkuAI) | No | ✅ Done |
+| 5c | [AkuWorkspace](https://github.com/oumar-code/AkuWorkspace) | Core — AI productivity suite | No | ✅ Done |
+| 5d | [Aku-DaaS](https://github.com/oumar-code/Aku-DaaS) | Core — data governance pipelines | **Yes** — stub has "device management" routes | ✅ Done |
 
 ---
 
@@ -251,6 +251,9 @@ POST  /api/v1/consent/{user_id}     # update consent
 
 ---
 
-## After Migration: Update This Repo
 
-When a service migration PR is merged, update the status in this table AND in [`automation_progress.md`](../../automation_progress.md) from ⬜ Pending to ✅ Done.
+## After Migration: Archive Scripts & Update Docs
+
+All service migrations are complete and PRs have been merged. Migration scripts have been archived in [`archive/`](archive/). Status tables in this file and in [`automation_progress.md`](../../automation_progress.md) have been updated to ✅ Done.
+
+For future migrations, use the new service templates and onboarding guides. This section and the archive serve as historical reference only.

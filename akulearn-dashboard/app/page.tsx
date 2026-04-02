@@ -1,3 +1,9 @@
+<<<<<<< Updated upstream
+import { redirect } from "next/navigation";
+
+export default function Home() {
+  redirect("/login");
+=======
 import Link from "next/link";
 import styles from "./home.module.css";
 
@@ -215,5 +221,6 @@ export default function Home() {
       </footer>
     </div>
   );
+>>>>>>> Stashed changes
 }
 
