@@ -22,3 +22,4 @@ httpx[http2]>=0.27.0                   # async HTTP/2 client used in metadata & 
 
 # ── Idempotency / distributed cache (production replacement for in-memory dict)
 redis[hiredis]>=5.0.0                  # async Redis for idempotency store & distributed lock
+aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts@v0.1.0
