@@ -29,31 +29,31 @@ This is the single source of truth for all repositories in the Aku Platform ecos
 
 | Repo | Tier | Aku Platform Role | Service Brand | Migration Status |
 |------|------|-------------------|---------------|-----------------|
-| [Aku-EdgeHub](https://github.com/oumar-code/Aku-EdgeHub) | Tier 1 — Edge | Offline-first local server; Wi-Fi hotspot, local AI inference (Gemma), SQLite store, cloud sync | — | Node.js stub → **needs Python/FastAPI migration** |
-| [Aku-SuperHub](https://github.com/oumar-code/Aku-SuperHub) | Tier 2 — Regional | Regional analytics aggregation, Edge Hub fleet management, model fine-tuning, regional API gateway | — | Node.js stub → **needs Python/FastAPI migration** |
-| [Aku-IGHub](https://github.com/oumar-code/Aku-IGHub) | Tier 3 — Global | Cross-border metadata exchange, Aku Coin financial clearing, policy/compliance enforcement, global credential registry | — | Node.js (TypeScript) stub → **needs Python/FastAPI migration** |
-| [Akudemy](https://github.com/oumar-code/Akudemy) | Core Service | Aku Learn: content delivery, offline sync, teacher/admin tools, blockchain credentials | **Akudemy** | Node.js stub → **needs Python/FastAPI migration** |
-| [AkuAI](https://github.com/oumar-code/AkuAI) | Core Service | Shared AI/ML inference: text-gen, classification, summarisation, adaptive learning paths, Gemma fine-tuning | — | Node.js stub → **needs Python/FastAPI migration** |
-| [AkuTutor](https://github.com/oumar-code/AkuTutor) | Core Service | AI Tutor: curriculum-aligned Q&A, hint system, feedback loops; consumes AkuAI | — | Node.js stub → **needs Python/FastAPI migration** |
-| [AkuWorkspace](https://github.com/oumar-code/AkuWorkspace) | Core Service | AI-Native Productivity Suite: NL data analysis, doc generation, contextual memory, distributed compute | — | Node.js stub → **needs Python/FastAPI migration** |
-| [Aku-DaaS](https://github.com/oumar-code/Aku-DaaS) | Core Service | Data governance: anonymised dataset pipelines, IG-Hub metadata publishing, privacy labels, consent | — | Node.js stub → **needs Python/FastAPI migration** |
-| [Aku-Telhone](https://github.com/oumar-code/Aku-Telhone) | Core Service | eSIM provisioning: OTA SIM lifecycle, MVNO network switching, device attestation via IG-Hub | **Telhone** | Node.js stub → **needs Python/FastAPI migration + domain realignment** |
+| [Aku-EdgeHub](https://github.com/oumar-code/Aku-EdgeHub) | Tier 1 — Edge | Offline-first local server; Wi-Fi hotspot, local AI inference (Gemma), SQLite store, cloud sync | — | ✅ Python/FastAPI — migrated |
+| [Aku-SuperHub](https://github.com/oumar-code/Aku-SuperHub) | Tier 2 — Regional | Regional analytics aggregation, Edge Hub fleet management, model fine-tuning, regional API gateway | — | ✅ Python/FastAPI — migrated |
+| [Aku-IGHub](https://github.com/oumar-code/Aku-IGHub) | Tier 3 — Global | Cross-border metadata exchange, Aku Coin financial clearing, policy/compliance enforcement, global credential registry | — | ✅ Python/FastAPI — migrated |
+| [Akudemy](https://github.com/oumar-code/Akudemy) | Core Service | Aku Learn: content delivery, offline sync, teacher/admin tools, blockchain credentials | **Akudemy** | ✅ Python/FastAPI — migrated |
+| [AkuAI](https://github.com/oumar-code/AkuAI) | Core Service | Shared AI/ML inference: text-gen, classification, summarisation, adaptive learning paths, Gemma fine-tuning | — | ✅ Python/FastAPI — migrated (tagged v0.1.1) |
+| [AkuTutor](https://github.com/oumar-code/AkuTutor) | Core Service | AI Tutor: curriculum-aligned Q&A, hint system, feedback loops; consumes AkuAI | — | ✅ Python/FastAPI — migrated |
+| [AkuWorkspace](https://github.com/oumar-code/AkuWorkspace) | Core Service | AI-Native Productivity Suite: NL data analysis, doc generation, contextual memory, distributed compute | — | ✅ Python/FastAPI — migrated |
+| [Aku-DaaS](https://github.com/oumar-code/Aku-DaaS) | Core Service | Data governance: anonymised dataset pipelines, IG-Hub metadata publishing, privacy labels, consent | — | ✅ Python/FastAPI — migrated |
+| [Aku-Telhone](https://github.com/oumar-code/Aku-Telhone) | Core Service | eSIM provisioning: OTA SIM lifecycle, MVNO network switching, device attestation via IG-Hub | **Telhone** | ✅ Python/FastAPI — migrated |
 
 ### 🟢 Frontend
 
 | Repo | Role | Tech | Status |
 |------|------|------|--------|
 | `akulearn-dashboard/` (inside Akulearn_docs) | **Canonical dashboard & marketing site** | Next.js 14, TypeScript, Supabase | **Active — deploy target** |
-| [Akudemy-frontend](https://github.com/oumar-code/Akudemy-frontend) | Minimal student-facing landing | Next.js 14 | Stub — low priority; consolidate into monorepo dashboard |
-| [akulearn-dashB](https://github.com/oumar-code/akulearn-dashB) | Bootstrapped Next.js | Next.js 15 | Redundant — archive or repurpose |
-| [Akulearn-dashboard](https://github.com/oumar-code/Akulearn-dashboard) | Empty shell | — | Archive |
+| [Akudemy-frontend](https://github.com/oumar-code/Akudemy-frontend) | Minimal student-facing landing | Next.js 14 | ⛔ Archived |
+| [akulearn-dashB](https://github.com/oumar-code/akulearn-dashB) | Bootstrapped Next.js | Next.js 15 | ⛔ Archived |
+| [Akulearn-dashboard](https://github.com/oumar-code/Akulearn-dashboard) | Empty shell | — | ⛔ Archived |
 
 ### 📱 Mobile
 
 | Repo | Role | Tech | Status |
 |------|------|------|--------|
-| `KOTLIN MULTIPLATFORM/` (inside Akulearn_docs) | Shared KMP library — **migrating out** | Kotlin Multiplatform | Migration to `oumar-code/Aku-Mobile` in progress |
-| [Aku-Mobile](https://github.com/oumar-code/Aku-Mobile) *(to create)* | Standalone KMP repo for Android + iOS | Kotlin Multiplatform, Ktor, Coroutines | **Pending — create from current `KOTLIN MULTIPLATFORM/` directory** |
+| `KOTLIN MULTIPLATFORM/` (inside Akulearn_docs) | Shared KMP library — **migrated out** | Kotlin Multiplatform | Migration to `oumar-code/Aku-Mobile` complete; pending removal from this repo |
+| [Aku-Mobile](https://github.com/oumar-code/Aku-Mobile) | Standalone KMP repo for Android + iOS | Kotlin Multiplatform, Ktor, Coroutines | **Active** |
 
 ---
 
@@ -122,18 +122,19 @@ All OpenAPI specs live in this repo:
 | Database schemas | `docs/02-backend/database-schemas.md` |
 | Containerisation spec | `docs/05-cross-cutting/containerization.md` |
 
-A dedicated `aku-platform-contracts` repo (OpenAPI YAML files, Pydantic models, Kafka schemas) is planned to avoid duplication of shared types across 9 service repos.  
-**Proposal & implementation checklist:** [`docs/aku-platform-contracts.md`](aku-platform-contracts.md)
+A dedicated [`aku-platform-contracts`](https://github.com/oumar-code/aku-platform-contracts) repo (OpenAPI YAML files, Pydantic models, Kafka schemas) has been created to share types across all 9 service repos.  
+**Proposal & implementation checklist:** [`docs/aku-platform-contracts.md`](aku-platform-contracts.md)  
+**Next step:** define Pydantic schemas and run `docs/service-migrations/integrate-contracts.sh` to add the package dependency to all 9 services.
 
 ---
 
 ## KMP Migration Checklist
 
-The `KOTLIN MULTIPLATFORM/` directory in this repo will be moved to a new `oumar-code/Aku-Mobile` repository.
+The `KOTLIN MULTIPLATFORM/` directory in this repo has been moved to `oumar-code/Aku-Mobile`.
 
-- [ ] Create `oumar-code/Aku-Mobile` repository
-- [ ] Copy contents of `KOTLIN MULTIPLATFORM/` to new repo root
-- [ ] Add `oumar-code/Aku-Mobile` to this table once live
+- [x] Create `oumar-code/Aku-Mobile` repository
+- [x] Copy contents of `KOTLIN MULTIPLATFORM/` to new repo root
+- [x] Add `oumar-code/Aku-Mobile` to this table once live
 - [ ] Remove `KOTLIN MULTIPLATFORM/` from `Akulearn_docs` after migration is confirmed
 - [ ] Update `docs/03-mobile/index.md` with link to the new repo
 
@@ -147,5 +148,4 @@ The canonical frontend is **`akulearn-dashboard/` inside this monorepo**. It is:
 - Source of truth for all authenticated dashboard pages (`/dashboard/*`)
 - Backed by Supabase for auth and data
 
-`Akudemy-frontend`, `akulearn-dashB`, and `Akulearn-dashboard` repos are redundant.  
-Recommended action: archive all three, redirect any active work back to `akulearn-dashboard/`.
+`Akudemy-frontend`, `akulearn-dashB`, and `Akulearn-dashboard` repos have been **archived**. All future frontend work goes to `akulearn-dashboard/` in this monorepo.
