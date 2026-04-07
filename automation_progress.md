@@ -210,9 +210,9 @@ Migration guide: `docs/service-templates/python-fastapi-bootstrap.md`
 | `akulearn-dashB` | Archive — bootstrapped Next.js, no active development |
 | `Akulearn-dashboard` | Archive — empty shell |
 
-- [ ] Archive `Akudemy-frontend`
-- [ ] Archive `akulearn-dashB`
-- [ ] Archive `Akulearn-dashboard`
+- [x] Archive `Akudemy-frontend`
+- [x] Archive `akulearn-dashB`
+- [x] Archive `Akulearn-dashboard`
 
 ---
 
@@ -220,14 +220,14 @@ Migration guide: `docs/service-templates/python-fastapi-bootstrap.md`
 
 **Decision: `KOTLIN MULTIPLATFORM/` will be moved to `oumar-code/Aku-Mobile`.**
 
-- [ ] Create `oumar-code/Aku-Mobile` repository
-- [ ] Move `KOTLIN MULTIPLATFORM/` contents to new repo
+- [x] Create `oumar-code/Aku-Mobile` repository
+- [x] Move `KOTLIN MULTIPLATFORM/` contents to new repo
 - [ ] Update `docs/03-mobile/index.md` with link to `Aku-Mobile`
 - [ ] Remove `KOTLIN MULTIPLATFORM/` from `Akulearn_docs` after migration confirmed
 
 ---
 
-_Last updated: 2026-03-30 — Python/FastAPI migration, frontend consolidation, KMP migration decisions recorded._
+_Last updated: 2026-04-07 — contracts repo created, Aku-Mobile created with KMP contents, dead frontend repos archived, all 9 service Python/FastAPI migrations merged._
 
 ---
 
@@ -240,6 +240,7 @@ Ready-to-apply migration resources are in `docs/service-migrations/`:
 | Priority-ordered migration tracker | `docs/service-migrations/index.md` |
 | Parameterised bootstrap script | `docs/service-migrations/bootstrap.sh` |
 | **Master automation script (apply all 9 services)** | `docs/service-migrations/apply-migrations.sh` |
+| **Contracts integration script (add dep + tag v0.1.1)** | `docs/service-migrations/integrate-contracts.sh` |
 | Frontend archive notices | `docs/service-migrations/frontend-archive-notices.md` |
 | KMP migration runbook | `docs/03-mobile/kmp-migration-runbook.md` |
 | Contracts repo proposal | `docs/aku-platform-contracts.md` |
@@ -252,15 +253,15 @@ Ready-to-apply migration resources are in `docs/service-migrations/`:
 
 | Priority | Repo | Scaffold | PR Status |
 |----------|------|----------|-----------|
-| 1 | [AkuAI](https://github.com/oumar-code/AkuAI) | ✅ Scaffold ready (`scaffolds/AkuAI/`) | ⬜ PR not opened |
-| 2 | [Akudemy](https://github.com/oumar-code/Akudemy) | ✅ Scaffold ready (`scaffolds/Akudemy/`) | ⬜ PR not opened |
-| 3 | [Aku-EdgeHub](https://github.com/oumar-code/Aku-EdgeHub) | ✅ Scaffold ready (`scaffolds/Aku-EdgeHub/`) | ⬜ PR not opened |
-| 4a | [Aku-IGHub](https://github.com/oumar-code/Aku-IGHub) | ✅ Scaffold ready (`scaffolds/Aku-IGHub/`) | ⬜ PR not opened |
-| 4b | [Aku-Telhone](https://github.com/oumar-code/Aku-Telhone) | ✅ Scaffold ready (`scaffolds/Aku-Telhone/`) | ⬜ PR not opened |
-| 5a | [Aku-SuperHub](https://github.com/oumar-code/Aku-SuperHub) | ✅ Scaffold ready (`scaffolds/Aku-SuperHub/`) | ⬜ PR not opened |
-| 5b | [AkuTutor](https://github.com/oumar-code/AkuTutor) | ✅ Scaffold ready (`scaffolds/AkuTutor/`) | ⬜ PR not opened |
-| 5c | [AkuWorkspace](https://github.com/oumar-code/AkuWorkspace) | ✅ Scaffold ready (`scaffolds/AkuWorkspace/`) | ⬜ PR not opened |
-| 5d | [Aku-DaaS](https://github.com/oumar-code/Aku-DaaS) | ✅ Scaffold ready (`scaffolds/Aku-DaaS/`) | ⬜ PR not opened |
+| 1 | [AkuAI](https://github.com/oumar-code/AkuAI) | ✅ Scaffold ready (`scaffolds/AkuAI/`) | ✅ PR merged |
+| 2 | [Akudemy](https://github.com/oumar-code/Akudemy) | ✅ Scaffold ready (`scaffolds/Akudemy/`) | ✅ PR merged |
+| 3 | [Aku-EdgeHub](https://github.com/oumar-code/Aku-EdgeHub) | ✅ Scaffold ready (`scaffolds/Aku-EdgeHub/`) | ✅ PR merged |
+| 4a | [Aku-IGHub](https://github.com/oumar-code/Aku-IGHub) | ✅ Scaffold ready (`scaffolds/Aku-IGHub/`) | ✅ PR merged |
+| 4b | [Aku-Telhone](https://github.com/oumar-code/Aku-Telhone) | ✅ Scaffold ready (`scaffolds/Aku-Telhone/`) | ✅ PR merged |
+| 5a | [Aku-SuperHub](https://github.com/oumar-code/Aku-SuperHub) | ✅ Scaffold ready (`scaffolds/Aku-SuperHub/`) | ✅ PR merged |
+| 5b | [AkuTutor](https://github.com/oumar-code/AkuTutor) | ✅ Scaffold ready (`scaffolds/AkuTutor/`) | ✅ PR merged |
+| 5c | [AkuWorkspace](https://github.com/oumar-code/AkuWorkspace) | ✅ Scaffold ready (`scaffolds/AkuWorkspace/`) | ✅ PR merged |
+| 5d | [Aku-DaaS](https://github.com/oumar-code/Aku-DaaS) | ✅ Scaffold ready (`scaffolds/Aku-DaaS/`) | ✅ PR merged |
 
 #### Per-Service Scaffold Checklist
 
@@ -296,16 +297,16 @@ For each service repo, the following steps apply the scaffold:
 
 | Action | Status |
 |--------|--------|
-| Archive `Akudemy-frontend` | ⬜ Pending |
-| Archive `akulearn-dashB` | ⬜ Pending |
-| Archive `Akulearn-dashboard` | ⬜ Pending |
+| Archive `Akudemy-frontend` | ✅ Done |
+| Archive `akulearn-dashB` | ✅ Done |
+| Archive `Akulearn-dashboard` | ✅ Done |
 
 ### KMP Mobile Migration Status
 
 | Action | Status |
 |--------|--------|
-| Create `oumar-code/Aku-Mobile` repository | ⬜ Pending |
-| Copy `KOTLIN MULTIPLATFORM/` to new repo | ⬜ Pending |
+| Create `oumar-code/Aku-Mobile` repository | ✅ Done |
+| Copy `KOTLIN MULTIPLATFORM/` to new repo | ✅ Done |
 | Add CI workflow to `Aku-Mobile` | ⬜ Pending |
 | Update `docs/03-mobile/index.md` | ✅ Done |
 | Update `docs/ecosystem-map.md` | ✅ Done |
@@ -315,6 +316,7 @@ For each service repo, the following steps apply the scaffold:
 
 | Action | Status |
 |--------|--------|
-| Create `oumar-code/aku-platform-contracts` | ⬜ Pending (after AkuAI migration) |
+| Create `oumar-code/aku-platform-contracts` | ✅ Done |
 | Define initial Pydantic schemas (inference, content, credentials) | ⬜ Pending |
+| Add `aku-platform-contracts` dependency to all 9 service repos | ⬜ Pending — use `docs/service-migrations/integrate-contracts.sh` |
 | Publish to GitHub Packages | ⬜ Pending |
