@@ -32,6 +32,7 @@ CONTRACT_DEP="aku-platform-contracts @ git+https://github.com/oumar-code/aku-pla
 TAG="v0.1.1"
 TAG_MSG="Release ${TAG} — migrates to aku-platform-contracts"
 SUMMARY=""
+SUMMARY_FILE="$(mktemp)"
 
 # ── Detect Python binary ───────────────────────────────────────────────────────
 # On Windows Git Bash the launcher is 'py'; on Linux/macOS it is 'python3'.
@@ -92,11 +93,13 @@ for svc in $SERVICES; do
     done
 
     # 3. Rewrite imports to aku_contracts.* ─────────────────────────────────────
+    #    Match only intra-package imports (relative "from ." or project-local
+    #    paths) so that legitimate third-party imports are never touched.
     find "$svc" -type f -name "*.py" -exec sed -i.bak \
-      -e 's/from [^ ]* import InferenceRequest/from aku_contracts.inference.schemas import InferenceRequest/' \
-      -e 's/from [^ ]* import InferenceResponse/from aku_contracts.inference.schemas import InferenceResponse/' \
-      -e 's/from [^ ]* import ContentItem/from aku_contracts.content.schemas import ContentItem/' \
-      -e 's/from [^ ]* import CredentialRecord/from aku_contracts.credentials.schemas import CredentialRecord/' \
+      -e 's|from \(\.\|app\|schemas\|models\)[^ ]* import InferenceRequest|from aku_contracts.inference.schemas import InferenceRequest|' \
+      -e 's|from \(\.\|app\|schemas\|models\)[^ ]* import InferenceResponse|from aku_contracts.inference.schemas import InferenceResponse|' \
+      -e 's|from \(\.\|app\|schemas\|models\)[^ ]* import ContentItem|from aku_contracts.content.schemas import ContentItem|' \
+      -e 's|from \(\.\|app\|schemas\|models\)[^ ]* import CredentialRecord|from aku_contracts.credentials.schemas import CredentialRecord|' \
       {} +
 
     # Clean up sed backup files
@@ -167,7 +170,7 @@ with open('openapi.yaml', 'w') as f:
     popd > /dev/null
     echo "  ✓ Done — Test=${TEST_RESULT}"
     # Append to summary (written to a temp file so it survives the subshell)
-    echo "$svc: Test=${TEST_RESULT}" >> /tmp/lint_format_tag_summary.txt
+    echo "$svc: Test=${TEST_RESULT}" >> "$SUMMARY_FILE"
   ) || echo "  ❌ Error in $svc — see output above"
 
   echo ""
@@ -179,9 +182,9 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo "All service repos processed and tagged ${TAG}."
 echo ""
 echo "Summary:"
-if [[ -f /tmp/lint_format_tag_summary.txt ]]; then
-  cat /tmp/lint_format_tag_summary.txt
-  rm -f /tmp/lint_format_tag_summary.txt
+if [[ -f "$SUMMARY_FILE" ]]; then
+  cat "$SUMMARY_FILE"
+  rm -f "$SUMMARY_FILE"
 else
   echo "(no services processed)"
 fi
