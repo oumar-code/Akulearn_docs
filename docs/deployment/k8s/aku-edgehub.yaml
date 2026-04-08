@@ -1,0 +1,102 @@
+# ── Aku-EdgeHub — Offline-First Edge Server ───────────────────────────────────
+# Tier 1 edge server: Wi-Fi hotspot, local AI inference (Gemma relay), SQLite
+# content cache, and cloud sync back to Akudemy.
+#
+# Container port : 8000
+# Health endpoint: GET /health
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aku-edgehub-config
+  namespace: aku-platform
+  labels:
+    app: aku-edgehub
+    app.kubernetes.io/part-of: aku-platform
+data:
+  APP_ENV: "staging"
+  LOG_LEVEL: "info"
+  APP_PORT: "8000"
+  # In offline mode the service uses SQLite; in cloud-connected mode PostgreSQL.
+  # Override DATABASE_URL in the Secret with the correct driver for each mode.
+  AKUDEMY_URL: "http://akudemy.aku-platform.svc.cluster.local"
+  AKU_AI_URL: "http://akuai.aku-platform.svc.cluster.local"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aku-edgehub
+  namespace: aku-platform
+  labels:
+    app: aku-edgehub
+    app.kubernetes.io/part-of: aku-platform
+    app.kubernetes.io/version: v0.1.1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aku-edgehub
+  template:
+    metadata:
+      labels:
+        app: aku-edgehub
+        app.kubernetes.io/version: v0.1.1
+    spec:
+      imagePullSecrets:
+        - name: ghcr-pull-secret
+      containers:
+        - name: aku-edgehub
+          image: ghcr.io/oumar-code/aku-edgehub:v0.1.1
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: aku-edgehub-config
+            - secretRef:
+                name: aku-edgehub-secret
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aku-edgehub
+  namespace: aku-platform
+  labels:
+    app: aku-edgehub
+    app.kubernetes.io/part-of: aku-platform
+spec:
+  type: ClusterIP
+  selector:
+    app: aku-edgehub
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP

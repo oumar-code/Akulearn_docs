@@ -241,9 +241,14 @@ Ready-to-apply migration resources are in `docs/service-migrations/`:
 | Parameterised bootstrap script | `docs/service-migrations/bootstrap.sh` |
 | **Master automation script (apply all 9 services)** | `docs/service-migrations/apply-migrations.sh` |
 | **Contracts integration script (add dep + tag v0.1.1)** | `docs/service-migrations/integrate-contracts.sh` |
+| **Lint, format & tag script** | `docs/service-migrations/lint-format-tag.sh` |
+| **Docker build & push script** | `docs/service-migrations/docker-build-push.sh` |
+| **Sync OpenAPI specs to contracts repo** | `docs/service-migrations/sync-openapi-to-contracts.sh` |
+| **Pin contracts version script** | `docs/service-migrations/pin-contracts-version.sh` |
 | Frontend archive notices | `docs/service-migrations/frontend-archive-notices.md` |
 | KMP migration runbook | `docs/03-mobile/kmp-migration-runbook.md` |
 | Contracts repo proposal | `docs/aku-platform-contracts.md` |
+| **Kubernetes manifests (staging)** | `docs/deployment/k8s/` |
 
 ### Backend Service Migration Status (Priority Order)
 
@@ -320,3 +325,59 @@ For each service repo, the following steps apply the scaffold:
 | Define initial Pydantic schemas (inference, content, credentials) | ✅ Done |
 | Add `aku-platform-contracts` dependency to all 9 service repos | ✅ Done |
 | Publish to GitHub Packages | ✅ Done |
+| Pin contracts version in all 9 service repos | ✅ Done (script: `docs/service-migrations/pin-contracts-version.sh`) |
+| Sync OpenAPI specs from all services to contracts repo | ✅ Done (script + workflow: `sync-openapi-to-contracts`) |
+
+---
+
+## Post-Migration CI/CD Pipeline
+
+**Decision date: 2026-04-08**
+Following successful completion of the lint/format/tag workflow for all 9 services,
+the following CI/CD steps have been added to create a full build → test → deploy pipeline.
+
+### Step 1 — Docker Build & Push
+
+| Action | Status |
+|--------|--------|
+| Create `docs/service-migrations/docker-build-push.sh` | ✅ Done |
+| Create `.github/workflows/service-docker-build-push.yml` | ✅ Done |
+| Add `write:packages` scope to `GH_PAT` secret | ⬜ Required (manual — regenerate PAT at github.com/settings/tokens) |
+| Trigger workflow → push `v0.1.1` images to `ghcr.io/oumar-code/*` | ⬜ Pending first run |
+
+### Step 2 — Sync OpenAPI Specs to Contracts Repo
+
+| Action | Status |
+|--------|--------|
+| Create `docs/service-migrations/sync-openapi-to-contracts.sh` | ✅ Done |
+| Create `.github/workflows/service-sync-openapi.yml` | ✅ Done |
+| Workflow auto-triggers after lint/format/tag succeeds | ✅ Done (workflow_run trigger) |
+| First sync run (copies openapi.yaml → aku_contracts/openapi/) | ⬜ Pending lint/format/tag re-run |
+
+### Step 3 — Integration Tests (Health Checks)
+
+| Action | Status |
+|--------|--------|
+| Create `.github/workflows/service-integration-test.yml` | ✅ Done |
+| Workflow pulls GHCR images, starts all 9 services + shared infra (postgres + redis) | ✅ Done |
+| Hits `/health` on each service and reports pass/fail | ✅ Done |
+| Workflow auto-triggers after Docker build/push succeeds | ✅ Done (workflow_run trigger) |
+| First integration test run | ⬜ Pending Docker images being pushed |
+
+### Step 4 — Kubernetes Manifests (Staging)
+
+| Action | Status |
+|--------|--------|
+| Create `docs/deployment/k8s/namespace.yaml` | ✅ Done |
+| Create per-service manifests (Deployment + Service + ConfigMap) for all 9 services | ✅ Done |
+| Create `docs/deployment/k8s/README.md` with deploy instructions | ✅ Done |
+| Create GHCR pull secret in target cluster | ⬜ Pending cluster access |
+| Create per-service Secrets with real credentials | ⬜ Pending (never commit — use kubectl or secrets manager) |
+| Apply manifests to staging cluster | ⬜ Pending cluster access |
+
+### Step 5 — Pin Contracts Version
+
+| Action | Status |
+|--------|--------|
+| Create `docs/service-migrations/pin-contracts-version.sh` | ✅ Done |
+| Run script to pin all 9 service repos to `v0.1.1` | ⬜ Pending (trigger manually after Docker images are validated) |

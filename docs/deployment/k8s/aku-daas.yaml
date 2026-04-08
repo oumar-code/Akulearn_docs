@@ -1,0 +1,99 @@
+# ── Aku-DaaS — Data Governance & Anonymisation ───────────────────────────────
+# Anonymised dataset pipelines, IG-Hub metadata publishing, privacy labels, and
+# user consent management.
+#
+# Container port : 8001
+# Health endpoint: GET /health
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aku-daas-config
+  namespace: aku-platform
+  labels:
+    app: aku-daas
+    app.kubernetes.io/part-of: aku-platform
+data:
+  APP_ENV: "staging"
+  LOG_LEVEL: "info"
+  APP_PORT: "8001"
+  AKU_IGHUB_URL: "http://aku-ighub.aku-platform.svc.cluster.local"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aku-daas
+  namespace: aku-platform
+  labels:
+    app: aku-daas
+    app.kubernetes.io/part-of: aku-platform
+    app.kubernetes.io/version: v0.1.1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aku-daas
+  template:
+    metadata:
+      labels:
+        app: aku-daas
+        app.kubernetes.io/version: v0.1.1
+    spec:
+      imagePullSecrets:
+        - name: ghcr-pull-secret
+      containers:
+        - name: aku-daas
+          image: ghcr.io/oumar-code/aku-daas:v0.1.1
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8001
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: aku-daas-config
+            - secretRef:
+                name: aku-daas-secret
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: "150m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aku-daas
+  namespace: aku-platform
+  labels:
+    app: aku-daas
+    app.kubernetes.io/part-of: aku-platform
+spec:
+  type: ClusterIP
+  selector:
+    app: aku-daas
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP

@@ -1,0 +1,99 @@
+# ── Akudemy — Content Delivery & Credential Issuance ─────────────────────────
+# Aku Learn: content delivery, offline sync (consumed by Edge Hubs), teacher /
+# admin tools, and blockchain credential issuance via Polygon.
+#
+# Container port : 8000
+# Health endpoint: GET /health
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: akudemy-config
+  namespace: aku-platform
+  labels:
+    app: akudemy
+    app.kubernetes.io/part-of: aku-platform
+data:
+  APP_ENV: "staging"
+  LOG_LEVEL: "info"
+  APP_PORT: "8000"
+  CORS_ORIGINS: "http://localhost:3000"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akudemy
+  namespace: aku-platform
+  labels:
+    app: akudemy
+    app.kubernetes.io/part-of: aku-platform
+    app.kubernetes.io/version: v0.1.1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: akudemy
+  template:
+    metadata:
+      labels:
+        app: akudemy
+        app.kubernetes.io/version: v0.1.1
+    spec:
+      imagePullSecrets:
+        - name: ghcr-pull-secret
+      containers:
+        - name: akudemy
+          image: ghcr.io/oumar-code/akudemy:v0.1.1
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: akudemy-config
+            - secretRef:
+                name: akudemy-secret
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: akudemy
+  namespace: aku-platform
+  labels:
+    app: akudemy
+    app.kubernetes.io/part-of: aku-platform
+spec:
+  type: ClusterIP
+  selector:
+    app: akudemy
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP

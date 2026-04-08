@@ -1,0 +1,101 @@
+# ── AkuWorkspace — AI-Native Productivity Suite ───────────────────────────────
+# NL data analysis, AI-assisted document generation, contextual memory (Redis),
+# and distributed workflow orchestration across AkuAI + Akudemy + Aku-DaaS.
+#
+# Container port : 8004
+# Health endpoint: GET /health
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: akuworkspace-config
+  namespace: aku-platform
+  labels:
+    app: akuworkspace
+    app.kubernetes.io/part-of: aku-platform
+data:
+  APP_ENV: "staging"
+  LOG_LEVEL: "info"
+  APP_PORT: "8004"
+  AKU_AI_URL: "http://akuai.aku-platform.svc.cluster.local"
+  AKUDEMY_URL: "http://akudemy.aku-platform.svc.cluster.local"
+  AKU_DAAS_URL: "http://aku-daas.aku-platform.svc.cluster.local"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akuworkspace
+  namespace: aku-platform
+  labels:
+    app: akuworkspace
+    app.kubernetes.io/part-of: aku-platform
+    app.kubernetes.io/version: v0.1.1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: akuworkspace
+  template:
+    metadata:
+      labels:
+        app: akuworkspace
+        app.kubernetes.io/version: v0.1.1
+    spec:
+      imagePullSecrets:
+        - name: ghcr-pull-secret
+      containers:
+        - name: akuworkspace
+          image: ghcr.io/oumar-code/akuworkspace:v0.1.1
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8004
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: akuworkspace-config
+            - secretRef:
+                name: akuworkspace-secret
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: akuworkspace
+  namespace: aku-platform
+  labels:
+    app: akuworkspace
+    app.kubernetes.io/part-of: aku-platform
+spec:
+  type: ClusterIP
+  selector:
+    app: akuworkspace
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP

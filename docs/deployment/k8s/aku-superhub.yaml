@@ -1,0 +1,100 @@
+# ── Aku-SuperHub — Regional Analytics Gateway ────────────────────────────────
+# Tier 2 regional hub: aggregates analytics from Edge Hub fleets, exposes
+# fleet health dashboards, and triggers regional model fine-tuning jobs.
+#
+# Container port : 8000
+# Health endpoint: GET /health
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aku-superhub-config
+  namespace: aku-platform
+  labels:
+    app: aku-superhub
+    app.kubernetes.io/part-of: aku-platform
+data:
+  APP_ENV: "staging"
+  LOG_LEVEL: "info"
+  APP_PORT: "8000"
+  AKU_AI_URL: "http://akuai.aku-platform.svc.cluster.local"
+  AKU_IGHUB_URL: "http://aku-ighub.aku-platform.svc.cluster.local"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aku-superhub
+  namespace: aku-platform
+  labels:
+    app: aku-superhub
+    app.kubernetes.io/part-of: aku-platform
+    app.kubernetes.io/version: v0.1.1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aku-superhub
+  template:
+    metadata:
+      labels:
+        app: aku-superhub
+        app.kubernetes.io/version: v0.1.1
+    spec:
+      imagePullSecrets:
+        - name: ghcr-pull-secret
+      containers:
+        - name: aku-superhub
+          image: ghcr.io/oumar-code/aku-superhub:v0.1.1
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: aku-superhub-config
+            - secretRef:
+                name: aku-superhub-secret
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aku-superhub
+  namespace: aku-platform
+  labels:
+    app: aku-superhub
+    app.kubernetes.io/part-of: aku-platform
+spec:
+  type: ClusterIP
+  selector:
+    app: aku-superhub
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
