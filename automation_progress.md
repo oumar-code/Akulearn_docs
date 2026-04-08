@@ -227,7 +227,7 @@ Migration guide: `docs/service-templates/python-fastapi-bootstrap.md`
 
 ---
 
-_Last updated: 2026-04-07 — contracts repo created, Aku-Mobile created with KMP contents, dead frontend repos archived, all 9 service Python/FastAPI migrations merged._
+_Last updated: 2026-04-08 — contracts repo fully complete: Pydantic schemas defined, dependency added to all 9 service repos (PRs merged), published to GitHub Packages._
 
 ---
 
@@ -317,6 +317,6 @@ For each service repo, the following steps apply the scaffold:
 | Action | Status |
 |--------|--------|
 | Create `oumar-code/aku-platform-contracts` | ✅ Done |
-| Define initial Pydantic schemas (inference, content, credentials) | ⬜ Pending |
-| Add `aku-platform-contracts` dependency to all 9 service repos | ⬜ Pending — use `docs/service-migrations/integrate-contracts.sh` |
-| Publish to GitHub Packages | ⬜ Pending |
+| Define initial Pydantic schemas (inference, content, credentials) | ✅ Done |
+| Add `aku-platform-contracts` dependency to all 9 service repos | ✅ Done |
+| Publish to GitHub Packages | ✅ Done |
