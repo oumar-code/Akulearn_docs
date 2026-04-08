@@ -27,9 +27,12 @@ set -euo pipefail
 
 # ── Constants ──────────────────────────────────────────────────────────────────
 
-SERVICES="AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS"
+# These can be overridden by environment variables so that a CI workflow (or a
+# one-off manual invocation) can target a subset of services or a different tag:
+#   SERVICES_OVERRIDE="AkuAI Akudemy" TAG_OVERRIDE="v0.1.2" ./lint-format-tag.sh
+SERVICES="${SERVICES_OVERRIDE:-AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS}"
 CONTRACT_DEP="aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts@v0.1.0"
-TAG="v0.1.1"
+TAG="${TAG_OVERRIDE:-v0.1.1}"
 TAG_MSG="Release ${TAG} — migrates to aku-platform-contracts"
 SUMMARY=""
 SUMMARY_FILE="$(mktemp)"
