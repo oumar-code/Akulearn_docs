@@ -1,0 +1,141 @@
+name: Service — Lint, Format & Tag
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# For each selected Aku Platform service repo this workflow:
+#   1. Clones the service repo (shallow)
+#   2. Adds aku-platform-contracts to requirements.txt (idempotent)
+#   3. Removes local class definitions now provided by the contracts package
+#   4. Rewrites import paths to aku_contracts.*
+#   5. Installs dependencies
+#   6. Formats code with Black (--target-version py311)
+#   7. Lints with flake8 (node_modules excluded, max-line-length 120)
+#   8. Runs unittest discover
+#   9. Generates openapi.yaml for FastAPI services
+#  10. Commits and pushes (skips if nothing changed)
+#  11. Creates and pushes an annotated tag (skips if already exists)
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# Create a repo secret named GH_PAT:
+#   Settings → Secrets and variables → Actions → New repository secret
+#   Name : GH_PAT
+#   Value: A classic Personal Access Token with scopes: repo, workflow
+#   (Generate at https://github.com/settings/tokens)
+#
+# How to trigger
+# ──────────────────────────────────────────────────────────────────────────────
+# Go to: Actions → "Service — Lint, Format & Tag" → Run workflow
+# Fill in the inputs (or keep the defaults) and click "Run workflow".
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      services:
+        description: >
+          Space-separated list of service repos to process.
+          Leave empty to process all 9 services.
+        required: false
+        default: "AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS"
+      tag:
+        description: "Annotated git tag to push to each service repo"
+        required: false
+        default: "v0.1.1"
+      dry_run:
+        description: "Set to 'true' to preview changes without pushing anything"
+        required: false
+        default: "false"
+
+jobs:
+  lint-format-tag:
+    name: Lint, Format & Tag (${{ inputs.services || 'all services' }})
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read  # only reads from this repo; pushes go to service repos via PAT
+
+    env:
+      GITHUB_ORG: oumar-code
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+
+    steps:
+      # ── 1. Checkout this (docs) repo to get the script ───────────────────────
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+
+      # ── 2. Set up Python 3.11 ────────────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # ── 3. Install Black & flake8 once (services pip-install too, this is a  ─
+      #       fast cache-friendly pre-install)                                   ─
+      - name: Pre-install formatting / linting tools
+        run: pip install --upgrade pip black flake8 pyyaml -q
+
+      # ── 4. Clone each service repo as a sibling directory ────────────────────
+      #       The script expects to run from a directory that contains all service
+      #       repos as immediate subdirectories.
+      - name: Clone service repos
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          SERVICES: ${{ inputs.services || 'AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS' }}
+        run: |
+          cd "$RUNNER_TEMP"
+          mkdir -p service-workspace
+          cd service-workspace
+
+          for svc in $SERVICES; do
+            repo_url="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${svc}.git"
+            echo "Cloning ${GITHUB_ORG}/${svc}..."
+            if git clone --depth 1 "${repo_url}" "${svc}" 2>&1; then
+              # Configure git identity inside each clone so commits work
+              git -C "${svc}" config user.email "github-actions[bot]@users.noreply.github.com"
+              git -C "${svc}" config user.name  "github-actions[bot]"
+              # Embed credentials so push works without interactive prompts
+              git -C "${svc}" remote set-url origin "${repo_url}"
+              echo "  ✓ Cloned ${svc}"
+            else
+              echo "  ⚠  Could not clone ${svc} — skipping"
+            fi
+          done
+
+      # ── 5. Run lint-format-tag.sh from the service workspace ─────────────────
+      - name: Run lint-format-tag.sh
+        env:
+          SERVICES_OVERRIDE: ${{ inputs.services || 'AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS' }}
+          TAG_OVERRIDE: ${{ inputs.tag || 'v0.1.1' }}
+        run: |
+          # Copy the script into the service workspace so it runs with the right CWD
+          cp docs/service-migrations/lint-format-tag.sh "$RUNNER_TEMP/service-workspace/"
+          chmod +x "$RUNNER_TEMP/service-workspace/lint-format-tag.sh"
+
+          if [[ "$DRY_RUN" == "true" ]]; then
+            echo "════════════════════════════════════════════════════"
+            echo "  DRY RUN — listing services that would be processed"
+            echo "════════════════════════════════════════════════════"
+            for svc in $SERVICES_OVERRIDE; do
+              if [ -d "$RUNNER_TEMP/service-workspace/$svc" ]; then
+                echo "  → $svc (would be processed)"
+              else
+                echo "  ⚠  $svc (directory missing — clone failed)"
+              fi
+            done
+          else
+            cd "$RUNNER_TEMP/service-workspace"
+            bash lint-format-tag.sh
+          fi
+
+      # ── 6. Print a run summary ────────────────────────────────────────────────
+      - name: Run summary
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Workflow complete"
+          echo "  Services  : ${{ inputs.services || 'all' }}"
+          echo "  Tag       : ${{ inputs.tag || 'v0.1.1' }}"
+          echo "  Dry run   : ${{ inputs.dry_run || 'false' }}"
+          echo "════════════════════════════════════════════════════"
