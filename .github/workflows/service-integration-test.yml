@@ -53,9 +53,16 @@ jobs:
       github.event_name == 'workflow_dispatch' ||
       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
 
+    permissions:
+      contents: read   # read this (docs) repo
+      packages: read   # pull images from GHCR
+
     env:
       GITHUB_ORG: oumar-code
       TAG: ${{ inputs.tag || 'v0.1.1' }}
+      # Seconds to wait for each individual HTTP response.  Services that perform
+      # DB migrations or have heavier startup logic may need more time.
+      HEALTH_CHECK_TIMEOUT: "10"
 
     steps:
       # ── 1. Log in to GHCR (read-only — pull only) ────────────────────────────
@@ -201,7 +208,7 @@ jobs:
             echo -n "  ${svc} (${url}) ... "
 
             for attempt in 1 2 3 4 5; do
-              HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 "${url}" 2>/dev/null || echo "000")
+              HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time "${HEALTH_CHECK_TIMEOUT}" "${url}" 2>/dev/null || echo "000")
               if [[ "$HTTP_CODE" == "200" ]]; then
                 echo "✅ HTTP ${HTTP_CODE}"
                 break
