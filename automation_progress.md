@@ -133,69 +133,69 @@ Migration guide: `docs/service-templates/python-fastapi-bootstrap.md`
 ### Per-Repo Migration Status
 
 #### Aku-EdgeHub
-- [ ] Remove Node.js files
-- [ ] Scaffold Python/FastAPI project structure
-- [ ] Implement offline-first content cache, sync, device registration endpoints
-- [ ] Add Dockerfile (multi-stage, non-root)
-- [ ] Add `docker-compose.yml`
-- [ ] Add `.github/workflows/ci.yml` (pytest + ruff + docker build)
-- [ ] Update README with Python/FastAPI instructions
+- [x] Remove Node.js files
+- [x] Scaffold Python/FastAPI project structure
+- [x] Implement offline-first content cache, sync, device registration endpoints
+- [x] Add Dockerfile (multi-stage, non-root)
+- [x] Add `docker-compose.yml`
+- [x] Add `.github/workflows/ci.yml` (pytest + ruff + docker build)
+- [x] Update README with Python/FastAPI instructions
 
 #### Aku-SuperHub
-- [ ] Remove Node.js files
-- [ ] Scaffold Python/FastAPI project structure
-- [ ] Implement fleet management, regional analytics, model fine-tuning endpoints
-- [ ] Add Dockerfile, docker-compose, CI workflow
-- [ ] Update README
+- [x] Remove Node.js files
+- [x] Scaffold Python/FastAPI project structure
+- [x] Implement fleet management, regional analytics, model fine-tuning endpoints
+- [x] Add Dockerfile, docker-compose, CI workflow
+- [x] Update README
 
 #### Aku-IGHub
-- [ ] Remove Node.js/TypeScript files
-- [ ] Scaffold Python/FastAPI project structure
-- [ ] Implement credential registry, Aku Coin clearing, anonymised metadata exchange endpoints
-- [ ] Add Dockerfile, docker-compose, CI workflow
-- [ ] Update README
+- [x] Remove Node.js/TypeScript files
+- [x] Scaffold Python/FastAPI project structure
+- [x] Implement credential registry, Aku Coin clearing, anonymised metadata exchange endpoints
+- [x] Add Dockerfile, docker-compose, CI workflow
+- [x] Update README
 
 #### Akudemy
-- [ ] Remove Node.js files
-- [ ] Scaffold Python/FastAPI project structure
-- [ ] Implement content sync API, teacher/admin tools, blockchain credential issuance
-- [ ] Add Dockerfile, docker-compose, CI workflow
-- [ ] Update README
+- [x] Remove Node.js files
+- [x] Scaffold Python/FastAPI project structure
+- [x] Implement content sync API, teacher/admin tools, blockchain credential issuance
+- [x] Add Dockerfile, docker-compose, CI workflow
+- [x] Update README
 
 #### AkuAI
-- [ ] Remove Node.js files
-- [ ] Scaffold Python/FastAPI project structure
-- [ ] Implement shared inference endpoints (text-gen, classify, summarize, Gemma relay)
-- [ ] Add Dockerfile, docker-compose, CI workflow
-- [ ] Update README
+- [x] Remove Node.js files
+- [x] Scaffold Python/FastAPI project structure
+- [x] Implement shared inference endpoints (text-gen, classify, summarize, Gemma relay)
+- [x] Add Dockerfile, docker-compose, CI workflow
+- [x] Update README
 
 #### AkuTutor
-- [ ] Remove Node.js files
-- [ ] Scaffold Python/FastAPI project structure
-- [ ] Implement AI Tutor session, Q&A, feedback endpoints (calls AkuAI — no local model)
-- [ ] Add Dockerfile, docker-compose, CI workflow
-- [ ] Update README
+- [x] Remove Node.js files
+- [x] Scaffold Python/FastAPI project structure
+- [x] Implement AI Tutor session, Q&A, feedback endpoints (calls AkuAI — no local model)
+- [x] Add Dockerfile, docker-compose, CI workflow
+- [x] Update README
 
 #### AkuWorkspace
-- [ ] Remove Node.js files
-- [ ] Scaffold Python/FastAPI project structure
-- [ ] Implement NL workflow orchestration, AI Assistant abstraction layer
-- [ ] Add Dockerfile, docker-compose, CI workflow
-- [ ] Update README
+- [x] Remove Node.js files
+- [x] Scaffold Python/FastAPI project structure
+- [x] Implement NL workflow orchestration, AI Assistant abstraction layer
+- [x] Add Dockerfile, docker-compose, CI workflow
+- [x] Update README
 
 #### Aku-DaaS
-- [ ] Remove Node.js files (note: existing stub has wrong domain — "device management", not data governance)
-- [ ] Scaffold Python/FastAPI project structure
-- [ ] Implement dataset ingestion, anonymisation pipeline, IG-Hub metadata publishing
-- [ ] Add Dockerfile, docker-compose, CI workflow
-- [ ] Update README
+- [x] Remove Node.js files (note: existing stub has wrong domain — "device management", not data governance)
+- [x] Scaffold Python/FastAPI project structure
+- [x] Implement dataset ingestion, anonymisation pipeline, IG-Hub metadata publishing
+- [x] Add Dockerfile, docker-compose, CI workflow
+- [x] Update README
 
 #### Aku-Telhone
-- [ ] Remove Node.js files (note: existing stub has wrong domain — generic telephony, not eSIM)
-- [ ] Scaffold Python/FastAPI project structure
-- [ ] Implement eSIM provisioning, OTA SIM lifecycle, network switching, device attestation
-- [ ] Add Dockerfile, docker-compose, CI workflow
-- [ ] Update README
+- [x] Remove Node.js files (note: existing stub has wrong domain — generic telephony, not eSIM)
+- [x] Scaffold Python/FastAPI project structure
+- [x] Implement eSIM provisioning, OTA SIM lifecycle, network switching, device attestation
+- [x] Add Dockerfile, docker-compose, CI workflow
+- [x] Update README
 
 ---
 
@@ -222,8 +222,8 @@ Migration guide: `docs/service-templates/python-fastapi-bootstrap.md`
 
 - [x] Create `oumar-code/Aku-Mobile` repository
 - [x] Move `KOTLIN MULTIPLATFORM/` contents to new repo
-- [ ] Update `docs/03-mobile/index.md` with link to `Aku-Mobile`
-- [ ] Remove `KOTLIN MULTIPLATFORM/` from `Akulearn_docs` after migration confirmed
+- [x] Update `docs/03-mobile/index.md` with link to `Aku-Mobile`
+- [x] Remove `KOTLIN MULTIPLATFORM/` from `Akulearn_docs` after migration confirmed
 
 ---
 
@@ -267,17 +267,17 @@ Ready-to-apply migration resources are in `docs/service-migrations/`:
 
 For each service repo, the following steps apply the scaffold:
 
-- [ ] Delete `package.json`, `index.js`, `src/` (Node.js files)
-- [ ] Copy `docs/service-migrations/bootstrap.sh` into repo root and run `./bootstrap.sh <ServiceName>`
-- [ ] Overlay matching `docs/service-migrations/scaffolds/<ServiceName>/` files into repo
-- [ ] Review and update `app/config.py` with service-specific env vars
-- [ ] Add service-specific `requirements-extra.txt` lines to `requirements.txt`
-- [ ] Verify `Dockerfile` multi-stage build (non-root user `aku`, uid 1001)
-- [ ] Verify `docker-compose.yml` local dev setup
-- [ ] Verify `.github/workflows/ci.yml` (lint + test + docker build)
-- [ ] Update `README.md` with Python/FastAPI getting started instructions
-- [ ] Open PR with `feat: migrate to Python 3.11 / FastAPI` message
-- [ ] Update status in this table once PR is merged
+- [x] Delete `package.json`, `index.js`, `src/` (Node.js files)
+- [x] Copy `docs/service-migrations/bootstrap.sh` into repo root and run `./bootstrap.sh <ServiceName>`
+- [x] Overlay matching `docs/service-migrations/scaffolds/<ServiceName>/` files into repo
+- [x] Review and update `app/config.py` with service-specific env vars
+- [x] Add service-specific `requirements-extra.txt` lines to `requirements.txt`
+- [x] Verify `Dockerfile` multi-stage build (non-root user `aku`, uid 1001)
+- [x] Verify `docker-compose.yml` local dev setup
+- [x] Verify `.github/workflows/ci.yml` (lint + test + docker build)
+- [x] Update `README.md` with Python/FastAPI getting started instructions
+- [x] Open PR with `feat: migrate to Python 3.11 / FastAPI` message
+- [x] Update status in this table once PR is merged
 
 #### Service-Specific Notes
 
@@ -307,10 +307,10 @@ For each service repo, the following steps apply the scaffold:
 |--------|--------|
 | Create `oumar-code/Aku-Mobile` repository | ✅ Done |
 | Copy `KOTLIN MULTIPLATFORM/` to new repo | ✅ Done |
-| Add CI workflow to `Aku-Mobile` | ⬜ Pending |
+| Add CI workflow to `Aku-Mobile` | ✅ Done |
 | Update `docs/03-mobile/index.md` | ✅ Done |
 | Update `docs/ecosystem-map.md` | ✅ Done |
-| Remove `KOTLIN MULTIPLATFORM/` from `Akulearn_docs` | ⬜ Pending (after confirmation) |
+| Remove `KOTLIN MULTIPLATFORM/` from `Akulearn_docs` | ✅ Done |
 
 ### Contracts Repo Status
 
