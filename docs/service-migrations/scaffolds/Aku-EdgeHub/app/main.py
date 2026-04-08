@@ -33,6 +33,11 @@ app.include_router(edge.router)
 app.include_router(devices.router)
 
 
+@app.get("/health", tags=["ops"])
+async def health() -> dict[str, str]:
+    return {"status": "ok", "service": "Aku-EdgeHub"}
+
+
 @app.on_event("startup")
 async def on_startup() -> None:
     logger.info("EdgeHub starting — mode=%s", settings.operating_mode)
