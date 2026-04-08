@@ -229,10 +229,25 @@ jobs:
           for svc in "${!SERVICES[@]}"; do
             port="${SERVICES[$svc]}"
             url="http://localhost:${port}/health"
+            container="svc-$(echo "${svc}" | tr '[:upper:]' '[:lower:]')"
+
+            # Fast-fail with a clear message when the container never started
+            # (image missing in GHCR or docker run failed).
+            if ! docker inspect "${container}" >/dev/null 2>&1; then
+              echo "  ${svc} (${url}) ... ⚠ container not running — image not available in GHCR"
+              ALL_PASS=false
+              continue
+            fi
+
             echo -n "  ${svc} (${url}) ... "
 
             for attempt in 1 2 3 4 5; do
-              HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time "${HEALTH_CHECK_TIMEOUT}" "${url}" 2>/dev/null || echo "000")
+              # curl -w "%{http_code}" always prints a 3-digit code to stdout
+              # even when the connection fails (prints "000").  The `|| true`
+              # prevents set -e from aborting the script on a non-zero curl
+              # exit without duplicating the code via a second `echo "000"`.
+              HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+                --max-time "${HEALTH_CHECK_TIMEOUT}" "${url}" 2>/dev/null) || true
               if [[ "$HTTP_CODE" == "200" ]]; then
                 echo "✅ HTTP ${HTTP_CODE}"
                 break
