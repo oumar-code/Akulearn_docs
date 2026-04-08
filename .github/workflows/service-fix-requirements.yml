@@ -64,6 +64,7 @@ jobs:
         run: |
           SUMMARY=""
 
+          # Configure git identity once for all commits made in this job.
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
 
@@ -74,7 +75,7 @@ jobs:
             repo_url="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${svc}.git"
 
             # Clone the default branch (we'll patch it and push)
-            if ! git clone --depth 1 "${repo_url}" "${svc}" 2>&1; then
+            if ! git clone --depth 1 "${repo_url}" "${svc}"; then
               echo "  ⚠  Could not clone ${svc} — skipping"
               SUMMARY="${SUMMARY}\n${svc}: SKIPPED (clone failed)"
               continue
@@ -129,7 +130,7 @@ once the contracts package is published to GHCR / PyPI.
 
 See: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/aku-platform-contracts.md"
 
-            if ! git -C "${svc}" push "${repo_url}" HEAD 2>&1; then
+            if ! git -C "${svc}" push "${repo_url}" HEAD; then
               echo "  ⚠  Push failed for ${svc}"
               SUMMARY="${SUMMARY}\n${svc}: FAILED (push error)"
               continue
@@ -140,7 +141,7 @@ See: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/aku-platform-con
 
             # Force-move the tag to the new commit
             git -C "${svc}" tag -f "${TAG}" "${NEW_SHA}"
-            if ! git -C "${svc}" push "${repo_url}" "refs/tags/${TAG}" --force 2>&1; then
+            if ! git -C "${svc}" push "${repo_url}" "refs/tags/${TAG}" --force; then
               echo "  ⚠  Tag push failed for ${svc} — the fix commit was pushed but the tag was not moved"
               SUMMARY="${SUMMARY}\n${svc}: PARTIAL (commit pushed; tag NOT moved)"
               continue
