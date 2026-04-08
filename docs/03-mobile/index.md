@@ -1,7 +1,7 @@
 # Akulearn Mobile Development Guidelines
 
-> 📱 **KMP module is migrating to a dedicated repo.**  
-> New mobile work goes to **[`oumar-code/Aku-Mobile`](https://github.com/oumar-code/Aku-Mobile)** (pending creation).  
+> 📱 **KMP module has migrated to a dedicated repo.**  
+> New mobile work goes to **[`oumar-code/Aku-Mobile`](https://github.com/oumar-code/Aku-Mobile)**.  
 > Migration runbook: [`docs/03-mobile/kmp-migration-runbook.md`](kmp-migration-runbook.md)
 
 ---
