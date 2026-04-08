@@ -1,0 +1,99 @@
+# ── AkuTutor — AI Tutoring Service ───────────────────────────────────────────
+# Curriculum-aligned Q&A, hint system, and feedback loops.
+# Delegates all model inference to AkuAI — does NOT run its own model.
+#
+# Container port : 8002
+# Health endpoint: GET /health
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: akututor-config
+  namespace: aku-platform
+  labels:
+    app: akututor
+    app.kubernetes.io/part-of: aku-platform
+data:
+  APP_ENV: "staging"
+  LOG_LEVEL: "info"
+  APP_PORT: "8002"
+  AKU_AI_URL: "http://akuai.aku-platform.svc.cluster.local"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akututor
+  namespace: aku-platform
+  labels:
+    app: akututor
+    app.kubernetes.io/part-of: aku-platform
+    app.kubernetes.io/version: v0.1.1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: akututor
+  template:
+    metadata:
+      labels:
+        app: akututor
+        app.kubernetes.io/version: v0.1.1
+    spec:
+      imagePullSecrets:
+        - name: ghcr-pull-secret
+      containers:
+        - name: akututor
+          image: ghcr.io/oumar-code/akututor:v0.1.1
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8002
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: akututor-config
+            - secretRef:
+                name: akututor-secret
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: "150m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: akututor
+  namespace: aku-platform
+  labels:
+    app: akututor
+    app.kubernetes.io/part-of: aku-platform
+spec:
+  type: ClusterIP
+  selector:
+    app: akututor
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP

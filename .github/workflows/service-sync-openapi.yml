@@ -1,0 +1,145 @@
+name: Service — Sync OpenAPI Specs to Contracts
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# After the "Service — Lint, Format & Tag" workflow has run (which generates
+# openapi.yaml in each service repo), this workflow:
+#   1. Clones all selected service repos at the specified tag
+#   2. Clones oumar-code/aku-platform-contracts
+#   3. Copies each service's openapi.yaml → aku_contracts/openapi/<service>.yaml
+#   4. Commits and pushes the updated specs to the contracts repo
+#   5. Creates (or skips) an annotated tag on the contracts repo
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# GH_PAT secret must have:
+#   repo     — to read service repos and push to the contracts repo
+#   workflow — to trigger other workflows
+#
+# How to trigger
+# ──────────────────────────────────────────────────────────────────────────────
+# Go to: Actions → "Service — Sync OpenAPI Specs to Contracts" → Run workflow
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      services:
+        description: >
+          Space-separated list of service repos whose openapi.yaml to sync.
+          Leave empty to sync all 9 services.
+        required: false
+        default: "AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS"
+      tag:
+        description: "Git tag to clone in each service repo; also applied to the contracts repo"
+        required: false
+        default: "v0.1.1"
+      dry_run:
+        description: "Set to 'true' to preview which specs would be copied without pushing"
+        required: false
+        default: "false"
+
+  # Also run automatically after the lint/format/tag workflow succeeds on main
+  workflow_run:
+    workflows: ["Service — Lint, Format & Tag"]
+    types: [completed]
+    branches: [main]
+
+jobs:
+  sync-openapi:
+    name: Sync OpenAPI Specs (${{ inputs.services || 'all services' }})
+    runs-on: ubuntu-latest
+
+    # Only run the workflow_run trigger when the upstream workflow succeeded
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+
+    permissions:
+      contents: read   # read this repo (for the script)
+
+    env:
+      GITHUB_ORG: oumar-code
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+
+    steps:
+      # ── 1. Checkout this (docs) repo to get the sync script ──────────────────
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+
+      # ── 2. Set up Python (needed only if we want to validate YAML) ────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pyyaml
+        run: pip install pyyaml -q
+
+      # ── 3. Clone service repos at the target tag ──────────────────────────────
+      - name: Clone service repos
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          SERVICES: ${{ inputs.services || 'AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS' }}
+          TAG: ${{ inputs.tag || 'v0.1.1' }}
+        run: |
+          cd "$RUNNER_TEMP"
+          mkdir -p service-workspace
+          cd service-workspace
+
+          for svc in $SERVICES; do
+            repo_url="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${svc}.git"
+            echo "Cloning ${GITHUB_ORG}/${svc} at tag ${TAG}..."
+
+            if git clone --depth 1 --branch "${TAG}" "${repo_url}" "${svc}" 2>&1; then
+              echo "  ✓ Cloned ${svc}@${TAG}"
+            else
+              # Fall back to default branch (openapi.yaml may have been committed there)
+              echo "  ⚠  Tag ${TAG} not found — cloning default branch"
+              if git clone --depth 1 "${repo_url}" "${svc}" 2>&1; then
+                echo "  ✓ Cloned ${svc} (default branch)"
+              else
+                echo "  ⚠  Could not clone ${svc} — skipping"
+              fi
+            fi
+          done
+
+      # ── 4. Run sync script (or dry-run preview) ───────────────────────────────
+      - name: Sync OpenAPI specs to contracts repo
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          SERVICES_OVERRIDE: ${{ inputs.services || 'AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS' }}
+          TAG_OVERRIDE: ${{ inputs.tag || 'v0.1.1' }}
+        run: |
+          cp docs/service-migrations/sync-openapi-to-contracts.sh "$RUNNER_TEMP/service-workspace/"
+          chmod +x "$RUNNER_TEMP/service-workspace/sync-openapi-to-contracts.sh"
+
+          if [[ "$DRY_RUN" == "true" ]]; then
+            echo "════════════════════════════════════════════════════"
+            echo "  DRY RUN — listing openapi.yaml files that would be synced"
+            echo "════════════════════════════════════════════════════"
+            for svc in $SERVICES_OVERRIDE; do
+              dir="$RUNNER_TEMP/service-workspace/$svc"
+              if [[ -f "${dir}/openapi.yaml" ]]; then
+                echo "  ✓ $svc/openapi.yaml  →  aku_contracts/openapi/$(echo "$svc" | tr '[:upper:]' '[:lower:]').yaml"
+              else
+                echo "  ⚠  $svc/openapi.yaml not found (run lint/format/tag first)"
+              fi
+            done
+          else
+            cd "$RUNNER_TEMP/service-workspace"
+            bash sync-openapi-to-contracts.sh
+          fi
+
+      # ── 5. Summary ────────────────────────────────────────────────────────────
+      - name: Run summary
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Workflow complete"
+          echo "  Services  : ${{ inputs.services || 'all' }}"
+          echo "  Tag       : ${{ inputs.tag || 'v0.1.1' }}"
+          echo "  Dry run   : ${{ inputs.dry_run || 'false' }}"
+          echo "  Contracts : https://github.com/${{ env.GITHUB_ORG }}/aku-platform-contracts"
+          echo "════════════════════════════════════════════════════"

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: aku-platform
+  labels:
+    app.kubernetes.io/managed-by: kubectl
+    aku-platform/environment: staging

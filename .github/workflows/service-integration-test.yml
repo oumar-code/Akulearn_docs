@@ -1,0 +1,271 @@
+name: Service — Integration Tests (Health Checks)
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Pulls the GHCR images built by "Service — Docker Build & Push", starts every
+# selected service in an isolated Docker network, waits for each /health
+# endpoint to return HTTP 200, then tears everything down.
+#
+# Architecture inside the runner:
+#   aku-net (bridge)
+#     ├── postgres   (shared — one instance, separate databases per service)
+#     ├── redis      (shared — separate DB index per service)
+#     └── <service>  (one container per service, env-configured to use above)
+#
+# Each service's /health endpoint is a simple liveness check that does NOT
+# query the database, so the test passes even if migrations have not been run.
+# The goal is to confirm that:
+#   1. The Docker image starts without a fatal import/config error.
+#   2. The FastAPI application binds to its configured port.
+#   3. The /health route responds with {"status": "ok"}.
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# GH_PAT secret must have:
+#   read:packages   — to pull images from GHCR
+#
+# How to trigger
+# ──────────────────────────────────────────────────────────────────────────────
+# Go to: Actions → "Service — Integration Tests (Health Checks)" → Run workflow
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Image tag to pull from GHCR (must already exist)"
+        required: false
+        default: "v0.1.1"
+
+  # Automatically run after a successful Docker build/push
+  workflow_run:
+    workflows: ["Service — Docker Build & Push"]
+    types: [completed]
+    branches: [main]
+
+jobs:
+  integration-test:
+    name: Integration Health Checks (${{ inputs.tag || 'v0.1.1' }})
+    runs-on: ubuntu-latest
+
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+
+    permissions:
+      contents: read   # read this (docs) repo
+      packages: read   # pull images from GHCR
+
+    env:
+      GITHUB_ORG: oumar-code
+      TAG: ${{ inputs.tag || 'v0.1.1' }}
+      # Seconds to wait for each individual HTTP response.  Services that perform
+      # DB migrations or have heavier startup logic may need more time.
+      HEALTH_CHECK_TIMEOUT: "10"
+
+    steps:
+      # ── 1. Log in to GHCR (read-only — pull only) ────────────────────────────
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GH_PAT }}
+
+      # ── 2. Create shared Docker network ──────────────────────────────────────
+      - name: Create Docker network
+        run: docker network create aku-net
+
+      # ── 3. Start shared infrastructure ───────────────────────────────────────
+      - name: Start PostgreSQL
+        run: |
+          docker run -d \
+            --name postgres \
+            --network aku-net \
+            --env POSTGRES_USER=aku \
+            --env POSTGRES_PASSWORD=aku_pass \
+            --env POSTGRES_DB=aku_platform \
+            postgres:16-alpine
+          echo "  ✓ PostgreSQL started"
+
+      - name: Start Redis
+        run: |
+          docker run -d \
+            --name redis \
+            --network aku-net \
+            redis:7-alpine
+          echo "  ✓ Redis started"
+
+      - name: Wait for infrastructure to be ready
+        run: |
+          echo "Waiting for PostgreSQL..."
+          for i in $(seq 1 30); do
+            if docker exec postgres pg_isready -U aku -q 2>/dev/null; then
+              echo "  ✓ PostgreSQL ready"
+              break
+            fi
+            sleep 2
+          done
+
+          echo "Waiting for Redis..."
+          for i in $(seq 1 20); do
+            if docker exec redis redis-cli ping 2>/dev/null | grep -q PONG; then
+              echo "  ✓ Redis ready"
+              break
+            fi
+            sleep 1
+          done
+
+      # ── 4. Pull and start service containers ─────────────────────────────────
+      #
+      # Service ↔ port mapping (container-internal port; each service listens on
+      # its APP_PORT inside the container, but we expose a unique host port to
+      # allow health checks from the runner):
+      #
+      #   akuai        8004  →  host 18004
+      #   akudemy      8000  →  host 18000
+      #   aku-edgehub  8000  →  host 18001
+      #   aku-ighub    8000  →  host 18002
+      #   aku-superhub 8000  →  host 18003
+      #   akututor     8002  →  host 18005
+      #   akuworkspace 8004  →  host 18006
+      #   aku-telhone  8001  →  host 18007
+      #   aku-daas     8001  →  host 18008
+      #
+      - name: Start service containers
+        env:
+          REGISTRY: ghcr.io/${{ env.GITHUB_ORG }}
+        run: |
+          TAG="${{ env.TAG }}"
+          REGISTRY="ghcr.io/${{ env.GITHUB_ORG }}"
+
+          # Common env for all services (non-sensitive; DB/Redis not used by /health)
+          COMMON_ENV="\
+            --env APP_ENV=staging \
+            --env LOG_LEVEL=info \
+            --env DATABASE_URL=postgresql+asyncpg://aku:aku_pass@postgres:5432/aku_platform \
+            --env REDIS_URL=redis://redis:6379/0"
+
+          start_service() {
+            local name="$1"          # lowercase image name
+            local container="$2"     # docker container name
+            local container_port="$3"
+            local host_port="$4"
+            local extra_env="${5:-}"
+
+            echo "Starting ${container}..."
+            eval docker run -d \
+              --name "${container}" \
+              --network aku-net \
+              --publish "${host_port}:${container_port}" \
+              ${COMMON_ENV} \
+              ${extra_env} \
+              "${REGISTRY}/${name}:${TAG}" || \
+            echo "  ⚠  Could not start ${container} (image may not exist yet)"
+          }
+
+          start_service "akuai"        "svc-akuai"        8004 18004
+          start_service "akudemy"      "svc-akudemy"      8000 18000
+          start_service "aku-edgehub"  "svc-aku-edgehub"  8000 18001
+          start_service "aku-ighub"    "svc-aku-ighub"    8000 18002
+          start_service "aku-superhub" "svc-aku-superhub" 8000 18003
+          start_service "akututor"     "svc-akututor"     8002 18005 \
+            "--env AKU_AI_URL=http://svc-akuai:8004"
+          start_service "akuworkspace" "svc-akuworkspace" 8004 18006 \
+            "--env AKU_AI_URL=http://svc-akuai:8004"
+          start_service "aku-telhone"  "svc-aku-telhone"  8001 18007 \
+            "--env AKU_IGHUB_URL=http://svc-aku-ighub:8000"
+          start_service "aku-daas"     "svc-aku-daas"     8001 18008 \
+            "--env AKU_IGHUB_URL=http://svc-aku-ighub:8000"
+
+          echo ""
+          echo "All service containers launched. Waiting 15 s for startup..."
+          sleep 15
+
+      # ── 5. Health checks ──────────────────────────────────────────────────────
+      - name: Run health checks
+        id: health
+        run: |
+          # service_name  host_port
+          declare -A SERVICES=(
+            ["AkuAI"]=18004
+            ["Akudemy"]=18000
+            ["Aku-EdgeHub"]=18001
+            ["Aku-IGHub"]=18002
+            ["Aku-SuperHub"]=18003
+            ["AkuTutor"]=18005
+            ["AkuWorkspace"]=18006
+            ["Aku-Telhone"]=18007
+            ["Aku-DaaS"]=18008
+          )
+
+          ALL_PASS=true
+
+          for svc in "${!SERVICES[@]}"; do
+            port="${SERVICES[$svc]}"
+            url="http://localhost:${port}/health"
+            echo -n "  ${svc} (${url}) ... "
+
+            for attempt in 1 2 3 4 5; do
+              HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time "${HEALTH_CHECK_TIMEOUT}" "${url}" 2>/dev/null || echo "000")
+              if [[ "$HTTP_CODE" == "200" ]]; then
+                echo "✅ HTTP ${HTTP_CODE}"
+                break
+              fi
+              if [[ $attempt -lt 5 ]]; then
+                echo -n "(retry ${attempt}) "
+                sleep 5
+              else
+                echo "❌ HTTP ${HTTP_CODE}"
+                ALL_PASS=false
+              fi
+            done
+          done
+
+          if [[ "$ALL_PASS" == "true" ]]; then
+            echo ""
+            echo "All health checks passed ✅"
+          else
+            echo ""
+            echo "Some health checks failed ❌ — see output above"
+            exit 1
+          fi
+
+      # ── 6. Collect logs on failure ────────────────────────────────────────────
+      - name: Collect container logs (on failure)
+        if: failure()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Container logs (last 50 lines each)"
+          echo "════════════════════════════════════════════════════"
+          for container in \
+            svc-akuai svc-akudemy svc-aku-edgehub svc-aku-ighub svc-aku-superhub \
+            svc-akututor svc-akuworkspace svc-aku-telhone svc-aku-daas; do
+            echo ""
+            echo "--- ${container} ---"
+            docker logs --tail 50 "${container}" 2>&1 || echo "(container not running)"
+          done
+
+      # ── 7. Tear down ──────────────────────────────────────────────────────────
+      - name: Tear down containers and network
+        if: always()
+        run: |
+          echo "Stopping and removing containers..."
+          docker rm -f \
+            svc-akuai svc-akudemy svc-aku-edgehub svc-aku-ighub svc-aku-superhub \
+            svc-akututor svc-akuworkspace svc-aku-telhone svc-aku-daas \
+            postgres redis 2>/dev/null || true
+
+          docker network rm aku-net 2>/dev/null || true
+          echo "  ✓ Cleanup complete"
+
+      # ── 8. Summary ────────────────────────────────────────────────────────────
+      - name: Run summary
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Integration test complete"
+          echo "  Tag     : ${{ env.TAG }}"
+          echo "  Registry: ghcr.io/${{ env.GITHUB_ORG }}"
+          echo "════════════════════════════════════════════════════"

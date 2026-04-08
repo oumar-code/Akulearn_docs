@@ -1,0 +1,103 @@
+# ── AkuAI — Shared Inference Layer ───────────────────────────────────────────
+# Provides text generation, classification, summarisation, embeddings, and the
+# Gemma edge-relay endpoint.  All other services call AkuAI; it does not call
+# any other service.
+#
+# Container port : 8004
+# Health endpoint: GET /health
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: akuai-config
+  namespace: aku-platform
+  labels:
+    app: akuai
+    app.kubernetes.io/part-of: aku-platform
+data:
+  APP_ENV: "staging"
+  LOG_LEVEL: "info"
+  APP_PORT: "8004"
+  CORS_ORIGINS: "http://localhost:3000"
+  GEMMA_MAX_PAYLOAD_BYTES: "4096"
+  # MODEL_DIR and GEMMA_GGUF_PATH are set via a PersistentVolumeClaim in prod;
+  # configure in the Deployment's volumeMounts if using real model weights.
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akuai
+  namespace: aku-platform
+  labels:
+    app: akuai
+    app.kubernetes.io/part-of: aku-platform
+    app.kubernetes.io/version: v0.1.1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: akuai
+  template:
+    metadata:
+      labels:
+        app: akuai
+        app.kubernetes.io/version: v0.1.1
+    spec:
+      imagePullSecrets:
+        - name: ghcr-pull-secret
+      containers:
+        - name: akuai
+          image: ghcr.io/oumar-code/akuai:v0.1.1
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8004
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: akuai-config
+            - secretRef:
+                name: akuai-secret
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "1000m"
+              memory: "2Gi"
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: akuai
+  namespace: aku-platform
+  labels:
+    app: akuai
+    app.kubernetes.io/part-of: aku-platform
+spec:
+  type: ClusterIP
+  selector:
+    app: akuai
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
