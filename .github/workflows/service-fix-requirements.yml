@@ -1,0 +1,172 @@
+name: Service — Fix requirements.txt (remove aku-platform-contracts git dep)
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# The aku-platform-contracts package is referenced in every service's
+# requirements.txt as a git+https:// dep, but the oumar-code/aku-platform-
+# contracts repo does not exist yet.  This causes `pip install` to fail inside
+# the Docker builder stage (pip needs git, and even with git installed the
+# clone fails with 404).
+#
+# This one-shot workflow:
+#   1. Clones each selected service repo
+#   2. Removes the aku-platform-contracts line from requirements.txt
+#   3. Commits and pushes the fix to the default branch
+#   4. Force-moves the v0.1.1 tag to the new commit so that subsequent
+#      service-docker-build-push.yml runs pick up the fixed requirements.
+#
+# Run once, then re-trigger service-docker-build-push.yml to rebuild images.
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      services:
+        description: >
+          Space-separated list of service repos to fix.
+          Leave empty to fix all 9 services.
+        required: false
+        default: "AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS"
+      tag:
+        description: "Git tag to force-move to the fixed commit (e.g. v0.1.1)"
+        required: false
+        default: "v0.1.1"
+      dry_run:
+        description: "Set to 'true' to show diffs without pushing or re-tagging"
+        required: false
+        default: "false"
+
+jobs:
+  fix-requirements:
+    name: Fix requirements.txt (${{ inputs.services || 'all services' }})
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    env:
+      GITHUB_ORG: oumar-code
+      TAG: ${{ inputs.tag || 'v0.1.1' }}
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+
+    steps:
+      # ── 1. Checkout docs repo (needed for nothing here, but keeps the job
+      #       consistent with other service workflows) ──────────────────────────
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+
+      # ── 2. Clone + patch each service repo ───────────────────────────────────
+      - name: Remove aku-platform-contracts git dep from each service
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          SERVICES: ${{ inputs.services || 'AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS' }}
+        run: |
+          SUMMARY=""
+
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+          for svc in $SERVICES; do
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "Processing ${svc}..."
+
+            repo_url="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${svc}.git"
+
+            # Clone the default branch (we'll patch it and push)
+            if ! git clone --depth 1 "${repo_url}" "${svc}" 2>&1; then
+              echo "  ⚠  Could not clone ${svc} — skipping"
+              SUMMARY="${SUMMARY}\n${svc}: SKIPPED (clone failed)"
+              continue
+            fi
+
+            req="${svc}/requirements.txt"
+
+            if [[ ! -f "${req}" ]]; then
+              echo "  ⚠  requirements.txt not found — skipping"
+              SUMMARY="${SUMMARY}\n${svc}: SKIPPED (no requirements.txt)"
+              continue
+            fi
+
+            # Check whether the dep is actually present
+            if ! grep -q 'aku-platform-contracts.*git+' "${req}"; then
+              echo "  ℹ  aku-platform-contracts git dep not found — nothing to do"
+              SUMMARY="${SUMMARY}\n${svc}: SKIPPED (dep not present)"
+              continue
+            fi
+
+            echo "  Before:"
+            grep 'aku-platform-contracts' "${req}" || true
+            echo ""
+
+            # Remove the line (handles both with and without .git extension,
+            # with or without a leading comment line about the dep)
+            sed -i '/aku-platform-contracts.*git+/d' "${req}"
+
+            # Also remove any immediately preceding comment line that solely
+            # describes aku-platform-contracts (e.g. "# Shared Aku Platform contracts")
+            sed -i '/^# Shared Aku Platform contracts/d' "${req}"
+
+            echo "  After (aku-platform-contracts lines removed):"
+            grep 'aku-platform-contracts' "${req}" || echo "  (none)"
+            echo ""
+
+            if [[ "${DRY_RUN}" == "true" ]]; then
+              echo "  DRY RUN — diff only, not committing"
+              git -C "${svc}" diff
+              SUMMARY="${SUMMARY}\n${svc}: DRY RUN (diff shown)"
+              continue
+            fi
+
+            # Commit and push
+            git -C "${svc}" add requirements.txt
+            git -C "${svc}" commit -m \
+              "chore: remove aku-platform-contracts git dep (package not yet published)
+
+The oumar-code/aku-platform-contracts repo does not exist yet.
+Removing the dep unblocks Docker image builds.  It will be re-added
+once the contracts package is published to GHCR / PyPI.
+
+See: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/aku-platform-contracts.md"
+
+            if ! git -C "${svc}" push "${repo_url}" HEAD 2>&1; then
+              echo "  ⚠  Push failed for ${svc}"
+              SUMMARY="${SUMMARY}\n${svc}: FAILED (push error)"
+              continue
+            fi
+
+            NEW_SHA=$(git -C "${svc}" rev-parse HEAD)
+            echo "  ✓ Committed and pushed (${NEW_SHA})"
+
+            # Force-move the tag to the new commit
+            git -C "${svc}" tag -f "${TAG}" "${NEW_SHA}"
+            if ! git -C "${svc}" push "${repo_url}" "refs/tags/${TAG}" --force 2>&1; then
+              echo "  ⚠  Tag push failed for ${svc} — the fix commit was pushed but the tag was not moved"
+              SUMMARY="${SUMMARY}\n${svc}: PARTIAL (commit pushed; tag NOT moved)"
+              continue
+            fi
+
+            echo "  ✓ Tag ${TAG} moved to ${NEW_SHA}"
+            SUMMARY="${SUMMARY}\n${svc}: FIXED (commit + tag ${TAG} updated)"
+          done
+
+          echo ""
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Summary:"
+          echo -e "${SUMMARY}"
+
+      # ── 3. Print next steps ───────────────────────────────────────────────────
+      - name: Next steps
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          if [[ "${DRY_RUN}" == "true" ]]; then
+            echo "  DRY RUN complete — no changes were pushed."
+            echo "  Re-run with dry_run=false to apply the fix."
+          else
+            echo "  Fix applied. Next: trigger the Docker Build & Push workflow"
+            echo "  to rebuild and push images for the fixed services:"
+            echo "    Actions → Service — Docker Build & Push → Run workflow"
+            echo "    (services: ${{ inputs.services || 'all' }}, tag: ${TAG})"
+          fi
+          echo "════════════════════════════════════════════════════"

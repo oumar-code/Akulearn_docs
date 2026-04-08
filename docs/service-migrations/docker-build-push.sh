@@ -68,6 +68,17 @@ for svc in $SERVICES; do
       exit 0
     fi
 
+    # Strip the aku-platform-contracts git+ dep so the Docker builder stage
+    # does not require git to be installed.  The package repo (oumar-code/
+    # aku-platform-contracts) has not been published yet; no service code
+    # currently imports it, so removing it here is safe for the integration
+    # build.  Once the contracts repo is live, this patch can be removed and
+    # the Dockerfiles updated to install git in the builder stage.
+    if [[ -f "${svc}/requirements.txt" ]]; then
+      sed -i '/aku-platform-contracts.*git+/d' "${svc}/requirements.txt"
+      echo "  ℹ  Stripped aku-platform-contracts git dep from ${svc}/requirements.txt"
+    fi
+
     IMAGE_NAME="$(to_lower "$svc")"
     IMAGE_BASE="${REGISTRY}/${IMAGE_NAME}"
     IMAGE_TAG="${IMAGE_BASE}:${TAG}"
