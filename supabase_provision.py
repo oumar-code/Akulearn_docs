@@ -214,7 +214,79 @@ def provision_user(supabase_url: str, service_key: str, member: dict) -> dict:
         }
 
 
-def send_credentials_email(
+def provision_student(supabase_url: str, service_key: str, student: dict) -> dict:
+    """
+    Create a student account in Supabase via the Admin API.
+
+    *student* must contain:
+        name         – full name
+        email        – email address
+        exam_type    – "JAMB" | "WAEC" | "NECO" | "Secondary"
+        class_level  – e.g. "SS2", "JSS3"
+        subjects     – list of subject strings
+
+    Returns a result dict (same shape as provision_user).
+    """
+    temp_password = generate_temp_password()
+    exam_role = f"student_{student['exam_type'].lower()}"
+
+    payload = json.dumps(
+        {
+            "email": student["email"],
+            "password": temp_password,
+            "email_confirm": True,
+            "user_metadata": {
+                "name": student["name"],
+                "exam_type": student["exam_type"],
+                "class_level": student["class_level"],
+                "subjects": student.get("subjects", []),
+                "role": exam_role,
+                "dashboard": "student",
+            },
+            "app_metadata": {
+                "role": exam_role,
+            },
+        }
+    ).encode()
+
+    req = urllib.request.Request(
+        f"{supabase_url}/auth/v1/admin/users",
+        data=payload,
+        headers={
+            "Content-Type": "application/json",
+            "apikey": service_key,
+            "Authorization": f"Bearer {service_key}",
+        },
+        method="POST",
+    )
+
+    try:
+        with urllib.request.urlopen(req) as response:
+            result = json.loads(response.read())
+            return {
+                "name": student["name"],
+                "email": student["email"],
+                "role": exam_role,
+                "dashboard": "student",
+                "exam_type": student["exam_type"],
+                "class_level": student["class_level"],
+                "temp_password": temp_password,
+                "user_id": result.get("id", ""),
+                "status": "created",
+            }
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode()
+        return {
+            "name": student["name"],
+            "email": student["email"],
+            "role": exam_role,
+            "dashboard": "student",
+            "temp_password": temp_password,
+            "status": f"error ({exc.code}): {body}",
+        }
+
+
+
     resend_api_key: str,
     from_email: str,
     result: dict,

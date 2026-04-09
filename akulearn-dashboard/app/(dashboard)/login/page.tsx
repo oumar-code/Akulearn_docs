@@ -19,20 +19,30 @@ export default function LoginPage() {
   };
 
   return (
-    <form onSubmit={handleLogin} className={styles.loginForm}>
-      <h2>Team Login</h2>
-      <input
-        type="email"
-        placeholder="Your team email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        required
-        className={styles.loginInput}
-      />
-      <button type="submit" className={styles.loginButton}>
-        Send Magic Link
-      </button>
-      <div className={styles.loginMessage}>{message}</div>
-    </form>
+    <div className={styles.loginWrapper}>
+      <form onSubmit={handleLogin} className={styles.loginForm}>
+        <div className={styles.loginLogo}>🎓</div>
+        <h2 className={styles.loginTitle}>Akulearn Dashboard</h2>
+        <p className={styles.loginSubtitle}>
+          Team members and students — enter your registered email to receive a secure login link.
+        </p>
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          required
+          className={styles.loginInput}
+        />
+        <button type="submit" className={styles.loginButton}>
+          Send Magic Link
+        </button>
+        {message && <div className={styles.loginMessage}>{message}</div>}
+        <div className={styles.loginHint}>
+          <strong>Team members:</strong> use your assigned team email.<br />
+          <strong>Students:</strong> use the email provided during registration.
+        </div>
+      </form>
+    </div>
   );
 }
