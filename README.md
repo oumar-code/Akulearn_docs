@@ -1,5 +1,3 @@
-# aku-platform-contracts
-
 # Akulearn Documentation Repository
 
 ![CI](https://github.com/oumar-code/Akulearn_docs/actions/workflows/automation.yml/badge.svg)
@@ -59,7 +57,8 @@ This repository is organized for clarity and ease of navigation:
 - **docs/07-glossary/**: Glossary of Akulearn terms
 - **docs/images/**: Diagrams and screenshots
 - **akulearn-dashboard/**: Canonical Next.js frontend (source of truth)
-- **KOTLIN MULTIPLATFORM/**: KMP shared library (migrating to `oumar-code/Aku-Mobile`)
+- **client_examples/**: Apollo/GraphQL + WebSocket + D3 visualization SDK examples
+- **aku_platform_contracts/**: Shared Pydantic schemas, OpenAPI specs, Kafka topic constants
 
 ### Strategic Roadmap & Thought Leadership
 - **docs/clean_energy_for_africa.md**: Clean energy research and vision for Africa
@@ -136,50 +135,29 @@ python supabase_provision.py
 
 > ⚠ Never commit your `.env` file. It is already listed in `.gitignore`.
 
-## Contact Information
-
-For questions, feedback, or partnership inquiries, please contact the Akulearn team (details coming soon).
-
-
-```mermaid
-graph TD
-    subgraph Edge
-        E1[Edge Hub] -- Mesh Link --> E2[Edge Hub]
-        E1 -- Client Access --> D1[User Device]
-    end
-    subgraph Cluster
-        C1[Super Hub] -- Backhaul --> IG1[IG-Hub]
-        C1 -- OTA Updates --> E1
-    end
-    IG1[Interstate Gateway Hub]
-```
-
 ## Repository Structure
 
 | Directory | Purpose |
 |---|---|
-| `KOTLIN MULTIPLATFORM/` | Android + iOS mobile app (KMP) |
-| `docs/` | Platform documentation (MkDocs) |
-| `supabase/` | Auth and database schema |
-| `infra/` / `kubernetes/` | Infrastructure and deployment |
-| `wave3_rest_api.py` and related | Python content and recommendation backend |
+| `akulearn-dashboard/` | Canonical Next.js frontend — marketing site + all dashboard pages |
+| `docs/` | Platform documentation (MkDocs site) |
+| `client_examples/` | Apollo/GraphQL + WebSocket + D3 visualization SDK examples |
+| `aku_platform_contracts/` | Shared Pydantic schemas, OpenAPI specs, Kafka topic constants |
 
 Full documentation structure:
 
+- **`docs/ecosystem-map.md`** — Master map of all repos, roles, and migration status
 - **`docs/00-project-overview/`** — Vision, mission, and Phase 1 roadmap
 - **`docs/01-architecture/`** — System architecture and design documents
 - **`docs/02-backend/`** — Backend handbook, API specs, and database schemas
-- **`docs/03-mobile/`** — Mobile app guidelines
+- **`docs/03-mobile/`** — Mobile app guidelines (links to `oumar-code/Aku-Mobile`)
 - **`docs/04-iot-projector/`** — IoT projector guidelines
 - **`docs/05-cross-cutting/`** — Technical specs and coding standards
 - **`docs/06-process-methodology/`** — Agile/DevOps methodology
 - **`docs/07-glossary/`** — Glossary of Aku terms
-- **`docs/images/`** — Diagrams and screenshots
+- **`docs/client-sdk/`** — Client SDK integration guide
 
 ## Getting Started
-
-### Mobile App (Android / iOS)
-See [`KOTLIN MULTIPLATFORM/README.md`](KOTLIN%20MULTIPLATFORM/README.md) for full setup instructions.
 
 ### Documentation Site
 ```sh
@@ -188,11 +166,16 @@ mkdocs serve
 ```
 Open [http://localhost:8000](http://localhost:8000) in your browser.
 
-### Python Backend
+### Backend Services
+Each service repo has its own Python/FastAPI scaffold (see `docs/service-templates/python-fastapi-bootstrap.md`):
 ```sh
+# In any service repo (AkuAI, Akudemy, Aku-EdgeHub, etc.)
 pip install -r requirements.txt
-python start_wave3_server.py
+uvicorn app.main:app --reload
 ```
+
+### Mobile App (Android / iOS)
+See [`oumar-code/Aku-Mobile`](https://github.com/oumar-code/Aku-Mobile) for full setup instructions.
 
 ## Contributing
 
@@ -204,74 +187,12 @@ For questions, feedback, or partnership inquiries, please contact the Aku Platfo
 
 ---
 
-Thank you for helping us build a brighter future for education and connectivity!
-
-# Aku Platform Documentation Repository
-
-Welcome to the Aku Platform documentation repository! This space contains all official documentation for the Aku Platform, designed to empower learners and communities across Africa.
-
 ## Interactive Zamfara Network Map
 
 [![Zamfara Network Map Preview](docs/network-map/preview.png)](https://oumar-code.github.io/Akulearn_docs/docs/network-map/)
 
 > **Click the image above or [this link](https://oumar-code.github.io/Akulearn_docs/docs/network-map/) to view the interactive Zamfara mesh network map.**
 
-## Architecture Overview
-
-Below is the Aku Platform architecture diagram. If you see a rendering error, please view the diagram in a Markdown editor that supports Mermaid, or see the GitHub documentation for troubleshooting.
-
-```mermaid
-graph TD
-    subgraph Edge
-        E1[Edge Hub] -- Mesh Link --> E2[Edge Hub]
-        E1 -- Client Access --> D1[User Device]
-    end
-    subgraph Cluster
-        C1[Super Hub] -- Backhaul --> IG1[IG-Hub]
-        C1 -- OTA Updates --> E1
-    end
-    IG1[Interstate Gateway Hub]
-```
-
-> **Note:** If the diagram does not render, see [GitHub Mermaid Diagrams](https://docs.github.com/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams#creating-mermaid-diagrams) for troubleshooting.
-
-## Project Overview
-
-Aku Platform is an innovative initiative with a mission to make quality, personalized, and verifiable education and connectivity universally accessible. Our hybrid ecosystem leverages AI, blockchain, and solar/wind-powered hardware to deliver engaging, curriculum-aligned content and telecom services to both connected and underserved communities.
-
-## Repository Structure
-
-- **docs/00-project-overview/**: Vision, mission, and Phase 1 roadmap
-- **docs/01-architecture/**: System architecture, ADRs, and design documents
-- **docs/02-backend/**: Backend handbook, API specs, and database schemas
-- **docs/03-mobile/**: Mobile app guidelines
-- **docs/04-iot-projector/**: IoT projector guidelines
-- **docs/05-cross-cutting/**: Technical specs and coding standards
-- **docs/06-process-methodology/**: Agile/DevOps methodology
-- **docs/07-glossary/**: Glossary of Aku terms
-- **docs/images/**: Diagrams and screenshots
-
-## How to Contribute
-
-We welcome contributions! Please check back soon for our contribution guidelines and process.
-
-## How to View Documentation
-
-To view the documentation locally:
-
-1. Install [MkDocs](https://www.mkdocs.org/) and the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme.
-2. In your terminal, run:
-   ```sh
-   pip install mkdocs mkdocs-material
-   mkdocs serve
-   ```
-3. Open [http://localhost:8000](http://localhost:8000) in your browser to explore the docs.
-
-## Contact Information
-
-For questions, feedback, or partnership inquiries, please contact the Aku Platform team (details coming soon).
-
 ---
 
 Thank you for helping us build a brighter future for education and connectivity!
-"# Akudemy" 
