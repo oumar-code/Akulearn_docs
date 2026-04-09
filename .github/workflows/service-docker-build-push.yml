@@ -132,13 +132,25 @@ jobs:
                 continue
               fi
 
+              # Ensure git is available in the builder stage (same patch as
+              # docker-build-push.sh) so pip can install git+ URL deps.
+              if ! grep -q 'apt-get install.*\bgit\b' "${dir}/Dockerfile" 2>/dev/null; then
+                if grep -q 'apt-get install.*--no-install-recommends' "${dir}/Dockerfile" 2>/dev/null; then
+                  sed -i 's/\(apt-get install -y --no-install-recommends\)/\1 git/' \
+                    "${dir}/Dockerfile"
+                fi
+              fi
+
               image="ghcr.io/${GHCR_USER}/$(echo "$svc" | tr '[:upper:]' '[:lower:]'):${TAG_OVERRIDE}"
               echo "  → $svc  →  $image"
 
-              docker build \
+              if ! docker build \
                 --file "${dir}/Dockerfile" \
                 --tag  "${image}" \
-                "${dir}"
+                "${dir}"; then
+                echo "    ✗ Build FAILED for $svc"
+                continue
+              fi
               echo "    ✓ Build OK (not pushed in dry-run mode)"
             done
           else
