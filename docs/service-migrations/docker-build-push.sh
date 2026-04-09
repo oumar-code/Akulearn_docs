@@ -50,63 +50,86 @@ echo ""
 to_lower() { echo "$1" | tr '[:upper:]' '[:lower:]'; }
 
 # ── Per-service build ─────────────────────────────────────────────────────────
+# NOTE: Do NOT wrap service iterations in a subshell followed by `|| handler`
+# (i.e., avoid the `( ... ) || catch` pattern).  Bash disables `set -e` for
+# every command inside a subshell that is the left-hand side of `||`, so build
+# or push failures are silently ignored and the summary falsely reports PUSHED.
 
 for svc in $SERVICES; do
-  (
-    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-    echo "Building $svc..."
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "Building $svc..."
 
-    if [[ ! -d "$svc" ]] || [[ ! -d "$svc/.git" ]]; then
-      echo "  ⚠  $svc — directory not found or not a git repo; skipping"
-      echo "$svc: SKIPPED (not cloned)" >> "$SUMMARY_FILE"
-      exit 0
+  if [[ ! -d "$svc" ]] || [[ ! -d "$svc/.git" ]]; then
+    echo "  ⚠  $svc — directory not found or not a git repo; skipping"
+    echo "$svc: SKIPPED (not cloned)" >> "$SUMMARY_FILE"
+    echo ""
+    continue
+  fi
+
+  if [[ ! -f "$svc/Dockerfile" ]]; then
+    echo "  ⚠  $svc/Dockerfile not found; skipping"
+    echo "$svc: SKIPPED (no Dockerfile)" >> "$SUMMARY_FILE"
+    echo ""
+    continue
+  fi
+
+  # Ensure git is available in the Dockerfile builder stage so that pip can
+  # install git+ URL dependencies (e.g. aku-platform-contracts).  The standard
+  # python:3.11-slim image does not include git; we patch any apt-get install
+  # --no-install-recommends line in the Dockerfile to add it.  The grep check
+  # makes the substitution idempotent: once git is already listed the sed is
+  # skipped on subsequent runs.
+  if ! grep -q 'apt-get install.*\bgit\b' "${svc}/Dockerfile" 2>/dev/null; then
+    if grep -q 'apt-get install.*--no-install-recommends' "${svc}/Dockerfile" 2>/dev/null; then
+      sed -i 's/\(apt-get install -y --no-install-recommends\)/\1 git/' \
+        "${svc}/Dockerfile"
+      echo "  ℹ  Patched ${svc}/Dockerfile: added git to builder apt-get install"
+    else
+      echo "  ⚠  ${svc}/Dockerfile has no apt-get install --no-install-recommends line — git may be unavailable"
     fi
+  fi
 
-    if [[ ! -f "$svc/Dockerfile" ]]; then
-      echo "  ⚠  $svc/Dockerfile not found; skipping"
-      echo "$svc: SKIPPED (no Dockerfile)" >> "$SUMMARY_FILE"
-      exit 0
-    fi
+  IMAGE_NAME="$(to_lower "$svc")"
+  IMAGE_BASE="${REGISTRY}/${IMAGE_NAME}"
+  IMAGE_TAG="${IMAGE_BASE}:${TAG}"
+  IMAGE_LATEST="${IMAGE_BASE}:latest"
 
-    # Strip the aku-platform-contracts git+ dep so the Docker builder stage
-    # does not require git to be installed.  The package repo (oumar-code/
-    # aku-platform-contracts) has not been published yet; no service code
-    # currently imports it, so removing it here is safe for the integration
-    # build.  Once the contracts repo is live, this patch can be removed and
-    # the Dockerfiles updated to install git in the builder stage.
-    if [[ -f "${svc}/requirements.txt" ]]; then
-      sed -i '/aku-platform-contracts.*git+/d' "${svc}/requirements.txt"
-      echo "  ℹ  Stripped aku-platform-contracts git dep from ${svc}/requirements.txt"
-    fi
+  echo "  Image : ${IMAGE_TAG}"
+  echo "  Also  : ${IMAGE_LATEST}"
 
-    IMAGE_NAME="$(to_lower "$svc")"
-    IMAGE_BASE="${REGISTRY}/${IMAGE_NAME}"
-    IMAGE_TAG="${IMAGE_BASE}:${TAG}"
-    IMAGE_LATEST="${IMAGE_BASE}:latest"
-
-    echo "  Image : ${IMAGE_TAG}"
-    echo "  Also  : ${IMAGE_LATEST}"
-
-    # Build — multi-platform linux/amd64 to match Kubernetes node pools.
-    # We use --load (not --push) to produce a local image first so we can
-    # inspect it before pushing.  Both tags are applied in one build pass.
-    docker build \
+  # Build — both version tag and :latest applied in one pass.
+  if ! docker build \
       --file "${svc}/Dockerfile" \
       --tag  "${IMAGE_TAG}" \
       --tag  "${IMAGE_LATEST}" \
       --label "org.opencontainers.image.source=https://github.com/${GHCR_USER}/${svc}" \
       --label "org.opencontainers.image.revision=${TAG}" \
       --label "org.opencontainers.image.created=$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-      "${svc}"
+      "${svc}"; then
+    echo "  ✗ Build FAILED for ${svc}"
+    echo "$svc: FAILED (build error)" >> "$SUMMARY_FILE"
+    echo ""
+    continue
+  fi
 
-    echo "  ✓ Build succeeded — pushing ${IMAGE_TAG}"
-    docker push "${IMAGE_TAG}"
-    docker push "${IMAGE_LATEST}"
-    echo "  ✓ Pushed ${IMAGE_TAG} and ${IMAGE_LATEST}"
+  echo "  ✓ Build succeeded — pushing ${IMAGE_TAG}"
 
-    echo "$svc: PUSHED ${IMAGE_TAG}" >> "$SUMMARY_FILE"
-  ) || echo "$svc: FAILED" >> "$SUMMARY_FILE"
+  if ! docker push "${IMAGE_TAG}"; then
+    echo "  ✗ Push FAILED for ${IMAGE_TAG}"
+    echo "$svc: FAILED (push error)" >> "$SUMMARY_FILE"
+    echo ""
+    continue
+  fi
 
+  if ! docker push "${IMAGE_LATEST}"; then
+    echo "  ✗ Push FAILED for ${IMAGE_LATEST}"
+    echo "$svc: FAILED (push :latest error)" >> "$SUMMARY_FILE"
+    echo ""
+    continue
+  fi
+
+  echo "  ✓ Pushed ${IMAGE_TAG} and ${IMAGE_LATEST}"
+  echo "$svc: PUSHED ${IMAGE_TAG}" >> "$SUMMARY_FILE"
   echo ""
 done
 
