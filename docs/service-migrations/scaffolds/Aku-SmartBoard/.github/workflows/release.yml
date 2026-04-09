@@ -1,0 +1,72 @@
+name: Build & Release
+
+# Triggered on version tags (v*.*.*) or manually.
+# On tag push: builds the linuxX64 .kexe binary and attaches it + the systemd
+# service unit to a GitHub Release.
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build linuxX64 binary
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Cache Gradle packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Build linuxX64 binary
+        run: ./gradlew build --no-daemon
+
+      - name: Locate .kexe binary
+        id: locate
+        run: |
+          BINARY=$(find build -name "*.kexe" -type f | head -1)
+          if [[ -z "$BINARY" ]]; then
+            echo "❌ No .kexe binary found after build"
+            exit 1
+          fi
+          echo "binary=${BINARY}" >> "$GITHUB_OUTPUT"
+          echo "✅ Binary: ${BINARY}"
+
+      - name: Upload binary artifact (PRs and workflow_dispatch)
+        if: "!startsWith(github.ref, 'refs/tags/')"
+        uses: actions/upload-artifact@v4
+        with:
+          name: akulearn-smartboard-linux
+          path: ${{ steps.locate.outputs.binary }}
+          retention-days: 7
+
+      - name: Create GitHub Release (tag push only)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Aku-SmartBoard ${{ github.ref_name }}
+          generate_release_notes: true
+          files: |
+            ${{ steps.locate.outputs.binary }}
+            systemd/akulearn-smartboard.service
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

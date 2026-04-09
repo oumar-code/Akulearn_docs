@@ -1,0 +1,24 @@
+[Unit]
+Description=Aku SmartBoard — Classroom Client (KMP Compose Desktop)
+Documentation=https://github.com/oumar-code/Aku-SmartBoard
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=aku
+Group=aku
+ExecStart=/usr/local/bin/akulearn-smartboard
+Restart=on-failure
+RestartSec=5
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/aku/.Xauthority
+Environment=HUB_URL=http://hub.local:8000
+Environment=LOG_LEVEL=INFO
+
+# Resource limits
+LimitNOFILE=65536
+MemoryMax=512M
+
+[Install]
+WantedBy=graphical.target

@@ -227,7 +227,7 @@ Migration guide: `docs/service-templates/python-fastapi-bootstrap.md`
 
 ---
 
-_Last updated: 2026-04-08 — contracts repo fully complete: Pydantic schemas defined, dependency added to all 9 service repos (PRs merged), published to GitHub Packages._
+_Last updated: 2026-04-09 — Content & Classroom App Migration section added: Aku-Content and Aku-SmartBoard repos created, migration scripts generated (`migrate-to-aku-content.sh`, `migrate-exam-papers.sh`, `migrate-to-aku-smartboard.sh`), Aku-SmartBoard CI/release workflow scaffold created._
 
 ---
 
@@ -245,6 +245,10 @@ Ready-to-apply migration resources are in `docs/service-migrations/`:
 | **Docker build & push script** | `docs/service-migrations/docker-build-push.sh` |
 | **Sync OpenAPI specs to contracts repo** | `docs/service-migrations/sync-openapi-to-contracts.sh` |
 | **Pin contracts version script** | `docs/service-migrations/pin-contracts-version.sh` |
+| **Migrate content/ → Aku-Content** | `docs/service-migrations/migrate-to-aku-content.sh` |
+| **Migrate exam papers → Akudemy** | `docs/service-migrations/migrate-exam-papers.sh` |
+| **Migrate akulearn-linux-app/ → Aku-SmartBoard** | `docs/service-migrations/migrate-to-aku-smartboard.sh` |
+| **Aku-SmartBoard CI/release workflow scaffold** | `docs/service-migrations/scaffolds/Aku-SmartBoard/` |
 | Frontend archive notices | `docs/service-migrations/frontend-archive-notices.md` |
 | KMP migration runbook | `docs/03-mobile/kmp-migration-runbook.md` |
 | Contracts repo proposal | `docs/aku-platform-contracts.md` |
@@ -381,3 +385,43 @@ the following CI/CD steps have been added to create a full build → test → de
 |--------|--------|
 | Create `docs/service-migrations/pin-contracts-version.sh` | ✅ Done |
 | Run script to pin all 9 service repos to `v0.1.1` | ⬜ Pending (trigger manually after Docker images are validated) |
+
+---
+
+## Content & Classroom App Migration
+
+**Decision date: 2026-04-09**
+Two new repos (`Aku-Content`, `Aku-SmartBoard`) have been created. Migration scripts are in `docs/service-migrations/`.
+
+### Aku-Content — Content Library Migration
+
+| Action | Status |
+|--------|--------|
+| Create `oumar-code/Aku-Content` repository | ✅ Done |
+| Create migration script (`docs/service-migrations/migrate-to-aku-content.sh`) | ✅ Done |
+| Initialize Git LFS in Aku-Content for binary assets (.glb, .unitypackage, .pdf, .mp4, .zip) | ⬜ Pending (run `migrate-to-aku-content.sh`) |
+| Copy `content/` tree (textbooks, AR, VR, simulations, flashcards, quizzes, games, encyclopedia, tools, news corpus) | ⬜ Pending (run `migrate-to-aku-content.sh`) |
+| Copy `content_templates/` CSV templates | ⬜ Pending (run `migrate-to-aku-content.sh`) |
+| Update Akudemy and Aku-EdgeHub to reference new content repo | ⬜ Pending post-copy |
+| Remove `content/` and `content_templates/` from `Akulearn_docs` after migration confirmed | ⬜ Pending |
+
+### Akudemy — Exam Papers Migration
+
+| Action | Status |
+|--------|--------|
+| Create migration script (`docs/service-migrations/migrate-exam-papers.sh`) | ✅ Done |
+| Copy `data/exam_papers/` (1,350 questions, JSON + CSV) to `oumar-code/Akudemy/data/` | ⬜ Pending (run `migrate-exam-papers.sh`) |
+| Copy `mlops/exam_paper_scraper.py` and docs to `oumar-code/Akudemy/scripts/` | ⬜ Pending (run `migrate-exam-papers.sh`) |
+| Remove `data/exam_papers/` from `Akulearn_docs` after migration confirmed | ⬜ Pending |
+
+### Aku-SmartBoard — KMP Classroom App Migration
+
+| Action | Status |
+|--------|--------|
+| Create `oumar-code/Aku-SmartBoard` repository | ✅ Done |
+| Create migration script (`docs/service-migrations/migrate-to-aku-smartboard.sh`) | ✅ Done |
+| Create GitHub Actions CI/release workflow scaffold (`docs/service-migrations/scaffolds/Aku-SmartBoard/`) | ✅ Done |
+| Copy `akulearn-linux-app/` (Kotlin source, Gradle build, DEPLOYMENT.md) to new repo root | ⬜ Pending (run `migrate-to-aku-smartboard.sh`) |
+| Set up GitHub Actions: `./gradlew build` → release `.kexe` binary as GitHub Release artifact | ⬜ Pending (apply scaffold from `docs/service-migrations/scaffolds/Aku-SmartBoard/`) |
+| Add systemd service unit to GitHub Release assets | ⬜ Pending (covered by CI workflow scaffold) |
+| Remove `akulearn-linux-app/` from `Akulearn_docs` after migration confirmed | ⬜ Pending |
