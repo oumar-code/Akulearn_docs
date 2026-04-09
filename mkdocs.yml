@@ -97,6 +97,8 @@ nav:
       - Overview: 03-mobile/index.md
       - KMP Migration Runbook: 03-mobile/kmp-migration-runbook.md
   - IoT Projector: 04-iot-projector/index.md
+  - Client SDK:
+      - Integration Guide: client-sdk/index.md
   - AI & ML:
       - AI Tutor: ai_tutor.md
       - ML Training Pipeline: ml_training_pipeline.md

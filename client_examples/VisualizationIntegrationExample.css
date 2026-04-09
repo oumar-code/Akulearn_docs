@@ -1,0 +1,158 @@
+.visualization-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f9fafb;
+}
+
+.visualization-nav {
+  display: flex;
+  gap: 0;
+  background: #fff;
+  border-bottom: 2px solid #e5e7eb;
+  padding: 0;
+}
+
+.nav-tab {
+  flex: 1;
+  padding: 24px 32px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.nav-tab:hover {
+  background: #f9fafb;
+  color: #111827;
+}
+
+.nav-tab.active {
+  color: #4f46e5;
+  border-bottom-color: #4f46e5;
+  background: #f9fafb;
+}
+
+.tab-description {
+  font-size: 13px;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.nav-tab.active .tab-description {
+  color: #6b7280;
+}
+
+.visualization-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.visualization-help {
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  padding: 20px 40px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.help-content h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.help-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.help-content li {
+  font-size: 14px;
+  color: #6b7280;
+  padding: 8px 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.visualization-loading,
+.visualization-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 16px;
+}
+
+.visualization-loading p,
+.visualization-error p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.visualization-error h2 {
+  color: #ef4444;
+  margin: 0;
+}
+
+.visualization-error button {
+  padding: 12px 24px;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.visualization-error button:hover {
+  background: #4338ca;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e5e7eb;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .visualization-nav {
+    flex-direction: column;
+  }
+
+  .nav-tab {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .visualization-help {
+    padding: 16px;
+  }
+
+  .help-content ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
