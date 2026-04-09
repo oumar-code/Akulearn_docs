@@ -20,6 +20,8 @@ const AuditLogsViewer = dynamic(() => import("../admin/audit-logs").then(mod => 
 const ProductRoadmapKanban = dynamic(() => import("../product/roadmap-kanban").then(mod => mod.default), { ssr: false });
 const MarketingAnalytics = dynamic(() => import("../product/marketing-analytics").then(mod => mod.default), { ssr: false });
 const MediaKitPanel = dynamic(() => import("../product/media-kit").then(mod => mod.default), { ssr: false });
+const StudentExamDashboard = dynamic(() => import("../content/student-exam-dashboard").then(mod => mod.default), { ssr: false });
+const StudentOnboardingPanel = dynamic(() => import("../content/student-onboarding-panel").then(mod => mod.default), { ssr: false });
 
 // Map team emails to roles and accesses (real emails from supabase_provision.py)
 type TeamMember = {
@@ -135,8 +137,20 @@ const TEAM_MEMBERS: TeamMember[] = [
 interface SupabaseUser {
   email?: string;
   id?: string;
-  // Add other expected user properties as needed
+  user_metadata?: {
+    name?: string;
+    exam_type?: string;
+    class_level?: string;
+    subjects?: string[];
+    role?: string;
+    dashboard?: string;
+  };
+  app_metadata?: {
+    role?: string;
+  };
 }
+
+const STUDENT_ROLES = ["student_jamb", "student_waec", "student_neco", "student_secondary", "student"];
 
 export default function DashboardPage() {
   const [user, setUser] = useState<SupabaseUser | null>(null);
@@ -148,7 +162,7 @@ export default function DashboardPage() {
     const getUser = async () => {
       const { data } = await supabase.auth.getUser();
       if (data?.user) {
-        setUser(data.user);
+        setUser(data.user as SupabaseUser);
         if (data.user.email) {
           const found = TEAM_MEMBERS.find(m => m.email.toLowerCase() === data.user.email!.toLowerCase()) || null;
           setMember(found);
@@ -166,12 +180,40 @@ export default function DashboardPage() {
   if (loading) return <div>Loading...</div>;
   if (!user) return null;
 
+  // Check if user is a student (from Supabase metadata, not in team list)
+  const appRole = user.app_metadata?.role || user.user_metadata?.role || "";
+  const isStudent = !member && STUDENT_ROLES.includes(appRole);
+
+  if (isStudent) {
+    const examType = user.user_metadata?.exam_type || appRole.replace("student_", "").toUpperCase() || "JAMB";
+    const studentData = {
+      name: user.user_metadata?.name || user.email || "Student",
+      email: user.email || "",
+      exam_type: examType === "SECONDARY" ? "Secondary" : examType,
+      class_level: user.user_metadata?.class_level || "SS2",
+      subjects: user.user_metadata?.subjects || [],
+    };
+    return (
+      <>
+        <StudentExamDashboard student={studentData} />
+        <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+          <button
+            className={styles.signOutBtn}
+            onClick={async () => { await supabase.auth.signOut(); router.push("/login"); }}
+          >
+            Sign Out
+          </button>
+        </div>
+      </>
+    );
+  }
+
   if (!member) {
     return (
       <div className={styles.centeredBox}>
         <h2>Welcome</h2>
         <p>Email: {user.email}</p>
-        <p className={styles.errorText}>You do not have a team dashboard assigned. Please contact admin.</p>
+        <p className={styles.errorText}>You do not have a dashboard assigned. Please contact admin.</p>
         <button onClick={async () => { await supabase.auth.signOut(); router.push("/login"); }}>
           Sign Out
         </button>
@@ -202,12 +244,14 @@ export default function DashboardPage() {
             <ul>
               <li>System analytics dashboard (user stats, system health)</li>
               <li>User management (invite, remove, assign roles)</li>
+              <li>Student onboarding (JAMB / WAEC / NECO / Secondary)</li>
               <li>Content management overview</li>
               <li>System settings (feature toggles, integrations)</li>
               <li>Audit logs viewer</li>
               <li>AI/ML/DevOps status panels</li>
             </ul>
           </div>
+          <StudentOnboardingPanel />
           <SystemAnalyticsDashboard />
           <UserManagementPanel />
           <AuditLogsViewer />
@@ -270,13 +314,14 @@ export default function DashboardPage() {
           <div className={styles.panelExamPrep}>
             <h3>Exam Prep & Access Coordinator Panel</h3>
             <ul>
-              <li>JAMB/WAEC/NECO subject dashboards</li>
-              <li>Student/teacher dashboard access</li>
+              <li>JAMB/WAEC/NECO/Secondary student onboarding</li>
+              <li>Student &amp; teacher dashboard access</li>
               <li>Quiz and topic management</li>
               <li>Medicine pathway tracker</li>
               <li>School admin dashboard</li>
             </ul>
           </div>
+          <StudentOnboardingPanel />
           <QuizTopicManagement />
           <StudentTeacherDashboard />
         </>
