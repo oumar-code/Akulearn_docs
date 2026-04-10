@@ -123,6 +123,28 @@ Credentials are ERC-721/ERC-1155 tokens minted on Polygon.
 
 ---
 
+## Content Source — Aku-Content
+
+All learning content (textbooks, AR/VR assets, simulations, flashcards, quizzes, games, encyclopaedia, news corpus) lives in the **[`oumar-code/Aku-Content`](https://github.com/oumar-code/Aku-Content)** repository, tracked with Git LFS.
+
+Akudemy is the **delivery layer** — it reads from Aku-Content and exposes the content through its API to Edge Hubs.
+
+### Seeding content from Aku-Content
+
+```bash
+# Option A — clone as a sibling directory
+git clone https://github.com/oumar-code/Aku-Content /opt/aku-content
+git -C /opt/aku-content lfs pull
+# Set AKU_CONTENT_LOCAL_PATH=/opt/aku-content in .env
+
+# Option B — reference raw files via HTTPS (no LFS pull needed for text assets)
+# Set AKU_CONTENT_BASE_URL=https://raw.githubusercontent.com/oumar-code/Aku-Content/main in .env
+```
+
+The `app/services/content.py` stub should be replaced with a loader that reads from `AKU_CONTENT_LOCAL_PATH` (or fetches via `AKU_CONTENT_BASE_URL`) and hydrates the PostgreSQL database.
+
+---
+
 ## Development Notes
 
 - Python **3.11+** required.

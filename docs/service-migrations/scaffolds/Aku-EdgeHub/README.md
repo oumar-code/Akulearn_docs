@@ -90,6 +90,18 @@ The container runs as non-root user `aku` (uid 1001). The SQLite file is written
 
 ---
 
+## Content Source — Aku-Content
+
+Edge Hub receives content by polling **Akudemy** (`GET /api/v1/content/sync`). Akudemy in turn reads from the **[`oumar-code/Aku-Content`](https://github.com/oumar-code/Aku-Content)** repository (Git LFS) — Edge Hub has no direct dependency on Aku-Content.
+
+```
+oumar-code/Aku-Content  ──▶  Akudemy (PostgreSQL/Redis)  ──▶  Aku-EdgeHub (SQLite)  ──▶  Learner devices
+```
+
+Set `AKUDEMY_BASE_URL` in `.env` to point at your Akudemy instance.
+
+---
+
 ## API reference
 
 ### `GET /api/v1/health/offline`

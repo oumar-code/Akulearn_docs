@@ -199,7 +199,7 @@ The `content/` and `content_templates/` directories should move to a dedicated `
 - [ ] **Trigger `stub-aku-content.yml`** from GitHub Actions UI → opens PR in Aku-Content with LFS config + empty dirs
 - [ ] ⚠️ **LOCAL MACHINE REQUIRED** — Copy `content/` tree (textbooks, AR, VR, simulations, flashcards, quizzes, games, encyclopedia, tools, news corpus): restore `content/` locally, then run `./docs/service-migrations/migrate-to-aku-content.sh`
 - [ ] ⚠️ **LOCAL MACHINE REQUIRED** — Copy `content_templates/` CSV templates (included in the same full migration run above)
-- [ ] Update Akudemy and Aku-EdgeHub to reference new content repo
+- [x] Update Akudemy and Aku-EdgeHub to reference new content repo (scaffold READMEs + `.env.example` updated; apply to live repos once content migration is complete)
 - [ ] Remove `content/` and `content_templates/` from `Akulearn_docs` after migration is confirmed
 
 ### Akudemy — Exam Papers
