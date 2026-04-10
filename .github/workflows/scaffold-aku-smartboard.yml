@@ -128,6 +128,27 @@ jobs:
         if: inputs.dry_run != 'true'
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
+          PR_BODY: |
+            Adds the GitHub Actions CI/release workflow and systemd service unit to Aku-SmartBoard.
+
+            ## What's included
+            - `.github/workflows/release.yml` — builds `./gradlew build` on tag push → attaches `.kexe` binary + systemd unit to a GitHub Release
+            - `systemd/akulearn-smartboard.service` — ready-to-install systemd unit for the classroom client
+
+            ## What's NOT included yet
+            The Kotlin application source (`akulearn-linux-app/`) has not been copied yet — it is gitignored
+            in the Akulearn_docs monorepo and must be pushed separately from a local machine.
+
+            Run `./docs/service-migrations/migrate-to-aku-smartboard.sh` (full migration, local machine) once
+            the source is restored locally to complete the migration.
+
+            ## Next steps
+            1. Merge this PR to get the CI/release pipeline in place
+            2. Run the full migration from a local machine to add the Kotlin source
+            3. Push a `v0.1.0` tag → CI will publish the `.kexe` binary as a Release artifact
+
+            _Automated by the scaffold-aku-smartboard GitHub Actions workflow._
+            Migration tracker: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md
         run: |
           # Check if branch was pushed (nothing-to-commit exits 0 above but skips push)
           TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
@@ -135,27 +156,6 @@ jobs:
             echo "ℹ️  Branch not pushed (nothing to commit) — skipping PR creation."
             exit 0
           fi
-
-          PR_BODY="Adds the GitHub Actions CI/release workflow and systemd service unit to Aku-SmartBoard.
-
-## What's included
-- \`.github/workflows/release.yml\` — builds \`./gradlew build\` on tag push → attaches \`.kexe\` binary + systemd unit to a GitHub Release
-- \`systemd/akulearn-smartboard.service\` — ready-to-install systemd unit for the classroom client
-
-## What's NOT included yet
-The Kotlin application source (\`akulearn-linux-app/\`) has not been copied yet — it is gitignored
-in the Akulearn_docs monorepo and must be pushed separately from a local machine.
-
-Run \`./docs/service-migrations/migrate-to-aku-smartboard.sh\` (full migration, local machine) once
-the source is restored locally to complete the migration.
-
-## Next steps
-1. Merge this PR to get the CI/release pipeline in place
-2. Run the full migration from a local machine to add the Kotlin source
-3. Push a \`v0.1.0\` tag → CI will publish the \`.kexe\` binary as a Release artifact
-
-_Automated by the [scaffold-aku-smartboard workflow](https://github.com/${GITHUB_ORG}/Akulearn_docs/actions/workflows/scaffold-aku-smartboard.yml)_
-Migration tracker: https://github.com/${GITHUB_ORG}/Akulearn_docs/blob/main/docs/ecosystem-map.md"
 
           gh pr create \
             --repo "${GITHUB_ORG}/${TARGET_REPO}" \
