@@ -11,13 +11,52 @@ Schema Overview
 - LO_ID: Unique identifier for a Learning Objective in the internal system.
   - Format: `LO:{CURRICULUM}:{SUBJECT}:{CLASS}:{TOPIC_CODE}:{SEQ}`
   - Example: `LO:NERDC:MAT:SS2:ALG:001`
+  - JSS examples: `LO:NERDC:MAT:JSS1:T1:001` (Mathematics JSS1 Topic 1 LO 1)
+                  `LO:NERDC:BSC:JSS3:T8:002` (Basic Science JSS3 Topic 8 LO 2)
+                  `LO:NERDC:ENG:JSS2:T3:001` (English Language JSS2 Topic 3 LO 1)
+
+**Class Level Values** (expanded to include Junior Secondary):
+| Value | Description | Target Exam |
+|-------|-------------|------------|
+| `JSS1` | Junior Secondary School Year 1 | National Assessment |
+| `JSS2` | Junior Secondary School Year 2 | National Assessment |
+| `JSS3` | Junior Secondary School Year 3 | BECE / Common Entrance |
+| `SS1` | Senior Secondary School Year 1 | Internal / State exams |
+| `SS2` | Senior Secondary School Year 2 | WAEC mock / Checkpoint |
+| `SS3` | Senior Secondary School Year 3 | WAEC / NECO / JAMB |
+
+**Subject Codes — Full List** (JSS subjects added):
+| Code | Subject | Level |
+|------|---------|-------|
+| `MAT` | Mathematics | JSS + SS |
+| `ENG` | English Language | JSS + SS |
+| `BSC` | Basic Science | JSS |
+| `SST` | Social Studies | JSS |
+| `BTH` | Basic Technology | JSS |
+| `CIV` | Civic Education | JSS + SS |
+| `AGR` | Agricultural Science | JSS + SS |
+| `HEC` | Home Economics | JSS |
+| `FRN` | French | JSS + SS |
+| `PHY` | Physics | SS |
+| `CHE` | Chemistry | SS |
+| `BIO` | Biology | SS |
+| `ECO` | Economics | SS |
+| `GOV` | Government | SS |
+| `GEO` | Geography | SS |
+| `FMA` | Further Mathematics | SS |
+| `ACC` | Financial Accounting | SS |
+| `COM` | Commerce | SS |
+| `LIT` | Literature in English | SS |
+| `CRS` | Christian Religious Studies | JSS + SS |
+| `IRS` | Islamic Religious Studies | JSS + SS |
+| `ICT` | Information Technology | JSS + SS |
 
 - Fields for each mapping entry (CSV/JSON):
   - asset_path: Relative path to the content asset (e.g., `content/textbooks/math_v1.0/chapter1.pdf`)
   - asset_type: `pdf`, `video`, `quiz`, `simulation`, `flashcard`, `ar`, etc.
   - curriculum: Source curriculum (e.g., `NERDC`, `WAEC`, `NECO`, `FED_MIN_ED`) — can be multiple
-  - subject: Standard subject code (MAT, PHY, CHE, BIO, ENG, GOV, ECO, CRS, AGR, ICT, etc.)
-  - class_level: `SS1`, `SS2`, `SS3` (or `JSS` etc. if present)
+  - subject: Standard subject code (MAT, PHY, CHE, BIO, ENG, SST, BSC, BTH, CIV, etc.)
+  - class_level: `JSS1`, `JSS2`, `JSS3`, `SS1`, `SS2`, or `SS3`
   - term_week: Optional field for term or week mapping (Term1, Term2, Term3 or week number)
   - topic: Human-readable topic name (e.g., `Quadratic Equations`)
   - subtopic: Optional subtopic name
@@ -58,6 +97,68 @@ Privacy & Compliance
 - Keep reviewer and system logs for audit and quality measurement.
 
 Next Steps
-- Create `lo_catalog.json` with initial LO entries for one subject (e.g., Mathematics SS1-SS3) as pilot.
-- Build the LO Mapper UI and CSV import/export workflows.
-- Integrate auto-tagging NLU pipeline and vector DB for LO similarity search.
+- ✅ JSS1–JSS3 LO schema extended (class levels, subject codes, LO ID format)
+- ✅ JSS1–JSS3 textbook starter files created (9 core files in `public/`)
+- ✅ Pipeline scripts created (`pipeline/textbook_generator.py`, `flashcard_generator.py`, `quiz_generator.py`, `bece_scraper.py`)
+- [ ] Create `lo_catalog.json` with initial LO entries for JSS1–JSS3 Mathematics, English, Basic Science (pilot)
+- [ ] Extend `lo_catalog.json` to cover all JSS subjects (SST, BTH, CIV)
+- [ ] Build the LO Mapper UI and CSV import/export workflows
+- [ ] Integrate auto-tagging NLU pipeline and vector DB for LO similarity search
+- [ ] Add SS1–SS3 gap subjects to catalog (Economics, Government, Geography)
+
+**JSS LO Catalog Seed** (starter entries — expand via `pipeline/textbook_generator.py`):
+
+```json
+[
+  {
+    "lo_id": "LO:NERDC:MAT:JSS1:T1:001",
+    "curriculum": "NERDC",
+    "subject": "MAT",
+    "class_level": "JSS1",
+    "term": 1,
+    "topic_code": "T1",
+    "topic": "Place Value and Whole Numbers",
+    "lo_text": "Student can identify the place value of any digit in a number up to 1,000,000 and write numbers in expanded form",
+    "target_exam": "BECE",
+    "created_at": "2026-04-10"
+  },
+  {
+    "lo_id": "LO:NERDC:MAT:JSS1:T2:001",
+    "curriculum": "NERDC",
+    "subject": "MAT",
+    "class_level": "JSS1",
+    "term": 1,
+    "topic_code": "T2",
+    "topic": "BODMAS and Order of Operations",
+    "lo_text": "Student can apply BODMAS to evaluate multi-step arithmetic expressions correctly",
+    "target_exam": "BECE",
+    "created_at": "2026-04-10"
+  },
+  {
+    "lo_id": "LO:NERDC:ENG:JSS1:T1:001",
+    "curriculum": "NERDC",
+    "subject": "ENG",
+    "class_level": "JSS1",
+    "term": 1,
+    "topic_code": "T1",
+    "topic": "Parts of Speech",
+    "lo_text": "Student can identify and correctly use all 8 parts of speech in written and spoken English",
+    "target_exam": "BECE",
+    "created_at": "2026-04-10"
+  },
+  {
+    "lo_id": "LO:NERDC:BSC:JSS1:T1:001",
+    "curriculum": "NERDC",
+    "subject": "BSC",
+    "class_level": "JSS1",
+    "term": 1,
+    "topic_code": "T1",
+    "topic": "Characteristics of Living Things (MRS GREN)",
+    "lo_text": "Student can list and explain all 7 MRS GREN characteristics of living things with examples",
+    "target_exam": "BECE",
+    "created_at": "2026-04-10"
+  }
+]
+```
+
+Use `pipeline/textbook_generator.py` to auto-generate the full catalog across all JSS and SS subjects.
