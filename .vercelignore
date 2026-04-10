@@ -8,6 +8,17 @@
 /requirements.txt
 
 # Source code and application directories (not part of the Next.js dashboard)
+/Aku-SuperHub/
+/Aku-Telhone/
+/AkuAI/
+/AkuTutor/
+/AkuWorkspace/
+/Akudemy/
+/DaaS/
+/EdgeHub/
+/IGHub/
+/aku-platform-contracts/
+/aku_platform_contracts/
 /akulearn_microservices/
 /akulearn-linux-app/
 /client_examples/
@@ -17,6 +28,7 @@
 /data/
 /diagrams/
 /examples/
+/github_addons/
 /hardware/
 /hardware_integration/
 /infra/
@@ -25,9 +37,11 @@
 /kubernetes/
 /marketing/
 /mlops/
+/monitoring/
 /personal_portfolio/
 /public/
 /scripts/
+/site/
 /src/
 /static/
 /tests/
