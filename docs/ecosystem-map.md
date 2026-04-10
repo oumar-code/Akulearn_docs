@@ -169,19 +169,30 @@ Full usage guide: [`docs/client-sdk/index.md`](client-sdk/index.md)
 >
 > | Script | What it does |
 > |--------|-------------|
-> | `migrate-to-aku-content.sh` | Clones Aku-Content, initialises Git LFS, copies `content/` + `content_templates/`, opens PR |
-> | `migrate-exam-papers.sh` | Clones Akudemy, copies `data/exam_papers/` + `mlops/exam_paper_scraper.py`, opens PR |
-> | `migrate-to-aku-smartboard.sh` | Clones Aku-SmartBoard, copies `akulearn-linux-app/`, applies CI/release workflow scaffold, opens PR |
+> | `migrate-to-aku-content.sh` | Clones Aku-Content, initialises Git LFS, copies `content/` + `content_templates/`, opens PR. `--stub-only` flag: initialises LFS + dir structure without local content (can run in CI). `--help` for full usage. |
+> | `migrate-exam-papers.sh` | Clones Akudemy, copies `data/exam_papers/` + `mlops/exam_paper_scraper.py`, opens PR. `--stub-only` flag: creates dir structure + scraper placeholder without local data (can run in CI). `--help` for full usage. |
+> | `migrate-to-aku-smartboard.sh` | Clones Aku-SmartBoard, copies `akulearn-linux-app/`, applies CI/release workflow scaffold, opens PR. `--scaffold-only` flag: pushes just the CI scaffold without needing local app source (can run in CI). `--help` for full usage. |
 >
 > CI/release workflow scaffold for Aku-SmartBoard: `docs/service-migrations/scaffolds/Aku-SmartBoard/`
+>
+> **GitHub Actions workflows** (no local machine needed — require `GH_PAT` secret):
+>
+> | Workflow | What it does |
+> |----------|-------------|
+> | `scaffold-aku-smartboard.yml` | Pushes CI/release workflow + systemd unit to Aku-SmartBoard; opens PR |
+> | `stub-aku-content.yml` | Initialises Aku-Content with LFS config, README, dir structure; opens PR |
+> | `stub-akudemy-exam-papers.yml` | Adds exam papers dir structure + scraper placeholder to Akudemy; opens PR |
 
 ### Aku-Content (new repo)
 
 The `content/` and `content_templates/` directories should move to a dedicated `oumar-code/Aku-Content` repo with Git LFS for binary assets (.glb, .unitypackage, .pdf, .mp4, .zip).
 
 - [x] Create `oumar-code/Aku-Content` repository with Git LFS
-- [ ] Copy `content/` tree (textbooks, AR, VR, simulations, flashcards, quizzes, games, encyclopedia, tools, news corpus)
-- [ ] Copy `content_templates/` CSV templates
+- [x] Create migration script with `--stub-only` and `--help` modes (`docs/service-migrations/migrate-to-aku-content.sh`)
+- [x] Create GitHub Actions workflow to push LFS config + README + dir structure stub (`stub-aku-content.yml`) — **no local machine needed**
+- [ ] **Trigger `stub-aku-content.yml`** from GitHub Actions UI → opens PR in Aku-Content with LFS config + empty dirs
+- [ ] ⚠️ **LOCAL MACHINE REQUIRED** — Copy `content/` tree (textbooks, AR, VR, simulations, flashcards, quizzes, games, encyclopedia, tools, news corpus): restore `content/` locally, then run `./docs/service-migrations/migrate-to-aku-content.sh`
+- [ ] ⚠️ **LOCAL MACHINE REQUIRED** — Copy `content_templates/` CSV templates (included in the same full migration run above)
 - [ ] Update Akudemy and Aku-EdgeHub to reference new content repo
 - [ ] Remove `content/` and `content_templates/` from `Akulearn_docs` after migration is confirmed
 
@@ -189,8 +200,11 @@ The `content/` and `content_templates/` directories should move to a dedicated `
 
 The `data/exam_papers/` dataset and `mlops/exam_paper_scraper.py` belong in `oumar-code/Akudemy`.
 
-- [ ] Copy `data/exam_papers/` (1,350 questions, JSON + CSV) to `oumar-code/Akudemy`
-- [ ] Copy `mlops/exam_paper_scraper.py` and its docs to `oumar-code/Akudemy/scripts/`
+- [x] Create migration script with `--stub-only` and `--help` modes (`docs/service-migrations/migrate-exam-papers.sh`)
+- [x] Create GitHub Actions workflow to push dir structure + scraper stub (`stub-akudemy-exam-papers.yml`) — **no local machine needed**
+- [ ] **Trigger `stub-akudemy-exam-papers.yml`** from GitHub Actions UI → opens PR in Akudemy with placeholder structure
+- [ ] ⚠️ **LOCAL MACHINE REQUIRED** — Copy `data/exam_papers/` (1,350 questions, JSON + CSV): restore `data/exam_papers/` locally, then run `./docs/service-migrations/migrate-exam-papers.sh`
+- [ ] ⚠️ **LOCAL MACHINE REQUIRED** — Copy `mlops/exam_paper_scraper.py` and its docs (included in the same full migration run above)
 - [ ] Remove `data/` (exam_papers) from `Akulearn_docs` after migration is confirmed
 
 ### Aku-SmartBoard (new repo)
@@ -198,9 +212,12 @@ The `data/exam_papers/` dataset and `mlops/exam_paper_scraper.py` belong in `oum
 The `akulearn-linux-app/` directory is a full KMP/Compose Desktop application — it needs its own CI/CD and release pipeline.
 
 - [x] Create `oumar-code/Aku-SmartBoard` repository
-- [ ] Copy `akulearn-linux-app/` (Kotlin source, Gradle build, DEPLOYMENT.md) to new repo root
-- [ ] Set up GitHub Actions: `./gradlew build` → release `.kexe` binary as GitHub Release artifact
-- [ ] Add systemd service unit to GitHub Release assets
+- [x] Create migration script with `--scaffold-only` and `--help` modes (`docs/service-migrations/migrate-to-aku-smartboard.sh`)
+- [x] Create GitHub Actions CI/release workflow scaffold (`docs/service-migrations/scaffolds/Aku-SmartBoard/`)
+- [x] Create GitHub Actions workflow to push CI scaffold to Aku-SmartBoard (`scaffold-aku-smartboard.yml`) — **no local machine needed**
+- [ ] **Trigger `scaffold-aku-smartboard.yml`** from GitHub Actions UI → opens PR in Aku-SmartBoard with `release.yml` + `systemd/` unit
+- [ ] ⚠️ **LOCAL MACHINE REQUIRED** — Copy `akulearn-linux-app/` (Kotlin source, Gradle build, DEPLOYMENT.md): restore `akulearn-linux-app/` locally, then run `./docs/service-migrations/migrate-to-aku-smartboard.sh`
+- [ ] Add systemd service unit to GitHub Release assets (covered by CI workflow scaffold, applied above)
 - [ ] Remove `akulearn-linux-app/` from `Akulearn_docs` after migration is confirmed
 
 ---
