@@ -1,0 +1,183 @@
+name: "Aku-SmartBoard — Apply CI/Release Scaffold"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Pushes the GitHub Actions CI/release workflow and systemd service unit from
+# docs/service-migrations/scaffolds/Aku-SmartBoard/ into the Aku-SmartBoard
+# repo and opens a pull request.
+#
+# This unblocks the Aku-SmartBoard CI/release pipeline WITHOUT needing
+# akulearn-linux-app/ to be present locally (it is gitignored in Akulearn_docs).
+# The Kotlin source must still be pushed separately from a local machine.
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# Create a repo secret named GH_PAT:
+#   Settings → Secrets and variables → Actions → New repository secret
+#   Name : GH_PAT
+#   Value: A classic Personal Access Token with scopes: repo, workflow
+#   (Generate at https://github.com/settings/tokens)
+#
+# How to trigger
+# ──────────────────────────────────────────────────────────────────────────────
+# Go to: Actions → "Aku-SmartBoard — Apply CI/Release Scaffold" → Run workflow
+# Optionally tick "Dry run" to preview without making changes.
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run — preview steps without pushing anything"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+jobs:
+  scaffold:
+    name: Apply scaffold to Aku-SmartBoard
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read  # only reads from this repo; pushes go to Aku-SmartBoard via PAT
+
+    env:
+      GITHUB_ORG: oumar-code
+      TARGET_REPO: Aku-SmartBoard
+      BRANCH_NAME: feat/ci-workflow-scaffold
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+
+    steps:
+      # ── 1. Checkout Akulearn_docs to get the scaffold files ──────────────────
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+
+      # ── 2. Configure git identity ────────────────────────────────────────────
+      - name: Configure git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name  "github-actions[bot]"
+
+      # ── 3. Clone Aku-SmartBoard via PAT ──────────────────────────────────────
+      - name: Clone Aku-SmartBoard
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          REPO_URL="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${TARGET_REPO}.git"
+          echo "Cloning ${GITHUB_ORG}/${TARGET_REPO}..."
+          git clone --depth 1 "${REPO_URL}" "${RUNNER_TEMP}/${TARGET_REPO}"
+          git -C "${RUNNER_TEMP}/${TARGET_REPO}" remote set-url origin "${REPO_URL}"
+
+      # ── 4. Create branch and apply scaffold ──────────────────────────────────
+      - name: Apply scaffold files
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          SCAFFOLD_SRC="${GITHUB_WORKSPACE}/docs/service-migrations/scaffolds/Aku-SmartBoard"
+
+          if [[ ! -d "$SCAFFOLD_SRC" ]]; then
+            echo "❌ Scaffold directory not found: ${SCAFFOLD_SRC}"
+            exit 1
+          fi
+
+          echo "📂 Scaffold source: ${SCAFFOLD_SRC}"
+          echo "📂 Target clone  : ${TARGET_CLONE}"
+          echo ""
+
+          if [[ "$DRY_RUN" == "true" ]]; then
+            echo "🔍 DRY-RUN mode — files that would be written:"
+            find "${SCAFFOLD_SRC}" -type f | while read -r f; do
+              echo "  [dry-run] ${f#"${SCAFFOLD_SRC}/"}"
+            done
+            exit 0
+          fi
+
+          # Create the branch
+          git -C "${TARGET_CLONE}" checkout -b "${BRANCH_NAME}"
+
+          # Copy scaffold content (workflows + systemd unit)
+          cp -r "${SCAFFOLD_SRC}/." "${TARGET_CLONE}/"
+          echo "✅ Copied $(find "${SCAFFOLD_SRC}" -type f | wc -l) scaffold files"
+
+          # List applied files for the log
+          find "${SCAFFOLD_SRC}" -type f | while read -r f; do
+            echo "  → ${f#"${SCAFFOLD_SRC}/"}"
+          done
+
+      # ── 5. Commit and push ────────────────────────────────────────────────────
+      - name: Commit and push
+        if: inputs.dry_run != 'true'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          cd "${TARGET_CLONE}"
+
+          git add .
+          if git diff --cached --quiet; then
+            echo "ℹ️  Nothing to commit — scaffold files may already be in place."
+            exit 0
+          fi
+
+          git commit -m "feat: add CI/release workflow and systemd unit scaffold"
+          git push -u origin "${BRANCH_NAME}"
+          echo "✅ Pushed branch: ${BRANCH_NAME}"
+
+      # ── 6. Open pull request ──────────────────────────────────────────────────
+      - name: Open pull request
+        if: inputs.dry_run != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          # Check if branch was pushed (nothing-to-commit exits 0 above but skips push)
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          if ! git -C "${TARGET_CLONE}" ls-remote --exit-code origin "${BRANCH_NAME}" &>/dev/null; then
+            echo "ℹ️  Branch not pushed (nothing to commit) — skipping PR creation."
+            exit 0
+          fi
+
+          PR_BODY="Adds the GitHub Actions CI/release workflow and systemd service unit to Aku-SmartBoard.
+
+## What's included
+- \`.github/workflows/release.yml\` — builds \`./gradlew build\` on tag push → attaches \`.kexe\` binary + systemd unit to a GitHub Release
+- \`systemd/akulearn-smartboard.service\` — ready-to-install systemd unit for the classroom client
+
+## What's NOT included yet
+The Kotlin application source (\`akulearn-linux-app/\`) has not been copied yet — it is gitignored
+in the Akulearn_docs monorepo and must be pushed separately from a local machine.
+
+Run \`./docs/service-migrations/migrate-to-aku-smartboard.sh\` (full migration, local machine) once
+the source is restored locally to complete the migration.
+
+## Next steps
+1. Merge this PR to get the CI/release pipeline in place
+2. Run the full migration from a local machine to add the Kotlin source
+3. Push a \`v0.1.0\` tag → CI will publish the \`.kexe\` binary as a Release artifact
+
+_Automated by the [scaffold-aku-smartboard workflow](https://github.com/${GITHUB_ORG}/Akulearn_docs/actions/workflows/scaffold-aku-smartboard.yml)_
+Migration tracker: https://github.com/${GITHUB_ORG}/Akulearn_docs/blob/main/docs/ecosystem-map.md"
+
+          gh pr create \
+            --repo "${GITHUB_ORG}/${TARGET_REPO}" \
+            --base main \
+            --head "${BRANCH_NAME}" \
+            --title "feat: add CI/release workflow and systemd service unit to Aku-SmartBoard" \
+            --body "${PR_BODY}" \
+            || echo "ℹ️  PR may already exist for this branch."
+
+      # ── 7. Summary ────────────────────────────────────────────────────────────
+      - name: Summary
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Workflow complete"
+          echo "  Target repo : ${GITHUB_ORG}/${TARGET_REPO}"
+          echo "  Branch      : ${BRANCH_NAME}"
+          echo "  Dry run     : ${DRY_RUN}"
+          echo "════════════════════════════════════════════════════"
+          if [[ "$DRY_RUN" != "true" ]]; then
+            echo "  Next steps:"
+            echo "  1. Review and merge the PR in Aku-SmartBoard"
+            echo "  2. Run the full migration locally (with akulearn-linux-app/ present)"
+            echo "  3. Push tag v0.1.0 to trigger a Release build"
+          fi

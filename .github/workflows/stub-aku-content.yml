@@ -1,0 +1,274 @@
+name: "Aku-Content — Initialise Stub"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Creates a stub PR in oumar-code/Aku-Content with:
+#   - .gitattributes — Git LFS rules for all binary asset types
+#   - README.md      — repo documentation and Git LFS usage guide
+#   - Empty directory structure with .gitkeep placeholders for all content dirs
+#
+# This unblocks LFS configuration and directory structure in Aku-Content WITHOUT
+# needing content/ or content_templates/ present locally (both are gitignored
+# in Akulearn_docs).
+#
+# The actual content files must still be pushed from a local machine by
+# running: ./docs/service-migrations/migrate-to-aku-content.sh
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# Create a repo secret named GH_PAT:
+#   Settings → Secrets and variables → Actions → New repository secret
+#   Name : GH_PAT
+#   Value: A classic Personal Access Token with scopes: repo, workflow
+#   (Generate at https://github.com/settings/tokens)
+#
+# How to trigger
+# ──────────────────────────────────────────────────────────────────────────────
+# Go to: Actions → "Aku-Content — Initialise Stub" → Run workflow
+# Optionally tick "Dry run" to preview without making changes.
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run — preview steps without pushing anything"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+jobs:
+  stub:
+    name: Initialise stub in Aku-Content
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read  # only reads from this repo; pushes go to Aku-Content via PAT
+
+    env:
+      GITHUB_ORG: oumar-code
+      TARGET_REPO: Aku-Content
+      BRANCH_NAME: feat/content-repo-stub
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+
+    steps:
+      # ── 1. Checkout Akulearn_docs ─────────────────────────────────────────────
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+
+      # ── 2. Configure git identity ────────────────────────────────────────────
+      - name: Configure git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name  "github-actions[bot]"
+
+      # ── 3. Install git-lfs ────────────────────────────────────────────────────
+      - name: Install git-lfs
+        run: |
+          sudo apt-get install -y git-lfs
+          git lfs install --system
+          echo "✅ git-lfs installed"
+
+      # ── 4. Clone Aku-Content via PAT ──────────────────────────────────────────
+      - name: Clone Aku-Content
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          REPO_URL="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${TARGET_REPO}.git"
+          echo "Cloning ${GITHUB_ORG}/${TARGET_REPO}..."
+          git clone --depth 1 "${REPO_URL}" "${RUNNER_TEMP}/${TARGET_REPO}"
+          git -C "${RUNNER_TEMP}/${TARGET_REPO}" remote set-url origin "${REPO_URL}"
+
+      # ── 5. Create branch and stub files ──────────────────────────────────────
+      - name: Create stub files
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+
+          CONTENT_DIRS=(
+            "content/textbooks"
+            "content/ar"
+            "content/vr"
+            "content/simulations"
+            "content/flashcards"
+            "content/quizzes"
+            "content/games"
+            "content/encyclopedia"
+            "content/tools"
+            "content/news_corpus"
+            "content_templates"
+          )
+
+          LFS_EXTENSIONS=("*.glb" "*.unitypackage" "*.pdf" "*.mp4" "*.zip" "*.zim" "*.fbx" "*.obj" "*.png" "*.jpg")
+
+          if [[ "$DRY_RUN" == "true" ]]; then
+            echo "🔍 DRY-RUN mode — files that would be written:"
+            echo "  [dry-run] .gitattributes"
+            echo "  [dry-run] README.md"
+            for dir in "${CONTENT_DIRS[@]}"; do
+              echo "  [dry-run] ${dir}/.gitkeep"
+            done
+            exit 0
+          fi
+
+          git -C "${TARGET_CLONE}" checkout -b "${BRANCH_NAME}"
+
+          # .gitattributes (Git LFS rules)
+          {
+            echo "# Git LFS — binary content assets"
+            for ext in "${LFS_EXTENSIONS[@]}"; do
+              echo "${ext} filter=lfs diff=lfs merge=lfs -text"
+            done
+          } > "${TARGET_CLONE}/.gitattributes"
+          echo "✅ Written: .gitattributes"
+
+          # README.md
+          cat > "${TARGET_CLONE}/README.md" << 'EOF'
+# Aku-Content
+
+Offline content library for the Aku Platform — consumed by **Akudemy** and **Aku-EdgeHub**.
+
+## Contents
+
+| Directory | Description |
+|-----------|-------------|
+| `content/textbooks/` | AI-generated WAEC textbooks — 9 subjects × SS1 (JSON + MD) |
+| `content/ar/` | Augmented Reality assets (.glb) |
+| `content/vr/` | Virtual Reality scene packages (.unitypackage) |
+| `content/simulations/` | Interactive science simulations |
+| `content/flashcards/` | Subject flashcard decks |
+| `content/quizzes/` | Formative assessment question banks |
+| `content/games/` | Gamified learning modules |
+| `content/encyclopedia/` | Offline Wikipedia (.zim) |
+| `content/tools/` | Interactive learning tools |
+| `content/news_corpus/` | Multilingual news corpus (EN/HA/YO) + translation corpora |
+| `content_templates/` | WAEC/NERDC lesson CSV templates (8 subjects) |
+
+> **Status**: Directory structure initialised. Actual content pending full migration.
+> See [migration tracker](https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md).
+
+## Git LFS
+
+Binary assets (`.glb`, `.unitypackage`, `.pdf`, `.mp4`, `.zip`, `.zim`) are tracked via **Git LFS**.
+Run `git lfs install` and `git lfs pull` after cloning.
+
+## Usage in Other Repos
+
+Clone or submodule this repo to make content available offline:
+
+```bash
+# As a submodule
+git submodule add https://github.com/oumar-code/Aku-Content content
+git lfs install && git lfs pull
+```
+
+## Source
+
+Migrated from `Akulearn_docs` monorepo — see [migration tracker](https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md).
+EOF
+          echo "✅ Written: README.md"
+
+          # Directory structure
+          for dir in "${CONTENT_DIRS[@]}"; do
+            mkdir -p "${TARGET_CLONE}/${dir}"
+            cat > "${TARGET_CLONE}/${dir}/.gitkeep" << 'EOF'
+# Placeholder — actual content to be added via full migration.
+# Run: ./docs/service-migrations/migrate-to-aku-content.sh (from a local machine
+# with content/ and content_templates/ present)
+EOF
+            echo "✅ Created: ${dir}/.gitkeep"
+          done
+
+      # ── 6. Initialise Git LFS in the clone ────────────────────────────────────
+      - name: Initialise Git LFS
+        if: inputs.dry_run != 'true'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          git -C "${TARGET_CLONE}" lfs install
+          echo "✅ git-lfs initialised in ${TARGET_REPO}"
+
+      # ── 7. Commit and push ────────────────────────────────────────────────────
+      - name: Commit and push
+        if: inputs.dry_run != 'true'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          cd "${TARGET_CLONE}"
+
+          git add .
+          if git diff --cached --quiet; then
+            echo "ℹ️  Nothing to commit — stub files may already be in place."
+            exit 0
+          fi
+
+          git commit -m "feat: initialise Aku-Content with LFS config, README, and directory structure"
+          git push -u origin "${BRANCH_NAME}"
+          echo "✅ Pushed branch: ${BRANCH_NAME}"
+
+      # ── 8. Open pull request ──────────────────────────────────────────────────
+      - name: Open pull request
+        if: inputs.dry_run != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          if ! git -C "${TARGET_CLONE}" ls-remote --exit-code origin "${BRANCH_NAME}" &>/dev/null; then
+            echo "ℹ️  Branch not pushed (nothing to commit) — skipping PR creation."
+            exit 0
+          fi
+
+          PR_BODY="Sets up the Aku-Content repo with Git LFS configuration, README, and empty directory structure.
+
+## What's included
+- \`.gitattributes\` — Git LFS rules for all binary asset types (.glb, .unitypackage, .pdf, .mp4, .zip, .zim)
+- \`README.md\` — repo documentation and Git LFS usage guide
+- Empty directory structure with \`.gitkeep\` placeholders:
+  \`content/textbooks/\`, \`content/ar/\`, \`content/vr/\`, \`content/simulations/\`,
+  \`content/flashcards/\`, \`content/quizzes/\`, \`content/games/\`, \`content/encyclopedia/\`,
+  \`content/tools/\`, \`content/news_corpus/\`, \`content_templates/\`
+
+## What's NOT included yet
+The actual content files are gitignored in the Akulearn_docs monorepo and must be copied
+separately from a local machine.
+
+## How to complete the migration (local machine steps)
+\`\`\`bash
+# 1. Restore the gitignored content locally in your Akulearn_docs clone
+#    (from local drive or team file storage)
+
+# 2. Install gh CLI and git-lfs, then authenticate
+gh auth login
+
+# 3. Run the full migration
+./docs/service-migrations/migrate-to-aku-content.sh
+\`\`\`
+
+_Automated by the [stub-aku-content workflow](https://github.com/${GITHUB_ORG}/Akulearn_docs/actions/workflows/stub-aku-content.yml)_
+Migration tracker: https://github.com/${GITHUB_ORG}/Akulearn_docs/blob/main/docs/ecosystem-map.md"
+
+          gh pr create \
+            --repo "${GITHUB_ORG}/${TARGET_REPO}" \
+            --base main \
+            --head "${BRANCH_NAME}" \
+            --title "feat: initialise Aku-Content with Git LFS config, README, and directory structure" \
+            --body "${PR_BODY}" \
+            || echo "ℹ️  PR may already exist for this branch."
+
+      # ── 9. Summary ────────────────────────────────────────────────────────────
+      - name: Summary
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Workflow complete"
+          echo "  Target repo : ${GITHUB_ORG}/${TARGET_REPO}"
+          echo "  Branch      : ${BRANCH_NAME}"
+          echo "  Dry run     : ${DRY_RUN}"
+          echo "════════════════════════════════════════════════════"
+          if [[ "$DRY_RUN" != "true" ]]; then
+            echo "  Next steps:"
+            echo "  1. Review and merge the stub PR in Aku-Content"
+            echo "  2. Restore content/ and content_templates/ locally"
+            echo "  3. Run: ./docs/service-migrations/migrate-to-aku-content.sh"
+            echo "  4. Update Akudemy and Aku-EdgeHub to reference Aku-Content"
+          fi

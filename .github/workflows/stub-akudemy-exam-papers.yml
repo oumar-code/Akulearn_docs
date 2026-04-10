@@ -1,0 +1,242 @@
+name: "Akudemy — Exam Papers Stub"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Creates a stub PR in oumar-code/Akudemy with:
+#   - data/exam_papers/.gitkeep  — placeholder for the 1,350-question dataset
+#   - scripts/exam_paper_scraper.py — stub with usage instructions
+#   - scripts/README.md            — usage guide for the scraper and dataset
+#
+# This unblocks partial setup of Akudemy's exam papers directory WITHOUT needing
+# data/exam_papers/ or mlops/exam_paper_scraper.py present locally (both are
+# gitignored in Akulearn_docs).
+#
+# The actual exam papers dataset must still be pushed from a local machine by
+# running: ./docs/service-migrations/migrate-exam-papers.sh
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# Create a repo secret named GH_PAT:
+#   Settings → Secrets and variables → Actions → New repository secret
+#   Name : GH_PAT
+#   Value: A classic Personal Access Token with scopes: repo, workflow
+#   (Generate at https://github.com/settings/tokens)
+#
+# How to trigger
+# ──────────────────────────────────────────────────────────────────────────────
+# Go to: Actions → "Akudemy — Exam Papers Stub" → Run workflow
+# Optionally tick "Dry run" to preview without making changes.
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run — preview steps without pushing anything"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+jobs:
+  stub:
+    name: Create exam papers stub in Akudemy
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read  # only reads from this repo; pushes go to Akudemy via PAT
+
+    env:
+      GITHUB_ORG: oumar-code
+      TARGET_REPO: Akudemy
+      BRANCH_NAME: feat/exam-papers-stub
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+
+    steps:
+      # ── 1. Checkout Akulearn_docs ─────────────────────────────────────────────
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+
+      # ── 2. Configure git identity ────────────────────────────────────────────
+      - name: Configure git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name  "github-actions[bot]"
+
+      # ── 3. Clone Akudemy via PAT ──────────────────────────────────────────────
+      - name: Clone Akudemy
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          REPO_URL="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${TARGET_REPO}.git"
+          echo "Cloning ${GITHUB_ORG}/${TARGET_REPO}..."
+          git clone --depth 1 "${REPO_URL}" "${RUNNER_TEMP}/${TARGET_REPO}"
+          git -C "${RUNNER_TEMP}/${TARGET_REPO}" remote set-url origin "${REPO_URL}"
+
+      # ── 4. Create branch and stub files ──────────────────────────────────────
+      - name: Create stub files
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+
+          if [[ "$DRY_RUN" == "true" ]]; then
+            echo "🔍 DRY-RUN mode — files that would be written:"
+            echo "  [dry-run] data/exam_papers/.gitkeep"
+            echo "  [dry-run] scripts/exam_paper_scraper.py (stub)"
+            echo "  [dry-run] scripts/README.md"
+            exit 0
+          fi
+
+          git -C "${TARGET_CLONE}" checkout -b "${BRANCH_NAME}"
+
+          # data/exam_papers/.gitkeep
+          mkdir -p "${TARGET_CLONE}/data/exam_papers"
+          cat > "${TARGET_CLONE}/data/exam_papers/.gitkeep" << 'EOF'
+# Placeholder — full dataset (1,350 questions) to be added via full migration.
+# Run: ./docs/service-migrations/migrate-exam-papers.sh (from a local machine
+# with data/exam_papers/ and mlops/exam_paper_scraper.py present)
+EOF
+          echo "✅ Written: data/exam_papers/.gitkeep"
+
+          # scripts/exam_paper_scraper.py (stub)
+          mkdir -p "${TARGET_CLONE}/scripts"
+          cat > "${TARGET_CLONE}/scripts/exam_paper_scraper.py" << 'EOF'
+"""
+exam_paper_scraper.py — Placeholder
+
+The full scraper will be added when the complete exam papers migration is run
+from a local machine with mlops/exam_paper_scraper.py present.
+
+Migration tracker:
+  https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md
+
+Usage (once the full file is in place):
+  pip install -r requirements.txt
+  python scripts/exam_paper_scraper.py --output data/exam_papers/
+"""
+raise NotImplementedError(
+    "Full scraper not yet migrated. See module docstring for migration instructions."
+)
+EOF
+          echo "✅ Written: scripts/exam_paper_scraper.py (stub)"
+
+          # scripts/README.md
+          cat > "${TARGET_CLONE}/scripts/README.md" << 'EOF'
+# Akudemy Scripts
+
+## exam_paper_scraper.py
+
+Generates `data/exam_papers/` — 1,350 structured WAEC/NECO/JAMB questions.
+
+> **Status**: Full migration pending. The stub file is a placeholder.
+> Run `./docs/service-migrations/migrate-exam-papers.sh` from a local machine
+> with `data/exam_papers/` and `mlops/exam_paper_scraper.py` present to complete
+> the migration.
+
+### Usage (once migrated)
+
+```bash
+pip install -r requirements.txt
+python scripts/exam_paper_scraper.py --output data/exam_papers/
+```
+
+### Output
+
+| File | Description |
+|------|-------------|
+| `data/exam_papers/INDEX.json` | Dataset manifest — 1,350 questions, 4 subjects, 27 topics |
+| `data/exam_papers/<subject>/` | Per-subject JSON question files |
+| `data/exam_papers/<subject>.csv` | Per-subject CSV question files |
+
+### Data Sources
+
+Scrapes and structures publicly available past questions from WAEC, NECO, and JAMB (2020–2024).
+Covers: Mathematics, English Language, Physics, Chemistry.
+
+See `EXAM_SCRAPER_DELIVERABLES.md` for full specification (added during full migration).
+EOF
+          echo "✅ Written: scripts/README.md"
+
+      # ── 5. Commit and push ────────────────────────────────────────────────────
+      - name: Commit and push
+        if: inputs.dry_run != 'true'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          cd "${TARGET_CLONE}"
+
+          git add .
+          if git diff --cached --quiet; then
+            echo "ℹ️  Nothing to commit — stub files may already be in place."
+            exit 0
+          fi
+
+          git commit -m "feat: add exam papers directory structure and scripts placeholder"
+          git push -u origin "${BRANCH_NAME}"
+          echo "✅ Pushed branch: ${BRANCH_NAME}"
+
+      # ── 6. Open pull request ──────────────────────────────────────────────────
+      - name: Open pull request
+        if: inputs.dry_run != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          if ! git -C "${TARGET_CLONE}" ls-remote --exit-code origin "${BRANCH_NAME}" &>/dev/null; then
+            echo "ℹ️  Branch not pushed (nothing to commit) — skipping PR creation."
+            exit 0
+          fi
+
+          PR_BODY="Adds the directory structure and scripts placeholder for the exam papers migration.
+
+## What's included
+- \`data/exam_papers/.gitkeep\` — placeholder for the 1,350-question dataset (WAEC/NECO/JAMB, 4 subjects, 27 topics, 2020–2024)
+- \`scripts/exam_paper_scraper.py\` — stub with usage instructions
+- \`scripts/README.md\` — usage guide for the scraper and dataset
+
+## What's NOT included yet
+The actual exam papers dataset (\`data/exam_papers/\`) and the full scraper are gitignored
+in the Akulearn_docs monorepo and must be added separately from a local machine.
+
+## How to complete the migration (local machine steps)
+\`\`\`bash
+# 1. Restore the gitignored data locally in your Akulearn_docs clone
+#    (from local drive, OR re-run the scraper):
+pip install -r requirements.txt
+python mlops/exam_paper_scraper.py --output data/exam_papers/
+
+# 2. Authenticate gh CLI
+gh auth login
+
+# 3. Run the full migration
+./docs/service-migrations/migrate-exam-papers.sh
+\`\`\`
+
+_Automated by the [stub-akudemy-exam-papers workflow](https://github.com/${GITHUB_ORG}/Akulearn_docs/actions/workflows/stub-akudemy-exam-papers.yml)_
+Migration tracker: https://github.com/${GITHUB_ORG}/Akulearn_docs/blob/main/docs/ecosystem-map.md"
+
+          gh pr create \
+            --repo "${GITHUB_ORG}/${TARGET_REPO}" \
+            --base main \
+            --head "${BRANCH_NAME}" \
+            --title "feat: add exam papers directory structure and scraper placeholder" \
+            --body "${PR_BODY}" \
+            || echo "ℹ️  PR may already exist for this branch."
+
+      # ── 7. Summary ────────────────────────────────────────────────────────────
+      - name: Summary
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Workflow complete"
+          echo "  Target repo : ${GITHUB_ORG}/${TARGET_REPO}"
+          echo "  Branch      : ${BRANCH_NAME}"
+          echo "  Dry run     : ${DRY_RUN}"
+          echo "════════════════════════════════════════════════════"
+          if [[ "$DRY_RUN" != "true" ]]; then
+            echo "  Next steps:"
+            echo "  1. Review and merge the stub PR in Akudemy"
+            echo "  2. Restore data/exam_papers/ locally (or re-run the scraper)"
+            echo "  3. Run: ./docs/service-migrations/migrate-exam-papers.sh"
+            echo "  4. Wire data/exam_papers/ into Akudemy content API (routers/content.py)"
+          fi
