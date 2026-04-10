@@ -62,6 +62,12 @@ This is the single source of truth for all repositories in the Aku Platform ecos
 | `akulearn-linux-app/` (inside Akulearn_docs) | Classroom client app (Smart TV/Board, Raspberry Pi, Jetson) — syncs content from Edge Hub, AR/VR launcher, offline cache, facilitator dashboard | Kotlin Multiplatform, Compose for Desktop, linuxX64 | **⏳ Pending migration → `oumar-code/Aku-SmartBoard`** |
 | [Aku-SmartBoard](https://github.com/oumar-code/Aku-SmartBoard) | Standalone desktop app repo — linuxX64 binary, systemd service, touchscreen support | KMP + Compose Desktop | ✅ Repo created — migration in progress |
 
+### 📚 Shared Libraries
+
+| Repo | Role | Tech | Status |
+|------|------|------|--------|
+| [aku-platform-contracts](https://github.com/oumar-code/aku-platform-contracts) | Shared Pydantic schemas, Kafka topic constants, and OpenAPI YAML specs consumed by all 9 backend services | Python, Pydantic v2, GitHub Packages | ✅ Active — `v0.1.0` released |
+
 ### 📦 Content
 
 | Repo | Role | Tech | Status |
@@ -138,9 +144,9 @@ All OpenAPI specs live in this repo:
 | Database schemas | `docs/02-backend/database-schemas.md` |
 | Containerisation spec | `docs/05-cross-cutting/containerization.md` |
 
-A dedicated [`aku-platform-contracts`](https://github.com/oumar-code/aku-platform-contracts) repo (OpenAPI YAML files, Pydantic models, Kafka schemas) has been created to share types across all 9 service repos.  
-**Proposal & implementation checklist:** [`docs/aku-platform-contracts.md`](aku-platform-contracts.md)  
-**Next step:** define Pydantic schemas and run `docs/service-migrations/integrate-contracts.sh` to add the package dependency to all 9 services.
+A dedicated [`aku-platform-contracts`](https://github.com/oumar-code/aku-platform-contracts) repo (OpenAPI YAML files, Pydantic models, Kafka schemas) is **active at `v0.1.0`** — shared across all 9 service repos.  
+**Full proposal & implementation checklist:** [`docs/aku-platform-contracts.md`](aku-platform-contracts.md)  
+**Next step:** run `docs/service-migrations/integrate-contracts.sh` to add the package dependency to remaining services as each completes migration.
 
 ---
 
