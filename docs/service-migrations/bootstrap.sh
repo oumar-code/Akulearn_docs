@@ -18,7 +18,7 @@
 #!/bin/bash
 set -e
 
-DEPENDENCY='aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts@v0.1.0'
+DEPENDENCY='aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts.git@v0.1.1'
 
 find . -type f -name 'requirements*.txt' | while read reqfile; do
   # Get the repo root for this requirements file

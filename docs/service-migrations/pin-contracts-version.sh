@@ -4,7 +4,7 @@
 #
 # Background:
 #   The lint-format-tag.sh script adds the contracts package as a floating git+ ref:
-#     aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts@v0.1.0
+#     aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts.git@v0.1.1
 #   This script replaces that ref with a pinned version tag so that:
 #     a) pip install is reproducible (no silent upgrades on re-installs), and
 #     b) deliberate version bumps are explicit commits in each service repo.

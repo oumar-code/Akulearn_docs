@@ -26,4 +26,4 @@ python-jose[cryptography]>=3.3.0       # JWT decode & verification (RS256 / ES25
 # ── Rate limiting ─────────────────────────────────────────────────────────────
 slowapi>=0.1.9                         # FastAPI rate limiting middleware (wraps limits)
 redis[hiredis]>=5.0.0                  # async Redis — OTA task status store in production
-aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts@v0.1.0
+aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts.git@v0.1.1
