@@ -1,4 +1,4 @@
 # Extra dependencies for Aku-EdgeHub (append to base requirements.txt)
 aiosqlite>=0.20.0
 httpx>=0.27.0
-aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts@v0.1.0
+aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts.git@v0.1.1

@@ -98,7 +98,7 @@ class InferenceResponse(BaseModel):
 
 In `AkuTutor/requirements.txt`:
 ```
-aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts@v0.1.0
+aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts.git@v0.1.1
 ```
 
 In `AkuTutor/app/routers/sessions.py`:
