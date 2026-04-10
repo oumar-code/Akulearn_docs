@@ -66,7 +66,7 @@ CURRICULUM: dict[str, dict[str, Any]] = {
             "home_economics":   {"code": "HEC", "priority": "P3", "terms": 3},
             "french":           {"code": "FRN", "priority": "P3", "terms": 3},
         },
-        "exam": "BECE / National Assessment",
+        "exam": "National Assessment",
     },
     "jss2": {
         "subjects": {
@@ -79,7 +79,7 @@ CURRICULUM: dict[str, dict[str, Any]] = {
             "agricultural_science": {"code": "AGR", "priority": "P3", "terms": 3},
             "home_economics":   {"code": "HEC", "priority": "P3", "terms": 3},
         },
-        "exam": "BECE / National Assessment",
+        "exam": "National Assessment",
     },
     "jss3": {
         "subjects": {

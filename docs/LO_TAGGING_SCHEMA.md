@@ -119,7 +119,7 @@ Next Steps
     "topic_code": "T1",
     "topic": "Place Value and Whole Numbers",
     "lo_text": "Student can identify the place value of any digit in a number up to 1,000,000 and write numbers in expanded form",
-    "target_exam": "BECE",
+    "target_exam": "National Assessment",
     "created_at": "2026-04-10"
   },
   {
@@ -131,7 +131,7 @@ Next Steps
     "topic_code": "T2",
     "topic": "BODMAS and Order of Operations",
     "lo_text": "Student can apply BODMAS to evaluate multi-step arithmetic expressions correctly",
-    "target_exam": "BECE",
+    "target_exam": "National Assessment",
     "created_at": "2026-04-10"
   },
   {
@@ -143,7 +143,7 @@ Next Steps
     "topic_code": "T1",
     "topic": "Parts of Speech",
     "lo_text": "Student can identify and correctly use all 8 parts of speech in written and spoken English",
-    "target_exam": "BECE",
+    "target_exam": "National Assessment",
     "created_at": "2026-04-10"
   },
   {
@@ -155,7 +155,7 @@ Next Steps
     "topic_code": "T1",
     "topic": "Characteristics of Living Things (MRS GREN)",
     "lo_text": "Student can list and explain all 7 MRS GREN characteristics of living things with examples",
-    "target_exam": "BECE",
+    "target_exam": "National Assessment",
     "created_at": "2026-04-10"
   }
 ]
