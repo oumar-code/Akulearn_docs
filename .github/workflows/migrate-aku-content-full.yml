@@ -1,0 +1,327 @@
+name: "Aku-Content — Full Content Migration"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Copies content/ and content_templates/ from a specified Akulearn_docs branch
+# (where those gitignored files were committed) into oumar-code/Aku-Content,
+# initialises Git LFS, writes .gitattributes, and opens a pull request.
+#
+# This allows the full content migration to run entirely in CI without needing
+# a local machine — provided the files have been committed to a branch.
+#
+# ⚠️  DISK SPACE WARNING
+# ──────────────────────────────────────────────────────────────────────────────
+# GitHub-hosted Ubuntu runners have ~14 GB of free disk space. If content/ is
+# large (many .glb / .unitypackage / .zim files), this may not be enough.
+# Options if you run out of space:
+#   a) Use a larger GitHub-hosted runner (requires paid plan)
+#   b) Split the migration by subdirectory — run once per content/ subdirectory
+#      using the content_subdirectory input below
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# 1. Commit content/ and content_templates/ to a branch in this repo
+#    (e.g. feat/content-migration), then provide that branch name as the
+#    source_branch input below.
+#
+# 2. Create a repo secret named GH_PAT:
+#    Settings → Secrets and variables → Actions → New repository secret
+#    Name : GH_PAT
+#    Value: A classic Personal Access Token with scopes: repo, workflow
+#    (Generate at https://github.com/settings/tokens)
+#
+# How to trigger
+# ──────────────────────────────────────────────────────────────────────────────
+# Go to: Actions → "Aku-Content — Full Content Migration" → Run workflow
+# Set source_branch to the branch that has content/ committed.
+# Optionally fill content_subdirectory to migrate a single subdirectory only.
+# Optionally tick "Dry run" to preview without making changes.
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_branch:
+        description: "Branch in Akulearn_docs that has content/ and content_templates/ committed"
+        required: true
+        type: string
+      content_subdirectory:
+        description: "Optional: migrate only this content/ subdirectory (e.g. textbooks). Leave empty to migrate all content."
+        required: false
+        default: ""
+        type: string
+      dry_run:
+        description: "Dry run — preview steps without pushing anything"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+jobs:
+  migrate:
+    name: Migrate content to Aku-Content
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read  # only reads from this repo; pushes go to Aku-Content via PAT
+
+    env:
+      GITHUB_ORG: oumar-code
+      TARGET_REPO: Aku-Content
+      BRANCH_NAME: feat/initial-content-migration
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+      CONTENT_SUBDIR: ${{ inputs.content_subdirectory || '' }}
+
+    steps:
+      # ── 1. Checkout Akulearn_docs at the source branch ────────────────────────
+      - name: Checkout Akulearn_docs at source branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_branch }}
+
+      # ── 2. Validate source files exist ────────────────────────────────────────
+      - name: Validate source files
+        run: |
+          MISSING=false
+
+          if [[ -n "${CONTENT_SUBDIR}" ]]; then
+            SRC="content/${CONTENT_SUBDIR}"
+            if [[ ! -d "${SRC}" ]]; then
+              echo "❌ content/${CONTENT_SUBDIR}/ not found in branch '${{ inputs.source_branch }}'"
+              MISSING=true
+            else
+              COUNT=$(find "${SRC}" -type f | wc -l)
+              echo "✅ content/${CONTENT_SUBDIR}/ found (${COUNT} files)"
+            fi
+          else
+            if [[ ! -d "content" ]]; then
+              echo "❌ content/ not found in branch '${{ inputs.source_branch }}'"
+              MISSING=true
+            else
+              COUNT=$(find content -type f | wc -l)
+              echo "✅ content/ found (${COUNT} files)"
+            fi
+
+            if [[ ! -d "content_templates" ]]; then
+              echo "❌ content_templates/ not found in branch '${{ inputs.source_branch }}'"
+              MISSING=true
+            else
+              COUNT=$(find content_templates -type f | wc -l)
+              echo "✅ content_templates/ found (${COUNT} files)"
+            fi
+          fi
+
+          if $MISSING; then
+            echo ""
+            echo "The source files must be committed (not just present locally) to branch '${{ inputs.source_branch }}'."
+            echo "Commit content/ and content_templates/ to that branch, then re-run this workflow."
+            exit 1
+          fi
+
+          # Report available disk space
+          echo ""
+          echo "💾 Available disk space:"
+          df -h "${GITHUB_WORKSPACE}" | tail -1
+
+      # ── 3. Configure git identity ────────────────────────────────────────────
+      - name: Configure git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name  "github-actions[bot]"
+
+      # ── 4. Install git-lfs ────────────────────────────────────────────────────
+      - name: Install git-lfs
+        run: |
+          sudo apt-get install -y git-lfs
+          git lfs install --system
+          echo "✅ git-lfs installed"
+
+      # ── 5. Clone Aku-Content via PAT ──────────────────────────────────────────
+      - name: Clone Aku-Content
+        if: inputs.dry_run != 'true'
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          REPO_URL="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${TARGET_REPO}.git"
+          echo "Cloning ${GITHUB_ORG}/${TARGET_REPO}..."
+          git clone --depth 1 "${REPO_URL}" "${RUNNER_TEMP}/${TARGET_REPO}"
+          git -C "${RUNNER_TEMP}/${TARGET_REPO}" remote set-url origin "${REPO_URL}"
+
+      # ── 6. Preview files (dry run) ────────────────────────────────────────────
+      - name: Preview files (dry run)
+        if: inputs.dry_run == 'true'
+        run: |
+          echo "🔍 DRY-RUN mode — files that would be copied to ${GITHUB_ORG}/${TARGET_REPO}:"
+          echo ""
+          if [[ -n "${CONTENT_SUBDIR}" ]]; then
+            echo "  content/${CONTENT_SUBDIR}/ → content/${CONTENT_SUBDIR}/"
+            find "content/${CONTENT_SUBDIR}" -type f | sort | sed 's/^/    /'
+          else
+            echo "  content/ → content/"
+            find content -type f | sort | sed 's/^/    /'
+            echo ""
+            echo "  content_templates/ → content_templates/"
+            find content_templates -type f | sort | sed 's/^/    /'
+          fi
+          echo ""
+          echo "  (generated) .gitattributes (Git LFS rules)"
+
+      # ── 7. Create branch, write .gitattributes, copy files ───────────────────
+      - name: Create branch and copy content
+        if: inputs.dry_run != 'true'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+
+          git -C "${TARGET_CLONE}" lfs install
+
+          if git -C "${TARGET_CLONE}" rev-parse --verify "${BRANCH_NAME}" &>/dev/null; then
+            echo "Branch '${BRANCH_NAME}' already exists — checking it out"
+            git -C "${TARGET_CLONE}" checkout "${BRANCH_NAME}"
+          else
+            git -C "${TARGET_CLONE}" checkout -b "${BRANCH_NAME}"
+          fi
+
+          # Write .gitattributes (idempotent — overwrite with canonical version)
+          cat > "${TARGET_CLONE}/.gitattributes" << 'EOF'
+# Git LFS — binary content assets
+*.glb filter=lfs diff=lfs merge=lfs -text
+*.unitypackage filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.zim filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+EOF
+          echo "✅ Written: .gitattributes"
+
+          if [[ -n "${CONTENT_SUBDIR}" ]]; then
+            echo "📂 Copying content/${CONTENT_SUBDIR}/ tree..."
+            mkdir -p "${TARGET_CLONE}/content/${CONTENT_SUBDIR}"
+            cp -r "content/${CONTENT_SUBDIR}/." "${TARGET_CLONE}/content/${CONTENT_SUBDIR}/"
+            echo "   Copied $(find "content/${CONTENT_SUBDIR}" -type f | wc -l) files"
+          else
+            echo "📂 Copying content/ tree..."
+            cp -r content "${TARGET_CLONE}/content"
+            echo "   Copied $(find content -type f | wc -l) files"
+
+            echo "📂 Copying content_templates/ tree..."
+            cp -r content_templates "${TARGET_CLONE}/content_templates"
+            echo "   Copied $(find content_templates -type f | wc -l) files"
+          fi
+
+      # ── 8. Commit and push ────────────────────────────────────────────────────
+      - name: Commit and push
+        if: inputs.dry_run != 'true'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          cd "${TARGET_CLONE}"
+
+          git add .
+          if git diff --cached --quiet; then
+            echo "ℹ️  Nothing to commit — files may already be in place."
+            exit 0
+          fi
+
+          if [[ -n "${CONTENT_SUBDIR}" ]]; then
+            COMMIT_MSG="feat: migrate content/${CONTENT_SUBDIR} from Akulearn_docs"
+          else
+            COMMIT_MSG="feat: initial content migration from Akulearn_docs"
+          fi
+
+          git commit -m "${COMMIT_MSG}"
+          git push -u origin "${BRANCH_NAME}"
+          echo "✅ Pushed branch: ${BRANCH_NAME}"
+
+      # ── 9. Open pull request ──────────────────────────────────────────────────
+      - name: Open pull request
+        if: inputs.dry_run != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          if ! git -C "${TARGET_CLONE}" ls-remote --exit-code origin "${BRANCH_NAME}" &>/dev/null; then
+            echo "ℹ️  Branch not pushed (nothing to commit) — skipping PR creation."
+            exit 0
+          fi
+
+          if [[ -n "${CONTENT_SUBDIR}" ]]; then
+            PR_TITLE="feat: migrate content/${CONTENT_SUBDIR} from Akulearn_docs"
+            PR_BODY="Automated migration of \`content/${CONTENT_SUBDIR}/\` from the Akulearn_docs monorepo.
+
+**Source branch**: \`${{ inputs.source_branch }}\`
+**Content subdirectory**: \`content/${CONTENT_SUBDIR}/\`
+
+## What's included
+- \`content/${CONTENT_SUBDIR}/\` from Akulearn_docs source branch
+- \`.gitattributes\` with Git LFS rules for binary assets (.glb, .unitypackage, .pdf, .mp4, .zip, .zim)
+
+## Next steps
+1. Confirm content integrity
+2. Run the workflow again for other subdirectories (or omit content_subdirectory to migrate all at once)
+3. Update Akudemy and Aku-EdgeHub to reference this repo
+4. Remove migrated content from Akulearn_docs once all subdirectories are in place
+5. Update docs/ecosystem-map.md migration checklist
+
+_Automated by the migrate-aku-content-full GitHub Actions workflow._
+Migration tracker: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md"
+          else
+            PR_TITLE="feat: initial content migration from Akulearn_docs monorepo"
+            PR_BODY="Automated migration of \`content/\` and \`content_templates/\` from the Akulearn_docs monorepo.
+
+**Source branch**: \`${{ inputs.source_branch }}\`
+
+## What's included
+- \`content/\` tree: AI-generated textbooks (9 subjects × SS1), AR/VR assets (.glb, .unitypackage), simulations, flashcards, quizzes, games, offline Wikipedia (.zim), multilingual news corpus (EN/HA/YO), parallel translation corpora
+- \`content_templates/\` CSV templates: 8 WAEC/NERDC subject lesson plan templates
+- \`.gitattributes\` with Git LFS rules for binary assets (.glb, .unitypackage, .pdf, .mp4, .zip, .zim)
+
+## Next steps
+1. Confirm content integrity (spot-check a few files)
+2. Update Akudemy and Aku-EdgeHub to clone/submodule this repo instead of reading from local content/
+3. Merge this PR, then remove content/ and content_templates/ from Akulearn_docs
+4. Update docs/ecosystem-map.md migration checklist accordingly
+
+_Automated by the migrate-aku-content-full GitHub Actions workflow._
+Migration tracker: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md"
+          fi
+
+          gh pr create \
+            --repo "${GITHUB_ORG}/${TARGET_REPO}" \
+            --base main \
+            --head "${BRANCH_NAME}" \
+            --title "${PR_TITLE}" \
+            --body "${PR_BODY}" \
+            || echo "ℹ️  PR may already exist for this branch."
+
+      # ── 10. Summary ───────────────────────────────────────────────────────────
+      - name: Summary
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Workflow complete"
+          echo "  Source branch : ${{ inputs.source_branch }}"
+          echo "  Subdirectory  : ${CONTENT_SUBDIR:-'(all)'}"
+          echo "  Target repo   : ${GITHUB_ORG}/${TARGET_REPO}"
+          echo "  Branch        : ${BRANCH_NAME}"
+          echo "  Dry run       : ${DRY_RUN}"
+          echo "════════════════════════════════════════════════════"
+          if [[ "${DRY_RUN}" != "true" ]]; then
+            echo "  Next steps:"
+            if [[ -n "${CONTENT_SUBDIR}" ]]; then
+              echo "  1. Review the PR in Aku-Content"
+              echo "  2. Re-run for other subdirectories, or omit the subdirectory input to migrate all at once"
+              echo "  3. Once all subdirectories are merged, update Akudemy and Aku-EdgeHub"
+              echo "  4. Remove migrated content from Akulearn_docs source branch"
+              echo "  5. Update docs/ecosystem-map.md migration checklist"
+            else
+              echo "  1. Review and merge the PR in Aku-Content"
+              echo "  2. Update Akudemy and Aku-EdgeHub to reference Aku-Content"
+              echo "  3. Remove content/ and content_templates/ from Akulearn_docs"
+              echo "  4. Update docs/ecosystem-map.md migration checklist"
+            fi
+          fi
