@@ -1,6 +1,6 @@
 # aku-platform-contracts — Structural Recommendation
 
-> **Status:** Proposed — implement once all 9 services complete Python/FastAPI migration  
+> **Status:** ✅ Active — `v0.1.0` released; all 9 services fully migrated to Python/FastAPI  
 > **Owner:** Platform Architecture  
 > **Tracking:** [`automation_progress.md`](../automation_progress.md)
 
@@ -126,15 +126,15 @@ async def ask(session_id: str, body: InferenceRequest) -> InferenceResponse:
 
 ## Implementation Checklist
 
-- [ ] Create `oumar-code/aku-platform-contracts` repository
-- [ ] Scaffold `aku_contracts/` package with `pyproject.toml` and `__init__.py`
-- [ ] Define initial Pydantic schemas for: `inference`, `content`, `credentials`
-- [ ] Define Kafka topic name constants in `aku_contracts/events/kafka_topics.py`
-- [ ] Add `publish.yml` GitHub Actions workflow (build + publish to GitHub Packages on tag)
-- [ ] Tag `v0.1.0` release
-- [ ] Update `AkuAI/requirements.txt` to depend on `aku-platform-contracts`
+- [x] Create `oumar-code/aku-platform-contracts` repository
+- [x] Scaffold `aku_contracts/` package with `pyproject.toml` and `__init__.py`
+- [x] Define initial Pydantic schemas for: `inference`, `content`, `credentials`
+- [x] Define Kafka topic name constants in `aku_contracts/events/kafka_topics.py`
+- [x] Add `publish.yml` GitHub Actions workflow (build + publish to GitHub Packages on tag)
+- [x] Tag `v0.1.0` release
+- [x] Update `AkuAI/requirements.txt` to depend on `aku-platform-contracts`
 - [ ] Update each consuming service's `requirements.txt` as it completes migration
-- [ ] Add `aku-platform-contracts` to this ecosystem map
+- [x] Add `aku-platform-contracts` to this ecosystem map
 
 ---
 
