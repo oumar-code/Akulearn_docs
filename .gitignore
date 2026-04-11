@@ -16,6 +16,7 @@ __pycache__/
 !team.py
 !supabase_provision.py
 !docs/service-migrations/scaffolds/**/*.py
+!pipeline/*.py
 *.py[cod]
 *.pyo
 *.pyd
@@ -115,6 +116,7 @@ marketing/
 mlops/
 personal_portfolio/
 scripts/
+!docs/service-migrations/scaffolds/*/scripts/
 /src/
 static/
 tests/

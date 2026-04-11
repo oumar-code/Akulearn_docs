@@ -1,0 +1,225 @@
+name: "Akudemy — Full Exam Papers Migration"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Copies data/exam_papers/ and mlops/exam_paper_scraper.py from a specified
+# Akulearn_docs branch (where those gitignored files were committed) into
+# oumar-code/Akudemy and opens a pull request.
+#
+# This allows the full exam papers migration to run entirely in CI without
+# needing a local machine — provided the files have been committed to a branch.
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# 1. Commit data/exam_papers/ and mlops/exam_paper_scraper.py to a branch in
+#    this repo (e.g. feat/exam-papers-migration), then provide that branch name
+#    as the source_branch input below.
+#
+# 2. Create a repo secret named GH_PAT:
+#    Settings → Secrets and variables → Actions → New repository secret
+#    Name : GH_PAT
+#    Value: A classic Personal Access Token with scopes: repo, workflow
+#    (Generate at https://github.com/settings/tokens)
+#
+# How to trigger
+# ──────────────────────────────────────────────────────────────────────────────
+# Go to: Actions → "Akudemy — Full Exam Papers Migration" → Run workflow
+# Set source_branch to the branch that has data/exam_papers/ committed.
+# Optionally tick "Dry run" to preview without making changes.
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_branch:
+        description: "Branch in Akulearn_docs that has data/exam_papers/ and mlops/exam_paper_scraper.py committed"
+        required: true
+        type: string
+      dry_run:
+        description: "Dry run — preview steps without pushing anything"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+jobs:
+  migrate:
+    name: Migrate exam papers to Akudemy
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read  # only reads from this repo; pushes go to Akudemy via PAT
+
+    env:
+      GITHUB_ORG: oumar-code
+      TARGET_REPO: Akudemy
+      BRANCH_NAME: feat/exam-papers-migration
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+
+    steps:
+      # ── 1. Checkout Akulearn_docs at the source branch ────────────────────────
+      - name: Checkout Akulearn_docs at source branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_branch }}
+
+      # ── 2. Validate source files exist ────────────────────────────────────────
+      - name: Validate source files
+        run: |
+          MISSING=false
+
+          if [[ ! -d "data/exam_papers" ]]; then
+            echo "❌ data/exam_papers/ not found in branch '${{ inputs.source_branch }}'"
+            MISSING=true
+          else
+            COUNT=$(find data/exam_papers -type f | wc -l)
+            echo "✅ data/exam_papers/ found (${COUNT} files)"
+          fi
+
+          if [[ ! -f "mlops/exam_paper_scraper.py" ]]; then
+            echo "❌ mlops/exam_paper_scraper.py not found in branch '${{ inputs.source_branch }}'"
+            MISSING=true
+          else
+            echo "✅ mlops/exam_paper_scraper.py found"
+          fi
+
+          if $MISSING; then
+            echo ""
+            echo "The source files must be committed (not just present locally) to branch '${{ inputs.source_branch }}'."
+            echo "Commit data/exam_papers/ and mlops/exam_paper_scraper.py to that branch, then re-run this workflow."
+            exit 1
+          fi
+
+      # ── 3. Configure git identity ────────────────────────────────────────────
+      - name: Configure git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name  "github-actions[bot]"
+
+      # ── 4. Clone Akudemy via PAT ──────────────────────────────────────────────
+      - name: Clone Akudemy
+        if: inputs.dry_run != 'true'
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          REPO_URL="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${TARGET_REPO}.git"
+          echo "Cloning ${GITHUB_ORG}/${TARGET_REPO}..."
+          git clone --depth 1 "${REPO_URL}" "${RUNNER_TEMP}/${TARGET_REPO}"
+          git -C "${RUNNER_TEMP}/${TARGET_REPO}" remote set-url origin "${REPO_URL}"
+
+      # ── 5. Copy files (dry-run preview) ───────────────────────────────────────
+      - name: Preview files (dry run)
+        if: inputs.dry_run == 'true'
+        run: |
+          echo "🔍 DRY-RUN mode — files that would be copied to ${GITHUB_ORG}/${TARGET_REPO}:"
+          echo ""
+          echo "  data/exam_papers/ → data/exam_papers/"
+          find data/exam_papers -type f | sort | sed 's/^/    /'
+          echo ""
+          echo "  mlops/exam_paper_scraper.py → scripts/exam_paper_scraper.py"
+          if [[ -f "EXAM_SCRAPER_DELIVERABLES.md" ]]; then
+            echo "  EXAM_SCRAPER_DELIVERABLES.md → scripts/EXAM_SCRAPER_DELIVERABLES.md"
+          fi
+          echo "  (generated) scripts/README.md"
+
+      # ── 6. Create branch and copy files ──────────────────────────────────────
+      - name: Create branch and copy files
+        if: inputs.dry_run != 'true'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+
+          git -C "${TARGET_CLONE}" checkout -b "${BRANCH_NAME}"
+
+          echo "📂 Copying data/exam_papers/ tree..."
+          mkdir -p "${TARGET_CLONE}/data"
+          cp -r data/exam_papers "${TARGET_CLONE}/data/exam_papers"
+          echo "   Copied $(find data/exam_papers -type f | wc -l) files"
+
+          echo "📂 Copying mlops/exam_paper_scraper.py → scripts/..."
+          mkdir -p "${TARGET_CLONE}/scripts"
+          cp mlops/exam_paper_scraper.py "${TARGET_CLONE}/scripts/exam_paper_scraper.py"
+
+          if [[ -f "EXAM_SCRAPER_DELIVERABLES.md" ]]; then
+            cp EXAM_SCRAPER_DELIVERABLES.md "${TARGET_CLONE}/scripts/EXAM_SCRAPER_DELIVERABLES.md"
+            echo "   Copied EXAM_SCRAPER_DELIVERABLES.md"
+          fi
+
+          # Delegate to helper script to avoid YAML/heredoc indentation incompatibility
+          bash "${GITHUB_WORKSPACE}/docs/service-migrations/write-akudemy-scripts-readme.sh" "${TARGET_CLONE}"
+
+      # ── 7. Commit and push ────────────────────────────────────────────────────
+      - name: Commit and push
+        if: inputs.dry_run != 'true'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          cd "${TARGET_CLONE}"
+
+          git add .
+          if git diff --cached --quiet; then
+            echo "ℹ️  Nothing to commit — files may already be in place."
+            exit 0
+          fi
+
+          git commit -m "feat: migrate exam papers and scraper from Akulearn_docs"
+          git push -u origin "${BRANCH_NAME}"
+          echo "✅ Pushed branch: ${BRANCH_NAME}"
+
+      # ── 8. Open pull request ──────────────────────────────────────────────────
+      - name: Open pull request
+        if: inputs.dry_run != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          PR_BODY: |
+            Automated migration of `data/exam_papers/` and `mlops/exam_paper_scraper.py` from the Akulearn_docs monorepo.
+
+            **Source branch**: `${{ inputs.source_branch }}`
+
+            ## What's included
+            - `data/exam_papers/`: 1,350 structured exam questions — WAEC/NECO/JAMB, 4 subjects, 27 topics, 2020–2024 (JSON + CSV, see INDEX.json)
+            - `scripts/exam_paper_scraper.py`: scraper that generated the dataset (originally at mlops/exam_paper_scraper.py)
+            - `scripts/README.md`: usage instructions for the scraper
+
+            ## Next steps
+            1. Confirm data integrity (spot-check data/exam_papers/INDEX.json)
+            2. Wire `data/exam_papers/` into Akudemy's content API (routers/content.py)
+            3. Schedule `scripts/exam_paper_scraper.py` as a periodic GitHub Actions job if needed
+            4. Merge this PR, then remove data/exam_papers/ from Akulearn_docs
+            5. Update docs/ecosystem-map.md migration checklist accordingly
+
+            _Automated by the migrate-exam-papers-full GitHub Actions workflow._
+            Migration tracker: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          if ! git -C "${TARGET_CLONE}" ls-remote --exit-code origin "${BRANCH_NAME}" &>/dev/null; then
+            echo "ℹ️  Branch not pushed (nothing to commit) — skipping PR creation."
+            exit 0
+          fi
+
+          gh pr create \
+            --repo "${GITHUB_ORG}/${TARGET_REPO}" \
+            --base main \
+            --head "${BRANCH_NAME}" \
+            --title "feat: migrate exam papers dataset and scraper from Akulearn_docs" \
+            --body "${PR_BODY}" \
+            || echo "ℹ️  PR may already exist for this branch."
+
+      # ── 9. Summary ────────────────────────────────────────────────────────────
+      - name: Summary
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Workflow complete"
+          echo "  Source branch : ${{ inputs.source_branch }}"
+          echo "  Target repo   : ${GITHUB_ORG}/${TARGET_REPO}"
+          echo "  Branch        : ${BRANCH_NAME}"
+          echo "  Dry run       : ${DRY_RUN}"
+          echo "════════════════════════════════════════════════════"
+          if [[ "${DRY_RUN}" != "true" ]]; then
+            echo "  Next steps:"
+            echo "  1. Review and merge the PR in Akudemy"
+            echo "  2. Wire data/exam_papers/ into Akudemy's content API"
+            echo "  3. Remove data/exam_papers/ from Akulearn_docs (source branch)"
+            echo "  4. Update docs/ecosystem-map.md migration checklist"
+          fi

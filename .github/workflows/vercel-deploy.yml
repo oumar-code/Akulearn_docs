@@ -9,7 +9,8 @@ on:
       - 'docs/**'
       - 'mkdocs.yml'
       - 'requirements.txt'
-      - 'akulearn-dashboard/vercel.json'
+      - 'vercel.json'
+      - '.vercelignore'
       - '.github/workflows/vercel-deploy.yml'
   workflow_dispatch:
 
@@ -88,6 +89,7 @@ jobs:
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Deploy to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

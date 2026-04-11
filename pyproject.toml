@@ -1,6 +1,6 @@
 [project]
 name = "aku-platform-contracts"
-version = "0.1.0"
+version = "0.1.1"
 description = "Shared Pydantic schemas and Kafka topic constants for Aku Platform services"
 authors = [{name = "Platform Architecture"}]
 dependencies = [

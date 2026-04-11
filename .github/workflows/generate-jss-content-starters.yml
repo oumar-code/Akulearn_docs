@@ -1,0 +1,359 @@
+name: "JSS Content — Generate Starters and PR to Aku-Content"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Runs the content generation pipeline for JSS1–SS3, then opens a pull
+# request in oumar-code/Aku-Content with the generated content bundles.
+#
+# Phase 1 (this workflow): Text-only Tier 1 content
+#   - JSS1–JSS3 textbook chapter starter bundles (MD files)
+#   - BECE past question starter bundles (JSON)
+#   - LO catalog entries for all new JSS content
+#
+# Phase 2 (run after Phase 1 is merged): Derived content
+#   - Flashcard decks (auto-generated from textbook chapters)
+#   - Topic quizzes (auto-generated from chapters and exam questions)
+#   - Multilingual translations (Hausa / Yoruba / Igbo)
+#
+# Phase 3 (separate pipeline): Rich media
+#   - AR .glb models (Blender pipeline)
+#   - VR .unitypackage scenes (Unity pipeline)
+#   - Wikipedia .zim download
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# 1. GH_PAT secret — PAT with repo + workflow scopes
+# 2. AKUAI_API_KEY secret — set if using remote LLM (leave empty for local)
+# 3. Aku-Content repo must exist (run stub-aku-content.yml first if needed)
+#
+# How to trigger
+# ──────────────────────────────────────────────────────────────────────────────
+# Actions → "JSS Content — Generate Starters and PR to Aku-Content" → Run workflow
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      content_tier:
+        description: "Content tier to generate"
+        required: true
+        default: "tier1_starters"
+        type: choice
+        options:
+          - "tier1_starters"      # JSS1–JSS3 textbook starters (MD files from public/)
+          - "tier1_generated"     # JSS1–JSS3 chapters via LLM (requires AKUAI_API_KEY)
+          - "tier1_bece"          # BECE past question starter bundles
+          - "tier2_flashcards"    # Flashcard decks from textbook chapters
+          - "tier2_quizzes"       # Quiz files from textbook chapters
+      levels:
+        description: "Class levels to include (comma-separated: jss1,jss2,jss3,ss1,ss2,ss3)"
+        required: false
+        default: "jss1,jss2,jss3"
+        type: string
+      llm_provider:
+        description: "LLM provider for tier1_generated (ignored for starters)"
+        required: false
+        default: "akuai_local"
+        type: choice
+        options:
+          - "akuai_local"         # AkuAI local LLM (requires running AkuAI service)
+          - "openai"              # OpenAI API (requires OPENAI_API_KEY secret)
+          - "anthropic"           # Anthropic API (requires ANTHROPIC_API_KEY secret)
+      dry_run:
+        description: "Dry run — preview steps without pushing anything"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+jobs:
+  generate:
+    name: Generate JSS content and PR to Aku-Content
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    env:
+      GITHUB_ORG: oumar-code
+      TARGET_REPO: Aku-Content
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+      CONTENT_TIER: ${{ inputs.content_tier || 'tier1_starters' }}
+      LEVELS: ${{ inputs.levels || 'jss1,jss2,jss3' }}
+
+    steps:
+      # ── 1. Checkout Akulearn_docs ─────────────────────────────────────────────
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+
+      # ── 2. Set up Python ──────────────────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pipeline dependencies
+        run: |
+          pip install --quiet openai pydantic requests beautifulsoup4
+          echo "✅ Dependencies installed"
+
+      # ── 3. Configure git identity ────────────────────────────────────────────
+      - name: Configure git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name  "github-actions[bot]"
+
+      # ── 4. Clone Aku-Content ──────────────────────────────────────────────────
+      - name: Clone Aku-Content
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          REPO_URL="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${TARGET_REPO}.git"
+          git clone --depth 1 "${REPO_URL}" "${RUNNER_TEMP}/${TARGET_REPO}"
+          git -C "${RUNNER_TEMP}/${TARGET_REPO}" remote set-url origin "${REPO_URL}"
+
+      # ── 5a. Tier 1 Starters — copy public/ starter MDs to Aku-Content ─────────
+      - name: "Tier 1 Starters: Copy JSS starter files"
+        if: env.CONTENT_TIER == 'tier1_starters'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          BRANCH="feat/jss-content-starters-$(date +%Y%m%d)"
+          git -C "${TARGET_CLONE}" checkout -b "${BRANCH}"
+          echo "BRANCH_NAME=${BRANCH}" >> "${GITHUB_ENV}"
+
+          # Create target directory structure
+          mkdir -p "${TARGET_CLONE}/content/starters/jss"
+          mkdir -p "${TARGET_CLONE}/content/starters/ss"
+
+          # Copy JSS starters
+          JSS_COUNT=0
+          for f in public/JSS*.md; do
+            if [[ -f "$f" ]]; then
+              cp "$f" "${TARGET_CLONE}/content/starters/jss/"
+              echo "  ✅ Copied: $f"
+              JSS_COUNT=$((JSS_COUNT + 1))
+            fi
+          done
+
+          # Copy SS starters (existing)
+          SS_COUNT=0
+          for f in public/SS*.md; do
+            if [[ -f "$f" ]]; then
+              cp "$f" "${TARGET_CLONE}/content/starters/ss/"
+              SS_COUNT=$((SS_COUNT + 1))
+            fi
+          done
+
+          # Write starter index
+          cat > "${TARGET_CLONE}/content/starters/INDEX.md" << EOF
+          # Aku-Content: Starter Content Bundles
+
+          Starter content bundles for Aku Platform — JSS1–SS3.
+          Each file is a detailed study guide aligned to the NERDC curriculum and BECE/WAEC examination standards.
+
+          ## JSS Content (${JSS_COUNT} files)
+          Target: BECE / Common Entrance candidates (JSS1–JSS3)
+
+          | File | Class | Subject |
+          |------|-------|---------|
+          $(ls "${TARGET_CLONE}/content/starters/jss/"*.md 2>/dev/null | xargs -I{} basename {} | sort | \
+            awk -F'_' '{
+              class=$1"_"$2;
+              gsub(/_STARTER\.md$/, "", $0);
+              sub(/^[A-Z0-9]+_[A-Z0-9]+_/, "", $0);
+              sub(/_/, " ", $0);
+              print "| " $0 " | " class " | - |"
+            }')
+
+          ## SS Content (${SS_COUNT} files)
+          Target: WAEC / NECO / JAMB candidates (SS1–SS3)
+
+          Generated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          Pipeline: Akulearn_docs content generation pipeline
+          Curriculum: NERDC / FME
+          EOF
+
+          echo "✅ Copied ${JSS_COUNT} JSS starters and ${SS_COUNT} SS starters"
+          echo "CONTENT_COUNT=${JSS_COUNT}" >> "${GITHUB_ENV}"
+
+      # ── 5b. Tier 1 Generated — run LLM textbook generator ─────────────────────
+      - name: "Tier 1 Generated: Run textbook generator"
+        if: env.CONTENT_TIER == 'tier1_generated'
+        env:
+          AKUAI_API_KEY: ${{ secrets.AKUAI_API_KEY || secrets.OPENAI_API_KEY || 'local' }}
+          AKUAI_MODEL: ${{ inputs.llm_provider == 'openai' && 'gpt-4o' || inputs.llm_provider == 'anthropic' && 'claude-3-5-sonnet-20241022' || 'llama-3' }}
+          AKUAI_API_BASE: ${{ inputs.llm_provider == 'openai' && 'https://api.openai.com/v1' || inputs.llm_provider == 'anthropic' && 'https://api.anthropic.com/v1' || 'http://localhost:8004/v1' }}
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          BRANCH="feat/jss-textbook-chapters-$(date +%Y%m%d)"
+          git -C "${TARGET_CLONE}" checkout -b "${BRANCH}"
+          echo "BRANCH_NAME=${BRANCH}" >> "${GITHUB_ENV}"
+
+          DRY_FLAG=""
+          if [[ "${DRY_RUN}" == "true" ]]; then
+            DRY_FLAG="--dry-run"
+          fi
+
+          python pipeline/textbook_generator.py \
+            --all-jss \
+            --output-dir "${TARGET_CLONE}/content/textbooks/" \
+            ${DRY_FLAG}
+
+          echo "✅ Textbook generation complete"
+
+      # ── 5c. Tier 1 BECE — run BECE scraper ────────────────────────────────────
+      - name: "Tier 1 BECE: Run BECE past questions scraper"
+        if: env.CONTENT_TIER == 'tier1_bece'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          BRANCH="feat/bece-exam-questions-$(date +%Y%m%d)"
+          git -C "${TARGET_CLONE}" checkout -b "${BRANCH}"
+          echo "BRANCH_NAME=${BRANCH}" >> "${GITHUB_ENV}"
+
+          DRY_FLAG=""
+          if [[ "${DRY_RUN}" == "true" ]]; then
+            DRY_FLAG="--dry-run"
+          fi
+
+          python pipeline/bece_scraper.py \
+            --all \
+            --years 2019 2020 2021 2022 2023 \
+            --output-dir "${TARGET_CLONE}/data/exam_papers/bece/" \
+            ${DRY_FLAG}
+
+          echo "✅ BECE scraper complete"
+
+      # ── 5d. Tier 2 Flashcards ──────────────────────────────────────────────────
+      - name: "Tier 2 Flashcards: Generate from textbook chapters"
+        if: env.CONTENT_TIER == 'tier2_flashcards'
+        env:
+          AKUAI_API_KEY: ${{ secrets.AKUAI_API_KEY || 'local' }}
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          BRANCH="feat/flashcard-decks-$(date +%Y%m%d)"
+          git -C "${TARGET_CLONE}" checkout -b "${BRANCH}"
+          echo "BRANCH_NAME=${BRANCH}" >> "${GITHUB_ENV}"
+
+          DRY_FLAG=""
+          if [[ "${DRY_RUN}" == "true" ]]; then
+            DRY_FLAG="--dry-run"
+          fi
+
+          python pipeline/flashcard_generator.py \
+            --input-dir "${TARGET_CLONE}/content/textbooks/" \
+            --output-dir "${TARGET_CLONE}/content/flashcards/" \
+            ${DRY_FLAG}
+
+      # ── 5e. Tier 2 Quizzes ─────────────────────────────────────────────────────
+      - name: "Tier 2 Quizzes: Generate from textbook chapters"
+        if: env.CONTENT_TIER == 'tier2_quizzes'
+        env:
+          AKUAI_API_KEY: ${{ secrets.AKUAI_API_KEY || 'local' }}
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          BRANCH="feat/topic-quizzes-$(date +%Y%m%d)"
+          git -C "${TARGET_CLONE}" checkout -b "${BRANCH}"
+          echo "BRANCH_NAME=${BRANCH}" >> "${GITHUB_ENV}"
+
+          DRY_FLAG=""
+          if [[ "${DRY_RUN}" == "true" ]]; then
+            DRY_FLAG="--dry-run"
+          fi
+
+          python pipeline/quiz_generator.py \
+            --source textbook \
+            --input-dir "${TARGET_CLONE}/content/textbooks/" \
+            --output-dir "${TARGET_CLONE}/content/quizzes/" \
+            ${DRY_FLAG}
+
+      # ── 6. Commit and push ────────────────────────────────────────────────────
+      - name: Commit and push
+        if: inputs.dry_run != 'true'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          cd "${TARGET_CLONE}"
+
+          git add .
+          if git diff --cached --quiet; then
+            echo "ℹ️  Nothing to commit — files may already be in place."
+            exit 0
+          fi
+
+          COMMIT_MSG="feat: ${CONTENT_TIER} content bundle — $(date +%Y-%m-%d)"
+          git commit -m "${COMMIT_MSG}"
+          git push -u origin "${BRANCH_NAME}"
+          echo "✅ Pushed branch: ${BRANCH_NAME}"
+
+      # ── 7. Open pull request ──────────────────────────────────────────────────
+      - name: Open pull request in Aku-Content
+        if: inputs.dry_run != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+
+          if ! git -C "${TARGET_CLONE}" ls-remote --exit-code origin "${BRANCH_NAME}" &>/dev/null; then
+            echo "ℹ️  Branch not pushed — skipping PR creation."
+            exit 0
+          fi
+
+          TIER_LABEL="${CONTENT_TIER}"
+          PR_TITLE="feat: ${TIER_LABEL} content bundle for JSS1–SS3 ($(date +%Y-%m-%d))"
+
+          PR_BODY="## Content Bundle: ${TIER_LABEL}
+
+          **Source**: \`oumar-code/Akulearn_docs\` content generation pipeline
+          **Target levels**: ${LEVELS}
+          **Pipeline scripts**: \`pipeline/textbook_generator.py\`, \`pipeline/bece_scraper.py\`, etc.
+          **Workflow**: \`generate-jss-content-starters.yml\`
+
+          ## What's included
+          - Content tier: \`${TIER_LABEL}\`
+          - Class levels: \`${LEVELS}\`
+          - Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)
+
+          ## Content Population Priority
+          - ✅ **Tier 1** (text-only, immediate value): JSS1–JSS3 starters, BECE questions
+          - ⏳ **Tier 2** (derived): Flashcards, quizzes, translations
+          - ⏳ **Tier 3** (rich media): AR .glb, VR .unitypackage, Wikipedia .zim
+
+          ## Next Steps
+          1. Review content quality — spot-check 2–3 files per subject
+          2. Merge this PR
+          3. Run \`seed_content.py\` in Akudemy to import into PostgreSQL
+          4. Run the next tier (flashcards, then quizzes)
+          5. Update \`content/lo_catalog.json\` with new LO IDs
+
+          ## LO Catalog
+          All new content is tagged with LO IDs following [docs/LO_TAGGING_SCHEMA.md](https://github.com/oumar-code/Akulearn_docs/blob/main/docs/LO_TAGGING_SCHEMA.md).
+
+          _Automated by the \`generate-jss-content-starters.yml\` workflow in Akulearn_docs._"
+
+          gh pr create \
+            --repo "${GITHUB_ORG}/${TARGET_REPO}" \
+            --base main \
+            --head "${BRANCH_NAME}" \
+            --title "${PR_TITLE}" \
+            --body "${PR_BODY}" \
+            || echo "ℹ️  PR may already exist for this branch."
+
+      # ── 8. Summary ────────────────────────────────────────────────────────────
+      - name: Summary
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  JSS Content Generation — Complete"
+          echo "  Content tier : ${CONTENT_TIER}"
+          echo "  Levels       : ${LEVELS}"
+          echo "  Target repo  : ${GITHUB_ORG}/${TARGET_REPO}"
+          echo "  Branch       : ${BRANCH_NAME:-N/A}"
+          echo "  Dry run      : ${DRY_RUN}"
+          echo "════════════════════════════════════════════════════"
+          echo "  Recommended next steps:"
+          echo "  1. Review and merge the PR in Aku-Content"
+          echo "  2. Trigger seed_content.py in Akudemy (or stub-akudemy-exam-papers.yml)"
+          echo "  3. Re-run this workflow with content_tier=tier2_flashcards"
+          echo "  4. Re-run with content_tier=tier2_quizzes"
+          echo "  5. Add Wikipedia MCP and YouTube transcript MCP to AkuAI"
