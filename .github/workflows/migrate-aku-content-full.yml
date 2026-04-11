@@ -184,20 +184,8 @@ jobs:
           fi
 
           # Write .gitattributes (idempotent — overwrite with canonical version)
-          cat > "${TARGET_CLONE}/.gitattributes" << 'EOF'
-# Git LFS — binary content assets
-*.glb filter=lfs diff=lfs merge=lfs -text
-*.unitypackage filter=lfs diff=lfs merge=lfs -text
-*.pdf filter=lfs diff=lfs merge=lfs -text
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-*.zip filter=lfs diff=lfs merge=lfs -text
-*.zim filter=lfs diff=lfs merge=lfs -text
-*.fbx filter=lfs diff=lfs merge=lfs -text
-*.obj filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
-*.jpg filter=lfs diff=lfs merge=lfs -text
-EOF
-          echo "✅ Written: .gitattributes"
+          # Delegate to helper script to avoid YAML/heredoc indentation incompatibility
+          bash "${GITHUB_WORKSPACE}/docs/service-migrations/write-lfs-gitattributes.sh" "${TARGET_CLONE}"
 
           if [[ -n "${CONTENT_SUBDIR}" ]]; then
             echo "📂 Copying content/${CONTENT_SUBDIR}/ tree..."
@@ -242,6 +230,43 @@ EOF
         if: inputs.dry_run != 'true'
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
+          PR_BODY_SUBDIR: |
+            Automated migration of `content/${{ inputs.content_subdirectory }}/` from the Akulearn_docs monorepo.
+
+            **Source branch**: `${{ inputs.source_branch }}`
+            **Content subdirectory**: `content/${{ inputs.content_subdirectory }}/`
+
+            ## What's included
+            - `content/${{ inputs.content_subdirectory }}/` from Akulearn_docs source branch
+            - `.gitattributes` with Git LFS rules for binary assets (.glb, .unitypackage, .pdf, .mp4, .zip, .zim)
+
+            ## Next steps
+            1. Confirm content integrity
+            2. Run the workflow again for other subdirectories (or omit content_subdirectory to migrate all at once)
+            3. Update Akudemy and Aku-EdgeHub to reference this repo
+            4. Remove migrated content from Akulearn_docs once all subdirectories are in place
+            5. Update docs/ecosystem-map.md migration checklist
+
+            _Automated by the migrate-aku-content-full GitHub Actions workflow._
+            Migration tracker: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md
+          PR_BODY_ALL: |
+            Automated migration of `content/` and `content_templates/` from the Akulearn_docs monorepo.
+
+            **Source branch**: `${{ inputs.source_branch }}`
+
+            ## What's included
+            - `content/` tree: AI-generated textbooks (9 subjects × SS1), AR/VR assets (.glb, .unitypackage), simulations, flashcards, quizzes, games, offline Wikipedia (.zim), multilingual news corpus (EN/HA/YO), parallel translation corpora
+            - `content_templates/` CSV templates: 8 WAEC/NERDC subject lesson plan templates
+            - `.gitattributes` with Git LFS rules for binary assets (.glb, .unitypackage, .pdf, .mp4, .zip, .zim)
+
+            ## Next steps
+            1. Confirm content integrity (spot-check a few files)
+            2. Update Akudemy and Aku-EdgeHub to clone/submodule this repo instead of reading from local content/
+            3. Merge this PR, then remove content/ and content_templates/ from Akulearn_docs
+            4. Update docs/ecosystem-map.md migration checklist accordingly
+
+            _Automated by the migrate-aku-content-full GitHub Actions workflow._
+            Migration tracker: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md
         run: |
           TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
           if ! git -C "${TARGET_CLONE}" ls-remote --exit-code origin "${BRANCH_NAME}" &>/dev/null; then
@@ -251,43 +276,10 @@ EOF
 
           if [[ -n "${CONTENT_SUBDIR}" ]]; then
             PR_TITLE="feat: migrate content/${CONTENT_SUBDIR} from Akulearn_docs"
-            PR_BODY="Automated migration of \`content/${CONTENT_SUBDIR}/\` from the Akulearn_docs monorepo.
-
-**Source branch**: \`${{ inputs.source_branch }}\`
-**Content subdirectory**: \`content/${CONTENT_SUBDIR}/\`
-
-## What's included
-- \`content/${CONTENT_SUBDIR}/\` from Akulearn_docs source branch
-- \`.gitattributes\` with Git LFS rules for binary assets (.glb, .unitypackage, .pdf, .mp4, .zip, .zim)
-
-## Next steps
-1. Confirm content integrity
-2. Run the workflow again for other subdirectories (or omit content_subdirectory to migrate all at once)
-3. Update Akudemy and Aku-EdgeHub to reference this repo
-4. Remove migrated content from Akulearn_docs once all subdirectories are in place
-5. Update docs/ecosystem-map.md migration checklist
-
-_Automated by the migrate-aku-content-full GitHub Actions workflow._
-Migration tracker: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md"
+            BODY="${PR_BODY_SUBDIR}"
           else
             PR_TITLE="feat: initial content migration from Akulearn_docs monorepo"
-            PR_BODY="Automated migration of \`content/\` and \`content_templates/\` from the Akulearn_docs monorepo.
-
-**Source branch**: \`${{ inputs.source_branch }}\`
-
-## What's included
-- \`content/\` tree: AI-generated textbooks (9 subjects × SS1), AR/VR assets (.glb, .unitypackage), simulations, flashcards, quizzes, games, offline Wikipedia (.zim), multilingual news corpus (EN/HA/YO), parallel translation corpora
-- \`content_templates/\` CSV templates: 8 WAEC/NERDC subject lesson plan templates
-- \`.gitattributes\` with Git LFS rules for binary assets (.glb, .unitypackage, .pdf, .mp4, .zip, .zim)
-
-## Next steps
-1. Confirm content integrity (spot-check a few files)
-2. Update Akudemy and Aku-EdgeHub to clone/submodule this repo instead of reading from local content/
-3. Merge this PR, then remove content/ and content_templates/ from Akulearn_docs
-4. Update docs/ecosystem-map.md migration checklist accordingly
-
-_Automated by the migrate-aku-content-full GitHub Actions workflow._
-Migration tracker: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md"
+            BODY="${PR_BODY_ALL}"
           fi
 
           gh pr create \
@@ -295,7 +287,7 @@ Migration tracker: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ec
             --base main \
             --head "${BRANCH_NAME}" \
             --title "${PR_TITLE}" \
-            --body "${PR_BODY}" \
+            --body "${BODY}" \
             || echo "ℹ️  PR may already exist for this branch."
 
       # ── 10. Summary ───────────────────────────────────────────────────────────
