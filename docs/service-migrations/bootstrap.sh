@@ -1,21 +1,18 @@
 #!/usr/bin/env bash
-# bootstrap.sh — Aku Platform Python/FastAPI migration scaffold
+# bootstrap.sh — Aku Platform contracts dependency injector
 #
-# Usage (run from the target service repo root):
-#   ./bootstrap.sh <service-name>
+# Usage (run from THIS docs repo root — it finds every requirements*.txt
+# under the current directory and adds the shared contracts pin):
 #
-# Example:
-#   ./bootstrap.sh AkuAI
+#   ./bootstrap.sh
 #
-# What it generates:
-#   app/  tests/  alembic/  Dockerfile  docker-compose.yml
-#   .github/workflows/ci.yml  pyproject.toml  requirements.txt
-#   requirements-dev.txt  alembic.ini  .env.example  .gitignore
+# For the full Python/FastAPI service scaffold (app/, tests/, Dockerfile,
+# docker-compose.yml, ci.yml, pyproject.toml, requirements.txt, etc.)
+# follow the step-by-step guide at:
+#   docs/service-templates/python-fastapi-bootstrap.md
 #
-# Full playbook: docs/service-templates/python-fastapi-bootstrap.md
 # Migration tracker: docs/service-migrations/index.md
 
-#!/bin/bash
 set -e
 
 DEPENDENCY='aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts.git@v0.1.1'

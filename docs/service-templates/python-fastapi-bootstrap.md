@@ -272,7 +272,6 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
 ## Step 8 — Docker Compose (Local Dev)
 
 ```yaml
-version: "3.9"
 services:
   app:
     build: .
