@@ -51,6 +51,11 @@ compose*.yaml
 compose*.yml
 docker-compose*.yaml
 docker-compose*.yml
+# Exceptions: scaffold Dockerfiles and local dev compose file
+!docs/service-migrations/scaffolds/**/Dockerfile
+!docs/service-migrations/scaffolds/**/Dockerfile.*
+!docs/deployment/local/docker-compose*.yml
+!docs/deployment/local/docker-compose*.yaml
 
 # Logs and temporary outputs
 *.log
@@ -120,6 +125,8 @@ scripts/
 /src/
 static/
 tests/
+!docs/service-migrations/scaffolds/**/tests/
+!docs/service-migrations/scaffolds/**/tests/**
 unconnected_stack/
 versatech_profile/
 web/
