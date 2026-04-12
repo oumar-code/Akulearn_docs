@@ -1,0 +1,355 @@
+# docker-compose.dev.yml — Aku Platform Local Developer Stack
+#
+# Memory-constrained for machines with 6 GB total RAM.
+# See: docs/deployment/local/dev-ram-allocation-decision.md
+#
+# ── Profiles ────────────────────────────────────────────────────────────────────
+#   infra   Shared backbone (Postgres, Redis, Neo4j) — always required
+#   core    4 highest-priority services (AkuAI, Akudemy, Aku-EdgeHub, AkuTutor)
+#   full    Remaining 5 services — integration testing only
+#
+# ── Usage ───────────────────────────────────────────────────────────────────────
+#   Infra only:
+#     docker compose -f docker-compose.dev.yml --profile infra up -d
+#
+#   Core dev (daily):
+#     docker compose -f docker-compose.dev.yml --profile infra --profile core up -d
+#
+#   Full stack (integration testing):
+#     docker compose -f docker-compose.dev.yml --profile infra --profile core --profile full up -d
+#
+# ── Docker Desktop (Windows / macOS) ────────────────────────────────────────────
+#   Cap the Docker Desktop VM at 5 GB:
+#     Settings → Resources → Memory → 5 GB
+#   Without this, Docker Desktop claims all 6 GB from the host OS before cgroups
+#   can enforce mem_limit.  Linux hosts need no extra configuration.
+#
+# ── Scenario RAM totals ─────────────────────────────────────────────────────────
+#   infra only  : ~896 MB   (~3.6 GB headroom)
+#   infra + core: ~2.4 GB   (~2.1 GB headroom)
+#   all profiles: ~3.0 GB   (~1.5 GB headroom)
+
+name: aku-platform-dev
+
+services:
+
+  # ════════════════════════════════════════════════════════════════════════════
+  # INFRA — Shared backbone (always start this profile first)
+  # ════════════════════════════════════════════════════════════════════════════
+
+  postgres:
+    image: postgres:16-alpine
+    profiles: [infra]
+    restart: unless-stopped
+    mem_limit: 256m
+    environment:
+      POSTGRES_USER: aku
+      POSTGRES_PASSWORD: aku_dev
+      # Single shared database for dev — each service uses a separate schema.
+      POSTGRES_DB: aku_platform
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aku -d aku_platform"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  redis:
+    image: redis:7-alpine
+    profiles: [infra]
+    restart: unless-stopped
+    mem_limit: 128m
+    # Cap Redis in-memory usage well below the container limit so the OS doesn't OOM.
+    command: redis-server --maxmemory 96mb --maxmemory-policy allkeys-lru
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+  neo4j:
+    image: neo4j:5-community
+    profiles: [infra]
+    restart: unless-stopped
+    mem_limit: 512m
+    environment:
+      NEO4J_AUTH: neo4j/aku_dev_password
+      # CRITICAL: without this, Neo4j allocates 1-2 GB of heap by default
+      # and blows the entire 4.5 GB container budget on its own.
+      NEO4J_dbms_memory_heap_maxSize: 256m
+      NEO4J_dbms_memory_pagecache_size: 128m
+      NEO4J_PLUGINS: "[]"
+    ports:
+      - "7474:7474"   # HTTP browser UI
+      - "7687:7687"   # Bolt protocol
+    volumes:
+      - neo4j_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:7474 || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  # ════════════════════════════════════════════════════════════════════════════
+  # CORE — The 4 highest-priority services (daily development)
+  # Host ports: 8004–8007  |  Container port: 8000 (all services)
+  # ════════════════════════════════════════════════════════════════════════════
+
+  akuai:
+    image: ghcr.io/oumar-code/akuai:v0.1.1
+    profiles: [core]
+    restart: unless-stopped
+    # 512 MB is safe in dev because InferenceService.startup() is a no-op stub
+    # (no torch / transformers are imported at runtime until real weights are loaded).
+    mem_limit: 512m
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      APP_ENV: development
+      LOG_LEVEL: info
+      DATABASE_URL: postgresql+asyncpg://aku:aku_dev@postgres:5432/aku_platform
+      REDIS_URL: redis://redis:6379/2
+      # Leave MODEL_DIR and GEMMA_GGUF_PATH empty in dev — stub responses only.
+      # Set them to a volume-mounted path when loading real weights.
+      MODEL_DIR: ""
+      GEMMA_GGUF_PATH: ""
+      CORS_ORIGINS: "http://localhost:3000"
+      GEMMA_MAX_PAYLOAD_BYTES: "4096"
+      AKUAI_API_SECRET: dev_secret_change_in_production
+    ports:
+      - "8004:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=4)\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  akudemy:
+    image: ghcr.io/oumar-code/akudemy:v0.1.1
+    profiles: [core]
+    restart: unless-stopped
+    mem_limit: 256m
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      APP_ENV: development
+      LOG_LEVEL: info
+      DATABASE_URL: postgresql+asyncpg://aku:aku_dev@postgres:5432/aku_platform
+      REDIS_URL: redis://redis:6379/3
+      REDIS_SYNC_TTL_SECONDS: "30"
+      CORS_ALLOWED_ORIGINS: "http://localhost:3000"
+      EDGE_HUB_SHARED_SECRET: dev_edge_hub_secret
+    ports:
+      - "8005:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=4)\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  aku-edgehub:
+    image: ghcr.io/oumar-code/aku-edgehub:v0.1.1
+    profiles: [core]
+    restart: unless-stopped
+    # EdgeHub uses SQLite in dev — no Postgres dependency needed.
+    mem_limit: 256m
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      APP_ENV: development
+      LOG_LEVEL: info
+      OPERATING_MODE: online
+      # SQLite in dev; swap for asyncpg DATABASE_URL in staging/production.
+      DATABASE_URL: sqlite+aiosqlite:////data/edge_hub.db
+      # Service-to-service URLs — use Docker service names, container port 8000.
+      AKUDEMY_BASE_URL: http://akudemy:8000
+      AKUAI_BASE_URL: http://akuai:8000
+      AKUDEMY_API_KEY: dev_akudemy_key
+      AKUAI_API_KEY: dev_akuai_key
+      REDIS_URL: redis://redis:6379/4
+    ports:
+      - "8006:8000"
+    volumes:
+      - edgehub_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=4)\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  akututor:
+    image: ghcr.io/oumar-code/akututor:v0.1.1
+    profiles: [core]
+    restart: unless-stopped
+    mem_limit: 256m
+    depends_on:
+      akuai:
+        condition: service_healthy
+    environment:
+      APP_ENV: development
+      LOG_LEVEL: INFO
+      # AkuTutor delegates ALL inference to AkuAI — it runs no model of its own.
+      AKU_AI_URL: http://akuai:8000
+    ports:
+      - "8007:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=4)\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # ════════════════════════════════════════════════════════════════════════════
+  # FULL — Remaining 5 services (integration testing only)
+  # Host ports: 8008–8012  |  Container port: 8000 (all services)
+  #
+  # NOTE: always start with --profile infra --profile core --profile full.
+  #       These services reference core services (akuai, akudemy) by name;
+  #       they will start but some calls will fail if core is not running.
+  # ════════════════════════════════════════════════════════════════════════════
+
+  aku-ighub:
+    image: ghcr.io/oumar-code/aku-ighub:v0.1.1
+    profiles: [full]
+    restart: unless-stopped
+    mem_limit: 128m
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      APP_ENV: development
+      LOG_LEVEL: info
+      REDIS_URL: redis://redis:6379/5
+      IDEMPOTENCY_TTL_SECONDS: "86400"
+      ALLOWED_ORIGINS: "http://localhost:3000"
+    ports:
+      - "8008:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=4)\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  aku-superhub:
+    image: ghcr.io/oumar-code/aku-superhub:v0.1.1
+    profiles: [full]
+    restart: unless-stopped
+    mem_limit: 128m
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      APP_ENV: development
+      LOG_LEVEL: INFO
+      DATABASE_URL: postgresql+asyncpg://aku:aku_dev@postgres:5432/aku_platform
+      REDIS_URL: redis://redis:6379/6
+      JWT_SECRET_KEY: dev_secret_change_in_production
+      JWT_ALGORITHM: HS256
+    ports:
+      - "8009:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=4)\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  akuworkspace:
+    image: ghcr.io/oumar-code/akuworkspace:v0.1.1
+    profiles: [full]
+    restart: unless-stopped
+    mem_limit: 128m
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      APP_ENV: development
+      LOG_LEVEL: info
+      # Downstream service URLs — use container port 8000 for all.
+      AKU_AI_URL: http://akuai:8000
+      AKU_DAAS_URL: http://aku-daas:8000
+      AKUDEMY_URL: http://akudemy:8000
+      REDIS_URL: redis://redis:6379/7
+      HTTP_TIMEOUT: "30.0"
+      CORS_ORIGINS: "http://localhost:3000"
+    ports:
+      - "8010:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=4)\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  aku-telhone:
+    image: ghcr.io/oumar-code/aku-telhone:v0.1.1
+    profiles: [full]
+    restart: unless-stopped
+    mem_limit: 128m
+    environment:
+      APP_ENV: development
+      LOG_LEVEL: info
+      ALLOWED_ORIGINS: "http://localhost:3000"
+      # SM-DP+ / OTA / IGHub URLs point to stubs in dev
+      AKU_IGHUB_URL: http://aku-ighub:8000
+    ports:
+      - "8011:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=4)\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  aku-daas:
+    image: ghcr.io/oumar-code/aku-daas:v0.1.1
+    profiles: [full]
+    restart: unless-stopped
+    mem_limit: 128m
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      APP_ENV: development
+      LOG_LEVEL: info
+      DATABASE_URL: postgresql+asyncpg://aku:aku_dev@postgres:5432/aku_platform
+      REDIS_URL: redis://redis:6379/8
+      PIPELINE_STATUS_TTL_SECONDS: "604800"
+      ALLOWED_ORIGINS: "http://localhost:3000"
+    ports:
+      - "8012:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=4)\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+# ── Named volumes ─────────────────────────────────────────────────────────────
+volumes:
+  postgres_data:
+  neo4j_data:
+  edgehub_data:
