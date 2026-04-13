@@ -348,6 +348,9 @@ jobs:
           python-version: "3.11"
           cache: pip
 
+      - name: Configure git credentials for private packages
+        run: git config --global url."https://${{ secrets.GH_PAT }}@github.com/".insteadOf "https://github.com/"
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
