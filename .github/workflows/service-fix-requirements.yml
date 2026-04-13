@@ -123,13 +123,8 @@ jobs:
 
             # Commit and push
             git -C "${svc}" add requirements.txt
-            git -C "${svc}" commit -m \
-              "chore: update aku-platform-contracts dep to .git@v0.1.1
-
-Replace old git+https URL (missing .git suffix, wrong version) with:
-  ${CORRECT_DEP}
-
-See: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/aku-platform-contracts.md"
+            COMMIT_MSG=$'chore: update aku-platform-contracts dep to .git@v0.1.1\n\nReplace old git+https URL (missing .git suffix, wrong version) with:\n  '"${CORRECT_DEP}"$'\n\nSee: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/aku-platform-contracts.md'
+            git -C "${svc}" commit -m "${COMMIT_MSG}"
 
             if ! git -C "${svc}" push "${repo_url}" HEAD; then
               echo "  ⚠  Push failed for ${svc}"
