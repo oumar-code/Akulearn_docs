@@ -95,21 +95,33 @@ jobs:
               echo "list=${ALL_SERVICES}" >> "$GITHUB_OUTPUT"
             fi
           else
-            # Push event — detect which scaffold subdirs changed
-            CHANGED=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" \
-                        -- "${SCAFFOLDS_DIR}/" \
-                      | awk -F'/' '{print $4}' \
-                      | sort -u \
-                      | tr '\n' ' ' \
-                      | xargs)
-
-            if [[ -z "$CHANGED" ]]; then
-              echo "ℹ️  No scaffold directories changed — nothing to sync."
-              echo "source=none" >> "$GITHUB_OUTPUT"
-              echo "list=" >> "$GITHUB_OUTPUT"
+            # Push event — detect which scaffold subdirs changed.
+            # Validate that github.event.before is a real commit (not the
+            # zero SHA that GitHub uses when there is no previous commit).
+            BEFORE="${{ github.event.before }}"
+            ZERO_SHA="0000000000000000000000000000000000000000"
+            if [[ -z "$BEFORE" || "$BEFORE" == "$ZERO_SHA" ]]; then
+              echo "ℹ️  No previous commit available (first push?) — syncing all services as a safe fallback."
+              echo "source=all-fallback" >> "$GITHUB_OUTPUT"
+              echo "list=${ALL_SERVICES}" >> "$GITHUB_OUTPUT"
             else
-              echo "source=auto-detected" >> "$GITHUB_OUTPUT"
-              echo "list=${CHANGED}" >> "$GITHUB_OUTPUT"
+              # Extract the service name (3rd path component) from each
+              # changed path, e.g. docs/service-migrations/scaffolds/AkuAI/app/main.py → AkuAI
+              CHANGED=$(git diff --name-only "${BEFORE}" "${{ github.sha }}" \
+                          -- "${SCAFFOLDS_DIR}/" \
+                        | grep -oP "^${SCAFFOLDS_DIR}/\K[^/]+" \
+                        | sort -u \
+                        | tr '\n' ' ' \
+                        | xargs)
+
+              if [[ -z "$CHANGED" ]]; then
+                echo "ℹ️  No scaffold directories changed — nothing to sync."
+                echo "source=none" >> "$GITHUB_OUTPUT"
+                echo "list=" >> "$GITHUB_OUTPUT"
+              else
+                echo "source=auto-detected" >> "$GITHUB_OUTPUT"
+                echo "list=${CHANGED}" >> "$GITHUB_OUTPUT"
+              fi
             fi
           fi
 
@@ -139,6 +151,7 @@ jobs:
           SUCCEEDED=()
           SKIPPED=()
           FAILED=()
+          COMMIT_SHA="${{ github.sha }}"
 
           for SERVICE in $SERVICES; do
             SCAFFOLD_SRC="${GITHUB_WORKSPACE}/${SCAFFOLDS_DIR}/${SERVICE}"
@@ -167,12 +180,13 @@ jobs:
             # Clone the target service repo
             REPO_URL="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${SERVICE}.git"
             echo "│  Step 1: Clone ${GITHUB_ORG}/${SERVICE}"
-            if ! git clone --depth 1 "${REPO_URL}" "${TARGET_CLONE}" 2>&1; then
+            CLONE_OUTPUT=$(git clone --depth 1 "${REPO_URL}" "${TARGET_CLONE}" 2>&1) || {
               echo "│  ✗ Clone failed — skipping ${SERVICE}"
+              echo "│    ${CLONE_OUTPUT}"
               echo "└──────────────────────────────────────────────────────"
               FAILED+=("${SERVICE}")
               continue
-            fi
+            }
             git -C "${TARGET_CLONE}" remote set-url origin "${REPO_URL}"
 
             # Create or reset the sync branch
@@ -205,18 +219,25 @@ jobs:
               continue
             fi
 
-            COMMIT_SHA="${{ github.sha }}"
+            COMMIT_SHA_SHORT="${COMMIT_SHA:0:7}"
             git -C "${TARGET_CLONE}" commit \
-              -m "chore: sync scaffold from Akulearn_docs@${COMMIT_SHA:0:7}"
+              -m "chore: sync scaffold from Akulearn_docs@${COMMIT_SHA_SHORT}"
 
-            # Push the branch
+            # Push the branch — fail loudly if the lease check fails rather
+            # than silently overwriting diverged remote work
             echo "│  Step 5: Push ${BRANCH_NAME}"
-            git -C "${TARGET_CLONE}" push -u origin "${BRANCH_NAME}" --force-with-lease \
-              || git -C "${TARGET_CLONE}" push -u origin "${BRANCH_NAME}" --force
+            if ! git -C "${TARGET_CLONE}" push -u origin "${BRANCH_NAME}" --force-with-lease; then
+              echo "│  ✗ Push failed (remote branch has diverged unexpectedly)."
+              echo "│    Inspect ${GITHUB_ORG}/${SERVICE}:${BRANCH_NAME} manually."
+              echo "└──────────────────────────────────────────────────────"
+              FAILED+=("${SERVICE}")
+              rm -rf "${TARGET_CLONE}"
+              continue
+            fi
 
             # Open or update PR
             echo "│  Step 6: Open / update pull request"
-            PR_BODY="Automated scaffold sync from [Akulearn_docs](https://github.com/oumar-code/Akulearn_docs) @ \`${COMMIT_SHA:0:7}\`.
+            PR_BODY="Automated scaffold sync from [Akulearn_docs](https://github.com/oumar-code/Akulearn_docs) @ \`${COMMIT_SHA_SHORT}\`.
 
           ## What's included
           All files from \`docs/service-migrations/scaffolds/${SERVICE}/\` have been overlaid onto this branch.
