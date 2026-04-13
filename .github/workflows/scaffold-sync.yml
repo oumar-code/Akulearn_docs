@@ -1,0 +1,261 @@
+name: "Scaffold Sync — Push scaffold changes to service repos"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Any edit to docs/service-migrations/scaffolds/<ServiceName>/** in this repo
+# is automatically reflected in the corresponding oumar-code/<ServiceName> repo
+# by opening (or updating) a pull request on branch feat/scaffold-sync.
+#
+# Auto-trigger (on push to main):
+#   - Detects which scaffold directories changed in the commit
+#   - Only syncs the affected service(s)
+#
+# Manual trigger (workflow_dispatch):
+#   - Optionally specify a space-separated list of service names, or leave
+#     blank to sync all 9 backend services
+#   - Optionally enable dry_run to preview without pushing anything
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# A repo secret named GH_PAT must exist:
+#   Settings → Secrets and variables → Actions → New repository secret
+#   Name : GH_PAT
+#   Value: A classic Personal Access Token with scopes: repo, workflow
+#   (Generate at https://github.com/settings/tokens)
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/service-migrations/scaffolds/**"
+
+  workflow_dispatch:
+    inputs:
+      services:
+        description: >
+          Space-separated list of service repos to sync.
+          Leave empty to sync all 9 backend services.
+        required: false
+        default: ""
+      dry_run:
+        description: "Dry run — preview steps without pushing anything"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+jobs:
+  scaffold-sync:
+    name: Sync scaffold → service repos
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read  # reads from this repo; all pushes go to service repos via PAT
+
+    env:
+      GITHUB_ORG: oumar-code
+      BRANCH_NAME: feat/scaffold-sync
+      SCAFFOLDS_DIR: docs/service-migrations/scaffolds
+      # All 9 backend services (used as the default when no override is given)
+      ALL_SERVICES: "AkuAI Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub AkuTutor AkuWorkspace Aku-DaaS"
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+
+    steps:
+      # ── 1. Checkout Akulearn_docs (full history on push so we can diff) ───────
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ── 2. Configure git identity ────────────────────────────────────────────
+      - name: Configure git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name  "github-actions[bot]"
+
+      # ── 3. Determine which services to sync ──────────────────────────────────
+      #
+      # • workflow_dispatch with services input → use that list
+      # • workflow_dispatch with empty services → use ALL_SERVICES
+      # • push trigger → inspect changed paths and extract service names
+      - name: Determine services to sync
+        id: services
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            OVERRIDE="${{ inputs.services }}"
+            if [[ -n "$OVERRIDE" ]]; then
+              echo "source=manual-override" >> "$GITHUB_OUTPUT"
+              echo "list=${OVERRIDE}" >> "$GITHUB_OUTPUT"
+            else
+              echo "source=all" >> "$GITHUB_OUTPUT"
+              echo "list=${ALL_SERVICES}" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            # Push event — detect which scaffold subdirs changed
+            CHANGED=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" \
+                        -- "${SCAFFOLDS_DIR}/" \
+                      | awk -F'/' '{print $4}' \
+                      | sort -u \
+                      | tr '\n' ' ' \
+                      | xargs)
+
+            if [[ -z "$CHANGED" ]]; then
+              echo "ℹ️  No scaffold directories changed — nothing to sync."
+              echo "source=none" >> "$GITHUB_OUTPUT"
+              echo "list=" >> "$GITHUB_OUTPUT"
+            else
+              echo "source=auto-detected" >> "$GITHUB_OUTPUT"
+              echo "list=${CHANGED}" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      # ── 4. Early-exit if nothing to sync ─────────────────────────────────────
+      - name: Skip if no services detected
+        if: steps.services.outputs.list == ''
+        run: |
+          echo "No services to sync. Exiting."
+          exit 0
+
+      # ── 5. Sync each service ─────────────────────────────────────────────────
+      - name: Sync scaffold to service repos
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          SERVICES: ${{ steps.services.outputs.list }}
+        run: |
+          set -euo pipefail
+
+          echo "════════════════════════════════════════════════════"
+          echo "  Scaffold Sync"
+          echo "  Source  : ${{ steps.services.outputs.source }}"
+          echo "  Services: ${SERVICES}"
+          echo "  Dry run : ${DRY_RUN}"
+          echo "════════════════════════════════════════════════════"
+          echo ""
+
+          SUCCEEDED=()
+          SKIPPED=()
+          FAILED=()
+
+          for SERVICE in $SERVICES; do
+            SCAFFOLD_SRC="${GITHUB_WORKSPACE}/${SCAFFOLDS_DIR}/${SERVICE}"
+            TARGET_CLONE="${RUNNER_TEMP}/${SERVICE}"
+
+            echo "┌─ ${SERVICE} ─────────────────────────────────────────"
+
+            # Validate scaffold directory exists
+            if [[ ! -d "$SCAFFOLD_SRC" ]]; then
+              echo "│  ⚠  No scaffold directory found at ${SCAFFOLD_SRC} — skipping"
+              echo "└──────────────────────────────────────────────────────"
+              SKIPPED+=("${SERVICE}")
+              continue
+            fi
+
+            if [[ "$DRY_RUN" == "true" ]]; then
+              echo "│  🔍 DRY-RUN — files that would be pushed:"
+              find "${SCAFFOLD_SRC}" -type f | while read -r f; do
+                echo "│    → ${f#"${SCAFFOLD_SRC}/"}"
+              done
+              echo "└──────────────────────────────────────────────────────"
+              SKIPPED+=("${SERVICE} (dry-run)")
+              continue
+            fi
+
+            # Clone the target service repo
+            REPO_URL="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${SERVICE}.git"
+            echo "│  Step 1: Clone ${GITHUB_ORG}/${SERVICE}"
+            if ! git clone --depth 1 "${REPO_URL}" "${TARGET_CLONE}" 2>&1; then
+              echo "│  ✗ Clone failed — skipping ${SERVICE}"
+              echo "└──────────────────────────────────────────────────────"
+              FAILED+=("${SERVICE}")
+              continue
+            fi
+            git -C "${TARGET_CLONE}" remote set-url origin "${REPO_URL}"
+
+            # Create or reset the sync branch
+            echo "│  Step 2: Create/reset branch ${BRANCH_NAME}"
+            if git -C "${TARGET_CLONE}" ls-remote --exit-code origin "refs/heads/${BRANCH_NAME}" &>/dev/null; then
+              # Branch already exists remotely — check it out and reset to main
+              git -C "${TARGET_CLONE}" fetch origin "${BRANCH_NAME}"
+              git -C "${TARGET_CLONE}" checkout -B "${BRANCH_NAME}" "origin/${BRANCH_NAME}"
+            else
+              git -C "${TARGET_CLONE}" checkout -b "${BRANCH_NAME}"
+            fi
+
+            # Overlay the scaffold files
+            echo "│  Step 3: Overlay scaffold files"
+            cp -r "${SCAFFOLD_SRC}/." "${TARGET_CLONE}/"
+            FILE_COUNT=$(find "${SCAFFOLD_SRC}" -type f | wc -l)
+            echo "│    Overlaid ${FILE_COUNT} file(s)"
+            find "${SCAFFOLD_SRC}" -type f | while read -r f; do
+              echo "│    → ${f#"${SCAFFOLD_SRC}/"}"
+            done
+
+            # Commit if anything changed
+            echo "│  Step 4: Commit"
+            git -C "${TARGET_CLONE}" add .
+            if git -C "${TARGET_CLONE}" diff --cached --quiet; then
+              echo "│  ℹ️  Nothing to commit — scaffold already up-to-date"
+              echo "└──────────────────────────────────────────────────────"
+              SKIPPED+=("${SERVICE} (no change)")
+              rm -rf "${TARGET_CLONE}"
+              continue
+            fi
+
+            COMMIT_SHA="${{ github.sha }}"
+            git -C "${TARGET_CLONE}" commit \
+              -m "chore: sync scaffold from Akulearn_docs@${COMMIT_SHA:0:7}"
+
+            # Push the branch
+            echo "│  Step 5: Push ${BRANCH_NAME}"
+            git -C "${TARGET_CLONE}" push -u origin "${BRANCH_NAME}" --force-with-lease \
+              || git -C "${TARGET_CLONE}" push -u origin "${BRANCH_NAME}" --force
+
+            # Open or update PR
+            echo "│  Step 6: Open / update pull request"
+            PR_BODY="Automated scaffold sync from [Akulearn_docs](https://github.com/oumar-code/Akulearn_docs) @ \`${COMMIT_SHA:0:7}\`.
+
+          ## What's included
+          All files from \`docs/service-migrations/scaffolds/${SERVICE}/\` have been overlaid onto this branch.
+
+          ## Why this PR was opened
+          A push to the \`main\` branch of Akulearn_docs changed one or more files under
+          \`docs/service-migrations/scaffolds/${SERVICE}/\`. This PR keeps ${SERVICE} in sync with the latest scaffold.
+
+          ## Next steps
+          1. Review the diff and resolve any conflicts with your service-specific code
+          2. Merge this PR to apply the scaffold updates
+          3. Update the migration tracker if needed: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/service-migrations/index.md
+
+          _Automated by the \`scaffold-sync\` GitHub Actions workflow in Akulearn_docs._"
+
+            gh pr create \
+              --repo "${GITHUB_ORG}/${SERVICE}" \
+              --base main \
+              --head "${BRANCH_NAME}" \
+              --title "chore: sync scaffold from Akulearn_docs ($(date -u '+%Y-%m-%d'))" \
+              --body "${PR_BODY}" \
+              2>&1 || echo "│  ℹ️  PR may already exist — it has been updated with the new commit."
+
+            echo "│  ✅ Done"
+            echo "└──────────────────────────────────────────────────────"
+            SUCCEEDED+=("${SERVICE}")
+            rm -rf "${TARGET_CLONE}"
+          done
+
+          # ── Summary ──────────────────────────────────────────────────────────
+          echo ""
+          echo "════════════════════════════════════════════════════"
+          echo "  Scaffold Sync Summary"
+          echo "════════════════════════════════════════════════════"
+          [[ ${#SUCCEEDED[@]} -gt 0 ]] && echo "  ✅ Synced  (${#SUCCEEDED[@]}): ${SUCCEEDED[*]}"
+          [[ ${#SKIPPED[@]}   -gt 0 ]] && echo "  ⏭  Skipped (${#SKIPPED[@]}):  ${SKIPPED[*]}"
+          [[ ${#FAILED[@]}    -gt 0 ]] && echo "  ❌ Failed  (${#FAILED[@]}):   ${FAILED[*]}"
+          echo "════════════════════════════════════════════════════"
+
+          if [[ ${#FAILED[@]} -gt 0 ]]; then
+            exit 1
+          fi
