@@ -103,21 +103,67 @@ jobs:
                 if [[ -d "${SCAFFOLDS}/${svc}" ]]; then
                   cp -r "${SCAFFOLDS}/${svc}" "./${svc}"
 
-                  # AkuAI's requirements-extra.txt contains multi-GB ML packages
-                  # (torch, llama-cpp-python, …) that are not needed to serve
-                  # /health — the inference service is a stub until real weights
-                  # are loaded.  Replace it with a no-op to keep the image small
-                  # and the build fast.
-                  if [[ "$svc" == "AkuAI" ]]; then
-                    echo "# ML extras skipped for CI scaffold build — not needed for /health" \
-                      > "./${svc}/requirements-extra.txt"
-                  fi
-
                   echo "  ✓ Using scaffold for ${svc}"
                 else
                   echo "  ⚠  No scaffold found for ${svc} — skipping"
                 fi
               fi
+            fi
+
+            # Apply targeted scaffold patches that fix known bugs present in the
+            # service repo's v0.1.1 tags.  Each patch copies a single corrected
+            # file from the scaffold, which is always the source of truth for
+            # shared template code.  Applying patches after the clone step keeps
+            # the fix in one place (this docs repo) and propagates immediately
+            # without waiting for scaffold-sync PRs to be merged in service repos.
+            # The patches are idempotent: when scaffold fallback was used above the
+            # files are already correct and the copy is a no-op.
+            if [[ -d "./${svc}" ]]; then
+              case "$svc" in
+                AkuAI)
+                  # AkuAI's requirements-extra.txt contains multi-GB ML packages
+                  # (torch, llama-cpp-python, …) that are not needed to serve
+                  # /health — the inference service is a stub until real weights
+                  # are loaded.  Replace it with a no-op to keep the image small
+                  # and the build fast.
+                  echo "# ML extras skipped for CI scaffold build — not needed for /health" \
+                    > "./${svc}/requirements-extra.txt"
+                  echo "  ℹ  AkuAI: requirements-extra.txt replaced with no-op (ML deps skipped)"
+                  # Fix NameError: 'OutputFormat' was referenced inside its own
+                  # class body as a default value, which fails because the class
+                  # is not yet bound to a name at that point.  The scaffold has
+                  # the corrected version (field lives in InferenceRequest, not
+                  # OutputFormat).
+                  if [[ -f "${SCAFFOLDS}/AkuAI/app/schemas/inference.py" ]]; then
+                    cp "${SCAFFOLDS}/AkuAI/app/schemas/inference.py" \
+                       "./${svc}/app/schemas/inference.py"
+                    echo "  🔧 AkuAI: patched app/schemas/inference.py (OutputFormat NameError fix)"
+                  fi
+                  ;;
+                Aku-EdgeHub)
+                  # Fix TypeError: connect() got unexpected keyword argument
+                  # 'check_same_thread'.  SQLite's aiosqlite driver needs
+                  # check_same_thread=False, but asyncpg (PostgreSQL) does not
+                  # accept that argument at all.  The scaffold version guards
+                  # the connect_arg behind a startswith("sqlite") check.
+                  if [[ -f "${SCAFFOLDS}/Aku-EdgeHub/app/db/session_sqlite.py" ]]; then
+                    cp "${SCAFFOLDS}/Aku-EdgeHub/app/db/session_sqlite.py" \
+                       "./${svc}/app/db/session_sqlite.py"
+                    echo "  🔧 Aku-EdgeHub: patched app/db/session_sqlite.py (asyncpg connect_args fix)"
+                  fi
+                  ;;
+                Aku-DaaS)
+                  # Fix RuntimeError: Form data requires 'python-multipart' to
+                  # be installed.  The /api/v1/datasets/ingest endpoint accepts
+                  # multipart uploads; python-multipart was accidentally omitted
+                  # from the service repo's requirements.txt.  The scaffold has
+                  # the correct version.
+                  if [[ -f "${SCAFFOLDS}/Aku-DaaS/requirements.txt" ]]; then
+                    cp "${SCAFFOLDS}/Aku-DaaS/requirements.txt" "./${svc}/requirements.txt"
+                    echo "  🔧 Aku-DaaS: patched requirements.txt (added python-multipart)"
+                  fi
+                  ;;
+              esac
             fi
           done
 
