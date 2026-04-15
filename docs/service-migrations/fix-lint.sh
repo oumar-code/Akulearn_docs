@@ -194,7 +194,7 @@ NEW_BLOCK = (
     "]\n"
     "\n"
     "[tool.ruff.lint.per-file-ignores]\n"
-    '"alembic/env.py" = ["I001"]   # alembic-generated; import order follows alembic convention\n'
+    '"alembic/env.py" = ["I001"]   # alembic-generated file; import order follows alembic convention\n'
 )
 
 if not OLD_BLOCK.search(text):
