@@ -37,6 +37,12 @@ on:
         description: "Image tag to pull from GHCR (must already exist)"
         required: false
         default: "v0.1.1"
+      fail_on_missing:
+        description: >
+          Set to 'true' to treat missing GHCR images as failures.
+          Use this once all 9 images have been published (zero skips expected).
+        required: false
+        default: "false"
 
   # Automatically run after a successful Docker build/push
   workflow_run:
@@ -73,11 +79,53 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GH_PAT }}
 
-      # ── 2. Create shared Docker network ──────────────────────────────────────
+      # ── 2. Preflight — verify all 9 GHCR image manifests exist ───────────────
+      #
+      # Uses `docker manifest inspect` (no image download) to confirm that every
+      # service image is present in GHCR before starting containers.  Missing
+      # images are listed clearly so the engineer knows exactly what to push.
+      # When fail_on_missing=true the step exits non-zero immediately, blocking
+      # the rest of the workflow until all images are published.
+      - name: Preflight — verify GHCR image manifests
+        env:
+          FAIL_ON_MISSING: ${{ inputs.fail_on_missing || 'false' }}
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Preflight: checking GHCR manifests for tag ${{ env.TAG }}"
+          echo "════════════════════════════════════════════════════"
+
+          REGISTRY="ghcr.io/${{ env.GITHUB_ORG }}"
+          IMAGES=(akuai akudemy aku-edgehub aku-ighub aku-superhub akututor akuworkspace aku-telhone aku-daas)
+          MISSING=()
+
+          for img in "${IMAGES[@]}"; do
+            ref="${REGISTRY}/${img}:${{ env.TAG }}"
+            if docker manifest inspect "${ref}" >/dev/null 2>&1; then
+              echo "  ✅ ${ref}"
+            else
+              echo "  ⚠  ${ref} — NOT found in GHCR"
+              MISSING+=("${img}")
+            fi
+          done
+
+          echo ""
+          if [[ ${#MISSING[@]} -eq 0 ]]; then
+            echo "  All 9 images confirmed in GHCR ✅"
+          else
+            echo "  Missing images (${#MISSING[@]}): ${MISSING[*]}"
+            echo "  → Run 'Service — Docker Build & Push' to publish them."
+            if [[ "${FAIL_ON_MISSING}" == "true" ]]; then
+              echo "  fail_on_missing=true — aborting workflow ❌"
+              exit 1
+            fi
+          fi
+          echo "════════════════════════════════════════════════════"
+
+      # ── 3. Create shared Docker network ──────────────────────────────────────
       - name: Create Docker network
         run: docker network create aku-net
 
-      # ── 3. Start shared infrastructure ───────────────────────────────────────
+      # ── 4. Start shared infrastructure ───────────────────────────────────────
       - name: Start PostgreSQL
         run: |
           docker run -d \
@@ -210,6 +258,8 @@ jobs:
       # ── 6. Health checks ──────────────────────────────────────────────────────
       - name: Run health checks
         id: health
+        env:
+          FAIL_ON_MISSING: ${{ inputs.fail_on_missing || 'false' }}
         run: |
           # service_name  host_port
           declare -A SERVICES=(
@@ -235,11 +285,19 @@ jobs:
             container="svc-$(echo "${svc}" | tr '[:upper:]' '[:lower:]')"
 
             # A container that never started means its image is not yet published
-            # to GHCR.  This is expected while services are being rolled out
-            # incrementally — warn but do NOT count as a failure.
+            # to GHCR.  When fail_on_missing=false (default during incremental
+            # rollout) this is a non-fatal skip.  When fail_on_missing=true all
+            # 9 images are expected to be present and a missing container is a
+            # test failure.
             if ! docker inspect "${container}" >/dev/null 2>&1; then
-              echo "  ${svc} (${url}) ... ⚠ skipped — image not yet published to GHCR"
-              SKIPPED=$((SKIPPED + 1))
+              if [[ "${FAIL_ON_MISSING}" == "true" ]]; then
+                echo "  ${svc} (${url}) ... ❌ container never started — image missing from GHCR"
+                FAILED=$((FAILED + 1))
+                FAILED_SVCS+=("${svc}")
+              else
+                echo "  ${svc} (${url}) ... ⚠ skipped — image not yet published to GHCR"
+                SKIPPED=$((SKIPPED + 1))
+              fi
               continue
             fi
 
