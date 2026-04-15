@@ -208,7 +208,7 @@ bearer_scheme = HTTPBearer()
 
 
 async def get_current_user(
-    credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme),
+    credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme),  # noqa: B008
 ) -> dict:
     token = credentials.credentials
     try:
@@ -216,11 +216,11 @@ async def get_current_user(
             token, settings.jwt_secret_key, algorithms=[settings.jwt_algorithm]
         )
         return payload
-    except JWTError:
+    except JWTError as exc:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid or expired token",
-        )
+        ) from exc
 ```
 
 ---
