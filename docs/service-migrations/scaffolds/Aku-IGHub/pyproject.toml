@@ -1,7 +1,15 @@
 [tool.ruff]
 line-length = 100
+
+[tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
-ignore = ["E501"]
+ignore = [
+    "E501",   # line too long — Black handles line length
+    "B008",   # FastAPI Depends() in function defaults is intentional
+]
+
+[tool.ruff.lint.per-file-ignores]
+"alembic/env.py" = ["I001"]   # alembic-generated file; import order follows alembic convention
 
 [tool.black]
 line-length = 100
@@ -21,4 +29,3 @@ omit = ["tests/*"]
 [tool.coverage.report]
 show_missing = true
 fail_under = 80
-
