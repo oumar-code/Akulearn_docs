@@ -32,6 +32,7 @@ GHCR_USER="${GHCR_USER:-oumar-code}"
 REGISTRY="ghcr.io/${GHCR_USER}"
 
 SUMMARY_FILE="$(mktemp)"
+FAIL_COUNT=0
 
 # ── Pre-flight: log in to GHCR ────────────────────────────────────────────────
 
@@ -62,6 +63,7 @@ for svc in $SERVICES; do
   if [[ ! -d "$svc" ]]; then
     echo "  ⚠  $svc — directory not found; skipping"
     echo "$svc: SKIPPED (not cloned)" >> "$SUMMARY_FILE"
+    FAIL_COUNT=$((FAIL_COUNT + 1))
     echo ""
     continue
   fi
@@ -69,6 +71,7 @@ for svc in $SERVICES; do
   if [[ ! -f "$svc/Dockerfile" ]]; then
     echo "  ⚠  $svc/Dockerfile not found; skipping"
     echo "$svc: SKIPPED (no Dockerfile)" >> "$SUMMARY_FILE"
+    FAIL_COUNT=$((FAIL_COUNT + 1))
     echo ""
     continue
   fi
@@ -108,6 +111,7 @@ for svc in $SERVICES; do
       "${svc}"; then
     echo "  ✗ Build FAILED for ${svc}"
     echo "$svc: FAILED (build error)" >> "$SUMMARY_FILE"
+    FAIL_COUNT=$((FAIL_COUNT + 1))
     echo ""
     continue
   fi
@@ -117,6 +121,7 @@ for svc in $SERVICES; do
   if ! docker push "${IMAGE_TAG}"; then
     echo "  ✗ Push FAILED for ${IMAGE_TAG}"
     echo "$svc: FAILED (push error)" >> "$SUMMARY_FILE"
+    FAIL_COUNT=$((FAIL_COUNT + 1))
     echo ""
     continue
   fi
@@ -124,6 +129,7 @@ for svc in $SERVICES; do
   if ! docker push "${IMAGE_LATEST}"; then
     echo "  ✗ Push FAILED for ${IMAGE_LATEST}"
     echo "$svc: FAILED (push :latest error)" >> "$SUMMARY_FILE"
+    FAIL_COUNT=$((FAIL_COUNT + 1))
     echo ""
     continue
   fi
@@ -146,3 +152,6 @@ else
   echo "(no services processed)"
 fi
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# Exit non-zero if any service failed so CI marks the job as failed.
+exit $FAIL_COUNT
