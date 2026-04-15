@@ -32,6 +32,7 @@ GHCR_USER="${GHCR_USER:-oumar-code}"
 REGISTRY="ghcr.io/${GHCR_USER}"
 
 SUMMARY_FILE="$(mktemp)"
+FAIL_COUNT=0
 
 # ── Pre-flight: log in to GHCR ────────────────────────────────────────────────
 
@@ -62,6 +63,7 @@ for svc in $SERVICES; do
   if [[ ! -d "$svc" ]]; then
     echo "  ⚠  $svc — directory not found; skipping"
     echo "$svc: SKIPPED (not cloned)" >> "$SUMMARY_FILE"
+    FAIL_COUNT=$((FAIL_COUNT + 1))
     echo ""
     continue
   fi
@@ -69,12 +71,22 @@ for svc in $SERVICES; do
   if [[ ! -f "$svc/Dockerfile" ]]; then
     echo "  ⚠  $svc/Dockerfile not found; skipping"
     echo "$svc: SKIPPED (no Dockerfile)" >> "$SUMMARY_FILE"
+    FAIL_COUNT=$((FAIL_COUNT + 1))
     echo ""
     continue
   fi
 
-  # Ensure git is available in the Dockerfile builder stage so that pip can
-  # install git+ URL dependencies (e.g. aku-platform-contracts).  The standard
+  # Strip the aku-platform-contracts git+ URL from ALL requirements files before
+  # building.  pip inside Docker has no GitHub credentials, so any git+https://
+  # reference to a private repo causes a fatal authentication error.  The
+  # contracts package only defines shared Pydantic schemas; stub services don't
+  # import it at startup, so removing it here is safe for v0.1.1 images.
+  find "${svc}" -name "requirements*.txt" \
+    -exec sed -i '/aku-platform-contracts[[:space:]]*@[[:space:]]*git+/d' {} \;
+  echo "  ℹ  Stripped aku-platform-contracts git+ dep from ${svc}/requirements*.txt (private repo — no Docker auth)"
+
+  # Ensure git is available in the Dockerfile builder stage so that any
+  # remaining git+ URL dependencies can be installed by pip.  The standard
   # python:3.11-slim image does not include git; we patch any apt-get install
   # --no-install-recommends line in the Dockerfile to add it.  The grep check
   # makes the substitution idempotent: once git is already listed the sed is
@@ -108,6 +120,7 @@ for svc in $SERVICES; do
       "${svc}"; then
     echo "  ✗ Build FAILED for ${svc}"
     echo "$svc: FAILED (build error)" >> "$SUMMARY_FILE"
+    FAIL_COUNT=$((FAIL_COUNT + 1))
     echo ""
     continue
   fi
@@ -117,6 +130,7 @@ for svc in $SERVICES; do
   if ! docker push "${IMAGE_TAG}"; then
     echo "  ✗ Push FAILED for ${IMAGE_TAG}"
     echo "$svc: FAILED (push error)" >> "$SUMMARY_FILE"
+    FAIL_COUNT=$((FAIL_COUNT + 1))
     echo ""
     continue
   fi
@@ -124,6 +138,7 @@ for svc in $SERVICES; do
   if ! docker push "${IMAGE_LATEST}"; then
     echo "  ✗ Push FAILED for ${IMAGE_LATEST}"
     echo "$svc: FAILED (push :latest error)" >> "$SUMMARY_FILE"
+    FAIL_COUNT=$((FAIL_COUNT + 1))
     echo ""
     continue
   fi
@@ -146,3 +161,6 @@ else
   echo "(no services processed)"
 fi
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# Exit non-zero if any service failed so CI marks the job as failed.
+exit $FAIL_COUNT

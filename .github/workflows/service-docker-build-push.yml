@@ -147,16 +147,25 @@ jobs:
             # can gate the push steps.
             export DRY_RUN=true
 
+            dry_run_fail=0
             for svc in $SERVICES_OVERRIDE; do
               dir="$RUNNER_TEMP/service-workspace/$svc"
               if [[ ! -d "$dir" ]]; then
                 echo "  ⚠  $svc (directory missing — clone failed)"
+                dry_run_fail=$((dry_run_fail + 1))
                 continue
               fi
               if [[ ! -f "$dir/Dockerfile" ]]; then
                 echo "  ⚠  $svc (Dockerfile missing)"
+                dry_run_fail=$((dry_run_fail + 1))
                 continue
               fi
+
+              # Strip the aku-platform-contracts git+ URL before building.
+              # The contracts repo is private and Docker has no GitHub auth,
+              # so pip would fail trying to clone it.
+              find "${dir}" -name "requirements*.txt" \
+                -exec sed -i '/aku-platform-contracts[[:space:]]*@[[:space:]]*git+/d' {} \;
 
               # Ensure git is available in the builder stage (same patch as
               # docker-build-push.sh) so pip can install git+ URL deps.
@@ -175,10 +184,12 @@ jobs:
                 --tag  "${image}" \
                 "${dir}"; then
                 echo "    ✗ Build FAILED for $svc"
+                dry_run_fail=$((dry_run_fail + 1))
                 continue
               fi
               echo "    ✓ Build OK (not pushed in dry-run mode)"
             done
+            exit $dry_run_fail
           else
             cd "$RUNNER_TEMP/service-workspace"
             bash docker-build-push.sh
