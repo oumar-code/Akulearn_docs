@@ -103,13 +103,6 @@ jobs:
                 if [[ -d "${SCAFFOLDS}/${svc}" ]]; then
                   cp -r "${SCAFFOLDS}/${svc}" "./${svc}"
 
-                  # Strip the aku-platform-contracts git URL from ALL requirements
-                  # files so the build does not fail when that repo does not yet
-                  # exist.  The line will be re-added once the contracts repo is
-                  # live and the service repo is properly cloned above.
-                  find "./${svc}" -name "requirements*.txt" -exec \
-                    sed -i '/aku-platform-contracts @ git+/d' {} \;
-
                   # AkuAI's requirements-extra.txt contains multi-GB ML packages
                   # (torch, llama-cpp-python, …) that are not needed to serve
                   # /health — the inference service is a stub until real weights
@@ -161,14 +154,9 @@ jobs:
                 continue
               fi
 
-              # Strip the aku-platform-contracts git+ URL before building.
-              # The contracts repo is private and Docker has no GitHub auth,
-              # so pip would fail trying to clone it.
-              find "${dir}" -name "requirements*.txt" \
-                -exec sed -i '/aku-platform-contracts[[:space:]]*@[[:space:]]*git+/d' {} \;
-
               # Ensure git is available in the builder stage (same patch as
-              # docker-build-push.sh) so pip can install git+ URL deps.
+              # docker-build-push.sh) so pip can install git+ URL deps
+              # (e.g. aku-platform-contracts, which is now public).
               if ! grep -q 'apt-get install.*\bgit\b' "${dir}/Dockerfile" 2>/dev/null; then
                 if grep -q 'apt-get install.*--no-install-recommends' "${dir}/Dockerfile" 2>/dev/null; then
                   sed -i 's/\(apt-get install -y --no-install-recommends\)/\1 git/' \

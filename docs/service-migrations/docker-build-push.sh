@@ -76,17 +76,8 @@ for svc in $SERVICES; do
     continue
   fi
 
-  # Strip the aku-platform-contracts git+ URL from ALL requirements files before
-  # building.  pip inside Docker has no GitHub credentials, so any git+https://
-  # reference to a private repo causes a fatal authentication error.  The
-  # contracts package only defines shared Pydantic schemas; stub services don't
-  # import it at startup, so removing it here is safe for v0.1.1 images.
-  find "${svc}" -name "requirements*.txt" \
-    -exec sed -i '/aku-platform-contracts[[:space:]]*@[[:space:]]*git+/d' {} \;
-  echo "  ℹ  Stripped aku-platform-contracts git+ dep from ${svc}/requirements*.txt (private repo — no Docker auth)"
-
-  # Ensure git is available in the Dockerfile builder stage so that any
-  # remaining git+ URL dependencies can be installed by pip.  The standard
+  # Ensure git is available in the Dockerfile builder stage so that pip can
+  # install git+ URL dependencies (e.g. aku-platform-contracts).  The standard
   # python:3.11-slim image does not include git; we patch any apt-get install
   # --no-install-recommends line in the Dockerfile to add it.  The grep check
   # makes the substitution idempotent: once git is already listed the sed is
