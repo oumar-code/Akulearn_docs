@@ -59,8 +59,8 @@ for svc in $SERVICES; do
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   echo "Building $svc..."
 
-  if [[ ! -d "$svc" ]] || [[ ! -d "$svc/.git" ]]; then
-    echo "  ⚠  $svc — directory not found or not a git repo; skipping"
+  if [[ ! -d "$svc" ]]; then
+    echo "  ⚠  $svc — directory not found; skipping"
     echo "$svc: SKIPPED (not cloned)" >> "$SUMMARY_FILE"
     echo ""
     continue
