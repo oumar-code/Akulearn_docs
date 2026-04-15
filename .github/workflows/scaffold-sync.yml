@@ -193,8 +193,13 @@ jobs:
             echo "│  Step 2: Create/reset branch ${BRANCH_NAME}"
             if git -C "${TARGET_CLONE}" ls-remote --exit-code origin "refs/heads/${BRANCH_NAME}" &>/dev/null; then
               # Branch already exists remotely — check it out and reset to main
-              git -C "${TARGET_CLONE}" fetch origin "${BRANCH_NAME}"
-              git -C "${TARGET_CLONE}" checkout -B "${BRANCH_NAME}" "origin/${BRANCH_NAME}"
+              if git -C "${TARGET_CLONE}" fetch origin \
+                "refs/heads/${BRANCH_NAME}:refs/remotes/origin/${BRANCH_NAME}"; then
+                git -C "${TARGET_CLONE}" checkout -B "${BRANCH_NAME}" "origin/${BRANCH_NAME}"
+              else
+                echo "│  ⚠  Remote branch lookup changed during sync — creating local ${BRANCH_NAME}"
+                git -C "${TARGET_CLONE}" checkout -b "${BRANCH_NAME}"
+              fi
             else
               git -C "${TARGET_CLONE}" checkout -b "${BRANCH_NAME}"
             fi
