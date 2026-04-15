@@ -151,6 +151,14 @@ jobs:
                        "./${svc}/app/db/session_sqlite.py"
                     echo "  🔧 Aku-EdgeHub: patched app/db/session_sqlite.py (asyncpg connect_args fix)"
                   fi
+                  # Fix HTTP 404 on /health: the v0.1.1 tag was created before
+                  # the @app.get("/health") route was added to app/main.py.
+                  # The scaffold has the correct version with the /health endpoint.
+                  if [[ -f "${SCAFFOLDS}/Aku-EdgeHub/app/main.py" ]]; then
+                    cp "${SCAFFOLDS}/Aku-EdgeHub/app/main.py" \
+                       "./${svc}/app/main.py"
+                    echo "  🔧 Aku-EdgeHub: patched app/main.py (added /health endpoint)"
+                  fi
                   ;;
                 Aku-DaaS)
                   # Fix RuntimeError: Form data requires 'python-multipart' to
