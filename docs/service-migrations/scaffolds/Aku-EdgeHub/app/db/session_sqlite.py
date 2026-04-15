@@ -12,9 +12,16 @@ from sqlalchemy.orm import DeclarativeBase
 
 from app.core.config import settings
 
+# check_same_thread is a SQLite-only connect arg; asyncpg rejects it.
+_connect_args: dict = (
+    {"check_same_thread": False}
+    if settings.database_url.startswith("sqlite")
+    else {}
+)
+
 engine: AsyncEngine = create_async_engine(
     settings.database_url,
-    connect_args={"check_same_thread": False},
+    connect_args=_connect_args,
     echo=settings.db_echo,
 )
 
