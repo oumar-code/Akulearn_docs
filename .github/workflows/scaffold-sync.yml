@@ -190,19 +190,12 @@ jobs:
             git -C "${TARGET_CLONE}" remote set-url origin "${REPO_URL}"
 
             # Create or reset the sync branch
+            # Always base the branch off origin/main so the PR diff is clean.
+            # We use --force on push because this is a dedicated automated branch;
+            # --force-with-lease is unreliable in shallow clones when the remote
+            # branch was fetched separately (causes "stale info" rejection).
             echo "│  Step 2: Create/reset branch ${BRANCH_NAME}"
-            if git -C "${TARGET_CLONE}" ls-remote --exit-code origin "refs/heads/${BRANCH_NAME}" &>/dev/null; then
-              # Branch already exists remotely — check it out and reset to main
-              if git -C "${TARGET_CLONE}" fetch origin \
-                "refs/heads/${BRANCH_NAME}:refs/remotes/origin/${BRANCH_NAME}"; then
-                git -C "${TARGET_CLONE}" checkout -B "${BRANCH_NAME}" "origin/${BRANCH_NAME}"
-              else
-                echo "│  ⚠  Remote branch lookup changed during sync — creating local ${BRANCH_NAME}"
-                git -C "${TARGET_CLONE}" checkout -b "${BRANCH_NAME}"
-              fi
-            else
-              git -C "${TARGET_CLONE}" checkout -b "${BRANCH_NAME}"
-            fi
+            git -C "${TARGET_CLONE}" checkout -B "${BRANCH_NAME}" HEAD
 
             # Overlay the scaffold files
             echo "│  Step 3: Overlay scaffold files"
@@ -228,11 +221,11 @@ jobs:
             git -C "${TARGET_CLONE}" commit \
               -m "chore: sync scaffold from Akulearn_docs@${COMMIT_SHA_SHORT}"
 
-            # Push the branch — fail loudly if the lease check fails rather
-            # than silently overwriting diverged remote work
+            # Push the branch — force because this is a dedicated automated sync
+            # branch that is always rebased onto main.
             echo "│  Step 5: Push ${BRANCH_NAME}"
-            if ! git -C "${TARGET_CLONE}" push -u origin "${BRANCH_NAME}" --force-with-lease; then
-              echo "│  ✗ Push failed (remote branch has diverged unexpectedly)."
+            if ! git -C "${TARGET_CLONE}" push -u origin "${BRANCH_NAME}" --force; then
+              echo "│  ✗ Push failed."
               echo "│    Inspect ${GITHUB_ORG}/${SERVICE}:${BRANCH_NAME} manually."
               echo "└──────────────────────────────────────────────────────"
               FAILED+=("${SERVICE}")
