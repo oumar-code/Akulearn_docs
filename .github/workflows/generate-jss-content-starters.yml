@@ -29,10 +29,14 @@ name: "JSS Content — Generate Starters and PR to Aku-Content"
 #
 # How to trigger
 # ──────────────────────────────────────────────────────────────────────────────
-# Actions → "JSS Content — Generate Starters and PR to Aku-Content" → Run workflow
+# Scheduled : 3×/day at 06:00, 14:00, 22:00 UTC — runs tier1_starters automatically
+# Manual    : Actions → "JSS Content — Generate Starters and PR to Aku-Content" → Run workflow
 # ──────────────────────────────────────────────────────────────────────────────
 
 on:
+  schedule:
+    - cron: '0 6,14,22 * * *'   # 3×/day: 06:00, 14:00, 22:00 UTC
+
   workflow_dispatch:
     inputs:
       content_tier:
@@ -353,7 +357,26 @@ jobs:
           echo "════════════════════════════════════════════════════"
           echo "  Recommended next steps:"
           echo "  1. Review and merge the PR in Aku-Content"
-          echo "  2. Trigger seed_content.py in Akudemy (or stub-akudemy-exam-papers.yml)"
+          echo "  2. Akudemy content-sync.yml will run automatically via repository_dispatch"
           echo "  3. Re-run this workflow with content_tier=tier2_flashcards"
           echo "  4. Re-run with content_tier=tier2_quizzes"
           echo "  5. Add Wikipedia MCP and YouTube transcript MCP to AkuAI"
+
+      # ── 9. Notify Akudemy — trigger content re-sync ───────────────────────────
+      - name: Notify Akudemy — trigger content re-sync
+        if: env.DRY_RUN != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          gh api \
+            --method POST \
+            -H "Accept: application/vnd.github+json" \
+            /repos/${GITHUB_ORG}/Akudemy/dispatches \
+            -f event_type="content-updated" \
+            -f "client_payload[source]=Aku-Content" \
+            -f "client_payload[tier]=${CONTENT_TIER}" \
+            -f "client_payload[levels]=${LEVELS}" \
+            -f "client_payload[branch]=${BRANCH_NAME:-unknown}" \
+            -f "client_payload[triggered_at]=$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+          && echo "✅ Dispatched content-updated event to Akudemy" \
+          || echo "⚠️  Dispatch to Akudemy failed — verify GH_PAT has repo scope and Akudemy has a content-sync.yml receiver"
