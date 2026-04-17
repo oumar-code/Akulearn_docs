@@ -1,0 +1,148 @@
+name: "Content Sync — Receive coordinator dispatch"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Listens for a `repository_dispatch` event with type `content-updated`, sent
+# automatically by the `generate-jss-content-starters.yml` workflow in
+# oumar-code/Akulearn_docs whenever new content is pushed to Aku-Content.
+#
+# On receiving the event it:
+#   1. Clones oumar-code/Aku-Content (shallow, latest main)
+#   2. Runs scripts/seed_content.py to import the new content into Akudemy's
+#      PostgreSQL database (content_items table)
+#   3. Prints a summary of seeded items
+#
+# The workflow is a no-op if DATABASE_URL is not configured — it will log a
+# warning and exit cleanly, so it never blocks the coordinator.
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# Secrets required in oumar-code/Akudemy:
+#   GH_PAT       — PAT with repo scope (to clone Aku-Content)
+#   DATABASE_URL — PostgreSQL connection string for Akudemy's database
+#   REDIS_URL    — Redis connection string (optional, for cache invalidation)
+#
+# How this is triggered
+# ──────────────────────────────────────────────────────────────────────────────
+# Automatically — fired by generate-jss-content-starters.yml in Akulearn_docs
+# Manual        — Actions → "Content Sync — Receive coordinator dispatch" → Run workflow
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  repository_dispatch:
+    types: [content-updated]
+
+  workflow_dispatch:
+    inputs:
+      source:
+        description: "Content source to seed from"
+        required: false
+        default: "aku-content"
+        type: choice
+        options:
+          - "aku-content"
+          - "exam-papers"
+          - "all"
+      dry_run:
+        description: "Dry run — log what would be seeded without writing to database"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+jobs:
+  seed:
+    name: Seed Akudemy content from Aku-Content
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    env:
+      GITHUB_ORG: oumar-code
+      CONTENT_REPO: Aku-Content
+      # Dispatch payload values fall back to workflow_dispatch inputs or sensible defaults
+      DISPATCH_TIER:   ${{ github.event.client_payload.tier   || 'tier1_starters' }}
+      DISPATCH_LEVELS: ${{ github.event.client_payload.levels || 'jss1,jss2,jss3' }}
+      DISPATCH_SOURCE: ${{ github.event.client_payload.source || 'Aku-Content' }}
+      DRY_RUN:         ${{ inputs.dry_run || 'false' }}
+      SEED_SOURCE:     ${{ inputs.source  || 'aku-content' }}
+
+    steps:
+      # ── 1. Log dispatch payload ───────────────────────────────────────────────
+      - name: Log dispatch payload
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Akudemy Content Sync — Triggered"
+          echo "  Event type   : ${{ github.event_name }}"
+          echo "  Source repo  : ${DISPATCH_SOURCE}"
+          echo "  Content tier : ${DISPATCH_TIER}"
+          echo "  Levels       : ${DISPATCH_LEVELS}"
+          echo "  Branch       : ${{ github.event.client_payload.branch || 'main' }}"
+          echo "  Triggered at : ${{ github.event.client_payload.triggered_at || 'manual' }}"
+          echo "  Dry run      : ${DRY_RUN}"
+          echo "════════════════════════════════════════════════════"
+
+      # ── 2. Checkout Akudemy ───────────────────────────────────────────────────
+      - name: Checkout Akudemy
+        uses: actions/checkout@v4
+
+      # ── 3. Set up Python 3.11 ─────────────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install --quiet -r requirements.txt
+          pip install --quiet asyncpg python-dotenv
+          echo "✅ Dependencies installed"
+
+      # ── 4. Clone Aku-Content ──────────────────────────────────────────────────
+      - name: Clone Aku-Content
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          REPO_URL="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${CONTENT_REPO}.git"
+          git clone --depth 1 "${REPO_URL}" "${RUNNER_TEMP}/${CONTENT_REPO}"
+          echo "✅ Cloned Aku-Content"
+          echo "   Files: $(find ${RUNNER_TEMP}/${CONTENT_REPO}/content -type f 2>/dev/null | wc -l) content files"
+
+      # ── 5. Seed content into Akudemy database ─────────────────────────────────
+      - name: Seed content into Akudemy database
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          REDIS_URL:    ${{ secrets.REDIS_URL }}
+        run: |
+          if [[ -z "${DATABASE_URL}" ]]; then
+            echo "⚠️  DATABASE_URL not configured — skipping database seed."
+            echo "    Set the DATABASE_URL secret in Akudemy to enable automatic seeding."
+            exit 0
+          fi
+
+          DRY_FLAG=""
+          if [[ "${DRY_RUN}" == "true" ]]; then
+            DRY_FLAG="--dry-run"
+          fi
+
+          python scripts/seed_content.py \
+            --source "${SEED_SOURCE}" \
+            --content-dir "${RUNNER_TEMP}/${CONTENT_REPO}/content" \
+            ${DRY_FLAG}
+
+      # ── 6. Summary ────────────────────────────────────────────────────────────
+      - name: Summary
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Akudemy Content Sync — Complete"
+          echo "  Content tier : ${DISPATCH_TIER}"
+          echo "  Levels       : ${DISPATCH_LEVELS}"
+          echo "  Dry run      : ${DRY_RUN}"
+          echo "════════════════════════════════════════════════════"
+          echo "  Next steps:"
+          echo "  1. Verify content_items table has new rows"
+          echo "  2. Clear CDN / Redis cache if REDIS_URL is set"
+          echo "  3. Check Akudemy /api/content endpoint returns fresh data"

@@ -14,6 +14,8 @@ This markdown file will record the step-by-step progress of implementing automat
 - SuperHub ✅ Done
 - Telhone ✅ Done
 - Akulearn_docs ✅ Done
+- Aku-Content ✅ Scheduled pipeline active (3×/day via coordinator)
+- Akudemy ✅ Content-sync receiver workflow scaffolded
 
 
 
@@ -26,8 +28,21 @@ This markdown file will record the step-by-step progress of implementing automat
 - [x] Automate deployment (Docker build step in CI)
 - [x] Automate documentation builds (placeholder in CI)
 - [x] Document automation setup (badges and automation section added to README)
+- [x] Content sync receiver workflow scaffolded (`content-sync.yml` — listens for `content-updated` repository_dispatch from coordinator)
 
 ## Progress Log
+
+### [Date: 2026-04-17]
+
+#### Content Pipeline Automation (Coordinator → Aku-Content → Akudemy)
+
+- [x] Added 3×/day `schedule` trigger (06:00, 14:00, 22:00 UTC) to `generate-jss-content-starters.yml`
+- [x] Added step 9 — `repository_dispatch` to `oumar-code/Akudemy` with `content-updated` event after each successful content push
+- [x] Updated Summary step in `generate-jss-content-starters.yml` to reflect the new automated flow
+- [x] Scaffolded `docs/service-migrations/scaffolds/Akudemy/.github/workflows/content-sync.yml`
+  — receives `content-updated` dispatch, clones Aku-Content, runs `scripts/seed_content.py`
+  — gracefully skips database seed if `DATABASE_URL` secret is not configured
+  — also supports `workflow_dispatch` for manual reruns
 
 ### [Date: 2026-03-20]
 
