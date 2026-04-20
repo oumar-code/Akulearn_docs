@@ -63,7 +63,7 @@ async def test_text_summarize_returns_lengths(client: AsyncClient) -> None:
     assert response.status_code == 200
     data = response.json()
     assert data["model"] == "facebook/bart-large-cnn"
-    assert data["original_length"] == len(long_text)
+    assert data["original_length"] == len(long_text.strip())
     assert data["summary_length"] > 0
     assert "Summary" in data["summary"]
 
