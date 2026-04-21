@@ -1,145 +1,103 @@
-# ML Training Pipeline for Nigerian Language Translation
+# ML Training Pipeline
 
-## Overview
-Generate news articles, build parallel corpora, and fine-tune translation models for English ↔ Hausa/Igbo/Yoruba.
+## Objective
+Provide a reproducible end-to-end pipeline for training, evaluating, and deploying multilingual models (English ↔ Hausa/Igbo/Yoruba) for Akulearn content and tutoring workflows.
 
-## Workflow
+## Scope
+- Tasks: translation, classification, retrieval quality scoring.
+- Data sources: curated curriculum data, approved public corpora, and multilingual news datasets.
+- Outputs: versioned datasets, trained models, evaluation reports, deployable artifacts.
 
-### 1. Generate News Corpus
+## Pipeline Stages
+
+## 1) Data Ingestion
+- Ingest raw documents from approved sources.
+- Validate schema and metadata (source, language, timestamp, license).
+- Store immutable raw snapshots for lineage.
+
+## 2) Data Preparation
+- Normalize text (encoding, punctuation, script handling).
+- Remove duplicates and low-quality pairs.
+- Segment into train/validation/test with leakage prevention.
+- Export standardized formats (TSV/JSONL/HF datasets).
+
+## 3) Dataset Quality Gates
+- Language identification accuracy checks.
+- Minimum alignment confidence for parallel corpora.
+- Toxicity/safety screening.
+- Coverage checks by subject and grade level.
+
+## 4) Training
+- Select baseline model per task and language pair.
+- Run parameterized training jobs with tracked configs.
+- Save checkpoints and model card metadata.
+
+Recommended baseline translation models:
+- `Helsinki-NLP/opus-mt-en-ha`
+- `Helsinki-NLP/opus-mt-en-yo`
+- `Helsinki-NLP/opus-mt-en-ig`
+
+## 5) Evaluation
+- Automated metrics: BLEU/chrF/COMET (for translation), accuracy/F1 (classification).
+- Safety checks: harmful output and bias spot checks.
+- Human review: linguistic quality and curriculum fidelity.
+
+Promotion gate:
+- Candidate model must outperform production baseline on agreed metrics and pass safety checks.
+
+## 6) Packaging and Registry
+- Package model + tokenizer + inference config.
+- Register artifact with semantic version and lineage metadata.
+- Store reproducibility details: dataset version, code commit, training config.
+
+## 7) Deployment
+- Deploy to staging first with shadow/canary traffic.
+- Monitor latency, error rate, and output quality regressions.
+- Promote to production after acceptance criteria are met.
+
+## 8) Monitoring and Retraining
+- Track live quality indicators and drift signals.
+- Trigger retraining on drift, content expansion, or metric decay.
+- Keep rollback-ready previous model versions.
+
+## Suggested Repository Layout
+```text
+content/
+  news_corpus/
+  ml_datasets/
+models/
+  <task>/<lang-pair>/<version>/
+reports/
+  eval/
+```
+
+## Example Command Flow
 ```bash
-# Synthetic articles in English + automatic translation (requires HF model)
-python generate_news_corpus.py \
-  --count 100 \
-  --langs en ha yo ig \
-  --pairs en-ha en-yo en-ig \
-  --models Helsinki-NLP/opus-mt-en-ha Helsinki-NLP/opus-mt-en-yo Helsinki-NLP/opus-mt-en-ig
+# 1) Generate/collect corpus
+python generate_news_corpus.py --count 100 --langs en ha yo ig
 
-# Output: content/news_corpus/
-#   en/YYYY/MM/DD/*.json      (English articles)
-#   ha/YYYY/MM/DD/*.json      (Hausa articles)
-#   yo/YYYY/MM/DD/*.json      (Yoruba articles)
-#   ig/YYYY/MM/DD/*.json      (Igbo articles)
+# 2) Prepare parallel dataset
+python prepare_ml_dataset.py --corpus content/news_corpus --source-lang en --target-lang ha --output content/ml_datasets --format tsv
+
+# 3) Dry-run training
+python train_translation_model.py --data content/ml_datasets/en-ha.tsv --lang-pair en-ha --base-model Helsinki-NLP/opus-mt-en-ha --output models --dry-run
+
+# 4) Train
+python train_translation_model.py --data content/ml_datasets/en-ha.tsv --lang-pair en-ha --base-model Helsinki-NLP/opus-mt-en-ha --output models --max-steps 5000 --batch-size 16 --learning-rate 2e-5
 ```
 
-### 2. Prepare Dataset for Training
-```bash
-# Build parallel corpus (document-level pairs)
-python prepare_ml_dataset.py \
-  --corpus content/news_corpus \
-  --source-lang en \
-  --target-lang ha \
-  --output content/ml_datasets \
-  --format tsv
+## CI/CD Integration
+- CI validates dataset schema and training config.
+- Scheduled jobs run periodic evaluation against benchmark sets.
+- Release pipeline blocks deployment when quality gates fail.
 
-# Or split into sentences for finer-grained training
-python prepare_ml_dataset.py \
-  --corpus content/news_corpus \
-  --source-lang en \
-  --target-lang ha \
-  --output content/ml_datasets \
-  --format tsv \
-  --sentence-level
+## Risks and Mitigations
+- **Data drift**: continuous monitoring and periodic retraining.
+- **Low-resource language quality**: expand corpus and increase human review.
+- **Overfitting**: strict held-out test sets and early stopping.
+- **Unsafe outputs**: content safety filters and moderation checks.
 
-# Output: content/ml_datasets/en-ha.tsv
-#   Format: source_text \t target_text (one pair per line)
-```
-
-### 3. Fine-Tune Translation Model
-```bash
-# Test setup first
-python train_translation_model.py \
-  --data content/ml_datasets/en-ha.tsv \
-  --lang-pair en-ha \
-  --base-model Helsinki-NLP/opus-mt-en-ha \
-  --output models \
-  --dry-run
-
-# Train (requires GPU recommended for speed)
-python train_translation_model.py \
-  --data content/ml_datasets/en-ha.tsv \
-  --lang-pair en-ha \
-  --base-model Helsinki-NLP/opus-mt-en-ha \
-  --output models \
-  --max-steps 5000 \
-  --batch-size 16 \
-  --learning-rate 2e-5
-
-# Output: models/en-ha/
-#   pytorch_model.bin      (fine-tuned weights)
-#   config.json            (model config)
-#   tokenizer.json         (tokenizer)
-```
-
-### 4. Use Fine-Tuned Model in Akulearn
-```bash
-# Update .env
-export HUGGINGFACE_TRANSLATION_MODEL=models/en-ha
-
-# Translate lessons
-python translate_lessons.py \
-  content/ai_generated/textbooks/Computer\ Science/SS1/lesson_01_computer_hardware_and_software.json \
-  --lang ha
-
-# Output: content/ai_generated_translated/ha/lesson_01_...json
-```
-
-## Dataset Formats
-
-**TSV (Tab-Separated Values):**
-```
-source_text	target_text
-The school is green.	Makaranta ita gida.
-```
-
-**JSONL (JSON Lines):**
-```json
-{"source": "The school is green.", "target": "Makaranta ita gida."}
-```
-
-**HF Datasets Format:**
-```json
-{
-  "translation": [
-    {"en": "The school is green.", "ha": "Makaranta ita gida."},
-    ...
-  ]
-}
-```
-
-## Parallel Datasets to Combine (Future)
-- **MAFAND-MT**: News parallel corpus (Hausa, Yoruba, Pidgin)
-- **JW300**: Bible (13+ Nigerian languages)
-- **MENYO-20k**: Yoruba-English multi-domain
-
-## Base Models (Hugging Face)
-| Language Pair | Model |
-|---|---|
-| en-ha | `Helsinki-NLP/opus-mt-en-ha` |
-| en-yo | `Helsinki-NLP/opus-mt-en-yo` |
-| en-ig | `Helsinki-NLP/opus-mt-en-ig` |
-| ha-en | `Helsinki-NLP/opus-mt-ha-en` |
-
-## Environment Variables
-```bash
-# .env
-HUGGINGFACE_TOKEN=your_hf_token_if_using_private_models
-HUGGINGFACE_TRANSLATION_MODEL=models/en-ha  # Path to fine-tuned model
-```
-
-## Metrics & Evaluation
-- **BLEU Score**: Automatic metric for translation quality
-- **Training curves**: Logged via HF Trainer (view in `models/en-ha/`)
-- **Manual review**: Spot-check translated lessons for accuracy
-
-## Tips
-1. **Start small**: 100-500 articles for initial fine-tuning
-2. **Use GPU**: Training on CPU is slow; consider Colab/Lambda Labs
-3. **Monitor**: Check `models/<pair>/training_args.bin` for convergence
-4. **Iterate**: Collect more domain-specific news to improve
-5. **Combine**: Merge Akulearn corpus with MAFAND-MT for larger dataset
-
-## Next: Multi-Modal Training
-Once translation is working, add:
-- Image-to-caption pairs (BBC News articles + images)
-- Audio-to-text (VOA podcasts + transcripts)
-- Cross-lingual image-text alignment
+## Definition of Done
+- Reproducible training run from raw data to deployable model.
+- Quality and safety reports generated for each candidate.
+- Versioned model promoted through staging to production with rollback plan.
