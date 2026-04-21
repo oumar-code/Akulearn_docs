@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ai-tutor-akututor" class="md-skip">
+        <a href="#ai-tutor" class="md-skip">
           Skip to content
         </a>
       
@@ -3234,43 +3234,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#strategy" class="md-nav__link">
+  <a href="#placeholder" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Strategy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#service-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Service Integration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rollout-phases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rollout Phases
+        Placeholder
       
     </span>
   </a>
@@ -4005,34 +3972,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../strategy/rag_chatbot_strategy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RAG Chatbot Strategy
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../clean_energy_for_africa/" class="md-nav__link">
         
   
@@ -4567,43 +4506,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#strategy" class="md-nav__link">
+  <a href="#placeholder" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Strategy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#service-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Service Integration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rollout-phases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rollout Phases
+        Placeholder
       
     </span>
   </a>
@@ -4630,118 +4536,12 @@
   
 
 
-<h1 id="ai-tutor-akututor">AI Tutor (AkuTutor)</h1>
-<p>AkuTutor is Akulearn's curriculum-grounded AI chatbot that helps students at every class level (JSS1–SS3) prepare for WAEC, NECO, JAMB, and BECE examinations.<br />
-It uses <strong>Retrieval-Augmented Generation (RAG)</strong> so every answer is backed by approved lesson content, past questions, and the NERDC LO catalog — not hallucinated text.</p>
-<h2 id="strategy">Strategy</h2>
-<p>The full design is documented in <strong><a href="../strategy/rag_chatbot_strategy/"><code>docs/strategy/rag_chatbot_strategy.md</code></a></strong>.</p>
-<p>Key pillars:</p>
-<table>
-<thead>
-<tr>
-<th>Pillar</th>
-<th>Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Hybrid edge + cloud</strong></td>
-<td>Runs fully offline on Aku Edge Hubs; upgrades to cloud models when connected</td>
-</tr>
-<tr>
-<td><strong>Curriculum-grounded retrieval</strong></td>
-<td>Two-layer search (LO/topic filter → semantic vector search) with re-ranking</td>
-</tr>
-<tr>
-<td><strong>Pedagogy-aware responses</strong></td>
-<td>Five response modes: <code>direct</code>, <code>step_by_step</code>, <code>hint_only</code>, <code>exam_style</code>, <code>recap</code></td>
-</tr>
-<tr>
-<td><strong>Strong guardrails</strong></td>
-<td>Grounding checks, safety filters, audit logs — no hallucinated facts</td>
-</tr>
-<tr>
-<td><strong>Measurable outcomes</strong></td>
-<td>KPIs cover retrieval quality, learning impact, and operational health</td>
-</tr>
-</tbody>
-</table>
-<h2 id="architecture-overview">Architecture Overview</h2>
-<div class="codehilite"><pre><span></span><code>Student question
-      │
-      ▼
-AkuTutor Service  (delegates all inference to AkuAI)
-      │
-      ├── Layer A: Curriculum filter  (class, subject, LO, exam path)
-      ├── Layer B: Semantic search    (FAISS/Milvus + all-MiniLM-L6-v2)
-      ├── Re-ranking &amp; threshold gate (score ≥ 0.75 required)
-      └── Generation                 (Gemma edge relay or cloud LLM)
-                                     + citation appended
-</code></pre></div>
-
-<h2 id="service-integration">Service Integration</h2>
-<table>
-<thead>
-<tr>
-<th>Dependency</th>
-<th>Role</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>AkuAI /api/v1/embeddings</code></td>
-<td>Query embedding</td>
-</tr>
-<tr>
-<td><code>AkuAI /api/v1/text/generate</code></td>
-<td>Response generation</td>
-</tr>
-<tr>
-<td>User Profile Service</td>
-<td>LO mastery scores for personalisation</td>
-</tr>
-<tr>
-<td>CMS + <code>aku-learn-sync</code></td>
-<td>Content ingestion and edge index delivery</td>
-</tr>
-<tr>
-<td>LO Catalog (<code>lo_catalog.json</code>)</td>
-<td>Curriculum metadata filter</td>
-</tr>
-<tr>
-<td>Teacher Dashboard</td>
-<td>Escalation and feedback signals</td>
-</tr>
-</tbody>
-</table>
-<h2 id="rollout-phases">Rollout Phases</h2>
-<table>
-<thead>
-<tr>
-<th>Phase</th>
-<th>Scope</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>English · Mathematics · Biology (en) — Zamfara pilot</td>
-<td>Planned</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Full subject coverage + Hausa / Igbo / Yoruba</td>
-<td>Planned</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Full adaptive tutoring, governance cadence</td>
-<td>Planned</td>
-</tr>
-</tbody>
-</table>
-<p>For detailed acceptance criteria, KPI targets, and implementation tasks, see the <a href="../strategy/rag_chatbot_strategy/">RAG chatbot strategy</a>.</p>
+<h1 id="ai-tutor">AI Tutor</h1>
+<p>This document will describe the architecture, algorithms, and features of Akulearn's AI-powered tutoring system.</p>
+<h2 id="placeholder">Placeholder</h2>
+<ul>
+<li>Details on NLP, GenAI, and adaptive learning will be added here.</li>
+</ul>
 
 
 
