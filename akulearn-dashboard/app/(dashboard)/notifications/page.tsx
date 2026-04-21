@@ -22,7 +22,7 @@ export default function NotificationsPage() {
 
     // Subscribe to real-time changes
     channel = supabase.channel('public:notifications')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'notifications' }, (payload) => {
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'notifications' }, () => {
         fetchNotifications();
       })
       .subscribe();

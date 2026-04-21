@@ -121,7 +121,7 @@ export default function AboutPage() {
         <div className="container">
           <h2>Join the Akudemy mission</h2>
           <p>Help us bring quality learning to every student.</p>
-          <a href="/">Start Learning</a>
+          <Link href="/">Start Learning</Link>
         </div>
       </section>
 

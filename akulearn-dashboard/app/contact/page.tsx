@@ -5,7 +5,7 @@ export default function ContactPage() {
     <main>
       <header>
         <h1>Contact Us</h1>
-        <p>We'd love to hear from you! Fill out the form below or reach us at [email@akudemy.com].</p>
+        <p>We&apos;d love to hear from you! Fill out the form below or reach us at [email@akudemy.com].</p>
       </header>
       <section>
         <form>
