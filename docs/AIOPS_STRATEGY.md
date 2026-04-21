@@ -1,7 +1,7 @@
 # AIOps Strategy
 
 ## Objective
-Establish an AIOps operating model for Akulearn that improves reliability, security, and learning outcomes by combining observability, automation, and AI-assisted incident operations.
+Establish an AIOps operating model for Akulearn that improves platform reliability and security for student-facing services by combining observability, automation, and AI-assisted incident operations.
 
 ## Scope
 - Platform services: Aku-EdgeHub, Aku-SuperHub, Aku-IGHub, AkuAI, AkuTutor, Akudemy, AkuWorkspace, Aku-Telhone.

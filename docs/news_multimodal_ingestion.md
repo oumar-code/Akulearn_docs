@@ -67,7 +67,7 @@ Record fields:
 ## Compliance and Safety
 - Preserve attribution and publisher metadata.
 - Keep licensing field explicit and enforce usage constraints.
-- Redact sensitive personal data where detected.
+- Detect and redact sensitive personal data in free text, including direct contact details (phone numbers, email addresses, exact home addresses), government identifiers if present, and exposed account numbers; keep person names in editorial content unless policy requires otherwise.
 - Maintain audit logs for ingestion and transformation steps.
 
 ## Quality Gates
