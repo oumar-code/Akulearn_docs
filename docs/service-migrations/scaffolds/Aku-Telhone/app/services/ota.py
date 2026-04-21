@@ -34,9 +34,9 @@ def get_task_status(task_id: str) -> dict[str, Any] | None:
 _profile_store: dict[str, dict[str, Any]] = {}
 
 
-def _upsert_profile(iccid: str, **updates: Any) -> None:
+def _upsert_profile(profile_key: str, **updates: Any) -> None:
     """Merge updates into the in-process profile store."""
-    existing = _profile_store.setdefault(iccid, {})
+    existing = _profile_store.setdefault(profile_key, {})
     existing.update(updates)
 
 

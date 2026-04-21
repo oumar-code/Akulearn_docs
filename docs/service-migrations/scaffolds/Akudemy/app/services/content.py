@@ -122,7 +122,7 @@ async def upsert_content(payload: ContentCreate) -> ContentRead:
     now = datetime.now(tz=timezone.utc)
     item = ContentRead(
         id=uuid4(),
-        **payload.model_dump(),
+        **payload.model_dump(mode="json"),
         created_at=now,
         updated_at=now,
     )
