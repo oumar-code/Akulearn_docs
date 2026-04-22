@@ -156,71 +156,28 @@ Invoke-RestMethod -Uri "http://localhost:8000/api/assets/generate" `
 
 ## Postman Collection (Import This)
 
-```json
-{
-  "info": {
-    "name": "Akulearn Asset Manager API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Health Check",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:8000/api/assets/health",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "8000",
-          "path": ["api", "assets", "health"]
-        }
-      }
-    },
-    {
-      "name": "Search Images",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:8000/api/assets/search?query=photosynthesis&source=all&per_page=10",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "8000",
-          "path": ["api", "assets", "search"],
-          "query": [
-            {"key": "query", "value": "photosynthesis"},
-            {"key": "source", "value": "all"},
-            {"key": "per_page", "value": "10"}
-          ]
-        }
-      }
-    },
-    {
-      "name": "Generate Asset",
-      "request": {
-        "method": "POST",
-        "header": [
-          {"key": "Content-Type", "value": "application/json"}
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"prompt\": \"Educational diagram of photosynthesis\",\n  \"type\": \"image\",\n  \"subject\": \"Biology\",\n  \"style\": \"educational\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:8000/api/assets/generate",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "8000",
-          "path": ["api", "assets", "generate"]
-        }
-      }
-    }
-  ]
-}
-```
+Importable files live in the [`postman/`](../postman/) directory at the root of the repository:
 
-Save this as `Akulearn_Asset_Manager.postman_collection.json` and import into Postman.
+| File | Purpose |
+|------|---------|
+| [`Akulearn_Asset_Manager.postman_collection.json`](../postman/Akulearn_Asset_Manager.postman_collection.json) | Collection with all 3 core requests + automated test scripts |
+| [`Akulearn_Asset_Manager.postman_environment.json`](../postman/Akulearn_Asset_Manager.postman_environment.json) | Environment with `base_url`, search defaults, and API-key placeholders |
+
+### How to import
+
+1. Open Postman → **Import** (top-left).
+2. Drag-and-drop (or browse to) **both** files above.
+3. Select the **"Akulearn Asset Manager - Local"** environment from the environment dropdown.
+4. Fill in any API key variables (`unsplash_key`, `pexels_key`, `replicate_key`, `openai_key`) for the endpoints you want to test.
+5. Run the **Health Check** request first to confirm the server is reachable.
+
+### What each request tests automatically
+
+| Request | Automated assertions |
+|---------|---------------------|
+| `GET /api/assets/health` | Status 200 · has `status` field · has `apis` field · response < 2 s |
+| `GET /api/assets/search` | Status 200 · response is array · each item has `id` and `url` · response < 5 s |
+| `POST /api/assets/generate` | Status 200 or 202 · has `asset_id` · has `status` · response < 10 s |
 
 ---
 
