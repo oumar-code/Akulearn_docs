@@ -154,6 +154,7 @@ public/generated_content/
 !package.json
 !puppeteer-config.json
 !public/*.json
+!postman/*.json
 
 # Allow Next.js dashboard config files
 !akulearn-dashboard/*.json
