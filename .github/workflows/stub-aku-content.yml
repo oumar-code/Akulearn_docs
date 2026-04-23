@@ -8,12 +8,14 @@ name: "Aku-Content — Initialise Stub"
 #   - README.md      — repo documentation and Git LFS usage guide
 #   - Empty directory structure with .gitkeep placeholders for all content dirs
 #
-# This unblocks LFS configuration and directory structure in Aku-Content WITHOUT
-# needing content/ or content_templates/ present locally (both are gitignored
-# in Akulearn_docs).
-#
-# The actual content files must still be pushed from a local machine by
-# running: ./docs/service-migrations/migrate-to-aku-content.sh
+# This initialises LFS configuration and directory structure in Aku-Content
+# without needing any local files. All content is generated entirely in CI:
+#   - Text content (textbooks, flashcards, quizzes, exam questions):
+#       trigger generate-jss-content-starters.yml
+#   - Wikipedia .zim:
+#       trigger download-wikipedia.yml (wget from kiwix.org in CI)
+#   - AR/VR/simulations/games:
+#       Phase 3 — Blender/Unity pipelines (placeholders ready after this stub)
 #
 # Prerequisites
 # ──────────────────────────────────────────────────────────────────────────────
@@ -151,21 +153,16 @@ jobs:
               `content/flashcards/`, `content/quizzes/`, `content/games/`, `content/encyclopedia/`,
               `content/tools/`, `content/news_corpus/`, `content_templates/`
 
-            ## What's NOT included yet
-            The actual content files are gitignored in the Akulearn_docs monorepo and must be copied
-            separately from a local machine.
+            ## How to populate content (all CI — no local machine needed)
+            All content is generated from scratch entirely in GitHub Actions:
 
-            ## How to complete the migration (local machine steps)
-            ```bash
-            # 1. Restore the gitignored content locally in your Akulearn_docs clone
-            #    (from local drive or team file storage)
-
-            # 2. Install gh CLI and git-lfs, then authenticate
-            gh auth login
-
-            # 3. Run the full migration
-            ./docs/service-migrations/migrate-to-aku-content.sh
-            ```
+            1. **Text content** — trigger `generate-jss-content-starters.yml`:
+               - `content_tier=tier1_generated` → LLM-generates textbook chapters for JSS1–SS3
+               - `content_tier=tier1_bece` → generates BECE/WAEC exam question bundles
+               - `content_tier=tier2_flashcards` → generates flashcard decks from chapters
+               - `content_tier=tier2_quizzes` → generates quiz files from chapters
+            2. **Wikipedia .zim** — trigger `download-wikipedia.yml` → `wget` from kiwix.org in CI
+            3. **AR/VR/simulations/games** — Phase 3 (Blender/Unity pipelines); placeholder dirs ready
 
             _Automated by the stub-aku-content GitHub Actions workflow._
             Migration tracker: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md
@@ -197,7 +194,9 @@ jobs:
           if [[ "$DRY_RUN" != "true" ]]; then
             echo "  Next steps:"
             echo "  1. Review and merge the stub PR in Aku-Content"
-            echo "  2. Restore content/ and content_templates/ locally"
-            echo "  3. Run: ./docs/service-migrations/migrate-to-aku-content.sh"
-            echo "  4. Update Akudemy and Aku-EdgeHub to reference Aku-Content"
+            echo "  2. Trigger generate-jss-content-starters.yml (tier1_generated) to generate textbook chapters"
+            echo "  3. Trigger generate-jss-content-starters.yml (tier1_bece) to generate exam question bundles"
+            echo "  4. Trigger generate-jss-content-starters.yml (tier2_flashcards / tier2_quizzes)"
+            echo "  5. Trigger download-wikipedia.yml to fetch Wikipedia .zim into Aku-Content"
+            echo "  6. Update Akudemy and Aku-EdgeHub to reference Aku-Content"
           fi

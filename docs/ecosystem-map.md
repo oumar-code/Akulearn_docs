@@ -206,16 +206,15 @@ The `content/` and `content_templates/` directories should move to a dedicated `
 - [x] **LO Tagging Schema updated** to cover JSS1–JSS3 class levels, subject codes and LO ID format
 - [ ] **Trigger `stub-aku-content.yml`** from GitHub Actions UI → opens PR in Aku-Content with LFS config + empty dirs
 - [ ] **Trigger `generate-jss-content-starters.yml`** (content_tier=tier1_starters) → PRs JSS starter MDs to Aku-Content
-- [ ] **Run `pipeline/textbook_generator.py --all-jss`** (locally or via LLM CI) → generates JSS1–JSS3 chapter bundles
-- [ ] **Run `pipeline/bece_scraper.py --all`** → structures BECE past questions
-- [ ] **Trigger `generate-jss-content-starters.yml`** (content_tier=tier2_flashcards) → generates flashcard decks
-- [ ] **Trigger `generate-jss-content-starters.yml`** (content_tier=tier2_quizzes) → generates quiz files
-- [ ] **Download Wikipedia .zim** (see `docs/mcp/index.md`) → push to Aku-Content
+- [ ] **Trigger `generate-jss-content-starters.yml`** (content_tier=tier1_generated, levels=jss1,jss2,jss3,ss1,ss2,ss3) → LLM-generates all textbook chapters (JSON+MD) for all class levels; requires `AKUAI_API_KEY` or `OPENAI_API_KEY` secret — **no local machine needed**
+- [ ] **Trigger `generate-jss-content-starters.yml`** (content_tier=tier1_bece) → runs `pipeline/bece_scraper.py` in CI to structure BECE past questions — **no local machine needed**
+- [ ] **Trigger `generate-jss-content-starters.yml`** (content_tier=tier2_flashcards) → auto-generates flashcard decks from generated textbook chapters — **no local machine needed**
+- [ ] **Trigger `generate-jss-content-starters.yml`** (content_tier=tier2_quizzes) → auto-generates topic quizzes from generated chapters — **no local machine needed**
+- [ ] **Regenerate `content_templates/` CSVs via CI** — extend `pipeline/textbook_generator.py` (or add `pipeline/content_template_generator.py`) to emit WAEC/NERDC lesson CSV templates directly into Aku-Content; trigger via `generate-jss-content-starters.yml` — **no local machine needed**
+- [ ] **Download Wikipedia .zim via CI** — add a `download-wikipedia.yml` workflow that `wget`s the relevant `.zim` from kiwix.org and pushes to `Aku-Content/content/encyclopedia/` (no local machine needed; ~2 GB — verify runner disk space)
 - [ ] **Wire Wikipedia + YouTube Transcript MCPs** to AkuAI (`app/tools/`)
-- [ ] ⚠️ **LOCAL MACHINE REQUIRED** — Copy `content/` tree (textbooks, AR, VR, simulations, flashcards, quizzes, games, encyclopedia, tools, news corpus): restore `content/` locally, then run `./docs/service-migrations/migrate-to-aku-content.sh`
-- [ ] ⚠️ **LOCAL MACHINE REQUIRED** — Copy `content_templates/` CSV templates (included in the same full migration run above)
+- [ ] ⏳ **AR .glb / VR .unitypackage / simulations / games** — Phase 3 only; require Blender/Unity pipelines; scaffold placeholder dirs are already created by `stub-aku-content.yml`
 - [x] Update Akudemy and Aku-EdgeHub to reference new content repo (scaffold READMEs + `.env.example` updated; apply to live repos once content migration is complete)
-- [ ] Remove `content/` and `content_templates/` from `Akulearn_docs` after migration is confirmed
 
 ### Content Population Priority Matrix
 
@@ -237,10 +236,8 @@ The `data/exam_papers/` dataset and `mlops/exam_paper_scraper.py` belong in `oum
 
 - [x] Create migration script with `--stub-only` and `--help` modes (`docs/service-migrations/migrate-exam-papers.sh`)
 - [x] Create GitHub Actions workflow to push dir structure + scraper stub (`stub-akudemy-exam-papers.yml`) — **no local machine needed**
-- [ ] **Trigger `stub-akudemy-exam-papers.yml`** from GitHub Actions UI → opens PR in Akudemy with placeholder structure
-- [ ] ⚠️ **LOCAL MACHINE REQUIRED** — Copy `data/exam_papers/` (1,350 questions, JSON + CSV): restore `data/exam_papers/` locally, then run `./docs/service-migrations/migrate-exam-papers.sh`
-- [ ] ⚠️ **LOCAL MACHINE REQUIRED** — Copy `mlops/exam_paper_scraper.py` and its docs (included in the same full migration run above)
-- [ ] Remove `data/` (exam_papers) from `Akulearn_docs` after migration is confirmed
+- [ ] **Trigger `stub-akudemy-exam-papers.yml`** from GitHub Actions UI → opens PR in Akudemy with placeholder structure + scraper stub
+- [ ] **Trigger `generate-jss-content-starters.yml`** (content_tier=tier1_bece) → runs `pipeline/bece_scraper.py --all` in CI to generate BECE/WAEC/NECO/JAMB exam question bundles fresh and PRs them to Aku-Content — **no local machine needed**
 
 ### Aku-SmartBoard (new repo)
 
@@ -251,9 +248,8 @@ The `akulearn-linux-app/` directory is a full KMP/Compose Desktop application �
 - [x] Create GitHub Actions CI/release workflow scaffold (`docs/service-migrations/scaffolds/Aku-SmartBoard/`)
 - [x] Create GitHub Actions workflow to push CI scaffold to Aku-SmartBoard (`scaffold-aku-smartboard.yml`) — **no local machine needed**
 - [ ] **Trigger `scaffold-aku-smartboard.yml`** from GitHub Actions UI → opens PR in Aku-SmartBoard with `release.yml` + `systemd/` unit
-- [ ] ⚠️ **LOCAL MACHINE REQUIRED** — Copy `akulearn-linux-app/` (Kotlin source, Gradle build, DEPLOYMENT.md): restore `akulearn-linux-app/` locally, then run `./docs/service-migrations/migrate-to-aku-smartboard.sh`
+- [ ] **Build `akulearn-linux-app/` from scratch in `oumar-code/Aku-SmartBoard`** — the source is no longer in this branch; create the KMP/Compose Desktop app fresh directly in the Aku-SmartBoard repo, guided by `docs/04-iot-projector/` specs — **no local machine needed for scaffolding**
 - [ ] Add systemd service unit to GitHub Release assets (covered by CI workflow scaffold, applied above)
-- [ ] Remove `akulearn-linux-app/` from `Akulearn_docs` after migration is confirmed
 
 ---
 

@@ -4,16 +4,15 @@ name: "Akudemy — Exam Papers Stub"
 # What this workflow does
 # ──────────────────────────────────────────────────────────────────────────────
 # Creates a stub PR in oumar-code/Akudemy with:
-#   - data/exam_papers/.gitkeep  — placeholder for the 1,350-question dataset
+#   - data/exam_papers/.gitkeep  — placeholder for the exam question dataset
 #   - scripts/exam_paper_scraper.py — stub with usage instructions
 #   - scripts/README.md            — usage guide for the scraper and dataset
 #
-# This unblocks partial setup of Akudemy's exam papers directory WITHOUT needing
-# data/exam_papers/ or mlops/exam_paper_scraper.py present locally (both are
-# gitignored in Akulearn_docs).
-#
-# The actual exam papers dataset must still be pushed from a local machine by
-# running: ./docs/service-migrations/migrate-exam-papers.sh
+# This initialises the exam papers directory in Akudemy without needing any
+# local files. Exam question content is generated entirely in CI:
+#   - Trigger generate-jss-content-starters.yml (content_tier=tier1_bece) →
+#     runs pipeline/bece_scraper.py in CI to generate BECE/WAEC/NECO/JAMB
+#     question bundles fresh and PRs them to Aku-Content.
 #
 # Prerequisites
 # ──────────────────────────────────────────────────────────────────────────────
@@ -119,27 +118,14 @@ jobs:
             Adds the directory structure and scripts placeholder for the exam papers migration.
 
             ## What's included
-            - `data/exam_papers/.gitkeep` — placeholder for the 1,350-question dataset (WAEC/NECO/JAMB, 4 subjects, 27 topics, 2020–2024)
+            - `data/exam_papers/.gitkeep` — placeholder for the exam question dataset (WAEC/NECO/JAMB/BECE)
             - `scripts/exam_paper_scraper.py` — stub with usage instructions
             - `scripts/README.md` — usage guide for the scraper and dataset
 
-            ## What's NOT included yet
-            The actual exam papers dataset (`data/exam_papers/`) and the full scraper are gitignored
-            in the Akulearn_docs monorepo and must be added separately from a local machine.
-
-            ## How to complete the migration (local machine steps)
-            ```bash
-            # 1. Restore the gitignored data locally in your Akulearn_docs clone
-            #    (from local drive, OR re-run the scraper):
-            pip install -r requirements.txt
-            python mlops/exam_paper_scraper.py --output data/exam_papers/
-
-            # 2. Authenticate gh CLI
-            gh auth login
-
-            # 3. Run the full migration
-            ./docs/service-migrations/migrate-exam-papers.sh
-            ```
+            ## How to populate exam questions (CI — no local machine needed)
+            Trigger `generate-jss-content-starters.yml` with `content_tier=tier1_bece` →
+            runs `pipeline/bece_scraper.py --all` in CI and PRs the generated question bundles
+            to `oumar-code/Aku-Content`.
 
             _Automated by the stub-akudemy-exam-papers GitHub Actions workflow._
             Migration tracker: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md
@@ -171,7 +157,6 @@ jobs:
           if [[ "$DRY_RUN" != "true" ]]; then
             echo "  Next steps:"
             echo "  1. Review and merge the stub PR in Akudemy"
-            echo "  2. Restore data/exam_papers/ locally (or re-run the scraper)"
-            echo "  3. Run: ./docs/service-migrations/migrate-exam-papers.sh"
-            echo "  4. Wire data/exam_papers/ into Akudemy content API (routers/content.py)"
+            echo "  2. Trigger generate-jss-content-starters.yml (content_tier=tier1_bece) to generate exam questions in CI"
+            echo "  3. Wire data/exam_papers/ into Akudemy content API (routers/content.py)"
           fi
