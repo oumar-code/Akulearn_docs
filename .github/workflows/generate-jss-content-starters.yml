@@ -47,6 +47,14 @@ name: "JSS Content — Generate Starters and PR to Aku-Content"
 #   AKUAI_API_KEY   — API key             (default: local — any string works for local LLM)
 #   AKUAI_MODEL     — model name          (default: llama-3)
 # Leave them unset to use the local AkuAI defaults above.
+#
+# Self-hosted runner
+# ──────────────────────────────────────────────────────────────────────────────
+# When AkuAI runs on your own machine, GitHub-hosted runners cannot reach
+# http://localhost:8004.  Install a GitHub Actions self-hosted runner on the
+# same machine as AkuAI and select runner=self-hosted when triggering the
+# workflow manually.  Scheduled runs always use ubuntu-latest.
+#   Docs: https://docs.github.com/en/actions/hosting-your-own-runners
 # ──────────────────────────────────────────────────────────────────────────────
 
 on:
@@ -86,11 +94,19 @@ on:
         default: "false"
         type: choice
         options: ["false", "true"]
+      runner:
+        description: "Runner to use — choose self-hosted when AkuAI runs on your own machine"
+        required: false
+        default: "ubuntu-latest"
+        type: choice
+        options:
+          - "ubuntu-latest"   # GitHub-hosted (default); use for starters / bece / cloud LLM
+          - "self-hosted"     # Your own machine; gives direct access to localhost AkuAI
 
 jobs:
   generate:
     name: Generate JSS content and PR to Aku-Content
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.runner || 'ubuntu-latest' }}
 
     permissions:
       contents: read
