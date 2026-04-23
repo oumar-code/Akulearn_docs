@@ -184,6 +184,10 @@ async def seed_to_database(
     items: list[dict[str, Any]],
     dry_run: bool = False,
 ) -> int:
+    if dry_run:
+        print(f"  [DRY-RUN] Would insert/update {len(items)} items into database")
+        return len(items)
+
     if not DATABASE_URL:
         print("ERROR: DATABASE_URL environment variable is not set.", file=sys.stderr)
         print("Set it in .env or export it before running this script.", file=sys.stderr)
@@ -192,10 +196,6 @@ async def seed_to_database(
     if not _ASYNCPG_AVAILABLE:
         print("ERROR: asyncpg not installed. Run: pip install asyncpg", file=sys.stderr)
         sys.exit(1)
-
-    if dry_run:
-        print(f"  [DRY-RUN] Would insert/update {len(items)} items into database")
-        return len(items)
 
     conn = await asyncpg.connect(DATABASE_URL)
     try:
