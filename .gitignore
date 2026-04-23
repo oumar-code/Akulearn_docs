@@ -101,6 +101,7 @@ akulearn-linux-app/
 akulearn_microservices/
 connected_stack/
 content/
+!content/lo_catalog.json
 !akulearn-dashboard/app/content/
 !akulearn-dashboard/app/content/**
 !akulearn-dashboard/app/(dashboard)/content/
