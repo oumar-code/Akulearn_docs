@@ -31,6 +31,22 @@ name: "JSS Content — Generate Starters and PR to Aku-Content"
 # ──────────────────────────────────────────────────────────────────────────────
 # Scheduled : 3×/day at 06:00, 14:00, 22:00 UTC — runs tier1_starters automatically
 # Manual    : Actions → "JSS Content — Generate Starters and PR to Aku-Content" → Run workflow
+#
+# Recommended trigger order (manual runs)
+# ──────────────────────────────────────────────────────────────────────────────
+# 1. tier1_starters  (JSS)         → review & merge PR in Aku-Content
+# 2. tier1_generated (JSS, then SS) → review & merge PR in Aku-Content
+# 3. tier1_bece                    → review & merge PR
+# 4. tier2_flashcards              → after all Tier 1 PRs are merged
+# 5. tier2_quizzes                 → after all Tier 1 PRs are merged
+#
+# LLM / AkuAI API configuration
+# ──────────────────────────────────────────────────────────────────────────────
+# Set these repository secrets for full control:
+#   AKUAI_API_BASE  — AkuAI endpoint URL  (default: http://localhost:8004/v1)
+#   AKUAI_API_KEY   — API key             (default: local — any string works for local LLM)
+#   AKUAI_MODEL     — model name          (default: llama-3)
+# Leave them unset to use the local AkuAI defaults above.
 # ──────────────────────────────────────────────────────────────────────────────
 
 on:
@@ -86,6 +102,10 @@ jobs:
       DRY_RUN: ${{ inputs.dry_run || 'false' }}
       CONTENT_TIER: ${{ inputs.content_tier || 'tier1_starters' }}
       LEVELS: ${{ inputs.levels || 'jss1,jss2,jss3' }}
+      # AkuAI local API — override via repository secrets when using a remote endpoint
+      AKUAI_API_BASE: ${{ secrets.AKUAI_API_BASE || 'http://localhost:8004/v1' }}
+      AKUAI_API_KEY: ${{ secrets.AKUAI_API_KEY || 'local' }}
+      AKUAI_MODEL: ${{ secrets.AKUAI_MODEL || 'llama-3' }}
 
     steps:
       # ── 1. Checkout Akulearn_docs ─────────────────────────────────────────────
@@ -186,9 +206,10 @@ jobs:
       - name: "Tier 1 Generated: Run textbook generator"
         if: env.CONTENT_TIER == 'tier1_generated'
         env:
-          AKUAI_API_KEY: ${{ secrets.AKUAI_API_KEY || secrets.OPENAI_API_KEY || 'local' }}
-          AKUAI_MODEL: ${{ inputs.llm_provider == 'openai' && 'gpt-4o' || inputs.llm_provider == 'anthropic' && 'claude-3-5-sonnet-20241022' || 'llama-3' }}
-          AKUAI_API_BASE: ${{ inputs.llm_provider == 'openai' && 'https://api.openai.com/v1' || inputs.llm_provider == 'anthropic' && 'https://api.anthropic.com/v1' || 'http://localhost:8004/v1' }}
+          # Override job-level defaults when a specific cloud provider is chosen
+          AKUAI_API_BASE: ${{ inputs.llm_provider == 'openai' && 'https://api.openai.com/v1' || inputs.llm_provider == 'anthropic' && 'https://api.anthropic.com/v1' || secrets.AKUAI_API_BASE || 'http://localhost:8004/v1' }}
+          AKUAI_API_KEY: ${{ inputs.llm_provider == 'openai' && secrets.OPENAI_API_KEY || inputs.llm_provider == 'anthropic' && secrets.ANTHROPIC_API_KEY || secrets.AKUAI_API_KEY || 'local' }}
+          AKUAI_MODEL: ${{ inputs.llm_provider == 'openai' && 'gpt-4o' || inputs.llm_provider == 'anthropic' && 'claude-3-5-sonnet-20241022' || secrets.AKUAI_MODEL || 'llama-3' }}
         run: |
           TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
           BRANCH="feat/jss-textbook-chapters-$(date +%Y%m%d)"
@@ -232,8 +253,6 @@ jobs:
       # ── 5d. Tier 2 Flashcards ──────────────────────────────────────────────────
       - name: "Tier 2 Flashcards: Generate from textbook chapters"
         if: env.CONTENT_TIER == 'tier2_flashcards'
-        env:
-          AKUAI_API_KEY: ${{ secrets.AKUAI_API_KEY || 'local' }}
         run: |
           TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
           BRANCH="feat/flashcard-decks-$(date +%Y%m%d)"
@@ -253,8 +272,6 @@ jobs:
       # ── 5e. Tier 2 Quizzes ─────────────────────────────────────────────────────
       - name: "Tier 2 Quizzes: Generate from textbook chapters"
         if: env.CONTENT_TIER == 'tier2_quizzes'
-        env:
-          AKUAI_API_KEY: ${{ secrets.AKUAI_API_KEY || 'local' }}
         run: |
           TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
           BRANCH="feat/topic-quizzes-$(date +%Y%m%d)"
