@@ -1,0 +1,44 @@
+name: Firmware CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "firmware/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "firmware/**"
+
+jobs:
+  lint-and-test:
+    name: Lint and test firmware
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install pylint pytest
+
+      - name: Lint firmware Python files
+        run: |
+          pylint \
+            --disable=import-error,missing-module-docstring \
+            --max-line-length=100 \
+            firmware/**/*.py
+
+      - name: Run firmware unit tests (host-side, mocked hardware)
+        run: |
+          if find firmware -name "test_*.py" | grep -q .; then
+            pytest firmware/ -v
+          else
+            echo "ℹ️  No firmware tests found yet — skipping pytest"
+          fi

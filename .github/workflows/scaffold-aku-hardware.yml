@@ -1,0 +1,223 @@
+name: "Aku-Hardware — Apply Full Scaffold"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Pushes the complete Aku-Hardware scaffold from
+# docs/service-migrations/scaffolds/Aku-Hardware/ into the oumar-code/Aku-Hardware
+# repo and opens a pull request.
+#
+# The scaffold includes:
+#   - README.md, CONTRIBUTING.md, .gitignore
+#   - hardware/edge-hub/  — specs, BOM, wiring, assembly guide
+#   - hardware/projector/ — specs, BOM
+#   - hardware/power-system/ — solar, wind (incl. blade aerodynamics), battery, monitoring
+#   - hardware/enclosure/ — enclosure design notes
+#   - firmware/energy-monitor/ — INA3221 MicroPython firmware (main.py)
+#   - firmware/device-watchdog/ — watchdog stub
+#   - testing/ — power system and integration test procedures
+#   - docs/ — manufacturing guide, field deployment, maintenance
+#   - .github/workflows/firmware-ci.yml — CI for firmware lint/test
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# Create a repo secret named GH_PAT:
+#   Settings → Secrets and variables → Actions → New repository secret
+#   Name : GH_PAT
+#   Value: A classic Personal Access Token with scopes: repo, workflow
+#   (Generate at https://github.com/settings/tokens)
+#
+# How to trigger
+# ──────────────────────────────────────────────────────────────────────────────
+# Go to: Actions → "Aku-Hardware — Apply Full Scaffold" → Run workflow
+# Optionally tick "Dry run" to preview without making changes.
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run — preview steps without pushing anything"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+jobs:
+  scaffold:
+    name: Apply scaffold to Aku-Hardware
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read  # only reads from this repo; pushes go to Aku-Hardware via PAT
+
+    env:
+      GITHUB_ORG: oumar-code
+      TARGET_REPO: Aku-Hardware
+      BRANCH_NAME: feat/initial-hardware-scaffold
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+
+    steps:
+      # ── 1. Checkout Akulearn_docs to get the scaffold files ──────────────────
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+
+      # ── 2. Configure git identity ────────────────────────────────────────────
+      - name: Configure git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name  "github-actions[bot]"
+
+      # ── 3. Clone Aku-Hardware via PAT ─────────────────────────────────────────
+      - name: Clone Aku-Hardware
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          REPO_URL="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${TARGET_REPO}.git"
+          echo "Cloning ${GITHUB_ORG}/${TARGET_REPO}..."
+
+          # Handle the case where the repo is empty (no commits yet)
+          if git clone --depth 1 "${REPO_URL}" "${RUNNER_TEMP}/${TARGET_REPO}" 2>/dev/null; then
+            echo "✅ Cloned existing repo"
+          else
+            echo "ℹ️  Repo appears empty — initialising fresh clone"
+            mkdir -p "${RUNNER_TEMP}/${TARGET_REPO}"
+            git -C "${RUNNER_TEMP}/${TARGET_REPO}" init
+            git -C "${RUNNER_TEMP}/${TARGET_REPO}" remote add origin "${REPO_URL}"
+          fi
+          git -C "${RUNNER_TEMP}/${TARGET_REPO}" remote set-url origin "${REPO_URL}"
+
+      # ── 4. Dry-run preview ────────────────────────────────────────────────────
+      - name: Dry-run preview
+        if: inputs.dry_run == 'true'
+        run: |
+          SCAFFOLD_SRC="${GITHUB_WORKSPACE}/docs/service-migrations/scaffolds/Aku-Hardware"
+          echo "🔍 DRY-RUN mode — files that would be written:"
+          find "${SCAFFOLD_SRC}" -type f | sort | while read -r f; do
+            echo "  [dry-run] ${f#"${SCAFFOLD_SRC}/"}"
+          done
+          FILE_COUNT=$(find "${SCAFFOLD_SRC}" -type f | wc -l)
+          echo ""
+          echo "Total: ${FILE_COUNT} files"
+
+      # ── 5. Create branch and apply scaffold ──────────────────────────────────
+      - name: Apply scaffold files
+        if: inputs.dry_run != 'true'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          SCAFFOLD_SRC="${GITHUB_WORKSPACE}/docs/service-migrations/scaffolds/Aku-Hardware"
+
+          if [[ ! -d "$SCAFFOLD_SRC" ]]; then
+            echo "❌ Scaffold directory not found: ${SCAFFOLD_SRC}"
+            exit 1
+          fi
+
+          echo "📂 Scaffold source: ${SCAFFOLD_SRC}"
+          echo "📂 Target clone  : ${TARGET_CLONE}"
+
+          # Create the branch (from initial empty state or existing main)
+          git -C "${TARGET_CLONE}" checkout -b "${BRANCH_NAME}" 2>/dev/null \
+            || git -C "${TARGET_CLONE}" checkout -B "${BRANCH_NAME}"
+
+          # Copy all scaffold files
+          cp -r "${SCAFFOLD_SRC}/." "${TARGET_CLONE}/"
+
+          FILE_COUNT=$(find "${SCAFFOLD_SRC}" -type f | wc -l)
+          echo "✅ Copied ${FILE_COUNT} scaffold files:"
+          find "${SCAFFOLD_SRC}" -type f | sort | while read -r f; do
+            echo "  → ${f#"${SCAFFOLD_SRC}/"}"
+          done
+
+      # ── 6. Commit and push ────────────────────────────────────────────────────
+      - name: Commit and push
+        if: inputs.dry_run != 'true'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          cd "${TARGET_CLONE}"
+
+          git add .
+          if git diff --cached --quiet; then
+            echo "ℹ️  Nothing to commit — scaffold files may already be in place."
+            exit 0
+          fi
+
+          git commit -m "feat: add full hardware scaffold (Edge Hub, projector, power system, firmware)"
+          git push -u origin "${BRANCH_NAME}"
+          echo "✅ Pushed branch: ${BRANCH_NAME}"
+
+      # ── 7. Open pull request ──────────────────────────────────────────────────
+      - name: Open pull request
+        if: inputs.dry_run != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          PR_BODY: |
+            Initialises the Aku-Hardware repository with the complete hardware design
+            scaffold for the Aku Edge Hub, Projector module, and solar/wind hybrid
+            power system.
+
+            ## What's included
+
+            ### Hardware Design
+            - `hardware/edge-hub/` — full specification, BOM (~275 USD prototype), wiring guide, step-by-step assembly procedure
+            - `hardware/projector/` — projector selection criteria, spec table, kit BOM (~490 USD)
+            - `hardware/power-system/` — solar subsystem, wind turbine (incl. NACA 4412 blade aerodynamics), LiFePO4 battery storage, INA3221 energy monitoring
+            - `hardware/enclosure/` — IP54 ruggedised steel enclosure design, thermal management, cable gland layout
+
+            ### Firmware
+            - `firmware/energy-monitor/main.py` — production-ready MicroPython INA3221 driver for Raspberry Pi Pico; reads solar/wind/load at 1 Hz, streams JSON to Edge Hub SBC
+            - `firmware/device-watchdog/` — hardware watchdog stub (in progress)
+
+            ### Testing
+            - `testing/power-system-test.md` — 7-stage power system acceptance test with sign-off sheet
+            - `testing/edge-hub-integration-test.md` — 8-stage full integration & 24-hour soak test
+
+            ### Operational Docs
+            - `docs/manufacturing-guide.md` — IQC, sub-assembly, QC, serial number format
+            - `docs/field-deployment.md` — site survey, installation sequence, commissioning, facilitator handover
+            - `docs/maintenance.md` — monthly/quarterly/annual maintenance schedule, fault diagnosis, spare parts inventory
+
+            ### CI
+            - `.github/workflows/firmware-ci.yml` — runs `pylint` + `pytest` on firmware Python files on every PR
+
+            ## Next Steps
+            1. Merge this PR to establish the `main` branch
+            2. Add KiCad schematic and PCB files under `hardware/edge-hub/pcb/`
+            3. Add FreeCAD enclosure DXF under `hardware/enclosure/`
+            4. Complete the device watchdog firmware (`firmware/device-watchdog/main.py`)
+            5. Link hardware BOM to the active Aku-EdgeHub and Akudemy deployments
+
+            _Automated by the scaffold-aku-hardware GitHub Actions workflow._
+            Ecosystem map: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/ecosystem-map.md
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          if ! git -C "${TARGET_CLONE}" ls-remote --exit-code origin "${BRANCH_NAME}" &>/dev/null; then
+            echo "ℹ️  Branch not pushed (nothing to commit) — skipping PR creation."
+            exit 0
+          fi
+
+          gh pr create \
+            --repo "${GITHUB_ORG}/${TARGET_REPO}" \
+            --base main \
+            --head "${BRANCH_NAME}" \
+            --title "feat: initialise Aku-Hardware with full Edge Hub, power system, firmware, and testing scaffold" \
+            --body "${PR_BODY}" \
+            || echo "ℹ️  PR may already exist for this branch."
+
+      # ── 8. Summary ────────────────────────────────────────────────────────────
+      - name: Summary
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  Workflow complete"
+          echo "  Target repo : ${GITHUB_ORG}/${TARGET_REPO}"
+          echo "  Branch      : ${BRANCH_NAME}"
+          echo "  Dry run     : ${DRY_RUN}"
+          echo "════════════════════════════════════════════════════"
+          if [[ "$DRY_RUN" != "true" ]]; then
+            echo "  Next steps:"
+            echo "  1. Review and merge the PR in Aku-Hardware"
+            echo "  2. Add KiCad PCB files to hardware/edge-hub/pcb/"
+            echo "  3. Complete firmware/device-watchdog/main.py"
+            echo "  4. Push tag fw-energy-monitor-v1.0.0 to mark first firmware release"
+          fi

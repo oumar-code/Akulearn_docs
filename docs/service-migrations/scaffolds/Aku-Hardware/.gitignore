@@ -1,0 +1,47 @@
+# Byte-compiled / optimised Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# KiCad EDA artefacts
+*.kicad_prl
+*-backups/
+fp-info-cache
+*.kicad_pcb-bak
+*.sch-bak
+
+# Gerber production output (keep sources; exclude generated outputs)
+gerbers/
+output/
+
+# FreeCAD artefacts
+*.FCBak
+
+# Blender artefacts
+*.blend1
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python virtual environments
+.venv/
+venv/
+
+# Test artefacts
+.pytest_cache/
+htmlcov/
+*.log
+
+# Environment secrets
+.env
+*.env.local
