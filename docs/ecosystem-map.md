@@ -62,6 +62,12 @@ This is the single source of truth for all repositories in the Aku Platform ecos
 | `akulearn-linux-app/` (inside Akulearn_docs) | Classroom client app (Smart TV/Board, Raspberry Pi, Jetson) — syncs content from Edge Hub, AR/VR launcher, offline cache, facilitator dashboard | Kotlin Multiplatform, Compose for Desktop, linuxX64 | **⏳ Pending migration → `oumar-code/Aku-SmartBoard`** |
 | [Aku-SmartBoard](https://github.com/oumar-code/Aku-SmartBoard) | Standalone desktop app repo — linuxX64 binary, systemd service, touchscreen support | KMP + Compose Desktop | ✅ Repo created — migration in progress |
 
+### 🔧 Hardware
+
+| Repo | Role | Tech | Status |
+|------|------|------|--------|
+| [Aku-Hardware](https://github.com/oumar-code/Aku-Hardware) | Hardware design, firmware, and manufacturing docs for the Aku Edge Hub (SBC, enclosure, wiring), Projector module, and solar/wind hybrid power system; includes INA3221 MicroPython firmware, BOM, test procedures, field deployment & maintenance guides | MicroPython, KiCad (planned), FreeCAD (planned) | ✅ Repo created — scaffold applied via `scaffold-aku-hardware.yml` |
+
 ### 📚 Shared Libraries
 
 | Repo | Role | Tech | Status |

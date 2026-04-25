@@ -30,6 +30,7 @@ Welcome to the Akulearn documentation repository! This space contains all offici
 | [AkuWorkspace](https://github.com/oumar-code/AkuWorkspace) | AI-Native Productivity Suite |
 | [Aku-DaaS](https://github.com/oumar-code/Aku-DaaS) | Data governance — anonymised datasets, IG-Hub publishing |
 | [Aku-Telhone](https://github.com/oumar-code/Aku-Telhone) | eSIM provisioning — OTA SIM lifecycle, MVNO (Telhone brand) |
+| [Aku-Hardware](https://github.com/oumar-code/Aku-Hardware) | Edge Hub hardware design, power system, firmware (INA3221), test procedures |
 
 ### Frontend (canonical: this monorepo)
 
