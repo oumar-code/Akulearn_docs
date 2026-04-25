@@ -112,6 +112,7 @@ diagrams/
 examples/
 hardware/
 !docs/hardware/
+!docs/service-migrations/scaffolds/Aku-Hardware/hardware/
 hardware_integration/
 infra/
 infrastructure/
