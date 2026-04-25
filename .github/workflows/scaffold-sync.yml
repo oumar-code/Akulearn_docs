@@ -195,7 +195,13 @@ jobs:
             # --force-with-lease is unreliable in shallow clones when the remote
             # branch was fetched separately (causes "stale info" rejection).
             echo "│  Step 2: Create/reset branch ${BRANCH_NAME}"
-            git -C "${TARGET_CLONE}" checkout -B "${BRANCH_NAME}" HEAD
+            if git -C "${TARGET_CLONE}" rev-parse --verify HEAD &>/dev/null; then
+              git -C "${TARGET_CLONE}" checkout -B "${BRANCH_NAME}" HEAD
+            else
+              # Empty repo — no commits yet, so HEAD is not a valid ref.
+              # Create an orphan branch so we can still push scaffold files.
+              git -C "${TARGET_CLONE}" checkout --orphan "${BRANCH_NAME}"
+            fi
 
             # Overlay the scaffold files
             echo "│  Step 3: Overlay scaffold files"
