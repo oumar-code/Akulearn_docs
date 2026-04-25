@@ -78,7 +78,11 @@ def main() -> None:
     # Verify device present
     devices = i2c.scan()
     if _INA3221_ADDR not in devices:
-        print(json.dumps({"error": "INA3221 not found", "scanned": devices}))
+        print(json.dumps({
+            "error": "INA3221 not found at 0x40",
+            "scanned": devices,
+            "hint": "Check I\u00b2C wiring: SDA→GP4, SCL→GP5, VCC→3V3, GND→GND; confirm A0/A1 tied to GND",
+        }))
         return
 
     # Write config register (enable all channels, continuous mode)
