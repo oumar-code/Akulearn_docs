@@ -59,6 +59,12 @@ jobs:
       DRY_RUN: ${{ inputs.dry_run || 'false' }}
 
     steps:
+      # ── 0. Checkout default branch to obtain workflow helper scripts ──────────
+      - name: Checkout workflow helpers (default branch)
+        uses: actions/checkout@v4
+        with:
+          path: _wf_helpers
+
       # ── 1. Checkout Akulearn_docs at the source branch ────────────────────────
       - name: Checkout Akulearn_docs at source branch
         uses: actions/checkout@v4
@@ -147,7 +153,9 @@ jobs:
           fi
 
           # Delegate to helper script to avoid YAML/heredoc indentation incompatibility
-          bash "${GITHUB_WORKSPACE}/docs/service-migrations/write-akudemy-scripts-readme.sh" "${TARGET_CLONE}"
+          # Use the copy checked out from the default branch (_wf_helpers) so this step
+          # works regardless of whether the user-supplied source_branch contains the script.
+          bash "${GITHUB_WORKSPACE}/_wf_helpers/docs/service-migrations/write-akudemy-scripts-readme.sh" "${TARGET_CLONE}"
 
       # ── 7. Commit and push ────────────────────────────────────────────────────
       - name: Commit and push
