@@ -37,7 +37,7 @@ on:
       services:
         description: >
           Space-separated list of service repos to sync.
-          Leave empty to sync all 9 backend services.
+          Leave empty to sync all 10 backend services.
         required: false
         default: ""
       dry_run:
@@ -59,8 +59,8 @@ jobs:
       GITHUB_ORG: oumar-code
       BRANCH_NAME: feat/scaffold-sync
       SCAFFOLDS_DIR: docs/service-migrations/scaffolds
-      # All 9 backend services (used as the default when no override is given)
-      ALL_SERVICES: "AkuAI Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub AkuTutor AkuWorkspace Aku-DaaS"
+      # All 10 backend services (used as the default when no override is given)
+      ALL_SERVICES: "AkuAI Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub AkuTutor AkuWorkspace Aku-DaaS Aku-Hardware"
       DRY_RUN: ${{ inputs.dry_run || 'false' }}
       GH_TOKEN: ${{ secrets.GH_PAT }}
 
@@ -195,7 +195,7 @@ jobs:
             # --force-with-lease is unreliable in shallow clones when the remote
             # branch was fetched separately (causes "stale info" rejection).
             echo "│  Step 2: Create/reset branch ${BRANCH_NAME}"
-            if git -C "${TARGET_CLONE}" rev-parse --verify HEAD &>/dev/null; then
+            if git -C "${TARGET_CLONE}" log -1 &>/dev/null; then
               git -C "${TARGET_CLONE}" checkout -B "${BRANCH_NAME}" HEAD
             else
               # Empty repo — no commits yet, so HEAD is not a valid ref.
