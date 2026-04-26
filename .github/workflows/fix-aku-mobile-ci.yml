@@ -1,0 +1,165 @@
+name: "Aku-Mobile — Fix CI"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Opens a pull request to oumar-code/Aku-Mobile that fixes three CI blockers:
+#
+#  1. gradlew executable bit — `git update-index --chmod=+x` so the Linux runner
+#     can invoke Gradle. Every CI job also adds `chmod +x gradlew` as a
+#     belt-and-suspenders safeguard against the bit being lost in future commits.
+#
+#  2. Windows-only JDK path — `gradle.properties` currently contains
+#     `org.gradle.java.home=C:\Program Files\Android\Android Studio\jbr` which
+#     crashes Gradle on Linux runners because that path does not exist.
+#     The fixed gradle.properties (in docs/service-migrations/scaffolds/Aku-Mobile/)
+#     removes this line; `JAVA_HOME` set by actions/setup-java is sufficient.
+#
+#  3. Expanded CI pipeline — the updated build.yml:
+#       • adds `chmod +x gradlew` to every job  (fix #1 defence-in-depth)
+#       • builds :androidApp:assembleDebug and uploads the APK as an artifact
+#       • on `v*` tag pushes: builds release APK and attaches it to a GitHub Release
+#         so early users can sideload it without a Play Store listing
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# A repo secret named GH_PAT must exist in Akulearn_docs:
+#   Settings → Secrets and variables → Actions → New repository secret
+#   Name : GH_PAT
+#   Value: A classic Personal Access Token with scopes: repo, workflow
+#
+# The same PAT is already used by scaffold-sync.yml and other cross-repo
+# workflows in this repository.
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fix-aku-mobile-ci:
+    name: Apply CI fixes to Aku-Mobile and open PR
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      REPO: oumar-code/Aku-Mobile
+      BRANCH: fix/ci-gradlew-android-pipeline
+      CLONE_DIR: /tmp/aku-mobile
+      SCAFFOLDS_DIR: docs/service-migrations/scaffolds/Aku-Mobile
+
+    steps:
+      # ── 1. Checkout Akulearn_docs to read scaffold files ─────────────────────
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+        with:
+          path: akulearn-docs
+
+      # ── 2. Configure git identity ────────────────────────────────────────────
+      - name: Configure git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name  "github-actions[bot]"
+
+      # ── 3. Clone Aku-Mobile ──────────────────────────────────────────────────
+      # gh repo clone uses GH_TOKEN from the environment — no token in URLs.
+      - name: Clone Aku-Mobile
+        run: gh repo clone "$REPO" "${CLONE_DIR}" -- --depth 1
+
+      # ── 4. Checkout fix branch ───────────────────────────────────────────────
+      - name: Create fix branch
+        working-directory: ${{ env.CLONE_DIR }}
+        run: git checkout -B "$BRANCH"
+
+      # ── 5. Fix gradlew executable bit in git ─────────────────────────────────
+      # This ensures `./gradlew` is executable when GitHub clones the repo.
+      # Equivalent to the one-time local command:
+      #   git update-index --chmod=+x "KOTLIN MULTIPLATFORM/gradlew"
+      - name: Fix gradlew executable bit
+        working-directory: ${{ env.CLONE_DIR }}
+        run: git update-index --chmod=+x "KOTLIN MULTIPLATFORM/gradlew"
+
+      # ── 6. Overlay scaffold files ────────────────────────────────────────────
+      # Copies the two fixed files from this repo's scaffold directory:
+      #   • .github/workflows/build.yml              (updated CI pipeline)
+      #   • KOTLIN MULTIPLATFORM/gradle.properties   (Windows JDK path removed)
+      - name: Overlay scaffold files onto Aku-Mobile
+        run: |
+          SCAFFOLD_SRC="${GITHUB_WORKSPACE}/akulearn-docs/${SCAFFOLDS_DIR}"
+          echo "Overlaying files from: ${SCAFFOLD_SRC}"
+          cp -rv "${SCAFFOLD_SRC}/." "${CLONE_DIR}/"
+
+      # ── 7. Commit all changes ─────────────────────────────────────────────────
+      - name: Commit fixes
+        working-directory: ${{ env.CLONE_DIR }}
+        run: |
+          git add .
+          echo "=== Changed files ==="
+          git diff --cached --stat
+          git commit -m \
+            "fix: gradlew permissions, remove Windows JDK path, add androidApp build + APK artifact"
+
+      # ── 8. Push fix branch ────────────────────────────────────────────────────
+      - name: Push fix branch
+        working-directory: ${{ env.CLONE_DIR }}
+        run: git push -u origin "$BRANCH" --force
+
+      # ── 9. Open (or update) pull request ─────────────────────────────────────
+      - name: Open pull request
+        run: |
+          PR_BODY="## What this PR fixes
+
+          ### 1. \`gradlew\` executable bit (root cause of all CI failures)
+          The error \`./gradlew: Permission denied\` (exit code 126) occurs because the file was
+          committed without the executable bit. This is fixed by:
+          - \`git update-index --chmod=+x \"KOTLIN MULTIPLATFORM/gradlew\"\` — stores the bit in git permanently
+          - \`chmod +x gradlew\` step added to every CI job as a belt-and-suspenders safeguard
+
+          ### 2. Windows-only JDK path removed from \`gradle.properties\`
+          The line \`org.gradle.java.home=C:\\Program Files\\Android\\Android Studio\\jbr\`
+          causes Gradle to crash on Linux CI runners (path does not exist).
+          Removed — \`actions/setup-java\` already sets \`JAVA_HOME\` correctly.
+
+          ### 3. Expanded CI pipeline
+          - Adds \`:androidApp:assembleDebug\` step after \`:shared:assembleDebug\`
+          - Uploads the debug APK as a GitHub Actions artifact (\`akulearn-debug-apk\`, 14-day retention) — downloadable from the run summary immediately
+          - New \`release-apk\` job: triggered when a \`v*\` tag is pushed, builds an unsigned release APK and attaches it to a GitHub Release automatically
+
+          ## How to get the app to early users (after merging this PR)
+          1. Merge this PR and confirm CI passes on \`main\`
+          2. Push a version tag: \`git tag v0.1.0 && git push origin v0.1.0\`
+          3. CI builds the release APK and attaches it to a GitHub Release automatically
+          4. Share the Releases page link — testers download and sideload the APK on Android
+          5. For managed beta distribution, integrate Firebase App Distribution into the \`release-apk\` job
+
+          ## iOS note
+          The \`build-ios\` job validates the KMP shared framework compiles on macOS.
+          Distributing to iOS users requires an Apple Developer account (\$99/yr) for TestFlight/App Store — plan this as a follow-up sprint.
+
+          ---
+          _Automated by the \`fix-aku-mobile-ci\` workflow in [oumar-code/Akulearn_docs](https://github.com/oumar-code/Akulearn_docs)_"
+
+          # Try to create the PR; if it already exists, fall through gracefully.
+          gh pr create \
+            --repo "$REPO" \
+            --base main \
+            --head "$BRANCH" \
+            --title "fix: Android CI — gradlew permissions + remove Windows JDK path + APK artifact" \
+            --body "$PR_BODY" \
+          && echo "Pull request created successfully." \
+          || {
+            EXIT_CODE=$?
+            # A non-zero exit from gh pr create is expected when the PR already
+            # exists. Check for that before treating it as a real error.
+            EXISTING_PR=$(gh pr list \
+              --repo "$REPO" \
+              --head "$BRANCH" \
+              --json number \
+              --jq '.[0].number' 2>/dev/null || true)
+            if [ -n "$EXISTING_PR" ]; then
+              echo "PR #${EXISTING_PR} already exists — branch has been updated with the latest fixes."
+            else
+              echo "ERROR: gh pr create failed with exit code ${EXIT_CODE} and no existing PR was found."
+              exit $EXIT_CODE
+            fi
+          }
