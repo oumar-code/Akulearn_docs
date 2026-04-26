@@ -160,7 +160,14 @@ jobs:
         run: |
           TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
           BRANCH="feat/jss-content-starters-$(date +%Y%m%d)"
-          git -C "${TARGET_CLONE}" checkout -b "${BRANCH}"
+          # If the branch already exists on remote (same-day re-run), fetch and
+          # reset to it so the subsequent push can use --force-with-lease.
+          if git -C "${TARGET_CLONE}" ls-remote --exit-code origin "${BRANCH}" &>/dev/null; then
+            git -C "${TARGET_CLONE}" fetch origin "${BRANCH}"
+            git -C "${TARGET_CLONE}" checkout -B "${BRANCH}" "origin/${BRANCH}"
+          else
+            git -C "${TARGET_CLONE}" checkout -b "${BRANCH}"
+          fi
           echo "BRANCH_NAME=${BRANCH}" >> "${GITHUB_ENV}"
 
           # Create target directory structure
@@ -320,7 +327,7 @@ jobs:
 
           COMMIT_MSG="feat: ${CONTENT_TIER} content bundle — $(date +%Y-%m-%d)"
           git commit -m "${COMMIT_MSG}"
-          git push -u origin "${BRANCH_NAME}"
+          git push --force-with-lease -u origin "${BRANCH_NAME}"
           echo "✅ Pushed branch: ${BRANCH_NAME}"
 
       # ── 7. Open pull request ──────────────────────────────────────────────────
