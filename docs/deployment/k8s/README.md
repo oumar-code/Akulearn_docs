@@ -10,6 +10,7 @@ Raw Kubernetes manifests for deploying all 9 Aku Platform backend services to a 
 docs/deployment/k8s/
 ├── README.md           ← this file
 ├── namespace.yaml      ← shared Namespace (aku-platform)
+├── secrets.yaml        ← Secret templates for all 9 services (placeholder values only)
 ├── akuai.yaml          ← AkuAI: Deployment + Service + ConfigMap
 ├── akudemy.yaml        ← Akudemy
 ├── aku-edgehub.yaml    ← Aku-EdgeHub
@@ -54,15 +55,21 @@ kubectl create secret docker-registry ghcr-pull-secret \
   --docker-username=<github-username> \
   --docker-password=<github-pat-with-read:packages>
 
-# 3. Create service secrets (adjust values before running)
-#    Each service expects a Secret named <service>-secret with keys:
-#      DATABASE_URL, REDIS_URL, and any service-specific API keys.
-#    Example for AkuAI:
+# 3. Create service secrets.
+#
+#    Option A — apply the template file (replace every CHANGE_ME placeholder first):
+#      Edit docs/deployment/k8s/secrets.yaml, then:
+kubectl apply -f docs/deployment/k8s/secrets.yaml
+#
+#    Option B — create each secret imperatively (shown here for AkuAI):
 kubectl create secret generic akuai-secret \
   --namespace aku-platform \
-  --from-literal=DATABASE_URL="postgresql+asyncpg://akuai:CHANGE_ME@postgres:5432/akuai" \
+  --from-literal=DATABASE_URL="postgresql+asyncpg://akuai:CHANGE_ME@postgres:5432/aku_platform" \
   --from-literal=REDIS_URL="redis://redis:6379/2" \
   --from-literal=AKUAI_API_SECRET="CHANGE_ME_IN_PRODUCTION"
+#
+#    Option C (production) — use an external secrets manager (HashiCorp Vault,
+#      AWS Secrets Manager, GCP Secret Manager) with the External Secrets Operator.
 
 # 4. Apply all service manifests
 kubectl apply -f docs/deployment/k8s/
@@ -127,19 +134,19 @@ All Services expose port **80** externally (within the cluster) and forward to t
 
 ## Secrets Reference
 
-Each service Deployment mounts a `<service>-secret` Secret. The required keys are:
+Each service Deployment mounts a `<service>-secret` Secret. The required keys are listed below. Placeholder YAML for all secrets lives in [`secrets.yaml`](./secrets.yaml) — copy it, replace every `CHANGE_ME` value, and apply with `kubectl apply -f docs/deployment/k8s/secrets.yaml`.
 
 | Service | Required Secret Keys |
 |---------|---------------------|
-| **AkuAI** | `DATABASE_URL`, `REDIS_URL`, `AKUAI_API_SECRET` |
-| **Akudemy** | `DATABASE_URL`, `REDIS_URL` |
-| **Aku-EdgeHub** | `DATABASE_URL`, `REDIS_URL` |
-| **Aku-IGHub** | `DATABASE_URL`, `REDIS_URL`, `IGHUB_JWT_SECRET` |
-| **Aku-SuperHub** | `DATABASE_URL`, `REDIS_URL` |
+| **AkuAI** | `DATABASE_URL`, `REDIS_URL`, `AKUAI_API_SECRET`, `HUGGINGFACE_TOKEN` *(optional)*, `OPENAI_API_KEY` *(optional)*, `ANTHROPIC_API_KEY` *(optional)*, `GOOGLE_API_KEY` *(optional)* |
+| **Akudemy** | `DATABASE_URL`, `REDIS_URL`, `EDGE_HUB_SHARED_SECRET`, `POLYGON_RPC_URL`, `POLYGON_PRIVATE_KEY`, `POLYGON_ISSUER_ADDRESS`, `CREDENTIAL_CONTRACT_ADDRESS`, `SUPABASE_URL` *(optional)*, `SUPABASE_SERVICE_ROLE_KEY` *(optional)* |
+| **Aku-EdgeHub** | `DATABASE_URL`, `REDIS_URL`, `AKUDEMY_API_KEY`, `AKUAI_API_KEY` |
+| **Aku-IGHub** | `DATABASE_URL`, `REDIS_URL`, `IGHUB_JWT_SECRET`, `JWT_ALGORITHM` |
+| **Aku-SuperHub** | `DATABASE_URL`, `REDIS_URL`, `JWT_SECRET_KEY`, `AKU_PLATFORM_API_KEY`, `ML_PIPELINE_API_KEY` |
 | **AkuTutor** | `DATABASE_URL`, `REDIS_URL` |
 | **AkuWorkspace** | `DATABASE_URL`, `REDIS_URL` |
-| **Aku-Telhone** | `DATABASE_URL`, `REDIS_URL` |
-| **Aku-DaaS** | `DATABASE_URL`, `REDIS_URL` |
+| **Aku-Telhone** | `DATABASE_URL`, `REDIS_URL`, `SMDP_API_KEY`, `OTA_PLATFORM_API_KEY`, `AKU_IGHUB_API_KEY`, `JWT_SECRET_KEY`, `JWT_ALGORITHM` |
+| **Aku-DaaS** | `DATABASE_URL`, `REDIS_URL`, `IGHUB_SERVICE_TOKEN`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_ENDPOINT_URL` *(optional for MinIO)* |
 
 > **Never commit real secret values to this repository.** Use `kubectl create secret` or a secrets manager (Vault, AWS Secrets Manager, GCP Secret Manager) to inject secrets at deploy time.
 
