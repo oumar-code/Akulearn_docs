@@ -62,9 +62,14 @@ jobs:
           git config --global user.name  "github-actions[bot]"
 
       # ── 3. Clone Aku-Mobile ──────────────────────────────────────────────────
-      # gh repo clone uses GH_TOKEN from the environment — no token in URLs.
+      # Clone using an authenticated HTTPS URL so that the subsequent git push
+      # step can push without being prompted for credentials (which fails in CI
+      # because there is no TTY to read from).
       - name: Clone Aku-Mobile
-        run: gh repo clone "$REPO" "${CLONE_DIR}" -- --depth 1
+        run: |
+          REPO_URL="https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git"
+          git clone --depth 1 "${REPO_URL}" "${CLONE_DIR}"
+          git -C "${CLONE_DIR}" remote set-url origin "${REPO_URL}"
 
       # ── 4. Checkout fix branch ───────────────────────────────────────────────
       - name: Create fix branch
