@@ -20,6 +20,20 @@ jobs:
     permissions:
       contents: read
     steps:
+      - name: Verify Vercel secrets are configured
+        run: |
+          MISSING=()
+          [[ -z "${{ secrets.VERCEL_TOKEN }}" ]]      && MISSING+=("VERCEL_TOKEN")
+          [[ -z "${{ secrets.VERCEL_ORG_ID }}" ]]     && MISSING+=("VERCEL_ORG_ID")
+          [[ -z "${{ secrets.VERCEL_PROJECT_ID }}" ]] && MISSING+=("VERCEL_PROJECT_ID")
+          if [[ ${#MISSING[@]} -gt 0 ]]; then
+            echo "❌ Missing required Vercel secrets: ${MISSING[*]}"
+            echo "   Go to: Settings → Secrets and variables → Actions"
+            echo "   and add each missing secret (from your Vercel project dashboard)."
+            exit 1
+          fi
+          echo "✅ All required Vercel secrets are set"
+
       - name: Checkout repository
         uses: actions/checkout@v4
 

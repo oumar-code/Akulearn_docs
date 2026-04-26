@@ -1,0 +1,59 @@
+[submodule "AkuAI"]
+	path = AkuAI
+	url = https://github.com/oumar-code/AkuAI.git
+
+[submodule "AkuTutor"]
+	path = AkuTutor
+	url = https://github.com/oumar-code/AkuTutor.git
+
+[submodule "AkuWorkspace"]
+	path = AkuWorkspace
+	url = https://github.com/oumar-code/AkuWorkspace.git
+
+[submodule "Akudemy"]
+	path = Akudemy
+	url = https://github.com/oumar-code/Akudemy.git
+
+[submodule "Aku-SuperHub"]
+	path = Aku-SuperHub
+	url = https://github.com/oumar-code/Aku-SuperHub.git
+
+[submodule "Aku-Telhone"]
+	path = Aku-Telhone
+	url = https://github.com/oumar-code/Aku-Telhone.git
+
+[submodule "EdgeHub"]
+	path = EdgeHub
+	url = https://github.com/oumar-code/Aku-EdgeHub.git
+
+[submodule "IGHub"]
+	path = IGHub
+	url = https://github.com/oumar-code/Aku-IGHub.git
+
+[submodule "DaaS"]
+	path = DaaS
+	url = https://github.com/oumar-code/Aku-DaaS.git
+
+[submodule "aku-platform-contracts"]
+	path = aku-platform-contracts
+	url = https://github.com/oumar-code/aku-platform-contracts.git
+
+[submodule "akulearn-dashboard/clean-test"]
+	path = akulearn-dashboard/clean-test
+	url = https://github.com/oumar-code/Akulearn-dashboard.git
+
+[submodule "github_addons/BlenderGIS"]
+	path = github_addons/BlenderGIS
+	url = https://github.com/domlysz/BlenderGIS.git
+
+[submodule "github_addons/UvSquares"]
+	path = github_addons/UvSquares
+	url = https://github.com/Radivarig/UvSquares.git
+
+[submodule "github_addons/blender-cli-rendering"]
+	path = github_addons/blender-cli-rendering
+	url = https://github.com/yuki-koyama/blender-cli-rendering.git
+
+[submodule "github_addons/uhlik-bpy"]
+	path = github_addons/uhlik-bpy
+	url = https://github.com/uhlik/bpy.git
