@@ -1,0 +1,88 @@
+name: "Notify Akulearn_docs — JSS tier PR merged"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Fires a repository_dispatch event to oumar-code/Akulearn_docs whenever a
+# feat/jss-* branch is merged into main.  This triggers jss-content-tier-chain.yml
+# in Akulearn_docs, which automatically runs the next content generation tier.
+#
+# Tier chain:
+#   tier1_starters  → tier1_generated
+#   tier1_generated → tier1_bece
+#   tier1_bece      → tier2_flashcards
+#   tier2_flashcards → tier2_quizzes
+#   tier2_quizzes   → (done)
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# Add a secret named AKULEARN_DOCS_PAT in oumar-code/Aku-Content:
+#   Settings → Secrets and variables → Actions → New repository secret
+#   Name : AKULEARN_DOCS_PAT
+#   Value: A classic PAT with scopes: repo  (no workflow scope needed here)
+#          Generate at https://github.com/settings/tokens
+#
+# How this gets installed
+# ──────────────────────────────────────────────────────────────────────────────
+# This file is stored as pipeline/aku-content-notify-dispatch.yml in Akulearn_docs.
+# Run jss-content-tier-chain.yml with install_notifier=true to push it to Aku-Content
+# as .github/workflows/notify-jss-tier-merged.yml.
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+jobs:
+  notify:
+    name: Dispatch jss-content-pr-merged to Akulearn_docs
+    # Only run when the PR was actually merged and the branch is a JSS content branch
+    if: >
+      github.event.pull_request.merged == true && (
+        startsWith(github.event.pull_request.head.ref, 'feat/jss-') ||
+        startsWith(github.event.pull_request.head.ref, 'feat/bece-') ||
+        startsWith(github.event.pull_request.head.ref, 'feat/flashcard-') ||
+        startsWith(github.event.pull_request.head.ref, 'feat/topic-quizzes-')
+      )
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Determine merged tier from branch name
+        id: tier
+        run: |
+          BRANCH="${{ github.event.pull_request.head.ref }}"
+          case "${BRANCH}" in
+            feat/jss-content-starters-*)   echo "merged_tier=tier1_starters"   >> "${GITHUB_OUTPUT}" ;;
+            feat/jss-textbook-chapters-*)  echo "merged_tier=tier1_generated"  >> "${GITHUB_OUTPUT}" ;;
+            feat/bece-exam-questions-*)    echo "merged_tier=tier1_bece"        >> "${GITHUB_OUTPUT}" ;;
+            feat/flashcard-decks-*)        echo "merged_tier=tier2_flashcards"  >> "${GITHUB_OUTPUT}" ;;
+            feat/topic-quizzes-*)          echo "merged_tier=tier2_quizzes"     >> "${GITHUB_OUTPUT}" ;;
+            *)
+              echo "⚠️  Branch '${BRANCH}' does not match any known JSS tier pattern — skipping dispatch." \
+                >> "${GITHUB_STEP_SUMMARY}"
+              exit 0
+              ;;
+          esac
+          echo "  Branch      : ${BRANCH}"
+          echo "  Merged tier : $(grep merged_tier ${GITHUB_OUTPUT} | cut -d= -f2)"
+
+      - name: Dispatch jss-content-pr-merged to Akulearn_docs
+        if: steps.tier.outputs.merged_tier != ''
+        env:
+          GH_TOKEN: ${{ secrets.AKULEARN_DOCS_PAT }}
+        run: |
+          if gh api \
+            --method POST \
+            -H "Accept: application/vnd.github+json" \
+            /repos/oumar-code/Akulearn_docs/dispatches \
+            -f event_type="jss-content-pr-merged" \
+            -f "client_payload[merged_tier]=${{ steps.tier.outputs.merged_tier }}" \
+            -f "client_payload[levels]=jss1,jss2,jss3" \
+            -f "client_payload[pr_number]=${{ github.event.pull_request.number }}" \
+            -f "client_payload[branch]=${{ github.event.pull_request.head.ref }}"; then
+            echo "✅ Dispatched jss-content-pr-merged (tier: ${{ steps.tier.outputs.merged_tier }}) to Akulearn_docs"
+          else
+            echo "❌ Dispatch failed — ensure AKULEARN_DOCS_PAT secret is set with 'repo' scope"
+            exit 1
+          fi
