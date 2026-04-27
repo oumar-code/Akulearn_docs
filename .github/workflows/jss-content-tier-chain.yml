@@ -188,7 +188,7 @@ jobs:
 
           # Bail out if the notifier is already installed on main
           if git -C "${TARGET_CLONE}" show "origin/main:.github/workflows/notify-jss-tier-merged.yml" \
-              &>/dev/null 2>&1; then
+              &>/dev/null; then
             echo "ℹ️  Notifier workflow is already on main in Aku-Content — nothing to do."
             exit 0
           fi

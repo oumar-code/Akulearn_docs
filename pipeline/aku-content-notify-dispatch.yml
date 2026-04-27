@@ -72,7 +72,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.AKULEARN_DOCS_PAT }}
         run: |
-          gh api \
+          if gh api \
             --method POST \
             -H "Accept: application/vnd.github+json" \
             /repos/oumar-code/Akulearn_docs/dispatches \
@@ -80,6 +80,9 @@ jobs:
             -f "client_payload[merged_tier]=${{ steps.tier.outputs.merged_tier }}" \
             -f "client_payload[levels]=jss1,jss2,jss3" \
             -f "client_payload[pr_number]=${{ github.event.pull_request.number }}" \
-            -f "client_payload[branch]=${{ github.event.pull_request.head.ref }}" \
-          && echo "✅ Dispatched jss-content-pr-merged (tier: ${{ steps.tier.outputs.merged_tier }}) to Akulearn_docs" \
-          || { echo "❌ Dispatch failed — ensure AKULEARN_DOCS_PAT secret is set with 'repo' scope"; exit 1; }
+            -f "client_payload[branch]=${{ github.event.pull_request.head.ref }}"; then
+            echo "✅ Dispatched jss-content-pr-merged (tier: ${{ steps.tier.outputs.merged_tier }}) to Akulearn_docs"
+          else
+            echo "❌ Dispatch failed — ensure AKULEARN_DOCS_PAT secret is set with 'repo' scope"
+            exit 1
+          fi
