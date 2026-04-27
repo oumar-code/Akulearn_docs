@@ -29,8 +29,8 @@ name: "JSS Content — Generate Starters and PR to Aku-Content"
 #
 # How to trigger
 # ──────────────────────────────────────────────────────────────────────────────
-# Scheduled : 3×/day at 06:00, 14:00, 22:00 UTC — runs tier1_starters automatically
 # Manual    : Actions → "JSS Content — Generate Starters and PR to Aku-Content" → Run workflow
+# Auto      : jss-content-tier-chain.yml fires this workflow after each tier PR is merged
 #
 # Recommended trigger order (manual runs)
 # ──────────────────────────────────────────────────────────────────────────────
@@ -53,14 +53,12 @@ name: "JSS Content — Generate Starters and PR to Aku-Content"
 # When AkuAI runs on your own machine, GitHub-hosted runners cannot reach
 # http://localhost:8004.  Install a GitHub Actions self-hosted runner on the
 # same machine as AkuAI and select runner=self-hosted when triggering the
-# workflow manually.  Scheduled runs always use ubuntu-latest.
+# workflow manually.  The jss-content-tier-chain.yml chainer always uses ubuntu-latest
+# unless you override it here.
 #   Docs: https://docs.github.com/en/actions/hosting-your-own-runners
 # ──────────────────────────────────────────────────────────────────────────────
 
 on:
-  schedule:
-    - cron: '0 6,14,22 * * *'   # 3×/day: 06:00, 14:00, 22:00 UTC
-
   workflow_dispatch:
     inputs:
       content_tier:
@@ -164,7 +162,7 @@ jobs:
           # reset to it so the subsequent push can use --force-with-lease.
           if git -C "${TARGET_CLONE}" ls-remote --exit-code origin "${BRANCH}" &>/dev/null; then
             git -C "${TARGET_CLONE}" fetch origin "${BRANCH}"
-            git -C "${TARGET_CLONE}" checkout -B "${BRANCH}" "origin/${BRANCH}"
+            git -C "${TARGET_CLONE}" checkout -B "${BRANCH}" FETCH_HEAD
           else
             git -C "${TARGET_CLONE}" checkout -b "${BRANCH}"
           fi

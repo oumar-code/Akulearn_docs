@@ -1,0 +1,249 @@
+name: "JSS Content — Tier Chain (auto-advance on PR merge)"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Listens for a repository_dispatch event fired by Aku-Content whenever a
+# feat/jss-* PR is merged there (via pipeline/aku-content-notify-dispatch.yml).
+# Determines the next content tier and triggers generate-jss-content-starters.yml
+# automatically, keeping Akulearn_docs as the sole orchestrator.
+#
+# Tier progression:
+#   tier1_starters   → tier1_generated   (LLM textbook chapters)
+#   tier1_generated  → tier1_bece        (BECE exam questions)
+#   tier1_bece       → tier2_flashcards  (flashcard decks)
+#   tier2_flashcards → tier2_quizzes     (topic quizzes)
+#   tier2_quizzes    → (pipeline complete)
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# 1. GH_PAT secret — PAT with repo + workflow scopes (already used by other workflows)
+# 2. Aku-Content must have pipeline/aku-content-notify-dispatch.yml installed as
+#    .github/workflows/notify-jss-tier-merged.yml  (run this workflow with
+#    install_notifier=true to do the one-time setup, then merge the resulting PR)
+# 3. Aku-Content must have an AKULEARN_DOCS_PAT secret with 'repo' scope so the
+#    notifier can fire repository_dispatch back to this repo
+#
+# How to trigger
+# ──────────────────────────────────────────────────────────────────────────────
+# Automatic : Aku-Content fires repository_dispatch after each feat/jss-* PR merge
+# Manual    : Actions → "JSS Content — Tier Chain" → Run workflow
+#             (useful for testing or re-running a tier after a failed step)
+# One-time  : Run with install_notifier=true to push the notifier workflow to
+#             Aku-Content (only needs to be done once per environment setup)
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  # Primary trigger — fired by pipeline/aku-content-notify-dispatch.yml in Aku-Content
+  repository_dispatch:
+    types: [jss-content-pr-merged]
+
+  # Manual trigger — for testing, re-running, or one-time notifier installation
+  workflow_dispatch:
+    inputs:
+      merged_tier:
+        description: "Tier that was just merged in Aku-Content"
+        required: true
+        default: "tier1_starters"
+        type: choice
+        options:
+          - "tier1_starters"
+          - "tier1_generated"
+          - "tier1_bece"
+          - "tier2_flashcards"
+          - "tier2_quizzes"
+      levels:
+        description: "Class levels (comma-separated: jss1,jss2,jss3,ss1,ss2,ss3)"
+        required: false
+        default: "jss1,jss2,jss3"
+        type: string
+      llm_provider:
+        description: "LLM provider for tier1_generated step"
+        required: false
+        default: "akuai_local"
+        type: choice
+        options:
+          - "akuai_local"
+          - "openai"
+          - "anthropic"
+      install_notifier:
+        description: "One-time setup: push the notifier workflow to Aku-Content"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+jobs:
+  # ────────────────────────────────────────────────────────────────────────────
+  # Job 1: Advance to next content tier
+  # ────────────────────────────────────────────────────────────────────────────
+  advance-tier:
+    name: Advance to next content tier
+    runs-on: ubuntu-latest
+    # Skip this job when the workflow is only being used to install the notifier
+    if: inputs.install_notifier != 'true'
+
+    permissions:
+      contents: read
+
+    env:
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      GITHUB_ORG: oumar-code
+
+    steps:
+      - name: Determine merged tier and next tier
+        id: tier
+        run: |
+          # Support both repository_dispatch (client_payload) and workflow_dispatch (inputs)
+          MERGED="${{ github.event.client_payload.merged_tier || inputs.merged_tier }}"
+          LEVELS="${{ github.event.client_payload.levels || inputs.levels || 'jss1,jss2,jss3' }}"
+          LLM="${{ github.event.client_payload.llm_provider || inputs.llm_provider || 'akuai_local' }}"
+
+          echo "  Event       : ${{ github.event_name }}"
+          echo "  Merged tier : ${MERGED}"
+          echo "  Levels      : ${LEVELS}"
+          echo "  LLM         : ${LLM}"
+
+          case "${MERGED}" in
+            tier1_starters)   NEXT="tier1_generated"  ;;
+            tier1_generated)  NEXT="tier1_bece"        ;;
+            tier1_bece)       NEXT="tier2_flashcards"  ;;
+            tier2_flashcards) NEXT="tier2_quizzes"     ;;
+            tier2_quizzes)
+              echo "✅ All tiers complete — nothing further to trigger." >> "${GITHUB_STEP_SUMMARY}"
+              exit 0
+              ;;
+            *)
+              echo "❌ Unknown merged_tier value: '${MERGED}'"
+              exit 1
+              ;;
+          esac
+
+          echo "MERGED_TIER=${MERGED}" >> "${GITHUB_OUTPUT}"
+          echo "NEXT_TIER=${NEXT}"     >> "${GITHUB_OUTPUT}"
+          echo "LEVELS=${LEVELS}"      >> "${GITHUB_OUTPUT}"
+          echo "LLM_PROVIDER=${LLM}"   >> "${GITHUB_OUTPUT}"
+          echo "  Next tier   : ${NEXT}"
+
+      - name: Trigger next tier via generate-jss-content-starters.yml
+        if: steps.tier.outputs.NEXT_TIER != ''
+        run: |
+          NEXT="${{ steps.tier.outputs.NEXT_TIER }}"
+          LEVELS="${{ steps.tier.outputs.LEVELS }}"
+          LLM="${{ steps.tier.outputs.LLM_PROVIDER }}"
+
+          gh workflow run generate-jss-content-starters.yml \
+            --repo "${GITHUB_ORG}/Akulearn_docs" \
+            --ref  main \
+            --field content_tier="${NEXT}" \
+            --field levels="${LEVELS}" \
+            --field llm_provider="${LLM}" \
+            --field dry_run="false" \
+            --field runner="ubuntu-latest"
+
+          echo "✅ Triggered \`generate-jss-content-starters.yml\` for tier: **${NEXT}**" \
+            >> "${GITHUB_STEP_SUMMARY}"
+          echo "   Levels : ${LEVELS}"                                                  \
+            >> "${GITHUB_STEP_SUMMARY}"
+          echo "   LLM    : ${LLM}"                                                     \
+            >> "${GITHUB_STEP_SUMMARY}"
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # Job 2: One-time setup — push notifier workflow to Aku-Content
+  # ────────────────────────────────────────────────────────────────────────────
+  install-notifier:
+    name: Install Aku-Content notifier workflow (one-time setup)
+    runs-on: ubuntu-latest
+    if: inputs.install_notifier == 'true'
+
+    permissions:
+      contents: read
+
+    env:
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      GITHUB_ORG: oumar-code
+      TARGET_REPO: Aku-Content
+      NOTIFIER_BRANCH: feat/add-jss-tier-notifier
+
+    steps:
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+
+      - name: Configure git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name  "github-actions[bot]"
+
+      - name: Clone Aku-Content
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          REPO_URL="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${TARGET_REPO}.git"
+          git clone --depth 1 "${REPO_URL}" "${RUNNER_TEMP}/${TARGET_REPO}"
+          git -C "${RUNNER_TEMP}/${TARGET_REPO}" remote set-url origin "${REPO_URL}"
+
+      - name: Push notifier workflow to Aku-Content
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+
+          # Bail out if the notifier is already installed on main
+          if git -C "${TARGET_CLONE}" show "origin/main:.github/workflows/notify-jss-tier-merged.yml" \
+              &>/dev/null 2>&1; then
+            echo "ℹ️  Notifier workflow is already on main in Aku-Content — nothing to do."
+            exit 0
+          fi
+
+          # Bail out if the setup branch already exists (PR pending review)
+          if git -C "${TARGET_CLONE}" ls-remote --exit-code origin "${NOTIFIER_BRANCH}" &>/dev/null; then
+            echo "ℹ️  Setup branch '${NOTIFIER_BRANCH}' already exists in Aku-Content — PR may be pending."
+            exit 0
+          fi
+
+          git -C "${TARGET_CLONE}" checkout -b "${NOTIFIER_BRANCH}"
+
+          mkdir -p "${TARGET_CLONE}/.github/workflows"
+          cp pipeline/aku-content-notify-dispatch.yml \
+             "${TARGET_CLONE}/.github/workflows/notify-jss-tier-merged.yml"
+
+          cd "${TARGET_CLONE}"
+          git add .
+          git commit -m "ci: add JSS tier notifier workflow (dispatches to Akulearn_docs on PR merge)"
+          git push -u origin "${NOTIFIER_BRANCH}"
+          echo "✅ Pushed notifier workflow to ${TARGET_REPO}:${NOTIFIER_BRANCH}"
+
+      - name: Open PR in Aku-Content
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+
+          if ! git -C "${TARGET_CLONE}" ls-remote --exit-code origin "${NOTIFIER_BRANCH}" &>/dev/null; then
+            echo "ℹ️  Branch not pushed — skipping PR creation."
+            exit 0
+          fi
+
+          gh pr create \
+            --repo "${GITHUB_ORG}/${TARGET_REPO}" \
+            --base main \
+            --head "${NOTIFIER_BRANCH}" \
+            --title "ci: add JSS tier notifier workflow" \
+            --body "## What this adds
+
+Installs \`.github/workflows/notify-jss-tier-merged.yml\` which fires a
+\`repository_dispatch\` event to \`oumar-code/Akulearn_docs\` whenever a
+\`feat/jss-*\`, \`feat/bece-*\`, \`feat/flashcard-*\`, or \`feat/topic-quizzes-*\`
+PR is merged into \`main\` here.
+
+This triggers \`jss-content-tier-chain.yml\` in Akulearn_docs, which automatically
+advances to the next content generation tier without any manual intervention.
+
+## One-time secret required
+After merging, add an **\`AKULEARN_DOCS_PAT\`** secret to this repo
+(\`Aku-Content\` → Settings → Secrets and variables → Actions):
+- Value: a classic PAT with \`repo\` scope (can reuse \`GH_PAT\` from Akulearn_docs)
+
+_Automated by \`jss-content-tier-chain.yml\` (install_notifier=true) in Akulearn_docs._" \
+          || echo "ℹ️  PR may already exist for this branch."
+
+          echo "## Notifier installed ✅" >> "${GITHUB_STEP_SUMMARY}"
+          echo "" >> "${GITHUB_STEP_SUMMARY}"
+          echo "Review and merge the PR in Aku-Content, then add the \`AKULEARN_DOCS_PAT\` secret." \
+            >> "${GITHUB_STEP_SUMMARY}"
