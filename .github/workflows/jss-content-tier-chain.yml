@@ -227,20 +227,20 @@ jobs:
             --title "ci: add JSS tier notifier workflow" \
             --body "## What this adds
 
-Installs \`.github/workflows/notify-jss-tier-merged.yml\` which fires a
-\`repository_dispatch\` event to \`oumar-code/Akulearn_docs\` whenever a
-\`feat/jss-*\`, \`feat/bece-*\`, \`feat/flashcard-*\`, or \`feat/topic-quizzes-*\`
-PR is merged into \`main\` here.
+          Installs \`.github/workflows/notify-jss-tier-merged.yml\` which fires a
+          \`repository_dispatch\` event to \`oumar-code/Akulearn_docs\` whenever a
+          \`feat/jss-*\`, \`feat/bece-*\`, \`feat/flashcard-*\`, or \`feat/topic-quizzes-*\`
+          PR is merged into \`main\` here.
 
-This triggers \`jss-content-tier-chain.yml\` in Akulearn_docs, which automatically
-advances to the next content generation tier without any manual intervention.
+          This triggers \`jss-content-tier-chain.yml\` in Akulearn_docs, which automatically
+          advances to the next content generation tier without any manual intervention.
 
-## One-time secret required
-After merging, add an **\`AKULEARN_DOCS_PAT\`** secret to this repo
-(\`Aku-Content\` → Settings → Secrets and variables → Actions):
-- Value: a classic PAT with \`repo\` scope (can reuse \`GH_PAT\` from Akulearn_docs)
+          ## One-time secret required
+          After merging, add an **\`AKULEARN_DOCS_PAT\`** secret to this repo
+          (\`Aku-Content\` → Settings → Secrets and variables → Actions):
+          - Value: a classic PAT with \`repo\` scope (can reuse \`GH_PAT\` from Akulearn_docs)
 
-_Automated by \`jss-content-tier-chain.yml\` (install_notifier=true) in Akulearn_docs._" \
+          _Automated by \`jss-content-tier-chain.yml\` (install_notifier=true) in Akulearn_docs._" \
           || echo "ℹ️  PR may already exist for this branch."
 
           echo "## Notifier installed ✅" >> "${GITHUB_STEP_SUMMARY}"
