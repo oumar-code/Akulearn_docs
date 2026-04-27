@@ -1,0 +1,656 @@
+openapi: "3.1.0"
+info:
+  title: Aku Code Editor API
+  version: "0.1.0"
+  description: |
+    Curriculum-grounded, edge-deployable AI code assistant for the Aku Platform.
+    Provides code completion, generation, explanation, static review, debugging,
+    and session management with WebSocket/SSE streaming support.
+  contact:
+    name: Aku Platform Engineering
+    url: https://github.com/oumar-code/Akulearn_docs
+
+servers:
+  - url: http://localhost:8013
+    description: Local development (Docker Compose editor profile)
+  - url: https://code-editor.aku.africa
+    description: Production
+
+tags:
+  - name: completion
+    description: Code tab-completion endpoints
+  - name: generation
+    description: Natural language → code generation
+  - name: analysis
+    description: Code explanation, review, and debugging
+  - name: sessions
+    description: Session management and feedback
+  - name: streaming
+    description: WebSocket streaming
+  - name: observability
+    description: Health and metrics
+
+paths:
+
+  # ── Code Completion ──────────────────────────────────────────────────────────
+
+  /api/v1/code/complete:
+    post:
+      operationId: codeComplete
+      tags: [completion]
+      summary: Tab-completion from cursor position
+      description: |
+        Returns one or more completion suggestions given the file content up to
+        the cursor position. Context window is capped at `CODE_CONTEXT_MAX_TOKENS`
+        (default 2048 tokens). Sliding window prioritises recently edited lines.
+
+        In dev with `CODE_MODEL_PATH` empty, returns a deterministic stub response.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompletionRequest'
+            example:
+              session_id: "s_abc123"
+              file_content: "def calculate_wave_speed(frequency, wavelength):\n    "
+              cursor_offset: 52
+              language: "python"
+              max_tokens: 128
+      responses:
+        "200":
+          description: Completion suggestions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompletionResponse'
+              example:
+                session_id: "s_abc123"
+                completions:
+                  - text: "return frequency * wavelength"
+                    confidence: 0.92
+                  - text: "speed = frequency * wavelength\n    return speed"
+                    confidence: 0.78
+                model_used: "codegemma-2b-q4"
+                latency_ms: 210
+        "429":
+          description: Token budget exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "503":
+          description: Model not ready
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  # ── Code Generation ──────────────────────────────────────────────────────────
+
+  /api/v1/code/generate:
+    post:
+      operationId: codeGenerate
+      tags: [generation]
+      summary: Natural language → code generation
+      description: |
+        Generates code from a natural language prompt. When `subject_context` is
+        provided, fetches related LO descriptions from Akudemy and injects them
+        into the generation prompt for curriculum-grounded output.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenerationRequest'
+            example:
+              session_id: "s_abc123"
+              prompt: "Write a Python function to simulate projectile motion"
+              subject_context: "Physics"
+              language: "python"
+              lo_ids: ["LO:NERDC:PHY:SS2:KIN:001"]
+      responses:
+        "200":
+          description: Generated code
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenerationResponse'
+              example:
+                session_id: "s_abc123"
+                generated_code: |
+                  import math
+
+                  def projectile_motion(v0: float, angle_deg: float, g: float = 9.8) -> dict:
+                      """Simulate projectile motion.
+                      LO: LO:NERDC:PHY:SS2:KIN:001 — Projectile Motion
+                      """
+                      theta = math.radians(angle_deg)
+                      time_of_flight = 2 * v0 * math.sin(theta) / g
+                      max_height = (v0 * math.sin(theta)) ** 2 / (2 * g)
+                      range_ = v0 ** 2 * math.sin(2 * theta) / g
+                      return {"time_of_flight": time_of_flight, "max_height": max_height, "range": range_}
+                language: "python"
+                lo_ids_used: ["LO:NERDC:PHY:SS2:KIN:001"]
+                model_used: "codegemma-2b-q4"
+                latency_ms: 850
+        "429":
+          $ref: '#/components/responses/TooManyRequests'
+        "503":
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  # ── Code Explanation ─────────────────────────────────────────────────────────
+
+  /api/v1/code/explain:
+    post:
+      operationId: codeExplain
+      tags: [analysis]
+      summary: Explain selected code block in plain language
+      description: |
+        Returns a plain-language explanation of the provided code block.
+        Optionally references curriculum LOs if `subject_context` is provided.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExplainRequest'
+            example:
+              session_id: "s_abc123"
+              code: "range_ = v0 ** 2 * math.sin(2 * theta) / g"
+              language: "python"
+              subject_context: "Physics"
+      responses:
+        "200":
+          description: Plain-language explanation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExplainResponse'
+              example:
+                session_id: "s_abc123"
+                explanation: |
+                  This line calculates the horizontal range of a projectile.
+                  The formula R = v₀² sin(2θ) / g comes from combining the
+                  equations for time of flight and horizontal displacement.
+                  Here, v0 is the initial speed, theta is the launch angle,
+                  and g is the gravitational acceleration (9.8 m/s²).
+                lo_reference: "LO:NERDC:PHY:SS2:KIN:001"
+                latency_ms: 420
+
+  # ── Code Review ──────────────────────────────────────────────────────────────
+
+  /api/v1/code/review:
+    post:
+      operationId: codeReview
+      tags: [analysis]
+      summary: Static code review — style, bugs, security, performance
+      description: |
+        Performs an AI-assisted static review of the provided code file.
+        Findings are categorized into `style`, `logic`, `security`, `performance`
+        and returned with line references and actionable suggestions.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReviewRequest'
+            example:
+              session_id: "s_abc123"
+              file_path: "main.py"
+              file_content: "import os\n\ndef run(cmd):\n    return eval(cmd)\n"
+              language: "python"
+      responses:
+        "200":
+          description: Review findings
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewResult'
+              example:
+                file_path: "main.py"
+                findings:
+                  - line: 4
+                    category: "security"
+                    severity: "high"
+                    message: "Use of eval() with unsanitized input is a critical security vulnerability"
+                    suggestion: "Use ast.literal_eval() or a safe command runner instead"
+                  - line: 1
+                    category: "style"
+                    severity: "low"
+                    message: "Unused import: os"
+                    suggestion: "Remove unused imports to keep code clean"
+                summary: "1 high-severity security issue found. Review before submitting."
+
+  # ── Debug Assistant ──────────────────────────────────────────────────────────
+
+  /api/v1/code/debug:
+    post:
+      operationId: codeDebug
+      tags: [analysis]
+      summary: Analyze error + stack trace → suggest fix
+      description: |
+        Parses a Python or JavaScript error message and stack trace.
+        Embeds the error context and retrieves similar past resolutions
+        from the FAISS debug-examples index. Returns a structured `DebugResult`.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DebugRequest'
+            example:
+              session_id: "s_abc123"
+              error_message: "TypeError: unsupported operand type(s) for *: 'str' and 'float'"
+              stack_trace: "  File \"main.py\", line 8, in calculate_wave_speed\n    return frequency * wavelength"
+              relevant_code: "def calculate_wave_speed(frequency, wavelength):\n    return frequency * wavelength"
+              language: "python"
+      responses:
+        "200":
+          description: Debug suggestions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DebugResult'
+              example:
+                error_type: "TypeError"
+                explanation: "frequency is being passed as a string (e.g. '440') but wavelength is a float. Python cannot multiply a string by a float."
+                suggested_fix: "Convert frequency to float: frequency = float(frequency)"
+                fixed_code: "def calculate_wave_speed(frequency, wavelength):\n    return float(frequency) * wavelength"
+                similar_resolutions_count: 3
+                latency_ms: 380
+
+  # ── Sessions ─────────────────────────────────────────────────────────────────
+
+  /api/v1/code/sessions/{session_id}:
+    get:
+      operationId: getSession
+      tags: [sessions]
+      summary: Retrieve past session context
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Session context
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CodeSession'
+        "404":
+          description: Session not found or expired
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/code/sessions/{session_id}/feedback:
+    post:
+      operationId: submitFeedback
+      tags: [sessions]
+      summary: Report accepted/rejected completion
+      description: |
+        Records whether the user accepted, rejected, or corrected a completion.
+        Accepted/rejected signals update the rolling acceptance rate metric.
+        Correction pairs are anonymized and queued for DaaS fine-tuning export.
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FeedbackRequest'
+            example:
+              completion_id: "c_uuid_001"
+              action: "corrected"
+              original_completion: "return frequency * wavelength"
+              user_correction: "return float(frequency) * float(wavelength)"
+      responses:
+        "204":
+          description: Feedback recorded
+        "404":
+          description: Session not found
+
+  # ── Streaming ────────────────────────────────────────────────────────────────
+
+  /ws/code/stream:
+    get:
+      operationId: wsStream
+      tags: [streaming]
+      summary: WebSocket streaming completions
+      description: |
+        Upgrade to WebSocket for token-by-token streaming of completions and
+        generation responses. Send a `CompletionRequest` or `GenerationRequest`
+        JSON message on the socket; receive a stream of `StreamToken` messages
+        followed by a `StreamEnd` message.
+
+        SSE (Server-Sent Events) is also available via `Accept: text/event-stream`
+        on the `/api/v1/code/complete` and `/api/v1/code/generate` endpoints.
+      responses:
+        "101":
+          description: WebSocket upgrade successful
+
+  # ── Observability ────────────────────────────────────────────────────────────
+
+  /health:
+    get:
+      operationId: healthCheck
+      tags: [observability]
+      summary: Liveness check
+      responses:
+        "200":
+          description: Service is alive
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "ok"
+
+  /ready:
+    get:
+      operationId: readinessCheck
+      tags: [observability]
+      summary: Readiness check — model loaded, Redis connected
+      responses:
+        "200":
+          description: Service is ready to handle requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "ready"
+                  model_loaded:
+                    type: boolean
+                  redis_connected:
+                    type: boolean
+        "503":
+          description: Not ready (model loading or Redis unavailable)
+
+  /metrics:
+    get:
+      operationId: prometheusMetrics
+      tags: [observability]
+      summary: Prometheus metrics
+      responses:
+        "200":
+          description: Prometheus text format metrics
+          content:
+            text/plain:
+              schema:
+                type: string
+
+# ── Components ───────────────────────────────────────────────────────────────
+
+components:
+
+  schemas:
+
+    CompletionRequest:
+      type: object
+      required: [session_id, file_content, cursor_offset, language]
+      properties:
+        session_id:
+          type: string
+          description: Active CodeSession ID
+        file_content:
+          type: string
+          description: Full file content up to cursor position
+        cursor_offset:
+          type: integer
+          description: Byte offset of the cursor in file_content
+        language:
+          type: string
+          example: "python"
+        max_tokens:
+          type: integer
+          default: 128
+
+    CompletionResponse:
+      type: object
+      properties:
+        session_id:
+          type: string
+        completions:
+          type: array
+          items:
+            type: object
+            properties:
+              text:
+                type: string
+              confidence:
+                type: number
+                format: float
+        model_used:
+          type: string
+        latency_ms:
+          type: integer
+
+    GenerationRequest:
+      type: object
+      required: [session_id, prompt, language]
+      properties:
+        session_id:
+          type: string
+        prompt:
+          type: string
+          description: Natural language description of what code to generate
+        subject_context:
+          type: string
+          description: Academic subject for curriculum-aware generation (e.g. "Physics")
+        language:
+          type: string
+          example: "python"
+        lo_ids:
+          type: array
+          items:
+            type: string
+          description: Optional LO IDs to ground the generation
+
+    GenerationResponse:
+      type: object
+      properties:
+        session_id:
+          type: string
+        generated_code:
+          type: string
+        language:
+          type: string
+        lo_ids_used:
+          type: array
+          items:
+            type: string
+        model_used:
+          type: string
+        latency_ms:
+          type: integer
+
+    ExplainRequest:
+      type: object
+      required: [session_id, code, language]
+      properties:
+        session_id:
+          type: string
+        code:
+          type: string
+        language:
+          type: string
+        subject_context:
+          type: string
+
+    ExplainResponse:
+      type: object
+      properties:
+        session_id:
+          type: string
+        explanation:
+          type: string
+        lo_reference:
+          type: string
+          nullable: true
+        latency_ms:
+          type: integer
+
+    ReviewRequest:
+      type: object
+      required: [session_id, file_path, file_content, language]
+      properties:
+        session_id:
+          type: string
+        file_path:
+          type: string
+        file_content:
+          type: string
+        language:
+          type: string
+
+    ReviewResult:
+      type: object
+      properties:
+        file_path:
+          type: string
+        findings:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReviewFinding'
+        summary:
+          type: string
+
+    ReviewFinding:
+      type: object
+      properties:
+        line:
+          type: integer
+        category:
+          type: string
+          enum: [style, logic, security, performance]
+        severity:
+          type: string
+          enum: [low, medium, high, critical]
+        message:
+          type: string
+        suggestion:
+          type: string
+
+    DebugRequest:
+      type: object
+      required: [session_id, error_message, language]
+      properties:
+        session_id:
+          type: string
+        error_message:
+          type: string
+        stack_trace:
+          type: string
+        relevant_code:
+          type: string
+        language:
+          type: string
+
+    DebugResult:
+      type: object
+      properties:
+        error_type:
+          type: string
+        explanation:
+          type: string
+        suggested_fix:
+          type: string
+        fixed_code:
+          type: string
+          nullable: true
+        similar_resolutions_count:
+          type: integer
+        latency_ms:
+          type: integer
+
+    CodeSession:
+      type: object
+      properties:
+        session_id:
+          type: string
+        user_id_hash:
+          type: string
+        language:
+          type: string
+        framework:
+          type: string
+          nullable: true
+        subject_context:
+          type: string
+          nullable: true
+        lo_ids:
+          type: array
+          items:
+            type: string
+        accepted_completions:
+          type: integer
+        rejected_completions:
+          type: integer
+        last_active_at:
+          type: string
+          format: date-time
+        ttl_seconds:
+          type: integer
+
+    FeedbackRequest:
+      type: object
+      required: [completion_id, action]
+      properties:
+        completion_id:
+          type: string
+        action:
+          type: string
+          enum: [accepted, rejected, corrected]
+        original_completion:
+          type: string
+          description: Required when action=corrected
+        user_correction:
+          type: string
+          description: Required when action=corrected
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: string
+        detail:
+          type: string
+
+  responses:
+    TooManyRequests:
+      description: Token budget exceeded
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error: "Token budget exceeded"
+            code: "TOKEN_BUDGET_EXCEEDED"
+            detail: "Daily token budget of 200000 tokens has been reached. Resets at midnight UTC."
+
+    ServiceUnavailable:
+      description: Model not ready or upstream service unavailable
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error: "Service unavailable"
+            code: "MODEL_NOT_READY"
+            detail: "Code model is loading. Retry in 30 seconds."

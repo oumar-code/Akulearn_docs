@@ -1,0 +1,125 @@
+# ── Aku-Code-Editor — AI Code Assistant ────────────────────────────────────────
+# Curriculum-grounded, edge-deployable AI code assistance.
+# Delegates inference to AkuAI; can fall back to local GGUF model when
+# CODE_MODEL_PATH is set (offline/edge mode).
+#
+# Container port : 8013 (dev host port)  |  8000 (container)
+# Health endpoint: GET /health
+# Metrics:        GET /metrics
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aku-code-editor-config
+  namespace: aku-platform
+  labels:
+    app: aku-code-editor
+    app.kubernetes.io/part-of: aku-platform
+data:
+  APP_ENV: "staging"
+  LOG_LEVEL: "info"
+  APP_PORT: "8013"
+  CORS_ORIGINS: "https://app.akulearn.com"
+  CODE_SESSION_TTL_SECONDS: "604800"
+  CODE_CONTEXT_MAX_TOKENS: "2048"
+  CODE_EDITOR_TOKEN_BUDGET: "50000"
+  ENABLE_SSE: "true"
+  ENABLE_WEBSOCKET: "true"
+  # Guardrails — enable in staging/production
+  ENABLE_HARMFUL_CODE_FILTER: "true"
+  ENABLE_LICENSE_SCAN: "true"
+  # Upstream service URLs (use Kubernetes service DNS)
+  AKU_AI_URL: "http://akuai.aku-platform.svc.cluster.local"
+  AKUDEMY_URL: "http://akudemy.aku-platform.svc.cluster.local"
+  AKU_DAAS_URL: "http://aku-daas.aku-platform.svc.cluster.local"
+  # Leave empty to delegate inference to AkuAI.
+  # Set to a PVC-mounted path when loading a local code model on Edge Hub.
+  CODE_MODEL_PATH: ""
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aku-code-editor
+  namespace: aku-platform
+  labels:
+    app: aku-code-editor
+    app.kubernetes.io/part-of: aku-platform
+    app.kubernetes.io/version: v0.1.0
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aku-code-editor
+  template:
+    metadata:
+      labels:
+        app: aku-code-editor
+        app.kubernetes.io/version: v0.1.0
+    spec:
+      imagePullSecrets:
+        - name: ghcr-pull-secret
+      containers:
+        - name: aku-code-editor
+          image: ghcr.io/oumar-code/aku-code-editor:v0.1.0
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8013
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: aku-code-editor-config
+            - secretRef:
+                name: aku-code-editor-secret
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          # Optional: mount a PVC for local GGUF model (Edge Hub / offline mode)
+          # volumeMounts:
+          #   - name: model-volume
+          #     mountPath: /aku/models
+          #     readOnly: true
+      restartPolicy: Always
+      # volumes:
+      #   - name: model-volume
+      #     persistentVolumeClaim:
+      #       claimName: code-model-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aku-code-editor
+  namespace: aku-platform
+  labels:
+    app: aku-code-editor
+    app.kubernetes.io/part-of: aku-platform
+spec:
+  type: ClusterIP
+  selector:
+    app: aku-code-editor
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP

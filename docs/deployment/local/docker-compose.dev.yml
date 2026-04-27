@@ -4,9 +4,11 @@
 # See: docs/deployment/local/dev-ram-allocation-decision.md
 #
 # ── Profiles ────────────────────────────────────────────────────────────────────
-#   infra   Shared backbone (Postgres, Redis, Neo4j) — always required
-#   core    4 highest-priority services (AkuAI, Akudemy, Aku-EdgeHub, AkuTutor)
-#   full    Remaining 5 services — integration testing only
+#   infra      Shared backbone (Postgres, Redis, Neo4j) — always required
+#   core       4 highest-priority services (AkuAI, Akudemy, Aku-EdgeHub, AkuTutor)
+#   full       Remaining 5 services — integration testing only
+#   editor     Aku Code Editor — AI-powered code assistance (port 8013)
+#   monitoring Prometheus + Grafana observability stack (ports 9090, 3001)
 #
 # ── Usage ───────────────────────────────────────────────────────────────────────
 #   Infra only:
@@ -18,6 +20,13 @@
 #   Full stack (integration testing):
 #     docker compose -f docker-compose.dev.yml --profile infra --profile core --profile full up -d
 #
+#   With Code Editor:
+#     docker compose -f docker-compose.dev.yml --profile infra --profile core --profile editor up -d
+#
+#   With observability stack:
+#     docker compose -f docker-compose.dev.yml --profile infra --profile core \
+#       --profile monitoring up -d
+#
 # ── Docker Desktop (Windows / macOS) ────────────────────────────────────────────
 #   Cap the Docker Desktop VM at 5 GB:
 #     Settings → Resources → Memory → 5 GB
@@ -25,9 +34,11 @@
 #   can enforce mem_limit.  Linux hosts need no extra configuration.
 #
 # ── Scenario RAM totals ─────────────────────────────────────────────────────────
-#   infra only  : ~896 MB   (~3.6 GB headroom)
-#   infra + core: ~2.4 GB   (~2.1 GB headroom)
-#   all profiles: ~3.0 GB   (~1.5 GB headroom)
+#   infra only             : ~896 MB   (~3.6 GB headroom)
+#   infra + core           : ~2.4 GB   (~2.1 GB headroom)
+#   all profiles           : ~3.0 GB   (~1.5 GB headroom)
+#   + editor               : ~3.1 GB   (+128 MB)
+#   + monitoring           : ~3.4 GB   (+384 MB Prometheus 128m + Grafana 256m)
 
 name: aku-platform-dev
 
@@ -348,8 +359,115 @@ services:
       retries: 3
       start_period: 15s
 
+  # ════════════════════════════════════════════════════════════════════════════
+  # EDITOR — Aku Code Editor (AI code assistance, curriculum-grounded)
+  # Host port: 8013  |  Container port: 8000
+  #
+  # Depends on: redis (session memory), akuai (inference), akudemy (LO context)
+  # Redis DB 9 — CodeSession objects (7-day TTL)
+  # ════════════════════════════════════════════════════════════════════════════
+
+  aku-code-editor:
+    image: ghcr.io/oumar-code/aku-code-editor:v0.1.0
+    profiles: [editor]
+    restart: unless-stopped
+    mem_limit: 128m
+    depends_on:
+      redis:
+        condition: service_healthy
+      akuai:
+        condition: service_healthy
+    environment:
+      APP_ENV: development
+      LOG_LEVEL: info
+      # Upstream service URLs (Docker network names, container port 8000)
+      AKU_AI_URL: http://akuai:8000
+      AKUDEMY_URL: http://akudemy:8000
+      AKU_DAAS_URL: http://aku-daas:8000
+      # Redis DB 9 — CodeSession storage
+      REDIS_URL: redis://redis:6379/9
+      CODE_SESSION_TTL_SECONDS: "604800"     # 7 days
+      # Code model — leave empty in dev for stub responses; set to GGUF path for real inference
+      CODE_MODEL_PATH: ""
+      # Per-user daily token budget (dev: generous; tighten in staging/production)
+      CODE_EDITOR_TOKEN_BUDGET: "200000"
+      # Maximum context tokens sent to AkuAI per completion request
+      CODE_CONTEXT_MAX_TOKENS: "2048"
+      CORS_ORIGINS: "http://localhost:3000"
+      # Streaming
+      ENABLE_SSE: "true"
+      ENABLE_WEBSOCKET: "true"
+      # Guardrails (enable in staging/production)
+      ENABLE_HARMFUL_CODE_FILTER: "false"
+      ENABLE_LICENSE_SCAN: "false"
+    ports:
+      - "8013:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=4)\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # ════════════════════════════════════════════════════════════════════════════
+  # MONITORING — Prometheus + Grafana observability stack
+  # Prometheus: host port 9090  |  Grafana: host port 3001
+  #
+  # NOTE: start with --profile infra + at least one service profile so that
+  #       Prometheus has targets to scrape.
+  # ════════════════════════════════════════════════════════════════════════════
+
+  prometheus:
+    image: prom/prometheus:v2.51.2
+    profiles: [monitoring]
+    restart: unless-stopped
+    mem_limit: 128m
+    volumes:
+      - ../../../../monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=7d'
+      - '--web.enable-lifecycle'
+    ports:
+      - "9090:9090"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:9090/-/healthy || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  grafana:
+    image: grafana/grafana:10.4.2
+    profiles: [monitoring]
+    restart: unless-stopped
+    mem_limit: 256m
+    depends_on:
+      prometheus:
+        condition: service_healthy
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: aku_dev_grafana
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_SERVER_HTTP_PORT: "3001"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "3001:3001"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3001/api/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
 # ── Named volumes ─────────────────────────────────────────────────────────────
 volumes:
   postgres_data:
   neo4j_data:
   edgehub_data:
+  grafana_data:
+  prometheus_data:

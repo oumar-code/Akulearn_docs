@@ -70,6 +70,7 @@ nav:
       - Aku eSIM: services/aku-esim.md
       - Aku DaaS: services/aku-daas.md
       - Aku Workspace: services/aku-workspace.md
+      - Aku Code Editor: services/aku-code-editor.md
   - Backend:
       - Overview: 02-backend/index.md
       - Python/FastAPI Bootstrap: service-templates/python-fastapi-bootstrap.md
@@ -123,6 +124,7 @@ nav:
   - Strategy:
       - Ultra-Affordable Connectivity: strategy/ultra_affordable_instate_strategy.md
       - RAG Chatbot Strategy: strategy/rag_chatbot_strategy.md
+      - Aku Code Editor Strategy: strategy/aku-code-editor-strategy.md
       - Clean Energy for Africa: clean_energy_for_africa.md
       - Clean Energy Whitepaper: clean_energy_whitepaper.md
       - AI, Automation & Industry 4.0: ai_automation_industry4.md
@@ -132,10 +134,31 @@ nav:
   - Handbooks:
       - MLOps & AI Engineering: handbooks/MLOps_AI_Engineering_Handbook.md
       - eSIM Provisioning: handbooks/eSIM_Provisioning_Handbook.md
+      - Aku Code Editor: handbooks/AkuCodeEditor_Handbook.md
   - Cross-Cutting:
       - Overview: 05-cross-cutting/index.md
       - Coding Standards: 05-cross-cutting/coding-standards.md
       - Containerisation: 05-cross-cutting/containerization.md
-  - Process & Methodology: 06-process-methodology/index.md
+  - Process & Methodology:
+      - Overview: 06-process-methodology/index.md
+      - 5-Phase Sprint Orchestration: 06-process-methodology/sprint-orchestration.md
+  - Infra Reference:
+      - Neo4j LO Schema: infra/neo4j-lo-schema.md
+      - Postgres Schemas: deployment/local/postgres-schemas.md
+      - Redis TTL Policy: deployment/local/REDIS_KEY_TTL_POLICY.md
+  - API Specs:
+      - Aku Code Editor OpenAPI: api/aku-code-editor-openapi.yaml
+  - Architecture Decisions:
+      - ADR Index: adrs.md
+      - ADR-005 Aku Code Editor: adrs/adr-005-aku-code-editor.md
+  - Runbooks:
+      - Developer Onboarding: runbooks/developer-onboarding.md
+      - On-Call Playbook: runbooks/on-call-playbook.md
+      - AkuAI: runbooks/akuai-runbook.md
+      - Aku Code Editor: runbooks/aku-code-editor-runbook.md
   - Glossary: 07-glossary/index.md
   - Demo Scripts: demo_scripts/offline_demo_segment.md
+  - Deployment:
+      - Local Dev Compose: deployment/local/docker-compose.dev.yml
+      - RAM Allocation Decision: deployment/local/dev-ram-allocation-decision.md
+      - Kubernetes README: deployment/k8s/README.md
