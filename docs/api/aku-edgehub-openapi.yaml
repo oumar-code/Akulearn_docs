@@ -1,0 +1,525 @@
+openapi: "3.1.0"
+info:
+  title: Aku-EdgeHub API
+  version: "0.2.0"
+  description: |
+    Tier 1 offline-first edge orchestrator for the Aku Platform.
+    Manages local curriculum cache, FAISS vector index, delta sync from Akudemy,
+    and serves RAG queries to AkuTutor and Aku Code Editor in online or offline mode.
+
+    **Phase 1:** Stub sync agent endpoints; SQLite schema initialized on startup.
+
+    **Phase 2:** Real delta sync, FAISS index building, full RAG query pipeline.
+  contact:
+    name: Aku Platform Engineering
+    url: https://github.com/oumar-code/Akulearn_docs
+
+servers:
+  - url: http://localhost:8006
+    description: Local development (Docker Compose core profile)
+  - url: https://edgehub.aku.africa
+    description: Production (K3s edge node)
+
+tags:
+  - name: sync
+    description: Delta sync control and status
+  - name: rag
+    description: Retrieval-Augmented Generation queries (Phase 2)
+  - name: catalog
+    description: Local LO catalog and chunk queries (Phase 2)
+  - name: events
+    description: Outbound event buffer (Phase 2)
+  - name: observability
+    description: Health and metrics
+
+paths:
+
+  # ── Sync ─────────────────────────────────────────────────────────────────────
+
+  /sync/request:
+    post:
+      operationId: requestSync
+      tags: [sync]
+      summary: Trigger a manual delta sync with Akudemy
+      description: |
+        Queues a sync job. In Phase 1 this is a stub that immediately returns
+        `{"status": "queued"}` without performing any network call.
+
+        In Phase 2 the background sync agent polls Akudemy for updated chunks
+        and rebuilds the FAISS index incrementally.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                categories:
+                  type: array
+                  items:
+                    type: string
+                    enum: [content_chunks, lo_catalog]
+                  description: Categories to sync; omit to sync all
+      responses:
+        '202':
+          description: Sync job queued
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: queued
+                  job_id:
+                    type: string
+                    example: "sync_job_uuid_001"
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /sync/status:
+    get:
+      operationId: getSyncStatus
+      tags: [sync]
+      summary: Current sync state for all categories
+      responses:
+        '200':
+          description: Sync status for all categories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SyncStatus'
+              example:
+                - category: content_chunks
+                  last_sync_at: "2026-04-27T18:00:00Z"
+                  sync_status: idle
+                  chunks_cached: 0
+                  faiss_index_size: 0
+                - category: lo_catalog
+                  last_sync_at: null
+                  sync_status: idle
+                  chunks_cached: 0
+                  faiss_index_size: 0
+
+  # ── RAG ──────────────────────────────────────────────────────────────────────
+
+  /api/v1/edge/rag/query:
+    post:
+      operationId: ragQuery
+      tags: [rag]
+      summary: Two-layer curriculum-filtered semantic RAG query
+      description: |
+        **Phase 2 only.** Executes:
+        1. Curriculum filter on `cached_chunks` (subject, class level, min trust level)
+        2. FAISS semantic search over filtered chunks
+        3. Re-rank by `trust_level × recency_score × cosine_similarity`
+        4. Returns top-k results with source citations
+
+        Returns `503` in Phase 1 (FAISS index not yet built).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RAGQueryRequest'
+            example:
+              question: "Explain how mitosis differs from meiosis"
+              subject_code: "BIO"
+              class_level: "SS2"
+              top_k: 5
+              min_trust_level: 2
+      responses:
+        '200':
+          description: RAG results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RAGQueryResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  # ── Catalog ──────────────────────────────────────────────────────────────────
+
+  /api/v1/edge/lo/{lo_id}:
+    get:
+      operationId: getLoById
+      tags: [catalog]
+      summary: Look up a cached Learning Objective by ID
+      parameters:
+        - name: lo_id
+          in: path
+          required: true
+          schema:
+            type: string
+          example: "LO:NERDC:BIO:SS2:CDIV:001"
+      responses:
+        '200':
+          description: LO details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CachedLO'
+        '404':
+          description: LO not in local cache
+
+  /api/v1/edge/chunks:
+    get:
+      operationId: listChunks
+      tags: [catalog]
+      summary: List cached content chunks
+      parameters:
+        - name: subject_code
+          in: query
+          schema:
+            type: string
+          example: BIO
+        - name: class_level
+          in: query
+          schema:
+            type: string
+          example: SS2
+        - name: topic
+          in: query
+          schema:
+            type: string
+        - name: asset_type
+          in: query
+          schema:
+            type: string
+            enum: [lesson, past_question, summary]
+        - name: min_trust_level
+          in: query
+          schema:
+            type: integer
+            default: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: List of cached chunks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total:
+                    type: integer
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CachedChunkSummary'
+
+  # ── Events ───────────────────────────────────────────────────────────────────
+
+  /api/v1/edge/events:
+    post:
+      operationId: bufferEvent
+      tags: [events]
+      summary: Buffer an outbound event for later sync to upstream
+      description: |
+        When the EdgeHub is offline or upstream is unreachable, outbound events
+        (learner progress, attendance, feedback) are stored in `pending_events`
+        and retried on the next connectivity window.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PendingEventRequest'
+      responses:
+        '202':
+          description: Event buffered
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  event_id:
+                    type: string
+                  status:
+                    type: string
+                    example: buffered
+
+  /api/v1/edge/events/pending:
+    get:
+      operationId: listPendingEvents
+      tags: [events]
+      summary: List pending outbound events and retry counts
+      responses:
+        '200':
+          description: Pending events
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PendingEventSummary'
+
+  # ── Observability ────────────────────────────────────────────────────────────
+
+  /health:
+    get:
+      operationId: healthCheck
+      tags: [observability]
+      summary: Liveness check
+      responses:
+        '200':
+          description: Service alive
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+
+  /ready:
+    get:
+      operationId: readinessCheck
+      tags: [observability]
+      summary: Readiness — SQLite accessible, FAISS index built
+      responses:
+        '200':
+          description: Service ready
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  db_accessible:
+                    type: boolean
+                  faiss_index_built:
+                    type: boolean
+                  operating_mode:
+                    type: string
+                    enum: [online, offline]
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /metrics:
+    get:
+      operationId: prometheusMetrics
+      tags: [observability]
+      summary: Prometheus metrics
+      responses:
+        '200':
+          description: Prometheus text format
+          content:
+            text/plain:
+              schema:
+                type: string
+
+# ── Components ───────────────────────────────────────────────────────────────
+
+components:
+
+  schemas:
+
+    SyncStatus:
+      type: object
+      required: [category, sync_status]
+      properties:
+        category:
+          type: string
+          enum: [content_chunks, lo_catalog]
+        last_sync_at:
+          type: string
+          format: date-time
+          nullable: true
+        sync_status:
+          type: string
+          enum: [idle, syncing, error]
+        chunks_cached:
+          type: integer
+        faiss_index_size:
+          type: integer
+          description: Number of vectors in the FAISS index for this category
+
+    RAGQueryRequest:
+      type: object
+      required: [question]
+      properties:
+        question:
+          type: string
+          maxLength: 1024
+        subject_code:
+          type: string
+          example: BIO
+        class_level:
+          type: string
+          example: SS2
+        top_k:
+          type: integer
+          default: 5
+          minimum: 1
+          maximum: 20
+        min_trust_level:
+          type: integer
+          default: 1
+          minimum: 1
+          maximum: 5
+        exam_path:
+          type: array
+          items:
+            type: string
+          example: [WAEC, NECO]
+
+    RAGQueryResponse:
+      type: object
+      required: [results, retrieval_mode, latency_ms]
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/RAGResult'
+        retrieval_mode:
+          type: string
+          enum: [local_faiss, upstream_akudemy]
+        latency_ms:
+          type: integer
+
+    RAGResult:
+      type: object
+      required: [chunk_id, lo_id, topic, content_text, score, trust_level]
+      properties:
+        chunk_id:
+          type: string
+        lo_id:
+          type: string
+        topic:
+          type: string
+        content_text:
+          type: string
+        score:
+          type: number
+          format: float
+          description: Combined re-rank score (0.0–1.0)
+        trust_level:
+          type: integer
+          minimum: 1
+          maximum: 5
+
+    CachedLO:
+      type: object
+      required: [lo_id, subject_code, class_level, topic, description, difficulty]
+      properties:
+        lo_id:
+          type: string
+        subject_code:
+          type: string
+        class_level:
+          type: string
+        topic:
+          type: string
+        description:
+          type: string
+        difficulty:
+          type: string
+          enum: [easy, medium, hard]
+        synced_at:
+          type: string
+          format: date-time
+
+    CachedChunkSummary:
+      type: object
+      required: [id, lo_id, subject_code, class_level, topic, asset_type, trust_level]
+      properties:
+        id:
+          type: string
+        lo_id:
+          type: string
+        subject_code:
+          type: string
+        class_level:
+          type: string
+        topic:
+          type: string
+        asset_type:
+          type: string
+          enum: [lesson, past_question, summary]
+        trust_level:
+          type: integer
+        faiss_indexed:
+          type: boolean
+        synced_at:
+          type: string
+          format: date-time
+
+    PendingEventRequest:
+      type: object
+      required: [event_type, payload, target_service]
+      properties:
+        event_type:
+          type: string
+          enum: [learner_progress, attendance, feedback]
+        payload:
+          type: object
+          description: Event-specific JSON payload
+        target_service:
+          type: string
+          enum: [akudemy, superhub]
+
+    PendingEventSummary:
+      type: object
+      required: [id, event_type, target_service, retry_count, created_at]
+      properties:
+        id:
+          type: string
+        event_type:
+          type: string
+        target_service:
+          type: string
+        retry_count:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+        last_attempted_at:
+          type: string
+          format: date-time
+          nullable: true
+
+    ErrorResponse:
+      type: object
+      required: [detail]
+      properties:
+        detail:
+          type: string
+
+  responses:
+
+    ValidationError:
+      description: Request validation failed
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: array
+                items:
+                  type: object
+
+    ServiceUnavailable:
+      description: Service temporarily unavailable (FAISS index not built, DB inaccessible)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'

@@ -1,0 +1,577 @@
+openapi: "3.1.0"
+info:
+  title: AkuAI API
+  version: "0.2.0"
+  description: |
+    Shared AI/ML inference engine for the Aku Platform.
+    Provides text embedding, text generation, and code inference
+    for all downstream services (AkuTutor, Aku Code Editor, AkuWorkspace, Aku-EdgeHub).
+
+    **Phase 1:** All endpoints return deterministic stub responses (`stub: true`) when
+    model weights are not loaded (`MODEL_DIR`, `GEMMA_GGUF_PATH` are empty).
+
+    **Phase 2:** Real inference when model paths are set.
+  contact:
+    name: Aku Platform Engineering
+    url: https://github.com/oumar-code/Akulearn_docs
+
+servers:
+  - url: http://localhost:8004
+    description: Local development (Docker Compose core profile)
+  - url: https://ai.aku.africa
+    description: Production
+
+tags:
+  - name: embeddings
+    description: Text embedding endpoints
+  - name: text
+    description: Text generation endpoints
+  - name: code
+    description: Code inference endpoints
+  - name: observability
+    description: Health and metrics
+
+paths:
+
+  # ── Embeddings ──────────────────────────────────────────────────────────────
+
+  /api/v1/embeddings:
+    post:
+      operationId: createEmbedding
+      tags: [embeddings]
+      summary: Embed text to a 384-dimensional vector
+      description: |
+        Encodes input text using `all-MiniLM-L6-v2` (ONNX).
+
+        **Phase 1 stub:** Returns a 384-element zero-vector with `stub: true`
+        when `MODEL_DIR` is not set. Clients MUST check `stub` and must NOT
+        store stub embeddings in FAISS or use them for similarity scoring.
+
+        **Phase 2:** Returns real 384-dim float32 vector. Response is cached
+        in Redis DB 2 for 5 minutes (key: `sha256(text)`).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmbeddingRequest'
+            example:
+              text: "Explain the properties and behaviour of waves"
+              model: "all-MiniLM-L6-v2"
+      responses:
+        '200':
+          description: Embedding vector
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmbeddingResponse'
+              example:
+                embedding: [0.0, 0.0, 0.0]
+                model: "all-MiniLM-L6-v2"
+                stub: true
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  # ── Text Generation ──────────────────────────────────────────────────────────
+
+  /api/v1/text/generate:
+    post:
+      operationId: generateText
+      tags: [text]
+      summary: Generate prose text from a prompt
+      description: |
+        Generates a text response using `gemma-2b-q4.gguf`.
+
+        **Phase 1 stub:** Returns a fixed canned response with `stub: true`
+        when `GEMMA_GGUF_PATH` is not set.
+
+        **Phase 2:** Real GGUF inference. Payload capped at `GEMMA_MAX_PAYLOAD_BYTES`
+        (→ `429` if exceeded). Response NOT cached (non-deterministic).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TextGenerationRequest'
+            example:
+              prompt: "Explain how sound waves travel through different media."
+              system_prompt: "You are a helpful Akulearn tutor for SS2 Physics students."
+              max_tokens: 256
+              temperature: 0.7
+              trace_id: "t_uuid_001"
+      responses:
+        '200':
+          description: Generated text
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TextGenerationResponse'
+              example:
+                text: "[STUB] This is a placeholder response from AkuAI."
+                model: "gemma-2b-q4"
+                tokens_generated: 8
+                latency_ms: 4
+                stub: true
+        '413':
+          description: Payload too large (exceeds GEMMA_MAX_PAYLOAD_BYTES)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  # ── Code Inference ───────────────────────────────────────────────────────────
+
+  /api/v1/code/generate:
+    post:
+      operationId: generateCode
+      tags: [code]
+      summary: Generate code from a natural language prompt
+      description: |
+        Generates code using `codegemma-2b-q4.gguf` (Phase 4) or a stub.
+
+        **Phase 1/2 stub:** Returns a fixed Python snippet with `stub: true`
+        when `CODE_MODEL_PATH` is not set.
+
+        **Phase 4:** Real CodeGemma inference. Supports `lo_descriptions` for
+        curriculum-aware generation (injected into system prompt by Aku Code Editor).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CodeGenerationRequest'
+            example:
+              prompt: "Write a Python function to simulate projectile motion"
+              language: "python"
+              subject_context: "Physics"
+              lo_descriptions:
+                - "Calculate range, maximum height and time of flight for projectile motion"
+              max_tokens: 256
+              session_id: "s_uuid_001"
+      responses:
+        '200':
+          description: Generated code
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CodeGenerationResponse'
+              example:
+                code: "def projectile_motion(v0, angle_deg, g=9.8):\n    # [STUB] placeholder\n    pass"
+                language: "python"
+                model: "codegemma-2b-q4"
+                tokens_generated: 18
+                latency_ms: 6
+                stub: true
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+
+  /api/v1/code/explain:
+    post:
+      operationId: explainCode
+      tags: [code]
+      summary: Explain a code block in plain language
+      description: |
+        Produces a plain-language explanation of a code snippet.
+
+        **Phase 1/2 stub:** Returns `"[STUB] This code performs the described operation."` with `stub: true`.
+
+        **Phase 4:** Real CodeGemma inference.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CodeExplainRequest'
+            example:
+              code: "def calculate_wave_speed(f, wl):\n    return f * wl"
+              language: "python"
+              audience: "SS2 Physics student"
+              session_id: "s_uuid_001"
+      responses:
+        '200':
+          description: Explanation text
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CodeExplainResponse'
+              example:
+                explanation: "[STUB] This code performs the described operation."
+                model: "codegemma-2b-q4"
+                stub: true
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  /api/v1/code/complete:
+    post:
+      operationId: completeCode
+      tags: [code]
+      summary: Tab-completion from cursor position (Phase 4)
+      description: |
+        Returns completion suggestions given the file content up to the cursor.
+        Delegated from Aku Code Editor. Stub in Phase 1/2/3.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CodeCompleteRequest'
+      responses:
+        '200':
+          description: Completion suggestions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CodeCompleteResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  /api/v1/code/review:
+    post:
+      operationId: reviewCode
+      tags: [code]
+      summary: Static review — style, bugs, security, performance (Phase 4)
+      description: |
+        Reviews a code file and returns structured findings.
+        Delegated from Aku Code Editor. Stub in Phase 1/2/3.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CodeReviewRequest'
+      responses:
+        '200':
+          description: Review result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CodeReviewResponse'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  # ── Observability ────────────────────────────────────────────────────────────
+
+  /health:
+    get:
+      operationId: healthCheck
+      tags: [observability]
+      summary: Liveness check
+      responses:
+        '200':
+          description: Service alive
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+
+  /ready:
+    get:
+      operationId: readinessCheck
+      tags: [observability]
+      summary: Readiness — model loaded and DB connected
+      responses:
+        '200':
+          description: Service ready
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  model_loaded:
+                    type: boolean
+                    example: false
+                  db_connected:
+                    type: boolean
+                    example: true
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /metrics:
+    get:
+      operationId: prometheusMetrics
+      tags: [observability]
+      summary: Prometheus metrics
+      responses:
+        '200':
+          description: Prometheus text format
+          content:
+            text/plain:
+              schema:
+                type: string
+
+# ── Components ───────────────────────────────────────────────────────────────
+
+components:
+
+  schemas:
+
+    EmbeddingRequest:
+      type: object
+      required: [text]
+      properties:
+        text:
+          type: string
+          description: Text to embed
+          maxLength: 4096
+        model:
+          type: string
+          default: all-MiniLM-L6-v2
+          description: Embedding model identifier
+
+    EmbeddingResponse:
+      type: object
+      required: [embedding, model, stub]
+      properties:
+        embedding:
+          type: array
+          items:
+            type: number
+            format: float
+          minItems: 384
+          maxItems: 384
+          description: 384-dimensional float32 embedding vector
+        model:
+          type: string
+        stub:
+          type: boolean
+          description: True when real model weights are not loaded
+
+    TextGenerationRequest:
+      type: object
+      required: [prompt]
+      properties:
+        prompt:
+          type: string
+          maxLength: 4096
+        system_prompt:
+          type: string
+          maxLength: 1024
+        max_tokens:
+          type: integer
+          default: 256
+          minimum: 1
+          maximum: 2048
+        temperature:
+          type: number
+          format: float
+          default: 0.7
+          minimum: 0.0
+          maximum: 2.0
+        trace_id:
+          type: string
+
+    TextGenerationResponse:
+      type: object
+      required: [text, model, tokens_generated, latency_ms, stub]
+      properties:
+        text:
+          type: string
+        model:
+          type: string
+        tokens_generated:
+          type: integer
+        latency_ms:
+          type: integer
+        stub:
+          type: boolean
+
+    CodeGenerationRequest:
+      type: object
+      required: [prompt, language]
+      properties:
+        prompt:
+          type: string
+          maxLength: 2048
+        language:
+          type: string
+          enum: [python, javascript, java, c, cpp]
+        subject_context:
+          type: string
+        lo_descriptions:
+          type: array
+          items:
+            type: string
+        max_tokens:
+          type: integer
+          default: 256
+          minimum: 1
+          maximum: 1024
+        session_id:
+          type: string
+
+    CodeGenerationResponse:
+      type: object
+      required: [code, language, model, tokens_generated, latency_ms, stub]
+      properties:
+        code:
+          type: string
+        language:
+          type: string
+        model:
+          type: string
+        tokens_generated:
+          type: integer
+        latency_ms:
+          type: integer
+        stub:
+          type: boolean
+
+    CodeExplainRequest:
+      type: object
+      required: [code, language]
+      properties:
+        code:
+          type: string
+          maxLength: 4096
+        language:
+          type: string
+        audience:
+          type: string
+          description: e.g. "SS2 Physics student"
+        session_id:
+          type: string
+
+    CodeExplainResponse:
+      type: object
+      required: [explanation, model, stub]
+      properties:
+        explanation:
+          type: string
+        model:
+          type: string
+        stub:
+          type: boolean
+
+    CodeCompleteRequest:
+      type: object
+      required: [session_id, file_content, cursor_offset, language]
+      properties:
+        session_id:
+          type: string
+        file_content:
+          type: string
+          maxLength: 8192
+        cursor_offset:
+          type: integer
+          minimum: 0
+        language:
+          type: string
+        max_tokens:
+          type: integer
+          default: 128
+
+    CodeCompleteResponse:
+      type: object
+      required: [completion, model, stub]
+      properties:
+        completion:
+          type: string
+        model:
+          type: string
+        tokens_generated:
+          type: integer
+        stub:
+          type: boolean
+
+    CodeReviewRequest:
+      type: object
+      required: [file_path, file_content, language]
+      properties:
+        file_path:
+          type: string
+        file_content:
+          type: string
+          maxLength: 16384
+        language:
+          type: string
+        session_id:
+          type: string
+
+    CodeReviewResponse:
+      type: object
+      required: [file_path, findings, stub]
+      properties:
+        file_path:
+          type: string
+        findings:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReviewFinding'
+        stub:
+          type: boolean
+
+    ReviewFinding:
+      type: object
+      required: [line, category, severity, message]
+      properties:
+        line:
+          type: integer
+        category:
+          type: string
+          enum: [style, logic, security, performance]
+        severity:
+          type: string
+          enum: [low, medium, high, critical]
+        message:
+          type: string
+        suggestion:
+          type: string
+
+    ErrorResponse:
+      type: object
+      required: [detail]
+      properties:
+        detail:
+          type: string
+
+  responses:
+
+    ValidationError:
+      description: Request validation failed
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: array
+                items:
+                  type: object
+
+    RateLimitExceeded:
+      description: Rate limit exceeded
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+          description: Seconds until the rate limit window resets
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+
+    ServiceUnavailable:
+      description: Service temporarily unavailable (model loading, DB down)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'

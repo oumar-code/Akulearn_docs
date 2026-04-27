@@ -40,10 +40,26 @@
 - See: [`docs/deployment/local/postgres-schemas.md`](../deployment/local/postgres-schemas.md)
 - Single shared database `aku_platform` in dev; each service connects to its own schema via `search_path`.
 
+**Checklist:**
+- [x] `akuai` schema SQL defined (`inference_log`, `model_registry`)
+- [x] `akudemy` schema SQL defined (`subjects`, `class_levels`, `learning_objectives`, `content_chunks`, `exam_papers`)
+- [x] `superhub` schema SQL defined (`service_registry`, `routing_policies`)
+- [x] `daas` schema SQL defined (`datasets`, `ingestion_jobs`, `pipeline_status`, `access_grants`)
+- [x] `code_editor` schema SQL defined (`correction_pairs`, `session_summaries`)
+- [ ] Each service's Alembic `versions/` directory seeded with initial migration
+- [ ] `alembic upgrade head` succeeds on a clean `aku_platform` database
+
 #### Redis
 - Document DB index ownership (DB 2–9) in [`docs/deployment/local/REDIS_KEY_TTL_POLICY.md`](../deployment/local/REDIS_KEY_TTL_POLICY.md).
 - Validate `maxmemory-policy allkeys-lru` does not evict session-critical JWT or idempotency keys.
 - Mitigation: move JWT session keys to DB 0 with a dedicated `volatile-lru` pool if eviction pressure is observed.
+
+**Checklist:**
+- [x] DB index ownership table documented (DB 2–10)
+- [x] TTL policy per key category documented
+- [x] `maxmemory 96mb allkeys-lru` in `docker-compose.dev.yml`
+- [ ] Prometheus alert configured for `redis_memory_used_bytes / redis_memory_max_bytes > 0.80`
+- [ ] Critical-key monitor implemented for JWT (DB 6) and idempotency keys (DB 5)
 
 #### Neo4j
 - Create the initial LO knowledge graph schema — see [`docs/infra/neo4j-lo-schema.md`](../infra/neo4j-lo-schema.md).
@@ -51,13 +67,23 @@
 - Relationships: `BELONGS_TO`, `PREREQUISITE_OF`, `ASSESSED_BY`.
 - Seed with pilot subjects: ENG, MAT, BIO (JSS1–SS3).
 
+**Checklist:**
+- [x] Node types and relationship types documented in `docs/infra/neo4j-lo-schema.md`
+- [x] Uniqueness constraint Cypher for `LO.lo_id` defined
+- [x] Full-text index on `LO.description` defined
+- [x] Pilot seed Cypher script (`ENG`, `MAT`, `BIO` subjects + ExamBoards) written
+- [x] Sample LO prerequisite chain (BIO SS2 cell division) documented
+- [x] Common query patterns (prerequisite chain, next-best-LO, exam-frequency) documented
+- [ ] Seed script runs successfully against dev Neo4j container
+- [ ] Prerequisite chain query returns correct result in < 50 ms
+
 ### AkuAI (8004)
 
-**Stub API contract:**
+**Stub API contract** — see [`docs/services/aku-ai.md`](../services/aku-ai.md) and [`docs/api/akuai-openapi.yaml`](../api/akuai-openapi.yaml):
 
 | Method | Path | Description |
 |--------|------|-------------|
-| `POST` | `/api/v1/embeddings` | Embed text to 384-dim vector (all-MiniLM-L6-v2) |
+| `POST` | `/api/v1/embeddings` | Embed text to 384-dim vector (stub: zero-vector) |
 | `POST` | `/api/v1/text/generate` | Generate text via Gemma GGUF or stub |
 | `POST` | `/api/v1/code/generate` | Generate code from prompt (stub → Phase 2) |
 | `POST` | `/api/v1/code/explain` | Explain code block (stub → Phase 2) |
@@ -65,8 +91,16 @@
 | `GET` | `/ready` | Readiness check — model loaded |
 | `GET` | `/metrics` | Prometheus metrics |
 
-- Document all environment variables in [`docs/services/aku-code-editor.md`](../services/aku-code-editor.md) and inline in compose file.
-- Add Prometheus scrape target at `akuai:8004/metrics` in `monitoring/prometheus.yml`.
+**Checklist:**
+- [x] Service documented in `docs/services/aku-ai.md`
+- [x] OpenAPI spec created at `docs/api/akuai-openapi.yaml`
+- [x] Environment variables documented
+- [x] Stub response specification defined (deterministic per endpoint)
+- [x] Prometheus scrape target active at `akuai:8000/metrics` in `monitoring/prometheus.yml`
+- [ ] Service starts healthy in `infra + core` profile on a 6 GB machine
+- [ ] `GET /health` returns `200 OK` with `{"status": "ok"}`
+- [ ] `POST /api/v1/embeddings` returns 384-dim zero-vector with `stub: true`
+- [ ] All log lines emit valid JSON with required fields
 
 ### Akudemy (8005)
 
@@ -74,36 +108,73 @@
 - Seed JSS1–SS3 LO catalog (from `lo_catalog.json`), 3 pilot subjects.
 - Initial endpoints: `GET /api/v1/curriculum/lo/{lo_id}`, `GET /health`, `GET /ready`, `GET /metrics`.
 
+**Checklist:**
+- [x] Postgres schema SQL defined in `docs/deployment/local/postgres-schemas.md`
+- [ ] Alembic migration created and runs on startup
+- [ ] `lo_catalog.json` seed file created for ENG, MAT, BIO (JSS1–SS3)
+- [ ] `GET /api/v1/curriculum/lo/{lo_id}` returns LO from Postgres
+- [ ] `GET /health` and `GET /ready` return `200 OK`
+- [ ] Prometheus scrape target active
+
 ### Aku-EdgeHub (8006)
 
 - SQLite schema: tables `sync_state`, `cached_chunks`, `cached_lo_catalog`, `pending_events`.
 - Stub sync agent: `POST /sync/request`, `GET /sync/status`.
 - Validate Docker service-name resolution to `akudemy:8000` and `akuai:8000`.
 
+**Checklist:**
+- [x] Service documented in `docs/services/aku-edgehub.md`
+- [x] OpenAPI spec created at `docs/api/aku-edgehub-openapi.yaml`
+- [x] SQLite schema (all 4 tables) documented
+- [x] Environment variables documented
+- [ ] SQLite schema created on first container startup
+- [ ] `POST /sync/request` returns `{"status": "queued"}` (stub)
+- [ ] `GET /sync/status` returns status for all categories
+- [ ] Docker service-name resolution to `akudemy:8000` and `akuai:8000` confirmed
+
 ### AkuTutor (8007)
 
 - Wire call to `AkuAI /api/v1/text/generate`; fall back to stub response when AkuAI path is empty.
-- Implement base `POST /api/v1/tutor/ask` with context envelope:
-
-```json
-{
-  "learner_id": "<hashed>",
-  "class_level": "SS2",
-  "subject": "PHY",
-  "exam_path": ["WAEC"],
-  "language": "en",
-  "response_mode": "step_by_step",
-  "question": "Explain how sound waves travel."
-}
-```
-
+- Implement base `POST /api/v1/tutor/ask` with context envelope.
 - Add audit log skeleton: structured JSON per interaction (no raw PII).
+
+**Checklist:**
+- [x] Service documented in `docs/services/aku-tutor.md`
+- [x] OpenAPI spec created at `docs/api/aku-tutor-openapi.yaml`
+- [x] Phase 1 stub implementation specified (fallback when `AKU_AI_URL` empty)
+- [x] Audit log JSON format documented
+- [ ] `POST /api/v1/tutor/ask` forwards to AkuAI and returns response
+- [ ] Graceful stub fallback when `AKU_AI_URL` is empty or AkuAI returns `stub: true`
+- [ ] Audit log entry written for every request (no raw PII)
+- [ ] Prometheus scrape target active
 
 ### All Services — Cross-Cutting Standards
 
 - **Structured logging:** every service emits JSON logs with fields `trace_id`, `service`, `level`, `timestamp`, `message`.
 - **Health endpoints:** `/health` (liveness) and `/ready` (readiness) on every service. Docker `healthcheck` must target `/ready` where available.
 - **Prometheus scrape:** all 13 services registered as scrape targets in `monitoring/prometheus.yml`.
+
+**Checklist:**
+- [x] All 13 services registered in `monitoring/prometheus.yml`
+- [x] `healthcheck` targets `/health` for all services in `docker-compose.dev.yml`
+- [x] JSON structured log format documented for AkuAI, AkuTutor, Aku Code Editor
+- [ ] All 13 service containers start successfully in `infra + core + full + editor` profile
+- [ ] `infra + core` stack starts healthy in < 60 s on a 6 GB machine
+
+### Phase 1 Exit Criteria
+
+| Criterion | Status |
+|-----------|--------|
+| Postgres schemas defined (all 5 services) | ✅ Documented |
+| Redis key-space policy documented | ✅ Documented |
+| Neo4j LO schema documented + seed Cypher written | ✅ Documented |
+| AkuAI stub API contract + OpenAPI spec | ✅ Documented |
+| Akudemy initial endpoints + schema | ✅ Documented |
+| EdgeHub SQLite schema + stub sync agent | ✅ Documented |
+| AkuTutor stub ask endpoint + audit log | ✅ Documented |
+| All 13 scrape targets in `prometheus.yml` | ✅ Done |
+| All services `healthcheck` configured in compose | ✅ Done |
+| Full `infra + core` stack starts in < 60 s | ⬜ Pending service repo implementation |
 
 ---
 
@@ -118,12 +189,34 @@
 - Rate limiting: `GEMMA_MAX_PAYLOAD_BYTES` gate → `429 Too Many Requests` on overload.
 - Code inference stubs for `/api/v1/code/generate` and `/api/v1/code/explain` (wired to code model in Phase 4).
 
+**Checklist:**
+- [x] Real embedding path documented (ONNX `InferenceSession`, `MODEL_DIR` env var)
+- [x] GGUF text generation path documented (`llama_cpp.Llama`, `GEMMA_GGUF_PATH`)
+- [x] Rate-limiting behaviour documented (`GEMMA_MAX_PAYLOAD_BYTES` → 429)
+- [x] Redis cache strategy documented (5-min TTL keyed by `sha256(text)`)
+- [x] `stub: false` response behaviour documented
+- [ ] Real embedding returns correct 384-dim vector for test input
+- [ ] `gemma-2b-q4.gguf` generates prose when `GEMMA_GGUF_PATH` is set
+- [ ] `429` returned and `Retry-After` header set when payload gate exceeded
+- [ ] Inference cache hit rate > 0 in local load test
+- [ ] `akuai.inference_log` table populated (no raw text stored)
+
 ### Akudemy (8005)
 
 - Full CRUD: `POST /api/v1/content/chunks`, `PUT /api/v1/content/chunks/{id}`, `DELETE /api/v1/content/chunks/{id}`.
 - LO tagging pipeline: ingest markdown/JSON chunks → auto-assign candidate `lo_ids` → `review_status=pending`.
 - Content freshness: background job flags chunks older than 365 days.
 - Exam-papers endpoints: `GET /api/v1/exam-papers`, `GET /api/v1/exam-papers/{id}`.
+
+**Checklist:**
+- [x] `content_chunks` table schema defined (with `review_status`, `trust_level`, `updated_at`)
+- [x] `exam_papers` table schema defined
+- [ ] `POST /api/v1/content/chunks` creates chunk and sets `review_status=pending`
+- [ ] `PUT /api/v1/content/chunks/{id}` updates content and refreshes `updated_at`
+- [ ] `DELETE /api/v1/content/chunks/{id}` soft-deletes or removes record
+- [ ] LO tagging pipeline: ingest → auto-assign `lo_ids` from LO catalog match
+- [ ] Background freshness job flags chunks where `updated_at < now() - 365 days`
+- [ ] `GET /api/v1/exam-papers` and `GET /api/v1/exam-papers/{id}` return results from Postgres
 
 ### Aku-EdgeHub (8006)
 
@@ -132,6 +225,18 @@
 - `POST /api/v1/edge/rag/query` — two-layer retrieval: curriculum filter → semantic search → top-k re-rank.
 - Offline mode: `OPERATING_MODE=offline` serves all requests from local index only.
 
+**Checklist:**
+- [x] Delta sync agent flow documented (pull → upsert → FAISS add → ETag update)
+- [x] FAISS `IndexFlatIP` with 500 MB cap documented
+- [x] Two-layer RAG query flow documented (curriculum filter → FAISS → re-rank)
+- [x] Offline mode behaviour documented
+- [x] `RAGQueryRequest` / `RAGQueryResponse` schemas in OpenAPI spec
+- [ ] Delta sync downloads updated chunks from Akudemy `?since=<last_sync_at>`
+- [ ] FAISS index builds successfully with ≤ 500 MB cap enforced
+- [ ] `POST /api/v1/edge/rag/query` returns ranked results in < 200 ms on dev
+- [ ] `OPERATING_MODE=offline` serves all requests from local index (no upstream calls)
+- [ ] Outbound events buffer and retry correctly when upstream is unreachable
+
 ### AkuTutor (8007)
 
 - Full RAG pipeline: question → AkuAI embed → EdgeHub rag query → re-rank (trust × recency) → AkuAI generate → response + citation.
@@ -139,17 +244,64 @@
 - `hint_only` session counter: server-side, max 3 hints → full answer revealed.
 - Guardrails: grounding check (score ≥ 0.75), off-topic classification, safety filter.
 
+**Checklist:**
+- [x] Full RAG pipeline flow documented (6-step: embed → retrieve → re-rank → prompt → generate → respond)
+- [x] All 5 `response_mode` values documented with distinct behaviours
+- [x] `hint_only` server-side counter documented (Redis key pattern, TTL, max → upgrade)
+- [x] Guardrails documented (grounding check, off-topic, safety filter)
+- [x] Teacher feedback endpoint documented (`POST /api/v1/tutor/feedback`)
+- [x] `TutorFeedbackRequest` schema in OpenAPI spec (trust level increment/decrement)
+- [ ] Full RAG pipeline: embed → retrieve → re-rank → generate → respond (integration test)
+- [ ] All 5 `response_mode` values produce distinct response shapes
+- [ ] `hint_only` enforces max 3 hints; 4th request returns full answer
+- [ ] Grounding check rejects off-topic questions with correct message
+- [ ] `grounding_score` ≥ 0.75 in ≥ 80% of integration test queries
+- [ ] AkuTutor edge latency p95 ≤ 800 ms in integration test
+
 ### AkuWorkspace (8010) — Begin Activation
 
 - `POST /api/v1/workspace/query` — natural language → DaaS query → chart/summary response.
 - `POST /api/v1/workspace/docs/generate` — generate document via AkuAI text generation.
 - Circuit-breaker on every downstream call (`AKU_AI_URL`, `AKU_DAAS_URL`, `AKUDEMY_URL`).
 
+**Checklist:**
+- [x] AkuWorkspace service document exists (`docs/services/aku-workspace.md`)
+- [x] Downstream service URLs documented in `docker-compose.dev.yml` (`AKU_AI_URL`, `AKU_DAAS_URL`, `AKUDEMY_URL`)
+- [ ] `POST /api/v1/workspace/query` accepts NL query, calls DaaS, returns chart/summary
+- [ ] `POST /api/v1/workspace/docs/generate` calls AkuAI and returns generated document
+- [ ] Circuit-breaker wraps every downstream HTTP call (open on ≥ 5 consecutive failures)
+- [ ] Service starts healthy in `infra + core + full` profile
+
 ### Aku-DaaS (8012) — Begin Activation
 
 - Postgres schema `daas`: tables `datasets`, `ingestion_jobs`, `pipeline_status`, `access_grants`.
 - `POST /api/v1/datasets/ingest`, `GET /api/v1/datasets/{id}` with PII field masking anonymization hook.
 - `GET /api/v1/query` — accepts natural language, returns anonymized dataset slice.
+
+**Checklist:**
+- [x] `daas` schema SQL defined (`datasets`, `ingestion_jobs`, `pipeline_status`, `access_grants`)
+- [x] `is_anonymized` flag and `owner_id` hashing documented in schema
+- [ ] Alembic migration for `daas` schema runs on startup
+- [ ] `POST /api/v1/datasets/ingest` creates `ingestion_job` and kicks off pipeline
+- [ ] `GET /api/v1/datasets/{id}` returns dataset metadata (never raw PII)
+- [ ] PII field masking anonymization hook applied on ingest
+- [ ] `GET /api/v1/query` returns anonymized dataset slice for NL query
+- [ ] Service starts healthy in `infra + core + full` profile
+
+### Phase 2 Exit Criteria
+
+| Criterion | Status |
+|-----------|--------|
+| AkuAI real embedding (ONNX) documented | ✅ Documented |
+| AkuAI GGUF text generation documented | ✅ Documented |
+| Akudemy full CRUD + LO tagging documented | ✅ Documented |
+| EdgeHub delta sync + FAISS RAG documented | ✅ Documented |
+| AkuTutor full RAG + 5 modes documented | ✅ Documented |
+| AkuWorkspace begin activation documented | ✅ Documented |
+| DaaS begin activation + schema documented | ✅ Documented |
+| AkuAI real embedding returns correct 384-dim vector | ⬜ Pending service repo |
+| AkuTutor RAG pipeline integration test passes | ⬜ Pending service repo |
+| EdgeHub FAISS index builds within 500 MB cap | ⬜ Pending service repo |
 
 ---
 
