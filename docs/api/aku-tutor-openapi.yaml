@@ -1,0 +1,418 @@
+openapi: "3.1.0"
+info:
+  title: AkuTutor API
+  version: "0.2.0"
+  description: |
+    AI tutoring service for the Aku Platform.
+    Answers curriculum questions from students and teachers using a
+    Retrieval-Augmented Generation (RAG) pipeline built on AkuAI and Aku-EdgeHub.
+
+    **Phase 1:** `POST /api/v1/tutor/ask` forwards question to AkuAI;
+    returns stub response when AkuAI is unavailable.
+
+    **Phase 2:** Full RAG pipeline with 5 response modes, hint counter,
+    grounding check, and teacher feedback loop.
+  contact:
+    name: Aku Platform Engineering
+    url: https://github.com/oumar-code/Akulearn_docs
+
+servers:
+  - url: http://localhost:8007
+    description: Local development (Docker Compose core profile)
+  - url: https://tutor.aku.africa
+    description: Production
+
+tags:
+  - name: tutor
+    description: Tutoring question and answer
+  - name: sessions
+    description: Session history and hints (Phase 2)
+  - name: feedback
+    description: Teacher feedback and trust score updates (Phase 2)
+  - name: observability
+    description: Health and metrics
+
+paths:
+
+  # ── Tutor ─────────────────────────────────────────────────────────────────────
+
+  /api/v1/tutor/ask:
+    post:
+      operationId: tutorAsk
+      tags: [tutor]
+      summary: Submit a curriculum question and receive an AI-generated answer
+      description: |
+        **Phase 1:** Forwards the question to AkuAI `POST /api/v1/text/generate`
+        and returns the response. Falls back to stub text if AkuAI is unavailable
+        or in stub mode. Always writes a structured audit log entry.
+
+        **Phase 2:** Full RAG pipeline:
+        1. Embed question via AkuAI
+        2. Retrieve top-k chunks from Aku-EdgeHub
+        3. Re-rank by trust × recency × cosine similarity
+        4. Generate answer via AkuAI with grounding context
+        5. Return answer + citations + grounding score
+
+        `response_mode` controls the shape and depth of the answer:
+        - `direct` — concise direct answer
+        - `step_by_step` — numbered steps (preferred when mastery < 60%)
+        - `hint_only` — hint; server tracks counter per question (max 3; 4th → full answer)
+        - `exam_style` — WAEC/NECO marking-scheme format
+        - `recap` — multi-LO revision summary
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TutorAskRequest'
+            example:
+              learner_id: "sha256:abc123def456"
+              class_level: "SS2"
+              subject: "PHY"
+              exam_path: ["WAEC"]
+              language: "en"
+              response_mode: "step_by_step"
+              question: "Explain how sound waves travel through different media."
+              session_id: "session_uuid_001"
+      responses:
+        '200':
+          description: Tutoring answer with citations
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TutorAskResponse'
+              example:
+                answer: "[STUB] AkuTutor placeholder response."
+                response_mode: step_by_step
+                citations: []
+                grounding_score: 0.0
+                hint_count: 0
+                stub: true
+                latency_ms: 12
+        '400':
+          description: Safety filter triggered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                detail: "Question was rejected by the safety filter."
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  # ── Sessions ─────────────────────────────────────────────────────────────────
+
+  /api/v1/tutor/sessions/{session_id}:
+    get:
+      operationId: getSession
+      tags: [sessions]
+      summary: Retrieve a past tutoring session (Phase 2)
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Session history
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TutorSession'
+        '404':
+          description: Session not found
+
+  /api/v1/tutor/sessions/{session_id}/hint:
+    post:
+      operationId: requestHint
+      tags: [sessions]
+      summary: Request a hint for the current question (Phase 2)
+      description: |
+        Increments the server-side hint counter for `(session_id, question_hash)`.
+        When `hint_count >= HINT_MAX_COUNT` (3), automatically upgrades to `direct`
+        mode and returns the full answer.
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [question_hash]
+              properties:
+                question_hash:
+                  type: string
+                  description: SHA-256 of the original question text
+      responses:
+        '200':
+          description: Hint or full answer (if hint limit reached)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TutorAskResponse'
+        '404':
+          description: Session not found
+
+  # ── Feedback ─────────────────────────────────────────────────────────────────
+
+  /api/v1/tutor/feedback:
+    post:
+      operationId: submitFeedback
+      tags: [feedback]
+      summary: Teacher marks a response as helpful or incorrect (Phase 2)
+      description: |
+        Allows teachers to correct AI-generated responses. Correct corrections
+        trigger a trust-score update on the relevant chunk(s) in Akudemy:
+        - `rating: helpful` → increment `trust_level` by 1 (cap at 5)
+        - `rating: incorrect` → decrement `trust_level` by 1 (floor at 1) for penalised chunks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TutorFeedbackRequest'
+            example:
+              session_id: "session_uuid_001"
+              response_id: "resp_uuid_001"
+              rating: "incorrect"
+              teacher_correction: "Sound waves cannot travel through a vacuum."
+              chunk_ids_to_penalise: ["chunk_042"]
+      responses:
+        '204':
+          description: Feedback recorded; trust scores updated
+        '404':
+          description: Session or response not found
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  # ── Observability ────────────────────────────────────────────────────────────
+
+  /health:
+    get:
+      operationId: healthCheck
+      tags: [observability]
+      summary: Liveness check
+      responses:
+        '200':
+          description: Service alive
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+
+  /ready:
+    get:
+      operationId: readinessCheck
+      tags: [observability]
+      summary: Readiness — AkuAI reachable
+      responses:
+        '200':
+          description: Service ready
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  akuai_reachable:
+                    type: boolean
+                  edgehub_reachable:
+                    type: boolean
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+
+  /metrics:
+    get:
+      operationId: prometheusMetrics
+      tags: [observability]
+      summary: Prometheus metrics
+      responses:
+        '200':
+          description: Prometheus text format
+          content:
+            text/plain:
+              schema:
+                type: string
+
+# ── Components ───────────────────────────────────────────────────────────────
+
+components:
+
+  schemas:
+
+    TutorAskRequest:
+      type: object
+      required: [question]
+      properties:
+        learner_id:
+          type: string
+          description: SHA-256 hash of the learner's user ID (no raw PII)
+        class_level:
+          type: string
+          example: SS2
+          description: e.g. JSS1, SS3
+        subject:
+          type: string
+          example: PHY
+          description: Subject code matching Akudemy subjects table
+        exam_path:
+          type: array
+          items:
+            type: string
+          example: [WAEC]
+          description: Target exam boards
+        language:
+          type: string
+          default: en
+          description: ISO 639-1 language code (en, ha, ig, yo)
+        response_mode:
+          type: string
+          enum: [direct, step_by_step, hint_only, exam_style, recap]
+          default: direct
+        question:
+          type: string
+          maxLength: 2048
+        session_id:
+          type: string
+          description: Optional session ID for hint counter tracking
+
+    TutorAskResponse:
+      type: object
+      required: [answer, response_mode, citations, grounding_score, stub, latency_ms]
+      properties:
+        answer:
+          type: string
+        response_mode:
+          type: string
+          enum: [direct, step_by_step, hint_only, exam_style, recap]
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Citation'
+        grounding_score:
+          type: number
+          format: float
+          description: Confidence score based on retrieval quality (0.0–1.0)
+        hint_count:
+          type: integer
+          description: Number of hints issued for the current question in this session
+        stub:
+          type: boolean
+          description: True when AkuAI returned a stub response
+        latency_ms:
+          type: integer
+
+    Citation:
+      type: object
+      required: [chunk_id, lo_id, topic, trust_level]
+      properties:
+        chunk_id:
+          type: string
+        lo_id:
+          type: string
+        topic:
+          type: string
+        trust_level:
+          type: integer
+          minimum: 1
+          maximum: 5
+
+    TutorSession:
+      type: object
+      required: [session_id, interactions]
+      properties:
+        session_id:
+          type: string
+        subject:
+          type: string
+        class_level:
+          type: string
+        interactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/TutorInteraction'
+
+    TutorInteraction:
+      type: object
+      required: [response_id, question, answer, created_at]
+      properties:
+        response_id:
+          type: string
+        question:
+          type: string
+        answer:
+          type: string
+        response_mode:
+          type: string
+        grounding_score:
+          type: number
+          format: float
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Citation'
+        created_at:
+          type: string
+          format: date-time
+
+    TutorFeedbackRequest:
+      type: object
+      required: [session_id, response_id, rating]
+      properties:
+        session_id:
+          type: string
+        response_id:
+          type: string
+        rating:
+          type: string
+          enum: [helpful, incorrect]
+        teacher_correction:
+          type: string
+          description: Optional corrected text provided by the teacher
+        chunk_ids_to_penalise:
+          type: array
+          items:
+            type: string
+          description: Chunk IDs that should have their trust level decremented
+
+    ErrorResponse:
+      type: object
+      required: [detail]
+      properties:
+        detail:
+          type: string
+
+  responses:
+
+    ValidationError:
+      description: Request validation failed
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: array
+                items:
+                  type: object
+
+    ServiceUnavailable:
+      description: Service temporarily unavailable (AkuAI unreachable)
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
