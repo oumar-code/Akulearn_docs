@@ -1,7 +1,139 @@
 global:
   scrape_interval: 15s
+  evaluation_interval: 15s
+  scrape_timeout: 10s
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ['alertmanager:9093']
+
+# Load alerting rules from the rules/ directory
+rule_files:
+  - "rules/*.yml"
 
 scrape_configs:
-  - job_name: 'docker-services'
+  # ── Infra ──────────────────────────────────────────────────────────────────
+  - job_name: 'postgres'
     static_configs:
-      - targets: ['host.docker.internal:8000', 'host.docker.internal:8080', 'host.docker.internal:8084']
+      - targets: ['postgres-exporter:9187']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'postgres'
+
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis-exporter:9121']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'redis'
+
+  - job_name: 'neo4j'
+    static_configs:
+      - targets: ['neo4j:2004']        # Neo4j built-in Prometheus endpoint
+    metrics_path: '/metrics'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'neo4j'
+
+  # ── Core Services ──────────────────────────────────────────────────────────
+  - job_name: 'akuai'
+    static_configs:
+      - targets: ['akuai:8000']
+    metrics_path: '/metrics'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'akuai'
+
+  - job_name: 'akudemy'
+    static_configs:
+      - targets: ['akudemy:8000']
+    metrics_path: '/metrics'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'akudemy'
+
+  - job_name: 'aku-edgehub'
+    static_configs:
+      - targets: ['aku-edgehub:8000']
+    metrics_path: '/metrics'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'aku-edgehub'
+
+  - job_name: 'akututor'
+    static_configs:
+      - targets: ['akututor:8000']
+    metrics_path: '/metrics'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'akututor'
+
+  # ── Full-Stack Services ────────────────────────────────────────────────────
+  - job_name: 'aku-ighub'
+    static_configs:
+      - targets: ['aku-ighub:8000']
+    metrics_path: '/metrics'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'aku-ighub'
+
+  - job_name: 'aku-superhub'
+    static_configs:
+      - targets: ['aku-superhub:8000']
+    metrics_path: '/metrics'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'aku-superhub'
+
+  - job_name: 'akuworkspace'
+    static_configs:
+      - targets: ['akuworkspace:8000']
+    metrics_path: '/metrics'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'akuworkspace'
+
+  - job_name: 'aku-telhone'
+    static_configs:
+      - targets: ['aku-telhone:8000']
+    metrics_path: '/metrics'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'aku-telhone'
+
+  - job_name: 'aku-daas'
+    static_configs:
+      - targets: ['aku-daas:8000']
+    metrics_path: '/metrics'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'aku-daas'
+
+  # ── Editor Service ─────────────────────────────────────────────────────────
+  - job_name: 'aku-code-editor'
+    static_configs:
+      - targets: ['aku-code-editor:8000']
+    metrics_path: '/metrics'
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'aku-code-editor'
+
+  # ── Prometheus self-scrape ─────────────────────────────────────────────────
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']

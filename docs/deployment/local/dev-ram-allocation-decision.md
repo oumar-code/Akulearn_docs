@@ -47,6 +47,9 @@ Rather than one flat `docker-compose.yml` that tries to boot everything, service
 | akuworkspace | full | 128 MB | |
 | aku-telhone | full | 128 MB | |
 | aku-daas | full | 128 MB | |
+| **aku-code-editor** | **editor** | **128 MB** | **no code model weights in dev; delegates to AkuAI** |
+| prometheus | monitoring | 128 MB | 7-day TSDB retention |
+| grafana | monitoring | 256 MB | |
 
 ### Scenario Totals
 
@@ -55,6 +58,8 @@ Rather than one flat `docker-compose.yml` that tries to boot everything, service
 | Infra only | `--profile infra` | ~896 MB | ~3.6 GB |
 | Core dev | `--profile infra --profile core` | ~2.4 GB | ~2.1 GB |
 | Full stack | `--profile infra --profile core --profile full` | ~3.0 GB | ~1.5 GB |
+| + Code Editor | add `--profile editor` | ~3.1 GB | +128 MB |
+| + Monitoring | add `--profile monitoring` | ~3.4 GB | +384 MB |
 
 All three scenarios fit within the 4,500 MB container budget.
 

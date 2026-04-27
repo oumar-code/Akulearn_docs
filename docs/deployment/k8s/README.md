@@ -8,18 +8,19 @@ Raw Kubernetes manifests for deploying all 9 Aku Platform backend services to a 
 
 ```
 docs/deployment/k8s/
-├── README.md           ← this file
-├── namespace.yaml      ← shared Namespace (aku-platform)
-├── secrets.yaml        ← Secret templates for all 9 services (placeholder values only)
-├── akuai.yaml          ← AkuAI: Deployment + Service + ConfigMap
-├── akudemy.yaml        ← Akudemy
-├── aku-edgehub.yaml    ← Aku-EdgeHub
-├── aku-ighub.yaml      ← Aku-IGHub
-├── aku-superhub.yaml   ← Aku-SuperHub
-├── akututor.yaml       ← AkuTutor
-├── akuworkspace.yaml   ← AkuWorkspace
-├── aku-telhone.yaml    ← Aku-Telhone
-└── aku-daas.yaml       ← Aku-DaaS
+├── README.md               ← this file
+├── namespace.yaml          ← shared Namespace (aku-platform)
+├── secrets.yaml            ← Secret templates for all 10 services (placeholder values only)
+├── akuai.yaml              ← AkuAI: Deployment + Service + ConfigMap
+├── akudemy.yaml            ← Akudemy
+├── aku-edgehub.yaml        ← Aku-EdgeHub
+├── aku-ighub.yaml          ← Aku-IGHub
+├── aku-superhub.yaml       ← Aku-SuperHub
+├── akututor.yaml           ← AkuTutor
+├── akuworkspace.yaml       ← AkuWorkspace
+├── aku-telhone.yaml        ← Aku-Telhone
+├── aku-daas.yaml           ← Aku-DaaS
+└── aku-code-editor.yaml    ← Aku-Code-Editor (AI code assistant)
 ```
 
 Each service manifest contains three resources separated by `---`:
@@ -127,6 +128,7 @@ kubectl create secret docker-registry ghcr-pull-secret \
 | AkuWorkspace | 8004 | 80 |
 | Aku-Telhone | 8001 | 80 |
 | Aku-DaaS | 8001 | 80 |
+| **Aku-Code-Editor** | **8013** | **80** |
 
 All Services expose port **80** externally (within the cluster) and forward to the container port. This lets services call each other on `http://<service-name>.<namespace>.svc.cluster.local/api/v1/...`.
 
@@ -147,6 +149,7 @@ Each service Deployment mounts a `<service>-secret` Secret. The required keys ar
 | **AkuWorkspace** | `DATABASE_URL`, `REDIS_URL` |
 | **Aku-Telhone** | `DATABASE_URL`, `REDIS_URL`, `SMDP_API_KEY`, `OTA_PLATFORM_API_KEY`, `AKU_IGHUB_API_KEY`, `JWT_SECRET_KEY`, `JWT_ALGORITHM` |
 | **Aku-DaaS** | `DATABASE_URL`, `REDIS_URL`, `IGHUB_SERVICE_TOKEN`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_ENDPOINT_URL` *(optional for MinIO)* |
+| **Aku-Code-Editor** | `REDIS_URL`, `AKUAI_API_KEY`, `AKUDEMY_API_KEY`, `DAAS_API_KEY`, `JWT_SECRET_KEY` |
 
 > **Never commit real secret values to this repository.** Use `kubectl create secret` or a secrets manager (Vault, AWS Secrets Manager, GCP Secret Manager) to inject secrets at deploy time.
 
