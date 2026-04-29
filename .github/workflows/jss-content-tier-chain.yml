@@ -147,7 +147,30 @@ jobs:
             >> "${GITHUB_STEP_SUMMARY}"
           echo "   LLM    : ${LLM}"                                                     \
             >> "${GITHUB_STEP_SUMMARY}"
-
+      - name: Email Notification
+        if: always() # send email on success or failure
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: JSS Tier Chain - ${{ job.status }} - ${{ steps.tier.outputs.NEXT_TIER }}
+          to: umarabubakarg2018@gmail.com
+          from: GitHub Actions <${{ secrets.MAIL_USERNAME }}>
+          body: |
+            JSS Content Pipeline Status: ${{ job.status }}
+            
+            Merged Tier: ${{ steps.tier.outputs.MERGED_TIER }}
+            Next Tier Triggered: ${{ steps.tier.outputs.NEXT_TIER }}
+            Levels: ${{ steps.tier.outputs.LEVELS }}
+            LLM: ${{ steps.tier.outputs.LLM_PROVIDER }}
+            
+            Repo: ${{ github.repository }}
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            
+            Triggered by: ${{ github.actor }}      
   # ────────────────────────────────────────────────────────────────────────────
   # Job 2: One-time setup — push notifier workflow to Aku-Content
   # ────────────────────────────────────────────────────────────────────────────
