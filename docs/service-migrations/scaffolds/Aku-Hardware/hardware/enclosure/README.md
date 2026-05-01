@@ -85,6 +85,16 @@ and occasional rain splash.
 
 ---
 
+## Design Documentation
+
+| Document | Purpose |
+|----------|---------|
+| [`mechanical-drawing.md`](mechanical-drawing.md) | Full fabrication drawing — orthographic views, hole table, material callout, tolerances |
+| [`freecad-setup.md`](freecad-setup.md) | FreeCAD 0.21 modeling guide — workbenches, parametric sketch, DXF/STEP export |
+| [`pcb-mounting.md`](pcb-mounting.md) | PCB-to-enclosure interface — standoff positions, clearance table, LED alignment |
+
+---
+
 ## CAD / DXF Files
 
 > **Status:** ⏳ FreeCAD design in progress — DXF drill template pending
@@ -133,12 +143,25 @@ All dimensions in millimetres. Tolerance: ±0.5 mm for cable glands, ±0.2 mm fo
 - [x] Enclosure specification defined (dimensions, IP rating, material)
 - [x] Internal layout and cable gland positions defined
 - [x] DXF drill template dimensions documented
-- [ ] FreeCAD model (`enclosure-body.FCStd`) — **in progress**
+- [x] Fabrication drawing documented ([mechanical-drawing.md](mechanical-drawing.md))
+- [x] FreeCAD modeling guide written ([freecad-setup.md](freecad-setup.md))
+- [x] PCB-to-enclosure interface defined ([pcb-mounting.md](pcb-mounting.md))
+- [ ] FreeCAD model (`enclosure-body.FCStd`) — **in progress** (see [freecad-setup.md](freecad-setup.md))
 - [ ] DXF flat patterns exported and verified at sheet-metal shop
 - [ ] Prototype enclosure fabricated (custom or off-the-shelf Fibox)
 - [ ] IP54 rating validated with water-spray test
 - [ ] Asset tag / QR code slot added to lid for field inventory scanning
 - [ ] STEP assembly clearance check passed
+
+### Fabrication Readiness Gate
+
+Before sending to the sheet-metal shop, all of the following must be complete:
+
+- [ ] `enclosure-body.FCStd` saved and validated per [freecad-setup.md](freecad-setup.md) checklist
+- [ ] `enclosure-body.dxf` and `enclosure-lid.dxf` exported and opened without errors in LibreCAD
+- [ ] `enclosure-drill-template.dxf` matches hole table in [mechanical-drawing.md](mechanical-drawing.md)
+- [ ] `enclosure-assembly.step` PCB clearance check passed per [pcb-mounting.md](pcb-mounting.md)
+- [ ] Material spec (RAL 7035, 1.5 mm CRCA, EPDM gasket) confirmed with shop
 
 ---
 
@@ -147,4 +170,5 @@ All dimensions in millimetres. Tolerance: ±0.5 mm for cable glands, ±0.2 mm fo
 - [Assembly procedure](../edge-hub/assembly.md) — references enclosure drill positions
 - [Wiring guide](../edge-hub/wiring.md) — cable gland assignments
 - [PCB design](../edge-hub/pcb/README.md) — PCB mounts on M3 standoffs inside enclosure
+- [Design status tracker](../edge-hub/DESIGN_STATUS.md) — overall PCB + mechanical milestone gates
 

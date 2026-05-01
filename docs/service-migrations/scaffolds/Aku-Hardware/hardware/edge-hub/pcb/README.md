@@ -4,6 +4,32 @@
 
 ---
 
+## Quick Start (KiCad 7)
+
+1. Install [KiCad 7](https://www.kicad.org/download/) (7.0.x or later).
+2. Open `aku-edge-hub-sensor-board.kicad_pro` from this directory.
+3. The schematic (`.kicad_sch`) and PCB layout (`.kicad_pcb`) open from the project manager.
+4. Custom symbols and footprints are in `.kicad_sym` / `.kicad_fp` — KiCad loads them
+   automatically from the project library paths (no global library changes needed).
+5. Review [`schematic-notes.md`](schematic-notes.md) before editing the schematic —
+   all net names and pin assignments are defined there.
+6. Review [`design-rules.md`](design-rules.md) before touching the PCB layout.
+7. Import `aku-edge-hub-sensor-board.kicad_dru` in Board Setup → Design Rules to
+   load the project-specific DRC rules.
+
+---
+
+## Design Documentation
+
+| Document | Purpose |
+|----------|---------|
+| [`schematic-notes.md`](schematic-notes.md) | Full net-level schematic description — every pin, net name, and passive value |
+| [`design-rules.md`](design-rules.md) | Layer stackup, trace widths, clearances, via sizes, DRU template |
+| [`component-placement.md`](component-placement.md) | Board floorplan with X/Y coordinates and routing guidance |
+| [`bom-pcb.csv`](bom-pcb.csv) | Machine-readable BOM (JLCPCB SMT assembly ready) |
+
+---
+
 ## Overview
 
 This directory will contain the **KiCad EDA files** for the Aku Edge Hub sensor and
@@ -86,8 +112,37 @@ Once design files are complete, fabricate using:
 
 ---
 
+## ERC / DRC Pass Criteria
+
+Before generating Gerbers the following must all be green:
+
+| Check | Tool | Acceptance |
+|-------|------|-----------|
+| Electrical Rules Check (ERC) | KiCad Schematic Editor → Inspect → ERC | 0 errors |
+| Design Rule Check (DRC) | KiCad PCB Editor → Inspect → DRC | 0 errors, 0 unconnected |
+| Gerber visual check | KiCad Gerber Viewer or gerbv | All copper, mask, silk look correct |
+| Drill file check | KiCad Gerber Viewer | All holes present, no missing pads |
+
+---
+
+## Fab Submission Checklist (JLCPCB)
+
+- [ ] Export Gerbers: `File → Plot` → Gerber, all layers checked, use Protel extensions
+- [ ] Export drill file: `File → Plot → Generate Drill Files` — Excellon format, metric
+- [ ] Zip all files: `gerbers/` folder → `aku-edge-hub-sensor-board-gerbers.zip`
+- [ ] Upload to JLCPCB order page; verify board outline in online viewer
+- [ ] Set: 2 layers, 1.6 mm, green, HASL lead-free, 5 pcs (prototype)
+- [ ] If SMT: upload `bom-pcb.csv` and pick-and-place CSV from KiCad fabrication output
+- [ ] Confirm SMT parts: U2 (INA3221), C1, R1–R9, D1 — all others hand-soldered
+
+---
+
 ## Status
 
+- [x] Schematic notes documented ([schematic-notes.md](schematic-notes.md))
+- [x] Design rules documented ([design-rules.md](design-rules.md))
+- [x] Component placement guide documented ([component-placement.md](component-placement.md))
+- [x] Pick-and-place BOM created ([bom-pcb.csv](bom-pcb.csv))
 - [ ] KiCad schematic complete
 - [ ] PCB layout complete
 - [ ] Design Rule Check (DRC) passed — 0 errors
@@ -103,3 +158,4 @@ Once design files are complete, fabricate using:
 - [Wiring guide](../wiring.md) — all connector and pin assignments sourced from this schematic
 - [BOM](../bom.md) — PCB board added as a line item in the production BOM
 - [Energy monitoring](../../power-system/energy-monitoring.md) — INA3221 metrics spec
+- [Design status tracker](../DESIGN_STATUS.md) — overall PCB + mechanical milestone gates
