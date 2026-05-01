@@ -2,7 +2,7 @@
 
 **Drawing number:** AKU-EH-ENC-001  
 **Revision:** A  
-**Material:** 1.5 mm mild steel, powder-coat RAL 7035 light grey  
+**Material:** DC01 cold-rolled mild steel (CRCA) 1.5 mm, powder-coat RAL 7035 light grey  
 **Scale:** Not to scale — all dimensions in millimetres  
 **Tolerance (unless stated):** Linear ±0.5 mm, angular ±1°, holes ±0.2 mm
 

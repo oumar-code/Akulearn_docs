@@ -75,13 +75,13 @@ For each component on the PCB, verify clearance to nearest enclosure wall.
 
 | Component | PCB Position | Enclosure wall | Gap (mm) | Min required | Pass? |
 |-----------|-------------|----------------|----------|--------------|-------|
-| J1 pin header (left) | X=10 from PCB left | Left inner wall (PCB left edge at X=40 encl.) | 40 − 10 = 30 | 5 mm | ✅ |
+| J1 pin header (left) | X=10 from PCB left | Left inner wall (PCB left edge at encl. X=40) | 40 − 10 = 30 | 5 mm | ✅ |
 | TB1 (left edge) | X=8 from PCB left | Left inner wall | 40 − 8 = 32 | 10 mm (cable clearance) | ✅ |
-| R4/R5/R6 shunts (top) | Y=50 from PCB bottom | Rear wall (PCB top at Y=70+60=130) | 117−130+117 → check STEP | 5 mm | ⚠️ verify in STEP |
-| LED1 (right) | X=88 from PCB left | Right inner wall (PCB right at 130+100=230, encl. inner=297) | 297−230=67 | 5 mm | ✅ |
-| Terminal block TB1 height | 8.5 mm above PCB | Lid underside (117−15−8.5=93.5 mm clear) | 93 mm | 10 mm | ✅ |
+| R4/R5/R6 shunts (top) | Y=50 from PCB bottom | Rear inner wall (PCB top at encl. Y=20+60=80; inner depth=117) | 117 − 80 = 37 | 5 mm | ✅ (verify in STEP) |
+| LED1 (right) | X=88 from PCB left | Right inner wall (PCB right at encl. X=40+100=140; inner width=297) | 297 − 140 = 157 | 5 mm | ✅ |
+| Terminal block TB1 height | 8.5 mm above PCB | Lid underside (encl. height 197 inner; standoff 15 + PCB 1.6 + TB 8.5 = 25.1) | 197 − 25 = 172 mm | 10 mm | ✅ |
 | INA3221 WQFN-16 height | < 1 mm above PCB | Lid clearance | >> 10 mm | 2 mm | ✅ |
-| Fuse holder F1 height | ~12 mm above PCB | Lid clearance (117−15−12=90 mm clear) | 90 mm | 10 mm | ✅ |
+| Fuse holder F1 height | ~12 mm above PCB | Lid clearance (197 − 15 − 12 = 170 mm clear) | 170 mm | 10 mm | ✅ |
 
 > ⚠️ Rows marked "verify in STEP" must be confirmed using `enclosure-assembly.step`
 > once the FreeCAD model is complete.
@@ -94,13 +94,13 @@ The DIN rail and power converters (U7, U8) sit beside the PCB on the enclosure b
 
 | Item | Enclosure base X (mm) | Enclosure base Y (mm) | Notes |
 |------|----------------------|----------------------|-------|
-| DIN rail start | 145 | 10 | 260 mm long, runs toward X=260+145=405 → trim to 297-145=152 mm |
+| DIN rail start | 145 | 10 | 260 mm long; maximum usable length = 297 − 145 = 152 mm → trim rail to 152 mm |
 | U7 (24→5V buck) | 150 | 15 | Snap-on DIN bracket |
 | U8 (24→12V buck) | 180 | 15 | Snap-on DIN bracket |
 | TB1 power terminal | 210 | 12 | DIN mounted |
 
-Minimum clearance between PCB right edge (at X=130+100=230 mm) and DIN rail (at X=145):
-230 − 145 = **85 mm** — adequate for wiring.
+Minimum clearance between PCB right edge (encl. X = 40 + 100 = 140 mm) and DIN rail start (X = 145 mm):
+145 − 140 = **5 mm** — tight but acceptable; ensure no connectors overhang the PCB right edge. Adjust DIN rail start to X = 160 mm if additional clearance is needed for cable routing.
 
 ---
 
@@ -108,11 +108,11 @@ Minimum clearance between PCB right edge (at X=130+100=230 mm) and DIN rail (at 
 
 The PCB LED positions must align with the lid holes within ±1 mm.
 
-| LED | PCB board X (mm) | PCB board Y (mm) | Enclosure base X | Enclosure base Y | Lid hole X | Lid hole Y | Δ |
-|-----|-----------------|-----------------|-----------------|-----------------|-----------|-----------|---|
-| LED1 | 88 | 46 | 40+88=128 | 20+46=66 | 130 | — | 2 mm — adjust standoff S2 X by +2 mm or shift PCB |
-| LED2 | 93 | 46 | 40+93=133 | 20+46=66 | 150 | — | 17 mm gap — **LED2 requires a flexible lead-out or PCB position adjustment** |
-| LED3 | 88 | 53 | 128 | 73 | 170 | — | see note |
+| LED | PCB board X (mm) | PCB board Y (mm) | Enclosure base X | Enclosure base Y | Lid hole X | Lid hole Y | Δ X |
+|-----|-----------------|-----------------|-----------------|-----------------|-----------|-----------|-----|
+| LED1 | 88 | 46 | 40+88=128 | 20+46=66 | 130 | 30 | 2 mm — minor; adjust standoff X or use flex lead |
+| LED2 | 93 | 46 | 40+93=133 | 20+46=66 | 150 | 30 | 17 mm — **LED2 requires flex lead-out or PCB position adjustment** |
+| LED3 | 88 | 53 | 40+88=128 | 20+53=73 | 170 | 30 | 42 mm — **LED3 requires flex lead-out** |
 
 > 📌 **Action required:** The LED positions in the current PCB placement produce an
 > X-offset from the lid hole positions (defined in `mechanical-drawing.md`). Resolution
