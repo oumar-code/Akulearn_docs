@@ -1,0 +1,246 @@
+name: "Aku-Hardware — Sync Docs from Akulearn_docs"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# What this workflow does
+# ──────────────────────────────────────────────────────────────────────────────
+# Keeps the oumar-code/Aku-Hardware repository in sync with the canonical hardware
+# documentation source-of-truth maintained in this repo (Akulearn_docs).
+#
+# Files synced (docs/service-migrations/scaffolds/Aku-Hardware/ → root of Aku-Hardware):
+#   - hardware/edge-hub/       — specs, BOM, wiring, assembly, PCB design notes
+#   - hardware/projector/      — specs, BOM
+#   - hardware/power-system/   — solar, wind, battery, energy monitoring
+#   - hardware/enclosure/      — enclosure design, DXF notes, CAD status
+#   - firmware/energy-monitor/ — INA3221 MicroPython firmware (main.py)
+#   - firmware/device-watchdog/— hardware watchdog firmware (main.py) + README
+#   - testing/                 — power system and integration test procedures
+#   - docs/                    — manufacturing guide, field deployment, maintenance
+#   - README.md, CONTRIBUTING.md, .gitignore
+#   - .github/workflows/firmware-ci.yml  — CI workflow for firmware lint/test
+#
+# The sync is one-way: Akulearn_docs is the single source of truth for all
+# hardware documentation. Any edits must be made here, not directly in Aku-Hardware.
+#
+# Trigger conditions:
+#   1. Automatic: on every push to main that touches the scaffold source directory
+#   2. Manual: via workflow_dispatch (supports dry_run preview)
+#
+# Prerequisites
+# ──────────────────────────────────────────────────────────────────────────────
+# Create a repo secret named GH_PAT:
+#   Settings → Secrets and variables → Actions → New repository secret
+#   Name : GH_PAT
+#   Value: A classic Personal Access Token with scopes: repo, workflow
+#   (Generate at https://github.com/settings/tokens)
+# ──────────────────────────────────────────────────────────────────────────────
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/service-migrations/scaffolds/Aku-Hardware/**"
+
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run — preview what would be synced without pushing"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+      force:
+        description: "Force sync even if no scaffold files changed"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+jobs:
+  sync:
+    name: Sync hardware docs to Aku-Hardware
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read  # only reads from this repo; pushes go to Aku-Hardware via PAT
+
+    env:
+      GITHUB_ORG: oumar-code
+      TARGET_REPO: Aku-Hardware
+      SYNC_BRANCH: sync/docs-from-akulearn-docs
+      GH_TOKEN: ${{ secrets.GH_PAT }}
+      DRY_RUN: ${{ inputs.dry_run || 'false' }}
+
+    steps:
+      # ── 1. Checkout Akulearn_docs to get the scaffold files ──────────────────
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+
+      # ── 2. Configure git identity ────────────────────────────────────────────
+      - name: Configure git identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name  "github-actions[bot]"
+
+      # ── 3. Clone Aku-Hardware via PAT ─────────────────────────────────────────
+      - name: Clone Aku-Hardware
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          REPO_URL="https://x-access-token:${GH_PAT}@github.com/${GITHUB_ORG}/${TARGET_REPO}.git"
+          echo "Cloning ${GITHUB_ORG}/${TARGET_REPO} (default branch)..."
+
+          if git clone --depth 1 "${REPO_URL}" "${RUNNER_TEMP}/${TARGET_REPO}" 2>/dev/null; then
+            echo "✅ Cloned existing repo"
+          else
+            echo "ℹ️  Repo appears empty — initialising fresh clone"
+            mkdir -p "${RUNNER_TEMP}/${TARGET_REPO}"
+            git -C "${RUNNER_TEMP}/${TARGET_REPO}" init
+            git -C "${RUNNER_TEMP}/${TARGET_REPO}" remote add origin "${REPO_URL}"
+          fi
+          git -C "${RUNNER_TEMP}/${TARGET_REPO}" remote set-url origin "${REPO_URL}"
+
+      # ── 4. Dry-run preview ────────────────────────────────────────────────────
+      - name: Dry-run preview
+        if: inputs.dry_run == 'true'
+        run: |
+          SCAFFOLD_SRC="${GITHUB_WORKSPACE}/docs/service-migrations/scaffolds/Aku-Hardware"
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+
+          echo "🔍 DRY-RUN — files that would be synced to ${GITHUB_ORG}/${TARGET_REPO}:"
+          echo ""
+
+          CHANGED=0
+          while IFS= read -r src_file; do
+            rel_path="${src_file#"${SCAFFOLD_SRC}/"}"
+            dest_file="${TARGET_CLONE}/${rel_path}"
+
+            if [[ ! -f "$dest_file" ]]; then
+              echo "  [NEW]     ${rel_path}"
+              CHANGED=$((CHANGED + 1))
+            elif ! diff -q "$src_file" "$dest_file" &>/dev/null; then
+              echo "  [CHANGED] ${rel_path}"
+              CHANGED=$((CHANGED + 1))
+            fi
+          done < <(find "${SCAFFOLD_SRC}" -type f | sort)
+
+          TOTAL=$(find "${SCAFFOLD_SRC}" -type f | wc -l)
+          echo ""
+          echo "Total scaffold files : ${TOTAL}"
+          echo "Files that would sync: ${CHANGED}"
+
+      # ── 5. Create sync branch and copy updated files ──────────────────────────
+      - name: Apply updated scaffold files
+        if: inputs.dry_run != 'true'
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          SCAFFOLD_SRC="${GITHUB_WORKSPACE}/docs/service-migrations/scaffolds/Aku-Hardware"
+
+          if [[ ! -d "$SCAFFOLD_SRC" ]]; then
+            echo "❌ Scaffold source not found: ${SCAFFOLD_SRC}"
+            exit 1
+          fi
+
+          # Create or reset the sync branch
+          git -C "${TARGET_CLONE}" checkout -B "${SYNC_BRANCH}" 2>/dev/null \
+            || git -C "${TARGET_CLONE}" checkout -b "${SYNC_BRANCH}"
+
+          # Copy all scaffold files (overwrite any existing)
+          cp -r "${SCAFFOLD_SRC}/." "${TARGET_CLONE}/"
+
+          FILE_COUNT=$(find "${SCAFFOLD_SRC}" -type f | wc -l)
+          echo "✅ Copied ${FILE_COUNT} scaffold files to ${TARGET_CLONE}"
+
+      # ── 6. Commit and push if there are changes ───────────────────────────────
+      - name: Commit and push
+        if: inputs.dry_run != 'true'
+        id: push
+        run: |
+          TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
+          cd "${TARGET_CLONE}"
+
+          git add .
+
+          if git diff --cached --quiet; then
+            echo "ℹ️  Nothing changed — Aku-Hardware is already up to date."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Build a concise commit message listing changed files
+          CHANGED_FILES=$(git diff --cached --name-only | head -20 | tr '\n' ' ')
+          git commit -m "docs: sync hardware docs from Akulearn_docs
+
+Updated files: ${CHANGED_FILES}
+
+Source: https://github.com/oumar-code/Akulearn_docs/tree/main/docs/service-migrations/scaffolds/Aku-Hardware
+Triggered by: ${{ github.event_name }} (${{ github.sha }})"
+
+          git push -u origin "${SYNC_BRANCH}" --force
+          echo "✅ Pushed sync branch: ${SYNC_BRANCH}"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # ── 7. Open or update pull request ───────────────────────────────────────
+      - name: Open or update pull request
+        if: inputs.dry_run != 'true' && steps.push.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          # Check if a PR already exists for this branch
+          EXISTING_PR=$(gh pr list \
+            --repo "${GITHUB_ORG}/${TARGET_REPO}" \
+            --head "${SYNC_BRANCH}" \
+            --state open \
+            --json number \
+            --jq '.[0].number' 2>/dev/null || echo "")
+
+          PR_BODY="Automated documentation sync from [Akulearn_docs](https://github.com/oumar-code/Akulearn_docs).
+
+## What changed
+
+$(cd "${RUNNER_TEMP}/${TARGET_REPO}" && git diff origin/main...HEAD --name-only 2>/dev/null | sed 's/^/- /' || echo "- See commit diff")
+
+## Source of truth
+
+All hardware documentation is maintained in \`docs/service-migrations/scaffolds/Aku-Hardware/\`
+inside [oumar-code/Akulearn_docs](https://github.com/oumar-code/Akulearn_docs).
+
+Do **not** edit documentation files directly in this repo — changes will be overwritten
+on the next sync. Edit the source files in Akulearn_docs instead.
+
+## Trigger
+
+- Event   : \`${{ github.event_name }}\`
+- Commit  : \`${{ github.sha }}\`
+- Workflow: \`${{ github.workflow }}\`
+
+---
+_Automated by the \`populate-aku-hardware.yml\` workflow in Akulearn_docs._"
+
+          if [[ -n "$EXISTING_PR" ]]; then
+            echo "ℹ️  Updating existing PR #${EXISTING_PR}"
+            gh pr edit "$EXISTING_PR" \
+              --repo "${GITHUB_ORG}/${TARGET_REPO}" \
+              --body "${PR_BODY}"
+            echo "✅ PR #${EXISTING_PR} updated"
+          else
+            gh pr create \
+              --repo "${GITHUB_ORG}/${TARGET_REPO}" \
+              --base main \
+              --head "${SYNC_BRANCH}" \
+              --title "docs: sync hardware documentation from Akulearn_docs" \
+              --body "${PR_BODY}" \
+              && echo "✅ New sync PR opened"
+          fi
+
+      # ── 8. Summary ────────────────────────────────────────────────────────────
+      - name: Summary
+        if: always()
+        run: |
+          echo "════════════════════════════════════════════════════"
+          echo "  populate-aku-hardware sync complete"
+          echo "  Target repo : ${GITHUB_ORG}/${TARGET_REPO}"
+          echo "  Sync branch : ${SYNC_BRANCH}"
+          echo "  Dry run     : ${DRY_RUN}"
+          echo "  Trigger     : ${{ github.event_name }}"
+          echo "════════════════════════════════════════════════════"

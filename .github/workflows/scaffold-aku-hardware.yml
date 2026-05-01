@@ -218,6 +218,9 @@ jobs:
             echo "  Next steps:"
             echo "  1. Review and merge the PR in Aku-Hardware"
             echo "  2. Add KiCad PCB files to hardware/edge-hub/pcb/"
-            echo "  3. Complete firmware/device-watchdog/main.py"
-            echo "  4. Push tag fw-energy-monitor-v1.0.0 to mark first firmware release"
+            echo "  3. Add KiCad PCB files to hardware/edge-hub/pcb/"
+            echo "  4. Add FreeCAD DXF to hardware/enclosure/"
+            echo "  5. Push tag fw-energy-monitor-v1.0.0 to mark first energy monitor firmware release"
+            echo "  6. Push tag fw-device-watchdog-v1.0.0 after relay hardware validation"
+            echo "  7. Enable populate-aku-hardware.yml to auto-sync future doc updates"
           fi
