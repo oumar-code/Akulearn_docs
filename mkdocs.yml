@@ -107,6 +107,12 @@ nav:
       - Cyber AIops: CYBER_AIOPS_STRATEGY.md
       - LO Tagging Schema: LO_TAGGING_SCHEMA.md
       - News Multimodal Ingestion: news_multimodal_ingestion.md
+  - Aku-Telhone:
+      - Overview: Aku-Telhone/index.md
+      - Physical SIM & MVNO: Aku-Telhone/physical-sim-mvno.md
+      - eSIM: Aku-Telhone/esim.md
+      - Telhone Application: Aku-Telhone/telhone-app.md
+      - Nigeria Regulatory Steps: Aku-Telhone/regulatory.md
   - eSIM & Connectivity:
       - MVNO/eSIM Integration: esim/mvno_esim_integration_plan.md
       - Projector Hub Leases: projector_hub_leases.md
