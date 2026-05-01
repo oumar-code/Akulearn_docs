@@ -66,7 +66,7 @@ This is the single source of truth for all repositories in the Aku Platform ecos
 
 | Repo | Role | Tech | Status |
 |------|------|------|--------|
-| [Aku-Hardware](https://github.com/oumar-code/Aku-Hardware) | Hardware design, firmware, and manufacturing docs for the Aku Edge Hub (SBC, enclosure, wiring), Projector module, and solar/wind hybrid power system; includes INA3221 MicroPython firmware, BOM, test procedures, field deployment & maintenance guides | MicroPython, KiCad (planned), FreeCAD (planned) | ✅ Repo created — scaffold applied via `scaffold-aku-hardware.yml` |
+| [Aku-Hardware](https://github.com/oumar-code/Aku-Hardware) | Hardware design, firmware, and manufacturing docs for the Aku Edge Hub (SBC, enclosure, wiring), Projector module, and solar/wind hybrid power system; includes INA3221 MicroPython firmware, device watchdog firmware, BOM, PCB design notes, FreeCAD enclosure DXF spec, test procedures, field deployment & maintenance guides | MicroPython, KiCad (planned), FreeCAD (planned) | ✅ Scaffold applied — docs populated — device watchdog firmware implemented — auto-sync via `populate-aku-hardware.yml` |
 
 ### 📚 Shared Libraries
 
