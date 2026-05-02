@@ -142,5 +142,5 @@
 - [Physical SIM & MVNO](physical-sim-mvno.md)
 - [eSIM Pillar](esim.md)
 - [Telhone Application](telhone-app.md)
-- [Regulatory Compliance Checklist (Zamfara Pilot)](../regulatory/regulatory_compliance_checklist.md)
-- [MVNO/eSIM Integration Plan](../esim/mvno_esim_integration_plan.md)
+- [Regulatory Compliance Checklist (Zamfara Pilot)](../../../../regulatory/regulatory_compliance_checklist.md)
+- [MVNO/eSIM Integration Plan](../../../../esim/mvno_esim_integration_plan.md)
