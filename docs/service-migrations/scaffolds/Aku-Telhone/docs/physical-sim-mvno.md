@@ -97,5 +97,5 @@ The bureau pre-personalizes SIMs with Aku's MVNO credentials and ships boxed or 
 - [eSIM Pillar](esim.md)
 - [Telhone Application](telhone-app.md)
 - [Nigeria Regulatory & Commercial Steps](regulatory.md)
-- [MVNO/eSIM Integration Plan (Zamfara Pilot)](../esim/mvno_esim_integration_plan.md)
-- [VoIP & Caching Architecture](../architecture/voip_caching_architecture.md)
+- [MVNO/eSIM Integration Plan (Zamfara Pilot)](../../../../esim/mvno_esim_integration_plan.md)
+- [VoIP & Caching Architecture](../../../../architecture/voip_caching_architecture.md)

@@ -119,5 +119,5 @@ On dual-SIM capable phones:
 - [Physical SIM & MVNO](physical-sim-mvno.md)
 - [Telhone Application](telhone-app.md) — app-assisted eSIM activation
 - [Nigeria Regulatory & Commercial Steps](regulatory.md)
-- [Aku eSIM Service Overview](../services/aku-esim.md)
-- [eSIM Provisioning Handbook](../handbooks/eSIM_Provisioning_Handbook.md)
+- [Aku eSIM Service Overview](../../../../services/aku-esim.md)
+- [eSIM Provisioning Handbook](../../../../handbooks/eSIM_Provisioning_Handbook.md)
