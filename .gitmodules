@@ -38,10 +38,6 @@
 	path = aku-platform-contracts
 	url = https://github.com/oumar-code/aku-platform-contracts.git
 
-[submodule "akulearn-dashboard/clean-test"]
-	path = akulearn-dashboard/clean-test
-	url = https://github.com/oumar-code/Akulearn-dashboard.git
-
 [submodule "github_addons/BlenderGIS"]
 	path = github_addons/BlenderGIS
 	url = https://github.com/domlysz/BlenderGIS.git

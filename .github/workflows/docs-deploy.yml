@@ -1,4 +1,8 @@
 # Akulearn Docs Deployment Workflow
+#
+# NOTE: This workflow is the single source of truth for GitHub Pages deployment
+# in this repository (Actions-based deployment via configure-pages/upload-pages-artifact/deploy-pages).
+# Keep legacy branch-based Pages build/deploy disabled in repository settings.
 
 name: Deploy MkDocs to GitHub Pages
 

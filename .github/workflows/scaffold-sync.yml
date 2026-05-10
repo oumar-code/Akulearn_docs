@@ -61,7 +61,6 @@ jobs:
       SCAFFOLDS_DIR: docs/service-migrations/scaffolds
       # All 10 backend services (used as the default when no override is given)
       ALL_SERVICES: "AkuAI Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub AkuTutor AkuWorkspace Aku-DaaS Aku-Hardware"
-      DRY_RUN: ${{ inputs.dry_run || 'false' }}
       GH_TOKEN: ${{ secrets.GH_PAT }}
 
     steps:
@@ -77,7 +76,19 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name  "github-actions[bot]"
 
-      # ── 3. Determine which services to sync ──────────────────────────────────
+      # ── 3. Resolve runtime inputs safely for both push and workflow_dispatch ───
+      - name: Resolve runtime inputs
+        id: runtime
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "dry_run=${{ github.event.inputs.dry_run || 'false' }}" >> "$GITHUB_OUTPUT"
+            echo "services_override=${{ github.event.inputs.services || '' }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "dry_run=false" >> "$GITHUB_OUTPUT"
+            echo "services_override=" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ── 4. Determine which services to sync ──────────────────────────────────
       #
       # • workflow_dispatch with services input → use that list
       # • workflow_dispatch with empty services → use ALL_SERVICES
@@ -86,7 +97,7 @@ jobs:
         id: services
         run: |
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            OVERRIDE="${{ inputs.services }}"
+            OVERRIDE="${{ steps.runtime.outputs.services_override }}"
             if [[ -n "$OVERRIDE" ]]; then
               echo "source=manual-override" >> "$GITHUB_OUTPUT"
               echo "list=${OVERRIDE}" >> "$GITHUB_OUTPUT"
@@ -125,18 +136,19 @@ jobs:
             fi
           fi
 
-      # ── 4. Early-exit if nothing to sync ─────────────────────────────────────
+      # ── 5. Early-exit if nothing to sync ─────────────────────────────────────
       - name: Skip if no services detected
         if: steps.services.outputs.list == ''
         run: |
           echo "No services to sync. Exiting."
           exit 0
 
-      # ── 5. Sync each service ─────────────────────────────────────────────────
+      # ── 6. Sync each service ─────────────────────────────────────────────────
       - name: Sync scaffold to service repos
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           SERVICES: ${{ steps.services.outputs.list }}
+          DRY_RUN: ${{ steps.runtime.outputs.dry_run }}
         run: |
           set -euo pipefail
 
@@ -226,31 +238,31 @@ jobs:
             # Guardrail: fail fast if copied workflow files look malformed.
             echo "│  Step 3b: Validate workflow files"
             if ! python3 - "${TARGET_CLONE}" <<'PYEOF'
-import pathlib
-import re
-import sys
+              import pathlib
+              import re
+              import sys
 
-root = pathlib.Path(sys.argv[1]) / ".github" / "workflows"
-if not root.exists():
-    sys.exit(0)
+              root = pathlib.Path(sys.argv[1]) / ".github" / "workflows"
+              if not root.exists():
+                  sys.exit(0)
 
-issues = []
-for wf in sorted(list(root.glob("*.yml")) + list(root.glob("*.yaml"))):
-    text = wf.read_text(encoding="utf-8", errors="replace")
-    if any(marker in text for marker in ("<<<<<<<", "=======", ">>>>>>>")):
-        issues.append(f"{wf}: contains merge conflict markers")
-        continue
-    if not re.search(r"(?m)^on:\s*$|(?m)^on:\s+\S", text):
-        issues.append(f"{wf}: missing top-level 'on:' key")
-    if not re.search(r"(?m)^jobs:\s*$|(?m)^jobs:\s+\S", text):
-        issues.append(f"{wf}: missing top-level 'jobs:' key")
+              issues = []
+              for wf in sorted(list(root.glob("*.yml")) + list(root.glob("*.yaml"))):
+                  text = wf.read_text(encoding="utf-8", errors="replace")
+                  if any(marker in text for marker in ("<<<<<<<", "=======", ">>>>>>>")):
+                      issues.append(f"{wf}: contains merge conflict markers")
+                      continue
+                  if not re.search(r"(?m)^on:\s*$|(?m)^on:\s+\S", text):
+                      issues.append(f"{wf}: missing top-level 'on:' key")
+                  if not re.search(r"(?m)^jobs:\s*$|(?m)^jobs:\s+\S", text):
+                      issues.append(f"{wf}: missing top-level 'jobs:' key")
 
-if issues:
-    print("Malformed workflow files detected:")
-    for issue in issues:
-        print(f" - {issue}")
-    sys.exit(1)
-PYEOF
+              if issues:
+                  print("Malformed workflow files detected:")
+                  for issue in issues:
+                      print(f" - {issue}")
+                  sys.exit(1)
+              PYEOF
             then
               echo "│  ✗ Workflow validation failed — skipping ${SERVICE}"
               echo "└──────────────────────────────────────────────────────"
