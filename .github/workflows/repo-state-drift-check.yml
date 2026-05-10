@@ -1,0 +1,79 @@
+name: Repo State Drift Check
+
+on:
+  schedule:
+    - cron: "30 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  drift-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+
+      - name: Compare documented claims vs GitHub API
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import re
+          import urllib.request
+          from pathlib import Path
+
+          owner = "oumar-code"
+          docs = Path("docs/ecosystem-map.md").read_text(encoding="utf-8")
+          readme = Path("README.md").read_text(encoding="utf-8")
+          package_json = json.loads(Path("package.json").read_text(encoding="utf-8"))
+          expected_next = package_json.get("devDependencies", {}).get("next")
+          token = os.environ.get("GH_TOKEN", "")
+
+          def get_repo(repo: str):
+              req = urllib.request.Request(
+                  f"https://api.github.com/repos/{owner}/{repo}",
+                  headers={
+                      "Accept": "application/vnd.github+json",
+                      "Authorization": f"Bearer {token}",
+                      "User-Agent": "akulearn-docs-drift-check",
+                  },
+              )
+              with urllib.request.urlopen(req, timeout=20) as resp:
+                  return json.loads(resp.read().decode("utf-8"))
+
+          drifts = []
+
+          if expected_next and (f"Next.js {expected_next}" not in readme or f"Next.js {expected_next}" not in docs):
+              drifts.append(
+                  f"Next.js version drift: package.json has {expected_next}, but README/ecosystem map do not both match it."
+              )
+
+          if re.search(r"\[Aku-SmartBoard\]\(|oumar-code/Aku-SmartBoard\b", docs):
+              drifts.append("Naming drift: docs still reference repo name 'Aku-SmartBoard' instead of 'Aku-Smartboard'.")
+
+          akudemy_frontend = get_repo("Akudemy-frontend")
+          if not akudemy_frontend.get("archived") and re.search(r"\[Akudemy-frontend\].*Archived", docs):
+              drifts.append("Akudemy-frontend is active in GitHub API, but docs still mark it archived.")
+
+          dashb = get_repo("akulearn-dashB")
+          if not dashb.get("archived") and re.search(r"\[akulearn-dashB\].*Archived", docs):
+              drifts.append("akulearn-dashB is active in GitHub API, but docs still mark it archived.")
+
+          hardware = get_repo("Aku-Hardware")
+          default_branch = hardware.get("default_branch")
+          if default_branch and default_branch != "main" and default_branch not in docs:
+              drifts.append(
+                  f"Aku-Hardware default branch drift: API reports '{default_branch}', but docs do not mention it."
+              )
+
+          if drifts:
+              print("❌ Repo-state drift detected:")
+              for item in drifts:
+                  print(f" - {item}")
+              raise SystemExit(1)
+
+          print("✅ No tracked repo-state drift detected.")
+          PY

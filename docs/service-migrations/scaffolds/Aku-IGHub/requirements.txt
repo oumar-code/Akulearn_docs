@@ -23,3 +23,6 @@ alembic>=1.13.0,<2.0.0
 
 # ── Multipart form support ────────────────────────────────────────────────────
 python-multipart>=0.0.9,<1.0.0
+
+# ── JWT / auth runtime dependency ─────────────────────────────────────────────
+python-jose[cryptography]>=3.3.0

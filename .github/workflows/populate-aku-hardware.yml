@@ -159,6 +159,13 @@ jobs:
           TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
           cd "${TARGET_CLONE}"
 
+          BASE_BRANCH=$(git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | sed 's@^origin/@@' || true)
+          if [[ -z "${BASE_BRANCH}" ]]; then
+            BASE_BRANCH="main"
+          fi
+          echo "Detected base branch: ${BASE_BRANCH}"
+          echo "base_branch=${BASE_BRANCH}" >> "$GITHUB_OUTPUT"
+
           git add .
 
           if git diff --cached --quiet; then
@@ -198,7 +205,7 @@ Triggered by: ${{ github.event_name }} (${{ github.sha }})"
 
 ## What changed
 
-$(cd "${RUNNER_TEMP}/${TARGET_REPO}" && git diff origin/main...HEAD --name-only 2>/dev/null | sed 's/^/- /' || echo "- See commit diff")
+$(cd "${RUNNER_TEMP}/${TARGET_REPO}" && git diff origin/${{ steps.push.outputs.base_branch }}...HEAD --name-only 2>/dev/null | sed 's/^/- /' || echo "- See commit diff")
 
 ## Source of truth
 
@@ -226,7 +233,7 @@ _Automated by the \`populate-aku-hardware.yml\` workflow in Akulearn_docs._"
           else
             gh pr create \
               --repo "${GITHUB_ORG}/${TARGET_REPO}" \
-              --base main \
+              --base "${{ steps.push.outputs.base_branch }}" \
               --head "${SYNC_BRANCH}" \
               --title "docs: sync hardware documentation from Akulearn_docs" \
               --body "${PR_BODY}" \

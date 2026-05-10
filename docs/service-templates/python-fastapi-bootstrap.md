@@ -354,6 +354,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+          if [ -f requirements-extra.txt ]; then pip install -r requirements-extra.txt; fi
           pip install -r requirements-dev.txt
 
       - name: Lint (Ruff)
@@ -366,7 +367,7 @@ jobs:
         env:
           DATABASE_URL: postgresql+asyncpg://aku:aku@localhost:5432/aku_test
           JWT_SECRET_KEY: test-secret-key
-        run: pytest --cov=app --cov-report=xml -v
+        run: python -m pytest --cov=app --cov-report=xml -v
 
   docker:
     runs-on: ubuntu-latest

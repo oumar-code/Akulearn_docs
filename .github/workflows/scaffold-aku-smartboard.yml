@@ -1,13 +1,13 @@
-name: "Aku-SmartBoard — Apply CI/Release Scaffold"
+name: "Aku-Smartboard — Apply CI/Release Scaffold"
 
 # ──────────────────────────────────────────────────────────────────────────────
 # What this workflow does
 # ──────────────────────────────────────────────────────────────────────────────
 # Pushes the GitHub Actions CI/release workflow and systemd service unit from
-# docs/service-migrations/scaffolds/Aku-SmartBoard/ into the Aku-SmartBoard
+# docs/service-migrations/scaffolds/Aku-SmartBoard/ into the Aku-Smartboard
 # repo and opens a pull request.
 #
-# This unblocks the Aku-SmartBoard CI/release pipeline WITHOUT needing
+# This unblocks the Aku-Smartboard CI/release pipeline WITHOUT needing
 # akulearn-linux-app/ to be present locally (it is gitignored in Akulearn_docs).
 # The Kotlin source must still be pushed separately from a local machine.
 #
@@ -21,7 +21,7 @@ name: "Aku-SmartBoard — Apply CI/Release Scaffold"
 #
 # How to trigger
 # ──────────────────────────────────────────────────────────────────────────────
-# Go to: Actions → "Aku-SmartBoard — Apply CI/Release Scaffold" → Run workflow
+# Go to: Actions → "Aku-Smartboard — Apply CI/Release Scaffold" → Run workflow
 # Optionally tick "Dry run" to preview without making changes.
 # ──────────────────────────────────────────────────────────────────────────────
 
@@ -37,15 +37,15 @@ on:
 
 jobs:
   scaffold:
-    name: Apply scaffold to Aku-SmartBoard
+    name: Apply scaffold to Aku-Smartboard
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read  # only reads from this repo; pushes go to Aku-SmartBoard via PAT
+      contents: read  # only reads from this repo; pushes go to Aku-Smartboard via PAT
 
     env:
       GITHUB_ORG: oumar-code
-      TARGET_REPO: Aku-SmartBoard
+      TARGET_REPO: Aku-Smartboard
       BRANCH_NAME: feat/ci-workflow-scaffold
       GH_TOKEN: ${{ secrets.GH_PAT }}
       DRY_RUN: ${{ inputs.dry_run || 'false' }}
@@ -61,8 +61,8 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name  "github-actions[bot]"
 
-      # ── 3. Clone Aku-SmartBoard via PAT ──────────────────────────────────────
-      - name: Clone Aku-SmartBoard
+      # ── 3. Clone Aku-Smartboard via PAT ──────────────────────────────────────
+      - name: Clone Aku-Smartboard
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
@@ -129,7 +129,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
           PR_BODY: |
-            Adds the GitHub Actions CI/release workflow and systemd service unit to Aku-SmartBoard.
+            Adds the GitHub Actions CI/release workflow and systemd service unit to Aku-Smartboard.
 
             ## What's included
             - `.github/workflows/release.yml` — builds `./gradlew build` on tag push → attaches `.kexe` binary + systemd unit to a GitHub Release
@@ -161,7 +161,7 @@ jobs:
             --repo "${GITHUB_ORG}/${TARGET_REPO}" \
             --base main \
             --head "${BRANCH_NAME}" \
-            --title "feat: add CI/release workflow and systemd service unit to Aku-SmartBoard" \
+            --title "feat: add CI/release workflow and systemd service unit to Aku-Smartboard" \
             --body "${PR_BODY}" \
             || echo "ℹ️  PR may already exist for this branch."
 
@@ -177,7 +177,7 @@ jobs:
           echo "════════════════════════════════════════════════════"
           if [[ "$DRY_RUN" != "true" ]]; then
             echo "  Next steps:"
-            echo "  1. Review and merge the PR in Aku-SmartBoard"
+            echo "  1. Review and merge the PR in Aku-Smartboard"
             echo "  2. Run the full migration locally (with akulearn-linux-app/ present)"
             echo "  3. Push tag v0.1.0 to trigger a Release build"
           fi

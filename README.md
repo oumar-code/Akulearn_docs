@@ -9,7 +9,7 @@ Welcome to the Akulearn documentation repository! This space contains all offici
 | Decision | Choice |
 |----------|--------|
 | **Backend language** | Python 3.11 / FastAPI (all services) |
-| **Frontend / Dashboard** | `akulearn-dashboard/` in this monorepo (Next.js 14) — canonical Vercel deployment |
+| **Frontend / Dashboard** | `akulearn-dashboard/` in this monorepo (Next.js 16.1.6) — canonical Vercel deployment |
 | **Mobile** | Kotlin Multiplatform — migrating to `oumar-code/Aku-Mobile` |
 | **Documentation** | This repo (`Akulearn_docs`) — MkDocs site on GitHub Pages |
 

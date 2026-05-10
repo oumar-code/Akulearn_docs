@@ -2,8 +2,7 @@
 # Install alongside the base requirements.txt:
 #   pip install -r requirements.txt -r requirements-extra.txt
 
-# ── JWT / auth ────────────────────────────────────────────────────────────────
-python-jose[cryptography]>=3.3.0       # JWT decode & verification (RS256 / ES256)
+# ── Auth helpers ──────────────────────────────────────────────────────────────
 passlib[bcrypt]>=1.7.4                 # password hashing (service-to-service API keys)
 
 # ── Verifiable Credentials ────────────────────────────────────────────────────

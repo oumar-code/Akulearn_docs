@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# migrate-to-aku-smartboard.sh — Copy akulearn-linux-app/ to oumar-code/Aku-SmartBoard
+# migrate-to-aku-smartboard.sh — Copy akulearn-linux-app/ to oumar-code/Aku-Smartboard
 #
 # Usage (run from the Akulearn_docs repo root):
 #   chmod +x docs/service-migrations/migrate-to-aku-smartboard.sh
@@ -7,13 +7,13 @@
 #   # Show this help
 #   ./docs/service-migrations/migrate-to-aku-smartboard.sh --help
 #
-#   # Scaffold-only — push CI/release workflow + systemd unit to Aku-SmartBoard (no local app source needed)
+#   # Scaffold-only — push CI/release workflow + systemd unit to Aku-Smartboard (no local app source needed)
 #   ./docs/service-migrations/migrate-to-aku-smartboard.sh --scaffold-only
 #
 #   # Scaffold-only dry-run
 #   ./docs/service-migrations/migrate-to-aku-smartboard.sh --scaffold-only --dry-run
 #
-#   # Full migration — clones Aku-SmartBoard, copies app source, applies CI workflow, opens PR
+#   # Full migration — clones Aku-Smartboard, copies app source, applies CI workflow, opens PR
 #   # ⚠️  MUST RUN FROM LOCAL MACHINE — requires akulearn-linux-app/ present locally (gitignored)
 #   ./docs/service-migrations/migrate-to-aku-smartboard.sh
 #
@@ -34,7 +34,7 @@
 set -euo pipefail
 
 GITHUB_ORG="oumar-code"
-TARGET_REPO="Aku-SmartBoard"
+TARGET_REPO="Aku-Smartboard"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CI_SCAFFOLD="${SCRIPT_DIR}/scaffolds/Aku-SmartBoard"
@@ -48,14 +48,14 @@ for arg in "$@"; do
   case "$arg" in
     --help|-h)
       cat << 'HELP'
-migrate-to-aku-smartboard.sh — Migrate akulearn-linux-app/ to oumar-code/Aku-SmartBoard
+migrate-to-aku-smartboard.sh — Migrate akulearn-linux-app/ to oumar-code/Aku-Smartboard
 
 MODES
-  (no flags)          Full migration — copies Kotlin source + scaffold to Aku-SmartBoard.
+  (no flags)          Full migration — copies Kotlin source + scaffold to Aku-Smartboard.
                       ⚠️  MUST RUN FROM LOCAL MACHINE — requires akulearn-linux-app/ locally.
 
   --scaffold-only     Scaffold-only — pushes CI/release workflow + systemd unit to
-                      Aku-SmartBoard WITHOUT needing akulearn-linux-app/ locally.
+                      Aku-Smartboard WITHOUT needing akulearn-linux-app/ locally.
                       Can be run from any machine or GitHub Actions (set GH_PAT env var).
 
   --dry-run           Preview every step without making any changes (works with both modes).
@@ -98,8 +98,8 @@ done
 if $SCAFFOLD_ONLY; then
   BRANCH_NAME="feat/ci-workflow-scaffold"
   COMMIT_MSG="feat: add CI/release workflow and systemd unit scaffold"
-  PR_TITLE="feat: add CI/release workflow and systemd service unit to Aku-SmartBoard"
-  PR_BODY="Adds the GitHub Actions CI/release workflow and systemd service unit to Aku-SmartBoard.
+  PR_TITLE="feat: add CI/release workflow and systemd service unit to Aku-Smartboard"
+  PR_BODY="Adds the GitHub Actions CI/release workflow and systemd service unit to Aku-Smartboard.
 
 ## What's included
 - \`.github/workflows/release.yml\` — builds \`./gradlew build\` on tag push → attaches \`.kexe\` binary + systemd unit to a GitHub Release
@@ -186,7 +186,7 @@ TO RUN THE FULL MIGRATION:
 
 ALTERNATIVE — push just the CI/release scaffold (no local source needed):
   ./docs/service-migrations/migrate-to-aku-smartboard.sh --scaffold-only
-  Or trigger the "Aku-SmartBoard — Apply CI/Release Scaffold" GitHub Actions
+  Or trigger the "Aku-Smartboard — Apply CI/Release Scaffold" GitHub Actions
   workflow from the Akulearn_docs Actions tab (requires GH_PAT secret).
 ─────────────────────────────────────────────────────────────────────────────
 LOCAL_MACHINE_ERR
