@@ -22,7 +22,7 @@ This is the single source of truth for all repositories in the Aku Platform ecos
 
 | Repo | Role | Tech | Status |
 |------|------|------|--------|
-| [Akulearn_docs](https://github.com/oumar-code/Akulearn_docs) | Platform docs, MkDocs site, Next.js dashboard, KMP module (migrating) | MkDocs, Next.js 14, Kotlin | **Active — source of truth** |
+| [Akulearn_docs](https://github.com/oumar-code/Akulearn_docs) | Platform docs, MkDocs site, Next.js dashboard, KMP module (migrating) | MkDocs, Next.js 16.1.6, Kotlin | **Active — source of truth** |
 
 ### 🔵 Core Backend Microservices  
 *All services: Python 3.11 / FastAPI / Docker / Kubernetes*
@@ -43,10 +43,10 @@ This is the single source of truth for all repositories in the Aku Platform ecos
 
 | Repo | Role | Tech | Status |
 |------|------|------|--------|
-| `akulearn-dashboard/` (inside Akulearn_docs) | **Canonical dashboard & marketing site** | Next.js 14, TypeScript, Supabase | **Active — deploy target** |
-| [Akudemy-frontend](https://github.com/oumar-code/Akudemy-frontend) | Minimal student-facing landing | Next.js 14 | ⛔ Archived |
-| [akulearn-dashB](https://github.com/oumar-code/akulearn-dashB) | Bootstrapped Next.js | Next.js 15 | ⛔ Archived |
-| [Akulearn-dashboard](https://github.com/oumar-code/Akulearn-dashboard) | Empty shell | — | ⛔ Archived |
+| `akulearn-dashboard/` (inside Akulearn_docs) | **Canonical dashboard & marketing site** | Next.js 16.1.6, TypeScript, Supabase | **Active — deploy target** |
+| [Akudemy-frontend](https://github.com/oumar-code/Akudemy-frontend) | Minimal student-facing landing | Next.js | ⚠️ Active but non-canonical |
+| [akulearn-dashB](https://github.com/oumar-code/akulearn-dashB) | Bootstrapped Next.js | Next.js | ⚠️ Active but non-canonical |
+| [Akulearn-dashboard](https://github.com/oumar-code/Akulearn-dashboard) | Empty shell | — | ⚠️ Empty / needs cleanup decision |
 
 ### 📱 Mobile
 
@@ -59,20 +59,20 @@ This is the single source of truth for all repositories in the Aku Platform ecos
 
 | Repo | Role | Tech | Status |
 |------|------|------|--------|
-| `akulearn-linux-app/` (inside Akulearn_docs) | Classroom client app (Smart TV/Board, Raspberry Pi, Jetson) — syncs content from Edge Hub, AR/VR launcher, offline cache, facilitator dashboard | Kotlin Multiplatform, Compose for Desktop, linuxX64 | **⏳ Pending migration → `oumar-code/Aku-SmartBoard`** |
-| [Aku-SmartBoard](https://github.com/oumar-code/Aku-SmartBoard) | Standalone desktop app repo — linuxX64 binary, systemd service, touchscreen support | KMP + Compose Desktop | ✅ Repo created — migration in progress |
+| `akulearn-linux-app/` (inside Akulearn_docs) | Classroom client app (Smart TV/Board, Raspberry Pi, Jetson) — syncs content from Edge Hub, AR/VR launcher, offline cache, facilitator dashboard | Kotlin Multiplatform, Compose for Desktop, linuxX64 | **⏳ Pending migration → `oumar-code/Aku-Smartboard`** |
+| [Aku-Smartboard](https://github.com/oumar-code/Aku-Smartboard) | Standalone desktop app repo — linuxX64 binary, systemd service, touchscreen support | KMP + Compose Desktop | ✅ Repo created — migration in progress |
 
 ### 🔧 Hardware
 
 | Repo | Role | Tech | Status |
 |------|------|------|--------|
-| [Aku-Hardware](https://github.com/oumar-code/Aku-Hardware) | Hardware design, firmware, and manufacturing docs for the Aku Edge Hub (SBC, enclosure, wiring), Projector module, and solar/wind hybrid power system; includes INA3221 MicroPython firmware, device watchdog firmware, BOM, PCB design notes, FreeCAD enclosure DXF spec, test procedures, field deployment & maintenance guides | MicroPython, KiCad (planned), FreeCAD (planned) | ✅ Scaffold applied — docs populated — device watchdog firmware implemented — auto-sync via `populate-aku-hardware.yml` |
+| [Aku-Hardware](https://github.com/oumar-code/Aku-Hardware) | Hardware design, firmware, and manufacturing docs for the Aku Edge Hub (SBC, enclosure, wiring), Projector module, and solar/wind hybrid power system; includes INA3221 MicroPython firmware, device watchdog firmware, BOM, PCB design notes, FreeCAD enclosure DXF spec, test procedures, field deployment & maintenance guides | MicroPython, KiCad (planned), FreeCAD (planned) | ⚠️ Scaffold exists, but default branch is currently `feat/initial-hardware-scaffold` (main branch still needs to be established) |
 
 ### 📚 Shared Libraries
 
 | Repo | Role | Tech | Status |
 |------|------|------|--------|
-| [aku-platform-contracts](https://github.com/oumar-code/aku-platform-contracts) | Shared Pydantic schemas, Kafka topic constants, and OpenAPI YAML specs consumed by all 9 backend services | Python, Pydantic v2, GitHub Packages | ✅ Active — `v0.1.0` released |
+| [aku-platform-contracts](https://github.com/oumar-code/aku-platform-contracts) | Shared Pydantic schemas, Kafka topic constants, and OpenAPI YAML specs consumed by all 9 backend services | Python, Pydantic v2, GitHub Packages | ✅ Active — scaffolds currently pin `v0.1.1`; publish pipeline reliability still being hardened |
 
 ### 📦 Content
 
@@ -152,7 +152,7 @@ All OpenAPI specs live in this repo:
 | Database schemas | `docs/02-backend/database-schemas.md` |
 | Containerisation spec | `docs/05-cross-cutting/containerization.md` |
 
-A dedicated [`aku-platform-contracts`](https://github.com/oumar-code/aku-platform-contracts) repo (OpenAPI YAML files, Pydantic models, Kafka schemas) is **active at `v0.1.0`** — shared across all 9 service repos.  
+A dedicated [`aku-platform-contracts`](https://github.com/oumar-code/aku-platform-contracts) repo (OpenAPI YAML files, Pydantic models, Kafka schemas) is active and currently scaffold-pinned at **`v0.1.1`** across service templates.  
 **Full proposal & implementation checklist:** [`docs/aku-platform-contracts.md`](aku-platform-contracts.md)  
 **Next step:** run `docs/service-migrations/integrate-contracts.sh` to add the package dependency to remaining services as each completes migration.
 
@@ -185,7 +185,7 @@ Full usage guide: [`docs/client-sdk/index.md`](client-sdk/index.md)
 > |--------|-------------|
 > | `migrate-to-aku-content.sh` | Clones Aku-Content, initialises Git LFS, copies `content/` + `content_templates/`, opens PR. `--stub-only` flag: initialises LFS + dir structure without local content (can run in CI). `--help` for full usage. |
 > | `migrate-exam-papers.sh` | Clones Akudemy, copies `data/exam_papers/` + `mlops/exam_paper_scraper.py`, opens PR. `--stub-only` flag: creates dir structure + scraper placeholder without local data (can run in CI). `--help` for full usage. |
-> | `migrate-to-aku-smartboard.sh` | Clones Aku-SmartBoard, copies `akulearn-linux-app/`, applies CI/release workflow scaffold, opens PR. `--scaffold-only` flag: pushes just the CI scaffold without needing local app source (can run in CI). `--help` for full usage. |
+> | `migrate-to-aku-smartboard.sh` | Clones Aku-Smartboard, copies `akulearn-linux-app/`, applies CI/release workflow scaffold, opens PR. `--scaffold-only` flag: pushes just the CI scaffold without needing local app source (can run in CI). `--help` for full usage. |
 >
 > CI/release workflow scaffold for Aku-SmartBoard: `docs/service-migrations/scaffolds/Aku-SmartBoard/`
 >
@@ -193,7 +193,7 @@ Full usage guide: [`docs/client-sdk/index.md`](client-sdk/index.md)
 >
 > | Workflow | What it does |
 > |----------|-------------|
-> | `scaffold-aku-smartboard.yml` | Pushes CI/release workflow + systemd unit to Aku-SmartBoard; opens PR |
+> | `scaffold-aku-smartboard.yml` | Pushes CI/release workflow + systemd unit to Aku-Smartboard; opens PR |
 > | `stub-aku-content.yml` | Initialises Aku-Content with LFS config, README, dir structure; opens PR |
 > | `stub-akudemy-exam-papers.yml` | Adds exam papers dir structure + scraper placeholder to Akudemy; opens PR |
 
@@ -245,16 +245,16 @@ The `data/exam_papers/` dataset and `mlops/exam_paper_scraper.py` belong in `oum
 - [ ] **Trigger `stub-akudemy-exam-papers.yml`** from GitHub Actions UI → opens PR in Akudemy with placeholder structure + scraper stub
 - [ ] **Trigger `generate-jss-content-starters.yml`** (content_tier=tier1_bece) → runs `pipeline/bece_scraper.py --all` in CI to generate BECE/WAEC/NECO/JAMB exam question bundles fresh and PRs them to Aku-Content — **no local machine needed**
 
-### Aku-SmartBoard (new repo)
+### Aku-Smartboard (new repo)
 
 The `akulearn-linux-app/` directory is a full KMP/Compose Desktop application — it needs its own CI/CD and release pipeline.
 
-- [x] Create `oumar-code/Aku-SmartBoard` repository
+- [x] Create `oumar-code/Aku-Smartboard` repository
 - [x] Create migration script with `--scaffold-only` and `--help` modes (`docs/service-migrations/migrate-to-aku-smartboard.sh`)
 - [x] Create GitHub Actions CI/release workflow scaffold (`docs/service-migrations/scaffolds/Aku-SmartBoard/`)
-- [x] Create GitHub Actions workflow to push CI scaffold to Aku-SmartBoard (`scaffold-aku-smartboard.yml`) — **no local machine needed**
-- [ ] **Trigger `scaffold-aku-smartboard.yml`** from GitHub Actions UI → opens PR in Aku-SmartBoard with `release.yml` + `systemd/` unit
-- [ ] **Build `akulearn-linux-app/` from scratch in `oumar-code/Aku-SmartBoard`** — the source is no longer in this branch; create the KMP/Compose Desktop app fresh directly in the Aku-SmartBoard repo, guided by `docs/04-iot-projector/` specs — **no local machine needed for scaffolding**
+- [x] Create GitHub Actions workflow to push CI scaffold to Aku-Smartboard (`scaffold-aku-smartboard.yml`) — **no local machine needed**
+- [ ] **Trigger `scaffold-aku-smartboard.yml`** from GitHub Actions UI → opens PR in Aku-Smartboard with `release.yml` + `systemd/` unit
+- [ ] **Build `akulearn-linux-app/` from scratch in `oumar-code/Aku-Smartboard`** — the source is no longer in this branch; create the KMP/Compose Desktop app fresh directly in the Aku-Smartboard repo, guided by `docs/04-iot-projector/` specs — **no local machine needed for scaffolding**
 - [ ] Add systemd service unit to GitHub Release assets (covered by CI workflow scaffold, applied above)
 
 ---
@@ -279,4 +279,4 @@ The canonical frontend is **`akulearn-dashboard/` inside this monorepo**. It is:
 - Source of truth for all authenticated dashboard pages (`/dashboard/*`)
 - Backed by Supabase for auth and data
 
-`Akudemy-frontend`, `akulearn-dashB`, and `Akulearn-dashboard` repos have been **archived**. All future frontend work goes to `akulearn-dashboard/` in this monorepo.
+`Akudemy-frontend` and `akulearn-dashB` are still active but are **non-canonical**; `Akulearn-dashboard` is currently an empty shell and needs lifecycle cleanup. All future frontend work goes to `akulearn-dashboard/` in this monorepo.

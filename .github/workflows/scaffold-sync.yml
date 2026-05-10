@@ -189,14 +189,25 @@ jobs:
             }
             git -C "${TARGET_CLONE}" remote set-url origin "${REPO_URL}"
 
+            BASE_BRANCH=$(git -C "${TARGET_CLONE}" symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | sed 's@^origin/@@' || true)
+            if [[ -z "${BASE_BRANCH}" ]]; then
+              BASE_BRANCH="main"
+            fi
+            echo "│    Detected base branch: ${BASE_BRANCH}"
+
             # Create or reset the sync branch
-            # Always base the branch off origin/main so the PR diff is clean.
+            # Always base the branch off the repository default branch so PR diffs
+            # are clean even when a service is not using `main`.
             # We use --force on push because this is a dedicated automated branch;
             # --force-with-lease is unreliable in shallow clones when the remote
             # branch was fetched separately (causes "stale info" rejection).
             echo "│  Step 2: Create/reset branch ${BRANCH_NAME}"
             if git -C "${TARGET_CLONE}" log -1 &>/dev/null; then
-              git -C "${TARGET_CLONE}" checkout -B "${BRANCH_NAME}" HEAD
+              if git -C "${TARGET_CLONE}" rev-parse --verify "origin/${BASE_BRANCH}" &>/dev/null; then
+                git -C "${TARGET_CLONE}" checkout -B "${BRANCH_NAME}" "origin/${BASE_BRANCH}"
+              else
+                git -C "${TARGET_CLONE}" checkout -B "${BRANCH_NAME}" HEAD
+              fi
             else
               # Empty repo — no commits yet, so HEAD is not a valid ref.
               # Create an orphan branch so we can still push scaffold files.
@@ -211,6 +222,42 @@ jobs:
             find "${SCAFFOLD_SRC}" -type f | while read -r f; do
               echo "│    → ${f#"${SCAFFOLD_SRC}/"}"
             done
+
+            # Guardrail: fail fast if copied workflow files look malformed.
+            echo "│  Step 3b: Validate workflow files"
+            if ! python3 - "${TARGET_CLONE}" <<'PYEOF'
+import pathlib
+import re
+import sys
+
+root = pathlib.Path(sys.argv[1]) / ".github" / "workflows"
+if not root.exists():
+    sys.exit(0)
+
+issues = []
+for wf in sorted(list(root.glob("*.yml")) + list(root.glob("*.yaml"))):
+    text = wf.read_text(encoding="utf-8", errors="replace")
+    if any(marker in text for marker in ("<<<<<<<", "=======", ">>>>>>>")):
+        issues.append(f"{wf}: contains merge conflict markers")
+        continue
+    if not re.search(r"(?m)^on:\s*$|(?m)^on:\s+\S", text):
+        issues.append(f"{wf}: missing top-level 'on:' key")
+    if not re.search(r"(?m)^jobs:\s*$|(?m)^jobs:\s+\S", text):
+        issues.append(f"{wf}: missing top-level 'jobs:' key")
+
+if issues:
+    print("Malformed workflow files detected:")
+    for issue in issues:
+        print(f" - {issue}")
+    sys.exit(1)
+PYEOF
+            then
+              echo "│  ✗ Workflow validation failed — skipping ${SERVICE}"
+              echo "└──────────────────────────────────────────────────────"
+              FAILED+=("${SERVICE}")
+              rm -rf "${TARGET_CLONE}"
+              continue
+            fi
 
             # Commit if anything changed
             echo "│  Step 4: Commit"
@@ -259,7 +306,7 @@ jobs:
 
             gh pr create \
               --repo "${GITHUB_ORG}/${SERVICE}" \
-              --base main \
+              --base "${BASE_BRANCH}" \
               --head "${BRANCH_NAME}" \
               --title "chore: sync scaffold from Akulearn_docs ($(date -u '+%Y-%m-%d'))" \
               --body "${PR_BODY}" \
