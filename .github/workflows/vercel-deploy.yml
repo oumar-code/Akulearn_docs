@@ -91,7 +91,20 @@ jobs:
         run: npm install -g vercel@latest
 
       - name: Pull Vercel environment
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        run: |
+          set -euo pipefail
+          OUT_FILE="$(mktemp)"
+          if ! vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} >"${OUT_FILE}" 2>&1; then
+            cat "${OUT_FILE}"
+            if grep -qiE "project not found|could not retrieve project|not authorized|forbidden" "${OUT_FILE}"; then
+              echo "❌ Failed to access the configured Vercel project."
+              echo "   Verify that VERCEL_ORG_ID and VERCEL_PROJECT_ID belong to the same project as akulearn-dashboard."
+              echo "   Re-link locally in akulearn-dashboard with: vercel link"
+              echo "   Then update GitHub secrets with the resulting org/project IDs."
+            fi
+            exit 1
+          fi
+          cat "${OUT_FILE}"
         working-directory: akulearn-dashboard
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}

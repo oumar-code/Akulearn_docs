@@ -69,7 +69,6 @@ jobs:
       TARGET_REPO: Aku-Hardware
       SYNC_BRANCH: sync/docs-from-akulearn-docs
       GH_TOKEN: ${{ secrets.GH_PAT }}
-      DRY_RUN: ${{ inputs.dry_run || 'false' }}
 
     steps:
       # ── 1. Checkout Akulearn_docs to get the scaffold files ──────────────────
@@ -82,7 +81,17 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name  "github-actions[bot]"
 
-      # ── 3. Clone Aku-Hardware via PAT ─────────────────────────────────────────
+      # ── 3. Resolve runtime inputs safely for both push and workflow_dispatch ───
+      - name: Resolve runtime inputs
+        id: runtime
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "dry_run=${{ github.event.inputs.dry_run || 'false' }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "dry_run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ── 4. Clone Aku-Hardware via PAT ─────────────────────────────────────────
       - name: Clone Aku-Hardware
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -100,9 +109,9 @@ jobs:
           fi
           git -C "${RUNNER_TEMP}/${TARGET_REPO}" remote set-url origin "${REPO_URL}"
 
-      # ── 4. Dry-run preview ────────────────────────────────────────────────────
+      # ── 5. Dry-run preview ────────────────────────────────────────────────────
       - name: Dry-run preview
-        if: inputs.dry_run == 'true'
+        if: steps.runtime.outputs.dry_run == 'true'
         run: |
           SCAFFOLD_SRC="${GITHUB_WORKSPACE}/docs/service-migrations/scaffolds/Aku-Hardware"
           TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
@@ -129,9 +138,9 @@ jobs:
           echo "Total scaffold files : ${TOTAL}"
           echo "Files that would sync: ${CHANGED}"
 
-      # ── 5. Create sync branch and copy updated files ──────────────────────────
+      # ── 6. Create sync branch and copy updated files ──────────────────────────
       - name: Apply updated scaffold files
-        if: inputs.dry_run != 'true'
+        if: steps.runtime.outputs.dry_run != 'true'
         run: |
           TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
           SCAFFOLD_SRC="${GITHUB_WORKSPACE}/docs/service-migrations/scaffolds/Aku-Hardware"
@@ -151,9 +160,9 @@ jobs:
           FILE_COUNT=$(find "${SCAFFOLD_SRC}" -type f | wc -l)
           echo "✅ Copied ${FILE_COUNT} scaffold files to ${TARGET_CLONE}"
 
-      # ── 6. Commit and push if there are changes ───────────────────────────────
+      # ── 7. Commit and push if there are changes ───────────────────────────────
       - name: Commit and push
-        if: inputs.dry_run != 'true'
+        if: steps.runtime.outputs.dry_run != 'true'
         id: push
         run: |
           TARGET_CLONE="${RUNNER_TEMP}/${TARGET_REPO}"
@@ -178,18 +187,18 @@ jobs:
           CHANGED_FILES=$(git diff --cached --name-only | head -20 | tr '\n' ' ')
           git commit -m "docs: sync hardware docs from Akulearn_docs
 
-Updated files: ${CHANGED_FILES}
+          Updated files: ${CHANGED_FILES}
 
-Source: https://github.com/oumar-code/Akulearn_docs/tree/main/docs/service-migrations/scaffolds/Aku-Hardware
-Triggered by: ${{ github.event_name }} (${{ github.sha }})"
+          Source: https://github.com/oumar-code/Akulearn_docs/tree/main/docs/service-migrations/scaffolds/Aku-Hardware
+          Triggered by: ${{ github.event_name }} (${{ github.sha }})"
 
           git push -u origin "${SYNC_BRANCH}" --force
           echo "✅ Pushed sync branch: ${SYNC_BRANCH}"
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
-      # ── 7. Open or update pull request ───────────────────────────────────────
+      # ── 8. Open or update pull request ───────────────────────────────────────
       - name: Open or update pull request
-        if: inputs.dry_run != 'true' && steps.push.outputs.changed == 'true'
+        if: steps.runtime.outputs.dry_run != 'true' && steps.push.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
@@ -203,26 +212,26 @@ Triggered by: ${{ github.event_name }} (${{ github.sha }})"
 
           PR_BODY="Automated documentation sync from [Akulearn_docs](https://github.com/oumar-code/Akulearn_docs).
 
-## What changed
+          ## What changed
 
-$(cd "${RUNNER_TEMP}/${TARGET_REPO}" && git diff origin/${{ steps.push.outputs.base_branch }}...HEAD --name-only 2>/dev/null | sed 's/^/- /' || echo "- See commit diff")
+          $(cd "${RUNNER_TEMP}/${TARGET_REPO}" && git diff origin/${{ steps.push.outputs.base_branch }}...HEAD --name-only 2>/dev/null | sed 's/^/- /' || echo "- See commit diff")
 
-## Source of truth
+          ## Source of truth
 
-All hardware documentation is maintained in \`docs/service-migrations/scaffolds/Aku-Hardware/\`
-inside [oumar-code/Akulearn_docs](https://github.com/oumar-code/Akulearn_docs).
+          All hardware documentation is maintained in \`docs/service-migrations/scaffolds/Aku-Hardware/\`
+          inside [oumar-code/Akulearn_docs](https://github.com/oumar-code/Akulearn_docs).
 
-Do **not** edit documentation files directly in this repo — changes will be overwritten
-on the next sync. Edit the source files in Akulearn_docs instead.
+          Do **not** edit documentation files directly in this repo — changes will be overwritten
+          on the next sync. Edit the source files in Akulearn_docs instead.
 
-## Trigger
+          ## Trigger
 
-- Event   : \`${{ github.event_name }}\`
-- Commit  : \`${{ github.sha }}\`
-- Workflow: \`${{ github.workflow }}\`
+          - Event   : \`${{ github.event_name }}\`
+          - Commit  : \`${{ github.sha }}\`
+          - Workflow: \`${{ github.workflow }}\`
 
----
-_Automated by the \`populate-aku-hardware.yml\` workflow in Akulearn_docs._"
+          ---
+          _Automated by the \`populate-aku-hardware.yml\` workflow in Akulearn_docs._"
 
           if [[ -n "$EXISTING_PR" ]]; then
             echo "ℹ️  Updating existing PR #${EXISTING_PR}"
@@ -240,9 +249,11 @@ _Automated by the \`populate-aku-hardware.yml\` workflow in Akulearn_docs._"
               && echo "✅ New sync PR opened"
           fi
 
-      # ── 8. Summary ────────────────────────────────────────────────────────────
+      # ── 9. Summary ────────────────────────────────────────────────────────────
       - name: Summary
         if: always()
+        env:
+          DRY_RUN: ${{ steps.runtime.outputs.dry_run }}
         run: |
           echo "════════════════════════════════════════════════════"
           echo "  populate-aku-hardware sync complete"
