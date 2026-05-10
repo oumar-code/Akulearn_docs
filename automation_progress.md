@@ -370,8 +370,8 @@ the following CI/CD steps have been added to create a full build → test → de
 |--------|--------|
 | Create `docs/service-migrations/docker-build-push.sh` | ✅ Done |
 | Create `.github/workflows/service-docker-build-push.yml` | ✅ Done |
-| Add `write:packages` scope to `GH_PAT` secret | ⬜ Required (manual — regenerate PAT at github.com/settings/tokens) |
-| Trigger workflow → push `v0.1.1` images to `ghcr.io/oumar-code/*` | ⬜ Pending first run |
+| Add `write:packages` scope to `GH_PAT` secret | ⬜ Required — regenerate PAT at github.com/settings/tokens, then update the secret in Akulearn_docs → Settings → Secrets |
+| Trigger workflow → push `v0.1.1` images to `ghcr.io/oumar-code/*` | ⬜ Pending — Actions tab → "Service — Docker Build & Push" → Run workflow |
 
 ### Step 2 — Sync OpenAPI Specs to Contracts Repo
 
@@ -380,7 +380,7 @@ the following CI/CD steps have been added to create a full build → test → de
 | Create `docs/service-migrations/sync-openapi-to-contracts.sh` | ✅ Done |
 | Create `.github/workflows/service-sync-openapi.yml` | ✅ Done |
 | Workflow auto-triggers after lint/format/tag succeeds | ✅ Done (workflow_run trigger) |
-| First sync run (copies openapi.yaml → aku_contracts/openapi/) | ⬜ Pending lint/format/tag re-run |
+| First sync run (copies openapi.yaml → aku_contracts/openapi/) | ⬜ Pending — auto-triggers after Docker build, or trigger manually via Actions tab |
 
 ### Step 3 — Integration Tests (Health Checks)
 
@@ -390,7 +390,7 @@ the following CI/CD steps have been added to create a full build → test → de
 | Workflow pulls GHCR images, starts all 9 services + shared infra (postgres + redis) | ✅ Done |
 | Hits `/health` on each service and reports pass/fail | ✅ Done |
 | Workflow auto-triggers after Docker build/push succeeds | ✅ Done (workflow_run trigger) |
-| First integration test run | ⬜ Pending Docker images being pushed |
+| First integration test run | ⬜ Pending — auto-triggers after Docker build, or manually via Actions → "Service — Integration Tests" |
 
 ### Step 4 — Kubernetes Manifests (Staging)
 
@@ -399,16 +399,16 @@ the following CI/CD steps have been added to create a full build → test → de
 | Create `docs/deployment/k8s/namespace.yaml` | ✅ Done |
 | Create per-service manifests (Deployment + Service + ConfigMap) for all 9 services | ✅ Done |
 | Create `docs/deployment/k8s/README.md` with deploy instructions | ✅ Done |
-| Create GHCR pull secret in target cluster | ⬜ Pending cluster access |
+| Create GHCR pull secret in target cluster | ⬜ Pending cluster access (see `docs/deployment/k8s/README.md`) |
 | Create per-service Secrets with real credentials | ⬜ Pending (never commit — use kubectl or secrets manager) |
-| Apply manifests to staging cluster | ⬜ Pending cluster access |
+| Apply manifests to staging cluster | ⬜ Pending cluster access (see `docs/deployment/k8s/README.md`) |
 
 ### Step 5 — Pin Contracts Version
 
 | Action | Status |
 |--------|--------|
 | Create `docs/service-migrations/pin-contracts-version.sh` | ✅ Done |
-| Run script to pin all 9 service repos to `v0.1.1` | ⬜ Pending (trigger manually after Docker images are validated) |
+| Run script to pin all 9 service repos to `v0.1.1` | ⬜ Pending — trigger after Docker images are validated and integration tests pass |
 
 ---
 
@@ -426,9 +426,9 @@ All three migration scripts now support `--help`, `--dry-run`, and a "no local f
 | Create `oumar-code/Aku-Content` repository | ✅ Done |
 | Create migration script with `--stub-only` + `--help` modes (`migrate-to-aku-content.sh`) | ✅ Done |
 | Create `stub-aku-content.yml` workflow (LFS config + README + dir structure — no local content needed) | ✅ Done |
-| Trigger `stub-aku-content.yml` → opens PR in Aku-Content | ⬜ Pending (go to Actions tab → "Aku-Content — Initialise Stub" → Run workflow) |
+| Trigger `stub-aku-content.yml` → opens PR in Aku-Content | ⬜ Pending — Actions tab → "Aku-Content — Initialise Stub" → Run workflow |
 | Initialize Git LFS in Aku-Content for binary assets (.glb, .unitypackage, .pdf, .mp4, .zip) | ⬜ Pending (included in `stub-aku-content.yml` run above) |
-| Copy `content/` tree (textbooks, AR, VR, simulations, flashcards, quizzes, games, encyclopedia, tools, news corpus) | ⬜ Pending — ⚠️ **LOCAL MACHINE REQUIRED** (see steps below) |
+| Copy `content/` tree (textbooks, AR, VR, simulations, flashcards, quizzes, games, encyclopedia, tools, news corpus) | ⬜ Pending — ⚠️ **LOCAL MACHINE REQUIRED** (`./docs/service-migrations/migrate-to-aku-content.sh`) |
 | Copy `content_templates/` CSV templates | ⬜ Pending — ⚠️ **LOCAL MACHINE REQUIRED** (included in same run as above) |
 | Update Akudemy and Aku-EdgeHub to reference new content repo | ⬜ Pending post-copy |
 | Remove `content/` and `content_templates/` from `Akulearn_docs` after migration confirmed | ⬜ Pending |
@@ -461,8 +461,8 @@ gh auth login
 |--------|--------|
 | Create migration script with `--stub-only` + `--help` modes (`migrate-exam-papers.sh`) | ✅ Done |
 | Create `stub-akudemy-exam-papers.yml` workflow (dir structure + scraper placeholder — no local data needed) | ✅ Done |
-| Trigger `stub-akudemy-exam-papers.yml` → opens PR in Akudemy | ⬜ Pending (go to Actions tab → "Akudemy — Exam Papers Stub" → Run workflow) |
-| Copy `data/exam_papers/` (1,350 questions, JSON + CSV) to `oumar-code/Akudemy/data/` | ⬜ Pending — ⚠️ **LOCAL MACHINE REQUIRED** (see steps below) |
+| Trigger `stub-akudemy-exam-papers.yml` → opens PR in Akudemy | ⬜ Pending — Actions tab → "Akudemy — Exam Papers Stub" → Run workflow |
+| Copy `data/exam_papers/` (1,350 questions, JSON + CSV) to `oumar-code/Akudemy/data/` | ⬜ Pending — ⚠️ **LOCAL MACHINE REQUIRED** (`./docs/service-migrations/migrate-exam-papers.sh`) |
 | Copy `mlops/exam_paper_scraper.py` and docs to `oumar-code/Akudemy/scripts/` | ⬜ Pending — ⚠️ **LOCAL MACHINE REQUIRED** (included in same run as above) |
 | Remove `data/exam_papers/` from `Akulearn_docs` after migration confirmed | ⬜ Pending |
 
@@ -496,10 +496,10 @@ gh auth login
 | Create migration script with `--scaffold-only` + `--help` modes (`migrate-to-aku-smartboard.sh`) | ✅ Done |
 | Create GitHub Actions CI/release workflow scaffold (`docs/service-migrations/scaffolds/Aku-SmartBoard/`) | ✅ Done |
 | Create `scaffold-aku-smartboard.yml` workflow (CI scaffold push — no local Kotlin source needed) | ✅ Done |
-| Trigger `scaffold-aku-smartboard.yml` → opens PR in Aku-SmartBoard with `release.yml` + systemd unit | ⬜ Pending (go to Actions tab → "Aku-SmartBoard — Apply CI/Release Scaffold" → Run workflow) |
+| Trigger `scaffold-aku-smartboard.yml` → opens PR in Aku-SmartBoard with `release.yml` + systemd unit | ⬜ Pending — Actions tab → "Aku-Smartboard — Apply CI/Release Scaffold" → Run workflow |
 | Set up GitHub Actions: `./gradlew build` → release `.kexe` binary as GitHub Release artifact | ⬜ Pending (covered by the scaffold PR above) |
 | Add systemd service unit to GitHub Release assets | ⬜ Pending (covered by the scaffold PR above) |
-| Copy `akulearn-linux-app/` (Kotlin source, Gradle build, DEPLOYMENT.md) to new repo root | ⬜ Pending — ⚠️ **LOCAL MACHINE REQUIRED** (see steps below) |
+| Copy `akulearn-linux-app/` (Kotlin source, Gradle build, DEPLOYMENT.md) to new repo root | ⬜ Pending — ⚠️ **LOCAL MACHINE REQUIRED** (`./docs/service-migrations/migrate-to-aku-smartboard.sh`) |
 | Remove `akulearn-linux-app/` from `Akulearn_docs` after migration confirmed | ⬜ Pending |
 
 **Local machine steps to complete the full migration:**
@@ -521,3 +521,45 @@ gh auth login
 ./docs/service-migrations/migrate-to-aku-smartboard.sh --scaffold-only
 ```
 
+---
+
+### [Date: 2026-05-10]
+
+#### Post-Migration Remediation Phase — Status & Next Steps
+
+**Summary of what the last session produced:**
+
+A prioritised remediation plan was produced and executed in two layers:
+
+1. **Cross-repo / systemic fixes (Akulearn_docs templates + automation):**
+   - `service-fix-requirements.yml` — patches `aku-platform-contracts` dep to correct `.git@v0.1.1` URL in all 9 service repos; force-moves the v0.1.1 tag.
+   - `docs/service-migrations/fix-lint.sh` — cross-repo ruff config migration (`[tool.ruff]` → `[tool.ruff.lint]`) + B904 exception-chaining fixes; opens PRs in all 9 service repos.
+   - `docs/service-migrations/fix-ci-git-credentials.sh` — adds `Configure git credentials` step before `pip install` in each service's `ci.yml`; opens PRs in all 9 service repos.
+   - `service-docker-build-push.yml` — builds and pushes GHCR images for all 9 services; applies inline scaffold patches (AkuAI `requirements-extra.txt` no-op, Aku-EdgeHub `/health` endpoint, Aku-DaaS `python-multipart`).
+   - `service-integration-test.yml` — starts all 9 GHCR images + shared postgres/redis and hits `/health` on each; auto-triggers after Docker build.
+
+2. **Repo-specific cleanup:**
+   - PRs opened by `fix-lint.sh` and `fix-ci-git-credentials.sh` await merge in each service repo (branches `fix/ruff-lint-remediation` and `fix/ci-git-credentials-for-pip`).
+
+**Consolidated next-steps tracker — remaining items:**
+
+| Step | Action | Trigger |
+|------|--------|---------|
+| 1a | Run `service-fix-requirements.yml` (ensure `.git@v0.1.1` dep in all service repos) | Actions → Service — Fix requirements.txt → Run workflow |
+| 1b | Merge `fix/ruff-lint-remediation` PRs in all 9 service repos | GitHub PR review in each repo |
+| 1c | Merge `fix/ci-git-credentials-for-pip` PRs in all 9 service repos | GitHub PR review in each repo |
+| 2 | Add `write:packages` scope to `GH_PAT`; update secret in Akulearn_docs | github.com/settings/tokens → re-generate; Settings → Secrets |
+| 3 | Run Docker build/push for all 9 services at `v0.1.1` | Actions → Service — Docker Build & Push → Run workflow |
+| 4 | Integration health checks pass for all started services | Auto-triggers after step 3; or Actions → Service — Integration Tests |
+| 5a | Trigger Aku-Content stub; merge PR in Aku-Content | Actions → Aku-Content — Initialise Stub |
+| 5b | Trigger Akudemy exam papers stub; merge PR in Akudemy | Actions → Akudemy — Exam Papers Stub |
+| 5c | Trigger Aku-SmartBoard CI scaffold; merge PR in Aku-SmartBoard | Actions → Aku-Smartboard — Apply CI/Release Scaffold |
+| 6a | Full content migration (local machine) — `content/` + `content_templates/` → Aku-Content | `./docs/service-migrations/migrate-to-aku-content.sh` |
+| 6b | Full exam papers migration (local machine) — `data/exam_papers/` → Akudemy | `./docs/service-migrations/migrate-exam-papers.sh` |
+| 6c | Full SmartBoard migration (local machine) — `akulearn-linux-app/` → Aku-SmartBoard | `./docs/service-migrations/migrate-to-aku-smartboard.sh` |
+| 7 | Kubernetes staging: create GHCR pull secret → apply `docs/deployment/k8s/` manifests | `kubectl apply -f docs/deployment/k8s/` (cluster access required) |
+
+**Full operator runbook with exact navigation steps:**
+→ `docs/runbooks/post-remediation-runbook.md`
+
+Mark each step `✅ Done` in the table above as it completes.
