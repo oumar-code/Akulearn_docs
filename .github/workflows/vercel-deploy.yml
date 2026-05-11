@@ -37,6 +37,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Validate docs/dashboard allowlist
+        run: |
+          source "$GITHUB_WORKSPACE/.github/allowlists/allowlist.bash"
+          resolve_allowed_repos "Akulearn_docs akulearn-dashboard" "${AKU_DOCS_DASHBOARD_REPOS}" "docs-dashboard-lane" >/dev/null
+
       # Guard: generate package-lock.json if it was accidentally removed,
       # so the npm cache step below never fails on a missing lockfile.
       - name: Ensure package-lock.json exists

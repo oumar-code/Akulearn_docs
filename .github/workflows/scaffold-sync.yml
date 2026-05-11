@@ -13,7 +13,7 @@ name: "Scaffold Sync — Push scaffold changes to service repos"
 #
 # Manual trigger (workflow_dispatch):
 #   - Optionally specify a space-separated list of service names, or leave
-#     blank to sync all 9 backend services
+#     blank to sync all allowlisted service + hardware repos
 #   - Optionally enable dry_run to preview without pushing anything
 #
 # Prerequisites
@@ -37,13 +37,13 @@ on:
       services:
         description: >
           Space-separated list of service repos to sync.
-          Leave empty to sync all 10 backend services.
+          Leave empty to sync all allowlisted service + hardware repos.
         required: false
         default: ""
       dry_run:
         description: "Dry run — preview steps without pushing anything"
         required: false
-        default: "false"
+        default: "true"
         type: choice
         options: ["false", "true"]
 
@@ -51,6 +51,7 @@ jobs:
   scaffold-sync:
     name: Sync scaffold → service repos
     runs-on: ubuntu-latest
+    environment: orchestration-publish
 
     permissions:
       contents: read  # reads from this repo; all pushes go to service repos via PAT
@@ -59,8 +60,6 @@ jobs:
       GITHUB_ORG: oumar-code
       BRANCH_NAME: feat/scaffold-sync
       SCAFFOLDS_DIR: docs/service-migrations/scaffolds
-      # All 10 backend services (used as the default when no override is given)
-      ALL_SERVICES: "AkuAI Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub AkuTutor AkuWorkspace Aku-DaaS Aku-Hardware"
       GH_TOKEN: ${{ secrets.GH_PAT }}
 
     steps:
@@ -96,14 +95,18 @@ jobs:
       - name: Determine services to sync
         id: services
         run: |
+          source "$GITHUB_WORKSPACE/.github/allowlists/allowlist.bash"
+          ALLOWED="$(normalize_space_list "${AKU_SERVICE_REPOS} ${AKU_HARDWARE_REPOS}")"
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             OVERRIDE="${{ steps.runtime.outputs.services_override }}"
             if [[ -n "$OVERRIDE" ]]; then
+              RESOLVED="$(resolve_allowed_repos "$OVERRIDE" "$ALLOWED" "scaffold-lane")"
               echo "source=manual-override" >> "$GITHUB_OUTPUT"
-              echo "list=${OVERRIDE}" >> "$GITHUB_OUTPUT"
+              echo "list=${RESOLVED}" >> "$GITHUB_OUTPUT"
             else
+              RESOLVED="$(resolve_allowed_repos "" "$ALLOWED" "scaffold-lane")"
               echo "source=all" >> "$GITHUB_OUTPUT"
-              echo "list=${ALL_SERVICES}" >> "$GITHUB_OUTPUT"
+              echo "list=${RESOLVED}" >> "$GITHUB_OUTPUT"
             fi
           else
             # Push event — detect which scaffold subdirs changed.
@@ -113,8 +116,9 @@ jobs:
             ZERO_SHA="0000000000000000000000000000000000000000"
             if [[ -z "$BEFORE" || "$BEFORE" == "$ZERO_SHA" ]]; then
               echo "ℹ️  No previous commit available (first push?) — syncing all services as a safe fallback."
+              RESOLVED="$(resolve_allowed_repos "" "$ALLOWED" "scaffold-lane")"
               echo "source=all-fallback" >> "$GITHUB_OUTPUT"
-              echo "list=${ALL_SERVICES}" >> "$GITHUB_OUTPUT"
+              echo "list=${RESOLVED}" >> "$GITHUB_OUTPUT"
             else
               # Extract the service name (3rd path component) from each
               # changed path, e.g. docs/service-migrations/scaffolds/AkuAI/app/main.py → AkuAI
@@ -130,8 +134,9 @@ jobs:
                 echo "source=none" >> "$GITHUB_OUTPUT"
                 echo "list=" >> "$GITHUB_OUTPUT"
               else
+                RESOLVED="$(resolve_allowed_repos "$CHANGED" "$ALLOWED" "scaffold-lane")"
                 echo "source=auto-detected" >> "$GITHUB_OUTPUT"
-                echo "list=${CHANGED}" >> "$GITHUB_OUTPUT"
+                echo "list=${RESOLVED}" >> "$GITHUB_OUTPUT"
               fi
             fi
           fi

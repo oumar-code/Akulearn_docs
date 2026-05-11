@@ -25,9 +25,9 @@ on:
       services:
         description: >
           Space-separated list of service repos to fix.
-          Leave empty to fix all 9 services.
+          Leave empty to fix all allowlisted service repos.
         required: false
-        default: "AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS"
+        default: ""
       tag:
         description: "Git tag to force-move to the fixed commit (e.g. v0.1.1)"
         required: false
@@ -35,12 +35,13 @@ on:
       dry_run:
         description: "Set to 'true' to show diffs without pushing or re-tagging"
         required: false
-        default: "false"
+        default: "true"
 
 jobs:
   fix-requirements:
     name: Fix requirements.txt (${{ inputs.services || 'all services' }})
     runs-on: ubuntu-latest
+    environment: orchestration-publish
 
     permissions:
       contents: read
@@ -56,11 +57,21 @@ jobs:
       - name: Checkout Akulearn_docs
         uses: actions/checkout@v4
 
+      - name: Resolve service allowlist
+        id: allowlist
+        env:
+          REQUESTED_SERVICES: ${{ inputs.services || '' }}
+        run: |
+          source "$GITHUB_WORKSPACE/.github/allowlists/allowlist.bash"
+          RESOLVED="$(resolve_allowed_repos "${REQUESTED_SERVICES}" "${AKU_SERVICE_REPOS}" "service-lane")"
+          echo "services=${RESOLVED}" >> "$GITHUB_OUTPUT"
+          echo "Resolved services: ${RESOLVED}"
+
       # ── 2. Clone + patch each service repo ───────────────────────────────────
       - name: Update aku-platform-contracts dep in each service
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-          SERVICES: ${{ inputs.services || 'AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS' }}
+          SERVICES: ${{ steps.allowlist.outputs.services }}
         run: |
           SUMMARY=""
           CORRECT_DEP="aku-platform-contracts @ git+https://github.com/oumar-code/aku-platform-contracts.git@v0.1.1"
@@ -164,6 +175,6 @@ jobs:
             echo "  Fix applied. Next: trigger the Docker Build & Push workflow"
             echo "  to rebuild and push images for the updated services:"
             echo "    Actions → Service — Docker Build & Push → Run workflow"
-            echo "    (services: ${{ inputs.services || 'all' }}, tag: ${TAG})"
+            echo "    (services: ${{ steps.allowlist.outputs.services }}, tag: ${TAG})"
           fi
           echo "════════════════════════════════════════════════════"

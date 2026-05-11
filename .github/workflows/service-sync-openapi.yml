@@ -28,9 +28,9 @@ on:
       services:
         description: >
           Space-separated list of service repos whose openapi.yaml to sync.
-          Leave empty to sync all 9 services.
+          Leave empty to sync all allowlisted service repos.
         required: false
-        default: "AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS"
+        default: ""
       tag:
         description: "Git tag to clone in each service repo; also applied to the contracts repo"
         required: false
@@ -38,7 +38,7 @@ on:
       dry_run:
         description: "Set to 'true' to preview which specs would be copied without pushing"
         required: false
-        default: "false"
+        default: "true"
 
   # Also run automatically after the lint/format/tag workflow succeeds on main
   workflow_run:
@@ -50,6 +50,7 @@ jobs:
   sync-openapi:
     name: Sync OpenAPI Specs (${{ inputs.services || 'all services' }})
     runs-on: ubuntu-latest
+    environment: orchestration-publish
 
     # Only run the workflow_run trigger when the upstream workflow succeeded
     if: >
@@ -68,6 +69,16 @@ jobs:
       - name: Checkout Akulearn_docs
         uses: actions/checkout@v4
 
+      - name: Resolve service allowlist
+        id: allowlist
+        env:
+          REQUESTED_SERVICES: ${{ inputs.services || '' }}
+        run: |
+          source "$GITHUB_WORKSPACE/.github/allowlists/allowlist.bash"
+          RESOLVED="$(resolve_allowed_repos "${REQUESTED_SERVICES}" "${AKU_SERVICE_REPOS}" "service-lane")"
+          echo "services=${RESOLVED}" >> "$GITHUB_OUTPUT"
+          echo "Resolved services: ${RESOLVED}"
+
       # ── 2. Set up Python (needed only if we want to validate YAML) ────────────
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
@@ -81,7 +92,7 @@ jobs:
       - name: Clone service repos
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-          SERVICES: ${{ inputs.services || 'AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS' }}
+          SERVICES: ${{ steps.allowlist.outputs.services }}
           TAG: ${{ inputs.tag || 'v0.1.1' }}
         run: |
           cd "$RUNNER_TEMP"
@@ -109,7 +120,7 @@ jobs:
       - name: Sync OpenAPI specs to contracts repo
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-          SERVICES_OVERRIDE: ${{ inputs.services || 'AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS' }}
+          SERVICES_OVERRIDE: ${{ steps.allowlist.outputs.services }}
           TAG_OVERRIDE: ${{ inputs.tag || 'v0.1.1' }}
         run: |
           cp docs/service-migrations/sync-openapi-to-contracts.sh "$RUNNER_TEMP/service-workspace/"
@@ -138,7 +149,7 @@ jobs:
         run: |
           echo "════════════════════════════════════════════════════"
           echo "  Workflow complete"
-          echo "  Services  : ${{ inputs.services || 'all' }}"
+          echo "  Services  : ${{ steps.allowlist.outputs.services }}"
           echo "  Tag       : ${{ inputs.tag || 'v0.1.1' }}"
           echo "  Dry run   : ${{ inputs.dry_run || 'false' }}"
           echo "  Contracts : https://github.com/${{ env.GITHUB_ORG }}/aku-platform-contracts"

@@ -32,9 +32,9 @@ on:
       services:
         description: >
           Space-separated list of service repos to build.
-          Leave empty to build all 9 services.
+          Leave empty to build all allowlisted service repos.
         required: false
-        default: "AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS"
+        default: ""
       tag:
         description: "Git tag to check out in each service repo (also used as the image tag)"
         required: false
@@ -42,12 +42,13 @@ on:
       dry_run:
         description: "Set to 'true' to build images locally without pushing to GHCR"
         required: false
-        default: "false"
+        default: "true"
 
 jobs:
   docker-build-push:
     name: Docker Build & Push (${{ inputs.services || 'all services' }})
     runs-on: ubuntu-latest
+    environment: orchestration-publish
 
     permissions:
       contents: read   # read this (docs) repo
@@ -61,6 +62,16 @@ jobs:
       # ── 1. Checkout this (docs) repo to get the build script ─────────────────
       - name: Checkout Akulearn_docs
         uses: actions/checkout@v4
+
+      - name: Resolve service allowlist
+        id: allowlist
+        env:
+          REQUESTED_SERVICES: ${{ inputs.services || '' }}
+        run: |
+          source "$GITHUB_WORKSPACE/.github/allowlists/allowlist.bash"
+          RESOLVED="$(resolve_allowed_repos "${REQUESTED_SERVICES}" "${AKU_SERVICE_REPOS}" "service-lane")"
+          echo "services=${RESOLVED}" >> "$GITHUB_OUTPUT"
+          echo "Resolved services: ${RESOLVED}"
 
       # ── 2. Set up Docker Buildx ───────────────────────────────────────────────
       - name: Set up Docker Buildx
@@ -78,7 +89,7 @@ jobs:
       - name: Clone service repos at tag
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-          SERVICES: ${{ inputs.services || 'AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS' }}
+          SERVICES: ${{ steps.allowlist.outputs.services }}
           TAG: ${{ inputs.tag || 'v0.1.1' }}
         run: |
           cd "$RUNNER_TEMP"
@@ -178,7 +189,7 @@ jobs:
       # ── 5. Build (and optionally push) each service image ────────────────────
       - name: Build and push Docker images
         env:
-          SERVICES_OVERRIDE: ${{ inputs.services || 'AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS' }}
+          SERVICES_OVERRIDE: ${{ steps.allowlist.outputs.services }}
           TAG_OVERRIDE: ${{ inputs.tag || 'v0.1.1' }}
           GHCR_USER: ${{ env.GITHUB_ORG }}
         run: |
@@ -243,7 +254,7 @@ jobs:
         run: |
           echo "════════════════════════════════════════════════════"
           echo "  Workflow complete"
-          echo "  Services  : ${{ inputs.services || 'all' }}"
+          echo "  Services  : ${{ steps.allowlist.outputs.services }}"
           echo "  Tag       : ${{ inputs.tag || 'v0.1.1' }}"
           echo "  Dry run   : ${{ inputs.dry_run || 'false' }}"
           echo "  Registry  : ghcr.io/${{ env.GITHUB_ORG }}"

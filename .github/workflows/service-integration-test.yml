@@ -40,7 +40,7 @@ on:
       fail_on_missing:
         description: >
           Set to 'true' to treat missing GHCR images as failures.
-          Use this once all 9 images have been published (zero skips expected).
+          Use this once all allowlisted images have been published (zero skips expected).
         required: false
         default: "false"
 
@@ -71,6 +71,17 @@ jobs:
       HEALTH_CHECK_TIMEOUT: "10"
 
     steps:
+      - name: Checkout Akulearn_docs
+        uses: actions/checkout@v4
+
+      - name: Resolve service allowlist
+        id: allowlist
+        run: |
+          source "$GITHUB_WORKSPACE/.github/allowlists/allowlist.bash"
+          RESOLVED="$(resolve_allowed_repos "" "${AKU_SERVICE_REPOS}" "service-lane")"
+          echo "services=${RESOLVED}" >> "$GITHUB_OUTPUT"
+          echo "Resolved services: ${RESOLVED}"
+
       # ── 1. Log in to GHCR (read-only — pull only) ────────────────────────────
       - name: Log in to GHCR
         uses: docker/login-action@v3
@@ -79,7 +90,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GH_PAT }}
 
-      # ── 2. Preflight — verify all 9 GHCR image manifests exist ───────────────
+      # ── 2. Preflight — verify all selected GHCR image manifests exist ─────────
       #
       # Uses `docker manifest inspect` (no image download) to confirm that every
       # service image is present in GHCR before starting containers.  Missing
@@ -89,13 +100,17 @@ jobs:
       - name: Preflight — verify GHCR image manifests
         env:
           FAIL_ON_MISSING: ${{ inputs.fail_on_missing || 'false' }}
+          SERVICES: ${{ steps.allowlist.outputs.services }}
         run: |
           echo "════════════════════════════════════════════════════"
           echo "  Preflight: checking GHCR manifests for tag ${{ env.TAG }}"
           echo "════════════════════════════════════════════════════"
 
           REGISTRY="ghcr.io/${{ env.GITHUB_ORG }}"
-          IMAGES=(akuai akudemy aku-edgehub aku-ighub aku-superhub akututor akuworkspace aku-telhone aku-daas)
+          IMAGES=()
+          for svc in $SERVICES; do
+            IMAGES+=("$(echo "$svc" | tr '[:upper:]' '[:lower:]')")
+          done
           MISSING=()
 
           for img in "${IMAGES[@]}"; do
@@ -110,7 +125,7 @@ jobs:
 
           echo ""
           if [[ ${#MISSING[@]} -eq 0 ]]; then
-            echo "  All 9 images confirmed in GHCR ✅"
+            echo "  All ${#IMAGES[@]} images confirmed in GHCR ✅"
           else
             echo "  Missing images (${#MISSING[@]}): ${MISSING[*]}"
             echo "  → Run 'Service — Docker Build & Push' to publish them."
@@ -177,7 +192,6 @@ jobs:
       #   akudemy      8000  →  host 18000
       #   aku-edgehub  8000  →  host 18001
       #   aku-ighub    8000  →  host 18002
-      #   aku-superhub 8000  →  host 18003
       #   akututor     8000  →  host 18005
       #   akuworkspace 8000  →  host 18006
       #   aku-telhone  8000  →  host 18007
@@ -186,6 +200,7 @@ jobs:
       - name: Start service containers
         env:
           REGISTRY: ghcr.io/${{ env.GITHUB_ORG }}
+          SERVICES: ${{ steps.allowlist.outputs.services }}
         run: |
           TAG="${{ env.TAG }}"
           REGISTRY="ghcr.io/${{ env.GITHUB_ORG }}"
@@ -218,20 +233,19 @@ jobs:
           # All services use the standard Dockerfile port 8000.
           # Aku-IGHub: pass HS256 fallback so the app does not crash looking for
           # a PEM key file that is absent in the CI environment.
-          start_service "akuai"        "svc-akuai"        8000 18004
-          start_service "akudemy"      "svc-akudemy"      8000 18000
-          start_service "aku-edgehub"  "svc-aku-edgehub"  8000 18001
-          start_service "aku-ighub"    "svc-aku-ighub"    8000 18002 \
-            "--env JWT_ALGORITHM=HS256 --env JWT_SECRET_KEY=test-dev-only-secret"
-          start_service "aku-superhub" "svc-aku-superhub" 8000 18003
-          start_service "akututor"     "svc-akututor"     8000 18005 \
-            "--env AKU_AI_URL=http://svc-akuai:8000"
-          start_service "akuworkspace" "svc-akuworkspace" 8000 18006 \
-            "--env AKU_AI_URL=http://svc-akuai:8000"
-          start_service "aku-telhone"  "svc-aku-telhone"  8000 18007 \
-            "--env AKU_IGHUB_URL=http://svc-aku-ighub:8000"
-          start_service "aku-daas"     "svc-aku-daas"     8000 18008 \
-            "--env AKU_IGHUB_URL=http://svc-aku-ighub:8000"
+          for svc in $SERVICES; do
+            case "$svc" in
+              AkuAI)        start_service "akuai"        "svc-akuai"        8000 18004 ;;
+              Akudemy)      start_service "akudemy"      "svc-akudemy"      8000 18000 ;;
+              Aku-EdgeHub)  start_service "aku-edgehub"  "svc-aku-edgehub"  8000 18001 ;;
+              Aku-IGHub)    start_service "aku-ighub"    "svc-aku-ighub"    8000 18002 "--env JWT_ALGORITHM=HS256 --env JWT_SECRET_KEY=test-dev-only-secret" ;;
+              AkuTutor)     start_service "akututor"     "svc-akututor"     8000 18005 "--env AKU_AI_URL=http://svc-akuai:8000" ;;
+              AkuWorkspace) start_service "akuworkspace" "svc-akuworkspace" 8000 18006 "--env AKU_AI_URL=http://svc-akuai:8000" ;;
+              Aku-Telhone)  start_service "aku-telhone"  "svc-aku-telhone"  8000 18007 "--env AKU_IGHUB_URL=http://svc-aku-ighub:8000" ;;
+              Aku-DaaS)     start_service "aku-daas"     "svc-aku-daas"     8000 18008 "--env AKU_IGHUB_URL=http://svc-aku-ighub:8000" ;;
+              *)            echo "  ⚠  Unsupported service ${svc} — skipping" ;;
+            esac
+          done
 
           echo ""
           echo "All service containers launched. Waiting 30 s for startup..."
@@ -239,6 +253,8 @@ jobs:
 
       # ── 5. Show container status before health checks ────────────────────────
       - name: Show running containers
+        env:
+          SERVICES: ${{ steps.allowlist.outputs.services }}
         run: |
           echo "════════════════════════════════════════════════════"
           echo "  Container status after startup wait"
@@ -246,9 +262,8 @@ jobs:
           docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
           echo ""
           echo "  Containers NOT running:"
-          for container in \
-            svc-akuai svc-akudemy svc-aku-edgehub svc-aku-ighub svc-aku-superhub \
-            svc-akututor svc-akuworkspace svc-aku-telhone svc-aku-daas; do
+          for svc in $SERVICES; do
+            container="svc-$(echo "${svc}" | tr '[:upper:]' '[:lower:]')"
             if ! docker ps --format "{{.Names}}" | grep -q "^${container}$"; then
               echo "  ⚠  ${container} — last 20 log lines:"
               docker logs --tail 20 "${container}" 2>&1 || echo "    (no logs available)"
@@ -260,27 +275,34 @@ jobs:
         id: health
         env:
           FAIL_ON_MISSING: ${{ inputs.fail_on_missing || 'false' }}
+          SERVICES: ${{ steps.allowlist.outputs.services }}
         run: |
-          # service_name  host_port
-          declare -A SERVICES=(
-            ["AkuAI"]=18004
-            ["Akudemy"]=18000
-            ["Aku-EdgeHub"]=18001
-            ["Aku-IGHub"]=18002
-            ["Aku-SuperHub"]=18003
-            ["AkuTutor"]=18005
-            ["AkuWorkspace"]=18006
-            ["Aku-Telhone"]=18007
-            ["Aku-DaaS"]=18008
-          )
+          port_for() {
+            case "$1" in
+              AkuAI) echo 18004 ;;
+              Akudemy) echo 18000 ;;
+              Aku-EdgeHub) echo 18001 ;;
+              Aku-IGHub) echo 18002 ;;
+              AkuTutor) echo 18005 ;;
+              AkuWorkspace) echo 18006 ;;
+              Aku-Telhone) echo 18007 ;;
+              Aku-DaaS) echo 18008 ;;
+              *) echo "" ;;
+            esac
+          }
 
           PASSED=0
           SKIPPED=0
           FAILED=0
           FAILED_SVCS=()
 
-          for svc in "${!SERVICES[@]}"; do
-            port="${SERVICES[$svc]}"
+          for svc in $SERVICES; do
+            port="$(port_for "$svc")"
+            if [[ -z "$port" ]]; then
+              echo "  ${svc} ... ⚠ skipped — no known host-port mapping"
+              SKIPPED=$((SKIPPED + 1))
+              continue
+            fi
             url="http://localhost:${port}/health"
             container="svc-$(echo "${svc}" | tr '[:upper:]' '[:lower:]')"
 
@@ -352,13 +374,14 @@ jobs:
       # ── 7. Collect logs on failure ────────────────────────────────────────────
       - name: Collect container logs (on failure)
         if: failure()
+        env:
+          SERVICES: ${{ steps.allowlist.outputs.services }}
         run: |
           echo "════════════════════════════════════════════════════"
           echo "  Container logs (last 50 lines each)"
           echo "════════════════════════════════════════════════════"
-          for container in \
-            svc-akuai svc-akudemy svc-aku-edgehub svc-aku-ighub svc-aku-superhub \
-            svc-akututor svc-akuworkspace svc-aku-telhone svc-aku-daas; do
+          for svc in $SERVICES; do
+            container="svc-$(echo "${svc}" | tr '[:upper:]' '[:lower:]')"
             echo ""
             echo "--- ${container} ---"
             docker logs --tail 50 "${container}" 2>&1 || echo "(container not running)"
@@ -367,12 +390,15 @@ jobs:
       # ── 8. Tear down ──────────────────────────────────────────────────────────
       - name: Tear down containers and network
         if: always()
+        env:
+          SERVICES: ${{ steps.allowlist.outputs.services }}
         run: |
           echo "Stopping and removing containers..."
-          docker rm -f \
-            svc-akuai svc-akudemy svc-aku-edgehub svc-aku-ighub svc-aku-superhub \
-            svc-akututor svc-akuworkspace svc-aku-telhone svc-aku-daas \
-            postgres redis 2>/dev/null || true
+          CONTAINERS=(postgres redis)
+          for svc in $SERVICES; do
+            CONTAINERS+=("svc-$(echo "${svc}" | tr '[:upper:]' '[:lower:]')")
+          done
+          docker rm -f "${CONTAINERS[@]}" 2>/dev/null || true
 
           docker network rm aku-net 2>/dev/null || true
           echo "  ✓ Cleanup complete"

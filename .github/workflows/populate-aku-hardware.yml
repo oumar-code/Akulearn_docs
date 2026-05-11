@@ -46,7 +46,7 @@ on:
       dry_run:
         description: "Dry run — preview what would be synced without pushing"
         required: false
-        default: "false"
+        default: "true"
         type: choice
         options: ["false", "true"]
       force:
@@ -60,6 +60,7 @@ jobs:
   sync:
     name: Sync hardware docs to Aku-Hardware
     runs-on: ubuntu-latest
+    environment: orchestration-publish
 
     permissions:
       contents: read  # only reads from this repo; pushes go to Aku-Hardware via PAT
@@ -74,6 +75,11 @@ jobs:
       # ── 1. Checkout Akulearn_docs to get the scaffold files ──────────────────
       - name: Checkout Akulearn_docs
         uses: actions/checkout@v4
+
+      - name: Validate hardware target allowlist
+        run: |
+          source "$GITHUB_WORKSPACE/.github/allowlists/allowlist.bash"
+          resolve_allowed_repos "${TARGET_REPO}" "${AKU_HARDWARE_REPOS}" "hardware-lane" >/dev/null
 
       # ── 2. Configure git identity ────────────────────────────────────────────
       - name: Configure git identity
