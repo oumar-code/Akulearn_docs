@@ -31,7 +31,7 @@ set -euo pipefail
 
 # ── Constants ──────────────────────────────────────────────────────────────────
 
-SERVICES="${SERVICES_OVERRIDE:-AkuAI AkuTutor AkuWorkspace Akudemy Aku-EdgeHub Aku-IGHub Aku-Telhone Aku-SuperHub Aku-DaaS}"
+SERVICES="${SERVICES_OVERRIDE:-AkuAI Aku-DaaS Aku-Telhone Aku-EdgeHub Aku-IGHub Akudemy AkuWorkspace AkuTutor}"
 TAG="${TAG_OVERRIDE:-v0.1.1}"
 GITHUB_ORG="${GITHUB_ORG:-oumar-code}"
 CONTRACTS_REPO="aku-platform-contracts"

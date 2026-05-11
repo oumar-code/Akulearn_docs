@@ -14,59 +14,52 @@ jobs:
       - name: Checkout Akulearn_docs
         uses: actions/checkout@v4
 
-      - name: Compare documented claims vs GitHub API
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Verify orchestration repo targeting against allowlist
         run: |
           python - <<'PY'
-          import json
-          import os
           import re
-          import urllib.request
           from pathlib import Path
 
-          owner = "oumar-code"
-          docs = Path("docs/ecosystem-map.md").read_text(encoding="utf-8")
-          readme = Path("README.md").read_text(encoding="utf-8")
-          package_json = json.loads(Path("package.json").read_text(encoding="utf-8"))
-          expected_next = package_json.get("devDependencies", {}).get("next")
-          token = os.environ.get("GH_TOKEN", "")
-
-          def get_repo(repo: str):
-              req = urllib.request.Request(
-                  f"https://api.github.com/repos/{owner}/{repo}",
-                  headers={
-                      "Accept": "application/vnd.github+json",
-                      "Authorization": f"Bearer {token}",
-                      "User-Agent": "akulearn-docs-drift-check",
-                  },
-              )
-              with urllib.request.urlopen(req, timeout=20) as resp:
-                  return json.loads(resp.read().decode("utf-8"))
-
           drifts = []
+          allowlist_env = Path(".github/allowlists/repos.env")
+          if not allowlist_env.exists():
+              raise SystemExit("Missing allowlist file: .github/allowlists/repos.env")
 
-          if expected_next and (f"Next.js {expected_next}" not in readme or f"Next.js {expected_next}" not in docs):
+          env_text = allowlist_env.read_text(encoding="utf-8")
+          m = re.search(r'^AKU_ALLOWED_REPOS="([^"]+)"', env_text, flags=re.MULTILINE)
+          if not m:
+              raise SystemExit("AKU_ALLOWED_REPOS not found in allowlist env file")
+          allowed = set(m.group(1).split())
+
+          monitored_workflows = [
+              "service-lint-format-tag.yml",
+              "service-docker-build-push.yml",
+              "service-sync-openapi.yml",
+              "service-fix-requirements.yml",
+              "service-integration-test.yml",
+              "scaffold-sync.yml",
+              "scaffold-aku-hardware.yml",
+              "populate-aku-hardware.yml",
+              "vercel-deploy.yml",
+          ]
+          workflow_paths = [Path(".github/workflows") / name for name in monitored_workflows]
+          referenced = set()
+          for wf in workflow_paths:
+              text = wf.read_text(encoding="utf-8")
+              referenced.update(re.findall(r"oumar-code/([A-Za-z0-9_.-]+)", text))
+              referenced.update(re.findall(r"TARGET_REPO:\s*([A-Za-z0-9_.-]+)", text))
+
+          out_of_scope = sorted(r for r in referenced if r and r not in allowed)
+          if out_of_scope:
               drifts.append(
-                  f"Next.js version drift: package.json has {expected_next}, but README/ecosystem map do not both match it."
+                  "Out-of-scope repos referenced by workflows: " + ", ".join(out_of_scope)
               )
 
-          if re.search(r"\[Aku-SmartBoard\]\(|oumar-code/Aku-SmartBoard\b", docs):
-              drifts.append("Naming drift: docs still reference repo name 'Aku-SmartBoard' instead of 'Aku-Smartboard'.")
-
-          akudemy_frontend = get_repo("Akudemy-frontend")
-          if not akudemy_frontend.get("archived") and re.search(r"\[Akudemy-frontend\].*Archived", docs):
-              drifts.append("Akudemy-frontend is active in GitHub API, but docs still mark it archived.")
-
-          dashb = get_repo("akulearn-dashB")
-          if not dashb.get("archived") and re.search(r"\[akulearn-dashB\].*Archived", docs):
-              drifts.append("akulearn-dashB is active in GitHub API, but docs still mark it archived.")
-
-          hardware = get_repo("Aku-Hardware")
-          default_branch = hardware.get("default_branch")
-          if default_branch and default_branch != "main" and default_branch not in docs:
+          required = {"Akulearn_docs", "aku-platform-contracts", "Aku-Hardware", "akulearn-dashboard"}
+          missing_required = sorted(r for r in required if r not in allowed)
+          if missing_required:
               drifts.append(
-                  f"Aku-Hardware default branch drift: API reports '{default_branch}', but docs do not mention it."
+                  "Required orchestration repos missing from allowlist: " + ", ".join(missing_required)
               )
 
           if drifts:
