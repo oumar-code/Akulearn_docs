@@ -36,6 +36,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: orchestration-publish
 
+    permissions:
+      contents: read  # reads this repo only; all pushes go to the target repo via GH_PAT
+
     env:
       GH_TOKEN: ${{ secrets.GH_PAT }}
       TARGET_REPO: oumar-code/aku-platform-contracts
@@ -63,7 +66,7 @@ jobs:
           cat > /tmp/aku-platform-contracts/pyproject.toml <<'TOML'
 [build-system]
 requires = ["setuptools>=68"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "aku-platform-contracts"
@@ -82,9 +85,8 @@ TOML
           echo "✅ pyproject.toml updated"
 
       - name: Apply publish.yml fix
-        # Fix publish.yml to use GITHUB_TOKEN for GitHub Packages instead of
-        # PYPI_API_TOKEN. Services consume via git+https so the registry is
-        # a convenience — it must not block CI on a missing secret.
+        # Fix publish.yml to publish to PyPI via PYPI_API_TOKEN, with a soft
+        # fallback (--skip-existing) so CI does not fail on a missing secret.
         run: |
           mkdir -p /tmp/aku-platform-contracts/.github/workflows
           cat > /tmp/aku-platform-contracts/.github/workflows/publish.yml <<'YAML'
@@ -115,7 +117,7 @@ jobs:
       - name: Build package
         run: python -m build
 
-      - name: Publish to GitHub Packages (PyPI-compatible index)
+      - name: Publish to PyPI
         run: |
           twine upload \
             --repository-url https://upload.pypi.org/legacy/ \
