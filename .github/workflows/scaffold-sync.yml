@@ -241,11 +241,24 @@ jobs:
             done
 
             # Guardrail: fail fast if copied workflow files look malformed.
+            # Checks performed:
+            #   1. No git merge conflict markers (<<<<<<<, =======, >>>>>>>)
+            #   2. Required top-level YAML keys (on: and jobs:) are present
+            #   3. The first substantive line is a valid YAML key — not markdown
+            #      prose (this catches the known corruption pattern where docs
+            #      content is injected at the top of a workflow file, displacing
+            #      the required name:/on: keys).
             echo "│  Step 3b: Validate workflow files"
             if ! python3 - "${TARGET_CLONE}" <<'PYEOF'
               import pathlib
               import re
               import sys
+
+              # A line is "substantive" if it is not blank and not a YAML comment.
+              BLANK_OR_COMMENT = re.compile(r"^\s*(#.*)?$")
+              # A valid YAML top-level key starts at column 0 with a word char or
+              # a YAML document-start marker (---).
+              VALID_FIRST_LINE = re.compile(r"^(---|[A-Za-z_][A-Za-z0-9_-]*\s*:)")
 
               root = pathlib.Path(sys.argv[1]) / ".github" / "workflows"
               if not root.exists():
@@ -254,13 +267,32 @@ jobs:
               issues = []
               for wf in sorted(list(root.glob("*.yml")) + list(root.glob("*.yaml"))):
                   text = wf.read_text(encoding="utf-8", errors="replace")
+                  lines = text.splitlines()
+
+                  # Check 1: merge conflict markers
                   if any(marker in text for marker in ("<<<<<<<", "=======", ">>>>>>>")):
-                      issues.append(f"{wf}: contains merge conflict markers")
+                      issues.append(f"{wf}: contains git merge conflict markers")
                       continue
-                  if not re.search(r"(?m)^on:\s*$|(?m)^on:\s+\S", text):
+
+                  # Check 2: required structural keys exist somewhere in the file
+                  if not re.search(r"^on:\s*$|^on:\s+\S", text, re.MULTILINE):
                       issues.append(f"{wf}: missing top-level 'on:' key")
-                  if not re.search(r"(?m)^jobs:\s*$|(?m)^jobs:\s+\S", text):
+                  if not re.search(r"^jobs:\s*$|^jobs:\s+\S", text, re.MULTILINE):
                       issues.append(f"{wf}: missing top-level 'jobs:' key")
+
+                  # Check 3: the first substantive line must be a valid YAML key.
+                  # This catches the corruption pattern where markdown prose (e.g.
+                  # "# Automation Progress Tracker\n\nThis markdown file will...") is
+                  # written at the top of the file, making the workflow unparseable
+                  # even though 'on:' and 'jobs:' appear later in the file.
+                  first_substantive = next(
+                      (ln for ln in lines if not BLANK_OR_COMMENT.match(ln)), None
+                  )
+                  if first_substantive is not None and not VALID_FIRST_LINE.match(first_substantive):
+                      issues.append(
+                          f"{wf}: first substantive line is not a valid YAML key "
+                          f"(got: {first_substantive!r:.80})"
+                      )
 
               if issues:
                   print("Malformed workflow files detected:")
