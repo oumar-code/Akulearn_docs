@@ -1,14 +1,27 @@
 site_name: Akulearn Documentation
-site_url: https://akulearn.com/docs
+site_url: https://oumar-code.github.io/Akulearn_docs/
 repo_url: https://github.com/oumar-code/Akulearn_docs
 repo_name: oumar-code/Akulearn_docs
 site_description: Comprehensive documentation for the Akulearn EdTech platform, covering architecture, development standards, and project plans.
 
 theme:
   name: material
+  custom_dir: docs/overrides
+  logo: images/logos/aku-brand-horns-up.svg
+  favicon: images/logos/aku-brand-horns-up.svg
   palette:
-    primary: blue
-    accent: indigo
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   font:
     text: Roboto
     code: Roboto Mono
@@ -19,14 +32,32 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.annotate
+    - content.code.copy
     - content.tabs.link
+
+extra_css:
+  - stylesheets/extra.css
 
 markdown_extensions:
   - admonition
-  - codehilite
   - footnotes
   - meta
   - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.details
+  - pymdownx.inlinehilite
 
 nav:
   - Home: index.md

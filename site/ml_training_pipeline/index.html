@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://akulearn.com/docs/ml_training_pipeline/">
+        <link rel="canonical" href="https://oumar-code.github.io/Akulearn_docs/ml_training_pipeline/">
       
       
         <link rel="prev" href="../ai_tutor/">
@@ -22,7 +22,7 @@
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../images/logos/aku-brand-horns-up.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -64,10 +66,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ml-training-pipeline-for-nigerian-language-translation" class="md-skip">
+        <a href="#ml-training-pipeline" class="md-skip">
           Skip to content
         </a>
       
@@ -92,8 +96,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Akulearn Documentation" class="md-header__button md-logo" aria-label="Akulearn Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../images/logos/aku-brand-horns-up.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -118,7 +121,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -536,6 +565,26 @@
     
     
       <li class="md-tabs__item">
+        <a href="../Aku-Telhone/" class="md-tabs__link">
+          
+  
+  
+  Aku-Telhone
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../esim/mvno_esim_integration_plan/" class="md-tabs__link">
           
   
@@ -653,17 +702,98 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../06-process-methodology/" class="md-tabs__link">
-        
-  
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="../06-process-methodology/" class="md-tabs__link">
+          
+  
   
   Process & Methodology
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../infra/neo4j-lo-schema/" class="md-tabs__link">
+          
+  
+  
+  Infra Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api/aku-code-editor-openapi.yaml" class="md-tabs__link">
+          
+  
+  
+  API Specs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../adrs/" class="md-tabs__link">
+          
+  
+  
+  Architecture Decisions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../runbooks/developer-onboarding/" class="md-tabs__link">
+          
+  
+  
+  Runbooks
+
+        </a>
+      </li>
+    
   
 
       
@@ -705,6 +835,26 @@
   
 
       
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../deployment/local/docker-compose.dev.yml" class="md-tabs__link">
+          
+  
+  
+  Deployment
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -729,8 +879,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Akulearn Documentation" class="md-nav__button md-logo" aria-label="Akulearn Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../images/logos/aku-brand-horns-up.svg" alt="logo">
 
     </a>
     Akulearn Documentation
@@ -2167,6 +2316,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/aku-code-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aku Code Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3262,10 +3439,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#objective" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Objective
       
     </span>
   </a>
@@ -3273,71 +3450,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow" class="md-nav__link">
+  <a href="#scope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-generate-news-corpus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Generate News Corpus
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-prepare-dataset-for-training" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Prepare Dataset for Training
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-fine-tune-translation-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Fine-Tune Translation Model
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-use-fine-tuned-model-in-akulearn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Use Fine-Tuned Model in Akulearn
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dataset-formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dataset Formats
+        Scope
       
     </span>
   </a>
@@ -3345,10 +3461,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parallel-datasets-to-combine-future" class="md-nav__link">
+  <a href="#pipeline-stages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parallel Datasets to Combine (Future)
+        Pipeline Stages
       
     </span>
   </a>
@@ -3356,10 +3472,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#base-models-hugging-face" class="md-nav__link">
+  <a href="#1-data-ingestion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Base Models (Hugging Face)
+        1) Data Ingestion
       
     </span>
   </a>
@@ -3367,10 +3483,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#environment-variables" class="md-nav__link">
+  <a href="#2-data-preparation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Environment Variables
+        2) Data Preparation
       
     </span>
   </a>
@@ -3378,10 +3494,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#metrics-evaluation" class="md-nav__link">
+  <a href="#3-dataset-quality-gates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Metrics &amp; Evaluation
+        3) Dataset Quality Gates
       
     </span>
   </a>
@@ -3389,10 +3505,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
+  <a href="#4-training" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tips
+        4) Training
       
     </span>
   </a>
@@ -3400,10 +3516,98 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-multi-modal-training" class="md-nav__link">
+  <a href="#5-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next: Multi-Modal Training
+        5) Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-packaging-and-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) Packaging and Registry
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7) Deployment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-monitoring-and-retraining" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8) Monitoring and Retraining
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-repository-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested Repository Layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-command-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Command Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks-and-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks and Mitigations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition-of-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definition of Done
       
     </span>
   </a>
@@ -3568,7 +3772,7 @@
   <span class="md-ellipsis">
     
   
-    eSIM & Connectivity
+    Aku-Telhone
   
 
     
@@ -3581,6 +3785,205 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aku-Telhone
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aku-Telhone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aku-Telhone/physical-sim-mvno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physical SIM & MVNO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aku-Telhone/esim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eSIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aku-Telhone/telhone-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telhone Application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aku-Telhone/regulatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nigeria Regulatory Steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eSIM & Connectivity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3673,10 +4076,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
         
           
-          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
             
   
   
@@ -3694,8 +4097,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_19">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3928,10 +4331,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_21" >
         
           
-          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_21" id="__nav_21_label" tabindex="0">
             
   
   
@@ -3949,8 +4352,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_20">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_21_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_21">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4043,10 +4446,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_21" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
         
           
-          <label class="md-nav__link" for="__nav_21" id="__nav_21_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
             
   
   
@@ -4064,8 +4467,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_21_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_21">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4090,6 +4493,62 @@
     
   
     Ultra-Affordable Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strategy/rag_chatbot_strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG Chatbot Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strategy/aku-code-editor-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aku Code Editor Strategy
   
 
     
@@ -4298,10 +4757,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" >
         
           
-          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
             
   
   
@@ -4319,8 +4778,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_22">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_23">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4386,6 +4845,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handbooks/AkuCodeEditor_Handbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aku Code Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4413,10 +4900,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" >
         
           
-          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
             
   
   
@@ -4434,8 +4921,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_23">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_24">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4542,9 +5029,25 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../06-process-methodology/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25" >
+        
+          
+          <label class="md-nav__link" for="__nav_25" id="__nav_25_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -4558,7 +5061,595 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_25">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process & Methodology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-process-methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-process-methodology/sprint-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5-Phase Sprint Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_26" >
+        
+          
+          <label class="md-nav__link" for="__nav_26" id="__nav_26_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infra Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_26_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_26">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Infra Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra/neo4j-lo-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neo4j LO Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/local/postgres-schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Postgres Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/local/REDIS_KEY_TTL_POLICY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redis TTL Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_27" >
+        
+          
+          <label class="md-nav__link" for="__nav_27" id="__nav_27_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Specs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_27_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_27">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Specs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/aku-code-editor-openapi.yaml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aku Code Editor OpenAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_28" >
+        
+          
+          <label class="md-nav__link" for="__nav_28" id="__nav_28_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Decisions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_28_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_28">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture Decisions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adrs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All ADRs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adrs/adr-005-aku-code-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-005 Aku Code Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_29" >
+        
+          
+          <label class="md-nav__link" for="__nav_29" id="__nav_29_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_29_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_29">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Runbooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runbooks/developer-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runbooks/on-call-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    On-Call Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runbooks/akuai-runbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AkuAI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runbooks/aku-code-editor-runbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aku Code Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4617,6 +5708,149 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_32" >
+        
+          
+          <label class="md-nav__link" for="__nav_32" id="__nav_32_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_32_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_32">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/local/docker-compose.dev.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Dev Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/local/dev-ram-allocation-decision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAM Allocation Decision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/k8s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -4644,10 +5878,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#objective" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Objective
       
     </span>
   </a>
@@ -4655,71 +5889,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workflow" class="md-nav__link">
+  <a href="#scope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-generate-news-corpus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Generate News Corpus
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-prepare-dataset-for-training" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Prepare Dataset for Training
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-fine-tune-translation-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Fine-Tune Translation Model
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-use-fine-tuned-model-in-akulearn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Use Fine-Tuned Model in Akulearn
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dataset-formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dataset Formats
+        Scope
       
     </span>
   </a>
@@ -4727,10 +5900,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parallel-datasets-to-combine-future" class="md-nav__link">
+  <a href="#pipeline-stages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parallel Datasets to Combine (Future)
+        Pipeline Stages
       
     </span>
   </a>
@@ -4738,10 +5911,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#base-models-hugging-face" class="md-nav__link">
+  <a href="#1-data-ingestion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Base Models (Hugging Face)
+        1) Data Ingestion
       
     </span>
   </a>
@@ -4749,10 +5922,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#environment-variables" class="md-nav__link">
+  <a href="#2-data-preparation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Environment Variables
+        2) Data Preparation
       
     </span>
   </a>
@@ -4760,10 +5933,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#metrics-evaluation" class="md-nav__link">
+  <a href="#3-dataset-quality-gates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Metrics &amp; Evaluation
+        3) Dataset Quality Gates
       
     </span>
   </a>
@@ -4771,10 +5944,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
+  <a href="#4-training" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tips
+        4) Training
       
     </span>
   </a>
@@ -4782,10 +5955,98 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-multi-modal-training" class="md-nav__link">
+  <a href="#5-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next: Multi-Modal Training
+        5) Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-packaging-and-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) Packaging and Registry
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7) Deployment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-monitoring-and-retraining" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8) Monitoring and Retraining
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-repository-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested Repository Layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-command-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Command Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks-and-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks and Mitigations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition-of-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definition of Done
       
     </span>
   </a>
@@ -4812,161 +6073,113 @@
   
 
 
-<h1 id="ml-training-pipeline-for-nigerian-language-translation">ML Training Pipeline for Nigerian Language Translation</h1>
-<h2 id="overview">Overview</h2>
-<p>Generate news articles, build parallel corpora, and fine-tune translation models for English ↔ Hausa/Igbo/Yoruba.</p>
-<h2 id="workflow">Workflow</h2>
-<h3 id="1-generate-news-corpus">1. Generate News Corpus</h3>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Synthetic articles in English + automatic translation (requires HF model)</span>
-python<span class="w"> </span>generate_news_corpus.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--count<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--langs<span class="w"> </span>en<span class="w"> </span>ha<span class="w"> </span>yo<span class="w"> </span>ig<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--pairs<span class="w"> </span>en-ha<span class="w"> </span>en-yo<span class="w"> </span>en-ig<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--models<span class="w"> </span>Helsinki-NLP/opus-mt-en-ha<span class="w"> </span>Helsinki-NLP/opus-mt-en-yo<span class="w"> </span>Helsinki-NLP/opus-mt-en-ig
-
-<span class="c1"># Output: content/news_corpus/</span>
-<span class="c1">#   en/YYYY/MM/DD/*.json      (English articles)</span>
-<span class="c1">#   ha/YYYY/MM/DD/*.json      (Hausa articles)</span>
-<span class="c1">#   yo/YYYY/MM/DD/*.json      (Yoruba articles)</span>
-<span class="c1">#   ig/YYYY/MM/DD/*.json      (Igbo articles)</span>
-</code></pre></div>
-
-<h3 id="2-prepare-dataset-for-training">2. Prepare Dataset for Training</h3>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Build parallel corpus (document-level pairs)</span>
-python<span class="w"> </span>prepare_ml_dataset.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--corpus<span class="w"> </span>content/news_corpus<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--source-lang<span class="w"> </span>en<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--target-lang<span class="w"> </span>ha<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--output<span class="w"> </span>content/ml_datasets<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--format<span class="w"> </span>tsv
-
-<span class="c1"># Or split into sentences for finer-grained training</span>
-python<span class="w"> </span>prepare_ml_dataset.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--corpus<span class="w"> </span>content/news_corpus<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--source-lang<span class="w"> </span>en<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--target-lang<span class="w"> </span>ha<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--output<span class="w"> </span>content/ml_datasets<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--format<span class="w"> </span>tsv<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--sentence-level
-
-<span class="c1"># Output: content/ml_datasets/en-ha.tsv</span>
-<span class="c1">#   Format: source_text \t target_text (one pair per line)</span>
-</code></pre></div>
-
-<h3 id="3-fine-tune-translation-model">3. Fine-Tune Translation Model</h3>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Test setup first</span>
-python<span class="w"> </span>train_translation_model.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--data<span class="w"> </span>content/ml_datasets/en-ha.tsv<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--lang-pair<span class="w"> </span>en-ha<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--base-model<span class="w"> </span>Helsinki-NLP/opus-mt-en-ha<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--output<span class="w"> </span>models<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--dry-run
-
-<span class="c1"># Train (requires GPU recommended for speed)</span>
-python<span class="w"> </span>train_translation_model.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--data<span class="w"> </span>content/ml_datasets/en-ha.tsv<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--lang-pair<span class="w"> </span>en-ha<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--base-model<span class="w"> </span>Helsinki-NLP/opus-mt-en-ha<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--output<span class="w"> </span>models<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--max-steps<span class="w"> </span><span class="m">5000</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--batch-size<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--learning-rate<span class="w"> </span>2e-5
-
-<span class="c1"># Output: models/en-ha/</span>
-<span class="c1">#   pytorch_model.bin      (fine-tuned weights)</span>
-<span class="c1">#   config.json            (model config)</span>
-<span class="c1">#   tokenizer.json         (tokenizer)</span>
-</code></pre></div>
-
-<h3 id="4-use-fine-tuned-model-in-akulearn">4. Use Fine-Tuned Model in Akulearn</h3>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Update .env</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">HUGGINGFACE_TRANSLATION_MODEL</span><span class="o">=</span>models/en-ha
-
-<span class="c1"># Translate lessons</span>
-python<span class="w"> </span>translate_lessons.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>content/ai_generated/textbooks/Computer<span class="se">\ </span>Science/SS1/lesson_01_computer_hardware_and_software.json<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--lang<span class="w"> </span>ha
-
-<span class="c1"># Output: content/ai_generated_translated/ha/lesson_01_...json</span>
-</code></pre></div>
-
-<h2 id="dataset-formats">Dataset Formats</h2>
-<p><strong>TSV (Tab-Separated Values):</strong></p>
-<div class="codehilite"><pre><span></span><code>source_text target_text
-The school is green.    Makaranta ita gida.
-</code></pre></div>
-
-<p><strong>JSONL (JSON Lines):</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The school is green.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Makaranta ita gida.&quot;</span><span class="p">}</span>
-</code></pre></div>
-
-<p><strong>HF Datasets Format:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;translation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The school is green.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;ha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Makaranta ita gida.&quot;</span><span class="p">},</span>
-<span class="w">    </span><span class="err">...</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<h2 id="parallel-datasets-to-combine-future">Parallel Datasets to Combine (Future)</h2>
+<h1 id="ml-training-pipeline">ML Training Pipeline<a class="headerlink" href="#ml-training-pipeline" title="Permanent link">&para;</a></h1>
+<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h2>
+<p>Provide a reproducible end-to-end pipeline for training, evaluating, and deploying multilingual models (English ↔ Hausa/Igbo/Yoruba) for Akulearn content and tutoring workflows.</p>
+<h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>MAFAND-MT</strong>: News parallel corpus (Hausa, Yoruba, Pidgin)</li>
-<li><strong>JW300</strong>: Bible (13+ Nigerian languages)</li>
-<li><strong>MENYO-20k</strong>: Yoruba-English multi-domain</li>
+<li>Tasks: translation, classification, retrieval quality scoring.</li>
+<li>Data sources: curated curriculum data, approved public corpora, and multilingual news datasets.</li>
+<li>Outputs: versioned datasets, trained models, evaluation reports, deployable artifacts.</li>
 </ul>
-<h2 id="base-models-hugging-face">Base Models (Hugging Face)</h2>
-<table>
-<thead>
-<tr>
-<th>Language Pair</th>
-<th>Model</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>en-ha</td>
-<td><code>Helsinki-NLP/opus-mt-en-ha</code></td>
-</tr>
-<tr>
-<td>en-yo</td>
-<td><code>Helsinki-NLP/opus-mt-en-yo</code></td>
-</tr>
-<tr>
-<td>en-ig</td>
-<td><code>Helsinki-NLP/opus-mt-en-ig</code></td>
-</tr>
-<tr>
-<td>ha-en</td>
-<td><code>Helsinki-NLP/opus-mt-ha-en</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="environment-variables">Environment Variables</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># .env</span>
-<span class="nv">HUGGINGFACE_TOKEN</span><span class="o">=</span>your_hf_token_if_using_private_models
-<span class="nv">HUGGINGFACE_TRANSLATION_MODEL</span><span class="o">=</span>models/en-ha<span class="w">  </span><span class="c1"># Path to fine-tuned model</span>
-</code></pre></div>
-
-<h2 id="metrics-evaluation">Metrics &amp; Evaluation</h2>
+<h2 id="pipeline-stages">Pipeline Stages<a class="headerlink" href="#pipeline-stages" title="Permanent link">&para;</a></h2>
+<h2 id="1-data-ingestion">1) Data Ingestion<a class="headerlink" href="#1-data-ingestion" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>BLEU Score</strong>: Automatic metric for translation quality</li>
-<li><strong>Training curves</strong>: Logged via HF Trainer (view in <code>models/en-ha/</code>)</li>
-<li><strong>Manual review</strong>: Spot-check translated lessons for accuracy</li>
+<li>Ingest raw documents from approved sources.</li>
+<li>Validate schema and metadata (source, language, timestamp, license).</li>
+<li>Store immutable raw snapshots for lineage.</li>
 </ul>
-<h2 id="tips">Tips</h2>
-<ol>
-<li><strong>Start small</strong>: 100-500 articles for initial fine-tuning</li>
-<li><strong>Use GPU</strong>: Training on CPU is slow; consider Colab/Lambda Labs</li>
-<li><strong>Monitor</strong>: Check <code>models/&lt;pair&gt;/training_args.bin</code> for convergence</li>
-<li><strong>Iterate</strong>: Collect more domain-specific news to improve</li>
-<li><strong>Combine</strong>: Merge Akulearn corpus with MAFAND-MT for larger dataset</li>
-</ol>
-<h2 id="next-multi-modal-training">Next: Multi-Modal Training</h2>
-<p>Once translation is working, add:
-- Image-to-caption pairs (BBC News articles + images)
-- Audio-to-text (VOA podcasts + transcripts)
-- Cross-lingual image-text alignment</p>
+<h2 id="2-data-preparation">2) Data Preparation<a class="headerlink" href="#2-data-preparation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Normalize text (encoding, punctuation, script handling).</li>
+<li>Remove duplicates and low-quality pairs.</li>
+<li>Segment into train/validation/test with leakage prevention.</li>
+<li>Export standardized formats (TSV/JSONL/HF datasets).</li>
+</ul>
+<h2 id="3-dataset-quality-gates">3) Dataset Quality Gates<a class="headerlink" href="#3-dataset-quality-gates" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Language identification accuracy checks.</li>
+<li>Minimum alignment confidence for parallel corpora.</li>
+<li>Toxicity/safety screening.</li>
+<li>Coverage checks by subject and grade level.</li>
+</ul>
+<h2 id="4-training">4) Training<a class="headerlink" href="#4-training" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Select baseline model per task and language pair.</li>
+<li>Run parameterized training jobs with tracked configs.</li>
+<li>Save checkpoints and model card metadata.</li>
+</ul>
+<p>Recommended baseline translation models:
+- <code>Helsinki-NLP/opus-mt-en-ha</code>
+- <code>Helsinki-NLP/opus-mt-en-yo</code>
+- <code>Helsinki-NLP/opus-mt-en-ig</code></p>
+<h2 id="5-evaluation">5) Evaluation<a class="headerlink" href="#5-evaluation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Automated metrics: BLEU/chrF/COMET (for translation), accuracy/F1 (classification).</li>
+<li>Safety checks: harmful output and bias spot checks.</li>
+<li>Human review: linguistic quality and curriculum fidelity.</li>
+</ul>
+<p>Promotion gate:
+- Candidate model must outperform production baseline on agreed metrics and pass safety checks.</p>
+<h2 id="6-packaging-and-registry">6) Packaging and Registry<a class="headerlink" href="#6-packaging-and-registry" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Package model + tokenizer + inference config.</li>
+<li>Register artifact with semantic version and lineage metadata.</li>
+<li>Store reproducibility details: dataset version, code commit, training config.</li>
+</ul>
+<h2 id="7-deployment">7) Deployment<a class="headerlink" href="#7-deployment" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Deploy to staging first with shadow/canary traffic.</li>
+<li>Monitor latency, error rate, and output quality regressions.</li>
+<li>Promote to production after acceptance criteria are met.</li>
+</ul>
+<h2 id="8-monitoring-and-retraining">8) Monitoring and Retraining<a class="headerlink" href="#8-monitoring-and-retraining" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Track live quality indicators and drift signals.</li>
+<li>Trigger retraining on drift, content expansion, or metric decay.</li>
+<li>Keep rollback-ready previous model versions.</li>
+</ul>
+<h2 id="suggested-repository-layout">Suggested Repository Layout<a class="headerlink" href="#suggested-repository-layout" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>content/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  news_corpus/
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ml_datasets/
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>models/
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  &lt;task&gt;/&lt;lang-pair&gt;/&lt;version&gt;/
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>reports/
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  eval/
+</span></code></pre></div>
+<h2 id="example-command-flow">Example Command Flow<a class="headerlink" href="#example-command-flow" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 1) Generate/collect corpus</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python<span class="w"> </span>generate_news_corpus.py<span class="w"> </span>--count<span class="w"> </span><span class="m">100</span><span class="w"> </span>--langs<span class="w"> </span>en<span class="w"> </span>ha<span class="w"> </span>yo<span class="w"> </span>ig
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 2) Prepare parallel dataset</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>python<span class="w"> </span>prepare_ml_dataset.py<span class="w"> </span>--corpus<span class="w"> </span>content/news_corpus<span class="w"> </span>--source-lang<span class="w"> </span>en<span class="w"> </span>--target-lang<span class="w"> </span>ha<span class="w"> </span>--output<span class="w"> </span>content/ml_datasets<span class="w"> </span>--format<span class="w"> </span>tsv
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># 3) Dry-run training</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>python<span class="w"> </span>train_translation_model.py<span class="w"> </span>--data<span class="w"> </span>content/ml_datasets/en-ha.tsv<span class="w"> </span>--lang-pair<span class="w"> </span>en-ha<span class="w"> </span>--base-model<span class="w"> </span>Helsinki-NLP/opus-mt-en-ha<span class="w"> </span>--output<span class="w"> </span>models<span class="w"> </span>--dry-run
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># 4) Train</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>python<span class="w"> </span>train_translation_model.py<span class="w"> </span>--data<span class="w"> </span>content/ml_datasets/en-ha.tsv<span class="w"> </span>--lang-pair<span class="w"> </span>en-ha<span class="w"> </span>--base-model<span class="w"> </span>Helsinki-NLP/opus-mt-en-ha<span class="w"> </span>--output<span class="w"> </span>models<span class="w"> </span>--max-steps<span class="w"> </span><span class="m">5000</span><span class="w"> </span>--batch-size<span class="w"> </span><span class="m">16</span><span class="w"> </span>--learning-rate<span class="w"> </span>2e-5
+</span></code></pre></div>
+<h2 id="cicd-integration">CI/CD Integration<a class="headerlink" href="#cicd-integration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>CI validates dataset schema and training config.</li>
+<li>Scheduled jobs run periodic evaluation against benchmark sets.</li>
+<li>Release pipeline blocks deployment when quality gates fail.</li>
+</ul>
+<h2 id="risks-and-mitigations">Risks and Mitigations<a class="headerlink" href="#risks-and-mitigations" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Data drift</strong>: continuous monitoring and periodic retraining.</li>
+<li><strong>Low-resource language quality</strong>: expand corpus and increase human review.</li>
+<li><strong>Overfitting</strong>: strict held-out test sets and early stopping.</li>
+<li><strong>Unsafe outputs</strong>: content safety filters and moderation checks.</li>
+</ul>
+<h2 id="definition-of-done">Definition of Done<a class="headerlink" href="#definition-of-done" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Reproducible training run from raw data to deployable model.</li>
+<li>Quality and safety reports generated for each candidate.</li>
+<li>Versioned model promoted through staging to production with rollback plan.</li>
+</ul>
 
 
 
@@ -5024,7 +6237,7 @@ The school is green.    Makaranta ita gida.
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>

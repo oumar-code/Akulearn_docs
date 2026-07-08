@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://akulearn.com/docs/system_design/">
+        <link rel="canonical" href="https://oumar-code.github.io/Akulearn_docs/system_design/">
       
       
         <link rel="prev" href="../architecture/voip_caching_architecture/">
@@ -22,7 +22,7 @@
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../images/logos/aku-brand-horns-up.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -64,10 +66,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -92,8 +96,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Akulearn Documentation" class="md-header__button md-logo" aria-label="Akulearn Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../images/logos/aku-brand-horns-up.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -118,7 +121,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -536,6 +565,26 @@
     
     
       <li class="md-tabs__item">
+        <a href="../Aku-Telhone/" class="md-tabs__link">
+          
+  
+  
+  Aku-Telhone
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
         <a href="../esim/mvno_esim_integration_plan/" class="md-tabs__link">
           
   
@@ -653,17 +702,98 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../06-process-methodology/" class="md-tabs__link">
-        
-  
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="../06-process-methodology/" class="md-tabs__link">
+          
+  
   
   Process & Methodology
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../infra/neo4j-lo-schema/" class="md-tabs__link">
+          
+  
+  
+  Infra Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api/aku-code-editor-openapi.yaml" class="md-tabs__link">
+          
+  
+  
+  API Specs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../adrs/" class="md-tabs__link">
+          
+  
+  
+  Architecture Decisions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../runbooks/developer-onboarding/" class="md-tabs__link">
+          
+  
+  
+  Runbooks
+
+        </a>
+      </li>
+    
   
 
       
@@ -705,6 +835,26 @@
   
 
       
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../deployment/local/docker-compose.dev.yml" class="md-tabs__link">
+          
+  
+  
+  Deployment
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -729,8 +879,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Akulearn Documentation" class="md-nav__button md-logo" aria-label="Akulearn Documentation" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../images/logos/aku-brand-horns-up.svg" alt="logo">
 
     </a>
     Akulearn Documentation
@@ -2389,6 +2538,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../services/aku-code-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aku Code Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3589,7 +3766,7 @@
   <span class="md-ellipsis">
     
   
-    eSIM & Connectivity
+    Aku-Telhone
   
 
     
@@ -3602,6 +3779,205 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aku-Telhone
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aku-Telhone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aku-Telhone/physical-sim-mvno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physical SIM & MVNO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aku-Telhone/esim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eSIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aku-Telhone/telhone-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telhone Application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Aku-Telhone/regulatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nigeria Regulatory Steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    eSIM & Connectivity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3694,10 +4070,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
         
           
-          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
             
   
   
@@ -3715,8 +4091,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_19">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3949,10 +4325,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_21" >
         
           
-          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_21" id="__nav_21_label" tabindex="0">
             
   
   
@@ -3970,8 +4346,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_20">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_21_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_21">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4064,10 +4440,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_21" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
         
           
-          <label class="md-nav__link" for="__nav_21" id="__nav_21_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
             
   
   
@@ -4085,8 +4461,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_21_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_21">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_22">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4111,6 +4487,62 @@
     
   
     Ultra-Affordable Connectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strategy/rag_chatbot_strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAG Chatbot Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strategy/aku-code-editor-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aku Code Editor Strategy
   
 
     
@@ -4319,10 +4751,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" >
         
           
-          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
             
   
   
@@ -4340,8 +4772,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_22">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_23">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4407,6 +4839,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handbooks/AkuCodeEditor_Handbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aku Code Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4434,10 +4894,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" >
         
           
-          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
             
   
   
@@ -4455,8 +4915,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_23">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_24">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4563,9 +5023,25 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../06-process-methodology/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25" >
+        
+          
+          <label class="md-nav__link" for="__nav_25" id="__nav_25_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -4579,7 +5055,595 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_25">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Process & Methodology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-process-methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-process-methodology/sprint-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5-Phase Sprint Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_26" >
+        
+          
+          <label class="md-nav__link" for="__nav_26" id="__nav_26_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infra Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_26_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_26">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Infra Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infra/neo4j-lo-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neo4j LO Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/local/postgres-schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Postgres Schemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/local/REDIS_KEY_TTL_POLICY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redis TTL Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_27" >
+        
+          
+          <label class="md-nav__link" for="__nav_27" id="__nav_27_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Specs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_27_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_27">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Specs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/aku-code-editor-openapi.yaml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aku Code Editor OpenAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_28" >
+        
+          
+          <label class="md-nav__link" for="__nav_28" id="__nav_28_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Decisions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_28_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_28">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture Decisions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adrs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All ADRs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adrs/adr-005-aku-code-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-005 Aku Code Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_29" >
+        
+          
+          <label class="md-nav__link" for="__nav_29" id="__nav_29_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runbooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_29_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_29">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Runbooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runbooks/developer-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runbooks/on-call-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    On-Call Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runbooks/akuai-runbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AkuAI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runbooks/aku-code-editor-runbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aku Code Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4634,6 +5698,149 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_32" >
+        
+          
+          <label class="md-nav__link" for="__nav_32" id="__nav_32_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_32_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_32">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/local/docker-compose.dev.yml" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Dev Compose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/local/dev-ram-allocation-decision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAM Allocation Decision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/k8s/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4851,36 +6058,36 @@
   
 
 
-<h1 id="system-design">System Design</h1>
+<h1 id="system-design">System Design<a class="headerlink" href="#system-design" title="Permanent link">&para;</a></h1>
 <p>This document will provide high-level and low-level system design details, including diagrams and technical specifications.</p>
-<h2 id="akulearn-hybrid-localized-content-delivery-model">Akulearn Hybrid Localized Content Delivery Model</h2>
-<h3 id="strategy-for-schools-with-devices-network-interruption">Strategy for Schools with Devices &amp; Network Interruption</h3>
+<h2 id="akulearn-hybrid-localized-content-delivery-model">Akulearn Hybrid Localized Content Delivery Model<a class="headerlink" href="#akulearn-hybrid-localized-content-delivery-model" title="Permanent link">&para;</a></h2>
+<h3 id="strategy-for-schools-with-devices-network-interruption">Strategy for Schools with Devices &amp; Network Interruption<a class="headerlink" href="#strategy-for-schools-with-devices-network-interruption" title="Permanent link">&para;</a></h3>
 <p>Akulearn's best strategy for serving schools or communities with computers/tablets but unreliable internet is a hybrid, localized content delivery model that leverages the strengths of both Aku Edge Hubs and existing devices.</p>
-<h4 id="1-aku-edge-hub-as-a-local-server-the-brain">1. Aku Edge Hub as a Local Server (The "Brain")</h4>
+<h4 id="1-aku-edge-hub-as-a-local-server-the-brain">1. Aku Edge Hub as a Local Server (The "Brain")<a class="headerlink" href="#1-aku-edge-hub-as-a-local-server-the-brain" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Integrated Wi-Fi Hotspot:</strong> Every Akulearn Aku Edge Hub has a built-in, local Wi-Fi hotspot (e.g., "Akulearn_SchoolName").</li>
 <li><strong>Local Content Delivery:</strong> The Hub is pre-loaded with Akulearn learning modules, videos, past questions, and the Gemma AI model. Students connect via browser to a local IP (e.g., 192.168.1.1) and access a browser-friendly Akulearn portal (PWA) for lessons, practice, and AI tutoring—all offline.</li>
 <li><strong>AI Tutor on the Hub:</strong> The Gemma AI model runs directly on the Hub, processing student requests locally for instant, offline AI tutoring.</li>
 </ul>
-<h4 id="2-scheduled-opportunistic-syncing-the-update-mechanism">2. Scheduled &amp; Opportunistic Syncing (The "Update Mechanism")</h4>
+<h4 id="2-scheduled-opportunistic-syncing-the-update-mechanism">2. Scheduled &amp; Opportunistic Syncing (The "Update Mechanism")<a class="headerlink" href="#2-scheduled-opportunistic-syncing-the-update-mechanism" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Scheduled Sync Windows:</strong> The Hub syncs with the cloud backend during off-peak hours or when stable internet is detected, updating content, AI models, and student progress data.</li>
 <li><strong>Smart Bandwidth Usage:</strong> Sync prioritizes essential updates and uses data compression to minimize bandwidth.</li>
 <li><strong>User Notification:</strong> School Admin dashboard shows last sync status and new content availability.</li>
 </ul>
-<h4 id="3-teacher-led-content-distribution-collection">3. Teacher-Led Content Distribution &amp; Collection</h4>
+<h4 id="3-teacher-led-content-distribution-collection">3. Teacher-Led Content Distribution &amp; Collection<a class="headerlink" href="#3-teacher-led-content-distribution-collection" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Offline Assignment &amp; Collection:</strong> Teachers assign lessons/quizzes from the local portal; student progress is stored locally on the Hub.</li>
 <li><strong>Batch Upload/Download:</strong> Teachers can transfer data via USB or authenticated cloud sync when in a connected environment.</li>
 </ul>
-<h4 id="4-simplified-device-integration">4. Simplified Device Integration</h4>
+<h4 id="4-simplified-device-integration">4. Simplified Device Integration<a class="headerlink" href="#4-simplified-device-integration" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>No App Installation Needed:</strong> Browser-based portal means students don't need to install an app.</li>
 <li><strong>Device-Agnostic Access:</strong> Works on any device with a modern browser.</li>
 <li><strong>Focus on Security:</strong> Local Wi-Fi is secure (WPA2/3) and isolated from external internet.</li>
 </ul>
 <hr />
-<h3 id="prototype-vs-final-product-comparison-table">Prototype vs. Final Product Comparison Table</h3>
+<h3 id="prototype-vs-final-product-comparison-table">Prototype vs. Final Product Comparison Table<a class="headerlink" href="#prototype-vs-final-product-comparison-table" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -4928,83 +6135,79 @@
 </tbody>
 </table>
 <hr />
-<h3 id="architecture-diagrams">Architecture Diagrams</h3>
-<h4 id="1-prototype-architecture-offline-only">1. Prototype Architecture (Offline Only)</h4>
-<div class="codehilite"><pre><span></span><code><span class="c"> </span><span class="nb">+--------------------------+</span>
-<span class="c"> | Raspberry Pi Hub         |</span>
-<span class="c"> |</span><span class="nb">--------------------------</span><span class="c">|</span>
-<span class="c"> | </span><span class="nb">-</span><span class="c"> Local Wi</span><span class="nb">-</span><span class="c">Fi Network    |</span>
-<span class="c"> | </span><span class="nb">-</span><span class="c"> Lightweight Linux OS   |</span>
-<span class="c"> | </span><span class="nb">-</span><span class="c"> Offline AI Copilot     |</span>
-<span class="c"> | </span><span class="nb">-</span><span class="c"> Local Web App (PWA)    |</span>
-<span class="c"> </span><span class="nb">+--------------------------+</span>
-<span class="c">            |</span>
-<span class="c">            v</span>
-<span class="c"> </span><span class="nb">+--------------------------+</span>
-<span class="c"> | Connected Devices        |</span>
-<span class="c"> | (PCs</span><span class="nt">,</span><span class="c"> Tablets</span><span class="nt">,</span><span class="c"> Phones)   |</span>
-<span class="c"> </span><span class="nb">+--------------------------+</span>
-<span class="c">            |</span>
-<span class="c">            v</span>
-<span class="c"> </span><span class="nb">+--------------------------+</span>
-<span class="c"> | Akulearn PWA (Offline)   |</span>
-<span class="c"> </span><span class="nb">+--------------------------+</span>
-</code></pre></div>
-
-<h4 id="2-final-product-architecture-hybrid-model">2. Final Product Architecture (Hybrid Model)</h4>
-<div class="codehilite"><pre><span></span><code><span class="c"> </span><span class="nb">+-------------------------------+</span>
-<span class="c"> | Akulearn Hub (Custom SoC/NPU) |</span>
-<span class="c"> |</span><span class="nb">-------------------------------</span><span class="c">|</span>
-<span class="c"> | </span><span class="nb">-</span><span class="c"> Local Network               |</span>
-<span class="c"> | </span><span class="nb">-</span><span class="c"> Advanced AI Copilot         |</span>
-<span class="c"> | </span><span class="nb">-</span><span class="c"> Robust Power Management     |</span>
-<span class="c"> | </span><span class="nb">-</span><span class="c"> Offline &amp; Online Modes      |</span>
-<span class="c"> </span><span class="nb">+-------------------------------+</span>
-<span class="c">            |</span>
-<span class="c">            v</span>
-<span class="c"> </span><span class="nb">+-------------------------------+</span>
-<span class="c"> | Connected Devices             |</span>
-<span class="c"> | (PCs</span><span class="nt">,</span><span class="c"> Tablets</span><span class="nt">,</span><span class="c"> Phones)        |</span>
-<span class="c"> </span><span class="nb">+-------------------------------+</span>
-<span class="c">            |</span>
-<span class="c">            v</span>
-<span class="c"> </span><span class="nb">+-------------------------------+</span>
-<span class="c"> | Akulearn PWA                  |</span>
-<span class="c"> | (Offline/Online Experience)   |</span>
-<span class="c"> </span><span class="nb">+-------------------------------+</span>
-<span class="c">            |</span>
-<span class="c">            v</span>
-<span class="c"> </span><span class="nb">+-------------------------------+</span>
-<span class="c"> | Cloud Server (when online)    |</span>
-<span class="c"> | </span><span class="nb">-</span><span class="c"> Data Sync                   |</span>
-<span class="c"> | </span><span class="nb">-</span><span class="c"> Content Updates             |</span>
-<span class="c"> | </span><span class="nb">-</span><span class="c"> Analytics                   |</span>
-<span class="c"> </span><span class="nb">+-------------------------------+</span>
-</code></pre></div>
-
+<h3 id="architecture-diagrams">Architecture Diagrams<a class="headerlink" href="#architecture-diagrams" title="Permanent link">&para;</a></h3>
+<h4 id="1-prototype-architecture-offline-only">1. Prototype Architecture (Offline Only)<a class="headerlink" href="#1-prototype-architecture-offline-only" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> +--------------------------+
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> | Raspberry Pi Hub         |
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> |--------------------------|
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a> | - Local Wi-Fi Network    |
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a> | - Lightweight Linux OS   |
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a> | - Offline AI Copilot     |
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a> | - Local Web App (PWA)    |
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a> +--------------------------+
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            |
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            v
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a> +--------------------------+
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a> | Connected Devices        |
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a> | (PCs, Tablets, Phones)   |
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a> +--------------------------+
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>            |
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            v
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a> +--------------------------+
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a> | Akulearn PWA (Offline)   |
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a> +--------------------------+
+</span></code></pre></div>
+<h4 id="2-final-product-architecture-hybrid-model">2. Final Product Architecture (Hybrid Model)<a class="headerlink" href="#2-final-product-architecture-hybrid-model" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a> +-------------------------------+
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a> | Akulearn Hub (Custom SoC/NPU) |
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a> |-------------------------------|
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a> | - Local Network               |
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a> | - Advanced AI Copilot         |
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a> | - Robust Power Management     |
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a> | - Offline &amp; Online Modes      |
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a> +-------------------------------+
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            |
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            v
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a> +-------------------------------+
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a> | Connected Devices             |
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a> | (PCs, Tablets, Phones)        |
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a> +-------------------------------+
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>            |
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>            v
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a> +-------------------------------+
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a> | Akulearn PWA                  |
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a> | (Offline/Online Experience)   |
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a> +-------------------------------+
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>            |
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>            v
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a> +-------------------------------+
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a> | Cloud Server (when online)    |
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a> | - Data Sync                   |
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a> | - Content Updates             |
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a> | - Analytics                   |
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a> +-------------------------------+
+</span></code></pre></div>
 <hr />
-<h2 id="microservice-interaction-diagram">Microservice Interaction Diagram</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">graph</span><span class="w"> </span><span class="n">TD</span>
-<span class="w">    </span><span class="n">AI</span><span class="p">[</span><span class="n">AI</span><span class="w"> </span><span class="n">Tutor</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">API</span><span class="p">[</span><span class="n">API</span><span class="w"> </span><span class="n">Gateway</span><span class="p">]</span>
-<span class="w">    </span><span class="n">Polls</span><span class="p">[</span><span class="n">Polls</span><span class="o">/</span><span class="n">Q</span><span class="o">&amp;</span><span class="n">A</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">API</span>
-<span class="w">    </span><span class="n">Analytics</span><span class="p">[</span><span class="n">Analytics</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">API</span>
-<span class="w">    </span><span class="n">Hub</span><span class="p">[</span><span class="n">Hub</span><span class="w"> </span><span class="n">Integration</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">API</span>
-<span class="w">    </span><span class="n">Marketplace</span><span class="p">[</span><span class="n">Marketplace</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">API</span>
-<span class="w">    </span><span class="n">Hardware</span><span class="p">[</span><span class="n">Hardware</span><span class="w"> </span><span class="n">Integration</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">API</span>
-<span class="w">    </span><span class="n">API</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">FE</span><span class="p">[</span><span class="n">Frontend</span><span class="p">]</span>
-<span class="w">    </span><span class="n">API</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">DB</span><span class="p">[(</span><span class="n">Database</span><span class="p">)]</span>
-</code></pre></div>
-
-<h2 id="data-sync-flow-diagram">Data Sync Flow Diagram</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">graph</span><span class="w"> </span><span class="n">TD</span>
-<span class="w">    </span><span class="n">Local</span><span class="p">[</span><span class="n">Local</span><span class="w"> </span><span class="n">Device</span><span class="o">/</span><span class="n">Hub</span><span class="p">]</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Offline</span><span class="w"> </span><span class="n">Data</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Hub</span><span class="p">[</span><span class="n">Aku</span><span class="w"> </span><span class="n">Edge</span><span class="w"> </span><span class="n">Hub</span><span class="p">]</span>
-<span class="w">    </span><span class="n">Hub</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Scheduled</span><span class="w"> </span><span class="n">Sync</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Cloud</span><span class="p">[</span><span class="n">Cloud</span><span class="w"> </span><span class="n">Backend</span><span class="p">]</span>
-<span class="w">    </span><span class="n">Cloud</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Updates</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Hub</span>
-<span class="w">    </span><span class="n">Hub</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">Real</span><span class="o">-</span><span class="n">Time</span><span class="w"> </span><span class="n">Data</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">FE</span><span class="p">[</span><span class="n">Frontend</span><span class="p">]</span>
-</code></pre></div>
-
+<h2 id="microservice-interaction-diagram">Microservice Interaction Diagram<a class="headerlink" href="#microservice-interaction-diagram" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>graph TD
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    AI[AI Tutor] --&gt; API[API Gateway]
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    Polls[Polls/Q&amp;A] --&gt; API
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    Analytics[Analytics] --&gt; API
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    Hub[Hub Integration] --&gt; API
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    Marketplace[Marketplace] --&gt; API
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    Hardware[Hardware Integration] --&gt; API
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    API --&gt; FE[Frontend]
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    API --&gt; DB[(Database)]
+</span></code></pre></div>
+<h2 id="data-sync-flow-diagram">Data Sync Flow Diagram<a class="headerlink" href="#data-sync-flow-diagram" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>graph TD
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    Local[Local Device/Hub] -- Offline Data --&gt; Hub[Aku Edge Hub]
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    Hub -- Scheduled Sync --&gt; Cloud[Cloud Backend]
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    Cloud -- Updates --&gt; Hub
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    Hub -- Real-Time Data --&gt; FE[Frontend]
+</span></code></pre></div>
 <hr />
-<h3 id="why-this-strategy-wins-for-akulearn">Why This Strategy Wins for Akulearn</h3>
+<h3 id="why-this-strategy-wins-for-akulearn">Why This Strategy Wins for Akulearn<a class="headerlink" href="#why-this-strategy-wins-for-akulearn" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Maximizes Existing Assets:</strong> Leverages schools' existing computers/tablets, reducing new hardware costs.</li>
 <li><strong>True Offline Capability:</strong> Entire learning experience, including AI tutoring, is genuinely offline within the school.</li>
@@ -5071,7 +6274,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
