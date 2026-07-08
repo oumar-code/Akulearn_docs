@@ -73,7 +73,6 @@ It can also be triggered manually via `workflow_dispatch`.
   "buildCommand": "cd akulearn-dashboard && npm run build",
   "installCommand": "npm install --include=dev && cd akulearn-dashboard && npm ci",
   "outputDirectory": "akulearn-dashboard/.next",
-  "ignoreCommand": "exit 0",
   "rewrites": [ ... ]
 }
 ```
@@ -140,6 +139,7 @@ vercel --prod
 | Symptom | Likely cause | Fix |
 |---------|-------------|-----|
 | "No Next.js version detected" | Vercel GitHub integration can't find Next.js in the root | Root `package.json` `devDependencies` must include `next` at the same version as the dashboard |
+| "Canceled by Ignored Build Step" | Root `vercel.json` includes an `ignoreCommand` that exits `0` | Remove `ignoreCommand` (or make it return non-zero) so builds run |
 | Supabase client throws at runtime | `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` not set | Add both variables in Vercel project environment settings |
 | `/docs/` returns 404 | MkDocs output wasn't copied to `public/docs/` | Re-run the CI workflow; check the "Copy MkDocs output" step |
 | Double deployments | Both GitHub integration and CI workflow deploy simultaneously | If using CI workflow as primary, disable the Vercel GitHub integration in the Vercel project settings |
@@ -148,4 +148,3 @@ vercel --prod
 
 **Last Updated**: 2026-04
 **Main Branch**: All production deployments go to `main`.
-
