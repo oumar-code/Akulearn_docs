@@ -135,6 +135,7 @@ web/
 # Root-level HTML/CSS dashboards
 *.html
 *.css
+!docs/overrides/**/*.html
 
 # Allow Next.js dashboard CSS and static files
 !akulearn-dashboard/**/*.css
