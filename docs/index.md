@@ -1,6 +1,8 @@
-# Welcome to Akulearn Documentation
+---
+template: home.html
+---
 
-![Aku Platform](images/logos/aku-brand-horns-up.svg)
+# Welcome to Akulearn Documentation
 
 Welcome to the Akulearn documentation repository! This space contains all official documentation for the Akulearn EdTech platform, designed to empower learners and educators across Nigeria and Africa.
 
