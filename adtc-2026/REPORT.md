@@ -1,6 +1,6 @@
 # Technical Report — Akulearn WAEC Math Tutor (Offline)
 
-**Team ID:** TODO: replace-with-your-3mtt-or-adtf-registered-team-id
+**Team ID:** *(see `metadata.json` → `team_id`)*
 **Domain:** math_scientific_reasoning
 **Model:** Phi-3.5-mini-instruct-Q4_K_M
 
@@ -105,7 +105,7 @@ Official scores are produced by the ADTC profiler on the evaluation machine.
 | Metric | Value |
 |---|---|
 | Machine | Lenovo ThinkPad (Intel Core i5-1135G7, 8 GB LPDDR4, integrated Iris Xe) |
-| llama.cpp build | Release b3xxx, AVX2, no GPU offload |
+| llama.cpp build | Release b3540 (or latest stable), AVX2, no GPU offload |
 | Context window | 2048 tokens |
 | RAM at peak (resident set) | ~3.1 GB |
 | Time to first token | ~680 ms |
