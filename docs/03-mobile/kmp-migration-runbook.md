@@ -3,7 +3,7 @@
 This runbook describes every step to move the existing KMP module out of the `Akulearn_docs` monorepo into a dedicated `oumar-code/Aku-Mobile` repository.
 
 > **Decision recorded in:** [`docs/ecosystem-map.md — KMP Migration Checklist`](../ecosystem-map.md#kmp-migration-checklist)  
-> **Tracking:** [`automation_progress.md — KMP Mobile Migration`](../../automation_progress.md#kmp-mobile-migration)
+> **Tracking:** internal operations tracker (removed from this public repository)
 
 ---
 
@@ -125,7 +125,7 @@ to:
 | [Aku-Mobile](https://github.com/oumar-code/Aku-Mobile) | ... | **Active** |
 ```
 
-### 5c — Mark KMP checklist items done in `automation_progress.md`
+### 5c — Mark KMP checklist items done in `internal operations tracker`
 
 ---
 
@@ -216,5 +216,5 @@ jobs:
 - [ ] Verify Android build passes in `Aku-Mobile`
 - [ ] Update `docs/03-mobile/index.md` with link to `Aku-Mobile`
 - [ ] Update `docs/ecosystem-map.md` — change status from Pending → Active
-- [ ] Update `automation_progress.md` — mark KMP checklist items done
+- [ ] Update `internal operations tracker` — mark KMP checklist items done
 - [ ] Remove `KOTLIN MULTIPLATFORM/` from `Akulearn_docs` after confirmation

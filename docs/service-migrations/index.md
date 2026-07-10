@@ -254,6 +254,6 @@ POST  /api/v1/consent/{user_id}     # update consent
 
 ## After Migration: Archive Scripts & Update Docs
 
-All service migrations are complete and PRs have been merged. Migration scripts have been archived in [`archive/`](archive/). Status tables in this file and in [`automation_progress.md`](../../automation_progress.md) have been updated to ✅ Done.
+All service migrations are complete and PRs have been merged. Migration scripts have been archived in [`archive/`](archive/). Status tables in this file and in internal operations tracker (removed from this public repository) have been updated to ✅ Done.
 
 For future migrations, use the new service templates and onboarding guides. This section and the archive serve as historical reference only.

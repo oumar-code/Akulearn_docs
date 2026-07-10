@@ -175,7 +175,7 @@ A suggested 12-week daily study plan is pre-loaded into Hauwau's dashboard:
 
 ## Supabase Configuration
 
-Hauwau's account in Supabase is provisioned with the following metadata by `supabase_provision.py`:
+Hauwau's account in Supabase is provisioned with the following metadata by `internal provisioning process`:
 
 ```json
 {
@@ -201,4 +201,4 @@ auto-trigger a JAMB-format quiz whenever a topic is marked complete for this use
 ---
 
 For the dashboard overview, see [**Hauwau Dashboard**](hauwau_dashboard.md).  
-For provisioning details, see [`supabase_provision.py`](../../supabase_provision.py).
+For provisioning details, see internal provisioning process.
