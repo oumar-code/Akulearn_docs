@@ -4,6 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { isSupabaseConfigured, supabase, supabaseConfigError } from "../../../lib/supabaseClient";
 
+const sanitizeNextRoute = (route: string | null) => {
+  if (!route) return "/dashboard";
+  if (!route.startsWith("/") || route.startsWith("//")) return "/dashboard";
+  return route;
+};
+
 export default function AuthCallbackPage() {
   const router = useRouter();
   const [status, setStatus] = useState(
@@ -12,18 +18,16 @@ export default function AuthCallbackPage() {
   const [error, setError] = useState(
     isSupabaseConfigured ? "" : (supabaseConfigError ?? "Supabase is not configured.")
   );
-
   const attemptsRef = useRef(0);
   const navigatedRef = useRef(false);
-  const timeoutRef = useRef<number | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (!isSupabaseConfigured) return;
 
     let isMounted = true;
     const maxAttempts = 10;
-    const nextRoute =
-      new URLSearchParams(window.location.search).get("next") || "/dashboard";
+    const nextRoute = sanitizeNextRoute(new URLSearchParams(window.location.search).get("next"));
 
     const navigateOnce = () => {
       if (navigatedRef.current) return;
@@ -56,7 +60,7 @@ export default function AuthCallbackPage() {
       timeoutRef.current = window.setTimeout(finishIfSession, 500);
     };
 
-    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+    const { data: authSubscription } = supabase.auth.onAuthStateChange((event, session) => {
       if (!isMounted) return;
       if (event === "SIGNED_IN" && session) {
         navigateOnce();
@@ -70,7 +74,7 @@ export default function AuthCallbackPage() {
       if (timeoutRef.current) {
         window.clearTimeout(timeoutRef.current);
       }
-      authListener.subscription.unsubscribe();
+      authSubscription.subscription.unsubscribe();
     };
   }, [router]);
 

@@ -4,6 +4,12 @@ import styles from "./login.module.css";
 import { isSupabaseConfigured, supabase, supabaseConfigError } from "../../../lib/supabaseClient";
 import { useRouter } from "next/navigation";
 
+const sanitizeNextRoute = (route: string | null) => {
+  if (!route) return "/dashboard";
+  if (!route.startsWith("/") || route.startsWith("//")) return "/dashboard";
+  return route;
+};
+
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -14,7 +20,7 @@ export default function LoginPage() {
   useEffect(() => {
     const checkExistingSession = async () => {
       if (!isSupabaseConfigured) return;
-      const nextRoute = new URLSearchParams(window.location.search).get("next") || "/dashboard";
+      const nextRoute = sanitizeNextRoute(new URLSearchParams(window.location.search).get("next"));
       const { data } = await supabase.auth.getSession();
       if (data.session) {
         router.push(nextRoute);
@@ -34,7 +40,7 @@ export default function LoginPage() {
     }
 
     setLoading(true);
-    const nextRoute = new URLSearchParams(window.location.search).get("next") || "/dashboard";
+    const nextRoute = sanitizeNextRoute(new URLSearchParams(window.location.search).get("next"));
     const callbackUrl = `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextRoute)}`;
     const { error: signInError } = await supabase.auth.signInWithOtp({
       email,
