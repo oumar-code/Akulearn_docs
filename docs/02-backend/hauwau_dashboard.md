@@ -71,7 +71,7 @@ As Exam Prep & Access Coordinator, Hauwau also has access to:
 
 ## Access
 
-This dashboard is exclusively assigned to **Hauwau Abubakar** (`hauwauabubakargusau2009@gmail.com`) in the `hauwau_special` role. Access is governed by role-based authentication configured in [`team.py`](../../team.py) and [`supabase_provision.py`](../../supabase_provision.py).
+This dashboard is exclusively assigned to **Hauwau Abubakar** (`hauwauabubakargusau2009@gmail.com`) in the `hauwau_special` role. Access is governed by role-based authentication configured in internal team configuration source and internal provisioning process.
 
 ## Navigation
 
@@ -80,5 +80,5 @@ For the detailed JAMB preparation specification, see [**Hauwau JAMB Prep**](hauw
 
 ---
 
-For technical details, see the backend API documentation and the team configuration in `team.py`.
+For technical details, see the backend API documentation and the team configuration in `internal team configuration source`.
 

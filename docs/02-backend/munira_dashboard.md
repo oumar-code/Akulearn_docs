@@ -20,7 +20,7 @@ The Munira Abubakar Dashboard is a dedicated interface for the **Head of Product
 
 ## Access
 
-This dashboard is exclusively assigned to **Munira Abubakar** (`muniraabubakar6@gmail.com`) in the `Head of Product & External Engagement` role. Access is governed by role-based authentication configured in [`team.py`](../../team.py) and [`supabase_provision.py`](../../supabase_provision.py).
+This dashboard is exclusively assigned to **Munira Abubakar** (`muniraabubakar6@gmail.com`) in the `Head of Product & External Engagement` role. Access is governed by role-based authentication configured in internal team configuration source and internal provisioning process.
 
 ## Navigation
 
@@ -28,4 +28,4 @@ From the main navigation, select **Backend > Munira Dashboard** to access this p
 
 ---
 
-For technical details, see the backend API documentation and the team configuration in `team.py`.
+For technical details, see the backend API documentation and the team configuration in `internal team configuration source`.

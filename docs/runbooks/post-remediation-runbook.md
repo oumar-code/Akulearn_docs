@@ -237,7 +237,7 @@ Go to: **Actions → "Service — Sync OpenAPI to Contracts"**
 
 ## Step 8 — Declare operational steady state
 
-Once all steps above are done, update `automation_progress.md`:
+Once all steps above are done, update `internal operations tracker`:
 
 1. Mark the Docker Build & Push line: `⬜ Pending first run` → `✅ Done`
 2. Mark the OpenAPI sync line: `⬜ Pending lint/format/tag re-run` → `✅ Done`

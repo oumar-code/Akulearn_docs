@@ -181,7 +181,6 @@ nav:
       - Overview: 06-process-methodology/index.md
       - 5-Phase Sprint Orchestration: 06-process-methodology/sprint-orchestration.md
   - Infra Reference:
-      - Neo4j LO Schema: infra/neo4j-lo-schema.md
       - Postgres Schemas: deployment/local/postgres-schemas.md
       - Redis TTL Policy: deployment/local/REDIS_KEY_TTL_POLICY.md
   - API Specs:

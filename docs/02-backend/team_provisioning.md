@@ -1,6 +1,6 @@
 # Team Provisioning — Supabase Setup & Onboarding Strategy
 
-`supabase_provision.py` is the authoritative script for onboarding the Akulearn core team into Supabase. It creates each member's account, assigns their role via `app_metadata`, grants Aku Workspace access, and generates a secure temporary password that must be changed on first login.
+`internal provisioning process` is the authoritative script for onboarding the Akulearn core team into Supabase. It creates each member's account, assigns their role via `app_metadata`, grants Aku Workspace access, and generates a secure temporary password that must be changed on first login.
 
 ## Team Roster
 
@@ -43,7 +43,7 @@ The script calls `_load_dotenv()` at startup and reads values from `.env` automa
 ## Running the Script
 
 ```bash
-python supabase_provision.py
+python internal provisioning process
 ```
 
 ### Dry-run mode
@@ -98,7 +98,7 @@ Each team member undergoes a structured 2-week onboarding programme before takin
 
 ### Sending Credentials
 
-1. Run `python supabase_provision.py` (with env vars set) to create accounts and print credentials.
+1. Run `python internal provisioning process` (with env vars set) to create accounts and print credentials.
 2. Send each user their **email**, **temporary password**, and the platform URL (`https://app.akulearn.com`) via an **encrypted email or secure channel**.
 3. Instruct each user to change their password immediately on first login.
 4. Confirm all five users can log in and see their custom dashboard before Day 1 of Week 1.
@@ -114,5 +114,5 @@ For a step-by-step login guide to share with team members, see [Login & Dashboar
 
 ---
 
-For the full team configuration, see [`team.py`](../../team.py) and [`supabase_provision.py`](../../supabase_provision.py).
+For the full team configuration, see internal team configuration source and internal provisioning process.
 

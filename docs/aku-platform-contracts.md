@@ -2,7 +2,7 @@
 
 > **Status:** ✅ Active — `v0.1.0` released; all 9 services fully migrated to Python/FastAPI  
 > **Owner:** Platform Architecture  
-> **Tracking:** [`automation_progress.md`](../automation_progress.md)
+> **Tracking:** internal operations tracker (removed from this public repository)
 
 ---
 
@@ -149,4 +149,4 @@ Do NOT wait for all 9 services to migrate before creating this repo — the long
 
 ## Tracking
 
-Add to `automation_progress.md` once work begins. Link from `docs/ecosystem-map.md` Contracts & API Specs section.
+Add to `internal operations tracker` once work begins. Link from `docs/ecosystem-map.md` Contracts & API Specs section.

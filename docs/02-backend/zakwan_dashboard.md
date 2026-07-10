@@ -15,7 +15,7 @@ The Zakwan Lawali Dashboard is a dedicated interface for the **Head of Skill Acq
 
 ## Access
 
-This dashboard is exclusively assigned to **Zakwan Lawali** (`zakawanulawali2017@gmail.com`) in the `Head of Skill Acquisition & Vocational Training` role. Access is governed by role-based authentication configured in [`team.py`](../../team.py) and [`supabase_provision.py`](../../supabase_provision.py).
+This dashboard is exclusively assigned to **Zakwan Lawali** (`zakawanulawali2017@gmail.com`) in the `Head of Skill Acquisition & Vocational Training` role. Access is governed by role-based authentication configured in internal team configuration source and internal provisioning process.
 
 ## Navigation
 
@@ -23,4 +23,4 @@ From the main navigation, select **Backend > Zakwan Dashboard** to access this p
 
 ---
 
-For technical details, see the backend API documentation and the team configuration in `team.py`.
+For technical details, see the backend API documentation and the team configuration in `internal team configuration source`.

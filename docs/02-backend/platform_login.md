@@ -57,4 +57,4 @@ If you forget your password, click **"Forgot password?"** on the login page and 
 
 ---
 
-For technical details on authentication configuration, see [`supabase_provision.py`](../../supabase_provision.py) and [`team.py`](../../team.py).
+For technical details on authentication configuration, see internal provisioning process and internal team configuration source.

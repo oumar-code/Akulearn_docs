@@ -86,7 +86,7 @@ No new work should go into this repo. Please direct all frontend contributions t
 
 ## After Archiving
 
-Update the status in [`automation_progress.md`](../../automation_progress.md):
+Update the status in internal operations tracker (removed from this public repository):
 - Mark `Archive Akudemy-frontend` ✅
 - Mark `Archive akulearn-dashB` ✅
 - Mark `Archive Akulearn-dashboard` ✅

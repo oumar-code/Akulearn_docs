@@ -10,7 +10,7 @@ This guide is the step-by-step playbook for migrating every Aku Platform backend
 - Consistent with documented backend stack in `docs/02-backend/index.md` and `docs/05-cross-cutting/coding-standards.md`
 - Async-first: FastAPI is built on Starlette + ASGI, making it natural for I/O-heavy microservices
 - First-class Pydantic support: automatic request validation and OpenAPI generation
-- Matches the `requirements.txt` and Python scripts (`team.py`, `supabase_provision.py`) already used in this monorepo
+- Matches the `requirements.txt` and Python scripts (`internal team configuration source`, `internal provisioning process`) already used in this monorepo
 
 ---
 
@@ -414,7 +414,7 @@ testpaths = ["tests"]
 - [ ] Add `.github/workflows/ci.yml` (lint + test + docker build)
 - [ ] Add `.env.example` with all documented env vars
 - [ ] Update `README.md` with Python/FastAPI getting started instructions
-- [ ] Add service to the automation tracking in `Akulearn_docs/automation_progress.md`
+- [ ] Add service to the automation tracking in `Akulearn_docs/internal operations tracker`
 
 ---
 
