@@ -53,6 +53,7 @@ If you forget your password, click **"Forgot password?"** on the login page and 
 ## Further Reading
 
 - [Team Provisioning](team_provisioning.md) — how accounts are created and credentials are distributed.
+- [Dashboard Login Troubleshooting](dashboard-login-troubleshooting.md) — required Supabase env vars, redirect URLs, and callback checks when login fails.
 - [Super Admin Dashboard](super_admin_dashboard.md) · [Munira Dashboard](munira_dashboard.md) · [Zakwan Dashboard](zakwan_dashboard.md) · [Balkisu Dashboard](balkisu_dashboard.md) · [Hauwau Dashboard](hauwau_dashboard.md)
 
 ---
