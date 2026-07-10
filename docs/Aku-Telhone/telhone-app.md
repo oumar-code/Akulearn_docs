@@ -1,81 +1,37 @@
 # Telhone Application
 
-The Telhone App is the subscriber-facing mobile application for Aku-Telhone services. It handles SIM management, data top-ups, eSIM activation, and account control.
+The Telhone App is the first delivery channel for the Aku-Telhone iDICE MVP.
+It follows an app-led connectivity model similar to how Geniex-style platforms use mobile apps as the user entry point before deeper telecom expansion.
 
-## Overview
+## Phase 1 MVP Behaviour (App-First)
 
-| Property | Detail |
-|----------|--------|
-| Platform | Android (primary), iOS |
-| Min Android version | 8.0 (API 26) |
-| Min iOS version | 14.0 |
-| Authentication | Phone number + OTP; biometric unlock |
-| State management | Kotlin: ViewModel + StateFlow; Swift: Combine |
+1. User installs and opens the Aku Telhone App
+2. App detects nearby Aku school Edge Hub Wi-Fi
+3. User is authenticated seamlessly on local network entry
+4. Internet traffic is routed through localized cache services
 
-## Core Features
+## Why App-First Works for MVP
 
-### 1. SIM & eSIM Management
-- Activate a new physical SIM or download an eSIM profile
-- View SIM status, ICCID, MSISDN
-- Enable / disable eSIM profiles (dual-SIM devices)
+- Avoids immediate SIM card operations and distribution complexity
+- Avoids telecom spectrum licensing at MVP stage
+- Avoids cellular tower infrastructure cost
+- Uses standard smartphone Wi-Fi capabilities already available to users
 
-### 2. Data & Bundle Top-Up
-- Purchase data bundles (daily, weekly, monthly)
-- Zero-rated Akulearn content bundles
-- Payment via card, bank transfer, USSD, or Aku Coin
+## Initial User Value
 
-### 3. Account & KYC
-- NIN-linked profile registration
-- View usage history and invoices
-- Manage beneficiaries (family top-up)
+- Faster access to frequently used content through local cache
+- Lower effective data costs inside school connectivity zones
+- Immediate activation experience via app download only
 
-### 4. Notifications
-- Low balance alerts
-- Bundle expiry reminders
-- Promotional offers
+## Product Scope in This Phase
 
-## App Architecture
+- App onboarding and account sign-in
+- Edge Hub network detection and seamless session handling
+- Localized data routing policy for education and common internet traffic
+- Usage visibility and basic account controls
 
-```
-Telhone App (Android / iOS)
-│
-├── Presentation layer  (Jetpack Compose / SwiftUI)
-├── Domain layer        (Use Cases)
-├── Data layer
-│   ├── Remote: Telhone REST API  (JWT auth)
-│   └── Local:  Room DB / Core Data (offline cache)
-└── Shared KMP module   (business logic, models)
-```
+## Next-Phase Link
 
-## API Integration
-
-The Telhone App communicates with the Aku-Telhone backend via a versioned REST API:
-
-- **Base URL:** `https://api.telhone.ng/v1`
-- **Auth:** ****** (JWT), refreshed via `/auth/refresh`
-- **Key endpoints:**
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/sim/activate` | POST | Activate physical SIM |
-| `/esim/profile` | POST | Initiate eSIM profile download |
-| `/bundle/list` | GET | List available data bundles |
-| `/bundle/purchase` | POST | Purchase a data bundle |
-| `/account/balance` | GET | Get current balance |
-
-## Build & Release
-
-```bash
-# Android
-./gradlew :telhone-app:assembleRelease
-
-# iOS
-xcodebuild -scheme TelhoneApp -configuration Release archive
-```
-
-Releases are signed and published via the CI/CD pipeline in `.github/workflows/`.
-
-## Related
-
-- [Physical SIM & MVNO](physical-sim-mvno.md)
-- [eSIM](esim.md)
+This application baseline is the foundation for:
+- [Physical SIM & MVNO](physical-sim-mvno.md) in Phase 2
+- [eSIM](esim.md) in Phase 3

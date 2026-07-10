@@ -37,19 +37,3 @@
 [submodule "aku-platform-contracts"]
 	path = aku-platform-contracts
 	url = https://github.com/oumar-code/aku-platform-contracts.git
-
-[submodule "github_addons/BlenderGIS"]
-	path = github_addons/BlenderGIS
-	url = https://github.com/domlysz/BlenderGIS.git
-
-[submodule "github_addons/UvSquares"]
-	path = github_addons/UvSquares
-	url = https://github.com/Radivarig/UvSquares.git
-
-[submodule "github_addons/blender-cli-rendering"]
-	path = github_addons/blender-cli-rendering
-	url = https://github.com/yuki-koyama/blender-cli-rendering.git
-
-[submodule "github_addons/uhlik-bpy"]
-	path = github_addons/uhlik-bpy
-	url = https://github.com/uhlik/bpy.git

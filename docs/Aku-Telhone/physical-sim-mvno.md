@@ -1,6 +1,18 @@
 # Physical SIM & MVNO
 
-This document covers Aku-Telhone's physical SIM card distribution strategy and the MVNO (Mobile Virtual Network Operator) infrastructure that underpins it.
+## Phase 2 Context: Post-MVP Scale Layer
+
+This phase starts after the app-first MVP is stable in initial school zones.
+The goal is to extend service continuity beyond hub coverage while preserving low-cost local offload where Edge Hubs exist.
+
+## How Phase 2 Works
+
+Aku-Telhone introduces branded physical SIM cards through national roaming or MVNO agreements with existing MNOs.
+
+- **Outside School Zones:** user traffic uses partner cellular networks for basic national coverage
+- **Inside School Zones:** heavy data traffic is shifted to Aku Edge Hub local Wi-Fi cache
+
+This creates a hybrid model: commercial cellular reach + localized mesh offloading.
 
 ## MVNO Architecture
 
@@ -62,5 +74,6 @@ Aku-Telhone maintains interconnect and roaming agreements with major Nigerian MN
 
 ## Related
 
+- [Telhone Application](telhone-app.md)
 - [eSIM](esim.md)
 - [Nigeria Regulatory Steps](regulatory.md)
