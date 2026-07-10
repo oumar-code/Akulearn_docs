@@ -11,7 +11,7 @@ This is the single source of truth for all repositories in the Aku Platform ecos
 |----------|--------|-----------|
 | Backend language | **Python / FastAPI** | Matches AI/ML tooling (PyTorch, HuggingFace, LangChain), aligns with existing `requirements.txt` and documented standards in `docs/02-backend/index.md` |
 | Frontend / Dashboard | **`akulearn-dashboard/` in this monorepo** | Fully implemented Next.js app with all marketing and dashboard pages; canonical Vercel deployment target |
-| Mobile | **Kotlin Multiplatform (KMP)** — dedicated repo `oumar-code/Aku-Mobile` (migration in progress) | Shared business logic for Android and iOS from one codebase |
+| Mobile | **Kotlin Multiplatform (KMP)** — dedicated repo `oumar-code/Aku-Mobile` (active) | Shared business logic for Android and iOS from one codebase |
 | Documentation | **This repo (`Akulearn_docs`)** | MkDocs site deployed to GitHub Pages; all service specs, ADRs, API contracts live here |
 
 ---
@@ -52,15 +52,21 @@ This is the single source of truth for all repositories in the Aku Platform ecos
 
 | Repo | Role | Tech | Status |
 |------|------|------|--------|
-| `KOTLIN MULTIPLATFORM/` (inside Akulearn_docs) | Shared KMP library — **migrated out** | Kotlin Multiplatform | Migration to `oumar-code/Aku-Mobile` complete; pending removal from this repo |
-| [Aku-Mobile](https://github.com/oumar-code/Aku-Mobile) | Standalone KMP repo for Android + iOS | Kotlin Multiplatform, Ktor, Coroutines | **Active** |
+| `KOTLIN MULTIPLATFORM/` (inside Akulearn_docs) | Legacy shared KMP library (historical source only) | Kotlin Multiplatform | Migration to `oumar-code/Aku-Mobile` complete; pending cleanup from this repo |
+| [Aku-Mobile](https://github.com/oumar-code/Aku-Mobile) | **Canonical** standalone KMP repo for Android + iOS | Kotlin Multiplatform, Ktor, Coroutines | **Active — new mobile entry point** |
 
 ### 🖥️ Classroom Edge Clients
 
 | Repo | Role | Tech | Status |
 |------|------|------|--------|
 | `akulearn-linux-app/` (inside Akulearn_docs) | Classroom client app (Smart TV/Board, Raspberry Pi, Jetson) — syncs content from Edge Hub, AR/VR launcher, offline cache, facilitator dashboard | Kotlin Multiplatform, Compose for Desktop, linuxX64 | **⏳ Pending migration → `oumar-code/Aku-Smartboard`** |
-| [Aku-Smartboard](https://github.com/oumar-code/Aku-Smartboard) | Standalone desktop app repo — linuxX64 binary, systemd service, touchscreen support | KMP + Compose Desktop | ✅ Repo created — migration in progress |
+| [Aku-Smartboard](https://github.com/oumar-code/Aku-Smartboard) | **Canonical** standalone desktop app repo — linuxX64 binary, systemd service, touchscreen support | KMP + Compose Desktop | ✅ Repo created — migration in progress (new smartboard entry point) |
+
+### 🚪 Primary Entry Points (Quick Links)
+
+- **Web app / dashboard docs**: `akulearn-dashboard/` in this monorepo + [Login guide](02-backend/platform_login.md)
+- **Mobile app development**: [oumar-code/Aku-Mobile](https://github.com/oumar-code/Aku-Mobile)
+- **Smartboard/classroom client development**: [oumar-code/Aku-Smartboard](https://github.com/oumar-code/Aku-Smartboard)
 
 ### 🔧 Hardware
 

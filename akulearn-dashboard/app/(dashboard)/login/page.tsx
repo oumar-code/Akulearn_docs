@@ -1,21 +1,59 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./login.module.css";
-import { supabase } from "../../../lib/supabaseClient";
+import { isSupabaseConfigured, supabase, supabaseConfigError } from "../../../lib/supabaseClient";
 import { useRouter } from "next/navigation";
+
+const sanitizeNextRoute = (route: string | null) => {
+  if (!route) return "/dashboard";
+  if (!route.startsWith("/") || route.startsWith("//")) return "/dashboard";
+  return route;
+};
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    const checkExistingSession = async () => {
+      if (!isSupabaseConfigured) return;
+      const nextRoute = sanitizeNextRoute(new URLSearchParams(window.location.search).get("next"));
+      const { data } = await supabase.auth.getSession();
+      if (data.session) {
+        router.push(nextRoute);
+      }
+    };
+    checkExistingSession();
+  }, [router]);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { error } = await supabase.auth.signInWithOtp({ email });
-    setMessage(error ? error.message : "Check your email for the login link!");
-    if (!error) {
-      setTimeout(() => router.push("/dashboard"), 2000);
+    setMessage("");
+    setError("");
+
+    if (!isSupabaseConfigured) {
+      setError(supabaseConfigError ?? "Supabase is not configured.");
+      return;
     }
+
+    setLoading(true);
+    const nextRoute = sanitizeNextRoute(new URLSearchParams(window.location.search).get("next"));
+    const callbackUrl = `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextRoute)}`;
+    const { error: signInError } = await supabase.auth.signInWithOtp({
+      email,
+      options: { emailRedirectTo: callbackUrl },
+    });
+    setLoading(false);
+
+    if (signInError) {
+      setError(signInError.message);
+      return;
+    }
+
+    setMessage("Magic link sent. Open your email and continue sign-in from the link.");
   };
 
   return (
@@ -26,6 +64,11 @@ export default function LoginPage() {
         <p className={styles.loginSubtitle}>
           Team members and students — enter your registered email to receive a secure login link.
         </p>
+        {!isSupabaseConfigured && (
+          <div className={styles.loginError}>
+            {supabaseConfigError}
+          </div>
+        )}
         <input
           type="email"
           placeholder="Enter your email address"
@@ -34,9 +77,10 @@ export default function LoginPage() {
           required
           className={styles.loginInput}
         />
-        <button type="submit" className={styles.loginButton}>
-          Send Magic Link
+        <button type="submit" className={styles.loginButton} disabled={loading || !isSupabaseConfigured}>
+          {loading ? "Sending..." : "Send Magic Link"}
         </button>
+        {error && <div className={styles.loginError}>{error}</div>}
         {message && <div className={styles.loginMessage}>{message}</div>}
         <div className={styles.loginHint}>
           <strong>Team members:</strong> use your assigned team email.<br />

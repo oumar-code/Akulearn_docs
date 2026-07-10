@@ -1,1 +1,20 @@
 {% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+  <section class="aku-hero">
+    <div class="aku-hero__inner md-grid">
+      <div class="aku-hero__copy">
+        <p class="aku-hero__eyebrow">Akulearn Platform</p>
+        <h1>Build, ship, and scale learning for every classroom.</h1>
+        <p>
+          Explore the full Akulearn ecosystem from one portal: docs, dashboard, mobile, smartboard, and backend services.
+        </p>
+        <div class="aku-hero__actions">
+          <a class="md-button md-button--primary" href="{{ 'ecosystem-map/' | url }}">Open Ecosystem Map</a>
+          <a class="md-button" href="{{ '02-backend/platform_login/' | url }}">Login & Access Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
