@@ -14,9 +14,10 @@ export default function LoginPage() {
   useEffect(() => {
     const checkExistingSession = async () => {
       if (!isSupabaseConfigured) return;
+      const nextRoute = new URLSearchParams(window.location.search).get("next") || "/dashboard";
       const { data } = await supabase.auth.getSession();
       if (data.session) {
-        router.push("/dashboard");
+        router.push(nextRoute);
       }
     };
     checkExistingSession();
@@ -33,7 +34,8 @@ export default function LoginPage() {
     }
 
     setLoading(true);
-    const callbackUrl = `${window.location.origin}/auth/callback?next=/dashboard`;
+    const nextRoute = new URLSearchParams(window.location.search).get("next") || "/dashboard";
+    const callbackUrl = `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextRoute)}`;
     const { error: signInError } = await supabase.auth.signInWithOtp({
       email,
       options: { emailRedirectTo: callbackUrl },

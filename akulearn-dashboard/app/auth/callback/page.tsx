@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { isSupabaseConfigured, supabase, supabaseConfigError } from "../../../lib/supabaseClient";
 
@@ -13,14 +13,23 @@ export default function AuthCallbackPage() {
     isSupabaseConfigured ? "" : (supabaseConfigError ?? "Supabase is not configured.")
   );
 
+  const attemptsRef = useRef(0);
+  const navigatedRef = useRef(false);
+  const timeoutRef = useRef<number | null>(null);
+
   useEffect(() => {
     if (!isSupabaseConfigured) return;
 
     let isMounted = true;
-    let attempts = 0;
     const maxAttempts = 10;
     const nextRoute =
       new URLSearchParams(window.location.search).get("next") || "/dashboard";
+
+    const navigateOnce = () => {
+      if (navigatedRef.current) return;
+      navigatedRef.current = true;
+      router.replace(nextRoute);
+    };
 
     const finishIfSession = async () => {
       const { data, error: sessionError } = await supabase.auth.getSession();
@@ -33,24 +42,24 @@ export default function AuthCallbackPage() {
       }
 
       if (data.session) {
-        router.replace(nextRoute);
+        navigateOnce();
         return;
       }
 
-      attempts += 1;
-      if (attempts >= maxAttempts) {
+      attemptsRef.current += 1;
+      if (attemptsRef.current >= maxAttempts) {
         setStatus("No active session found.");
         setError("Login link did not create a session. Request a new magic link and verify redirect URLs in Supabase.");
         return;
       }
 
-      window.setTimeout(finishIfSession, 500);
+      timeoutRef.current = window.setTimeout(finishIfSession, 500);
     };
 
     const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
       if (!isMounted) return;
       if (event === "SIGNED_IN" && session) {
-        router.replace(nextRoute);
+        navigateOnce();
       }
     });
 
@@ -58,6 +67,9 @@ export default function AuthCallbackPage() {
 
     return () => {
       isMounted = false;
+      if (timeoutRef.current) {
+        window.clearTimeout(timeoutRef.current);
+      }
       authListener.subscription.unsubscribe();
     };
   }, [router]);
