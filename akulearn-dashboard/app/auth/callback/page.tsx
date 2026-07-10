@@ -1,27 +1,26 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { isSupabaseConfigured, supabase, supabaseConfigError } from "../../../lib/supabaseClient";
 
 export default function AuthCallbackPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const [status, setStatus] = useState("Finalizing sign-in...");
-  const [error, setError] = useState("");
-
-  const nextRoute = useMemo(() => searchParams.get("next") || "/dashboard", [searchParams]);
+  const [status, setStatus] = useState(
+    isSupabaseConfigured ? "Finalizing sign-in..." : "Cannot complete sign-in."
+  );
+  const [error, setError] = useState(
+    isSupabaseConfigured ? "" : (supabaseConfigError ?? "Supabase is not configured.")
+  );
 
   useEffect(() => {
-    if (!isSupabaseConfigured) {
-      setError(supabaseConfigError ?? "Supabase is not configured.");
-      setStatus("Cannot complete sign-in.");
-      return;
-    }
+    if (!isSupabaseConfigured) return;
 
     let isMounted = true;
     let attempts = 0;
     const maxAttempts = 10;
+    const nextRoute =
+      new URLSearchParams(window.location.search).get("next") || "/dashboard";
 
     const finishIfSession = async () => {
       const { data, error: sessionError } = await supabase.auth.getSession();
@@ -61,7 +60,7 @@ export default function AuthCallbackPage() {
       isMounted = false;
       authListener.subscription.unsubscribe();
     };
-  }, [nextRoute, router]);
+  }, [router]);
 
   return (
     <main style={{ maxWidth: "42rem", margin: "4rem auto", padding: "0 1rem", textAlign: "center" }}>
