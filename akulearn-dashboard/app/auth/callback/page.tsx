@@ -57,7 +57,7 @@ export default function AuthCallbackPage() {
         return;
       }
 
-      timeoutRef.current = window.setTimeout(finishIfSession, 500);
+      timeoutRef.current = setTimeout(finishIfSession, 500);
     };
 
     const { data: authSubscription } = supabase.auth.onAuthStateChange((event, session) => {
@@ -72,7 +72,7 @@ export default function AuthCallbackPage() {
     return () => {
       isMounted = false;
       if (timeoutRef.current) {
-        window.clearTimeout(timeoutRef.current);
+        clearTimeout(timeoutRef.current);
       }
       authSubscription.subscription.unsubscribe();
     };
