@@ -12,19 +12,21 @@ const supabaseAnonKey =
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??
   process.env.SUPABASE_ANON_KEY;
 
-if (typeof window !== 'undefined') {
-  // Client-side: fail fast so misconfiguration is immediately obvious.
-  if (!supabaseUrl || !supabaseAnonKey) {
-    throw new Error(
-      '[Supabase] NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY is not set. ' +
-      'In your Vercel dashboard, rename SUPABASE_URL → NEXT_PUBLIC_SUPABASE_URL and ' +
-      'SUPABASE_ANON_KEY → NEXT_PUBLIC_SUPABASE_ANON_KEY ' +
-      '(same values, just the NEXT_PUBLIC_ prefix so Next.js exposes them to the browser).'
-    );
-  }
-}
+export const isSupabaseConfigured = Boolean(supabaseUrl && supabaseAnonKey);
+
+export const supabaseConfigError = isSupabaseConfigured
+  ? null
+  : '[Supabase] NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are required for browser auth. ' +
+    'In Vercel/project env vars, keep the same values but use NEXT_PUBLIC_ prefixed names.';
 
 export const supabase = createClient(
   supabaseUrl ?? 'https://placeholder.supabase.co',
-  supabaseAnonKey ?? 'placeholder-anon-key'
+  supabaseAnonKey ?? 'placeholder-anon-key',
+  {
+    auth: {
+      detectSessionInUrl: true,
+      persistSession: true,
+      autoRefreshToken: true,
+    },
+  }
 );

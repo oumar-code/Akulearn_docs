@@ -65,10 +65,24 @@
   background: #16213e;
 }
 
+.loginButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
 .loginMessage {
   color: #388e3c;
   font-size: 0.9rem;
   text-align: center;
+}
+
+.loginError {
+  color: #b00020;
+  background: #fff1f3;
+  border: 1px solid #ffc7cf;
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.86rem;
 }
 
 .loginHint {
