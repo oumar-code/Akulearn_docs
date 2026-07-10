@@ -47,20 +47,20 @@ Akulearn is building an education + connectivity ecosystem designed for connecte
 
 This repository is organized for clarity and ease of navigation:
 
-- **docs/ecosystem-map.md**: Master map of all repos, roles, and status
-- **docs/service-templates/**: Python/FastAPI bootstrap guide for all service repos
-- **docs/00-project-overview/**: Vision, mission, and Phase 1 roadmap
-- **docs/01-architecture/**: System architecture, ADRs, and design documents
-- **docs/02-backend/**: Backend handbook, API specs, and database schemas
-- **docs/03-mobile/**: Mobile app guidelines
-- **docs/04-iot-projector/**: IoT projector guidelines
-- **docs/05-cross-cutting/**: Technical specs and coding standards
-- **docs/06-process-methodology/**: Agile/DevOps methodology
-- **docs/07-glossary/**: Glossary of Akulearn terms
-- **docs/images/**: Diagrams and screenshots
-- **akulearn-dashboard/**: Canonical Next.js frontend (source of truth)
-- **client_examples/**: Apollo/GraphQL + WebSocket + D3 visualization SDK examples
-- **aku_platform_contracts/**: Shared Pydantic schemas, OpenAPI specs, Kafka topic constants
+- **[docs/ecosystem-map.md](docs/ecosystem-map.md)**: Master map of all repos, roles, and status
+- **[docs/service-templates/](docs/service-templates/)**: Python/FastAPI bootstrap guide for all service repos
+- **[docs/00-project-overview/](docs/00-project-overview/)**: Vision, mission, and Phase 1 roadmap
+- **[docs/01-architecture/](docs/01-architecture/)**: System architecture, ADRs, and design documents
+- **[docs/02-backend/](docs/02-backend/)**: Backend handbook, API specs, and database schemas
+- **[docs/03-mobile/](docs/03-mobile/)**: Mobile app guidelines
+- **[docs/04-iot-projector/](docs/04-iot-projector/)**: IoT projector guidelines
+- **[docs/05-cross-cutting/](docs/05-cross-cutting/)**: Technical specs and coding standards
+- **[docs/06-process-methodology/](docs/06-process-methodology/)**: Agile/DevOps methodology
+- **[docs/07-glossary/](docs/07-glossary/)**: Glossary of Akulearn terms
+- **[docs/images/](docs/images/)**: Diagrams and screenshots
+- **[akulearn-dashboard/](akulearn-dashboard/)**: Canonical Next.js frontend (source of truth)
+- **[client_examples/](client_examples/)**: Apollo/GraphQL + WebSocket + D3 visualization SDK examples
+- **[aku_platform_contracts/](aku_platform_contracts/)**: Shared Pydantic schemas, OpenAPI specs, Kafka topic constants
 
 ## Deployment & Automation
 
