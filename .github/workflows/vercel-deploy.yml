@@ -100,10 +100,12 @@ jobs:
           rm -rf .vercel
           rm -rf akulearn-dashboard/.vercel
           mkdir -p akulearn-dashboard/.vercel
-          printf '{"orgId":"%s","projectId":"%s"}\n' \
-            '${{ secrets.VERCEL_ORG_ID }}' \
-            '${{ secrets.VERCEL_PROJECT_ID }}' \
-            > akulearn-dashboard/.vercel/project.json
+          cat > akulearn-dashboard/.vercel/project.json <<EOF
+          {"orgId":"$VERCEL_ORG_ID","projectId":"$VERCEL_PROJECT_ID"}
+          EOF
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Pull Vercel environment
         run: |
