@@ -95,6 +95,11 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
 
+      - name: Remove stale Vercel link metadata
+        run: |
+          rm -rf .vercel
+          rm -rf akulearn-dashboard/.vercel
+
       - name: Pull Vercel environment
         run: |
           set -euo pipefail
