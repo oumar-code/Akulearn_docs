@@ -60,7 +60,7 @@ This repository is organized for clarity and ease of navigation:
 - **[docs/images/](docs/images/)**: Diagrams and screenshots
 - **[akulearn-dashboard/](akulearn-dashboard/)**: Canonical Next.js frontend (source of truth)
 - **[client_examples/](client_examples/)**: Apollo/GraphQL + WebSocket + D3 visualization SDK examples
-- **[aku_platform_contracts/](aku_platform_contracts/)**: Shared Pydantic schemas, OpenAPI specs, Kafka topic constants
+- **[aku-platform-contracts/](aku-platform-contracts/)**: Shared Pydantic schemas, OpenAPI specs, Kafka topic constants
 
 ## Deployment & Automation
 
@@ -90,7 +90,7 @@ Open [http://localhost:8000](http://localhost:8000) in your browser.
 | `akulearn-dashboard/` | Canonical Next.js frontend — marketing site + all dashboard pages |
 | `docs/` | Platform documentation (MkDocs site) |
 | `client_examples/` | Apollo/GraphQL + WebSocket + D3 visualization SDK examples |
-| `aku_platform_contracts/` | Shared Pydantic schemas, OpenAPI specs, Kafka topic constants |
+| `aku-platform-contracts/` | Shared Pydantic schemas, OpenAPI specs, Kafka topic constants |
 
 ## Contributing
 
