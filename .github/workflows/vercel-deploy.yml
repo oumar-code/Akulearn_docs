@@ -95,10 +95,15 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
 
-      - name: Remove stale Vercel link metadata
+      - name: Initialize Vercel project link
         run: |
           rm -rf .vercel
           rm -rf akulearn-dashboard/.vercel
+          mkdir -p akulearn-dashboard/.vercel
+          printf '{"orgId":"%s","projectId":"%s"}\n' \
+            '${{ secrets.VERCEL_ORG_ID }}' \
+            '${{ secrets.VERCEL_PROJECT_ID }}' \
+            > akulearn-dashboard/.vercel/project.json
 
       - name: Pull Vercel environment
         run: |
