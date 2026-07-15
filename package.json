@@ -25,5 +25,7 @@
   },
   "homepage": "https://github.com/oumar-code/Akulearn_docs#readme",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "next": "^16.2.3"
+  }
 }
