@@ -127,6 +127,16 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
+      - name: Export production env file
+        run: |
+          set -euo pipefail
+          vercel env pull .env.production.local --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+          test -f .env.production.local
+        working-directory: akulearn-dashboard
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
       - name: Validate Supabase environment variables
         run: |
           set -euo pipefail
@@ -161,6 +171,15 @@ jobs:
           PLAIN_URL="$(grep -E '^SUPABASE_URL=' "$ENV_FILE" | tail -n1 | cut -d= -f2- || true)"
           PLAIN_ANON="$(grep -E '^SUPABASE_ANON_KEY=' "$ENV_FILE" | tail -n1 | cut -d= -f2- || true)"
 
+          HAS_NEXT_URL=0
+          HAS_NEXT_ANON=0
+          HAS_PLAIN_URL=0
+          HAS_PLAIN_ANON=0
+          grep -Eq '^NEXT_PUBLIC_SUPABASE_URL=' "$ENV_FILE" && HAS_NEXT_URL=1
+          grep -Eq '^NEXT_PUBLIC_SUPABASE_ANON_KEY=' "$ENV_FILE" && HAS_NEXT_ANON=1
+          grep -Eq '^SUPABASE_URL=' "$ENV_FILE" && HAS_PLAIN_URL=1
+          grep -Eq '^SUPABASE_ANON_KEY=' "$ENV_FILE" && HAS_PLAIN_ANON=1
+
           if [[ -z "$NEXT_URL" && -n "$PLAIN_URL" ]]; then
             echo "NEXT_PUBLIC_SUPABASE_URL=$PLAIN_URL" >> "$ENV_FILE"
             echo "ℹ️ Mapped SUPABASE_URL -> NEXT_PUBLIC_SUPABASE_URL for this CI build"
@@ -179,6 +198,13 @@ jobs:
             echo "❌ Missing required Supabase env vars in Vercel project: ${MISSING[*]}"
             echo "   Add them in Vercel → Project Settings → Environment Variables"
             echo "   Prefer NEXT_PUBLIC_ names for browser auth in Next.js."
+            echo "   Environment scope must include: Production"
+            echo "   Linked project in CI: org=$VERCEL_ORG_ID project=$VERCEL_PROJECT_ID"
+            echo "   Presence in pulled file (1=yes,0=no):"
+            echo "     NEXT_PUBLIC_SUPABASE_URL=$HAS_NEXT_URL"
+            echo "     NEXT_PUBLIC_SUPABASE_ANON_KEY=$HAS_NEXT_ANON"
+            echo "     SUPABASE_URL=$HAS_PLAIN_URL"
+            echo "     SUPABASE_ANON_KEY=$HAS_PLAIN_ANON"
             echo "   Then rerun this workflow."
             exit 1
           fi
