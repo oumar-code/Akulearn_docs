@@ -166,19 +166,19 @@ jobs:
 
           # Back-compat: if plain Supabase vars exist, mirror them to NEXT_PUBLIC_*
           # so browser-side auth config remains available during CI builds.
-          NEXT_URL="$(grep -E '^NEXT_PUBLIC_SUPABASE_URL=' "$ENV_FILE" | tail -n1 | cut -d= -f2- || true)"
-          NEXT_ANON="$(grep -E '^NEXT_PUBLIC_SUPABASE_ANON_KEY=' "$ENV_FILE" | tail -n1 | cut -d= -f2- || true)"
-          PLAIN_URL="$(grep -E '^SUPABASE_URL=' "$ENV_FILE" | tail -n1 | cut -d= -f2- || true)"
-          PLAIN_ANON="$(grep -E '^SUPABASE_ANON_KEY=' "$ENV_FILE" | tail -n1 | cut -d= -f2- || true)"
+          NEXT_URL="$(grep -E '^NEXT_PUBLIC_SUPABASE_URL[[:space:]]*=' "$ENV_FILE" | tail -n1 | sed -E 's/^[^=]*=[[:space:]]*//' || true)"
+          NEXT_ANON="$(grep -E '^NEXT_PUBLIC_SUPABASE_ANON_KEY[[:space:]]*=' "$ENV_FILE" | tail -n1 | sed -E 's/^[^=]*=[[:space:]]*//' || true)"
+          PLAIN_URL="$(grep -E '^SUPABASE_URL[[:space:]]*=' "$ENV_FILE" | tail -n1 | sed -E 's/^[^=]*=[[:space:]]*//' || true)"
+          PLAIN_ANON="$(grep -E '^SUPABASE_ANON_KEY[[:space:]]*=' "$ENV_FILE" | tail -n1 | sed -E 's/^[^=]*=[[:space:]]*//' || true)"
 
           HAS_NEXT_URL=0
           HAS_NEXT_ANON=0
           HAS_PLAIN_URL=0
           HAS_PLAIN_ANON=0
-          grep -Eq '^NEXT_PUBLIC_SUPABASE_URL=' "$ENV_FILE" && HAS_NEXT_URL=1
-          grep -Eq '^NEXT_PUBLIC_SUPABASE_ANON_KEY=' "$ENV_FILE" && HAS_NEXT_ANON=1
-          grep -Eq '^SUPABASE_URL=' "$ENV_FILE" && HAS_PLAIN_URL=1
-          grep -Eq '^SUPABASE_ANON_KEY=' "$ENV_FILE" && HAS_PLAIN_ANON=1
+          grep -Eq '^NEXT_PUBLIC_SUPABASE_URL[[:space:]]*=' "$ENV_FILE" && HAS_NEXT_URL=1
+          grep -Eq '^NEXT_PUBLIC_SUPABASE_ANON_KEY[[:space:]]*=' "$ENV_FILE" && HAS_NEXT_ANON=1
+          grep -Eq '^SUPABASE_URL[[:space:]]*=' "$ENV_FILE" && HAS_PLAIN_URL=1
+          grep -Eq '^SUPABASE_ANON_KEY[[:space:]]*=' "$ENV_FILE" && HAS_PLAIN_ANON=1
 
           if [[ -z "$NEXT_URL" && -n "$PLAIN_URL" ]]; then
             echo "NEXT_PUBLIC_SUPABASE_URL=$PLAIN_URL" >> "$ENV_FILE"
@@ -205,6 +205,8 @@ jobs:
             echo "     NEXT_PUBLIC_SUPABASE_ANON_KEY=$HAS_NEXT_ANON"
             echo "     SUPABASE_URL=$HAS_PLAIN_URL"
             echo "     SUPABASE_ANON_KEY=$HAS_PLAIN_ANON"
+            echo "   Supabase-like keys found in pulled file:"
+            grep -E 'SUPABASE' "$ENV_FILE" | cut -d= -f1 || true
             echo "   Then rerun this workflow."
             exit 1
           fi
