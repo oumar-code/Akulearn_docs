@@ -154,6 +154,23 @@ jobs:
           fi
           echo "Using env file: $ENV_FILE"
 
+          # Back-compat: if plain Supabase vars exist, mirror them to NEXT_PUBLIC_*
+          # so browser-side auth config remains available during CI builds.
+          NEXT_URL="$(grep -E '^NEXT_PUBLIC_SUPABASE_URL=' "$ENV_FILE" | tail -n1 | cut -d= -f2- || true)"
+          NEXT_ANON="$(grep -E '^NEXT_PUBLIC_SUPABASE_ANON_KEY=' "$ENV_FILE" | tail -n1 | cut -d= -f2- || true)"
+          PLAIN_URL="$(grep -E '^SUPABASE_URL=' "$ENV_FILE" | tail -n1 | cut -d= -f2- || true)"
+          PLAIN_ANON="$(grep -E '^SUPABASE_ANON_KEY=' "$ENV_FILE" | tail -n1 | cut -d= -f2- || true)"
+
+          if [[ -z "$NEXT_URL" && -n "$PLAIN_URL" ]]; then
+            echo "NEXT_PUBLIC_SUPABASE_URL=$PLAIN_URL" >> "$ENV_FILE"
+            echo "ℹ️ Mapped SUPABASE_URL -> NEXT_PUBLIC_SUPABASE_URL for this CI build"
+          fi
+
+          if [[ -z "$NEXT_ANON" && -n "$PLAIN_ANON" ]]; then
+            echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=$PLAIN_ANON" >> "$ENV_FILE"
+            echo "ℹ️ Mapped SUPABASE_ANON_KEY -> NEXT_PUBLIC_SUPABASE_ANON_KEY for this CI build"
+          fi
+
           MISSING=()
           grep -Eq '^NEXT_PUBLIC_SUPABASE_URL=.+$' "$ENV_FILE" || MISSING+=("NEXT_PUBLIC_SUPABASE_URL")
           grep -Eq '^NEXT_PUBLIC_SUPABASE_ANON_KEY=.+$' "$ENV_FILE" || MISSING+=("NEXT_PUBLIC_SUPABASE_ANON_KEY")
@@ -161,6 +178,7 @@ jobs:
           if [[ ${#MISSING[@]} -gt 0 ]]; then
             echo "❌ Missing required Supabase env vars in Vercel project: ${MISSING[*]}"
             echo "   Add them in Vercel → Project Settings → Environment Variables"
+            echo "   Prefer NEXT_PUBLIC_ names for browser auth in Next.js."
             echo "   Then rerun this workflow."
             exit 1
           fi
