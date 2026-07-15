@@ -143,8 +143,8 @@ jobs:
           # `vercel pull` writes to Vercel-managed env files in CI.
           # Prefer production-targeted files first, but keep fallbacks.
           CANDIDATES=(
-            ".vercel/.env.production.local"
             ".env.production.local"
+            ".vercel/.env.production.local"
             ".vercel/.env.local"
             ".env.local"
           )
@@ -199,7 +199,7 @@ jobs:
             echo "   Add them in Vercel → Project Settings → Environment Variables"
             echo "   Prefer NEXT_PUBLIC_ names for browser auth in Next.js."
             echo "   Environment scope must include: Production"
-            echo "   Linked project in CI: org=$VERCEL_ORG_ID project=$VERCEL_PROJECT_ID"
+            echo "   Linked project in CI: org=${VERCEL_ORG_ID:-<unset>} project=${VERCEL_PROJECT_ID:-<unset>}"
             echo "   Presence in pulled file (1=yes,0=no):"
             echo "     NEXT_PUBLIC_SUPABASE_URL=$HAS_NEXT_URL"
             echo "     NEXT_PUBLIC_SUPABASE_ANON_KEY=$HAS_NEXT_ANON"
@@ -211,6 +211,9 @@ jobs:
 
           echo "✅ Required Supabase env vars are present in Vercel environment"
         working-directory: akulearn-dashboard
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Build project
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
