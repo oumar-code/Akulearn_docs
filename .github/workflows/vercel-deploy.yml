@@ -127,6 +127,30 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
+      - name: Validate Supabase environment variables
+        run: |
+          set -euo pipefail
+          ENV_FILE=".env.local"
+
+          if [[ ! -f "$ENV_FILE" ]]; then
+            echo "❌ Expected $ENV_FILE after 'vercel pull', but file was not found."
+            exit 1
+          fi
+
+          MISSING=()
+          grep -q '^NEXT_PUBLIC_SUPABASE_URL=' "$ENV_FILE" || MISSING+=("NEXT_PUBLIC_SUPABASE_URL")
+          grep -q '^NEXT_PUBLIC_SUPABASE_ANON_KEY=' "$ENV_FILE" || MISSING+=("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+
+          if [[ ${#MISSING[@]} -gt 0 ]]; then
+            echo "❌ Missing required Supabase env vars in Vercel project: ${MISSING[*]}"
+            echo "   Add them in Vercel → Project Settings → Environment Variables"
+            echo "   Then rerun this workflow."
+            exit 1
+          fi
+
+          echo "✅ Required Supabase env vars are present in Vercel environment"
+        working-directory: akulearn-dashboard
+
       - name: Build project
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
         working-directory: akulearn-dashboard
