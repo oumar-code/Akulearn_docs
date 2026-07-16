@@ -19,6 +19,7 @@ redis>=5.0.0,<6.0.0
 # ── Persistence (online: PostgreSQL; offline: SQLite via requirements-extra.txt)
 sqlalchemy[asyncio]>=2.0.0,<3.0.0
 asyncpg>=0.29.0,<1.0.0
+aiosqlite>=0.20.0,<1.0.0
 alembic>=1.13.0,<2.0.0
 
 # ── Multipart form support ────────────────────────────────────────────────────

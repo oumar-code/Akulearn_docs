@@ -17,6 +17,9 @@ app = FastAPI(
     title=settings.app_name,
     description=("Curriculum-aware AI tutoring service. Delegates all text generation to AkuAI."),
     version="0.1.0",
+    docs_url="/api/docs",
+    redoc_url="/api/redoc",
+    openapi_url="/api/openapi.json",
 )
 
 app.include_router(sessions.router)

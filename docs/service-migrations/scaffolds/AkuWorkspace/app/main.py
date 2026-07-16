@@ -52,6 +52,9 @@ def create_app() -> FastAPI:
             "and Akudemy into multi-step AI workflows."
         ),
         version=settings.service_version,
+        docs_url="/api/docs",
+        redoc_url="/api/redoc",
+        openapi_url="/api/openapi.json",
         lifespan=lifespan,
     )
 
