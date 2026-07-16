@@ -10,7 +10,6 @@ from __future__ import annotations
 
 from httpx import AsyncClient
 
-
 # ---------------------------------------------------------------------------
 # Health
 # ---------------------------------------------------------------------------
@@ -115,8 +114,9 @@ async def test_list_hubs_stub_raises_not_implemented(client: AsyncClient) -> Non
 async def test_aggregate_analytics_stub_raises_not_implemented(
     client: AsyncClient,
 ) -> None:
-    from uuid import uuid4
     from datetime import datetime, timezone
+    from uuid import uuid4
+
     import pytest
 
     payload = {

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import contextlib
 import json
 from datetime import datetime, timezone
 from typing import Annotated
@@ -57,10 +58,8 @@ async def get_context(user_id: str, redis: RedisDep) -> ContextRead:
         value_str = value.decode() if isinstance(value, bytes) else value
 
         if field_str == "__updated_at__":
-            try:
+            with contextlib.suppress(ValueError):
                 updated_at = datetime.fromisoformat(value_str)
-            except ValueError:
-                pass
             continue
 
         try:

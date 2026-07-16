@@ -17,7 +17,6 @@ from app.schemas.workflows import (
     WorkflowType,
 )
 
-
 # ---------------------------------------------------------------------------
 # Configuration dependency (injected at startup via FastAPI lifespan)
 # ---------------------------------------------------------------------------
@@ -49,9 +48,7 @@ class OrchestratorConfig:
         }
         key = service.lower()
         if key not in mapping:
-            raise ValueError(
-                f"Unknown service '{service}'. Expected one of: {list(mapping)}"
-            )
+            raise ValueError(f"Unknown service '{service}'. Expected one of: {list(mapping)}")
         return mapping[key]
 
 
@@ -208,10 +205,7 @@ class WorkflowOrchestrator:
             except httpx.HTTPStatusError as exc:
                 raise HTTPException(
                     status_code=exc.response.status_code,
-                    detail=(
-                        f"Upstream error from {step.service} "
-                        f"({url}): {exc.response.text}"
-                    ),
+                    detail=(f"Upstream error from {step.service} ({url}): {exc.response.text}"),
                 ) from exc
             except httpx.RequestError as exc:
                 raise HTTPException(

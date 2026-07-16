@@ -8,7 +8,6 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-
 # ---------------------------------------------------------------------------
 # Enumerations
 # ---------------------------------------------------------------------------
@@ -134,7 +133,9 @@ class NetworkSwitchAccepted(BaseModel):
     iccid: str
     status: ESIMStatus = ESIMStatus.SWITCHING
     task_id: str = Field(..., description="Background task identifier for status polling")
-    message: str = "OTA network switch initiated — profile status will update to ACTIVE when complete"
+    message: str = (
+        "OTA network switch initiated — profile status will update to ACTIVE when complete"
+    )
     accepted_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 

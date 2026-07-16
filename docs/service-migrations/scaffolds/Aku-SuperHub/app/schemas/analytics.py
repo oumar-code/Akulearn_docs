@@ -25,9 +25,13 @@ class AnalyticsEvent(BaseModel):
     learner_id: UUID = Field(..., description="Anonymised learner identifier")
     event_type: EventType
     occurred_at: datetime = Field(..., description="Event timestamp in UTC (set by Edge Hub)")
-    content_id: UUID | None = Field(default=None, description="Content item involved, if applicable")
+    content_id: UUID | None = Field(
+        default=None, description="Content item involved, if applicable"
+    )
     session_id: UUID | None = Field(default=None, description="Session this event belongs to")
-    duration_seconds: float | None = Field(default=None, ge=0.0, description="Duration, if applicable")
+    duration_seconds: float | None = Field(
+        default=None, ge=0.0, description="Duration, if applicable"
+    )
     metadata: dict[str, str | int | float | bool] = Field(
         default_factory=dict, description="Additional event-specific key/value pairs"
     )

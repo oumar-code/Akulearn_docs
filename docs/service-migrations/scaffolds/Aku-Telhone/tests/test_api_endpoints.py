@@ -246,8 +246,9 @@ async def test_ota_push_rejects_invalid_priority(client: AsyncClient) -> None:
 
 
 async def test_attest_device_returns_200_with_mocked_ighub(client: AsyncClient) -> None:
-    import httpx
     from unittest.mock import MagicMock
+
+    import httpx
 
     mock_response_data = {
         "attested": True,

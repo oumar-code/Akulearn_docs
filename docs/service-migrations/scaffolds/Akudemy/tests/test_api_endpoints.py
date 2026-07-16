@@ -6,15 +6,14 @@ from uuid import uuid4
 
 from httpx import AsyncClient
 
-
 # ---------------------------------------------------------------------------
 # Test isolation
 # ---------------------------------------------------------------------------
 
 
 async def _reset_stores() -> None:
-    import app.services.content as _content
     import app.routers.credentials as _creds
+    import app.services.content as _content
 
     _content._CONTENT_STORE.clear()
     _creds._CREDENTIAL_STORE.clear()

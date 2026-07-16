@@ -140,10 +140,7 @@ class InferenceService:
     async def classify_text(self, req: TextClassifyRequest) -> TextClassifyResponse:
         # TODO: load zero-shot pipeline (BART-MNLI) and run classification
         n = len(req.labels)
-        mock_scores = [
-            LabelScore(label=label, score=round(1.0 / n, 4))
-            for label in req.labels
-        ]
+        mock_scores = [LabelScore(label=label, score=round(1.0 / n, 4)) for label in req.labels]
         return TextClassifyResponse(
             request_id=_new_id(),
             scores=mock_scores,

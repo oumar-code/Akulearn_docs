@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from datetime import datetime
 from enum import Enum
-from typing import Any
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -29,12 +28,16 @@ class EdgeHub(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
     hub_id: UUID = Field(..., description="Unique hub identifier")
-    region: str = Field(..., min_length=1, max_length=64, description="Region code (e.g. 'us-east-1')")
+    region: str = Field(
+        ..., min_length=1, max_length=64, description="Region code (e.g. 'us-east-1')"
+    )
     name: str = Field(..., min_length=1, max_length=128, description="Human-readable hub name")
     status: HubStatus
     ip_address: str = Field(..., description="Hub IP address or hostname")
     firmware_version: str = Field(..., description="Semantic version string of hub firmware")
-    last_seen_at: datetime | None = Field(default=None, description="Last heartbeat timestamp (UTC)")
+    last_seen_at: datetime | None = Field(
+        default=None, description="Last heartbeat timestamp (UTC)"
+    )
     registered_at: datetime = Field(..., description="Hub registration timestamp (UTC)")
     tags: dict[str, str] = Field(default_factory=dict, description="Arbitrary key/value labels")
 

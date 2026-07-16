@@ -6,6 +6,7 @@ from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException, status
 
+from app.dependencies import get_tutor_service  # noqa: F401 — wired in app factory
 from app.schemas.sessions import (
     AskRequest,
     HintRequest,
@@ -15,7 +16,6 @@ from app.schemas.sessions import (
     TutorResponse,
 )
 from app.services.tutor import TutorService
-from app.dependencies import get_tutor_service  # noqa: F401 — wired in app factory
 
 router = APIRouter(prefix="/api/v1/sessions", tags=["sessions"])
 

@@ -64,7 +64,10 @@ def _issue_on_polygon(request: CredentialIssueRequest) -> str:
     # Stub: return a deterministic-looking mock hash derived from the request.
     # Polygon tx hashes are 32 bytes = 64 hex characters after the 0x prefix.
     _TX_HASH_HEX_LENGTH = 64
-    mock_hash = "0x" + format(abs(hash(str(request.learner_wallet_address) + str(request.course_id))), f"0{_TX_HASH_HEX_LENGTH}x")
+    mock_hash = "0x" + format(
+        abs(hash(str(request.learner_wallet_address) + str(request.course_id))),
+        f"0{_TX_HASH_HEX_LENGTH}x",
+    )
     logger.info(
         "STUB: Would issue credential on Polygon. learner=%s course=%s mock_tx=%s",
         request.learner_wallet_address,

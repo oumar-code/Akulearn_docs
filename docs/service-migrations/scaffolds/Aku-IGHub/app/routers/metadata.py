@@ -10,7 +10,6 @@ from fastapi import APIRouter, Depends, HTTPException, status
 
 from app.dependencies import get_current_user
 from app.schemas.metadata import (
-    MetadataCategory,
     MetadataPublishRequest,
     MetadataPublishResponse,
     MetadataRecord,

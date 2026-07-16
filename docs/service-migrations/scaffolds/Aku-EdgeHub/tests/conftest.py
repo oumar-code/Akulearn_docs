@@ -9,8 +9,8 @@ from httpx import ASGITransport, AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.pool import StaticPool
 
-from app.main import app
 from app.db.session_sqlite import get_db
+from app.main import app
 
 # ---------------------------------------------------------------------------
 # Use an in-memory SQLite database with a StaticPool so that all sessions

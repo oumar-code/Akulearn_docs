@@ -9,7 +9,6 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
 
-
 # ---------------------------------------------------------------------------
 # Enumerations
 # ---------------------------------------------------------------------------
@@ -38,9 +37,7 @@ class WorkflowStep(BaseModel):
     model_config = ConfigDict(str_strip_whitespace=True)
 
     name: str = Field(..., description="Human-readable step label")
-    service: str = Field(
-        ..., description="Target micro-service (akuai | daas | akudemy)"
-    )
+    service: str = Field(..., description="Target micro-service (akuai | daas | akudemy)")
     endpoint: str = Field(..., description="Relative endpoint path on target service")
     payload: dict[str, Any] = Field(
         default_factory=dict,

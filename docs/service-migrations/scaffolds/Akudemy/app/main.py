@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
+from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
-from typing import AsyncIterator
 
 import redis.asyncio as aioredis
 from fastapi import FastAPI
@@ -16,9 +16,7 @@ from app.routers import content, credentials
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     """Initialise Redis on startup; close connection on shutdown."""
-    app.state.redis = aioredis.from_url(
-        settings.redis_url, encoding="utf-8", decode_responses=True
-    )
+    app.state.redis = aioredis.from_url(settings.redis_url, encoding="utf-8", decode_responses=True)
     yield
     await app.state.redis.aclose()
 

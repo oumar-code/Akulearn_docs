@@ -18,6 +18,7 @@ router = APIRouter(prefix="/api/v1/models", tags=["Model Fine-Tuning"])
 # Schemas (local to this router — no external consumers yet)
 # ---------------------------------------------------------------------------
 
+
 class FineTuneStatus(str, Enum):
     QUEUED = "QUEUED"
     RUNNING = "RUNNING"
@@ -38,8 +39,12 @@ class FineTuneRequest(BaseModel):
         description="Hours of recent analytics data to use as the training dataset",
     )
     max_steps: int = Field(default=500, ge=1, le=10_000, description="Maximum training steps")
-    learning_rate: float = Field(default=2e-5, gt=0.0, description="Learning rate for the fine-tune run")
-    notes: str | None = Field(default=None, max_length=1024, description="Optional free-text notes for this job")
+    learning_rate: float = Field(
+        default=2e-5, gt=0.0, description="Learning rate for the fine-tune run"
+    )
+    notes: str | None = Field(
+        default=None, max_length=1024, description="Optional free-text notes for this job"
+    )
 
 
 class FineTuneJobResponse(BaseModel):
@@ -55,6 +60,7 @@ class FineTuneJobResponse(BaseModel):
 # ---------------------------------------------------------------------------
 # Background job implementation — replace with real ML pipeline
 # ---------------------------------------------------------------------------
+
 
 async def _run_finetune_job(job_id: UUID, request: FineTuneRequest) -> None:
     """
@@ -72,9 +78,7 @@ async def _run_finetune_job(job_id: UUID, request: FineTuneRequest) -> None:
         )
     except NotImplementedError:
         # Surface as a warning so the scaffold doesn't crash the event loop
-        logger.warning(
-            "Fine-tune job %s: pipeline not implemented — marking as FAILED.", job_id
-        )
+        logger.warning("Fine-tune job %s: pipeline not implemented — marking as FAILED.", job_id)
     except Exception:
         logger.exception("Fine-tune job %s encountered an unexpected error.", job_id)
 
@@ -82,6 +86,7 @@ async def _run_finetune_job(job_id: UUID, request: FineTuneRequest) -> None:
 # ---------------------------------------------------------------------------
 # Routes
 # ---------------------------------------------------------------------------
+
 
 @router.post(
     "/finetune",

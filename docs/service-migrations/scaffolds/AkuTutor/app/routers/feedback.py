@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from fastapi import APIRouter, Depends, status
 
+from app.dependencies import get_tutor_service  # noqa: F401 — wired in app factory
 from app.schemas.sessions import FeedbackCreate, FeedbackRead
 from app.services.tutor import TutorService
-from app.dependencies import get_tutor_service  # noqa: F401 — wired in app factory
 
 router = APIRouter(prefix="/api/v1/feedback", tags=["feedback"])
 

@@ -22,7 +22,9 @@ class DeviceStatus(StrEnum):
 class DeviceRegisterRequest(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
-    device_id: str = Field(..., min_length=1, max_length=128, description="Client-supplied unique device ID")
+    device_id: str = Field(
+        ..., min_length=1, max_length=128, description="Client-supplied unique device ID"
+    )
     name: str = Field(..., min_length=1, max_length=256)
     firmware_version: str = Field(..., pattern=r"^\d+\.\d+\.\d+$")
     capabilities: list[str] = Field(default_factory=list)

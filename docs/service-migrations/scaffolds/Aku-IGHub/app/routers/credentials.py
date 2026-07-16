@@ -11,7 +11,6 @@ from app.dependencies import get_current_user
 from app.schemas.credentials import (
     CredentialIssueRequest,
     CredentialIssueResponse,
-    CredentialType,
     CredentialVerifyResponse,
 )
 

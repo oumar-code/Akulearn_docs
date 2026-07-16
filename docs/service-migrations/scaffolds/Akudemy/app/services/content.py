@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 import logging
 from datetime import datetime, timezone
 from uuid import UUID, uuid4
@@ -95,7 +94,9 @@ async def get_sync_delta(
                 logger.debug("Cache hit for sync key %s", key)
                 return ContentSyncResponse.model_validate_json(cached)
         except Exception:
-            logger.warning("Redis read failed for key %s; falling through to DB", key, exc_info=True)
+            logger.warning(
+                "Redis read failed for key %s; falling through to DB", key, exc_info=True
+            )
 
     items = _items_since(since)
     response = ContentSyncResponse(

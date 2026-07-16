@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 import httpx
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, status
 from pydantic import BaseModel, ConfigDict, Field
 
 logger = logging.getLogger(__name__)
@@ -129,7 +129,9 @@ async def _forward_to_ighub(body: MetadataPublishRequest) -> tuple[str | None, b
         ighub_url = None
 
     if not ighub_url:
-        logger.warning("metadata.publish: IGHUB_METADATA_PUBLISH_URL not configured — skipping forward")
+        logger.warning(
+            "metadata.publish: IGHUB_METADATA_PUBLISH_URL not configured — skipping forward"
+        )
         return None, False
 
     payload = {

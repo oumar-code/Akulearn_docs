@@ -7,7 +7,6 @@ from enum import StrEnum
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-
 # ---------------------------------------------------------------------------
 # Consent purpose vocabulary
 # ---------------------------------------------------------------------------
@@ -30,7 +29,9 @@ class ConsentPurpose(StrEnum):
 class ConsentRecord(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
-    user_id: str = Field(..., description="Platform user identifier (UUID or opaque ID — never raw PII)")
+    user_id: str = Field(
+        ..., description="Platform user identifier (UUID or opaque ID — never raw PII)"
+    )
     consent_given: bool = Field(
         ...,
         description="Master consent flag; False implies withdrawal of all purposes",

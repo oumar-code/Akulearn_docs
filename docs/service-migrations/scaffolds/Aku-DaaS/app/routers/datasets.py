@@ -7,8 +7,7 @@ import logging
 import uuid
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, BackgroundTasks, HTTPException, UploadFile, status
-from fastapi import File, Form
+from fastapi import APIRouter, File, Form, HTTPException, UploadFile, status
 
 from app.schemas.datasets import (
     AnonymiseRequest,
@@ -42,7 +41,9 @@ router = APIRouter(prefix="/api/v1/datasets", tags=["datasets"])
     ),
 )
 async def ingest_dataset(
-    file: UploadFile | None = File(default=None, description="Raw dataset file (CSV, Parquet, JSONL)"),
+    file: UploadFile | None = File(
+        default=None, description="Raw dataset file (CSV, Parquet, JSONL)"
+    ),
     name: str = Form(default=""),
     description: str = Form(default=""),
     source_service: str = Form(default="unknown"),

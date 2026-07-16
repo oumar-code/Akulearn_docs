@@ -28,7 +28,9 @@ class ClearingSettleRequest(BaseModel):
     amount: Decimal = Field(..., gt=Decimal("0"), description="AKU Coin amount (positive)")
     currency: str = Field("AKU", description="Currency token identifier — always AKU for Aku Coin")
     reference: str | None = Field(None, description="Optional human-readable payment reference")
-    metadata: dict[str, str] = Field(default_factory=dict, description="Arbitrary settlement metadata")
+    metadata: dict[str, str] = Field(
+        default_factory=dict, description="Arbitrary settlement metadata"
+    )
 
 
 class ClearingSettleResponse(BaseModel):
@@ -41,7 +43,9 @@ class ClearingSettleResponse(BaseModel):
         False,
         description="True when the idempotency key was already consumed (HTTP 200 replay)",
     )
-    settled_at: datetime | None = Field(None, description="UTC timestamp of settlement; None while PENDING")
+    settled_at: datetime | None = Field(
+        None, description="UTC timestamp of settlement; None while PENDING"
+    )
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
@@ -63,4 +67,6 @@ class ClearingTransactionResponse(BaseModel):
     idempotency_key: str
     created_at: datetime
     settled_at: datetime | None = None
-    failed_reason: str | None = Field(None, description="Human-readable failure reason when status=FAILED")
+    failed_reason: str | None = Field(
+        None, description="Human-readable failure reason when status=FAILED"
+    )

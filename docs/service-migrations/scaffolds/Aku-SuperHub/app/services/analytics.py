@@ -17,7 +17,9 @@ class AnalyticsService:
     async def ingest(self, hub_id: str, payload: dict) -> dict:
         """Ingest analytics payload from a single Edge Hub."""
         # TODO: write to TimescaleDB or Kafka topic
-        logger.info("Analytics ingested from hub_id=%s payload_keys=%s", hub_id, list(payload.keys()))
+        logger.info(
+            "Analytics ingested from hub_id=%s payload_keys=%s", hub_id, list(payload.keys())
+        )
         return {
             "hub_id": hub_id,
             "accepted": True,

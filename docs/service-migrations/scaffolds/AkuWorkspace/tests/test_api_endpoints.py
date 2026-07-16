@@ -10,7 +10,6 @@ from httpx import AsyncClient
 
 from app.main import app as _app
 
-
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -63,16 +62,12 @@ async def test_create_workflow_returns_201(client: AsyncClient) -> None:
 
 
 async def test_create_workflow_rejects_empty_steps(client: AsyncClient) -> None:
-    response = await client.post(
-        "/api/v1/workflows", json=_workflow_payload(steps=[])
-    )
+    response = await client.post("/api/v1/workflows", json=_workflow_payload(steps=[]))
     assert response.status_code == 422
 
 
 async def test_create_workflow_rejects_empty_name(client: AsyncClient) -> None:
-    response = await client.post(
-        "/api/v1/workflows", json=_workflow_payload(name="")
-    )
+    response = await client.post("/api/v1/workflows", json=_workflow_payload(name=""))
     assert response.status_code == 422
 
 
@@ -105,13 +100,12 @@ async def test_get_workflow_404_for_unknown_id(client: AsyncClient) -> None:
 
 async def test_run_workflow_returns_completed_result(client: AsyncClient) -> None:
     _app.state.workflow_store.clear()
-    create_resp = await client.post(
-        "/api/v1/workflows", json=_workflow_payload(type="DATA_QUERY")
-    )
+    create_resp = await client.post("/api/v1/workflows", json=_workflow_payload(type="DATA_QUERY"))
     workflow_id = create_resp.json()["id"]
 
-    import httpx
     from unittest.mock import MagicMock
+
+    import httpx
 
     mock_resp = MagicMock(spec=httpx.Response)
     mock_resp.raise_for_status = MagicMock()
@@ -149,8 +143,9 @@ async def test_run_workflow_404_for_unknown_id(client: AsyncClient) -> None:
 
 
 async def test_docs_generate_returns_document(client: AsyncClient) -> None:
-    import httpx
     from unittest.mock import MagicMock
+
+    import httpx
 
     mock_resp = MagicMock(spec=httpx.Response)
     mock_resp.raise_for_status = MagicMock()
@@ -257,6 +252,7 @@ def test_orchestrator_config_base_url_for_known_services() -> None:
 
 def test_orchestrator_config_base_url_for_unknown_service_raises() -> None:
     import pytest
+
     from app.services.orchestrator import OrchestratorConfig
 
     cfg = OrchestratorConfig(
@@ -270,11 +266,13 @@ def test_orchestrator_config_base_url_for_unknown_service_raises() -> None:
 
 
 async def test_orchestrator_run_doc_generation_with_mocked_http() -> None:
-    import httpx
     from unittest.mock import MagicMock
     from uuid import uuid4 as _uuid4
-    from app.services.orchestrator import OrchestratorConfig, WorkflowOrchestrator
+
+    import httpx
+
     from app.schemas.workflows import WorkflowStep, WorkflowType
+    from app.services.orchestrator import OrchestratorConfig, WorkflowOrchestrator
 
     cfg = OrchestratorConfig(
         aku_ai_url="http://akuai:8001",
@@ -315,11 +313,13 @@ async def test_orchestrator_run_doc_generation_with_mocked_http() -> None:
 
 
 async def test_orchestrator_run_content_search_and_tutoring_assist() -> None:
-    import httpx
     from unittest.mock import MagicMock
     from uuid import uuid4 as _uuid4
-    from app.services.orchestrator import OrchestratorConfig, WorkflowOrchestrator
+
+    import httpx
+
     from app.schemas.workflows import WorkflowStep, WorkflowType
+    from app.services.orchestrator import OrchestratorConfig, WorkflowOrchestrator
 
     cfg = OrchestratorConfig(
         aku_ai_url="http://akuai:8001",

@@ -14,6 +14,7 @@ router = APIRouter(prefix="/api/v1/fleet", tags=["Fleet Management"])
 # Stub helpers — replace with real DB calls in production
 # ---------------------------------------------------------------------------
 
+
 def _get_all_hubs() -> list[EdgeHub]:
     """Return all registered Edge Hub records from the data store."""
     raise NotImplementedError("Replace with real data-access layer")
@@ -33,6 +34,7 @@ def _get_hub_metrics(hub_id: UUID) -> HubHealthMetrics:
 # Routes
 # ---------------------------------------------------------------------------
 
+
 @router.get(
     "",
     response_model=PaginatedHubs,
@@ -45,7 +47,9 @@ def _get_hub_metrics(hub_id: UUID) -> HubHealthMetrics:
 async def list_hubs(
     page: int = Query(default=1, ge=1, description="Page number (1-based)"),
     page_size: int = Query(default=20, ge=1, le=100, description="Items per page"),
-    status_filter: HubStatus | None = Query(default=None, alias="status", description="Filter by hub status"),
+    status_filter: HubStatus | None = Query(
+        default=None, alias="status", description="Filter by hub status"
+    ),
 ) -> PaginatedHubs:
     all_hubs = _get_all_hubs()
 

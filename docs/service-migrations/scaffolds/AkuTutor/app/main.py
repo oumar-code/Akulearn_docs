@@ -15,10 +15,7 @@ logging.basicConfig(level=settings.log_level.upper())
 
 app = FastAPI(
     title=settings.app_name,
-    description=(
-        "Curriculum-aware AI tutoring service. "
-        "Delegates all text generation to AkuAI."
-    ),
+    description=("Curriculum-aware AI tutoring service. Delegates all text generation to AkuAI."),
     version="0.1.0",
 )
 

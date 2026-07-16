@@ -5,10 +5,8 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from enum import StrEnum
 from typing import Any
-from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
-
 
 # ---------------------------------------------------------------------------
 # Status enum
@@ -40,7 +38,9 @@ class DatasetIngestRequest(BaseModel):
         ...,
         description="Originating Aku service identifier, e.g. 'Akudemy'",
     )
-    schema_version: str = Field("1.0", description="Dataset schema version for downstream compatibility")
+    schema_version: str = Field(
+        "1.0", description="Dataset schema version for downstream compatibility"
+    )
     tags: list[str] = Field(default_factory=list, description="Searchable classification tags")
     raw_payload: dict[str, Any] | None = Field(
         default=None,
@@ -48,7 +48,7 @@ class DatasetIngestRequest(BaseModel):
     )
 
     @model_validator(mode="after")
-    def _require_payload_or_file(self) -> "DatasetIngestRequest":
+    def _require_payload_or_file(self) -> DatasetIngestRequest:
         """raw_payload is optional here because the multipart path supplies no JSON body."""
         return self
 

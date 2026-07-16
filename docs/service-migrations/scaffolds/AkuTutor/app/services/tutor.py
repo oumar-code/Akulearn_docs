@@ -112,9 +112,7 @@ class TutorService:
 
     def _append_messages(self, session_id: UUID, *messages: Message) -> None:
         session = _sessions[session_id]
-        updated = session.model_copy(
-            update={"messages": list(session.messages) + list(messages)}
-        )
+        updated = session.model_copy(update={"messages": list(session.messages) + list(messages)})
         _sessions[session_id] = updated
 
     # ------------------------------------------------------------------
@@ -181,7 +179,5 @@ class TutorService:
             comment=payload.comment,
         )
         _feedback_store[record.id] = record
-        logger.info(
-            "Feedback recorded: session=%s rating=%d", record.session_id, record.rating
-        )
+        logger.info("Feedback recorded: session=%s rating=%d", record.session_id, record.rating)
         return record

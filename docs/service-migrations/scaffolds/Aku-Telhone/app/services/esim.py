@@ -77,7 +77,9 @@ class ESIMService:
         iccid = _generate_iccid(request.eid)
 
         if iccid in _profile_store:
-            logger.warning("Duplicate provisioning request for EID %s (iccid=%s)", request.eid, iccid)
+            logger.warning(
+                "Duplicate provisioning request for EID %s (iccid=%s)", request.eid, iccid
+            )
 
         activation_code = _generate_activation_code(iccid)
         qr_code_url = _qr_code_url(iccid, activation_code)

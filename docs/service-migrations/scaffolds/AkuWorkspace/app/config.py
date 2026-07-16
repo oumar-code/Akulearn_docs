@@ -33,9 +33,7 @@ class Settings(BaseSettings):
     log_level: str = Field("info", alias="LOG_LEVEL")
 
     # CORS
-    cors_origins: list[str] = Field(
-        default_factory=list, alias="CORS_ORIGINS"
-    )
+    cors_origins: list[str] = Field(default_factory=list, alias="CORS_ORIGINS")
 
 
 @lru_cache

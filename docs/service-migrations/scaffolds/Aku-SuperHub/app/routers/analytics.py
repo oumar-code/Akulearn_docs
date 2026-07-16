@@ -13,6 +13,7 @@ router = APIRouter(prefix="/api/v1/analytics", tags=["Analytics"])
 # Stub helpers — replace with real DB / warehouse calls in production
 # ---------------------------------------------------------------------------
 
+
 def _batch_upsert_events(batch: AnalyticsBatch) -> BatchIngestResult:
     """
     Persist events to the analytics store, skipping duplicates by event_id.
@@ -29,6 +30,7 @@ def _compute_regional_summary(window_start: datetime, window_end: datetime) -> R
 # ---------------------------------------------------------------------------
 # Routes
 # ---------------------------------------------------------------------------
+
 
 @router.post(
     "/aggregate",

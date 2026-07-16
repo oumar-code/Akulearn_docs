@@ -140,8 +140,6 @@ async def get_device(
         metadata=json.loads(record["metadata"]),
         registered_at=datetime.fromisoformat(record["registered_at"]),
         last_seen_at=(
-            datetime.fromisoformat(record["last_seen_at"])
-            if record["last_seen_at"]
-            else None
+            datetime.fromisoformat(record["last_seen_at"]) if record["last_seen_at"] else None
         ),
     )

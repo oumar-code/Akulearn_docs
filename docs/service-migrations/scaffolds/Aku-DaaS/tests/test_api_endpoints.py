@@ -6,15 +6,14 @@ from uuid import uuid4
 
 from httpx import AsyncClient
 
-
 # ---------------------------------------------------------------------------
 # Test isolation — clear in-memory stores before each test
 # ---------------------------------------------------------------------------
 
 
 async def _reset_stores() -> None:
-    import app.services.anonymisation as _anon
     import app.routers.consent as _consent
+    import app.services.anonymisation as _anon
 
     _anon._dataset_store.clear()
     _consent._consent_store.clear()
@@ -142,6 +141,7 @@ async def test_trigger_anonymise_409_when_already_anonymising(client: AsyncClien
     # (The background task would normally do this asynchronously.)
     import app.services.anonymisation as _anon
     from app.schemas.datasets import DatasetStatus
+
     _anon._dataset_store[dataset_id]["status"] = DatasetStatus.ANONYMISING
 
     # Now triggering again should return 409

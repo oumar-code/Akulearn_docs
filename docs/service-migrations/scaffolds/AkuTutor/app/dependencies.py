@@ -21,10 +21,10 @@ def get_settings() -> Settings:
 
 
 # Module-level singleton so every request shares one TutorService instance.
-_tutor_service_instance: "TutorService | None" = None  # noqa: F821
+_tutor_service_instance: TutorService | None = None  # noqa: F821
 
 
-def get_tutor_service() -> "TutorService":  # noqa: F821
+def get_tutor_service() -> TutorService:  # noqa: F821
     from app.services.tutor import TutorService  # local import to avoid circular refs
 
     global _tutor_service_instance

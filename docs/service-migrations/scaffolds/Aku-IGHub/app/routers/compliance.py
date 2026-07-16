@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from enum import StrEnum
 from typing import Any
 
-from fastapi import APIRouter, Depends, status
+from fastapi import APIRouter, Depends
 from pydantic import BaseModel, ConfigDict, Field
 
 from app.dependencies import get_current_user
@@ -27,12 +27,12 @@ class ComplianceDecision(StrEnum):
 
 class PolicyDomain(StrEnum):
     GDPR = "GDPR"
-    PDPA = "PDPA"           # Thailand / Singapore
-    FERPA = "FERPA"         # US education records
-    COPPA = "COPPA"         # US child privacy
-    NDPR = "NDPR"           # Nigeria Data Protection Regulation
-    POPIA = "POPIA"         # South Africa
-    LGPD = "LGPD"           # Brazil
+    PDPA = "PDPA"  # Thailand / Singapore
+    FERPA = "FERPA"  # US education records
+    COPPA = "COPPA"  # US child privacy
+    NDPR = "NDPR"  # Nigeria Data Protection Regulation
+    POPIA = "POPIA"  # South Africa
+    LGPD = "LGPD"  # Brazil
     CUSTOM = "CUSTOM"
 
 
@@ -117,9 +117,33 @@ async def compliance_check(
 
     # Stub: surface a warning for EU→non-adequate-country transfers
     _eu_member_states = {
-        "AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "ES", "FI",
-        "FR", "GR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT",
-        "NL", "PL", "PT", "RO", "SE", "SI", "SK",
+        "AT",
+        "BE",
+        "BG",
+        "CY",
+        "CZ",
+        "DE",
+        "DK",
+        "EE",
+        "ES",
+        "FI",
+        "FR",
+        "GR",
+        "HR",
+        "HU",
+        "IE",
+        "IT",
+        "LT",
+        "LU",
+        "LV",
+        "MT",
+        "NL",
+        "PL",
+        "PT",
+        "RO",
+        "SE",
+        "SI",
+        "SK",
     }
     _gdpr_adequate = {"AD", "AR", "CA", "CH", "FO", "GB", "GG", "IL", "IM", "JP", "JE", "NZ", "UY"}
 
@@ -163,9 +187,33 @@ async def compliance_check(
 def _infer_policies(source: str, target: str) -> list[PolicyDomain]:
     """Derive a best-guess list of applicable policy frameworks from jurisdiction codes."""
     _eu = {
-        "AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "ES", "FI",
-        "FR", "GR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT",
-        "NL", "PL", "PT", "RO", "SE", "SI", "SK",
+        "AT",
+        "BE",
+        "BG",
+        "CY",
+        "CZ",
+        "DE",
+        "DK",
+        "EE",
+        "ES",
+        "FI",
+        "FR",
+        "GR",
+        "HR",
+        "HU",
+        "IE",
+        "IT",
+        "LT",
+        "LU",
+        "LV",
+        "MT",
+        "NL",
+        "PL",
+        "PT",
+        "RO",
+        "SE",
+        "SI",
+        "SK",
     }
     policies: list[PolicyDomain] = []
     jurisdictions = {source.upper(), target.upper()}

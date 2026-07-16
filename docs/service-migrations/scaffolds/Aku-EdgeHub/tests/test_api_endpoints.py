@@ -6,7 +6,6 @@ from unittest.mock import AsyncMock, patch
 
 from httpx import AsyncClient
 
-
 # ---------------------------------------------------------------------------
 # Health
 # ---------------------------------------------------------------------------
@@ -130,8 +129,9 @@ async def test_cache_status_returns_response(client: AsyncClient) -> None:
 
 async def test_sync_trigger_returns_202_when_akudemy_accepts(client: AsyncClient) -> None:
     """Exercise the actual trigger_cloud_sync body by patching its httpx call."""
-    import httpx
     from unittest.mock import MagicMock
+
+    import httpx
 
     mock_resp = MagicMock(spec=httpx.Response)
     mock_resp.raise_for_status = MagicMock()
@@ -181,8 +181,9 @@ async def test_sync_trigger_returns_202_when_akudemy_returns_error(
     client: AsyncClient,
 ) -> None:
     """When Akudemy returns an HTTP error the service returns accepted=False."""
-    import httpx
     from unittest.mock import MagicMock
+
+    import httpx
 
     mock_err_resp = MagicMock(spec=httpx.Response)
     mock_err_resp.status_code = 503
@@ -209,8 +210,9 @@ async def test_sync_trigger_returns_202_when_akudemy_returns_error(
 
 async def test_ai_infer_returns_relay_response(client: AsyncClient) -> None:
     """Exercise relay_infer by patching its httpx call."""
-    import httpx
     from unittest.mock import MagicMock
+
+    import httpx
 
     mock_resp = MagicMock(spec=httpx.Response)
     mock_resp.raise_for_status = MagicMock()

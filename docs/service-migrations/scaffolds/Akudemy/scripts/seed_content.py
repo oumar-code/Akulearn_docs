@@ -48,12 +48,14 @@ from uuid import uuid4
 
 try:
     import asyncpg
+
     _ASYNCPG_AVAILABLE = True
 except ImportError:
     _ASYNCPG_AVAILABLE = False
 
 try:
     from dotenv import load_dotenv
+
     load_dotenv()
 except ImportError:
     pass
@@ -64,6 +66,7 @@ DATABASE_URL = os.getenv("DATABASE_URL", "")
 # ---------------------------------------------------------------------------
 # Content type mappings
 # ---------------------------------------------------------------------------
+
 
 def _infer_content_type(path: Path) -> str:
     name = path.name
@@ -119,6 +122,7 @@ def _extract_tags(data: dict[str, Any]) -> list[str]:
 # ---------------------------------------------------------------------------
 # File discovery
 # ---------------------------------------------------------------------------
+
 
 def discover_content_files(content_dir: Path, source: str) -> list[Path]:
     files: list[Path] = []
@@ -234,6 +238,7 @@ async def seed_to_database(
 # Main seeding logic
 # ---------------------------------------------------------------------------
 
+
 async def run_seeding(
     source: str,
     content_dir: Path,
@@ -284,6 +289,7 @@ async def run_seeding(
 # CLI
 # ---------------------------------------------------------------------------
 
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Akudemy Content Seeder — imports content from Aku-Content into Akudemy PostgreSQL",
@@ -301,8 +307,14 @@ def main() -> None:
         default="content",
         help="Path to the content directory (Aku-Content clone or local content/)",
     )
-    parser.add_argument("--dry-run", action="store_true", help="Preview without writing to database")
-    parser.add_argument("--reset", action="store_true", help="Drop and recreate the content_items table (destructive)")
+    parser.add_argument(
+        "--dry-run", action="store_true", help="Preview without writing to database"
+    )
+    parser.add_argument(
+        "--reset",
+        action="store_true",
+        help="Drop and recreate the content_items table (destructive)",
+    )
 
     args = parser.parse_args()
 

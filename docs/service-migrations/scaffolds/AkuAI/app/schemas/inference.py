@@ -7,7 +7,6 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
 
-
 # ---------------------------------------------------------------------------
 # Shared enums
 # ---------------------------------------------------------------------------
@@ -89,7 +88,9 @@ class TextClassifyRequest(BaseModel):
     model_config = ConfigDict(str_strip_whitespace=True)
 
     text: str = Field(..., min_length=1, max_length=16_384)
-    labels: list[str] = Field(..., min_length=2, description="Candidate labels for zero-shot classification")
+    labels: list[str] = Field(
+        ..., min_length=2, description="Candidate labels for zero-shot classification"
+    )
     model: str = Field(default="facebook/bart-large-mnli")
     multi_label: bool = Field(default=False)
 
