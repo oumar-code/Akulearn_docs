@@ -220,66 +220,27 @@ jobs:
             done
 
             # Guardrail: fail fast if copied workflow files look malformed.
-            # Checks performed:
-            #   1. No git merge conflict markers (<<<<<<<, =======, >>>>>>>)
-            #   2. Required top-level YAML keys (on: and jobs:) are present
-            #   3. The first substantive line is a valid YAML key — not markdown
-            #      prose (this catches the known corruption pattern where docs
-            #      content is injected at the top of a workflow file, displacing
-            #      the required name:/on: keys).
             echo "│  Step 3b: Validate workflow files"
-            if ! python3 - "${TARGET_CLONE}" <<'PYEOF'
-              import pathlib
-              import re
-              import sys
-
-              # A line is "substantive" if it is not blank and not a YAML comment.
-              BLANK_OR_COMMENT = re.compile(r"^\s*(#.*)?$")
-              # A valid YAML top-level key starts at column 0 with a word char or
-              # a YAML document-start marker (---).
-              VALID_FIRST_LINE = re.compile(r"^(---|[A-Za-z_][A-Za-z0-9_-]*\s*:)")
-
-              root = pathlib.Path(sys.argv[1]) / ".github" / "workflows"
-              if not root.exists():
-                  sys.exit(0)
-
-              issues = []
-              for wf in sorted(list(root.glob("*.yml")) + list(root.glob("*.yaml"))):
-                  text = wf.read_text(encoding="utf-8", errors="replace")
-                  lines = text.splitlines()
-
-                  # Check 1: merge conflict markers
-                  if any(marker in text for marker in ("<<<<<<<", "=======", ">>>>>>>")):
-                      issues.append(f"{wf}: contains git merge conflict markers")
-                      continue
-
-                  # Check 2: required structural keys exist somewhere in the file
-                  if not re.search(r"^on:\s*$|^on:\s+\S", text, re.MULTILINE):
-                      issues.append(f"{wf}: missing top-level 'on:' key")
-                  if not re.search(r"^jobs:\s*$|^jobs:\s+\S", text, re.MULTILINE):
-                      issues.append(f"{wf}: missing top-level 'jobs:' key")
-
-                  # Check 3: the first substantive line must be a valid YAML key.
-                  # This catches the corruption pattern where markdown prose (e.g.
-                  # "# Automation Progress Tracker\n\nThis markdown file will...") is
-                  # written at the top of the file, making the workflow unparseable
-                  # even though 'on:' and 'jobs:' appear later in the file.
-                  first_substantive = next(
-                      (ln for ln in lines if not BLANK_OR_COMMENT.match(ln)), None
-                  )
-                  if first_substantive is not None and not VALID_FIRST_LINE.match(first_substantive):
-                      issues.append(
-                          f"{wf}: first substantive line is not a valid YAML key "
-                          f"(got: {first_substantive!r:.80})"
-                      )
-
-              if issues:
-                  print("Malformed workflow files detected:")
-                  for issue in issues:
-                      print(f" - {issue}")
-                  sys.exit(1)
-              PYEOF
-            then
+            MALFORMED=0
+            WF_DIR="${TARGET_CLONE}/.github/workflows"
+            if [[ -d "${WF_DIR}" ]]; then
+              for WF in "${WF_DIR}"/*.yml "${WF_DIR}"/*.yaml; do
+                [[ -e "${WF}" ]] || continue
+                if grep -qE '<<<<<<<|=======|>>>>>>>' "${WF}"; then
+                  echo "│  ✗ ${WF} contains merge conflict markers"
+                  MALFORMED=1
+                fi
+                if ! grep -qE '^on:($|[[:space:]])' "${WF}"; then
+                  echo "│  ✗ ${WF} missing top-level on:"
+                  MALFORMED=1
+                fi
+                if ! grep -qE '^jobs:($|[[:space:]])' "${WF}"; then
+                  echo "│  ✗ ${WF} missing top-level jobs:"
+                  MALFORMED=1
+                fi
+              done
+            fi
+            if [[ "${MALFORMED}" -ne 0 ]]; then
               echo "│  ✗ Workflow validation failed — skipping ${SERVICE}"
               echo "└──────────────────────────────────────────────────────"
               FAILED+=("${SERVICE}")
@@ -316,25 +277,23 @@ jobs:
 
             # Open or update PR
             echo "│  Step 6: Open / update pull request"
-            PR_BODY=$(cat <<EOF
-          Automated scaffold sync from [Akulearn_docs](https://github.com/oumar-code/Akulearn_docs) @ \`${COMMIT_SHA_SHORT}\`.
-
-          ## What's included
-          This branch is a strict mirror of \`docs/service-migrations/scaffolds/${SERVICE}/\`.
-          Files in the target repo that do not exist in the scaffold were removed.
-
-          ## Why this PR was opened
-          A push to the \`main\` branch of Akulearn_docs changed one or more files under
-          \`docs/service-migrations/scaffolds/${SERVICE}/\`. This PR keeps ${SERVICE} in sync with the latest scaffold.
-
-          ## Next steps
-          1. Review the diff and resolve any conflicts with your service-specific code
-          2. Merge this PR to apply the scaffold updates
-          3. Update the migration tracker if needed: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/service-migrations/index.md
-
-          _Automated by the \`scaffold-sync\` GitHub Actions workflow in Akulearn_docs._
-          EOF
-            )
+            PR_BODY=$(printf '%s\n' \
+              "Automated scaffold sync from [Akulearn_docs](https://github.com/oumar-code/Akulearn_docs) @ \`${COMMIT_SHA_SHORT}\`." \
+              "" \
+              "## What's included" \
+              "This branch is a strict mirror of \`docs/service-migrations/scaffolds/${SERVICE}/\`." \
+              "Files in the target repo that do not exist in the scaffold were removed." \
+              "" \
+              "## Why this PR was opened" \
+              "A push to the \`main\` branch of Akulearn_docs changed one or more files under" \
+              "\`docs/service-migrations/scaffolds/${SERVICE}/\`. This PR keeps ${SERVICE} in sync with the latest scaffold." \
+              "" \
+              "## Next steps" \
+              "1. Review the diff and resolve any conflicts with your service-specific code" \
+              "2. Merge this PR to apply the scaffold updates" \
+              "3. Update the migration tracker if needed: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/service-migrations/index.md" \
+              "" \
+              "_Automated by the \`scaffold-sync\` GitHub Actions workflow in Akulearn_docs._")
 
             gh pr create \
               --repo "${GITHUB_ORG}/${SERVICE}" \
