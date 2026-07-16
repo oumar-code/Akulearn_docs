@@ -7,13 +7,17 @@ name: "Scaffold Sync — Push scaffold changes to service repos"
 # is automatically reflected in the corresponding oumar-code/<ServiceName> repo
 # by opening (or updating) a pull request on branch feat/scaffold-sync.
 #
+# Sync mode is STRICT MIRROR:
+#   - Target repo content is made to match scaffold content exactly (except .git)
+#   - Files not present in scaffold are removed from the target branch
+#
 # Auto-trigger (on push to main):
-#   - Detects which scaffold directories changed in the commit
-#   - Only syncs the affected service(s)
+#   - Runs when any scaffold path changes
+#   - Syncs all allowlisted Aku service repos in strict mirror mode
 #
 # Manual trigger (workflow_dispatch):
 #   - Optionally specify a space-separated list of service names, or leave
-#     blank to sync all allowlisted service + hardware repos
+#     blank to sync all allowlisted Aku service repos
 #   - Optionally enable dry_run to preview without pushing anything
 #
 # Prerequisites
@@ -37,7 +41,7 @@ on:
       services:
         description: >
           Space-separated list of service repos to sync.
-          Leave empty to sync all allowlisted service + hardware repos.
+            Leave empty to sync all allowlisted Aku service repos.
         required: false
         default: ""
       dry_run:
@@ -90,13 +94,13 @@ jobs:
       # ── 4. Determine which services to sync ──────────────────────────────────
       #
       # • workflow_dispatch with services input → use that list
-      # • workflow_dispatch with empty services → use ALL_SERVICES
-      # • push trigger → inspect changed paths and extract service names
+      # • workflow_dispatch with empty services → use ALL allowlisted services
+      # • push trigger → sync ALL allowlisted services (strict mirror policy)
       - name: Determine services to sync
         id: services
         run: |
           source "$GITHUB_WORKSPACE/.github/allowlists/allowlist.bash"
-          ALLOWED="$(normalize_space_list "${AKU_SERVICE_REPOS} ${AKU_HARDWARE_REPOS}")"
+          ALLOWED="$(normalize_space_list "${AKU_SERVICE_REPOS}")"
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             OVERRIDE="${{ steps.runtime.outputs.services_override }}"
             if [[ -n "$OVERRIDE" ]]; then
@@ -109,36 +113,10 @@ jobs:
               echo "list=${RESOLVED}" >> "$GITHUB_OUTPUT"
             fi
           else
-            # Push event — detect which scaffold subdirs changed.
-            # Validate that github.event.before is a real commit (not the
-            # zero SHA that GitHub uses when there is no previous commit).
-            BEFORE="${{ github.event.before }}"
-            ZERO_SHA="0000000000000000000000000000000000000000"
-            if [[ -z "$BEFORE" || "$BEFORE" == "$ZERO_SHA" ]]; then
-              echo "ℹ️  No previous commit available (first push?) — syncing all services as a safe fallback."
-              RESOLVED="$(resolve_allowed_repos "" "$ALLOWED" "scaffold-lane")"
-              echo "source=all-fallback" >> "$GITHUB_OUTPUT"
-              echo "list=${RESOLVED}" >> "$GITHUB_OUTPUT"
-            else
-              # Extract the service name (3rd path component) from each
-              # changed path, e.g. docs/service-migrations/scaffolds/AkuAI/app/main.py → AkuAI
-              CHANGED=$(git diff --name-only "${BEFORE}" "${{ github.sha }}" \
-                          -- "${SCAFFOLDS_DIR}/" \
-                        | grep -oP "^${SCAFFOLDS_DIR}/\K[^/]+" \
-                        | sort -u \
-                        | tr '\n' ' ' \
-                        | xargs)
-
-              if [[ -z "$CHANGED" ]]; then
-                echo "ℹ️  No scaffold directories changed — nothing to sync."
-                echo "source=none" >> "$GITHUB_OUTPUT"
-                echo "list=" >> "$GITHUB_OUTPUT"
-              else
-                RESOLVED="$(resolve_allowed_repos "$CHANGED" "$ALLOWED" "scaffold-lane")"
-                echo "source=auto-detected" >> "$GITHUB_OUTPUT"
-                echo "list=${RESOLVED}" >> "$GITHUB_OUTPUT"
-              fi
-            fi
+            # Push event — strict mirror policy keeps ALL services aligned.
+            RESOLVED="$(resolve_allowed_repos "" "$ALLOWED" "scaffold-lane")"
+            echo "source=all-on-push" >> "$GITHUB_OUTPUT"
+            echo "list=${RESOLVED}" >> "$GITHUB_OUTPUT"
           fi
 
       # ── 5. Early-exit if nothing to sync ─────────────────────────────────────
@@ -231,11 +209,12 @@ jobs:
               git -C "${TARGET_CLONE}" checkout --orphan "${BRANCH_NAME}"
             fi
 
-            # Overlay the scaffold files
-            echo "│  Step 3: Overlay scaffold files"
-            cp -r "${SCAFFOLD_SRC}/." "${TARGET_CLONE}/"
+            # Strict mirror: replace target repo content with scaffold content
+            # (excluding .git) and remove files that are not in scaffold.
+            echo "│  Step 3: Mirror scaffold files (strict)"
+            rsync -a --delete --exclude '.git/' "${SCAFFOLD_SRC}/" "${TARGET_CLONE}/"
             FILE_COUNT=$(find "${SCAFFOLD_SRC}" -type f | wc -l)
-            echo "│    Overlaid ${FILE_COUNT} file(s)"
+            echo "│    Mirrored ${FILE_COUNT} file(s)"
             find "${SCAFFOLD_SRC}" -type f | while read -r f; do
               echo "│    → ${f#"${SCAFFOLD_SRC}/"}"
             done
@@ -340,7 +319,8 @@ jobs:
             PR_BODY="Automated scaffold sync from [Akulearn_docs](https://github.com/oumar-code/Akulearn_docs) @ \`${COMMIT_SHA_SHORT}\`.
 
           ## What's included
-          All files from \`docs/service-migrations/scaffolds/${SERVICE}/\` have been overlaid onto this branch.
+          This branch is a strict mirror of \`docs/service-migrations/scaffolds/${SERVICE}/\`.
+          Files in the target repo that do not exist in the scaffold were removed.
 
           ## Why this PR was opened
           A push to the \`main\` branch of Akulearn_docs changed one or more files under
