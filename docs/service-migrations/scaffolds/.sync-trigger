@@ -1,0 +1,2 @@
+# Trigger file for scaffold-sync workflow.
+# Purpose: allows push-based execution when workflow_dispatch permissions are unavailable.
