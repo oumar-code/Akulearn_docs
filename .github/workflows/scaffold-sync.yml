@@ -22,9 +22,9 @@ name: "Scaffold Sync — Push scaffold changes to service repos"
 #
 # Prerequisites
 # ──────────────────────────────────────────────────────────────────────────────
-# A repo secret named GH_PAT must exist:
-#   Settings → Secrets and variables → Actions → New repository secret
-#   Name : GH_PAT
+# An environment secret named GHPATH must exist in orchestration-publish:
+#   Settings → Environments → orchestration-publish → Secrets
+#   Name : GHPATH
 #   Value: A classic Personal Access Token with scopes: repo, workflow
 #   (Generate at https://github.com/settings/tokens)
 # ──────────────────────────────────────────────────────────────────────────────
@@ -64,7 +64,7 @@ jobs:
       GITHUB_ORG: oumar-code
       BRANCH_NAME: feat/scaffold-sync
       SCAFFOLDS_DIR: docs/service-migrations/scaffolds
-      GH_TOKEN: ${{ secrets.GH_PAT }}
+      GH_TOKEN: ${{ secrets.GHPATH }}
 
     steps:
       # ── 1. Checkout Akulearn_docs (full history on push so we can diff) ───────
@@ -129,7 +129,7 @@ jobs:
       # ── 6. Sync each service ─────────────────────────────────────────────────
       - name: Sync scaffold to service repos
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_PAT: ${{ secrets.GHPATH }}
           SERVICES: ${{ steps.services.outputs.list }}
           DRY_RUN: ${{ steps.runtime.outputs.dry_run }}
         run: |
