@@ -55,6 +55,7 @@ def _get_idempotency_key(
 @router.post(
     "/settle",
     response_model=ClearingSettleResponse,
+    status_code=status.HTTP_201_CREATED,
     summary="Settle an Aku Coin clearing transaction (idempotent)",
     description=(
         "Initiates or replays an Aku Coin financial clearing operation. "

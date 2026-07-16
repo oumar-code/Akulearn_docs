@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import uuid
 from datetime import datetime, timezone
 
@@ -72,9 +73,7 @@ async def publish_metadata(
 
 async def _forward_to_daas(record: MetadataRecord) -> bool:
     """Forward a metadata record to Aku-DaaS; returns True on acknowledged receipt."""
-    from app.core.config import settings  # lazy import to avoid circular deps
-
-    daas_url = getattr(settings, "daas_ingest_url", None)
+    daas_url = os.getenv("DAAS_INGEST_URL")
     if not daas_url:
         return False
 
