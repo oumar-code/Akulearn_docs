@@ -316,7 +316,8 @@ jobs:
 
             # Open or update PR
             echo "│  Step 6: Open / update pull request"
-            PR_BODY="Automated scaffold sync from [Akulearn_docs](https://github.com/oumar-code/Akulearn_docs) @ \`${COMMIT_SHA_SHORT}\`.
+            PR_BODY=$(cat <<EOF
+          Automated scaffold sync from [Akulearn_docs](https://github.com/oumar-code/Akulearn_docs) @ \`${COMMIT_SHA_SHORT}\`.
 
           ## What's included
           This branch is a strict mirror of \`docs/service-migrations/scaffolds/${SERVICE}/\`.
@@ -331,7 +332,9 @@ jobs:
           2. Merge this PR to apply the scaffold updates
           3. Update the migration tracker if needed: https://github.com/oumar-code/Akulearn_docs/blob/main/docs/service-migrations/index.md
 
-          _Automated by the \`scaffold-sync\` GitHub Actions workflow in Akulearn_docs._"
+          _Automated by the \`scaffold-sync\` GitHub Actions workflow in Akulearn_docs._
+          EOF
+            )
 
             gh pr create \
               --repo "${GITHUB_ORG}/${SERVICE}" \
