@@ -18,8 +18,9 @@ app = FastAPI(
     title="Aku-EdgeHub",
     description="Offline edge server — local SQLite store, dual online/offline modes.",
     version="0.1.0",
-    docs_url="/docs",
-    redoc_url="/redoc",
+    docs_url="/api/docs",
+    redoc_url="/api/redoc",
+    openapi_url="/api/openapi.json",
 )
 
 app.add_middleware(
