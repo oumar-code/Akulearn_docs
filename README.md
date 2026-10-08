@@ -5,6 +5,20 @@
 This repository is the public documentation workspace for the Akulearn ecosystem.
 It is curated for external stakeholders (including the iDICE Founders Lab team) to quickly understand what Akulearn is building, what is live in the MVP, and how platform components fit together.
 
+## NAIC Submission Pack
+
+The repository includes a complete NAIC-ready draft pack for the Aku Platform N-ATLAS integration proposal.
+
+- [docs/NAIC-Submission-Index.md](docs/NAIC-Submission-Index.md)
+- [docs/NAIC-Submission-Template.md](docs/NAIC-Submission-Template.md)
+- [docs/NAIC-Submission-Checklist.md](docs/NAIC-Submission-Checklist.md)
+- [docs/AkuAI-N-ATLAS-Proxy-Spec.md](docs/AkuAI-N-ATLAS-Proxy-Spec.md)
+- [docs/Multi-Service-Demo-Architecture.md](docs/Multi-Service-Demo-Architecture.md)
+- [docs/Benchmark-Dataset-Summary.md](docs/Benchmark-Dataset-Summary.md)
+- [docs/N-ATLAS-Ecosystem-Integration-Roadmap.md](docs/N-ATLAS-Ecosystem-Integration-Roadmap.md)
+- [diagrams/Aku-N-ATLAS-Ecosystem.md](diagrams/Aku-N-ATLAS-Ecosystem.md)
+- [diagrams/Aku-N-ATLAS-Ecosystem.mmd](diagrams/Aku-N-ATLAS-Ecosystem.mmd)
+
 ## Key Platform Decisions
 
 | Decision | Choice |
@@ -41,7 +55,7 @@ It is curated for external stakeholders (including the iDICE Founders Lab team) 
 
 ## Project Overview
 
-Akulearn is building an education + connectivity ecosystem designed for connected and underserved communities across Africa. The platform combines localized edge infrastructure, AI-enabled learning services, and practical connectivity models to reduce costs while improving access.
+Akulearn is building an education + connectivity ecosystem designed for connected and underserved communities across Africa. The platform combines localized edge infrastructure, AI-enabled learning, and public-interest digital services for students, farmers, health workers, and citizens.
 
 ## What's Inside
 

@@ -1,0 +1,35 @@
+flowchart TD
+    A[User / Student / Farmer / Customer] --> B[Service Layer]
+    B --> C[AkuAI Proxy]
+    C --> D[N-ATLAS Core Backbone]
+
+    D --> E[Education Model]
+    D --> F[Agriculture Model]
+    D --> G[Health Model]
+    D --> H[Governance Model]
+    D --> I[Default Multilingual Model]
+
+    E --> J[Akudemy]
+    F --> K[AkuWorkspace]
+    G --> L[AkuHealth / Health workflows]
+    H --> M[Governance services]
+    I --> N[Aku-Telhone]
+
+    J --> O[ASR + TTS]
+    K --> P[Voice Summary + Document Gen]
+    N --> Q[Voice Authentication]
+
+    C --> R[Aku-IGHub Gateway]
+    D --> S[Aku-SuperHub Fine-tuning]
+    S --> T[Aku-EdgeHub Quantized Models]
+    T --> U[Offline / Low-bandwidth inference]
+
+    V[Aku-DaaS] --> S
+    V --> D
+
+    style A fill:#f9f,stroke:#333,stroke-width:1px
+    style C fill:#5b8def,stroke:#333,stroke-width:1px,color:#fff
+    style D fill:#8b4fab,stroke:#333,stroke-width:1px,color:#fff
+    style R fill:#ff8c42,stroke:#333,stroke-width:1px,color:#fff
+    style S fill:#20b2aa,stroke:#333,stroke-width:1px,color:#fff
+    style T fill:#4a90e2,stroke:#333,stroke-width:1px,color:#fff
